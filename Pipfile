@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 beautifulsoup4 = "==4.12.3"
 lxml = "==5.1.0"
+pymupdf = "==1.23.21"
 
 [dev-packages]
 ipykernel = "==6.29.2"
