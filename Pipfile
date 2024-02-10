@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+beautifulsoup4 = "==4.12.3"
+lxml = "==5.1.0"
+
+[dev-packages]
+ipykernel = "==6.29.2"
+
+[requires]
+python_version = "3.11"
