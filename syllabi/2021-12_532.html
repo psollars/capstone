@@ -1,0 +1,604 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Course Syllabus - SIADS 532
+ </h1>
+ <h3 level="3">
+  <strong>
+   Course Overview and Prerequisites
+  </strong>
+ </h3>
+ <p>
+  This course will introduce basic concepts and tasks of data mining. It focuses on how to formally represent real-world information as basic data types (itemsets, matrices, and sequences) that facilitate downstream analytics tasks. Students will learn how to characterize each type of data through pattern extraction and similarity measures.
+ </p>
+ <p>
+  Course prerequisites: Mathematics Methods for Applied Data Science, Data Manipulation
+ </p>
+ <h3 level="3">
+  <strong>
+   Instructor and Course Assistants
+  </strong>
+ </h3>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Instructor: Paramveer Dhillon - dhillonp@umich.edu
+   </p>
+  </li>
+  <li>
+   <p>
+    Course Assistant: Yumou Wei - yumouwei@umich.edu, Lia Bozarth - lbozrath@umich
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Communication Expectations
+  </strong>
+ </h3>
+ <p>
+  <strong>
+   Contacting instructor and course assistant
+  </strong>
+  : Course channel in Slack (siads532_fa21_001)
+ </p>
+ <p>
+  <strong>
+   Email response time
+  </strong>
+  : 24 - 48 hours
+ </p>
+ <p>
+  <strong>
+   Slack response time
+  </strong>
+  : 24 - 48 hours
+ </p>
+ <p>
+  <strong>
+   Office hours
+  </strong>
+  :
+  <strong>
+  </strong>
+  see
+  <em>
+   <strong>
+    Course Schedule
+   </strong>
+  </em>
+  <strong>
+  </strong>
+  below
+ </p>
+ <h3 level="3">
+  <strong>
+   Required Textbook
+  </strong>
+ </h3>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <a href="http://umich.summon.serialssolutions.com/2.0.0/link/0/eLvHCXMwpV1LS8NAEB60uShCfdJorUH0mLLZ5ulFtG0Qsbei3pZNdiPFGsSk4s93No82VNCDl0DIkmVnk2_n-Q0AXcODSPFIz3LT6i_exBwvlRPNHDheYKoOccpRMHqgN6FzHw4aBENFvLBKUuzXSLmKpKoXzV54WmVb9stKgGtRoDMqjUTVV2vUwVO9BRrC_HiydL8Q1IMQnAuSHXVq2V5QMUAt761t2ObZK2IN4lCeNQKZTV1UFY8sssaZFLahjv-WmSgF5VO96J9kj_9f5C5oUlVG7MGGTPehXfeDMCp4OICLEc-5MSlaTlwZw7IgMjN4KoxpTRWbHcJTOJ4O78yqC4PJla6GP5IvRBLFqiU9SbwgRgVQkCiKJWKBi7htDyLuRZaVSIvjQD9Rp35CXdRMfE9GqAMdwQ5X-fppXtT1iQ4YMnY46h6CBNK3Len5Duc84q4XC4k2JtfhvCF79jkvxJSx1Qb5xNOhW24Jey-pOdYfn9XyZE0ps_HtkKKZatHfRpSy1aFT7vByCrTB0G51qa3D5fojllFGmO-o8K-i0ndY_pUf_znJCWyVrmrXJEEXWvnHQp6CVux9DzbNx-de9f1-A6nuAfs" title="">
+     Data mining: concepts and techniques
+    </a>
+    . Han, J., Pei, J. and Kamber, M. (3rd Edition) [DMCT]
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://infolab.stanford.edu/~ullman/mmds/book.pdf" title="Mining of Massive Datasets">
+     Mining of massive datasets
+    </a>
+    . Leskovec, Jure, Anand Rajaraman, and Jeffrey David Ullman. (2nd Edition) [MMDS]
+   </p>
+  </li>
+ </ul>
+ <p>
+  Online access to these textbooks are provided through the University of Michigan Library. You may be asked to sign in with your UMich uniquename and password to access these materials.
+ </p>
+ <h3 level="3">
+  <strong>
+   Technology Requirements (unique to this course)
+  </strong>
+ </h3>
+ <p>
+  <em>
+   None
+  </em>
+ </p>
+ <h3 level="3">
+  <strong>
+   Accessibility
+  </strong>
+ </h3>
+ <p>
+  <a href="https://docs.google.com/document/d/1ct4BShNTYVU2J_oYeuTTsODSAFlEhtODXMlfc4-t5PM/edit?usp=sharing" title="">
+   Screen reader configuration for Jupyter Notebook Content
+  </a>
+ </p>
+ <h3 level="3">
+  <strong>
+   Learning Outcomes
+  </strong>
+ </h3>
+ <ol bullettype="numbers">
+  <li>
+   <p>
+    Understand the basic concepts of knowledge discovery from data.
+   </p>
+  </li>
+  <li>
+   <p>
+    Describe the basic computational tasks of data mining, including associations, retrieval, classification, clustering, ranking, prediction, and outlier detection.
+   </p>
+  </li>
+  <li>
+   <p>
+    Formulate real-world data as item sets, matrices, or sequences and articulate the pros and cons.
+   </p>
+  </li>
+  <li>
+   <p>
+    Extract patterns and associations from itemsets, matrices, and sequences.
+   </p>
+  </li>
+  <li>
+   <p>
+    Compute similarities/distances of item sets, vectors, and sequences.
+   </p>
+  </li>
+  <li>
+   <p>
+    Know how these techniques are applied to different domains.
+   </p>
+  </li>
+ </ol>
+ <h3 level="3">
+  <strong>
+   Course Schedule
+  </strong>
+ </h3>
+ <p>
+  This course
+  <strong>
+   begins on Monday, November 28, 2021
+  </strong>
+  and
+  <strong>
+   ends on Sunday, December 19, 2021
+  </strong>
+  .
+ </p>
+ <p>
+  Weekly
+  <strong>
+   Quizzes
+  </strong>
+  and
+  <strong>
+   Programming Assignments will be due on Mondays at 11:59
+  </strong>
+  <strong>
+   pm
+  </strong>
+  (time zone = Ann Arbor, Michigan = Eastern Time).
+ </p>
+ <p>
+  Schedule of Weekly Office Hours via Zoom (time zone = Ann Arbor, Michigan = Eastern Time):
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     <u>
+      Mondays 8:30 - 9:30 pm, Thursdays 4  - 5 pm, and  Sunday 10:30 - 11:30 am
+     </u>
+    </strong>
+    <strong>
+     <u>
+      <em>
+       (Passcode: 532).
+      </em>
+     </u>
+    </strong>
+   </p>
+  </li>
+ </ul>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Access via Live Events from the course menu
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Grading
+  </strong>
+ </h3>
+ <table columns="2" rows="19">
+  <thead>
+   <tr>
+    <th>
+     <p>
+      Course Assignment
+     </p>
+    </th>
+    <th>
+     <p>
+      Percentage of Final Grade
+     </p>
+    </th>
+   </tr>
+  </thead>
+  <tr>
+   <td>
+    <p>
+     Wk 1 Quiz Part 1 - Basic Concepts
+    </p>
+   </td>
+   <td>
+    <p>
+     2.5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 1 Quiz Part 2 - Data Representations
+    </p>
+   </td>
+   <td>
+    <p>
+     3.75%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 1 Quiz Part 3 - Solving a Real World Problem
+    </p>
+   </td>
+   <td>
+    <p>
+     13.75%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 1 Assignment 1 - Patterns and Similarities
+    </p>
+   </td>
+   <td>
+    <p>
+     5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 2 Assignment 2 - Part 1 - Itemset Data
+    </p>
+   </td>
+   <td>
+    <p>
+     1.25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 2 Assignment 2 - Part 2 - Frequent Itemsets
+    </p>
+   </td>
+   <td>
+    <p>
+     5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 2 Assignment 2 - Part 3 - Apriori under the Hood
+    </p>
+   </td>
+   <td>
+    <p>
+     10%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 2 Assignment 2 - Part 4 - Evaluating Frequent Itemsets
+    </p>
+   </td>
+   <td>
+    <p>
+     3.75%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 2 Assignment 2 - Part 5 - Itemset Similarity
+    </p>
+   </td>
+   <td>
+    <p>
+     5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 3 Assignment 3 - Part 1 - Vector and Matrix Data
+    </p>
+   </td>
+   <td>
+    <p>
+     1.25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 3 Assignment 3 - Part 2 - Vector Similarity and Distance
+    </p>
+   </td>
+   <td>
+    <p>
+     11.25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 3 Assignment 3 - Part 3 - Finding Similar Restaurants
+    </p>
+   </td>
+   <td>
+    <p>
+     6.25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 3 Assignment 3 - Part 4 - Singular Value Decomposition
+    </p>
+   </td>
+   <td>
+    <p>
+     6.25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 4 Assignment 4 - Part 1 - Sequence Data and Ngrams
+    </p>
+   </td>
+   <td>
+    <p>
+     10%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 4 Assignment 4 - Part 2 - Edit Distance
+    </p>
+   </td>
+   <td>
+    <p>
+     7.5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 4 Assignment 4 - Part 3 - Shingling and Near Duplicates
+    </p>
+   </td>
+   <td>
+    <p>
+     5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Wk 4 Assignment 4 - Part 4 - Application: Sequence Alignment
+    </p>
+   </td>
+   <td>
+    <p>
+     2.5%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Total
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      100%
+     </strong>
+    </p>
+   </td>
+  </tr>
+ </table>
+ <p>
+  Note: All assignments are required to earn credit for this course.
+ </p>
+ <h3 level="3">
+  <strong>
+   Letter Grades, Course Grades, and Late Submission Policy
+  </strong>
+ </h3>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/9eHGY/mads-assignment-submission-and-grading-policies" title="">
+   MADS Assignment Submission and Grading Policies
+  </a>
+  section of the UMSI Student Handbook (access to Student Orientation course required)
+ </p>
+ <p>
+  For this course, the late submission policy is 15% reduction if an assignment is turned in one day late, 30% reduction if two days late, 50% if reduction three days, and a zero (0) if four or more days late.
+ </p>
+ <p>
+  Note: we understand that the fluid Covid-19 situation may have various influences on our working schedule and conditions.  If you have specific needs, please let us know and we’d be happy to discuss and accommodate them on top of the default late submission policy.
+ </p>
+ <h3 level="3">
+  <strong>
+   Accommodations
+  </strong>
+ </h3>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/mK9GT/accommodations-for-students-with-disabilities" title="">
+   Accommodations for Students with Disabilities
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <p>
+  Use the
+  <a href="https://ssd.umich.edu/content/student-intake-form" title="">
+   Student Intake Form
+  </a>
+  to begin the process of working with the University’s Office of Services for Students with Disabilities.
+ </p>
+ <h3 level="3">
+  <strong>
+   Help Desk(s): How to Get Help
+  </strong>
+ </h3>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Degree program questions or general help - umsimadshelp@umich.edu
+   </p>
+  </li>
+  <li>
+   <p>
+    Coursera’s Technical Support (24/7) -
+    <a href="https://learner.coursera.help/" title="">
+     https://learner.coursera.help/
+    </a>
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  <strong>
+   Library Access
+  </strong>
+ </h3>
+ <p>
+  Refer to the
+  <a href="https://www.lib.umich.edu/computing-library/access-outside-library" title="">
+   U-M Library’s information sheet
+  </a>
+  on accessing library resources from off-campus. For more information regarding library support services, please refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/pED9d/u-m-library-resources" title="">
+   U-M Library Resources
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <h3 level="3">
+  <strong>
+   Student Mental Health
+  </strong>
+ </h3>
+ <p>
+  Refer to the University’s
+  <a href="https://www.uhs.umich.edu/stressresources#services" title="">
+   Resources for Stress and Mental Health website
+  </a>
+  for a listing of resources for students.
+ </p>
+ <h3 level="3">
+  <strong>
+   Student Services
+  </strong>
+ </h3>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/S6R1u/introduction-to-umsi-student-life-and-academic-affairs" title="">
+   Introduction to UMSI Student Life
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
