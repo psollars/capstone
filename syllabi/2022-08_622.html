@@ -1,0 +1,598 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  Course Syllabus for SIADS 622:Information Visualization II
+ </h1>
+ <h2 level="2">
+  Course Overview and Prerequisites
+ </h2>
+ <p>
+  This course extends our understanding of information visualization. Leveraging the topics covered in Information Visualization I, we introduce interactive techniques that can be used broadly for visualization. The course will also introduce techniques for visualizing specific data types: temporal, network, hierarchical, and text.
+ </p>
+ <p>
+  Information visualization is a crucial step in both understanding and communicating data. In the first Information Visualization course we focused on the fundamental principles behind visualization--the most basic types of data, encodings, and the perceptual and cognitive processes that make some visualizations better than others. This class will expand on these basic principles to include interactivity. We will see how interactivity can act as a boost to expressiveness and effectiveness by studying a handful of common cross-cutting techniques. The class will also expand on the basic data types to feature techniques for visualizing multivariate datasets, temporal data, network, hierarchical, and text. We will focus on general techniques but also focus on specific real-world case studies for each type. Beyond the theoretical, the course will allow students to build on their Altair expertise to build more sophisticated and interactive visualizations. We will also introduce other libraries as needed for the more rarified data types (e.g., NetworkX).
+ </p>
+ <p>
+  <em>
+   Students should have successfully completed Information Visualization I prior to enrolling in this course.
+  </em>
+ </p>
+ <h1 level="1">
+  Instructor and Course Assistants
+ </h1>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Instructor: Elham Amini -
+    <a href="mailto: eamini@umich.edu" title="">
+     eamini@umich.edu
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Course Lecturers: Amanda Hardy -
+    <a href="mailto: amjaha@umich.edu" title="">
+     amjaha@umich.edu
+    </a>
+    , Jake Huang -
+    <a href="mailto: yiju@umich.edu" title="">
+     yiju@umich.edu
+    </a>
+    , Bobby Madamanchi -
+    <a href="mailto: amadaman@umich.edu" title="">
+     amadaman@umich.edu
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    GSI: Ruotong Gao -
+    <a href="mailto: ruotongg@umich.edu" title="">
+     ruotongg@umich.edu
+    </a>
+   </p>
+  </li>
+ </ul>
+ <h1 level="1">
+  Communication Expectations
+ </h1>
+ <p>
+  Contacting instructor and course assistant: Course channel in Slack
+ </p>
+ <p>
+  Email response time:  24 - 48 hours
+ </p>
+ <p>
+  Slack response time: 24 - 48 hours
+ </p>
+ <p>
+  Office hours: see Course Schedule below
+ </p>
+ <h1 level="1">
+  Required Textbook
+ </h1>
+ <p>
+  Visual Display of Quantitative Information. Edward. R. Tufte. One source for this text is Amazon:
+  <a href="https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130" title="">
+   <u>
+    https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130
+   </u>
+  </a>
+  )
+ </p>
+ <h1 level="1">
+  Technology Requirements (unique to this course)
+ </h1>
+ <p>
+  None
+ </p>
+ <h1 level="1">
+  Learning Outcomes
+ </h1>
+ <ol bullettype="numbers">
+  <li>
+   <p>
+    Enumerate the key types of interactivity and their advantages
+   </p>
+  </li>
+  <li>
+   <p>
+    Be able to construct interactive visualizations using Altair
+   </p>
+  </li>
+  <li>
+   <p>
+    Be able to evaluate visualization systems and encodings based on an extended understanding of data types
+   </p>
+  </li>
+  <li>
+   <p>
+    Be able to critique and contrast different designs based on task frameworks (domain, abstract) for temporal/network/hierarchical/text/multivariate data formats
+   </p>
+  </li>
+  <li>
+   <p>
+    Be able to select appropriate encodings given data and task framework given temporal/network/hierarchical/text/multivariate data formats
+   </p>
+  </li>
+ </ol>
+ <h1 level="1">
+  Course Schedule
+ </h1>
+ <p>
+  This course begins on
+  <strong>
+   Tuesday July 26, 2022
+  </strong>
+  and ends on Monday August 22, 2022.
+ </p>
+ <p>
+  Weekly assignments will be
+  <strong>
+   due on Mondays at 11:59 pm
+  </strong>
+  (time zone = Ann Arbor, Michigan - Eastern Standard Time) unless stated otherwise by the instructor.
+ </p>
+ <p>
+  Schedule of Weekly Office Hours via Zoom (time zone = Ann Arbor, Michigan - Eastern Daylight Time):
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Elham Amini:  Fridays 11:00am - 12:00pm EDT
+   </p>
+  </li>
+  <li>
+   <p>
+    Amanda Hardy: Fridays 5:30pm - 6:30pm EDT
+   </p>
+  </li>
+  <li>
+   <p>
+    Jake Huang: Mondays 6:00pm - 7:00pm EDT
+   </p>
+  </li>
+  <li>
+   <p>
+    Bobby Madamanchi: Sundays 4:00pm - 5:00pm EDT
+   </p>
+  </li>
+  <li>
+   <p>
+    Ruotong Gao:  Thursdays 1:00pm - 2:00pm EDT
+   </p>
+  </li>
+ </ul>
+ <h1 level="1">
+  Grading
+ </h1>
+ <table columns="1" rows="6">
+  <thead>
+   <tr>
+    <th>
+     <p>
+      <strong>
+       Course Assignment
+      </strong>
+     </p>
+    </th>
+    <th>
+     <p>
+      <strong>
+       Percentage of Final Grade
+      </strong>
+     </p>
+    </th>
+   </tr>
+  </thead>
+  <tr>
+   <td>
+    <p>
+     Week 1 Assignment
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 2 Assignment
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 3 Assignment
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 4 Assignment
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     100%
+    </p>
+   </td>
+  </tr>
+ </table>
+ <p>
+  Note: All assignments are required to earn credit for this course.
+ </p>
+ <p>
+  Please note that instructional team may begin grading before the deadline (for assignments submitted early). Once we start grading your notebook you will not be able to revise your assignment. Be sure you are happy and done with the work whether you submit on the deadline or before.
+ </p>
+ <h3 level="3">
+  Letter Grades, Course Grades, and Late Submission Policy
+ </h3>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/9eHGY/mads-assignment-submission-and-grading-policies" title="">
+   MADS Assignment Submission and Grading Policies
+  </a>
+  section of the UMSI Student Handbook (access to Student Orientation course required)
+ </p>
+ <p>
+  For this course, assignments will be accepted 24 hours late with a 20% penalty. After 24 hours we will not accept your assignments unless you have prior approval for an extension.
+ </p>
+ <p>
+  Also, please note that we do not autograde in this course. We provide either an example of the output or the specific visualization for you to replicate. Because we can't autograde this (we need to look at the visualizations) this course is manually graded.
+ </p>
+ <p>
+  We apply the following for letter grade determination. Please note that we rarely give an A+ in this course:
+ </p>
+ <table columns="2" rows="13">
+  <thead>
+   <tr>
+    <th>
+     <p>
+      Letter Grade
+     </p>
+    </th>
+    <th>
+     <p>
+      Score Range
+     </p>
+    </th>
+   </tr>
+  </thead>
+  <tr>
+   <td>
+    <p>
+     A
+    </p>
+   </td>
+   <td>
+    <p>
+     &gt;93
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     A-
+    </p>
+   </td>
+   <td>
+    <p>
+     90-93
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B+
+    </p>
+   </td>
+   <td>
+    <p>
+     87-89
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B
+    </p>
+   </td>
+   <td>
+    <p>
+     83-86
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B-
+    </p>
+   </td>
+   <td>
+    <p>
+     80-82
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C+
+    </p>
+   </td>
+   <td>
+    <p>
+     77-79
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C
+    </p>
+   </td>
+   <td>
+    <p>
+     73-76
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C-
+    </p>
+   </td>
+   <td>
+    <p>
+     70-72
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D+
+    </p>
+   </td>
+   <td>
+    <p>
+     67-69
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D
+    </p>
+   </td>
+   <td>
+    <p>
+     63-66
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D-
+    </p>
+   </td>
+   <td>
+    <p>
+     60-62
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     F
+    </p>
+   </td>
+   <td>
+    <p>
+     &lt;60
+    </p>
+   </td>
+  </tr>
+ </table>
+ <p>
+ </p>
+ <h1 level="1">
+  Academic Integrity/Code of Conduct
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/CEdb0/master-of-applied-data-science-program-student-handbook" title="">
+   <u>
+    Academic and Professional Integrity
+   </u>
+  </a>
+  section of the UMSI Student Handbook. (access to Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Accommodations
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://docs.google.com/document/d/1YEOcpdONdme5kmpNEnZpdbJeVFhEIw1pS0wq16QdH1I/edit#heading=h.k0qrvex9x6d1" title="">
+   Accommodations for Students with Disabilities
+  </a>
+  section of the UMSI Student Handbook.
+ </p>
+ <p>
+  Use the Student Application Form
+  <a href="https://umich-accommodate.symplicity.com/" title="">
+   in Accommodate
+  </a>
+  to begin the process of working with the University’s Office of Services for Students with Disabilities.
+ </p>
+ <h1 level="1">
+  Accessibility
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://docs.google.com/document/d/1ct4BShNTYVU2J_oYeuTTsODSAFlEhtODXMlfc4-t5PM/edit#heading=h.t003rxazhbx3" title="">
+   <strong>
+   </strong>
+   <u>
+    Screen reader configuration for Jupyter Notebook Content
+   </u>
+  </a>
+  document to learn accessibility tips for Jupyter Notebooks.
+ </p>
+ <h1 level="1">
+  Library Access
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.lib.umich.edu/computing-library/access-outside-library" title="">
+   <u>
+    U-M Library’s information sheet
+   </u>
+  </a>
+  on accessing library resources from off-campus. For more information regarding library support services, please refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/pED9d/u-m-library-resources" title="">
+   <u>
+    U-M Library Resources
+   </u>
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Student Mental Health
+ </h1>
+ <p>
+  Refer to the University’s
+  <a href="https://www.uhs.umich.edu/stressresources#services" title="">
+   <u>
+    Resources for Stress and Mental Health website
+   </u>
+  </a>
+  for a listing of resources for students.
+ </p>
+ <h1 level="1">
+  Student Services
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/S6R1u/introduction-to-umsi-student-life-and-academic-affairs" title="">
+   <u>
+    Introduction to UMSI Student Life
+   </u>
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Technology Tips
+ </h1>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Recommended Technology
+   </p>
+  </li>
+  <li>
+   <p>
+    This program requires Jupyter Notebook for completion of problem sets and Adobe or other PDF viewer for reading articles.
+   </p>
+  </li>
+  <li>
+   <p>
+    Working Offline
+   </p>
+  </li>
+  <li>
+   <p>
+    While the Coursera platform has an integrated Jupyter Notebook system, you can work offline on your own computer by installing Python 3.7+ and the Jupyter software packages, including Pandas, Altair, networkx, nx-altair, squarify, scikit-learn. For more details, consult the
+    <a href="https://www.coursera.org/learn/python-machine-learning/resources/bANLa" title="">
+     Jupyter Notebook FAQ
+    </a>
+    .
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>

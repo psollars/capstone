@@ -1,0 +1,685 @@
+<meta charset="utf-8"/>
+<co-content>
+ <h1 level="1">
+  <strong>
+   Course Syllabus for SIADS 516: Big Data: Scalable Data Processing
+  </strong>
+ </h1>
+ <h1 level="1">
+  Course Overview and Prerequisites
+ </h1>
+ <p>
+  This course will introduce students to the use of the Spark data analysis framework for the analysis of Big Data. We will cover the theory and application of MapReduce strategies, the use of Resilient Distributed Datasets in cluster computing, and higher-level abstractions such as DataFrames and SparkSQL, which facilitate efficient analysis of large amounts of data.
+ </p>
+ <p>
+  The prerequisites for SIADS 516 include:
+ </p>
+ <p>
+  SIADS 505: Data Manipulation
+ </p>
+ <p>
+  SIADS 511: SQL &amp; Databases
+ </p>
+ <h1 level="1">
+  Instructor and Course Assistants
+ </h1>
+ <p>
+  Instructor: Kris Steinhoff, Intermittent Lecturer in Information, School of Information and Staff Software Engineer at Woven Planet
+ </p>
+ <p>
+  Course Assistant: Hsin-Yuan Sean Wu, Jake Huang, Intermittent Lecturers in Information, School of Information
+ </p>
+ <p>
+  Graduate Student Instructor: Danaja Maldeniya, Joshua Haskins
+ </p>
+ <p>
+  Chris Teplovs designed and developed this course.
+ </p>
+ <h1 level="1">
+  Course Communication Expectations
+ </h1>
+ <p>
+  If you have questions about course content (e.g. lecture videos, quizzes, or assignments), please use the class Slack channel to discuss with classmates and the instructional team. Instructor and course assistant response time to Slack messages will be within 24 hours.
+ </p>
+ <p>
+  Personal communication that may involve sensitive information can be emailed directly to
+  <em>
+   Kris Steinhoff &lt;steinhof@umich.edu&gt;
+  </em>
+  . Instructor and course assistant response time to email messages will be within 48 hours.
+ </p>
+ <h1 level="1">
+  Help Desk(s): How to get Help
+ </h1>
+ <p>
+  Need help? You may reach out to UMSI or Coursera depending on the type of question you have.
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    Degree program questions or general help - umsimadshelp@umich.edu
+   </p>
+  </li>
+  <li>
+   <p>
+    Coursera’s Technical Support (24/7) -
+    <a href="https://learner.coursera.help/" title="">
+     <u>
+      https://learner.coursera.help/
+     </u>
+    </a>
+   </p>
+  </li>
+ </ul>
+ <h1 level="1">
+  Weekly Readings
+ </h1>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    See the
+    <a href="https://search.lib.umich.edu/databases/record/10263" title="">
+     <u>
+      Library’s access instructions
+     </u>
+    </a>
+    for the readings hosted by O’Reilly Online.
+   </p>
+  </li>
+ </ul>
+ <h3 level="3">
+  Week 1 Readings
+ </h3>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/data-science-from/9781492041122/ch25.html#map_reduce" title="">
+   Data Science from Scratch
+  </a>
+  by Joel Grus (1st Edition: Chapter 24, 2nd. Edition: Chapter 25)—Required
+ </p>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/hadoop-with-python/9781492048435/ch02.html#idp135136" title="">
+   Hadoop with Python
+  </a>
+  by Zachary Radtka (Chapter 2)—Required
+ </p>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/advanced-analytics-with/9781491972946/ch01.html#Introduction" title="">
+   Advanced Analytics with Spark
+  </a>
+  by Josh Wills, Uri Laserson, Sandy Ryza, and Sean Owen (Chapter 1)—Optional
+ </p>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/high-performance-spark/9781491943199/ch02.html#ch2_general_design" title="">
+   High-Performance Spark
+  </a>
+  by Rachel Warren and Holden Karau (Chapter 2)—Optional
+ </p>
+ <h3 level="3">
+  Week 2 Reading
+ </h3>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/spark-the-definitive/9781491912201/ch12.html#s3c1---rdd-basics" title="">
+   Spark, the Definitive Guide
+  </a>
+  by Matei Zaharia and Bill Chambers (Chapter 12)—Required
+ </p>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/videos/debugging-apache-spark/9781492039174/9781492039174-video323752" title="">
+   Debugging Apache Spark
+  </a>
+  by Holden Karau (Video) - Optional
+ </p>
+ <h3 level="3">
+  Week 3 Reading
+ </h3>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/high-performance-spark/9781491943199/ch03.html#ch3_dataframes_and_sql" title="">
+   High-Performance Spark
+  </a>
+  by Rachel Warren and Holden Karau (Chapter 3)—Required
+ </p>
+ <h3 level="3">
+  Week 4 Readings
+ </h3>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/high-performance-spark/9781491943199/ch04.html#joins" title="">
+   High-Performance Spark
+  </a>
+  by Rachel Warren and Holden Karau (Chapter 4)—Required
+ </p>
+ <p>
+  <a href="https://learning-oreilly-com.proxy.lib.umich.edu/library/view/learning-spark-2nd/9781492050032/ch04.html#spark_sql_and_dataframes_introduction_to" title="">
+   Learning Spark (2nd ed.)
+  </a>
+  by Jules Damji, Denny Lee, Brooke Wenig, and Tathagata Das—Optional
+ </p>
+ <h1 level="1">
+  Learning Outcomes
+ </h1>
+ <p>
+  Explain the relationships between MapReduce, Spark and Hadoop
+ </p>
+ <p>
+  Use MapReduce to sort, filter, and summarize a dataset
+ </p>
+ <p>
+  Use Spark RDDs to manipulate, summarize, and analyze a text-based dataset
+ </p>
+ <p>
+  Use Spark DataFrames to manipulate, summarize and analyze heterogeneous data
+ </p>
+ <p>
+  Use Spark SQL to perform complex queries on heterogeneous Big Data
+ </p>
+ <h1 level="1">
+  Course Schedule
+ </h1>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    <strong>
+     This course begins on Tuesday, June 28, 2022 and ends on Monday, July 25, 2022.
+    </strong>
+   </p>
+  </li>
+  <li>
+   <p>
+    Weekly assignments will be
+    <strong>
+     due on Mondays at 11:59 pm
+    </strong>
+    (Ann Arbor, Michigan time-Eastern Standard/Daylight Time - EDT, UTC -4).
+   </p>
+  </li>
+ </ul>
+ <p>
+  In
+  <strong>
+   Week 1
+  </strong>
+  , after some discussion of how we can define Big Data,  you will be introduced to the split-apply-combine workflow common in Big-Data work. After overviewing scaling of distributed systems, week one progresses further into discussing how one can use libraries such as MapReduce, Hadoop, and MrJob for distributed solutions to big-data problems.
+ </p>
+ <p>
+  In
+  <strong>
+   Week 2
+  </strong>
+  , the course shifts focus towards introducing the Apache Spark functionality, structure, and stack. After further exploring the relationship between Spark and Hadoop, students will learn about the creation and manipulation of resilient distributed datasets (RDDs) using Spark and Python.
+ </p>
+ <p>
+  In
+  <strong>
+   Week 3
+  </strong>
+  , you will focus on working with Spark dataframes, including initialization from various file-types, column manipulation, and operations such as sorting, grouping, and user-defined functionality.
+ </p>
+ <p>
+  In
+  <strong>
+   Week 4
+  </strong>
+  , the course shifts focus to Spark's support for Structured Query Language (SQL) and explores methods available for data selection, filtration, and cross-table joining with SQL and Spark.
+ </p>
+ <h1 level="1">
+  Weekly Office Hours via Zoom (Ann Arbor, Michigan time):
+ </h1>
+ <p>
+  Your instructor will hold weekly, synchronous office hours using the video-conferencing tool, Zoom. The schedule of office hours can be found by clicking on the
+  <strong>
+   Live Events
+  </strong>
+  link in the left-hand navigation menu. Additionally, all office hours will be recorded and archived so that you can retrieve at a later date. Archived office hours can be found in the last lesson for each week with the heading
+  <strong>
+   SIADS 516 Office Hour Recordings
+  </strong>
+  .
+ </p>
+ <h1 level="1">
+  Grading
+ </h1>
+ <table columns="2" rows="6">
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Course Item
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Percentage of Final Grade
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      Due
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 1 Homework
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+   <td>
+    <p>
+     Monday, July 4, 2022
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 2 Homework
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+   <td>
+    <p>
+     Monday, July 11,  2022
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 3 Homework
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+   <td>
+    <p>
+     Monday, July 18,  2022
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     Week 4 Homework
+    </p>
+   </td>
+   <td>
+    <p>
+     25%
+    </p>
+   </td>
+   <td>
+    <p>
+     Monday, July 25,  2022
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     <strong>
+      Total
+     </strong>
+    </p>
+   </td>
+   <td>
+    <p>
+     <strong>
+      100%
+     </strong>
+    </p>
+   </td>
+  </tr>
+ </table>
+ <p>
+  Note: All assignments are required to earn credit for this course.
+ </p>
+ <h1 level="1">
+  Letter Grades, Course Grades, and Late Submission Policy
+ </h1>
+ <p>
+  We realize that the occasional crisis might mess up your schedule enough to require a bit of extra time in completing a course assignment. Thus, we have instituted the following late policy that gives you a limited number of flexible “late day” credits.
+ </p>
+ <p>
+  You have three (3) free late days to use during SIADS 516. One late day equals exactly one 24-hour period after the due date of the assignment (including weekends). No fractional late days: they are all or nothing. Once you have used up your late days, 25% penalty for each subsequent 24-hour period after the deadline that an assignment is late. For example, if the due date is 11:59pm Monday, with no late days left, penalties would be:
+ </p>
+ <p>
+  Before 11:59pm Tuesday: 25% deduction
+ </p>
+ <p>
+  Before 11:59pm Wednesday: 50% deduction
+ </p>
+ <p>
+  Before 11:59pm Thursday: 75% deduction
+ </p>
+ <p>
+  After 11:59pm Thursday: 100% deduction
+ </p>
+ <p>
+  You don't need to explain or get permission to use late days, and we will track them for you. Note that resubmissions after the deadline will be counted as late submissions.
+ </p>
+ <p>
+  The grading scale for this course is as follows:
+ </p>
+ <table columns="2" rows="12">
+  <tr>
+   <td>
+    <p>
+     A
+    </p>
+   </td>
+   <td>
+    <p>
+     95%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     A-
+    </p>
+   </td>
+   <td>
+    <p>
+     90%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B+
+    </p>
+   </td>
+   <td>
+    <p>
+     87%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B
+    </p>
+   </td>
+   <td>
+    <p>
+     83%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     B-
+    </p>
+   </td>
+   <td>
+    <p>
+     80%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C+
+    </p>
+   </td>
+   <td>
+    <p>
+     77%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C
+    </p>
+   </td>
+   <td>
+    <p>
+     73%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     C-
+    </p>
+   </td>
+   <td>
+    <p>
+     70%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D+
+    </p>
+   </td>
+   <td>
+    <p>
+     67%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D
+    </p>
+   </td>
+   <td>
+    <p>
+     63%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     D-
+    </p>
+   </td>
+   <td>
+    <p>
+     60%
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p>
+     F
+    </p>
+   </td>
+   <td>
+    <p>
+     0%
+    </p>
+   </td>
+  </tr>
+ </table>
+ <h1 level="1">
+  Academic Integrity/Code of Conduct
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/CEdb0/master-of-applied-data-science-program-student-handbook" title="">
+   Academic and Professional Integrity
+  </a>
+  section of the UMSI Student Handbook. (access to Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Accommodations
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://docs.google.com/document/d/1YEOcpdONdme5kmpNEnZpdbJeVFhEIw1pS0wq16QdH1I/edit#heading=h.k0qrvex9x6d1" title="">
+   Accommodations for Students with Disabilities
+  </a>
+  section of the UMSI Student Handbook.
+ </p>
+ <p>
+  Use the  Student Application Form
+  <a href="https://umich-accommodate.symplicity.com/" title="">
+   in Accommodate
+  </a>
+  to begin the process of working with the University’s Office of Services for Students with Disabilities
+ </p>
+ <h1 level="1">
+  Accessibility
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://docs.google.com/document/d/1ct4BShNTYVU2J_oYeuTTsODSAFlEhtODXMlfc4-t5PM/edit#heading=h.t003rxazhbx3" title="">
+   <strong>
+   </strong>
+   <u>
+    Screen reader configuration for Jupyter Notebook Content
+   </u>
+  </a>
+  document to learn accessibility tips for Jupyter Notebooks.
+ </p>
+ <h1 level="1">
+  Library Access
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.lib.umich.edu/computing-library/access-outside-library" title="">
+   <u>
+    U-M Library’s information sheet
+   </u>
+  </a>
+  on accessing library resources from off-campus. For more information regarding library support services, please refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/pED9d/u-m-library-resources" title="">
+   <u>
+    U-M Library Resources
+   </u>
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Student Mental Health
+ </h1>
+ <p>
+  Refer to the University’s
+  <a href="https://www.uhs.umich.edu/stressresources#services" title="">
+   <u>
+    Resources for Stress and Mental Health website
+   </u>
+  </a>
+  for a listing of resources for students.
+ </p>
+ <h1 level="1">
+  Student Services
+ </h1>
+ <p>
+  Refer to the
+  <a href="https://www.coursera.org/learn/siads-orientation/supplement/S6R1u/introduction-to-umsi-student-life-and-academic-affairs" title="">
+   <u>
+    Introduction to UMSI Student Life
+   </u>
+  </a>
+  section of the UMSI Student Handbook (access to the Student Orientation course required).
+ </p>
+ <h1 level="1">
+  Technology Tips
+ </h1>
+ <p>
+  Recommended Technology
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    This program requires Jupyter Notebook for completion of problem sets and Adobe or other PDF viewer for reading articles.
+   </p>
+  </li>
+ </ul>
+ <p>
+  Working Offline
+ </p>
+ <ul bullettype="bullets">
+  <li>
+   <p>
+    While the Coursera platform has an integrated Jupyter Notebook system, you can work offline on your own computer by installing Python 3.5+ and the Jupyter software packages, including pyspark. For more details, consult the
+    <a href="https://www.coursera.org/learn/python-machine-learning/resources/bANLa" title="">
+     Jupyter Notebook FAQ
+    </a>
+    .
+   </p>
+  </li>
+ </ul>
+ <p>
+ </p>
+</co-content>
+<style>
+ body {
+    padding: 50px 85px 50px 85px;
+}
+
+table th, table td {
+    border: 1px solid #e0e0e0;
+    padding: 5px 20px;
+    text-align: left;
+}
+input {
+    margin: 10px;
+}
+}
+th {
+    font-weight: bold;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+pre {
+    display: block;
+    margin: 20px;
+    background: #424242;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre-wrap;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+}
+</style>
+<script async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$$','$$'], ['$','$'] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true
+    }
+  });
+</script>
