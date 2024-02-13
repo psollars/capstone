@@ -1,1 +1,6 @@
 .venv
+
+# ChromaDB
+chroma_data
+chromadb_test
+chroma.log
