@@ -9,6 +9,7 @@ lxml = "==5.1.0"
 pymupdf = "==1.23.21"
 langchain = "==0.1.6"
 chromadb = "==0.4.22"
+markdownify = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
