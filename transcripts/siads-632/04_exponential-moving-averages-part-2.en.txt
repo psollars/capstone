@@ -1,0 +1,139 @@
+You can see that
+whenever we are actually making connections of EMA
+to radioactive decay, to radiation or to survival
+analysis there are lots of interesting concepts from that literature that can
+help us understand EMA. For example, when
+you are looking at radiation you're concerned about the quality of chemicals. How many particles
+are there at time t. All the particles
+may decay over time. Then at any given time you're concerned with how many
+particles are remaining, so that concept is known as N_t and that's known
+as the quantity. In this case,N_t in time series. N_t is of course related to what? Is of course related to the
+discounted value of Xi. Decay factor Alpha as
+we said is basically the proportion of
+particles that will be decayed by next day. There's the decay rate now
+the decay rate Lambda it is not Alpha but it is actually can be
+computed from alpha. It is minus the logarithm
+of one minus Alpha. The half-life We have already
+talked about half-life Half-life is basically t-half. It's not really as t a half. It is the time at which half of the particles will be gone. Well, if you are concerned was that individual particle instead of all the particles then there's also the concept called the mean lifetime and that is the average lifetime of
+any individual particle. You can hardly connect this to a time series because
+whenever your talk about X_1, that is actually the total number of particles at time one. But you could still
+consider that if the time series is measuring
+number of items over time, then you could also connect that to the average life time of
+the individual particle. With all these concepts you can actually have
+the mean lifetime t , that is actually the one over Lambda or Lambda
+is the decaying rate. The half-life is
+logarithm of 2 over Lambda and that is around
+0.693 over Lambda. So you can see that
+the half-life is what is actually shorter
+than mean lifetime, but it's actually larger the
+half of the mean lifetime. This sounds a little
+bit counter-intuitive, but in fact mathematically is correct because
+half-life is measuring the operation of all
+particles cumulatively and mean lifetime is measuring the property of one
+individual particle. Also suppose we have N_0 particles at the very
+beginning of a time series. Then after time t the
+remaining particle and t can be written as e to the power of minus
+Lambda t times N_0. That can also be interpreted as 1 minus Alpha to the
+power of t times N_0. Why? Because after
+every unit height then the particles will decay by Alpha so only 1 minus
+Alpha will remain. You can see that a particle
+we have e to the power of minus Lambda equals
+to 1 minus Alpha. That gives the connection
+between Lambda and Alpha. These connections are
+nice and if you're familiar with radiation
+or survival chances, you can actually see
+the connection of time series to these concepts. In practice they may or may not be that useful because
+whenever you are actually using the, you know, the package you'll only need to specify one of the parameters
+either Alpha, or Lambda, or half-life. But why do we need to talk about these different
+parameters like Lambda? This is because sometimes we have to apply EMA with
+irregular times series. Well about irregular timestamps why do we call them irregular? Well, as you can see that previously when we're
+doing the math of EMA. We say that j minus 1
+is actually the number of unit time from the very first observation
+to the j'th observation. That is making the
+implicit assumption that all the timestamps are
+equally distributed. You have the measurement every day or every week or every year. In the intervals between
+two time series are equal in other words the measurements are
+taken and even levels. But this is not always the
+case in some scenarios you have measurements that are taken at different intervals. For instance you visit
+Lake Michigan every once in a while but you actually don't visit there every day. If you measure the
+temperature of Lake Michigan, then you will have a series of values taken at uneven levels. Maybe once a week once in two weeks and once in a
+winter sense of course. If you have a time series
+data like that then computing EMA can be a little bit
+hard if you just use Alpha. For example if you have a
+time series that is a list of Timestamp items,
+t_1, t_2, t_n. If t_1 to t_2 and t_2 to t_3 are not given then you cannot just count how many
+timestamps are there. Because if the gap is too
+large between t_1 to t_2, then it's not fair to assume that x_1 we will decay by the same as if x_2 is going to decay from t_2 to
+t_3. Does that makes sense? In this case, you can actually compute the smallest value of x_j prime as the weighted
+average of all the x_is before, and now, the weight is no longer related to one
+minus alpha or alpha. We actually use the
+different parameterization. We use a different
+parameter, lambda. The weight of every old item at irregular time series
+can be computed as e to the power of one minus lambda
+times t_j minus t_i. T_j times t_i is the actual time between
+the two timestamps. Instead of j minus i, let's assume, at even intervals, but t_j times t_i
+is the actual time between the j's timestamp
+and i's timestamp. Your time that with
+minus lambda and then, I put that to the exponent. E to the power of minus lambda and the actual time between t_i to the current observation. You use that as
+the weight of x_i. Then, you compute
+the weighted average of every x_1, x_2 until x_i. That's how you compute EMA
+with irregular time series. Now, you should understand why lambda is now the better
+parameterization. Lambda that is the more
+useful parameter, than alpha, although those two are really related to each other. When you have a time-series data with irregular timestamps, then, you can describe EMA
+using lambda instead of alpha. You can also plot different smooth curves using
+different values of lambda. When lambda equals to zero, basically, you overly
+smoothe the time series. Essentially, this is equivalent to cumulative moving average, where every old elements will be considered when you compute
+the smoothed value of the future timestamp and they contribute to the cumulative
+moving average equally. This is not the case. Also, when lambda equals to one, you are actually taking a much more conservative smoothing. But lambda equals to one does not mean that there's
+no smoothing. There's still smoothing if you look at the
+difference between the purple curve and the
+original curve, the blue curve. There is still difference.
+But it gives you a much more conservative
+smooth curve. Of course, you can try many different numbers and navigate through different
+smoothed theories. In fact, in reality, we usually try multiple
+values and through that, we observe
+multiple patterns or multiple features for
+downstream analysis. With that said, this
+is the math and the intuitions and the
+practical usage behind EMA. It's more about using EMA
+or using moving average. When you use EMA and you're not sure about
+whether you should use alpha or you should use lambda because you're not sure
+whether your param steps are evenly distributed or not. Always use half-life because half-life is also
+related to these two, and half-life is very
+easy to interpret. Basically, that's
+the time that half of the impact of their
+old item is gone. You can also apply
+EMA with no window. Although EMA is defined to
+the very first timestamp, you can also just
+truncate EMA and then, EMA can also work
+with just a window. In practice, as we said, we usually use
+different parameters, either alpha or lambda to observe, to obtain a more comprehensive representation
+of your time series. In other words, we use
+different parameter alpha to obtain a high-dimensional
+representation of a time series. Then, we fit these
+high-dimensional representations to downstream tasks
+like machine learning. That usually gives us a better summary of
+the time series. Don't forget, you'll
+always compute moving averages using
+dynamic programming. Well, is EMA the best? It's very commonly used, it's very famous especially
+in financial analysis, but it does have some drawbacks. In fact, all these moving
+averages have some drawback. The drawback is all the
+weights are predefined. Either you use a
+uniform weighting or exponential weighting
+or linear weighting, you're pretty finding
+a weighting schema to the time series. You assume that the
+first timestamp will actually decay
+over time by alpha, but in reality, it may
+or may not be the case. The better method is what? A better method is to actually compute these weights from data. That leads us to
+autoregressive methods. Autoregressive methods can be also interpreted as
+smoothing the time series. You use previous values to
+smooth the current value. But they are more complex
+than moving average. In a way that they can
+be interpreted as moving average where the weights of previous observations
+are not predefined. You don't use exponential
+smoothing or uniform smoothing, but you'll learn this weights automatically from the data. You'll learn them through a regression, through
+these squared. What's interesting
+is that in this way, the autoregressive safe methods can also be interpreted as using the past k observations to predict the next observation. That's why you can
+also use moving average related measures to make forecasting of time series. We will revisit this when I'll introduce
+more details about this when we are talking about
+time series forecasting.

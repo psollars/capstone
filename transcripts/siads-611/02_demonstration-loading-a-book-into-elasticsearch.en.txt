@@ -1,0 +1,99 @@
+Hello and welcome to another
+walkthrough for Postgres for Everybody. Of course, today we're going to play
+with the code for Elasticsearch, which is in effect a
+compare and contrast. So we've got a number of
+different bits of sample code. And I'm going to start with elasticbook. So let's take a look at elasticbook.py. So elasticbook.py makes a connection and
+fills up a bunch of stuff with elastic, reads a book text from Gutenberg
+and then fills it up. So the first thing you've got to do is
+you've got to put your credentials. Oops, that would be my hidden one. hidden-dist has some sample credentials, and
+it's important that you set the elastic here. In this particular example we
+are using the same user and index, so we're going to have an index
+that's the same as the username. Then whatever your autograder or whatever will give you these
+details to place in here. So you copy this into hidden.py and
+then you edit and put the real values in. So you will notice that in
+the beginning of elasticbook.py, you see that it's going to import hidden. And then later it's going to grab
+the Elasticsearch secrets, and then it's going to create
+an Elasticsearch client. And then we're going to actually use
+in this case the same index as for the user. We'll reuse one index
+over and over and over again. So if I take a look at the basic outline, it's going to wipe out the index,
+which is like dropping a table. And then it's going to recreate
+the index, and then it's going to read through these
+paragraphs and do some parsing. So I'll come back to that because
+it's going to take a while. And so I want to go ahead and
+start this, python3 elasticbook.py. And it asks me for .txt, so you'll see it's going to drop. Oh. what did I type wrong? 14091.txt. What did I type? 14091, ls p14*. ls *.txt. Oh, pg14091.txt, I forgot the g. So let's go ahead and start it. Clear. pg14091.txt. Okay, so it's going to drop the index. So it did that, and it started the index,
+tells us something about the index, and now it's off and running. So we'll come back to this. It's got a bit of work to do. So it's filling up
+the Elasticsearch right now. So let's take a look. We saw it open the book file, get our secrets, set up an Elasticsearch
+instance in Python using, and again you have to do a pip to
+install this elasticsearch library. Once that's installed in your virtual
+environment or whatever, you're good to go. And then we're going to
+basically just read, and we're basically looking for blank lines. And we're going to concatenate
+these lines together, and make paragraphs out of them. Okay? Here we are concatenating the lines
+together, it's a bunch of blank lines. And let's just take
+a look at the file. We got pg14 text. So what I'm doing if you look at
+this is I'm taking, taking and reading all these lines looking for
+a blank line. And then concatenating these so
+that they're one long line. Which means I'm getting rid
+of the newlines at the end, I'm concatenating, throwing a blank in. So you see I read a line, I trim it,
+then I read the next line, I trim it and concatenate it with a blank, and
+then at some point I get a blank line. And then I insert this whole paragraph, this whole paragraph gets inserted at
+this point in this body doc, right? Okay, so it's accumulating it, and
+then when it finds here a blank line, then it counts how many paragraphs it is,
+puts the content in. Now one of the things that's
+important for a Elasticsearch strategy is
+you do want a primary key. And so there's a couple of ways
+I could do primary keys here. I could have them just go up,
+one, two, three, four, five, six, seven, eight, nine, ten. That'd be fine. I could pick random numbers.
+But I've chosen instead to actually compute a predictable
+hash of the document contents. And so this I'm going to do a SHA-256. I'm
+going to do a SHA-256 on this whole thing. And what this means is, I don't know
+if this is what you want to do but it's whated I wanted to do, is I want each paragraph
+just to be here. Now I am keeping track of where
+it's offset into the document. So I'm making this
+document a JSON document, in this case it's just a dictionary. So we have the offset, which is
+which paragraph, and the content. And then I'm going to insert it and have a primary key, which
+is a big long hex number. But it's a hash, it's a really well-built
+hash because it's a SHA-256 hash. And so what happens is if I'm going to
+use the primary key here, and I'm sticking it in the index
+with that primary key, it does mean that if I have
+exactly identical text, I will only get one copy of the paragraph. Now you could do something different. You might decide that you want to make
+your primary key just be one, two, three, four, five. Now one of the things
+you don't want to do is you're not supposed to change
+the type of your primary key. So this is a string.
+If we used uuid4 hexdigest will give me back a string, uuid4
+will give me back a string. pcount will give me a number,
+and either of those would work. Just don't change it once
+you start building it. And so we are adding these documents,
+you see it's an added document. It's still busily adding documents. I don't even know how many it's done. See how far it is, 2,000. 2,000 paragraphs have been added to our,
+can I go to the end. There we go. We've got to wait till it's
+all done, right? So at 2,200 it's still loading. Let's see, is there anything
+else while we're waiting? Oh, let me tell you about
+the index refresh. So one of the things that we do is, Elasticsearch sort of delays
+its index processing. And we've seen this in other databases
+where the index processing is delayed. And this says stop now and
+refresh your index. This is not something that you
+want to do all of the time, you want to say stop and
+let's recompute the index. Now if this was a highly scalable
+server with a whole bunch of clients, you wouldn't want to
+do this index refresh. You certainly wouldn't want to do it every
+time we went through this loop, right? This says, let's wait and
+catch up with the index. And that's what's going on here. And if I was going to start
+doing some reading of it, I would have to do a refresh to
+recompute the index before we did it. So let's see how we did here. Okay, so there we go. We loaded 2,600 paragraphs, 17,000 lines, and 875,000 characters. So I mean I built a little
+tool that we'll cover in a separate video called elastictool,
+python3 elastictool. Because there is no psql or
+any way that's a client. So I built one, and
+this knows from hidden.py, let's type help here,
+this knows for hidden.py. It went and grabbed that index. I can say match_all, and that will
+actually not match all of them and just get a bunch of them. And so it's showing you the documents,
+the first five documents. And so like okay, then we can see,
+like I can say search for penmanship. And that will find me a list of
+a number of the documents that have penmanship in them, right? So I can search for repose. Now one of the things is
+we've got these IDs here. Now if everything goes well, I should be able to do a GET based
+on the primary, not penmanship. I should be able to get a document
+based on its primary key. Let's see if that works. There we go. And so I just retrieved a document
+based on its primary key. So that primary key is the SHA-256
+of that data right here. I probably should have, whoops,
+trimmed the left there, it's not perfect. So that's what this does. You can also just wipe out, if I type delete it will wipe out
+the entire index, which I don't want to do. But that's it. So I think that's pretty much all I wanted
+to show you for this elasticbook loader. So it's just a parsing
+of a lot of data and pushing it into a Elasticsearch database. So cheers, hope this helps.

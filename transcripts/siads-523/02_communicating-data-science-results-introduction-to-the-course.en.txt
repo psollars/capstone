@@ -1,0 +1,247 @@
+Hi. Welcome to Communicating
+Data Science Results. In the next four weeks, we're going to be
+talking about ways in which you move from
+being an analyst to being someone who talks about and reports
+their data back out. So let's get started
+with an introduction of what you can expect in
+the next four weeks. This week, you'll have an
+introduction to the course. We'll talk a little bit
+about the mindset of the course and why we
+structured it the way we did. We'll introduce you
+to the project scenarios that you'll use in various ways throughout the
+entirety of the course. We'll talk a little
+bit about data that will help fuel your ability to
+complete this project, which I hope will
+introduce you to some data sources
+that will come in handy for you in future projects. And finally, we'll talk about
+this week's assignment, which is creating an
+executive summary, a one-page document,
+that expresses your recommendation for the
+scenario that you're given. I want to start by
+telling you a little bit about my own work. I am not a data scientist. I do not use Python to
+find insights in data. But what I do instead is I'm interested in data
+literacy and what kinds of skills people need to develop to be good consumers of data, to be good readers of data, and to be good
+communicators with data. And I hope that this
+is helpful for you in the course because
+we are always going to be talking in this course
+about preparing materials for novices to understand
+and feel respected by. I've written both for adults and for children on
+issues of data literacy. So our goal in this course is to turn the data analysis
+into reports. And I really want to emphasize
+the word translation here. We want to translate the
+complexity of the data that you found into insights that
+make sense for other people. So right from the get-go, I want to say that our goal is not to say, look what I did, here's what I found, devoid from the target audience. That really thinking
+with the audience in mind is a big objective
+of this course. So over the course of
+the next four weeks, we're going to be
+looking at these four themes and they'll sort of come and go throughout the
+entirety of the semester. The first thing is really
+focusing on our audience. Who is the target audience
+of the information that you found and the
+recommendations that you're making? What do they know? What's their
+technological expertise? What do they care about? And how can we use that
+information to craft something that's more
+customized for the recipient? Secondly, we're
+going to talk about storytelling with data
+in a couple of ways. We'll talk about
+simple strategies to help your audience see what
+is important in the data. We'll talk about
+strategies to highlight data in visual format. We'll talk about strategies for framing data when we
+present in an oral way. And then we'll talk
+about technical report writing and how that contributes to your
+communication toolkit. And that brings us
+to our third theme, which is this technical report, which is a fancy way of
+saying a document that talks about what you found and what you recommend in the
+scenario that you give. And this is a document that's
+attractive to look at, but that doesn't require sophisticated graphic
+design software or a graphic designer. We've tried intentionally
+to keep things very simple and very
+achievable for you with things like
+templates and recommended font stylings so that it's really easy for you to make
+something that looks good, because nicely packaged
+information always goes a little extra far. And in the fourth big theme, we're going to think about how we communicate in an
+oral presentation. And as this is an online course, we're going to talk
+about how you present on line in a webinar format, sometimes called a video
+conference, where you don't have a live audience in front of you and you're talking into
+your screen instead. We'll talk a little
+bit more about design. We'll talk about
+public speaking tips, including what happens when
+you get a case of nerves. And we'll talk
+about setting up an environment that is
+warm and welcoming, and where you know how to
+facilitate question and answer. Here's how we'll sequence
+each week of the course. This week, we're going to
+look at your scenario, and then we're going to look at some sites for demographic
+and consumer data, as well as some economic
+and government data. You'll use that to determine
+the recommendation for which way you recommend that the executive
+you're writing for, which direction they should go. And then we'll talk
+about writing that up in a single-page executive summary. That'll be the first week. Week 2 is going to be
+our lightest week. That's about drafting
+a technical report. That's the nuts and
+bolts of what we say, how we say it, and how we
+organize it on the page. We'll provide some templates to make that look really sharp, but you're always welcome to
+go off-roading if you like. In the third week,
+we're going to talk about visualizations
+and we're going to build on some of the
+work that you've done in previous classes
+for how we can make visualizations that
+highlight what's important to see in the data, and that use design as
+a communication tool, not just as a decoration tool. And finally, we'll close
+out the course in the fourth week
+by talking about online presentations
+and you will deliver a recorded presentation
+as your final assignment. To help us along the way, we're going to use this textbook, Knaflic's Storytelling with Data. This is a really friendly
+book that I think you'll really like having
+on your bookshelf, virtual or physical, as
+you go through things. Knaflic is a visualizer for those data
+visualizations for Google, and she really does a really
+nice job walking you through her processes for how she goes about
+communicating data using very simple formats as you can see from the
+cover of this book. So our mindset here is that the course is
+about communication. So the focus is not on data
+crunching or using Python, or even using Excel or Google Sheets in any kind of
+sophisticated way. So there are no assigned Jupyter notebooks
+because most of the data you're going to be
+looking at has already been analyzed and
+packaged for you. Now, they're available
+if you want them, but we're not going to
+support them in this course, because our focus is on how
+we communicate to and for others with words,
+visualizations, and speech. And we've pre-suggested some sources of data
+for you to use, and we'll walk you through those this week in the lecture. A variety of resources that I think you will find valuable
+beyond this course. So software you'll need for this, you'll want to have
+access to Google Sheets or Microsoft Excel is fine. These are very minor
+pieces of the puzzle, but they're very helpful
+if you are looking at, say, census data
+that's in a table, and you want to very quickly figure out what it might
+look like visualized. You will want access to Google Presentations or
+Microsoft PowerPoint. We're going to use
+that not only for your webinar or video
+conference slides, but we're also going
+to use that as our graphic design tool for laying out your technical report and your executive summary. In a few cases, you might need to use Inkscape, which is an open source
+version of Adobe Illustrator, which is a pretty high-powered
+graphic design tool. You're welcome to use
+Illustrator if you like. This is when you see data that's already been visualized
+by someone else and you literally
+want to trace it, and divide it into layers
+so that you can edit it in a way that makes
+more sense for you. The data you choose to use in the project will determine
+whether you need that, and we've got a
+really great tutorial to help you with that if you
+get into that situation. You can communicate
+with our team. Make sure you see the notes on the syllabus about
+the Slack channel. Take advantage of using Office Hours. We've
+got lots of ideas of extra things we can talk about when it comes
+to communication. It's a great chance to do Q&A, and if the attendance is low, we can even look at some
+of your work in process and do some peer critiquing. We do ask that you keep
+away from email as your number one choice
+for communication, only because we don't want you to get. lost in our ever-growing inboxes. So here's what we're going
+to try to do in this course. I'm a huge fan of this
+book that came out in fall 2019 by Nancy Duarte
+called Data Story, where she really
+talks about a lot of the processes regarding
+communication of data. And she talks about data
+scientists being on a continuum with three elements: explore, explain, and inspire. Explore is the type of work
+you've already been doing. The number crunching, the
+running the Python scripts, the trying to make sense
+of the data you have. Then the next stage in that process is as you
+move up the hierarchy, as you become more
+advanced in your career, you move to then explaining to somebody on your team
+what that means. And where we want to
+get in this course is this concept of Inspire, that you're actually
+the one saying, I've run all this data. Now
+I'm going to present you with my argument so that you are inspired to take the
+action that I recommend. And for some of you, this is an
+extension of how you see yourself as a data scientist,
+and for some of you this is a slightly different role that you'll be playing
+throughout the course. So it's a good time to point out that all of you come from
+different disciplines. Some of you have been doing
+written reports for decades, or you give tons of presentations and you feel
+really strong in those skills. Some of you are really adept with graphic design, and
+some of you are not. So I ask you to be thoughtful as you move through the course. You may not be the target
+audience for a beginner lesson, but someone else in
+the room might be. So let's talk a little bit about data storytelling or
+storytelling with data. You hear this term a lot
+bandied about when you travel in conversations
+about data and design. So one thing is that storytelling
+with data is a kind of bridge. You have your technical results, you have an audience
+that needs to know about that information and be empowered to make a
+decision about it, that's where that
+Inspire piece comes in, and your goal is to figure
+out how to communicate that. So storytelling is a
+communication device. Storytelling with data is
+also about making your aha moments visible to others. If you've ever looked at a really complicated
+line graph and there's things of all
+different colors and the lines are going up and
+down and cross each other, and you've had that
+instinctive of like, "What is going on here?" Then you were in need
+of data storytelling. So in this case it means sculpting information so that people see what's important
+the way you saw it, especially given that novice level that we're
+going to assume that your executive audience
+has in this course. Finally, when we start thinking
+about oral presentations, we start thinking
+about addressing both the heart and the
+mind of the audience. So a technical report
+is pretty cut and dry. It's an analysis. It has evidence and data that
+back up assertions. When we go to an
+oral presentation, we start bringing in
+some other elements that help make an
+environment that's conducive to people warming to your decision and
+your recommendation. So in this case
+storytelling with data is a way of addressing
+that heart piece. How did we get people to care about the thing
+that we care about? How do we get people
+invested in that? How can we get them engaged with what the data is showing us? And how do we get them
+inspired to take action? And finally, Duarte says,
+"Storytelling with data is stories so powerful others can recall
+and retell it," right? So we are looking at
+ways in which we are sharpening our toolkit,
+sharpening the saw, as Steven Covey would say, to be able to create worlds in which this data
+communication is happening. Now I want to be very
+clear that storytelling with data is not
+making up fiction. So it is not creating
+your own set of data or manipulating data in a
+way that's not ethical, or inaccurate, or incomplete. And that's probably a
+question you want to ask yourself as you go
+through this work is, "Am I portraying
+this data in a way that's authentic to
+the original dataset? Or am I kind of cutting some corners so that the data tells the story I want to tell?" We've all been on
+the receiving end of political arguments or commentary where you feel like someone's sort of pulling your strings to get you to think
+a certain way. That's not our goal. Our goal is not to
+get you to say yes at any cost or get your audience
+to say yes at any cost. Instead, what we're
+interested in is sculpting what's there so that it remains authentic and it
+remains accurate, and we don't fall afoul
+of unethical behavior. So it's also perhaps useful to think about, going back to
+the Duarte Data Story book again, three levels
+of decision-making. So right now you're
+probably dealing mostly with the first two. One is discrete decision-making. That means you've got a question. You can spend a few minutes in a dataset and it finds
+the answer for you. Sometimes I think
+about this as like, "Let me just check
+my gut on that." So that tends to be
+more procedural, and more sort of
+every day what you do. When we think about
+operational decision-making, we often think of that
+in terms of dashboards. I'm just looking at where
+the data overall is going. I'm kind of checking to make sure
+that things are kind of status quo. I'm looking to see if
+there are any changes that mean that maybe we need
+to look a little deeper. What I want you to think
+about in this course is moving to strategic
+decision-making, which means that
+you're really digging deeply into the data
+so that you can make a strong analysis that
+you've synthesized well, either orally, or visually, or in text, and that has an impact to make a significant decision
+about an organization, or effort, or initiative. So strategic is
+where we are going to concentrate ourselves today. Now in this course, you're going to use scenarios. There will be a variety of scenes from which you can
+choose where you want to go. Each of them will
+require that you look at both proprietary and
+government data to determine, based on
+your best judgment and your best analysis, what the correct path
+should be moving forward, and what the first steps
+towards that path should be. So you'll notice that those
+are in your course shell. What we're going to do
+now is give you a chance to take a look
+at those scenarios, and then we'll come back and
+get started in our work.

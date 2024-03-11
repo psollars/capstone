@@ -1,0 +1,272 @@
+Hello there. My name
+is Nick Sheltrown. Welcome to 523, Communicating Data
+Science Results , the alternative curriculum. Now what do I mean by that? That's what I'll explain in
+the context of this video. I've been working on this
+course for a couple of years. Throughout the many sessions, I'm always looking to get
+feedback from students on how the course is working and ways in
+which we can improve it. We've made a lot
+of adjustments to the core course as you may
+notice as you go through it. However, one of the
+points of feedback that I've gotten
+from students over the many sessions we've
+run this course is that the original
+version of the course doesn't really
+emphasize Python skills or data modeling much. Again, the thrust of the course is you're going to learn in four weeks a lot more about how to communicate data
+science results. But the project itself, you deal with aggregated data and web resources to pull that together to produce various data science
+communication work products like executive summaries, technical reports,
+and the presentation. There's nothing wrong with that. It's a great way to learn data science communicating
+results rather. Advantage of it is that you don't get caught up in a lot of the technical detail of trying to put together
+a data science project. You can just really focus on the communication principles. There's a good reason why the course is designed
+the way it is. Even so, over the
+last many months, I've been working in
+alternative version that I will be launching for
+the first time this month. Where you now have the choice. You can go through the regular main curriculum
+that has been designed. It's tested out. It's very solid. We've worked out most
+of the bugs and kings. We're always looking
+to improve it, but hundreds of students had
+been through it before you. In that version, you
+watch all the videos. They'll directly tie to the main project that
+you'll be working on. In that project you
+won't do any coding. You'll be working with aggregated demographic
+data sources and putting together a
+business expansion case. If that sounds good to you, you certainly can pursue that. However, for those
+students who want more of a data science experience and work a little bit more on their Python coding skills and learn perhaps quite a bit
+more about statistics, specifically
+regression modeling, I offer you the
+alternative curriculum. To learn more about the
+alternative curriculum, I want to talk to you about
+five different artifacts or documents that I created to support you on this journey. The first document is
+the most important, and I have it shown on my
+screen here right now. It's the overall
+project introduction, and I call this the Acme Aroma Project Introduction.
+What's Acme Aroma? Well, I've created a
+fictitious company called Acme Aroma that sells various Aroma related
+products like candles and things like
+that over the years. They're a fairly large
+company located in India, and they have a fairly robust
+human resource dataset. They're really
+interested in expanding their Data Science
+workforce planning work to include employee
+turnover predictions. The basic core of
+this project is that the VP of human
+resources for Acme Aroma has hired you as a data scientist to build an employee turnover
+prediction model. What this basically does
+is it pulls in inputs from various data
+sources in the company. It might be survey data
+for employee engagement, might be salary data, might be training data. We have in there
+years experience, gender and other demographic
+characteristics. We also include education and
+how far you are from work. We're with this
+fairly wide dataset. Your job as the newly hire
+data scientist is to build a logistic regression model that predicts and explains
+employee turnover. That's the core of the project. The trick of it is you're
+going to have to use course principals to produce work products that actually convey the insights
+that you develop. Although the lectures and things that are in the current course
+will fit nicely with this because you're going
+to be learning principles and tactics and strategies for how to communicate
+data science insights, and in this project
+you're going to generate quite a few
+insights, I hope. What I've created to
+help guide you through this journey are
+several documents. This is the first
+one and this is the most important
+one because this ties the whole thing together. This Acme Aroma
+Project introduction, you can see, is broken
+into four parts. The first part, I describe
+a master resource list, which basically describes all of these documents
+in some detail. Then we get into a
+much deeper treatment of the project background. You can learn all about Acme, you can look at their
+data from various sets, you can learn more about
+the dataset that we include for this project. There's a lot that
+you get exposed to. Then the third part, we'll talk about the
+analytical task, what you have to
+do modeling wise. Then lastly, in this document, we'll talk about
+the deliverables, which are what are the things you actually have to turn in? The work you actually
+do on this project, in terms of deliverables, is very similar to the work
+in the main curriculum. If you're trying to debate
+on which one you want to do, try to make the workload
+pretty similar. In this project, you're going
+to do an executive summary, a technical report,
+and a presentation. In the traditional curriculum, you do all those same
+three things as well. What's different
+in this project, you actually will do them in a little bit different order and there's a reason for that. But from a work standpoint, it should be pretty similar. Scrolling through the document, I do want to take
+a look at Part 1. I'm not going to go in great
+detail through all of these. This document is 19 pages long, so that would be a long video. I know you can read well. You're all masters
+students and I also will be unpacking some of this during office hours as well too so you can
+check that out. But just to look at some
+of the basics here, you can see here
+is a description of the five files I
+wanted to talk about. This document, again, the
+project introduction, it basically includes
+everything about the background of the project and the work you have to do. A second document is an introduction to
+logistic regression. One thing I've noticed, I teach this class and I also teach 524 presenting
+uncertainty, which has some regression in it, as well as 680
+learning analytics, which we have some
+regression in, one thing I notice is that
+not every student has a strong exposure to the
+foundations of regression. That's a really
+important thing if you're getting a masters
+in data science. You want to walk out
+of that program and feel like you have a solid
+regression foundation. I thought I would build, into this course, a supplementary curriculum
+in logistic regression. That's what this second document is that you'll have access to. The second document offers a brief introduction
+to regression. I try and describe it
+in plain language, but takes you through
+all the basics, a little bit of the math, how we fit models in
+logistic regression, models in general, frankly. You'll learn about the model
+fitting process as you can see and then, moving on there, how logistic regression
+specifically fits models, which is typically with something called
+maximum likelihood, although, that's not the
+only way it does it. How we interpret output in the model fitting process and what the coefficients of
+logistic regression mean, which are different than linear regression if
+you've ever done that, and some more good stuff there. This document is meant to give you some of the
+statistical foundation for you to be successful
+on the project. It's not terribly long
+but it should be helpful. Again, first document
+describes the project, second document describes the overall statistical
+background you need, third document is a data science communication
+framework I developed. It's called PAIRL. One thing you'll
+notice in this course is you're going to be exposed to many different frameworks. One I like to teach with is Scottman [inaudible]
+five questions that he uses in his book on communicating
+scientific results. There's also CER, claims, evidence, and reasoning, is also again a very popular
+communication framework to help you organize
+your thoughts. But one specifically for data science that I've
+worked on over the years, and I teach to data
+scientists that I coach and mentor in my regular professional
+life is called parallel. In parallel, you essentially
+structure your deliverable, your communications
+document into five sections: problem, approach, insights,
+recommendations, and limitations, and so on. Problem you describe,
+what's the problem? Why are we doing this work? It gives the context
+for the problem. This can be really helpful if this document that you produce, whatever form it may take
+is being passed around the office or maybe be shared
+outside of the office. Having that problem
+description enumerated will help give the reader some
+very necessary context. Candidly, if you're like me, sometimes you will do
+a project and then several years later
+you'll need to revisit it and you're
+like, how did I do that? Why did I do that? What
+was the context of this? Having the problem described is a really helpful reminder
+even for yourself. Second letter, the
+A is the approach. This describes
+essentially the method and data that you'll be using. Again, in this document, I'm mostly coaching you on how you do the
+communication side of that, how do you share that
+with an executive? Again, the audience for all of your work here is the VP of HR, so you want to make
+sure that you're speaking at the
+managerial level, not overly technical,
+but enough detail to explain what you're doing and to create a
+sense of competence. Then after the problem
+and the approach, we talk about insights. Insights is not
+just the results, it's your results in context, it's the results
+with implications, it's worth knowing
+out of all of this. The insights add
+your own judgment and expertise into the
+reporting process. Recommendation
+section is where we translate insights
+into suggested action. Not every project you'll do in your career has the opportunity
+to make recommendation, and that might be
+just because of project type or the nature of the organization you work in. But it's important if you are making
+recommendations to make sure you ground them in the data science that
+you're creating, and we'll talk about how
+you communicate that. The last section is
+something that shall probably be included in every data science project,
+and that's limitations. Statistics is all
+about how do we make decisions
+under uncertainty. If we could be perfectly
+certain and had perfect data, we really would need programs to figure out how
+to analyze data. This program you're
+going through and what you'll experience
+in your career, if you haven't already, is that a lot of
+data science is is figuring how to work with the
+problems and limitations. Whatever limitations may be in your project and your
+project will have some, those should be described
+also in the document. That's parallel, it's a
+little bit about that. These three Google Docs, in terms of you learning, this should give you the
+orientation of the project, the statistical
+foundation you need, and then the
+communication framework that you're going to use throughout the
+three deliverables you're going to use parallel. The other two documents
+here are Jupyter notebooks, and there's two
+Jupyter notebooks. One is DataPrep in cleaning notebook and you can see it's not terribly long, there's a lot of instruction
+you'll find in here, or I'll just say
+maybe a better way to think about that is its documentation
+chronicling what was being done and why. The scenario here is that again you're a new data
+scientist in the company, but there was a previous data scientist who
+actually was working on this project and got to an
+initial model but no farther. You're taking over the
+work for somebody else, which is something that
+you very likely may have to do in your career
+more than one time. This other data scientist
+that left the company created these two Jupyter. Notebooks. The way that
+data scientist structure this has created one
+Notebook to import, and export, and clean the data. Again, it's a starter file so it may not have
+everything you need. Then another Jupyter
+notebook here with the actual
+modeling work done. In the modeling you
+can use frankly, any statistical package you want or Machine
+Learning package. The most popular is
+certainly Scikit-learn, people use that for many
+different modeling needs, it's more of a Machine
+Learning package. In this file, I'm going to start you
+out with lesser known, I guess, Python package
+called statsmodel. The reason being is that
+statsmodel provides some additional
+statistical reporting for us that might be useful. Part of this project is
+prediction certainly, but part of it is again, to understand what variables are driving employee turnover. When you're talking to
+that VP of HR, yes, they want something
+that might be able to predict employee turnover, but in terms of things
+that they can work on to actually decrease
+employee turnover, what are the things
+they should focus on? Maybe one of these variables has the answer and
+we'll find out, and statsmodel can
+help you do that. Again, a baseline model was
+created with statsmodel, but the data scientist
+that started this used a lot of Scikit-learn to explore some of the
+basic performance. You've got a starter file, and what you're going
+to have to do is, essentially complete the modeling process
+and the requirements that are described in the
+project introduction. To be clear, this
+is for software, this is beta, it's early on in the
+development side of this, and so there may be
+some wrinkles in this. You'd be the pioneer group, the first ones to having
+gone through this. Eventually, this will become
+the only curriculum or the main curriculum
+for the course. But I thought it'd be helpful initially to offer
+it as an option, so you can opt into this
+or you don't have to, from a great standpoint, it's not going to make a
+difference either way. But if you do choose it, likely we'll be doing
+a lot of support for this during office
+hours in Slack, where we are providing
+additional instruction, additional support, and certainly answering
+your questions. I just wanted to explain this is a little bit different of a term for us in that
+you have a choice. If you have questions
+about that choice, or you want to talk
+more about it, please do share those on Slack. If it's something that is really specific to your project that
+you want to share with me, you can do that via DM. If it's more generic and
+others may benefit from it, you can put it in the pinned
+thread in the Slack channel. The last thing I
+will say about this is that, historically, this course hasn't required
+any Python support from the way of the instructors
+because of the nature, of the way it was created. It was created using websites
+that have aggregated data, so it's not really a
+lot of Python work. However, this obviously
+has python works, so in terms of our
+instructor core, I may be the only one
+supporting your Python. There's going to be potentially some limitations in terms of the amount of coaching I can do, so certainly I'm going to
+be as helpful as I can. I created the baseline files, I obviously can help you
+through, I'm allowed this, but just know that from
+a volume standpoint if you're having a
+lot of difficulties, so maybe you're going have to maybe figure out on your own, so I just want people to
+understand that going in. But again, as I mentioned, these documents have
+a lot of instruction. I'm going to be doing
+things in office hours, so I think you're going to
+be pretty well supported, I wouldn't let that
+scare you off, just understand that I'm an army of one right now
+as it relates to that. Now again, the key thing
+is on your deliverables, you should be communicating in a level where anybody
+can understand it, so don't be so technical, and again, the documents
+will guide you on that. Well, that was longer than
+I thought I was going to take describing this
+initial opportunity. If you have questions about it, certainly do reach out. I really look forward to
+working with you this term and learning more about how this project works for you. Thanks again, and we'll
+talk, I'm sure soon.

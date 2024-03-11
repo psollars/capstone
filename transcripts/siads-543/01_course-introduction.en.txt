@@ -1,0 +1,205 @@
+Hi everyone. Welcome to the Unsupervised Learning Course in the Masters of Applied
+Data Science program. I'm your instructor,
+Kevyn Collins Thompson, and I just wanted to take a few minutes to welcome
+you to the course and also to explain the topics we're going to cover and
+why they're important, and also give a summary of how this course fits with some of the others in the degree and also a week-by-week
+breakdown of how we're going to cover this
+fascinating landscape of unsupervised learning methods. What are unsupervised methods? In a nutshell, unsupervised
+learning involves taking a data set that has no labels
+and trying to transform, or compress, or do
+some processing that lets you find
+interesting structure like clusters in the data. All of this without the guidance of any labels whatsoever. So hence the term
+unsupervised learning. In this course we're
+going to explore and learn about unsupervised
+learning methods, and these are very
+important for two reasons. One of them is that, there are lots of interesting
+new paradigms about feature representation that
+you'll learn about how to construct a latent
+topic representation, for example, from a
+large text database. Or how to find interesting latent variables from a high-dimensional
+data set that you can use to boil it down
+to a low dimensional data set with principal components
+analysis, for example. You'll learn and deepen your understanding of
+feature representations. These types of paradigms
+include things like dimensionality reduction,
+clustering, topic modeling. Then the second
+reason this course is important in itself
+is that we'll cover very specific techniques in Scikit-learn that will
+allow you to apply those new paradigms to data-sets. We're going to cover a broad
+variety of algorithms, and also how to choose the right algorithm for
+a particular scenario. Some specific algorithms
+that we'll cover include principal components analysis, non-negative matrix
+factorization. For clustering we'll cover
+lots of different methods: k-means, hierarchical
+clustering, DBSCAN. In topic modeling we'll cover latent Dirichlet allocation, non-negative matrix
+factorization. For topic modeling as well, because it can have a topic
+modeling interpretation. You might wonder, how can we use a data set for machine learning if we don't have any labels? Well, it turns out that you can use these techniques that
+I've just described, as part of a supervised
+learning pipeline. You can find interesting
+structure and use that in a supervised
+problem as well. So unsupervised methods are not just useful in
+their own right, they can be very powerful
+when combined with supervised methods to
+improve prediction. I mentioned the word
+structure a lot so far. What do I mean by structure? Often when you have a data set, especially when it's
+in high dimensions, the data points are not just randomly distributed
+in the feature space, they often occur close to each
+other in interesting ways, they might cluster together
+in different groups, in different parts of the space, because of the relationships
+between the variables, they might actually
+lie all on a curve or a low-dimensional ribbon that runs through the
+high-dimensional space. Some of the shapes
+might be quite complex, but there is structure, and so the job of unsupervised learning
+methods is to help discover that structure and exploit
+it for prediction, for better insight into
+the data, and so on. Some examples of unsupervised
+learning methods include not just clustering, but density estimation to predict the
+probabilities of events. We might use
+dimensionality reduction to compress data in
+interesting ways, or make it more
+efficient to process a data set that has
+thousands of variables. By using dimensionality
+reduction, we can boil such data sets down to maybe 50 variables that
+capture most of the variation and allow us to process the data set more efficiently than we could have if we didn't
+use unsupervised methods. Beside from clustering,
+you can use unsupervised methods to
+find interesting outliers, interesting data
+points that don't fit actually into a broader
+pattern of things. All these methods in
+unsupervised learning have the property that they don't have any labels to guide us about which classes
+things belong to. Essentially these unsupervised
+methods have to start from scratch in figuring
+out what's there. So breaking this
+down a little more, one fundamental type of
+transformation that is used, which is an unsupervised method is dimensionality reduction, and as I said, that
+tries to find a way to represent a dataset that
+might have many features, many thousands of features, with an alternative new form
+of the dataset that has new features that can express mostly the same thing with
+a lot fewer features. That's a way that
+people, as I said, you can work with high dimensional
+data more effectively. These methods will try to preserve the
+interesting relationships, but in a lot lower dimension, so principal components analysis is an excellent example of that, and we'll cover that in
+quite a bit of detail. Dimensionality reduction can also be used to compress data, find interesting representations
+that can be used for downstream supervised tasks. A third popular application of unsupervised learning
+is clustering, as I said. The goal of clustering
+is to partition the data into groups of similar
+objects that are all similar in terms of their
+feature representation to each other and also very different from
+items that might be in other clusters farther away. Image search, for example, if you search for
+images on the web, often image search engines will cluster the images that come back into semantically
+meaningful groups that makes it easier
+to navigate them, and compare them, and so forth. Another example of
+clustering might be if you have a website and you have lots of people
+coming to visit the site, if say it's an e-commerce site, and you'd like to understand who your customers are and
+how they use the site, you could take the data as
+people access the site, as they click links to
+products and they type search terms and they
+buy things and so forth, you could use those
+interactions that are logged on the web server and apply
+clustering method to them. So you might discover
+that there's a cluster of customers who just like to browse lots of
+different products, and another cluster customers might have very focused
+shopping pattern. So by using these unsupervised
+methods like clustering, you could use that to develop, let's say, customer experience. If you detect that somebody's shopping in
+a more focused manner, you might give them some different interface to
+help that particular task. So that's an example of how unsupervised methods could
+inform a supervised one, we tend to predict
+the task people are doing or what
+they're going to buy. Well, as I said, we'll
+look at topic modeling. Topic modeling is a
+method that allows you to find a set of common topics that arise in a text collection. Might be looking at
+literary essays, or scientific papers, or
+webpages, or social media. So you can take a bunch of text and then derive a set of topics. You can think of them in
+some ways like clusters, clusters of topics, clusters of words that people talk about. Use these topics to summarize
+what people are saying or what methods are being used in a particular
+scientific field and so forth. We're also going to spend
+a fair amount of time in this course applying unsupervised methods to
+supervised learning situations because it is such an
+important scenario. Then finally, we're also
+going to cover how can you evaluate the results of unsupervised methods
+like clustering? If you don't have labels, if you don't have
+a ground truth to assess the quality of the result like you do
+in supervised learning, how can you assess the quality of a
+clustering, for example, so that you can pick the
+best clustering method from a set of options that
+are the best parameter, it gives you the
+best performance. So we'll talk about evaluation
+methods that can be used for these various types of unsupervised methods as well. So in terms of the learning
+objectives for the course, after you take this course
+in unsupervised learning, you will be able to
+correctly apply and interpret results from clustering methods
+in scikit-learn, like, k-means,
+agglomerative clustering, hierarchical clustering,
+DBSCAN and so forth. You'll understand the use
+of topic modeling and best practices and how to
+apply it to text collections. You'll be able to correctly
+apply and interpret the results from what are called manifold
+learning algorithms. They are a form of
+dimensionality reduction. Some things like multi-dimensional
+scaling and t- SNE. You'll understand how to evaluate the results of clustering methods using a variety of metrics. You'll be able to understand
+the tradeoffs and the assumptions that are inherent in different clustering methods, so you'd be able to
+correctly decide which to apply in
+a given situation. You'll understand
+how unsupervised learning can be used to improve supervised
+learning because it's a very important scenario. You'll know how to apply
+density estimation using a kernel function
+on a random variable. You'll understand how to interpret something
+called a biplot, which is a very useful
+visual summary of the results of a principal
+components analysis. It helps you understand what's
+going on in the dataset. As a result of this
+course, you'll also have a better awareness of the basic mechanism and
+use of word embeddings, which will be helpful in later courses in deep-learning or natural language
+processing, for example. You'll be aware of
+the EM algorithm and how it works and why it's important and how it relates to clustering,
+for example. We'll cover some specific
+advanced methods like spectral clustering so
+you'll be aware of those. In terms of how this
+course fits with the other machine
+learning oriented courses in this degree, you'll get a deeper
+understanding of future representations
+that the work we're doing on word embedding
+will help prepare you for this related course
+material in deep learning, machine learning pipelines and the Milestone two courses
+make heavy use of unsupervised methods as part of that tool kit that you'll have to tackle more complex
+prediction problems for example. Then quite a few of the
+domain specific courses, especially in natural
+language processing, will also make use of
+unsupervised methods potentially and text
+representations in their various problems
+that they tackle. To address these objectives, we're going to organize
+the course into four weeks as follows. In week one, we'll discuss dimensionality reduction
+and manifold learning. You'll learn how to apply PCA to a dataset and interpret a biplot. I'll also show you how to use manifold learning methods like multidimensional
+scaling in order to visualize a dataset for
+exploratory analysis. We'll perform density
+estimation on a set of random
+variables to create a probability density function, and we'll look at different parameter method choices
+for that because density estimation is a very important
+unsupervised technique. Week two, we'll devote
+entirely to clustering. It's a big topic and we'll try to cover the highlights
+of clustering, the most important techniques
+that you need to know, and these include
+K-Means clustering, hierarchical
+clustering, to create a tree structured series of clusters for the data that
+are appropriate for that. We'll learn how to
+detect groups and outliers using clustering methods that come with scikit-learn, and will finally discuss how
+to evaluate the quality of clusters and how to compare cluster quality across
+different options. In week three, we're
+going to focus on EM, topic modeling and
+word embeddings. We'll focus on the
+particular methods called Latent
+Dirichlet allocation and Latent semantic indexing. We'll apply these
+text collections and we'll spend a little
+bit of time going over feature representations for text to work correctly
+with those types of topic modeling applications, and then we'll look
+at word embeddings, which are a way to visualize
+and represent words in a high-dimensional
+space in ways that are semantically very powerful. Then in the final week, week four of the course, we're going to focus
+on applications to real world datasets. We're going to take
+all the methods we've learned about in the previous weeks and apply them together in different ways, especially to supervised
+learning problems and how to interpret
+the results of these and how to use them
+in a pipeline and so forth. That is a summary of the course, and let's get started
+by looking at a type of unsupervised learning that
+does the transformation of the data called principal
+components analysis.

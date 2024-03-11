@@ -1,0 +1,364 @@
+Hi, I'm Chris Brooks. I'm here joined by Damian Avila. He's a senior
+developer with us at the University of Michigan at
+the School of Information. Damian has been core
+and helping us build this new online Masters of
+Applied Data Science degree. Damian's got a nice set of talents that I wanted to
+share with you today. Damian, it's good to be here. Thank you for joining us. You flew a long way to
+join us from Argentina. Yes. Thank you so
+much for having me here. It's a pleasure to be here. So one of the reasons I wanted to have you
+on camera here to share is because
+you actually have a unique role in beyond
+building in our degree, a unique role in the
+Jupyter Ecosystem. Can you tell me a
+little bit about what your role is in the ecosystem, and what it's like to interact in an open source project
+like Project Jupyter. Yeah. Yeah. Well, that is
+a really good question. Currently, the Jupyter project comprise essentially
+a group of people, and we have hundreds
+of contributors. From there, we have a smaller group of people
+that is actually directing and actually trying to
+guide the project towards the mission and the vision
+we have for the project. This is actually known
+as the core team, and I am part of that core team. We essentially gather together once a year or twice a year to actually discuss and see where we should push
+forward the project. Also, on a daily basis, we have a lot of discussions and conversations about what is happening with the
+Jupyter project, how we can actually attack
+the issues and the problems we face with a
+popular project that is being used by probably
+millions of people, not probably, I'm pretty sure is used by millions of people. Absolutely. It's a really nice thing to do because you have
+the opportunity and this is probably related with the second part of your question. You have the possibility
+to be impactful and provide the people
+with the tools to actually do amazing stuff. I was talking recently
+with some people about essentially that
+first picture about the black hole that was
+recently published. Knowing that Jupyter and
+other open source libraries has been used to produce
+that amazing picture, that really made me happy. Yes. Absolutely. I think Jupyter has been
+incredibly impactful. I think I was probably
+a decade ago that, I, during my PhD would have started using IPython and
+the IPython interpreter, and started using the web
+front end and that was before it formed into its own
+project with Project Jupyter. I remember IPython magics and
+getting really excited and tried to switch my shell over to IPython which was maybe a
+little premature at the time, but the ease at which I could integrate
+different data sources and glue things together. First, it was a beautiful
+fit with Python in general but just a
+wonderful project, and now with Jupyter and
+Jupyter Lab coming into a much more full-featured
+and extensible ecosystem, I think it's great. Honestly, for me,
+when we launched a series of Muks on
+the Coursera platform, we were faced with
+the question of, if we want to teach
+Applied Data Science, what do we teach
+as far as an IDE? How do we teach people
+to be developers? As a software developer myself, I had a strong predilection. I wanted to use a traditional software
+engineering environment. I was convinced to try
+a hosted environment, and I'm so glad we did. Not only has the environment like Jupyter gotten better
+and better and better, but it also lowers the bar
+for people to actually get in and start
+doing data science. They don't have to worry about paths and which
+kind of version or PIP version they're using and trying to manage all of that. Yet at the same time, they can
+go to that if they want to inside of these hosted
+labs like interfaces. You've been involved in some
+other open source projects. Yes. One of the topics that
+we often talk about is exploratory data analysis
+and visualization. I often teach that
+with Barebones, Matplotlib, sometimes
+throw in a little Sibod, but now there's this
+plethora of toolkits. I think I lament in one
+of the lectures I give, how it's just so simple in R because everybody
+uses the same thing. This is one of the
+challenges in Python where the diversity sometimes
+feels like a big overload. I wanted to hear about Bokeh, and what it's like to be involved in that kind of project, the toolkit that's now widely used by people to
+create visualizations. Yes. That was essentially
+also an experience as well. I started to work in Bokeh
+probably four years ago. Then because of several reasons, I am not contributing right
+now, but at that time, it was pretty exciting
+to see something in the browser that you can have a really
+nice visualization, and you don't need
+actually to write JavaScript code to
+actually achieve that. You just need to write a
+little bit of Python code, and the visualization in
+JavaScript gets created somehow. That was the main idea of
+Bokeh at the very beginning. Bokeh is essentially composed
+by a JavaScript library. Bokeh is yes the Python bindings that essentially
+allows you to interact with that JavaScript library. There are also other
+bindings that are not so popular as a Python but there are interested to
+actually highlight that. They are available
+for people to use. The whole idea was
+essentially with Matplotlib, a few years ago, it was easy to have static plots, but they interactivity
+with those plots. Where we're not something develop it but with time [inaudible] will be actually did some
+work on that side. But the idea was essentially to provide these interactivity
+in their visualization. That allows you to actually essentially delimit
+regions inside the plot. Actually not only the limit
+their ratios but also get the information from
+deletion that you created. So the main idea was to
+implement that project. You can do that with JavaScript but it's difficult to write JavaScript and even more if you think in that
+[inaudible] spectrum. So how in Python
+bindings to actually create beautiful
+visualizations where you can do a lot of stuff and
+grab data from there was some of the main
+ideas behind Bokeh. At the time that I joined the project and it
+was actually pretty difficult to build it those two subcomponents because they belong to different worlds. So actually having a package to actually install things in their proper way was something that it
+wasn't simple to do. So we worked hard to
+actually do that. I tried to simplify
+the process in the packaging of
+Bokeh as one thing. We did a bunch of other
+work essentially trying to make the release of these
+packages simple enough. So more contributors can potentially be part of that work. It was pretty
+exciting to actually see that evolution
+from something that was pretty difficult to install to something
+that actually is fairly easy install right now and people can
+potentially use that. I interact with Bokeh and generate really beautiful
+visualizations. There was another
+piece essentially that it was interesting in terms of Bokeh has several layers that allows you to create
+simple visualizations. But at that time there were
+just a tiny development on the high level
+interface of Bokeh to create complex things
+with just a few lines of code sort of abstraction on top of the basic
+visualization things. I did some work there as well. Essentially bring in
+the first iteration of what we call at that
+time Bokeh charts which is essentially an abstraction to
+actually being able to make complex visualizations
+in a very easy way. That evolves eventually, well, there are a lot of projects
+that actually use Bokeh to create complex
+visualization as well. So yeah, it was pretty nice to actually start with that work Yeah, I think one of the
+things you mentioned there interactivity I think
+is really interesting. So we often think about like a Jupyter Notebook in
+this through the lens of the computational narrative and Fernando Perez talks about these and Adam Rule
+talks about these. But I think in narrative doesn't bring the sense of interactivity
+that we could have. So I think about projects
+like distill.pub, which seeks to take a
+scientific article and make it so that it's
+exploratory as well, so that you can read it
+and interact with it. Of course Jupyter
+has some of this, with Jupyter Widgets which we've been playing
+with a little bit in some of the classes and of
+course with visualizations. So indeed I liked Matplotlib because it was simple and static and I disliked
+it because I couldn't, if I wanted to
+change a parameter I had to regenerate my chart. Of course now we see
+this ecosystem has just exploded in size. Actually, taking the
+computational narrative and twisting it
+around a little bit, that artifact, the
+Jupyter Artifact is something I think that you
+are intimately familiar with. So I when I talk about
+your other project Rise. So I use this open
+source project in my classroom teaching and it's quite wonderful
+essentially this project takes your nice Jupyter
+Notebook and turns it into a set of
+PowerPoint like slides that you can interact with and it's great to
+be able to bring up a slide and execute commands
+directly in it and it's really changed how I can do
+my face-to-face teaching. I'm curious where do you see the future
+being for something like Rise taking a
+Jupyter Notebook turning it into slides, interactivity in the notebook. Where do you see that
+going down the road? That's a really nice question. Yeah, Rise it's a
+pretty popular package. Especially in higher ed
+data science, right? Yeah, I find a lot of people actually thanking me
+about that because the main idea about Rise
+was essentially to provide the Notebook user and
+professor, teacher. I mean, someone that is trying to deliver some content
+to other people, provide them with
+the easiest way with good to create a nice
+and beautiful slideshow. But without loosing the power of the interactivity in
+terms of executing code. So one of the first
+idea about Rise was an static representation
+of the Notebook as an slideshow and that is
+still present on nbconvert, if you use nbconvert which is
+essentially a package that allows you to convert
+Notebooks to other formats. You can create an static reveal a slideshow where you can actually navigate
+the slideshow but you can't execute code. Essentially, one of the main driving
+reasons to create Rise. Because the ability to execute code at the very same time that you are
+developing an idea and showing that to the students or to the people that is
+the interesting to know about what
+you want to share, I think it essentially gives you a lot of power to
+transmit the ideas. So for me worth something that
+it was definitely needed, and I work on that with
+other people because that is the interesting thing
+about the open source work, that there is a lot of people using the tool that you created, but also a lot of people
+interested to contribute back to the project and add functionalities that maybe
+you didn't think about, that maybe and surely
+will actually go in the same very main idea that you have or goal that you have for your package or for your library. For instance, in
+the last few years, there are several contributors. There is one specific
+contributor that he was able to provide some features to actually have a
+better interaction in the way when you are
+executing the code. So things get
+essentially selected and show at the time that
+you are executing things. Well, tiny details
+that made the workflow really smooth in terms
+of sharing your content. Recently, for instance, I have introduced some
+new functionalities to actually have some child-pour
+capabilities on Rise. So you can actually
+annotate things on the very same slide that
+you are talking about, and maybe executing code, and making notes
+there that you can maybe share later
+with your students. So yeah, that was the
+main idea behind Rise. I think it actually
+adds another layer of interactivity besides
+the interactivity that the Notebook per se offers. Not only because of this
+chatbot capabilities and so on, that they are not
+native on the Notebook. But also because the
+abstraction of having things in a slide show
+that you can navigate, makes you actually deliver the content that you are
+interested to deliver in a more focused way that helps people
+to understand what you're trying to tell them. Yeah. I think that actually it's really interesting with
+Jupyter Notebooks. So again, we talk about this sometime is
+computational narratives. But they've introduced
+a new structure, and that's the cell. For a software developer like
+myself, we have functions, we have modules, we have units, we have unit tests,
+we have statements. These are things that
+existed but a cell did not. Certainly as an instructor, I'm often in the classroom
+and I have a slide. I mean, I don't use
+slideshows anymore, I don't even use
+PowerPoint anymore. I use, I don't know, a variety of things:
+Google Slides, sometimes just straight
+up LaTeX or whatever. But it's interesting because it's a certain sized bite of
+what we're working on, and I find it interesting
+to think about how this computational narrative cell can be used for both of those. But I wanted to ask you
+because we've talked about a couple of the open-source projects that you've
+been involved in, and I've been involved in
+some open source in the past. I think for me, it's been an incredibly
+rewarding experience. It's a great way
+to give to others, but also to enrich your own life. I'm just wondering if
+you had advice for anybody who might be
+watching this as to whether they could
+get involved in open source data science or were in that broader ecosystem, with maybe an eye to a
+lot of our listeners, a lot of the viewers here, would be more on
+the applied side, not necessarily
+computer scientists. What advice would you
+have for them as far as contributing or getting involved
+in open source projects? Well, I guess the
+best advice I could potentially do or give is
+essentially, get involved. Maybe it seems trivial
+but is not trivial. But people actually working on open source projects are eager to get new people to actually help them to push the project forward. Also, there is several points here that maybe we could outline. But one thing that is important to highlight
+is that essentially, you can contribute to open source projects
+from different levels, and from different sounds
+or aspects or flavors. I mean, if you don't
+know anything about code but you are interested in to contribute to an
+open source project, there are a lot of places where you can
+actually contribute. Usually, there is an
+association about contribution and
+being able to code, that is not actually real. I mean, there is a lot
+of ways to contribute. So I encourage people that
+maybe don't have the skills to produce code but they want to contribute
+to open source project, to actually go and
+ask or maybe say, "I am available," and people in open source projects will find places where
+you can be valuable, and that will be valuable for the project and for you as well. For people that actually have
+some interest to actually develop code and contribute with code to different
+open-source project, then you shouldn't be afraid. You maybe know a little bit, you maybe know nothing but you're interested
+into contribute. I can talk a little bit
+about my story essentially, but I am actually a biochemist. I never have formal education
+on computer science. But because of life essentially, I got interested in
+finance and quanta stuff. I realized that I needed to learn things to actually make use to moderate about finance things. So I knew about Python, I never programmed before. That was probably
+11, 12 years ago. I started to program
+things in Python, very very basic stuff. Eventually, I knew
+about IPython and then I started to do
+stuff with IPython. Eventually, I became a
+contributor with DS. I became core developer of IPython that was renamed
+to Jupyter eventually. So if you have greater skills
+and you want to share that, that is really great and
+will be welcome from people. All the people, the majority of the people
+working on open source, they are doing that because
+they like to actually work on a project that could
+potentially impact others and foster others
+to actually do our stuff. So my advice would be, if you're interested to
+participate, just tell us. Tell the people, tell me, tell the project, any
+project not only Jupyter, it turn off open source
+projects that are different, and with some specific
+characteristics that may be suites you
+better than others. So it's just similar
+to go and see, and just raise your hand
+and say I want to help, and you will be welcome. Yeah, that's cool.
+That's wonderful. So maybe just at the very end, we'll talk a little bit
+about your role with us. So you're working with us at the University of Michigan in the School of Information
+on our new degree, a Masters of Applied
+Data Science. It's a 34-credit unit degree, and we're offering it on the
+Coursera platform largely. But behind the scenes, there's a lot of work going on, and you've been working along with others here at the school. Do you want to just
+share a little bit about the things that we've been dealing with together as we moved towards launch
+of the degree? Yeah. I'm going to
+briefly talk about that. Essentially, from the
+degree, there is a need. The need is essentially, the creation of content. When I say contents, I'm mainly talking
+about assignments and maybe Jupyter Notebooks,
+those content. The creation of this content for multiple courses could be made essentially in an
+isolated and very manual way, but that is not scalable. So we need to come up with
+some system essentially, that allows professors and CCAs, I mean content creators, to actually generate
+this content. But this not also to
+generate the content, but also in specific set of this content such
+as assignments, being able to automatically
+grade those assignments. So we reduce the burden on teachers and teacher's
+assistants who actually grade stuff for online
+courses where you maybe have hundreds or eventually
+thousands of users. If you can actually
+autograde assignments, you will have a
+better life probably. So we actually work to develop essentially a centralized
+and a very detailed way to create content. That is essentially using
+some of the Jupyter tools, so some of the projects
+that Jupyter provides. So there is a Jupyter
+hub where people, in this case the
+content creators, can actually login and
+create the assignments. We provide a way to
+actually customize the environment where they are
+developing the assignment, so they can actually push that environment later on the row so it can be replicated
+on Coursera, because that is the other part. We create the assignments, and we need to deliver
+that to Coursera, and Coursera is providing some
+infrastructure to actually let the students to interact with the content that we
+created on our site. So we use Jupyter curve essentially to support
+multiple users, and we have used one of
+the important processes on the Jupyter ecosystem related with the grading of Notebooks
+which is called nbgrader. That essentially allows
+you or provides you with an user interface that makes you easy to
+create these assignments, but also, it provides a
+lot of functionalities to actually being able to grade those assignments from
+the command line, or there is another way to grade those from the user interface. So yes, we set up this
+system that makes those things automatically,
+and in fact, create those assignments
+with the content that the CCAs and professors
+are interested to put there, and eventually we deliver
+that to Coursera, that is actually performing the autograding part using
+essentially some of our images that behind the scenes are using the nbgrader
+to actually grade the notebooks where the students have completed the assignments. I think this infrastructure has been transformative for
+me as an instructor. So when I first taught the applied data science
+on the Coursera platform, I had to build everything by
+hand as far as autograders, and as far as supporting
+the environment. But now we have a
+lot closer to more of what I would call
+standard deployment, that's used in higher ed. The nice thing about this
+is it's really sped up the amount of autograding
+that I can build, but also the quality of that. Now, students in my classes
+might not agree because autograders are still at the bane of their
+existence I think, but they love the idea that they can try an assignment as
+many times as they need, and just keep getting some
+feedback on that assignment. I'm looking forward to the future that we're
+going to be able to build with Jupyter essentially as our platform for learning here, the extensions and plug-ins
+that we'll be able to add to it to change the
+student learning experience. Yeah. I think coming
+back a little bit to your previous comment. One of the thing that was
+important to us was to provide a unified experience for
+the content creators, so they can actually smooth their workflow
+to get from zero to the complete assignments in an easy way and a unified way. That was pretty one of the goals that we had when
+we developed the system. But regarding the second
+part of your comment about the possibilities that it should be there
+as an ecosystem, and even more when we
+are thinking about Jupyter lab or the place that Jupyter lab have right
+now in the ecosystem. There are a lot of
+possibilities to actually create extensions and plug-ins and other
+tools that actually sit on top of the tools
+that already exist, and that could
+potentially provide the student really
+immense-full experience. I mean, an experience that actually allows you
+to learn quickly, and go into the depth of things, and actually allows them to keep thinking about a
+stuff and experimenting. I think that is really important, and that really huge extent
+in their learning process. So I'm really happy that
+Jupyter has a project goal. There are several places
+where Jupyter is important, but particularly in
+the education is something that is
+very close to me, because I feel that is something that
+has the potentiality to be disruptive and
+push us really forward. So I am really happy that
+Jupyter as part of the project, Jupyter is helping
+to make that push forward more quick
+and more efficient. Okay. So I think that's about it. Damian is just one of the many different
+technical experts here, working with us at the
+University of Michigan to help power our massive open
+online courses on Coursera, and our online
+degree on Coursera. That's new Masters of Applied
+Data Science with Python. Thanks very much
+Damian for joining me. Thank you for the interview.

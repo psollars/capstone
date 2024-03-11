@@ -1,0 +1,54 @@
+Hi, welcome back. This week in the series
+of lectures, what I want to do is focus
+a little bit on design. Specifically, I
+want to talk about suggestions and when it's
+safe to ignore them. So we will have seen in
+the past few lectures, this notion that we can take data and transform it through
+visualization into something that a human being
+can interpret and get back some answers to questions
+or find some insights. We've understood
+through understanding the psychology and cognitive processes
+around visualization, things like Weber's Law
+and Stevens' Law, on how this actually happens
+and where it doesn't happen. So specifically, where we
+don't get the right image. So as we are the people encoding the data through
+the visualization, we have to understand where
+it is that people will misinterpret the data when they try and decode it visually. So we basically
+focused on the idea that given the data and task we want to basically
+understand whether our choices are effective
+and expressive. So we've been given
+a certain set of tools around the perceptual literature that help us in identifying these. But that's really at a
+very, very low level. It turns out we want
+sometimes higher level advice that will guide our designs. So we get things like this and we'll talk about
+a few other ones, where basically we
+get suggestions about how to choose charts. And sometimes it's very easy, if you have very simple things
+like distributional data, you might want to
+use a bar chart with histograms and things like that. With more sophisticated
+decisions, there are other chart choices. But in many cases, we have very complicated choices
+that we need to make where we're
+combining lots of different visualizations
+as later we will do, add interactivity,
+and things like that. So we have to understand which of these suggestions
+we can actually utilize. The suggestions
+themselves are based on often good psychological
+principles although as we will
+see not always. So we will get advice like this. So we have a set of
+bar charts on the side. This is an older image. You have a set of
+bar charts on the left over here and then we subtract out, this is from Edward Tufte, you subtract out things that are believed to be redundant or non-informative and you'd get
+a different visualization, the one on the right over here where you get
+a much simplified view, more simplified view
+which has all the data. So it's as equally as expressive
+as this visualization. But the question will
+be is it more effective and for some it's
+suggested that it is. But as we will see this
+is not always the case. So we're going to take some of the advice that this
+is a good process, that this kind of elimination of this redundant data
+is a good thing. We're going to understand whether this is actually the case or not. The takeaway is just for this first bit and then we're going to keep going from here, is that there's a lot of high level advice and I'll
+give you some of it. It always has caveats
+on how to use it. So sometimes accept that the design practice is
+just really a bad idea. So I want to train you a
+little bit and reading some of the advice to be able to understand from what you've learned about perception
+and cognition, to be able understand
+whether it's actually good advice or not or whether there are situations for when it is useful advice or not. Okay? So there is stuff that has been accepted in
+literature but we're going to try and dig deeper into whether it's a good idea or
+not. With that, thank you.

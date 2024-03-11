@@ -1,0 +1,173 @@
+Welcome back. It's the beginning of a new week, and I'm here to talk to you about
+accountability and governance. I have the framing questions for
+this week for you, and I think you're going to like them. They're, again, somewhat provocative,
+they're meant to grab your attention. The first framing question for
+this week is, can large, automated systems be
+effectively controlled? If you'd like it to be a little more
+upbeat, you could say, how can large, automated systems be
+effectively controlled? The reason that's a framing question for a data science ethics class is that
+data science in general has really been moving over the past few years
+from something that's an analysis meant to inform decision makers
+to something that actually acts. So as computers have become more
+interconnected with everything, data science has this role now where
+a data science analysis can be something that drives decision making
+perhaps without a lot of input from a particular manager, or something
+like that, or even from any human. So examples have been given
+throughout the class. But just generally, I'm referring
+to the fact that we can now tie in many systems some sort of
+ongoing ingestion of data or at least a periodic analysis of data
+to some sort of outcome in the world. And that could all be
+connected with software. So we wouldn't necessarily, I guess
+I imagine maybe 20 or 30 years ago, the statistician producing
+some beautiful chart and showing it to someone and arguing about
+it like, this is what I mean by it. That still happens,
+that's still important. But in addition, data science now grapples with this issue
+of our analyses being plugged in and automatically used to achieve something,
+sometimes to achieve something disastrous. So we're going to look particularly at
+large automated systems because that's usually where the responsibility, the
+question of responsibility is the hardest. The second framing question,
+remember, I always have two. The second framing question for this week
+I think will grab your attention and it's, when are you responsible for
+ethical failures? Way back when we did our misconceptions,
+I tried to convince you then, or maybe I just said I assume, that we're
+often in situations where a bunch of little decisions that seem like a good
+idea add up to some negative outcome. That makes it very difficult to understand
+when it is that you are responsible. In some earlier segments, I've tried
+to emphasize that I feel like we're all kind of all responsible
+all the time as professionals. But you still could have a more
+specific question like, my gosh, this thing just exploded, was it me? And so we'll try to figure out, or
+at least, I mean, get more confused about, and develop some case studies
+about specifically responsibility. In this introductory segment, I also
+wanted to cover sort of the basics of what we're talking about when we're talking
+about accountability and governance. This is the accountability and
+governance week, and I chose those two words because I
+want to emphasize the idea of who maybe we're answerable to or who we're
+responsible to when something goes wrong. Which is sometimes what we
+think of as accountability. But I also want to point out
+that when we talk about that, we're talking about it for a reason. We're not just sort of angry
+people looking to assign blame. We're trying to be sure that the systems
+that we build do what they're supposed to. And so governing the the systems or
+you could say controlling the systems is really what we're trying
+to talk about in this week. Let's look at just
+a couple of examples here. Accountability and governance
+are the two words I just highlighted. But even within that, you can sometimes
+think of different components, and I'll give you four that
+I'd like to disentangle. Sometimes accountability and
+answerability are seen as synonyms. But another way to think of that is,
+who are you answerable to or who is the system answerable to? So accountability isn't
+just about lawsuits, it's also about who is responsible. But when we say answerability,
+I mean, that's a really important point because sometimes people talk about
+accountability mechanisms, but they don't have a clear view of who specifically
+we're supposed to be accountable to. So answerability maybe sometimes
+gets to that a little more. Sometimes people mix up
+blameworthiness and accountability. I think that's okay, and we're not super sticklers for the
+definitions in this portion of the class. But generally speaking, people, because
+they're defensive or they're worried, they might really focus on the idea of blame
+as what this kind of segment is about. But we're not actually
+that interested in blame. I mean, it's going to come up, but I think what we're more interested
+in really is the idea of overall the system has to work and
+it's gotta do what it's supposed to do. So how can we make that more likely? And yeah,
+how can we make that the positive outcome? Sometimes people confuse
+accountability and liability, which is the legal term
+meaning that someone has some recourse through the legal system perhaps
+to obtain a judgment against you. That might involve damages,
+payments, jail even. That's not what this course is about, it's really about doing the right
+thing as opposed to the law. One of the interesting things about
+legal liability is it's often very counterintuitive anyway, and it has some elements that really aren't
+what you would expect in the US context. So for some instances, for example, we would say, well,
+this person clearly made a mistake. But because some mistakes are going to
+normally happen in this circumstance, we're just not going to find it
+they're personally liable for it. That might be an agent of the government
+acting as part of their business. When some mistakes are normal, even if the
+mistake is terrible, even if we know who made the mistake and we can identify
+the moment at which they made it, we might say, well,
+they're not really liable. So it's important to say that,
+my focus here is this overall system and making the system work. And not so much sort of the idiosyncrasies
+of different legal systems for liability, which can be quite
+counterintuitive and strange. Other examples of liability include,
+sometimes we hold people liable and we're surprised that intent
+isn't a big part of it. We do care about intent in our legal
+systems, it's a very important idea. But whether someone meant to do
+something wrong is not actually, that doesn't mean that you're okay. So you might say, well, I'm trying
+to do the right thing, but you might still accrue significant legal liability
+because of the way the legal system works. The word for this is usually negligence. Of course, this varies based
+on what country you're in and how you're going to practice. But right now I just want to say
+that liability is a big topic and it's not really what we're covering. We're focusing more on
+the idea of accountability and making the overall system work. Responsibility would be the final idea,
+and that, again, is usually taken to mean personal, but could also be corporate or
+organizational responsibility. And I mean, that's definitely a synonym
+and it's okay to think about that word. But again, I'm trying to push away
+from this idea of assigning blame and saying it's this much blame
+versus that much blame. So let me give you a more
+concrete example that I think will help differentiate the approach
+from this class of other classes. This is a news headline by Madeleine
+Elish, who wrote a very fascinating article in 2015 and then another one or
+a bigger version of this in 2016. And it's really a current pressing issue,
+it's like a hot topic in data science ethics, and
+the topic is called moral crumple zones. The headline says,
+when your self-driving car crashes, you could still be the one who gets sued. It's not meant to be, I didn't assign
+this article, but the key idea from this headline is that Madeleine Elish is known
+for this idea of the moral crumple zone. Which is a really interesting idea in
+system design and for system designers. The moral crumple zone, so
+in case you're not into car design, a crumple zone is a part of the car that
+is designed to be destroyed in order to absorb the force of
+an impact in a collision. So even though you've run into something,
+the crumple zone is designed to be destroyed so as to protect the valuable
+payload, I guess the driver or passenger, the human,
+in automobile design. So that's a crumple zone. So what Madeleine Elish means by the moral
+crumple zone is that we're currently designing systems in which part
+of the system design includes something that's designed to absorb their
+responsibility in the case of an accident. So a good example that is from
+her is the self-driving cars, currently deployed as I speak. The self-driving cars often have a person
+sitting behind the wheel, and they're designed to stop the self-driving car if
+there's an error and the self-driving car does something dangerous or,
+well, let's just say dangerous. So there now have been cases where the
+self-driving car hit and killed someone, even though it had this safety driver
+that was supposed to be watching over it. And Madeline argues that the role of
+the safety driver was actually to absorb responsibility in this case. So you could say, well, the system was
+designed to have someone that would intervene if something
+terrible went wrong. The person didn't intervene,
+therefore it's their fault. So she uses this idea of moral
+crumple zones as a pejorative, she says it's negative. So if you say, I've built the system
+with moral crumple zones, what she's saying is like,
+you've picked someone to blame in advance. Airline pilots often feel
+that they're to blame. When they have a complicated technological
+system, something goes wrong, and they say, in the end, it's pilot error, or
+operator error in an industrial process. The key thing for our class in this week is to think
+about how accountability and governance really involves all kinds of little
+decisions by a large number of people. And that it's often not that useful to
+think of, well, there's an operator and the operator is the one
+who did something wrong. Because if the operator didn't get
+right information, they didn't get good information, it wasn't presented to them
+clearly, so they made the wrong decision. They might have made the wrong decision
+because the system itself did it. So there are some systems where you
+could say maybe the moral crumple zone is the developer, so
+maybe that's who's always blamed. But this is more like kind of way that
+we're going to reason about accountability and governance this week. And I think it gives you a kind of
+sense of how we're reasoning about it differently than just who's to blame,
+let's find the culprit and fix it. In other words, blame can be designed. I'll close the introduction with one
+last key distinction that will come up throughout the rest of the segments
+this week, and that's a distinction. In case you're not a lover of Latin,
+a distinction that you sometimes hear if you're a lawyer is you hear a lot
+of things as ex ante or post hoc, roughly translated to before the fact or
+after it happened, or after the fact. And sometimes in the literature it's
+called anticipatory versus remedial. I just want to emphasize that
+we're interested in both things. So we're interested in trying
+to think through accountability before something goes wrong. So how can we design a system,
+sometimes called responsibility by design, accountability by design, so that part of its operation includes some
+sense of this is who it's answerable to. This is what's supposed to happen
+when something goes wrong, this is how we trace out what happened. That's ex ante, so
+we're interested in that. We're also interested in post hoc, sometimes called forensic accountability
+or after the fact accountability. After something goes wrong, we do
+want to figure out what went wrong and ensure it doesn't happen again. But both are important. So what I'm emphasizing in
+this distinction is that sometimes people are talking
+about accountability, but they're only talking about one, but we're
+trying to emphasize both are important. We want to be able to diagnose
+a disaster after it happened and figure out what went wrong,
+that's post hoc or after the fact. But we also want to build the system
+in a way that if something goes wrong, we are acknowledging that that might
+happen in the future and we know already, because of the way the system is built,
+how to minimize failures. But also how to understand a sort of, how to make a post hoc accountability
+process work better because we knew that we were going to have to be answerable
+to someone even on day one. And that's ex ante,
+anticipatory accountability. We care about both.

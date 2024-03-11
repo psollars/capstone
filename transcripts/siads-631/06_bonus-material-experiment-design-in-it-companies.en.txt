@@ -1,0 +1,466 @@
+Really excited to be invited to present the summary of how field experiments are
+used in the industry. Feel free to jump in if
+you have any questions. So today, I'm going to give
+a simple introduction of how field experiments are
+used in the tech industry. I'm going to cover a few brief points that we usually
+will consider when designing and analyzing a
+few of the experiments. I'm not going to cover a
+lot of technical details, but we'll use several examples that I see in the
+industry to give you a sense of how few
+experiments are used to trap the growth
+product iteration in the tech industry. Now let me start with a very classic example
+of field experiments, which is the 2012
+presidential campaign. So actually, the idea of
+massive application of field experiments starts
+in the political arena. So in 2012, when president Obama [inaudible] the candidacy for this for his
+second administration, he and his team actually run a lot of different
+treatments and controls to see what's the best way to gain the support to raise the
+campaign sounds from the public. Here is one simple example. So if you take a
+look at this figure, there are two kinds
+of web views that a user can see when he went
+to his campaign website. So on the left-hand side, it is a control view
+where you are asked, "How much would you
+like to donate today?" On the right-hand side, the picture looks almost
+the same unless if you take a very clear look at
+the select amount here, 15, 25, 50 all of these amounts don't have
+a dollar sign come with it. So the idea of this
+design is when you put a dollar in
+front of a number, it makes you feel that you are giving the money away
+and it kinds of get this a mental pressure that's there's a pain of
+giving your money away. But if you don't have a
+dollar sign in front of it, the sense of giving
+your money away is less salient than
+the control group. So they ran this experiment
+and that the results shows that if a user is shown that there no dollar
+sign treatment, the probability of
+him giving a donation and the donation amount is much higher than the
+one on the left. They actually run a
+series of experiments, different treatments
+in the donation stage, there is a large combination of these experiments
+being run to show that by comparing a
+treatment versus a control, we can actually drive
+the donation amount. So this is the classical example of field experiments being
+run in the web view. In the tech industry, field experiments has a very illustrative name
+called A/B testing. So A and B is typically what we say a treatment
+and the control. So A/B testing,
+it's like comparing two different versions of
+web view of the email you receive of the U/I
+design you will see on your Facebook page. So the idea of A/B testing or field experiments originates
+from Sir Ronald Fisher, back when he designed the very first field
+experiments in the field. The online version of [inaudible]
+is called A/B testing. So it has been widely used in almost every tech firms from
+the tech giants like Amazon, Google and the Facebook, to the traditional
+companies that aim to bring their works online like
+Walmart, Costco, etc. So in most tech firms, there is a specific team
+that's dedicated to helping the company's entrepreneurial
+team to design and analyze the
+experiments they run. Now I'm going to talk about
+what I'm going to cover. So I'm going to start with what we want to analyze
+in an experiment. Then I'm going to talk about in the design of the experiments, what should be the
+experimental unit and what is the segment. How many units should be covered? Then I'm going to
+talk a little bit about the multiple
+hypothesis testing. In each of these section, I'm going to use a
+few examples to show why it is a something important
+we need to think about. So first, metrics. Metrics is basically the outcome
+variables we care about. Metrics is usually the term
+used in the tech industry. So a metric is typically
+what you want to measure from an A/B test or from
+a field experiment. Let's start with a
+very simple example, search engine marketing. So actually in Google, the way that Google
+makes a lot of revenue is through advertisement through
+the search engine. So every time you
+went on the Google, you will probably
+notice that some of the results right on the top of the readouts page is an advertisement or is a
+sponsored search results. So that is where Google and Facebook gets most
+of their revenue. Of course, boosting the sales by the search engine marketing
+is one of the primary goals, both for Google and
+for the advertisers. So typically, there are
+many ways for how you price for each slot
+in the search page. So there are two
+classic pricing options for a search engine. One is pay per click. Basically, if I put in a query in my Google search page and
+every time I click a result, Google web will get paid
+from the advertiser. So this is called pay per click. The other one is called
+the pay per view. What pay per view means
+is every time that results is shown to a user, Google will get paid
+from that result even if the user does not
+click at that result. So you can see that
+there's a difference between pay per click
+and pay per view. Essentially, pay per click is a stronger indication that the user is interested
+in the results, but it will be less
+often to be clicked. The pay per view is more like
+if a user gets exposure, gets exposed to the results. Typically, pay per click, and we can imagine, the price of in pay per click will be higher than the
+price in the pay per view. But with this balance between the number of clicks
+with the number of times Google can charge for one click or for one view
+and the unit price for each, which one is the best one to increase the
+sales by search engine? This is actually a purely
+empirical question and the best way to run
+it is run an experiment where half of the advertisers is charged pay per click and half of the advertisers are
+charged by pay per view. Now, with this setting
+of the experiment, what is the outcome variable
+or evaluation metrics that we should use to
+measure the two options? So essentially, there are many steps through which this design can get
+to the results. We can look at, how many
+users are getting exposed? How many clicks do we see? Do we get how many views
+does a results get? But with this specific design, the goal is pretty clear, which has boosted the sales. So the best evaluation
+metric here is something related to the
+total number of sells or the dollar value
+that is attached to either of the two options. So this is an example
+of how we use a single metric to measure
+the outcome of an experiment. A single metric is usually used when the goal of an
+experiment is super clear, like in the search
+engine experiment, we know for sure
+that what we want to do is increase the sales
+from the search engine. But the problem is
+that in many cases, we're not very clear what is the goal of an experiment
+or the goal is not well-defined or sometimes
+there are multiple ways to measure the success
+of an experiment. That comes to the
+most common cases where we need to use
+multiple metrics approach. So for the multiple
+metrics approach, let's come to another example, which is Facebook News Feed. So Facebook News Feed is probably the most commonly used
+product in the Facebook. When you log on
+the Facebook page, the web view that you
+see is the News Feed. So let's say Facebook develops a new recommendation algorithm
+in which all the stories, whether generic stories from your friends or the event
+or the advertisement, are shown to you, so Facebook has a new
+recommendation algorithm. The question is, how will we measure the performance of the new recommendation algorithm? Suppose the half of users have this new algorithm
+implemented and the other half we have
+the original one. Now, the question for this one is not very clearly defined because, well, let's say we want to measure the health of
+the News Feed product, there are many ways
+to measure it. For example, how long does a user stay in the
+news feed product? How much engagements he contributed in each
+web view session? Like if he provide
+a lot of likes, if he shares stories, if you re-share stories, if he leaves a comment to
+the stories that he read. So there were many
+ways to measure the new recommendation
+algorithm and usually what we do is we're going
+to use scorecard approach. So basically what the
+scorecard approach is, we will break the entire
+News Feed product into small pieces of segments. We'll consider what types
+of stories a user reads, the stories will included
+the generic story from friends or the
+stories when post, it will include a video, it will include advertisement. For each of these subsection where we'll have some
+metrics and we'll compare their metric for each of these section and then find a way to combine
+these together. So this is the idea of the multiple metrics
+and it is usually used to measure the health
+of entire products family. The third one that I want to talk about is counter metric. So counter metric is little bit different from single metric and
+multiple metric. The idea of counter metric is, provides evidence that
+can corroborate to the findings we see from a single metric measure or
+a multiple metric measure. The reason we need to
+have a counter metric is usually when we
+run an experiment, the most direct
+measure we have does not necessarily tell
+the whole story or it could be the case that the experiments is striving
+just single metric, it is that the design is
+hurting the other product. Now let me give you
+a simple example. Let's see again the
+Facebook example. Let's say Facebook
+wants to improve its video product by testing
+an autoplay feature. So autoplay is basically
+when you scroll down their Facebook video,
+their Facebook News Feed. If there is a video, typically there will
+be no autoplay, but sometimes if
+you scroll it down, there will be an
+autoplay with sound off. So it gives you a sense
+of what the video is about and you can look at
+it if you're interested, you can click the sound
+out and watch the video. The third option is, autoplay with sound on. So in that case, the video just plays when you slows down, when it appears in your page. So let's say we cast a views, the versions and find out that
+autoplay with sound off is the best metric that increases
+once video view time. Now is that good? Does that say that we need
+to launch this feature? If we only restrict our analysis within the first
+video, probably yes, but it might be the case
+that the total time one spend on the Facebook
+News Feed is constant. Which means if you spend
+more time on video, it's actually just
+taking the time from the other Facebook product. So in that case, we need to balance whether
+this autoplay feature has negative spillover effect
+on the rest of the product. So the level of engagement one has with
+none video products is something like a
+counter metric that we will focus on in
+this experiment. Now, let's get to
+the second point. What is an experimental unit? So conceptually, when
+we'd run an experiment, we want to do a randomization so that the other variations within a unit is randomly splitted
+so that we can average across them and the errors on
+average will be eliminated. So this is the main principle. One thing that we need to hear about the implementation is, we don't want to deliver inconsistency experimental
+experience to a user and especially
+don't let a user be exposed to a multiple
+experimental variance. So let's think about
+three different cases. One is Facebook News
+Feed algorithm. Let's say we have two
+different News Feed algorithm and the end we just attune one of the parameter in
+the recommendation. So in that case, let's say recommendation A
+and recommendation B are two different
+recommendation algorithms for end user experience, probably were not
+differ that much. Because the way a user gets exposed is
+simply, for example, a reordering of the
+stories that he reads or he gets the feed with more weight on organic
+stories from his friends. So in that case, in the first example,
+News Feed algorithm, usually it is okay to expose the user to
+multiple experimental units because it doesn't come with
+a surprise to a user that's the web and your design
+is completely different. Now, in the second example, Google's search engine algorithm from the perspective
+of an advertiser. If today the user has a
+pay-per-view pricing scheme, but tomorrow he wakes up in the morning and
+then suddenly find out that the way Google
+charges him is by view, that is a very bad experience. So in that case, we want to make the randomization at a user level instead
+of a session level. The third one, let's say Airbnb
+instance booking method. So the instant booking
+method is where you check houses or hotel on the
+Airbnb instance booking, option asking,
+basically providing you a fast checkout way
+to book a hotel. So the problem with
+this one is the flow of experience of Airbnb typically
+starts with when you're logging the website to the time you check
+out the website. It is a very long range of time and if we randomize based
+on a single booking, we might end up with a very
+few number of observations. But if we randomize based
+on every web view session, there might be user
+specific errors that we do not take
+in to account. So in that case, the
+problem becomes a little bit tricky and we need to balance between the errors within the users and the sample sizes we have
+to for the analysis. Now, let's look at one example, which is Google bar auto-fill. So when you go to Google
+and type-in a query, sometimes you'll probably notice that there was an auto
+suggestion, the auto-fill. Sometimes the auto suggestion is provided based on your
+previous search result, but sometimes it is based
+on recommendation from what people typically search from the first or few key
+words that you're typing. Now, let's say we want to
+test whether we need to have this auto-fill feature, whether it improve
+search experience. Consider three other few setting; one, no auto-fill
+which is a control. Second, auto-fill
+with five entries, and the third auto-fill
+with 10 entries. So what is the experimental
+unit we are going to use? So one option is we randomize
+based on each session. So every time a user opens
+in Google in his browser, we will randomly select one
+of the three settings to him. So in that case, a user
+might get expose to obvious three
+variants in one day. Another option is for each user, we just tie him to
+one of the settings. In that case, we make
+sure that a user gets the consistent experience. The problem with the first one is because a user gets
+different experience, the results we get
+might be contaminated because we don't know it is due to the result from the first one, or it is due to no auto-fill or auto-fill
+with five entries. But every time we searches
+if we believe that the contamination is not
+that strong, it is okay. For the second one, it is actually more like an implementation problem because every time a user
+searches Google, he might not log in. So in that case we
+might not be able to tell whether it is a single user or it
+is a different user. So in that case, the second one, it's a little bit challenging
+to implement. Now, let's talk about
+the power analysis. The power analysis in the offline or traditional
+field experiments is typically the number of the sample size that
+we want to include. But in the online experiments, because we have the data that updates usually on a daily basis, sometimes on an hourly basis, what we are actually
+talking about is not just how many units, but also how long do we
+need to run the experiment. So the power analysis basically
+determine the sample size that we have to detect the
+treatment effect size. So I think [inaudible] probably mentioned in the power
+analysis there were four quantities that are
+important we need to consider. One is the effect size
+we want to detect. So the effect size is typically
+compared to the control. How many improvements
+do we want to detect in the treatment
+variant that we test. So typically, from my experience, if a product is very mature, the relative gain compared
+to control, usually, whatever the metric you use, it is around 0.5
+percent to one percent. It is very rare that we see a large effect size gain that is over two percent so or
+with three percent. So 0.5 percent to one percent is typically the
+effect size that we aim. Second, the variance
+in the effect size. So the variance effect
+size is usually based on the previous history of the experiment of the product. Third, significance level
+is typically five percent, it's almost the
+conventional level. This conventional
+level is used in almost all the tech
+companies that I'm aware of. Lastly, the power, if the treatment has
+a positive effect, how confident we are
+to capture that. So another topic, randomization. The central idea of the field experiment is the
+power of randomization. So confounders across user level or other unit level by
+design can be averaged out. So there are many ways to randomize the
+experimentation unit. The first is stratify
+the randomization. This is usually the most ideal
+because what it does is, prior to the experiment, we have looked at
+all the sources of confounders that might
+affect the results, and we randomize
+based on that level, so that the variations across other dimensions
+can be eliminated. In that case, the
+comparison between the experiment of versions
+are due to treatment. But randomization sometimes
+is not available. So one example is if you are
+in a ride sharing company, and you have a new way of dispatching the
+drivers to riders. If you randomize
+on a driver level, there might be what we
+call a spillover effect. So basically, if some
+drivers in one city gets a higher promotion
+and other drivers don't, the way that the
+demand and balances supply will also affect the drivers who do not
+get that promotion. So in that case, there
+will be a spill over effect between these
+two groups of drivers. So in that case,
+stratified randomization might bias the results. In that case, we might want to do a clustered randomization. Basically, in this case, we restricted the randomization
+at a geographical level. Say we select half of the cities and use the
+high promotion scheme, and that the rest of the city we use the
+no-promotion scheme. The results of that will
+give us geographical level, the effect size of two
+different schemes. So this is the randomization, on what level should we
+randomize the experimental unit. There is another technical
+problem in the randomization. This typically applies to
+the case of the experiments where the number of sample
+size is extremely large. So the way randomization
+is performed in a tech company is actually by assigning a random
+number to a user. As we know, nothing is actually purely random in the
+computer system. They are all generated by
+the pseudo random number. So in that case, that means the randomness
+in the assignment, even though we randomize them, fill with some correlations
+within the pseudo number that determines whether one's
+in treatment or control. When the number of experimental units
+gets extremely large, there might be correlation between experiments
+and especially between two different experiments that could interact with each other. So this second problem
+is also a cutting edge, a research topic that many researchers are
+trying to figure out the best way to solve that. So the next one I
+want to talk about is a multiple hypothesis
+testing which is very, very common in the tech company. So let's suppose that you run an a/b test and that there
+are 10 different variants, basically 10 treatments
+and one control. You'll find that one
+of them gives you a significant outcome
+at five percent level. Now, the problem is, should you deliver it back the
+variant to the product? Just looking at the face value of the result, probably yes, because it gives you a
+significantly positive result. But now, suppose that, all these 10 variants actually has no effect so that
+is the ground truth. Because each A/B test gives a noisy estimate,
+by noisy estimate, even if the sample size
+is extremely large, it is basically an estimate and with inaccuracy
+to some level. So if all the variants
+have zero effect, the probability that you
+have one out of these 10 giving you a significant
+result will bump up. So in that case, we need to take into account this multiple hypothesis
+testing program. So typically there are three
+ways to solve this problem. The first approach is what we
+call Bonferroni correction. The idea of Bonferroni
+correction is pretty simple. So previously we look
+at five percent level. Now since we have 10
+treatments, basically, we require a more stringent
+significance level with the 0.5 percent. So we put a very strong
+requirement to each treatment. The disadvantage of this is, it gives a very
+conservative threshold to check whether an experiment
+is successful or not. So in that case, it might be that an experiment has
+a positive effect, but because the
+check is too strong, we basically deny all
+other treatments. The second one is,
+Benjamini-Hochberg procedure. It is a modified version
+of Bonferroni correction. The idea is simple, but we are looking to [inaudible] between how
+these independent p-values can inflate the overall
+assembly wise p-value and having a better
+corrective on that. The third approach is a
+little bit more complicated. So what it does is we look at the previous experiments
+and have a sense of what is the variation of a
+typical experiment on this product and compare it to the previous experiments and do a discount on
+the effect size that depends on the sampling
+error which gives us a more accurate effect size. So I'm going to, in the last few slides, talk about some other
+concerns that we need to take care when
+conducting an A/B testing. The first one, actually I've talked a little
+bit about it, is the network effect. So the network effect
+essentially violates the stable unit
+treatment value effect [inaudible] inference
+methodology. So typically when we
+run an experiment, one assumption that we impose is, whether a user's response to the experiment only depends
+on his own treatment status. But in many cases, my response also depends on the treatment status
+of someone else, like the news feed. If you run a news
+feed experiment, your response typically depends on whether your
+friends received that. For example, if Facebook launches a feature
+in Messenger app, if only I get that feature
+and none of my friends on Messenger has that
+feature enabled, then basically the benefit I can get from that
+feature is pretty low. Another example is when an experiment is about
+the marketplace. So let's say, an
+experiment you want to run in the ridesharing business. In the morning, in the rush hour, if you direct half of the drivers to a
+hot spot in a city, and that the rest
+of the drivers not giving them the directions. Because of the general
+equilibrium effect of how the ridesharing market works, the naive comparison between
+the treatment drivers and the control drivers will give you an under estimation
+of the treatment effect. The second one, novelty effect. So the treatment effects
+typically the case over time as it went on. So for example, if Google
+launches a new feature that reduces the time in which the search
+[inaudible] is shown to you, you feel that, well, Google
+is really doing well and I get some accurate [inaudible]
+in such a short time. But as time goes on, the reduction in the time becomes the new standard and
+you'll get used to it. So the treatment effect
+is not as large as we see during the
+experimentation stage or a few days after
+the experiment. So usually we need to take into account with
+this novelty effect and don't overestimates
+the long-term effect of an experiment. The third one, interaction
+between the experiment. So typically, the experiments in tech company runs in
+a decentralized way. Every team, sometimes
+every employee can run his experiment
+on a single platform. With the scale of the
+tech companies nowadays, it's really hard to make
+sure that the users who are locked in my experiment are not participants in
+some other experiments. So sometimes if two experiments are substituted to each other. That might complement
+to each other, they might bias the
+experimental units that we see. The last one is weekday effect. Because the way people works, if it's a social networking
+app or other apps, it might be that people engage
+more during the weekends than they do on the weekdays. So in that case, we probably want to make sure that each experiments last for at least one week so
+that we take into account their weekday effect. So one example here is
+the Messenger's Day. Messenger app, see it
+wants to test a feature that enables built-in cameras. So basically, what you do is
+when you open the Messenger, it comes directly with a built-in camera and
+you can take a picture or having a video chat
+with your friends. Now suppose in this experiment, only two percent of the total population
+gets this feature, and you'll find that
+users whose app has this feature enabled
+are not very active. To this point, this experiment is still fine because by design, the two percent of
+the population as long as it's a randomly selected. A problem with this is if these two percent users
+are not very active, the rest of the populations
+will be affected by them. Because to use that feature, you need the friends
+of these populations to be active as well so
+that they can use it. So the effect you get is not entirely caused by
+their inactiveness, it is also caused by
+the level of activeness by people who are connected
+to them on Messenger's app. So we need to figure out some way to correct
+for the result either from the analysis or
+from the pre-design stage. So another example is the
+forecast in the ride sharing. I think I have covered
+this example before, so I'm going to skip that. So some other thoughts. This is actually my own
+understanding after working on the experimentation for
+such a period of time. The idea behind A/B testing is actually the culture
+of experimentation. So one thing that I
+see tech industry is different from traditional
+companies is that, one, the product iteration is
+happening on a daily basis. Sometimes they earn
+in hourly basis. Whether from the product
+manager perspective or engineer prospective, every day we are exposed to two new things and we
+really don't know, even if you are in that
+one in this industry, you really don't know what
+your users like or dislike. The way to tell that is by users feedback and
+their response. So that's really
+gives the power of using A/B testing to
+improve your product. In that sense, we make the decision innovation
+like we are Bayesian. So you typically have a
+prior on the problem, the product, or a feature that you have based on
+your experience, whether it is your
+engagements with your users or the design
+experience you have, and you collect the evidence to update whether that
+is true or not. The evidence could be surveys or responses but in
+the tech industry, the evidence is typically
+the results from the experiments because that's by design and gives you
+a consistency and by unbiased estimates on how successful or unsuccessful it is. Again, the evidence is
+not limited to data, but experimental data is usually a powerful tool
+to convince people. So I think this is
+all I have today for the brief introduction of how A/B testing is used
+in tech companies and how we run A/B test and how we
+analyze the results. I hope this is useful for you. Yeah. Thank you. This
+is really interesting to think about the effects size and also think about the time, how long you run the experiments. Yeah. A lot of these personal experiences
+such as how you convince a product manager that the results of an experiment is the most convincing evidence. Yeah. Yeah. So do we have any
+last minute questions from the audience? Okay. Thanks for that question. So typically, I see there are two solutions to this problem. One is solve a problem from the very start when you
+design the experiment. The solution is when you choose which sample you want
+to use for the test, try to restrict it to two completely different
+samples and they have no interactions
+with each other. That is basically a
+pre-design solution. If you can't do that, of course, not all the companies are
+like Google or Facebook have so many simple
+users at their disposal. If that is not a solution, one way we do is look at the overlap of these
+two groups of users and check to what extent does the overlap might
+affect the results. If the overlap is large, we would probably look at basically these
+two experiments as conceptually one experiment. So everyone, you are either exposed to both or
+exposed to Experiment 1, or exposed to Experiment 2, or not exposed to any
+of these experiments. So basically it gives you
+four treatments induced by these two experiments.
+So that is all. It is excellent, yeah. Okay. Awesome. Thank you. Thank you. Yeah. That's great. Thanks.
+Unfortunately, we're running out of time, so thank you Eric for that
+very insightful presentation.

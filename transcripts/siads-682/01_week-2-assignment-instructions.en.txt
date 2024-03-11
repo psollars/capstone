@@ -1,0 +1,21 @@
+Hi, and welcome to
+week two's overview for the programming
+assignment in 682. So in the week 1 assignment, you were asked to just obtain and explore a dataset from a
+social media platform, to understand the structure, to get up to speed. You're getting up to speed
+for this week's assignment, which asks you primarily to visualize various attributes
+of the data through different lenses and
+through different filters. For example, you are
+seeing here a fragment of the notebook that you'll be doing for this
+week's assignment. We'll be taking the entire
+corpus we have from Twitter, not just fragments of it
+as in the last assignment, and you'll be visualizing that corpus along a
+variety of dimensions. You will be doing things like
+creating these histograms of the tweet volume at different points through
+different lenses. You're seeing a snippet here of using visualization
+frameworks and pandas to manipulate the data frames
+that we set up in week 1 and create these
+visualizations as output. The things you do in this week's assignment
+will be making use of the general pandas and general visualization skills
+that you've learned in previous courses to apply to the specific dataset in
+these specific ways. I wish you the best
+and good luck.

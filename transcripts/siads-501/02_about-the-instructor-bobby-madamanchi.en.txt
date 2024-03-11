@@ -1,0 +1,38 @@
+Hi. My name is Bobby Madamanchi, and I'm a lecturer at the
+School of Information here at the University
+of Michigan. In addition to this course, I teach Intermediate
+Python on campus, and in the MADS program, I teach in several of the
+data visualization courses. I want to welcome
+you to MADS 501, which I'll be
+teaching along with my colleague, Dr.
+Melissa Chalmers. I'm excited that this term we'll be joined by a
+small handful of GSIs, who are all currently
+MAD students and have recently
+taken this course. There'll be able to
+provide a little bit of a near peer perspective that hopefully will help
+you as you learn to make your way through
+the MADS program. A little bit about
+my background, I have a PhD in cancer biology from Vanderbilt University, where I use data science
+approaches to make a tiny contribution to our
+knowledge about cancer. After this, I did a postdoc in computational
+biology at Purdue, followed by two years as a scholar in the future
+of work and learning. During my time at
+Purdue, I got really interested in
+understanding how to help adults who have
+deep knowledge in a particular discipline learn to apply computational
+and data approaches. I did some research
+in that area, and last year I was
+lucky enough to join Michigan as a lecturer, where I get to contribute to this program and enact
+what I was studying. MAD students are my favorite
+students to work with. Because they're taking on this challenge of
+learning this material, and learning how to incorporate it and integrate it with their
+existing domain knowledge. My best piece of advice
+for MAD students, is to join the
+Slack and to get to know a few of your
+fellow classmates. The informal learning and information sharing
+that you do with your classmates is
+almost as important or, maybe as important as the technical knowledge we
+impart during these courses. It is centered on helping you
+figure out how to navigate the program and navigate
+your careers, afterwards. I look forward to
+working with you in this and other courses.

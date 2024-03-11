@@ -1,0 +1,65 @@
+So now that we built
+all of our tables, it is time to actually
+insert some data. So here is the first thing
+that you're going to notice. And this very first line is really important because you'll notice that we've always
+done INSERT INTO table name. And then we have the values,
+we have the columns and the values that
+we're going to use. But we don't have
+the id field, right? So remember the id
+is a serial field. So we do an INSERT, we do another INSERT, and the id values are automatically
+generated for us. So Led Zeppelin gets number 1, AC/DC gets number 2. I mean I only said
+don't replicate string data. We're
+going to use numbers. We have now assigned, for as long
+as we're going to run this database, Led Zeppelin is number 1 and AC/DC
+is number 2. That's not really a value
+judgment about rock and roll, that is a primary key that's generally internal
+to the database. And so then we have to make
+these connections, right? So we want to connect the
+albums to the artists. Now, we have to know
+this and I'll show you a couple of different ways to remember these little numbers. But we basically can't tell it easily how to set
+these artist IDs. They're not automatically set in the same way that the IDs
+are automatically set. And so in this one, you notice
+there's no id that we're inserting and so we
+have a title and a artist_id and we had to remember, you just kind of write on a little
+piece of paper or something when you're doing it by hand and that's exactly how I do it. When I inserted on
+that previous screen, I remembered that Led
+Zeppelin was 1 and AC/DC was 2 and then I
+construct these by hand. And later we will see
+quicker ways to do this once we know a
+little bit more SQL. And we're going from the outside
+of these trees, right? So we got track, we got album, we got artist, and
+we got genre, right? And we're kind of working our way in from the outside to the inside and then eventually we're
+going to get to track. So really we're just establishing what the primary key
+for Rock and Metal are so that we don't have to use those over and over.
+So it's not too bad. Now this starts to look complex but this
+is part of where, if you've been having conventions all along, you just
+I type this really fast because it's just
+following a pattern, right? So we've got id, that's going to be taken
+care of automatically. We got the title and then we got our length, rating,
+and count that come in and these are
+in the same order. The values are in
+the same order as the columns. And then we have two primary keys because
+here on track we point to album and
+we point to genre. And so that's what these
+things are doing. So we just know which album
+it is and what genre it is, which album it is, what genre it is, and we just
+know those numbers. And when you're doing this
+particular following along, hopefully you're just cutting
+and pasting these things. But if you have to do it from scratch, you just keep track. You got a little table that is the album IDs, the artist IDs,
+and the genre IDs, a little piece of
+paper, and then you can do all this stuff, okay? So that's like a
+whole bunch of fuss just to not replicate
+these strings, right? We effectively create rows that represent those strings once
+and then we get primary keys for those things and then
+we use these primary keys in foreign key columns to make the connections.
+And away we go. So we've built the relationships
+that we need in our data. Abd it's really just numbers, it's not that much more complex. So once we've spread this data
+across all these tables, then we're going to actually
+have to reconstruct it because our graphic designer
+who designed this UI didn't really want numbers to be shown to the users
+and so we still have to reconstruct this and we
+want to do that efficiently and all these numbers are
+also a form of compression, strings are bigger than numbers and if you have millions
+of them, it matters. And so we're going to take this compressed data
+that's all now links, re-link it together, and produce
+the output that we want.

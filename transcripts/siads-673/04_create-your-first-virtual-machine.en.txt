@@ -1,0 +1,108 @@
+What I'd like to do now is I'd like to
+use Amazon to create an instance and log into it. And so I want to create a virtual machine
+and I want to remotely log into it, before I can do this I have to
+have generated my key pair. And so I'm going to go under services and
+I'm going to make this full screen just so it's easier to see what's going on and
+we'll close this Azure pricing calculator. And so we're going to go under services,
+and we're going to open up EC2 and I want to make sure I know where I am. I'm currently in Ohio,
+I'm okay staying in Ohio, and the first thing I need to do is I
+need to tell Amazon about my keys. So if we look on here, we have a key
+pair and there's two options here. One, you can have this create a key pair
+for you or you can import an existing key pair depending on where you are in those
+tutorials either is perfectly fine. I'm going to import a key pair
+that I've already made and this is stored on my computer
+in the tilda.ssh directory. And I want to be careful that
+I'm only pulling the public key, not the private key so it ends in .pub. It's good to pull and
+we can see that it put it down in here and I'm just going to call this recording. And so you'll notice that it's in here,
+fingerprint uniquely identifies it, it gets an internal key ID,
+everything else is pretty straightforward. So the next thing I want to do here,
+is I want to actually create my instance. I'm going to go under instances and
+I'm going to say, hey let's launch a new instance. And I'm going to get a lot of different
+instance types that I can launch. Amazon has their own version
+of Lennox that they provide, which they are promoted as the first one. You can actually launch an entire Mac
+computer in here, that's great for software testing. Red hat is an enterprise version of
+Lennox that costs a little extra, I'm going to go with Ubuntu. Ubuntu is kind of a community
+version of Lennox, it's supported, it works really nicely and
+I'll go ahead and choose select. And now it's going to ask me what
+size instance do I want, and so these are measured by types T2 Nano,
+T2 micro small medium and large. And as we've discussed earlier they
+compare to the CPUs and the memory. I'm going to stick for now with a T2
+micro instance that's going to give me one CPU and one gig of RAM. And I could just skip ahead and
+launch it, but I'm going to actually go through
+the details in real time here. And so what are the options I have? Well a couple of things that
+you're going to see happen here. First of all I've got
+to choose the network, we only have one network in this but you
+might have different networks depending on your configuration within your cloud. And it's going to ask me what subnets and
+that's going to be the, what availability zone is,
+what that's translating into. Should I get a public IP address there's
+a bunch of other options in here. I'm going to go ahead and just take
+the defaults, it's going to ask me for my storage, please don't make this more
+than eight gigabytes, that's a cost, that creates a cost for us. So we're going to keep that
+at eight gigabytes tags, tags are every cloud supports tags, tags are a way to keep track
+of what this item does. You can use them for access control,
+you can use them for billing. We don't need them in our instance here,
+security group, this one is actually important. By default, what's going to happen is
+this is going to open up a create a new security group, it's going to call it
+launch Wizard one which doesn't really make a lot of sense here. And it's going to open up
+ssh to the entire world, anyone in the world can ssh into this. Now I don't really want to do that,
+I probably want to change the source to my IP which is going to be the current
+IP address that I'm using. If I leave it as anywhere it's going to
+be anywhere in the world but for now what I want to do is I'm probably
+going to change this to be all traffic. And rather than just ssh I'm going to
+say all traffic from anywhere. Now what I've done is actually quite
+insecure but for the purposes of learning what we're doing this is an easy
+way to go about doing this. And so what this is effectively is
+any piece of traffic anywhere in the world can hit the server. If you want to set this to be your IP,
+it's a much more secure environment depending on how your
+personal Internet is set up. This may cause some headaches for
+you either is fine, what I do recommend you do is that if you're going to say
+all traffic, set this to be anywhere. You can specify my IP but
+then say all traffic from and then just put this IP address in here,
+it makes life easier. One of the things to keep in mind is that
+if you're setting up a traffic role that's all traffic from a specific IP address. Your IP address on the Internet can change
+depending on how your Internet set up, it's not likely to change within two or
+three hours. But if you reboot your modem or
+over the course of a few days it may change I'm going to
+set this back to all traffic. And carry on. Now this is my final page I got
+to review the settings I've done, it's going to come up and warn me that
+I've done this all traffic thing again. That's okay and
+I'm going to go ahead and press launch. Now here's where this gets important, I have to specify what key should
+be allowed to access this machine. And I'm choosing my recording key which I
+originally created, and I'm going to press I acknowledge that I have access
+to this and press launch instance. It's going to go ahead and
+get that set up and running and when it's done you should see
+a page that looks like this and you can actually click on the instance and
+you'll see some information about it. You're going to see your instance ID,
+you're going to see a state, you're going to see a type and you're going to
+see some other basic information on this. I almost always give my instances
+a name recording demo that helps me figure out what they are later on. You'll notice that when this first loaded
+this said pending, it now says running. Even though it says running,
+it can sometimes take a minute or two before it's really ready for
+use which is why you see me talking. You'll see the status check here at
+some point that won't be initializing, it will actually, it'll give a green light
+at which point it's really ready for for someone to log in. But if we're a little impatient, what we can do is we can see here
+that there is a public IP address and a private IP address, we almost
+never need the private IP addresses. So let's ignore that for now,
+let's go look at the public IP address. We're going to copy that public
+IP address to our clipboard and we're going to open up our terminal which
+we use to remotely access our servers. If you're on a Mac, you're just going to
+run your terminal, if you're on a PC you're going to want to download a piece
+of software called not that called PuTTY. PuTTY is a free tool to download,
+to access servers over ssh and you've probably already downloaded
+this to set up your key. And so what I'm going to come over here
+and do is I'm going to type in ssh and I'm then going to make
+sure I pasted my IP. Now when you set up a server for
+the first time, a virtual machine, most cloud providers don't know who you
+are, what user name you like to use. So they create a default account. We set up an Ubuntu machine. So by default we want to log in as Ubuntu,
+if you set up an Amazon AWN, Amazon Lennox machine or a red hat
+machine, you would log in as EC2 user and there's a read me file that
+walks you through that. But we're going to use the Ubuntu account,
+and it's going to first come up and
+say, hey is this the right host. And you're going to say yes here, and
+it's going to take it a second, but then you're going to notice that you
+are remotely logged in on this computer, You have logged into another server. Now, if you try to click in here, you
+can't do anything with your mouth, you're on this server over ssh, you're only
+interface is with your command prompt. So LS PWD these are the commands
+you're going to use in here. Let me know if you have
+any questions in Slack, otherwise we're going to move
+on to installing jupiter.

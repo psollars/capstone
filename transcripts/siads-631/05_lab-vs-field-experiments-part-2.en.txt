@@ -1,0 +1,233 @@
+2
+00:00:05,233 --> 00:00:07,800
+Now that you have participated in the auction
+experiments in the lab, I'm going to introduce
+auctions and why we're so interested
+in auctions. We also will demonstrate the role of theory in data analysis. You should watch this
+segment before you do the homework assignment
+for this week. So auctions goes back
+into ancient times. It's an exchange mechanism
+to bargaining for selling a fixed supply of a
+commodity for which there's no well established
+ongoing market. So for instance, if you
+want to buy a house, most likely you have to go
+through a sealed-bid auction. The same applies to art,
+flowers, oil leases. In the wave of privatization
+and deregulation, lots of governments use auctions
+to auction off airwaves. So for instance, the
+FCC spectrum auction is a high stake example of this. The allocation of
+common resources is often done through auctions. For e-commerce, for instance, when you search on Google, you're often shown some
+of the sponsored ads. So these slots are auctioned off through
+Adwords auctions, this counts for more than 90
+percent of Google's revenue. So it is an important institution in our current
+economic environment. So there are many different
+forms of auctions. The most common form are what's called the
+English auctions. So this is the
+ascending bid auction that you see in a lot of movies as open-outcry
+ascending bid. The Dutch auction
+is descending bid. What you just
+participated in MobLab is called the first price
+sealed-bid auction. You also participated in the second price sealed-bid
+auction which is sometimes called the Vickrey auction
+in honor of the economist, William Vickrey, who formally
+analyzed this auction. The Google Adwords auction is
+called a position auction. There are many different
+kinds and they all have very interesting properties. So let me go through the first-price
+sealed-bid auction which you have participated
+as a bidder. So this form of auctions
+is often used to reward construction contracts
+and real estate or allocate art treasures. In the MobLab environment, each bidder submits
+his or her bid for the object to the auctioneer. So the object is an
+abstract object. The auctioneer finds the highest bidder
+who wins the auction. The highest bidder
+gets the object being sold for a price equal
+to her own bids. So the winner's
+profit is going to be your value, your buyer value, how much is this worth to you, which we induce in the lab, minus the price you pay. In this case, the
+price is your own bid. Everyone else's profit is zero. This is an example of an
+induced value method because every bidder is given a value
+for the abstract object. So you're in a group of two bidders competing
+for one item, this is really the
+simplest environment that we can come up with. The highest bidder gets
+the object being sold. In the case of
+first-price auctions, the winner's profit
+is going to be the winner's value for the
+object minus the highest bid. Everyone else's
+profit, in this case, the loser's profit is zero. So I'm going to go through the mathematical solution
+for this problem, and I'm going to solve
+for a special case. This is officially a part of game theory and we
+use it to demonstrate how theory can help with both design and analyze
+experiment data. So let me first set
+up the problem. In a sealed-bid, first price auction in the private
+value environment, let's say we have n bidders, each bidder has a private value, we call v_i, which is his
+or her private information. The distribution of v_i
+is common knowledge, that means everyone knows the
+distribution and everyone knows that everyone knows
+the distribution and so on. Let's use B_i to denote
+the bid for player i, and Pi_i to denote the
+profit of player i. So here's the common
+knowledge part, the rule of the game is common knowledge and
+the value distribution. So v_i is joined uniformly
+from the interval 0-100. What we're trying
+to do is to solve for a Bayesian Nash equilibrium
+bidding strategies. So as a theorist, now I'm trying to figure out to predict how bidders will bid. So let's go through the process. You must have gone
+through the process when you act as a
+bidder in MobLab. So how should you bid? You get a value, let's say eight points, if your bid is higher
+than your value, then if you win, you will lose money because
+you have to pay your bid. So therefore, you should
+never bid above your value. We call that overbid. How about you bid exactly
+equal to your value? In that case, if you win, you get zero profit, if you lose, you get zero profit, so it doesn't make a difference. So you don't want to bid
+at your value either. What if you bid below your value? Well, there are two scenarios. One is, if your bid is
+not the highest bid, then your profit is zero. But if your bid is
+the highest bid, then your profit is going to be your value minus your bid, so there is a gap and
+that's your profit margin. So this analysis
+says that you really should bid below your value. The question is, how much below? Intuitively, the less you bid, the less likely you
+will win the object. But if you win, you will earn more profit. So the optimal bidding
+strategy is essentially a trade-off between
+the probability of winning and the profit margin. So let's see how we resolve that. So I'm going to look at the simplest case
+with two bidders. When there are only two bidders, you are characterized by the
+strategy-type two tuple, which we'll call Bv, your bid and your value. Suppose the other
+bidder's value is X and we don't know what X is, but we know that the other
+bidder's also rational, so the other bidder will bid somewhere lower than her value. So let's say her bid is Alpha X, and Alpha is a number
+between zero and one, then what's the expected profit? We use EPi for expected profit. So your expected profit is the probability that
+your bid is higher. In this case, you
+win the auction. So your profit is
+going to be v minus B, your value minus your bid, plus the other scenario, which is, your bid is lower. In that case, your
+profit is zero. So it's P, probability that your bid is
+lower, times zero. So that term just drops out. We know that the
+values are drawn from the uniform distribution
+between zero and 100. So the probability that the other bidder's
+value is lower than B over Alpha is going to be
+B over Alpha divided by 100. So your expected profit
+is just going to be one-hundredth of B over Alpha
+times your profit margin, which is v minus B. But 1 over 100, as well as the parameter Alpha, are just constants, and we know that in the
+optimization problem, we can just take them out. It doesn't affect the optimum. So we assume that
+you're risk neutral. If you're risk
+neutral, you should just choose your bid to maximize your expected profit. So you are maximizing
+B times v minus B, your bid times your
+value minus your bid. That's a quadratic function which gives you Bv minus B squared. If you've learned
+the optimization, we know that we can figure out the optimal solution by taking the
+first-order condition. So take the first-order, differentiate the
+objective function Bv minus B squared
+with respect to B. The first-order
+condition is v minus 2B, we set it equal to zero. So the idea is, here's a quadratic function
+and you achieve the maximum profit when you
+are at the top of the hill. So that gives you
+the optimal bid, which is B equals v over 2, which means that if you're risk neutral and there are only
+two bidders in the auction, you should bid half
+of your value. So you can figure out the optimal solution
+by either using calculus or you can also use what you learned
+in Algebra II, which is completing the square. So that will give you the
+optimal solution as well. So we just derived that
+when there are two bidders, the optimal bid for a risk neutral bidder is
+to bid half of her value. What if there are more
+than two bidders? It turns out that you can set up the problem exactly the same way and you will
+get an optimal bid, an equilibrium bid as n minus
+1 over n times your value. In other words, if n equals two, you'll bid half of your value. If n equals three, if there are three bidders, you should bid two-thirds
+of your value. If n equals eight, you should bid seventh-eighth
+of your value and so on. So as there are more bidders, people will shade less. So the bids will be closer
+and closer to the value. The next question is, what if I am not maximizing
+my expected payoff? What if I'm risk averse? There are different ways
+of modeling risk aversion. But the generic answer
+is, with two bidders, the optimal bid shoots somewhere in between your risk neutral bid, which is v over over 2 and v depending on the extent
+of your risk aversion. Now we're going to switch gears to field experiments
+and we're going to go through a paper by
+Harrison and List. So this paper
+essentially classifies the different kinds of experiments social
+scientists conduct, and now we should
+add computer and information scientists as well. So they put up the
+different types of experiments on one spectrum, and we'll start with
+conventional lab experiments. So these are experiments
+very much like the auction experiment that
+you participated in MATLAB. A lab experiment employs a standard subject pool,
+usually they're students. There is abstract framing
+and an imposed set of rules. These rules are what
+the experiment are carefully designed and
+imposed on the subjects. At the next level, what Harrison and List called artefactual field experiments are the same as conventional
+lab experiments, but with a nonstandard
+subject pool. Now people don't use this term, they call it lab in the field. So you might be going
+to villages and use auctions to look at how well they can bid or how much they
+contribute to public goods. You can measure
+the risk attitude. We will go through an
+example of lab in the field. So it gets closer
+to reality because now the decision-makers
+are real decision-makers. The next level is called
+framed field experiments. So which is the same
+as lab in the field, but with the field
+contexts in the commodity, the task, the information, and the state, and so on. So you might be working
+with financial advisers. These are your subjects. But if you look at their decision-making and
+that's the advice giving, the contexts would
+not be abstract. It would be in the context of their profession which
+is financial advising. The last one which is very common these days are called
+natural field experiments. So these are the same as
+a frame field experiment, but with the environment is the one that the subject
+naturally undertake these tasks such that the subjects don't even know that they're
+in an experiment. For instance, you
+might want to study the effect of reputation
+on selling price on eBay. You could set up shops
+as an experimenter, you can accumulate reputation and set up a seller
+with high reputation, and you can set up sellers with low reputational,
+almost no reputation. You sell identical items and figure out that will
+enable you to figure out how much is the economic
+return to reputation. In that case, the bidders are eBay bidders and they would not know that they're
+actually in an experiment. They thought they are
+bidding naturally on eBay. So that's a natural
+field experiment. Most of the field experiment
+that we'll talk about in this course are natural
+field experiments. Natural field experiments are different from
+natural experiments. A natural experiment
+is when there are exogenous variations
+but the variation might not be that exogenous. So for instance, in
+the 1960s and '70s, most of the musicians in major orchestras in the
+United States are male. Some orchestras started
+to use blind auditions. In a blind audition, the committee cannot see
+the gender of the musician. So they're call by
+numbers and they can only hear what the
+musician produces. So then using these
+natural variation which is different orchestras introduced blind auditions at
+different times, the economists were able to
+figure out that the use of a screen increases women being recruited in
+major orchestras. However, there
+could be confounds. For instance, maybe
+orchestras who are more aware of gender bias are more likely to introduce
+blind auditions. So there are lots of unobservable factors which might have confounded the outcome. In a similar context, the experimenter can
+control the variation. So for instance, if you want
+to study whether employers discriminate against
+job applicants with African-American names, you could send out
+identical resumes with either white sounding or African-American
+sounding names. So this gives the experiment
+a better control over the resume quality and
+other characteristics. So this is actually an example from Bertrand and Manetho in a very well-know feud
+experiment where they uncover labor market discrimination
+against African-Americans. You might wonder how do field experiments compare
+to lab experiments? What are the pros and cons? So the benefits of field
+experiment include, you use real goods to instead of induced values and people make decisions very similar to those that they
+would normally make. So it's a familiar scenario. The decisions are more
+representative of their normal daily decisions. The cost of field experiments is that you can't
+control as much. You cannot control the
+demand and supply curves, you can't even observe as much. So in a lab walk auction, we can calculate the efficiency, whereas in the field experiment, is actually difficult to calculate the efficiency
+because you don't know people's maximum willingness
+to pay for an object. The last topic is online
+field experiments. This is something that you
+will probably use are a lot if you end up working or you are currently
+working for an IT company. In the IT sector, it's often called A/B testing. So these are essentially field experiments
+implemented online, and the intervention is usually delivered
+through different modes. For instance, it could
+be email messages. You control for the content
+of the email message by varying the variable of
+interests in your email. It could be text messages. The intervention could also be delivered by a modified
+web interface. So when people land
+on your website, they're randomized into
+one interface versus another interface
+and then you can look at their behavior
+on your website. It could also be
+implemented dynamically through a browser
+extension or by bots. So we will go through some of these examples as we
+continue this class, and if you're interested in
+these various techniques, you can read a short paper
+by Chen and Konstant. So this concludes our first
+week's lecture where we introduced the basic
+concepts and experiments, both lab and field experiments. You will get to work on a
+homework problem set that goes through some of these
+concepts and you'll get to play with an option dataset. In subsequent lectures,
+we'll go through some of these topics in much more
+depth. I hope you have fun.

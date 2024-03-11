@@ -1,0 +1,193 @@
+So now we're going to
+get back to performance. Now that we know about
+hashes and indexes, we're going to talk a little
+bit more about performance. So the application that
+I want to play with is a hypothetical web crawler. And the way web crawlers work is a Python web crawler would
+grab a page from the Internet, it would look through all
+the links in that page, and then add links to a queue. But we need to know the
+ones we've already seen, because a lot of
+web pages point to the same web pages
+because they got like a navigation on the left
+hand side or something. So we need to know which pages we've already seen
+in our database. And the other thing that we
+do in a web crawler is you want to use
+databases because you can't crawl the entire web or whatever you're doing
+into a dictionary, and then do your
+database analysis. And so these processes
+of like scraping the web, they take a long time and you want them to be able
+to be restarted. So if you retrieved 10,000 URLs, it might take you like
+twelve hours to do that, because you might have rate
+limitations or whatever, and you just don't want to have to start from
+zero all the time, so databases in web
+crawling are essential. And so we're going to have URLs, and there's going to
+be a lot of tables, and there's going
+to be just a lot of URLs and we've got to decide
+if we've seen them before. And so when you're building
+something like this, its super tempting and incorrect to do something like say,
+you know what? Depending on your application, but how long is a URL? Is a VARCHAR 128 long
+enough for the UNIQUE index? If we knew that URLs were
+only 128 characters, then this would be a fine
+way to represent the data. So we've got our page itself
+in the content field, and then you got the
+URL in the url field. And you could decide you're just
+going to treat all characters, you're going to have your
+uniqueness constraint just be on the first 128 characters of the URL, or maybe make it 1024, and you could do that, right? The problem is in the
+real world other than truncating URLs to
+1028 or to 1024, you just can't assume
+that URLs are long. You can't assume that
+URLs are a fixed length, right? And so the problem is if we
+sort of build something that's too long and we tell it it's 128 and we try to search something
+that's bigger than 128, Postgres just blows up. And you could truncate
+it, and that's up to you. That depends on your application and how much you want to know. But it's often a lot
+easier just to say, look, the URL is a
+text character too. But then we have another problem, okay? And so if we do that, and now I'm generating quite
+long URLs in this case, and so you'll notice we're going to have this text be a 4,000 long. So it's 4,000 Neon, Neon, Neon, Neon and we're going to have 5,000 rows that are
+4,000 characters long. And so that's what this
+INSERT INTO cr2 is doing. We have an unlimited length
+TEXT field for the URL. And so we can insert these 5,000 so it's like 5,000 records
+times 4,000 characters, and we end up with like about five
+megabytes in the relation. We don't have any index, right? So what we're going to do is we're going to
+basically create a unique index, which
+is a slight variation. So you can create an index which is a B-tree, which allows duplicates. UNIQUE INDEX is a B-tree that
+doesn't allow duplicates. The B-tree sort of functions the same. So UNIQUE just is a sort of a rule that says you're not allowed to insert
+the same thing twice. And in something like this
+url, and that's our goal, we want to make it unique, because then we can
+try to insert it and the insert blows
+up, we know something. And we've talked about that before, you can like ON
+DUPLICATE KEY kind of stuff. So we don't have to add the index into the
+CREATE statement. We can say CREATE UNIQUE INDEX. This is the name of
+the index ON cr2 url. That's the URL
+column in table cr2, and this is the
+name of the index. And it does it. And then
+we can see, right? Because we already
+put the records in, so it's going to make the
+index for the records. You can see that
+basically the database is a certain size and the index
+sort of tracks almost directly. And that's because all of these
+URLs, every bit of the text, 4,000 characters long,
+ends up in the index. Because the index wants
+to know a perfect match, whatever we told it to do, and the longer these get, the bigger this index gets. Now, we don't have any content in
+any of these records. So ultimately, if you
+started putting pages in, this would have
+grown a lot faster. The size of the relational data would grow a lot faster
+than the index size. So one of the things that we do is I'll get rid of that one. I'll get rid of the
+cr2 unique index, because you can get rid
+of the indexes too, and you can do this live even if you're running an online application. Now, I'm going to create
+a different index, create a unique index on
+name the index cr2_md5. That's just my name
+for the index. CREATE INDEX cr2_md5 ON cr2. In this parentheses, this
+is the index expression. So I'm saying I want to compute the MD5 hash function of the URL. So this index is
+4,000 characters, the URL is 4,000 characters long, but then we're going to
+end up with a 64-bit or a 128-bit MD5 result, and it's going to build
+a B-tree based on that. So the B-tree is much smaller. And so you can see, after
+we make this index, the index size is a
+lot smaller because we're only indexing
+the MD5 of the URL, okay? And so now, we can do something
+like we can SELECT star FROM cr2 WHERE
+url equals lemons. So because this index is
+not on the actual column, this does not use the index. So it has to do a full table scan because our url equals lemons, and the way you trigger
+the index is you say, where the md5 URL is
+equal the md5 of lemons. So now, it actually uses
+the index to do that. Okay? In the other one it would have used the index for this
+url equals lemons, but given that we made an
+index expression here, away it goes. And so this index condition, that's the part that gets sent to the database engine to
+go look these things up. So you have to kind of match in your WHERE clause the expression that you used to do the index. Now, this kind of looks arbitrary
+but it detects it, It is like oh, sweet, this is the
+thing I got an index for, so I know how to make
+the best use of that. So again you can do an explain and you can do the analyze.
+And the difference between the analyze is
+the explain just tells you what it would do to figure it out and what's it's going
+to ultimately do. But then the analyze says
+tell me how long it runs and so this is the one that's using the index and it's 0.14 milliseconds and
+this is the one without the index because it's not
+using MD5 here and so it's about a 100 times slower. That's because I've
+only got 5,000 rows. So I didn't put quite as many because in the previous
+ones I was showing a 100,000 rows but this is the difference
+between the explain, analyze, and just the
+explain and actually analyze causes it to run
+it and it tells you how long. It does the query and it
+tells you how long it takes. Now, a technique
+that I've used in these situations is
+that I've created this MD5 myself and put that in a column and then use
+a hash index on that. So it turns out that MD5 there's this datatype called UUID that is exactly the width and a very small column that is
+exactly the width of an MD5. It's kind of designed to be
+part of MD5. The fact that I call this url_md5, that's just the name I gave it. UUID is a datatype and I
+want that to be unique. So this url I'm actually not going to
+create an index on this. I'm going to create
+an index on this, but then I'm going
+to set that up. So here's how it goes where
+I'm going to insert into this making my 4K-long
+5,000 rows, 4,000 in each row, and then I'm going to state
+an UPDATE statement where I'm going to calculate this md5 column based
+on taking the md5 urlL. This is a cast statement, colon colon uuid is casting it to the UUID type. That turns
+out to be right, it works, and so then
+it stores these things. But as it's storing in this UPDATE statement, it is actually computing this but
+then creating an index. Now you can see that I've got a little larger amount of data here because I've got
+this extra column, not just that column but
+I've got this extra column but the index size is smaller, right? Because it's doing a unique
+B-tree index based on this. And so I haven't told
+to do a hash index yet, but it's a B-tree index, and you can see as long as
+I'm doing the same thing. Now this is my column
+that I've computed and I know that this is an
+MD5 column, so this is the string I'm looking for. I do MD5 of lemons and then
+convert that to a UUID. And then it knows that's what's in
+the index and so it can do that particular query
+with an index scan and it's scorching fast,
+as you would expect. So if we kind of compare
+these index strategies we see we use just the URL
+as text with no index. We get a relation size of five meg and it's 1.7
+milliseconds to read it. I do a basic B-tree index of MD5. It's smaller. This is a little smaller. The relation size
+doesn't change and the SELECT is 10 times faster. And  then this one here is where
+I'm manually doing it. So you see the relation size is a little bit bigger but
+the SELECT is super fast. So you see like there's
+a speedup. So these are the kind
+of things where you can look at the
+alternatives and decide amongst yourself how
+but space you're willing to give up and how much speed that you're
+going to try to do. So there's no sort of one thing. It all depends on
+your application and how often you're
+going to do selects, how often you're going
+to do inserts, etc., etc., etc. But we've got a
+mechanism so look at these. So again, the B-tree maintains
+order, it's the default. It helps on exact lookup, prefix lookup, less than, greater than, ranging, and sorting. So that's a lot. The one thing it doesn't
+if you're doing like wildcards that are
+anywhere in the string. Hash is only good for exact lookup and in earlier
+versions of Postgres, if you read the warnings,
+you just don't use it, but Postgres 10 did a much better job and made
+it so that it does stuff so if it blows up halfway through, the index doesn't
+have to be rebuilt. And so I'm going to just show you one
+little example of using a hash. So, here's my stuff. So I've got just url, content, no special column.
+And I want to make cr4_hash. And USING hash, this is where I'm
+adding right here. Normally that would
+be USING B-tree. If you just let it do it or don't say USING at all, it's
+going to use B-tree. So I'm going to force
+it to use hash. Okay? So now that the data's all in, the same data that I've been using
+up to this point, the relation size is five
+meg and the index size is two meg, which is the smallest we've seen for
+an index size so far. And if you do a look for url equals lemons,
+you don't have to do the MD5 thing because it is
+doing a hash on the URL. I don't know if it using
+an MD5 internally. It might be usings SHA-256.
+We don't care. We don't need to know. And so this is a very
+small index with a very fast lookup time and we don't have to
+do any fancy bit. We just have a WHERE
+clause and you'll notice it's an equality.
+Greater than, less than, or LIKE with a percent at the end would
+not speed up on this one, right? So that's the danger of using, it only speeds up one thing. But if you're looking
+for an exact match in our little database
+crawling we are kind of are looking for exact match.
+And there's no sorting advantage on a hash as well. So if you look at the
+hash versus B-tree, this was sort of my fastest
+and cleverest way of doing it and I had to do a little bit of work with this. The relation size
+got larger because I made my own explicit column.
+But it was super fast. But I also then made a hash, just let Postgres make a hash based on the url, and so then the
+index size is much smaller, the relation size is much smaller but this particular one. I don't quite know. I would want this to be
+faster but I'm going to guess partly because I'm
+using I think Postgres 11 in this that hash is
+not as widely used. So they probably have
+something that just runs better on a
+B-tree than a hash. But hash saves you space
+and is roughly the same. In this case it's 1.5 times slower but I think if you
+made bigger data, it wouldn't be quite that much. So that's sort of another romp through looking at
+different index choices and different index
+techniques and now the up next we're going to talk about regular expressions.

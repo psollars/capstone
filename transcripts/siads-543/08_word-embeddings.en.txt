@@ -1,0 +1,309 @@
+In this video, I'm going
+to cover word embeddings. Essentially a word embedding
+maps a term to a vector. The basic idea of word
+embeddings is to provide a dense vector that captures something about
+the semantics of a word. There's a famous expression, "A word is known by
+the company it keeps." Which supposedly was said by
+John Firth back in the 50s. Linguistically,
+that's really true. You can see a lot about a word's meaning by the
+contexts in which it is used. This relates to the distribution
+hypothesis of language. We have to look at how the
+word is actually used in practice to deduce
+aspects of its meaning. We're going to talk
+about word embeddings. Embeddings have recently been associated with deep
+learning methods. But you don't really need
+deep learning methods to compute useful word
+embeddings, as we'll see. Here's one example of a
+word embedding that maps a set of words to a two-dimensional vector just so that we can visualize them. The idea of an embedding is that words that are used
+in similar contexts, like oven and refrigerator, will be close in the
+embedding space. You've all seen sparse
+word vectors before. These one-hot,
+high-dimensional and coatings, where you might have a
+10,000 dimensional vector, that's all zeros except for
+one entry corresponding, lets say, to the word car. You can imagine a different
+10,000 dimensional vector, where the only word
+that's lit up for that vector might be for
+the word automobile. There's no semantic notion of similarity when we're dealing
+with 1-hot word vectors. Even synonyms like car and automobile have totally
+different 1-hot encodings. We can't just take
+the cosine similarity of these two vectors,
+it would be zero. It would be nice if similar words had similar numeric vectors. You can recall the
+vocabulary gap problem of latent semantic indexing. It's a fundamental problem
+in information retrieval. For example, how can we find
+relevant documents that match a person's query even though they may have
+no keywords in common? In fact, the usefulness of
+having a numeric encoding for a word goes far beyond
+information retrieval. It's useful anywhere we need to represent a word semantics. The concept of word embeddings is central to natural
+language processing. Natural language processing
+tasks can exploit models of semantic distance between
+words in all sorts of ways. It's useful not just in word similarity and semantic
+matching like in search, but topic modeling to measure the cohesiveness of a set
+of terms in stemming, finding word inflections,
+machine translation, part-of-speech tagging,
+and many other tasks. For example, suppose you have a machine translation system translating from
+English to French, and you're trying to figure
+out how to translate the word scarf in a sentence
+to its French equivalent. For example, suppose
+the sentence is, the colors of his silk
+scarf peaking above his collar looked elegantly
+paired with his tuxedo. In French, there are
+different types of scarves, and they have fairly
+well-defined meanings, so we wouldn't want to
+translate it incorrectly. The first word is "foulard", which is like a cravat for men. The second type of
+scarf is "echarpe", which was more of the
+traditional wool long scarf you might wear during the winter. An embedding can help
+here because we can take the context terms in
+the English sentence, like silk and map them to their non-ambiguous
+French equivalence. Tuxedo in French is un
+smoking believe it or not, and when we're trying to figure out how to
+translate the word scarf, we see that the word "foulard", is much more similar in context to the words
+in this sentence, than the word "esharpe". Machine translation system can benefit from an embedding to pick the correct sense of a
+word based on its context. In this video, I'm going to
+go through two examples of algorithms that can find
+these word embedding vectors. These algorithms are
+trained from examples, but it's an interesting
+example of something called self supervised learning
+in the case of Word2vec. I'll go over what that means is, well, but we're going
+to focus on word2vec, which uses the local context of terms to determine
+the embedding, and then we're going to look
+at a method called Glove, which is able to use both local and global contexts to derive embedding vectors. Let's jump right into the
+details of the Word2vec model. Now there are actually
+two flavors of Word2vec: Skip-gram model and the
+Continuous bag of words model. We're going to focus on the
+skip-gram model in this talk, but I'll say a little bit about
+the other method as well. This is the essence of the
+Word2vec neural model. It start off with a
+1-hot input vector that identifies a single word. We have a set of 300, let's say, hidden
+layer linear neurons. These are just linear
+combinations of the input. There's no non-linearity. That's part of the
+activation function here. Then we have a final layer, which is the softmax classifier
+that takes the output from the hidden layer and the weights from
+the softmax layer, runs it through the exponential function and then normalizes all these weights to make sure
+that they all sum to one. What does this mean
+on the output? Well, what this model
+is going to capture, it's going to take a target word. Let's just use the word mouse. There's going to be
+one output probability for every word in the vocabulary, so here we're assuming there are 10,000 words in our vocabulary. Each output is going to
+indicate a probability that the word at a randomly chosen nearby position
+to the word mouse, is the word at that index, so abandon, ability,
+able and so forth. Essentially, it's a map of all the likely context words that the word mouse
+is going to have, given a representative corpus of how those words are used. We can represent all of the
+weights in the hidden layer, linear neurons, all 300
+of them as a matrix. Our goal is to learn this matrix. More specifically, the
+matrix has 10,000 rows, one word per word
+in the vocabulary, 300 columns, one for
+every hidden neuron. This number 300 is a hyperparameter and
+that can be adjusted. The rows of this weight
+matrix are going to be eventually our
+word embedding vectors. To get the word embedding
+vector for a word, we're just going to look
+up it's learned weights in that row of the matrix. The next natural question is, how is this matrix learned? Let's walk through this model
+step-by-step to see how it operates on the way to getting an output on
+the output layer. Recall that the task of this model is to take
+a word as input, and predict which other words are likely to be
+nearby in contexts, given a corpus of
+representative usage. The idea is, we're going to
+have this model predict which context words are
+nearby this input word. We're going to have lots
+of real examples from our corpus and we can compare the prediction of this model, against the examples in our corpus and if the prediction
+of our model is wrong, we can go back and adjust the weights using a method
+like say, backpropagation. By continually comparing
+the predictions of the classifier about
+which words are likely to be in the
+neighborhood of the input word, by comparing those
+outputs against the actual examples in
+our training corpus, constantly iterating,
+training, training, training, modifying the weights,
+modifying the weights until the outputs from this model most closely match what we observe in the corpus about what the
+neighboring terms are. Mathematically, we're
+going to walk through very simply how the output
+is calculated. The input to this model is
+a one-hot input vector. Let's pick the word mouse. Suppose the word mouse appears at this point
+in the input vector. The hidden layer has this
+matrix of 10,000 words, 300 neurons, so these
+are linear neurons. We're going to simply
+take linear combination of the input vector
+with the matrix. It's essentially going to select by passing in a
+one-hot input vector, multiplying it with this matrix. The effect is going to
+be to select the row of weights corresponding
+to the word mouse out of these 10,000. Now I have selected a set of 300 neural weights that
+correspond to mouse. Each of these output layer cells has a set of 300 weights. Suppose the word cheese in the output layer has
+it's 300 weights, that gets multiplied
+with the weights that we have from the hidden layer
+to produce a real number. We'll do that for all the
+words in the vocabulary. At the end, we're
+going to normalize it by their sum so that all of the predictions here are
+normalized to sum to one. Again, the meaning
+of the output is a probability that if you randomly pick a word near mouse, it's the word cheese or the word ability,
+or the word zone. That's what the output from the classifier is
+supposed to represent. The question is now, we have similar words like mouse, durable or Hamster,
+rat or rodent. The model should learn to output similar context predictions for words that are used
+in similar ways. How can it do this? Well, it can learn similar
+hidden layer weights for the two contextually
+similar words. How are the hidden
+layer weights learned? They're learned via some
+parameter learning algorithm. We start off with randomly
+initialized weights here, and also in the output layer. We make our prediction
+about which words are likely
+to be near mouse. Some might be correct,
+some might be wrong. It might be wrong relative to what we observe in
+our training corpus, so that will generate
+an error signal, which gets propagated back into a modification of the weights. This cycle continues, make a new prediction based
+on the adjusted model. We tune the model
+in this way until the predictions about
+the context terms match. What we observe in corpus, there are multiple different
+ways that you could do this parameter
+learning by the way. Now, here's a surprise twist. We don't actually care
+about this prediction task. All we care about is learning this representation,
+this hidden layer. That's going to be our
+final look-up table of where impending vectors. This is an example of something called self
+supervised learning. In particular, it's
+a type of what's known as a pretext task. As we'll see next week, pretext tasks are task where we don't care so much about the accuracy of the task itself. But assigning a pretext task
+to a model forces it to learn a useful representation in order to help solve the model. In this case, the pretext task is predicting related
+words in a context. The representation that's learned is this set of word embeddings. I've just described the skip
+gram flavor of word2vec, where we had an input word. The hidden layer predicted
+the context and then the parameter
+learner could adjust the weight space based on how accurate the prediction was. But there's another
+direction we could go here, and that is predicting a target word given
+the nearby words. We can actually go in
+the other direction. This is what gives us
+the continuous bag of words, flavor of word2vec. It's basically exactly
+the same model, except the input and output
+going the other direction. For the CBOW method, we give it a set of words
+that are in the context, and we ask it to predict
+a specific target word. One very interesting thing about these neural word embeddings is that they have what's
+called linear semantics. You can actually take
+the vectors and do arithmetic on them in a
+semantically meaningful way. Here's a very well-known
+example of how word2vec. This is true for other
+word embeddings, not just word2vec. But you can take, for example, the embedding vector for king can add embedding
+vector for woman, subtract the embedding
+vector for man, and you'll end up with
+something that's quite close to the embedding
+vector for queen. In fact, you can derive
+a new vector where you subtract the man
+embedding vector from the woman embedding vector that somehow
+semantically captures difference between how those
+words are used in contexts. Then you can take this difference vector and you can apply
+it to other words. You can apply it
+to the word duke, and as you see in the diagram, you get something that's very
+close to the word duchess, or you can apply it to prince
+and you'll get princess. This applies to other
+types of entities as well. There have been some recent papers that have
+done a good job of explaining exactly why
+this phenomenon occurs. I don't have time to cover here, but it's now mathematically
+better understood about why this linearity happens and why many different embeddings
+exhibit this behavior. The second type of
+embedding I'm going to briefly mentioned
+is called GloVe, which is short for
+global vectors, was developed at Stanford. Word2vec captured local contexts within the neighborhood
+of a target word. What GloVe attempts to
+do is extend word2vec by incorporating
+global co-occurrence information into the embedding. It learns word
+relationships from the word co-occurrence statistics of
+any large enough corpus. It optimizes the embeddings
+so that the cosine similarity between words reflects the
+number of times they co-occur, which helps make the resulting vector's more Interpretable. Some of the notation we'll see is the variable Xij
+denotes the number of times that word I and word j co-occur together
+in the corpus. Let's say they occur in
+a certain Window size, five, 10 words, or maybe a
+sentence, or even a paragraph, so the probability that a word i occurs next to the word j, we can simply take the number
+of co-occurrences of them together and divide
+by the number of times where that occurs
+in the corpus in general, to get that probability that a word i occurs near
+or next to the word j. The main idea of GloVe is that we can discover
+relationships between words by looking at ratios
+of these probabilities. For example, if we compute
+the probability of the word k given the word ice and the probability of
+node k given steam, for lots of different
+choices of the word k, you would find that
+the largest ratios are for the words solid and gas, which would tell
+us that ice is the solid as steam is to gas. At heart, the algorithm
+that estimates the embedding vectors is just matrix factorization of
+the co-occurrence matrix. Actually more specifically,
+the log co-occurrence. Here on the left is the original co-occurrence
+matrix that has the logarithms of the counts that these words appear together
+and the GloVe algorithm finds a factorization of this
+matrix into two components. Now u vectors, which gives you the word embeddings
+and v vectors, which gives you some
+idea of contexts. You can see that this idea of matrix factorization and
+see yet another example of matrix factorization coming up as a core mechanism for deriving interesting
+representations. Patience. Mathematically GloVe's objective function
+looks like this. In technical terms, it's
+a log bilinear model with a least-squares objective. The goal here is to minimize the least-squares error in approximating the
+co-occurrence matrix. Here's the original log
+co-occurrence matrix, and here are the
+matrix factors u and v. There are some bias terms that have been added for
+mathematical convenience here. But you can see essentially
+what's happening. The goal of GloVe is to
+find these vectors u and v, such that this objective
+function is minimized. The objective
+function is measuring the least-squares distance between the matrix, essentially, that you get when you multiply
+the factors, u and v, together and the original
+matrix, the log co-occurrences. So it's the least-squares
+approximation problem. Each of these methods
+for embeddings has different strengths
+and weaknesses. The Skip-gram method
+tends to be effective for small training sets
+and low-frequency terms, but it can be rather
+slow to train. The continuous bag of words
+method is significantly faster and has better accuracy
+for more common terms, but it's less effective
+for rare words. The GloVe embedding
+method results in word embedding vectors that can be easier to interpret, and the results tend to be
+more stable than word2vec. By stable, I mean that if you were to randomly
+initialize the model, the embedding vectors you get, they tend to be a lot more similar to each
+other in the case of GloVe and there might
+be a lot more variation in the case of word2vec. The disadvantage of GloVe is that it needs
+lots of memory to store these word
+co-occurrence statistics. There's several options in Python for computing
+word embeddings. The one we use in this
+course is based on the Gensim library for topic modeling and natural
+language processing. There's a scikit-learn wrapper
+called W2VTransformer, and we used that in one of
+the assignments, for example. You can take a look at those
+documentation at this link. There's also an original
+implementation from Google, word2vec in C, which
+makes it very fast. There's also a relatively
+recent library called Zeugma, I hope I'm pronouncing
+that correctly, which has an implementation of GloVe and other embedding types. So it makes it very
+easy to specify, train, and then use those embedding
+vectors and something like logistic regression
+as features, for example. Here's an example of using the W2VTransformer
+class from Gensim. So this is how we import it. It's from gensim.sklearn_api. So here you just give it a size, which is the number of dimensions that you want the
+embedding vectors to be, and then some initial parameters indicate how to process
+the text that comes in. We have a silly document corpus example in the notebook that
+you can take a look at. But essentially, we take those text documents and we call the fit method on
+that simple_corpus, and that will cause it to learn the word2vec embedding
+for those words. Once that model is fit, you use the transform method to get the word embedding vectors for any words that
+you have as input. To get the embedding vectors for all these words in this example, you just pass those
+words into transform. What comes out?
+Something like this. Each of the words
+is shown here along with its 10 dimensional
+embedding vector, that word2vec calculated using
+this very simple corpus. The corpus was incredibly tiny. We won't expect a lot in terms of the quality of a word embeddings, but it does compute word
+embeddings that are actually usable and make
+some semantic sense. If I take those word
+embedding vectors and plot them using
+multidimensional scaling, you can see that they actually do form something reasonable. For example, I put the
+animals together in this semantic space fairly close. I tend to put the technical terms for electrical computer
+stuff close by. So it's not super
+accurate because it was trained using
+almost nothing, but it does a reasonable job, so far at finding these relationships that
+are based on the context. There has been an
+explosion tasks related to self-supervised learning
+on different objects. For example, beyond word2vec, there is now doc2vec
+that converts paragraphs to an
+embedding vector, sentence2vec, there's
+even DNA or RNA2vec, hashtag prediction
+using Tweet2vec, item2vec for product suggestions. People have developed
+embeddings for graphs, which makes it very
+easy to compare graphs and similar graph structures using these graph embeddings. If you're interested more
+in the Twitter example, I've provided a link
+to the paper here. So that concludes our brief
+tour of word embeddings. I encourage you to play
+around with embeddings in the assignment and
+in the notebooks because they're
+incredibly powerful tool that will be useful
+in a number of different natural language
+processing applications and possibly other
+supervised learning applications that are coming up.

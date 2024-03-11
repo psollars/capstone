@@ -1,0 +1,64 @@
+Hi, everyone. This
+is Paramveer Dhillon. In this video, we will
+learn about a new family of generative models called the generative adversarial
+networks or GANs for short. Recall that the goal of
+generative modeling is to learn a model that approximates the distribution of
+the training data. That is, to learn a probability
+distribution p model of x to approximate p
+training data of x. Now there are two possible
+modeling strategies. Either we can directly
+model the density function, that is p model of x and optimize it directly
+or optimize some lower bound on it if it is
+uncorrectable to optimize the model directly
+as done by PixelCNN, PixelRNNs, or Variational
+Autoencoders; Or we can adopt a second
+modeling strategy. The second strategy is to only implicitly model the density
+function so that we can draw samples from the underlying probability
+distribution p model of x as done by GANs, generative
+adversarial networks. GANs, in fact, what
+a breakthrough in deep learning research
+as they provided the new idea of
+adversarial training, which has found broad adoption in the deep learning community. GANs, or generative
+adversarial networks were introduced in 2014 by
+Ian Goodfellow et. al and have become a popular choice for
+generative modeling. The GANs incorporate
+the novel idea of using game theory to generate samples from the
+underlying distribution. The GANs model the
+generation from the training distribution
+as a two-person game. Therefore, GANs don't explicitly assume any density function, but just allow us
+to sample from it. The key intuition behind
+GANs is that if he can't sample from a
+complex distribution that we want to sample from, then a potential solution
+is to sample from a simpler distribution,
+example, random noise. Then learn a transformation from the random noise to the actual training
+distribution, and viola, the complex transformation
+from the noise distribution to the training distribution is represented and is parametrized
+by a neural network. So now let's look at the architectural
+details of the GANs. GANs learn a generative model by making two neural networks
+compete with each other. In other words, GANs
+model the generation from the training distribution
+as a two-player game. The two players in the game are the generator and
+the discriminator. The generator turns
+the random noise into a realistic approximation of the training data and tries
+to trick the discriminator. The discriminator competes
+against the generator by identifying the real data from the fake data generated
+by the generator. To be more precise, the generator and discriminator play a two-player minimax game. The generator fools
+the discriminator by generating real
+looking images. The discriminator tries to distinguish between
+real and fake images. This can be represented by the objective function
+shown on the slide. The discriminator, which is represented by the
+parameters Theta d, tries to maximize the
+objective function such that D of x is close
+to one that is recognized the real image
+with high confidence and D of G of Z is close to zero. That is, recognize
+fake images as fake. The generator which
+is represented by parameters Theta g
+wants to minimize the objective function so
+that D of G of Z is close to 1 and the generator can generate real
+looking fake images. Finally, after we
+have created GAN to optimize the
+model parameters of the discriminator
+and the generator that is Theta D and
+Theta G respectively, we throw away the
+discriminator and just use the generative network
+to generate new data.

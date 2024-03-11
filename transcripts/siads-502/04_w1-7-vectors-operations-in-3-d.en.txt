@@ -1,0 +1,108 @@
+Math methods for
+data science vectors, operations in three-dimensions. We can perform operations on vectors of
+three-dimensions similar to those that we performed on
+vectors of two-dimensions. These include addition, subtraction, scaling,
+dot products, length, and we will introduce a new operation cross-products. Remember we can represent our vectors as a set of numbers. In this case with three elements since we're
+in three-dimensions. We can also represent
+our vectors in square brackets which is more similar to a matrix notation that we'll
+discuss in future lectures. If I'm turning into
+mathematical notation, I will represent each
+of the components as v_1, v_2, and v_3. This notation will translate to all of our
+different operations. Again, this is
+a very similar lecture to that of operations
+in two-dimensions. However, we are extending each of these vectors to
+include three elements. Addition and subtraction will sum each of the elements from the vectors to create a new
+vector of three-dimensions. Scaling will take a constant a and multiply it by our vector. Our dot product will produce
+a single value where we sum the product of each of the components of
+the two vectors. We will calculate a cross product which is a new concept
+to three dimensions, and we will calculate
+the length of our vector. Our addition and
+subtraction calculations are just extending our addition, subtraction operations to
+more than two dimensions. Here we have two, three-dimensional vectors u and v already drawn on
+our Cartesian plane. Let's add them together. In order to add two 3-D vectors, we will add the components
+of each of the vectors. Our first component, our x value, will take the x components from each of the two vectors
+and sum them, and then we'll do the same
+with the y components, and finally the same
+with the z components. This will produce
+a new vector for us which is the sum
+of the two vectors. Our new vector goes; one unit in the x, one unit in the y, and one
+unit in the z direction. Now let's subtract
+those two vectors. Again, we'll take each
+of the components of the vectors and subtract
+them to create a new vector. Here I've taken each
+of the x values, each of the y values, and each of the z values
+and subtracted them to create a new vector; negative three,
+three, negative five. This new vector will go negative three units
+in the x-axis, three units in the y-axis, and negative five units
+in the z-axis. Now let's scale
+a three-dimensional vector. We have one vector u, and we're going to scale it
+by a factor of negative 1.5. In order to scale, we'll
+take this constant and multiply it by each of the elements or
+components in our vector. Negative 1.5 times negative one, negative 1.5 times two, and negative 1.5
+times negative two. This will give us a new vector; 1.5, negative three, and three. This new vector will go
+1.5 units in the x-axis, negative three units
+in the y-axis, and three units in the z-axis. You can see when we scaled
+by a negative number, it flipped the direction
+of our vector. The dot product of two, three-dimensional vectors
+will produce a single number. Here again we have
+two vectors u and v, and we will find the dot product
+between the two vectors. The dot product sums
+the products of each of the components
+of the two vectors. That is, if we multiply
+the x components, the y components, and the z components and
+sum them together, we'll produce the dot product. In this example, let's take the x components from
+the u and v vector, negative one times two
+plus the y components, two times negative one
+plus the z components, negative two times three. This will give us negative
+two plus negative two plus negative
+six, or negative 10. So the dot product of these
+two vectors is negative 10. The cross product is a
+little more involved than some of the operations
+we've seen before, but the algebra is
+no more complicated. Say we have two vectors u and v, and we want to find
+the cross product. In order to find
+the cross product, we will create a new vector. This is an instance
+where following the formula is going to be
+your best path forward. So let's take each of
+the elements that are described in
+this formula and write them out so that we can
+perform the algebra. So I have room to show
+you all the steps, I'm going to separate
+these out into their individual
+elements x, y, and z. So to solve for the x element
+of the new vector, I'm going to take
+two times three. That's the element two
+from the u vector, and the element three
+from the v vector, and I'm going to subtract
+off the element three from the u vector times the element
+two from the v vector. This should give me six
+minus two, or four. So our new x component is four, let's solve for the y component
+of this new vector. The y component of
+this new vector should take
+the third element from the u vector times
+the first element from the v vector minus
+the first element from the u vector times the third
+element from the v vector. This will give us negative four minus negative three or
+negative four plus three, which will give us
+the value negative one. So our y element here
+is negative one. Finally to solve
+for our z element, we're going to take
+the first element from the u vector times
+the second element from the v vector and subtract off the second element from the u vector times the first
+element from the v vector. This will give us one minus
+four or negative three. Giving us our third element
+of negative three. Our final vector then from the cross product of
+these two vectors u and v will be four, minus one, minus three. Which gives us a vector of
+four units in the x direction, negative one unit
+in the y direction, and negative three units
+in the z direction. Finally let's look at calculating the length for
+a three-dimensional vector. Say we have the vector u, and we want to
+calculate the length. We will take the square of
+each element of the vector, sum them and then
+find the square root. For this vector u, let's
+square each of the elements, negative one squared plus two squared plus negative
+two squared, and then calculate
+the square root. In this case we have the square
+root of 1 plus 4 plus 4, which gives us the square root
+of 9 which is equal to 3. So we have just
+calculated the length of the vector u as equal to three.

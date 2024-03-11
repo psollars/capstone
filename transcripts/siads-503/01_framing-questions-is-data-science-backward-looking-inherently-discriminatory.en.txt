@@ -1,0 +1,167 @@
+Welcome back. It's a new
+week in Data Science Ethics, and I've got two pretty provocative themes
+for you this week. They are, number 1, is data
+science backward-looking? Number 2, is data science
+inherently discriminatory? Now those could sound
+like fighting words. They sound provocative. They sound like I'm
+trying to throw shade on data science. That's not actually
+what I'm trying to do. This week is about some
+debates in data science about the ideas of fairness,
+bias, and classification. I'll give you a
+brief introduction to the framing for this week that I think will make it
+clear why these are debates. The first framing question, is data science backward-looking? Data scientists like data. I like data and in
+our other courses, we've been taught that
+we should be making conclusions based on the
+analysis of evidence. Now this may sound obvious, but evidence as other data
+scientists have pointed out, evidence is something that
+we captured about the past. That's the way time works. We can't capture information
+about the future. I suppose you could
+say it's possible to make predictions about things
+that haven't happened yet. I know there's an area of statistics where
+they try to figure out if a nuclear
+reactor will explode, even though, that
+hasn't happened yet. However, for the most part, we do have a bias toward predicting things
+that have already happened using data
+that occur in the past. Now I'm not trying
+to talk down to you. I think this is a profound point. I know that you all realize that time moves forward
+and not backward. But if data science's job is to predict things based
+on data from the past, that means that you could say
+we have an orientation or a predisposition to always recreate things that
+happened in the past, to reproduce whatever happened in the past and that's
+this debate about, is data science backward-looking? I'll give you an example there. So let's imagine that you have a dataset and it's about
+income and occupation. Now normally, we'd say if you have more data,
+that's better. We'd also say, if you have historical data, that's better. These are just the way that the culture of
+data science is. So great. More data, historical data, good job. The problem, though, is if
+your data go back far enough, you get into a situation where you have some occupations that, for example, barred women
+from being in them. So for example, some occupations
+in the United States, women couldn't be admitted to the professional
+schools that would allow you to be in
+that occupation like medicine or
+something like that. Now, if you didn't take
+that into account, you could run an analysis based on these data and
+you could come to a conclusion that was technically correct, but pretty silly. So you could come up
+with a conclusion like, "Women don't like money or women don't like
+high-paying jobs." Now, the reason that that's
+a problem is that maybe there's a situation in
+the past like sexism, discrimination against women from being in certain occupations, and you don't want to reproduce that situation
+in the future. The question that some
+data scientists have raised is that maybe
+data science is inherently predisposed
+to reproducing these kinds of
+problems in the past, and that we have a duty
+as data scientists to try and think about
+that predisposition and to try and challenge it, and that's a big topic this week. The second framing question
+that I have for you is, is data science inherently
+discriminatory? Now maybe I should put inherently in quotation marks in the air. That's a pretty strong
+word, inherently, and it sounds pejorative or judgmental, sounds pretty bad. So I want to explain
+what I mean by it. Discriminatory has a
+bunch of meanings, but we could start with the
+meaning in the dictionary of just dividing one thing
+from another thing. Not saying discriminatory
+in a negative way, but just dividing one
+thing from another thing. Now, I had a mentor who
+was a data scientist and he said that data scientists should all have a t-shirt
+made and it would say, "Variance is our business." He means statistical variance and what he meant
+by that, I think, is that we're happy
+when we have variation in our datasets because
+without variation, we can't really determine anything or predict anything
+or decide anything, and so variation is our business. But if you think about
+that model a little bit, you could turn it around
+and it would still be true, and that could be
+discrimination is our business. With variation, you
+have the ability to separate things
+from other things, and that means that your
+business is doing that, is separating things
+into other things; into categories, giving them scores that are different from other scores, things like that. Now, of course, you
+could say, "Well, that's fine, and that's
+natural, and it's human, and we do in fact separate things from
+other things as a part of everyday
+life and work." The issue, though, is that some data scientists have argued, "If you take it as your job to separate
+things from other things, it makes you more likely to do so in a way that is harmful, in addition to maybe ways that are productive and
+helpful and useful." So we have a tendency to
+divide, you could say. I'll explain that a little more. There's a famous quote. I mean, not famous. It's famous yet because
+it's too young. I predict this will be a famous quote by a data scientist named
+Moritz Hardt and he said, "There is always proportionately less data available
+about minorities." Now that seems obvious, and he means minority, again, in the dictionary sense of
+the smaller part of a group. So he says, "If you've got
+a group and is divided into parts and one part
+is the smaller part, there is always going to be less data about
+the smaller part." Now again, I'm not trying
+to talk down to you. I think there's
+something profound here if we think about
+it for a minute. Obviously, you could say, "Yes, there are less data
+about the smaller part of the group because
+it's the smaller part." But what that means is
+that, data science tools, you could say are optimized
+toward normality. They're generally thinking what's the best fit over the
+whole population, or what's the average, or what's the mean? This tendency means that when data science does a bad job, for example, maybe because
+it doesn't have enough data, that would be one reason
+it could do a bad job. It does that bad job
+with the minority. It's more likely anyway to do that bad job
+with the minority. So you could say that
+as a data scientist, one thing that you have
+to watch out for is this bias toward the whole
+or bias toward the normal or bias toward the population because it might be in
+many situations that there's a minority that there's a good reason why
+they behave differently than other people and we want to protect them and we want
+to ensure that it's okay that they behave differently
+from other people and not that our analyses assume that there's
+something wrong with them. So we could go even
+further than this. It's been said that the whole reason
+statistics were invented was to control populations, and that any gathering
+of data about people is inherently problematic. I think if you're in a
+data science program, you're probably not
+going to endorse that position or go that far. But even if you
+don't go that far, you can still have the
+framing questions from this week in your mind
+because in data science, it's data scientists that
+are saying, "Wait a minute, do we really want to be
+the profession that always reproduces what
+happened in the past with our analysis of the pas, t because our data
+come from the past? Do we really want to
+be the profession that does a great job
+with the average and the normal and doesn't do a
+great job with the minority in both a technical sense of minority as a smaller
+part of a group, but also in the sense that you sometimes in
+political debates." So a minority, for example,
+a racial minority, an ethnic minority, minority
+religion, things like that. Do we really always want to
+be the ones who don't do a good job of handling
+the exceptions? So that's our topic
+for this week, and we're going to
+delve into that topic through a series of cases that you could
+say are about bias, classification, and
+fairness for the most part. It's really a case-based week. I guess my lecture for
+the first week was really more about this
+top 10 list or top 15, it was about misconceptions. Whereas this week, the framing is going to
+be about these cases. So I'll now introduce the first
+case that you'll look at. It's the somewhat famous
+case of the "Scary Pizza". You probably haven't heard of it. It is somewhat famous. I don't think
+everyone's heard of it. It's a video you're going to
+watch after this that was produced by the American Civil
+Liberties Union in 2004, and there are a
+couple of things I'd like you to keep in mind as you watch the video. One of the things
+that's neat about the video and the reason
+that it's somewhat famous, is the video is quite
+old, it looks old, but the people who made it
+did a great job in 2004 of anticipating the ethical
+situation of this year. So they looked way beyond
+2004 and we're able to see the kinds of debates
+that were going to face data science today. So it's prescient, and that's one reason
+it's interesting. Another reason it's interesting
+is that it's funny. I don't know if it fall down, roll on the ground funny, but this is a technical class, our jokes are the best
+that we can make them, but I think it's pretty good. The other way I'd like
+you to think about it, though, is that in
+order to be funny, it takes the case of ordering a pizza and that's
+the focus of it. But as you watch the video, I think you might think about how that analysis might apply
+to other situations that have more consequences over the life course because
+a lot of the things that data scientists debate in ethics are very serious and they
+have to do with things like, is someone going to go to jail? Are they going to be
+offered a college education or the ability to buy a
+house? These are important. Even are they going
+to be identified as a terrorist and targeted for
+surveillance or killing? So think about the
+"Scary Pizza" case, but also think about what if we replaced the model
+or the analysis of the video with some other somewhat more significant consequence
+for the life course. Although maybe I like pizza, maybe pizza is significant
+enough. I'll end there.

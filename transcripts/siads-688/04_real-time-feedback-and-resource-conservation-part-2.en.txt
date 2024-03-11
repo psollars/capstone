@@ -1,0 +1,116 @@
+Hi everyone. We're going to take a look at the robustness check of the real-time feedback
+experiment that we discussed about showering. This experiment is conducted
+in a different setting in the student residence in the National University
+of Singapore. You might have noticed
+that there are two features about the Swiss Experiment
+conducted in Zurich, that people who participated in the experiment
+were volunteers. The other impressive
+feature is that the feedback given is
+extremely fine-grained. If we want to see how
+robust these results are, we want to take a look and see what if there's no selection. If everybody just by default
+participate, what happens? Do we still see
+such large effects? The second part is, what if the feedback is
+not so fine grained? While other
+institutional difference is that in Switzerland, it's actually very expensive. Water and energy are
+priced pretty high. There is a confound of environmental concerns as
+well as self interests, which is, you might be interested to reduce your energy bills. These concerns let
+the authors to take a look at very
+similar interventions in a completely
+different environment. The experiment that we're
+going to take a look now is conducted by a different
+group of researchers, but the lead author
+is Lorenz Goette. The researchers work with the Office of Housing Services at the National
+University of Singapore, and a company that provide
+the feedback device. What did they study? They looked at 1,200 residents in two residential colleges at NUS. All of them are students at the National University
+of Singapore. There's also an interesting
+feature that they actually don't pay for water or
+energy in any form. That takes away self interest in this energy
+conservation behavior. The third feature is that they participate in the experiment without the option to opt out. Everybody, by default, were
+opted into the experiments. There was no selection
+effect, in other words. This experiment, again
+has a control group. The message to the students is to encourage them
+to conserve water, and limit their water use
+to 28 liters per shower. This is a fairly realistic
+goal given the baseline use. The researchers have some
+data about baseline use in the months leading to
+this intervention. For this group there's
+no feedback given. One treatment condition is the what's called the 28 Liter Group. The message to the students is to again encourage them
+to conserve water, but limit the water use
+to 28 liters per shower, this is a realistic goal, and they have real-time feedback. But the real-time
+feedback compared to the Zurich Experiment
+is a lot coarser. In other words, there are basically different
+light indicators. When you are using between
+zero and 16 liters, the light is green and
+then it changes to yellow. When you're using
+up to 24 liters, it becomes orange and red. Again, it's real-time feedback, but not as fine-grained
+as the Zurich Experiment. There is another group which is to limit their water use
+to 18 liters per shower. This is unrealistic and what the researchers assess
+is that it's fairly difficult to achieve again, so these people have real-time feedback using
+the same color threshold. Here's what the shower
+heads looked like. The shower heads in action when you're using a small
+amount of water. You can see the explanation
+in the back wall. For the person taking a shower, it's fairly easy just
+to check where you are. This is what happens when it goes more than the minimum
+amount, it turns. Orange, and finally it turns red when you're
+approaching 20 liters. This is the baseline water
+use for this population, and when they implemented
+the experiment, 12 devices didn't
+connect to the network so they had 302 working devices. What you see here is the
+number of showers per day and it's fairly
+stable over time. Roughly there are
+about 1500 showers per day on a regular workday, about half of the
+showers are on weekends. This graph looks fairly familiar in the
+sense that you know, everybody started in
+the control condition. You see the blue line is the water usage in
+the control group whereas the orange line is the 18 liter group and the red line is
+the 28 liter group. When the treatment
+started you see a gradual separation
+of the two groups, the control group versus
+the treatment group. This is the regression estimates about water
+use per shower. Again, the omitted
+variable is the treatment, the control dummy, and you
+have two treatment Indicators, the 18 liter group and
+the 28 liter group. What you see here is
+that there again, we observe large and significant
+reductions in water use. Both treatments are
+highly effective in reducing water consumption
+by about four point five to five gallons
+per shower if you look at the the coefficients. That's corresponding
+to a reduction of about 15% of water
+use and energy use. The surprising outcome is
+that the less realistic goal, which is the 18 liter group, actually seems to be
+at least from the coefficient estimates looks
+like that is more effective. Again, we check the frequency of showers and this shows that it doesn't
+change the frequency. This is again trying to
+go into the mechanisms, why did we see
+water conservation? Is it because people take
+fewer showers or is it because they use less
+water per shower? It seems to show that
+taking fewer showers is not the mechanism and which makes sense because Singapore
+is the sub-tropical areas, and so reducing the frequency of showers is not a realistic goal. In last previous analysis such as the Ferraro and Price
+paper as well as the first shower experiment
+that we saw in Zurich. We saw that the users with
+high prior consumption, so the high use group, tend to have a greater effect. The question is whether this
+continues in the study. What you see here is a definitive but a
+non-parametric estimate of the conservation effect. The blue line on top
+is the control group, and again the 18 liter group is the orange line and the red
+one is the 28 liter group. On the horizontal axis, you see the baseline
+water use of showerhead, and so as you move
+towards the right, you see that reduction
+in water usage is more, the higher the prior usage is. The downward trend of
+the treatment group, again shows us that there is a heterogeneous
+treatment effect. In other words, how users
+tend to conserve more, which is good to see
+that it's fairly robust across studies
+and across settings. In terms of magnitude. The magnitude is very similar to different Tiefenbeck et
+al that we talked about. Here are some other studies that looks at real-time feedback. This is replicated
+in different places, different areas of the world, as well as in different settings. What we have learned today, apart from a lot of
+things about the showers, we learned that some of
+the effects observed in earlier experiments
+have been robust across different geographic
+areas and user groups, and that it does not depend
+on, for instance selection, and it does not depend
+so much on whether you pay for the electricity
+or water or not. This set of studies show that real-time interventions is fairly effective
+and promising, and perhaps we can use it
+in other areas as well. For to nudge healthy behavior and more pro-social behavior.

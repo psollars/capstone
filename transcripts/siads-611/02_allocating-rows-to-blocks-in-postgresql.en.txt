@@ -1,0 +1,129 @@
+Hello and welcome
+to our lecture on PostgreSQL full text indexes. So, you can get this material
+online, the PowerPoints. I've only got PowerPoints for the diagrams in case
+you want to reuse them, because I basically switched my style in this particular
+lecture from doing it all in PowerPoint to taking what I usually build as
+my lecture notes and just recording
+those and giving you my lecture notes rather
+than making lecture notes, turning them into PowerPoints, and then giving you
+the PowerPoints. I hope that you will find
+this to be more useful. I'd be curious if
+you like this format compared to the
+all-PowerPoint format. So you can get these materials online and add whatever you want. So first, I want to
+talk about row layout. We've been talking
+about the CREATE TABLE, and how schemas and
+how important it is to be precise about if this is a short text column
+or a long text column, etc., etc. And that schema becomes a
+contract because that's the way that Postgres can very efficiently store the data. And the amount of data
+that you scan is the thing that determines
+your performance. And so now I want to talk
+a little bit about how a schema is represented on disk. So here we have a little
+tiny, a messages table, one we've used for a
+couple of examples, where we have an email message, a timestamp, and then some
+relatively large bits. And you see that the id is small. It's exactly four bytes of memory and the timestamp
+is eight bytes. Then the other things are long. We don't exactly know
+what their length is. Now, remember we can insert
+and then we can update these. And so you might have an
+email address that's four characters or 20 characters and replace it with an
+email address that's 10. The size of a record
+can go up or it can go down based on updates. And when we modify data, we don't want to rewrite the
+entire file because that's like let's just say a
+minimum one gigabyte file takes about two seconds. Even on the fastest hardware,
+writing or reading a gigabyte takes several
+seconds of time. And so Postgres organizes
+its disk files with free space on them and they're organized into blocks
+of fixed length. And by having blocks of fixed
+length, typically 8K, 8,192 8K blocks, they're able to sort of compute a
+block offset really easy, so they don't pack
+the blocks in either. They make fixed blocks. So they can read the entire
+block into memory. The block is often
+a unit of locking. The block is often
+a unit of caching. So one of the things
+the database does is like actively used blocks end
+up sitting in the memory. So if you're hitting a bunch
+of queries at the same time and they keep reusing
+little blocks of files, then those blocks will
+stay in the memory. And so everything that the
+database environment is doing is making it as efficient
+as it possibly can be. And so for transactions, which
+we briefly talked about, they're often the
+unit of locking. So we think of locking a row and a block has somewhere between 5 and 50 rows maybe, or
+even less than 5, maybe 2 and 50 rows, but
+it doesn't matter. So let's take a look at the
+shape of a block, right? So here we have an 8K block, and remember that 8K
+blocks are they're all 8K. And so they are are placed
+on disk and they're stored one after another on disk. And within the block, there's some header stuff and other
+things that's in there, but the basic idea is the rows are inserted into this block sort of
+from the back to the front. Now, each of these
+rows has columns, some of varying length, and different rows have overall different length and
+the columns are in there. So then you insert another one, and you insert another one. And the rows grow from the end of
+the block forward and then, all they have is little. these offsets are like
+probably 2 to 3 bytes, probably 2 bytes.
+And what they are is, they're just like
+an array of where within that block the
+start of a row is. And so they're are small. The whole block comes
+in and then you can quickly go to each row. You can read them in order. You can read all of them. And then the middle here,
+which is really not to scale on my picture,
+is the free space. So you have growing from the
+end of the block the rows. You've got going from
+the front of the block, you've got the offsets. Now, the rows are generally
+way bigger than the offsets. Now, think about this from an update perspective where
+so if we were going to just take this row and
+there's like 10 characters in an email address
+and we're going to replace it with a 15-character
+email address, we can shift just a
+little bit of data. Five characters, we're
+going to shift everything five characters to the left and then we make 15 characters. Then we put the new email
+address in where it belongs. And then we just rewrite
+the whole block. And we've lost some of
+the free space. Same thing would
+happen if we rewrote an email address with a
+smaller email address. We'd shift everything. Actually, we might not shift
+everything at that point, but the point is, we can make small
+changes to this. Now again, in my picture, free space is not to
+scale because you don't want to make free space
+in my picture, it kind of looks like it's
+70 percent of it. This is a block being filled up. But the idea is that we can make tiny little modifications and then change these
+offset values and then rewrite the whole block to disk. The whole block is read in. We fiddle with it in memory, which is a very cheap operation, and then we rewrite
+it back out to disk. Now you might say, "Well, what's the best idea of block size?" And they go
+round and round and round. And there's a lot of
+things in Postgres where just accepting the default. is probably what
+you want to do. And so 8K is generally the default. If you have a block that's too small and then your
+rows don't fit well, and you sort of fit one row in a block, then you've got kind of a
+wasted free space. If you have too large a block, then you're pulling too
+much information in and out just to like read one row, and you start using up all
+your memory, your caching. If you have 8K blocks
+or 16K blocks, you can cache 50
+percent of the blocks, 50 percent fewer blocks
+if they were 16K. And so you can go read up on that. Google and say "What's the best block size
+for Postgres?" And they'll tell you that
+it's probably 8K and the next best block
+size might be 4K. And it has to do with the fact that solid-state disks,
+unlike spinning disks, so spinning disks have
+rotational delay and then once you get to the
+data on the spinning disk, pulling in 8K is smarter
+than pulling in 4K because the rotational delay is by far
+the greater consideration. In SSD disks, there is
+no rotational delay. And so then what happens
+is the thing that dominates is the actual
+amount that you transfer. And so that would advocate for
+smaller block sizes on SSDs and larger block
+size on hard drives. The problem is if you make
+the block sizes too small, then you get
+fragmentation and you can't do some of those
+dynamic things where you're either inserting a new row or you're taking some data, you're updating a row, and so the too tiny of a block size, then you get either
+too much free space, because you can't fit
+enough rows in a block, or you'll get too
+little free space. Then when you pack two rows in, and you've run out of space
+and you do an update, then you've got to
+move stuff all around in your database
+and it's not good. So there's a lot of different
+ways to think about this, but the key point to
+take away from all this is that we read
+entire blocks into memory. So we don't really know where a row is exactly on disk but we do want to know where
+a row is in a block. We know that this row is in this block and we read the block in and then we scan through
+the block and then find the row. So we can't go straight to a row. We can go straight to a block. So indexes, which is what we're
+really talking about now, indexes are basically a set
+of hints that map from a row that we're looking for to which block
+those rows are in. And that's what we'll
+talk about next. [MUSIC]

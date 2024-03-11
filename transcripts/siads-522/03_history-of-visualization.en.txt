@@ -1,0 +1,187 @@
+Welcome back to introduction
+to information visualization. I want to talk a little bit
+about the history of infovis and I can't do this topic Justice. I'm going to try and condense almost
+a thousand years of history and to about ten minutes. And so there are other resources
+that will provide for you. If you're curious about how
+infovis developed as a concept. One of the first kinds of information
+visualization that have ever been observed is this one, it's a map of sort of
+oscillations within the solar system. So how planets have moved
+nearer further to Earth. This is from the tenth Century. It's a planetary movement is the title and
+this is one of the very famous examples that we will see of an early
+kind of information visualization. Jumping ahead almost 600 years,
+we see another example. And this is again one of the earliest
+examples that we've seen. So you can see that there weren't that
+many examples of information visualization in the early periods that
+we're talking about though. This is how far it was or
+how the distance Toledo to Rome I'm trying to calculate how far you
+would have to travel. It's a very interesting visualization
+shows on the x axis distance and these different kinds of things that
+are in between Toledo and Rome and Italy. Jumping ahead even further,
+this is a couple hundred years. William Playfair is one of
+the the interesting people's, one of the interesting characters in our
+story about information visualization. Actually came up with a lot of different
+techniques, things like the time series, things like the pie chart are often
+believed to be due to William Playfair. And so in the 1800's this is when we
+first started seeing these interesting communicative to visualizations
+this was done to talk about different economic concepts and
+reflect them to the public. And so William Playfair came up
+with a bunch of different ways of representing them, a number of novel
+ways of representing them through this abstract set of shapes and so on. Around the same time people started trying
+to analyze complex scientific data. So Lord Kelvin, Lord Kelvin as you know, the measure of temperature had a lot
+of interesting scientific discoveries. One of the things that he looked at as
+well as a lot of his contemporaries at the time were things like equations that
+sort of tracked the pressure versus so the PV, nrt equation. So temperature and gas and pressure and
+how they related to each other and his brother actually constructed
+this very interesting 3D model of the underlying equation. So there's three variables
+that are at play here. And so you can see those reflected, and
+this interesting structure of this is from 1848 in a museum in Glasgow, so
+you can go see this if you're interested. Again as physical structure that
+is used to represent abstractly the underlying data that is something
+that's capturing equation about a gas law. Another example from around the same time. This is one of Edward Tufte famous
+examples of an ideal visualization. This one is created by Minard, Edward Tufte who will talk about a lot has
+very strong opinions about good design. And this is one of his favorite examples. This is in case you are unfamiliar with
+it is the march of Napoleon's Army towards Russia and then retreat back. So the underlying structure sort of
+of the entire thing is a map and this line represents the Army
+as it marches towards Moscow and then as it retreats back home to France. And the width is how many
+soldiers were alive and what you can see is that this as
+the soldiers advanced towards Russia, they're dying off and as they go back and
+retreat they're also dying off. You can also see interesting things
+like where there's a break-point, the retreat is heading back, where the
+Army breaks off into two different paths. And at the bottom here, what's also
+interesting because it captures some of the reasons why the soldiers were dying, were the temperature readings
+as measured by army. So as the thermostat drops and it gets
+much colder people start dying and so you can see the relationship between
+those temperature readings and these kind of spikes in
+soldiers dying on this map. This is a really interesting example
+capturing lots of things at the same time. You have the geography, you have
+the size of the Army, have its position. You have another variable
+that you're relating to that's explaining some causal
+structure the temperature and so lots of things that are being explained in
+this particular very clever visualization. Jumping ahead to 1939
+people started considering other ways of visualizing information so
+much more abstract representations. This is a flow chart sometimes
+called a Sankey diagram. This is a different kind of thing that's
+relating production costs to sail districts. If you can't see it, but I'm going to zoom
+in, this is actually constructed by hand. So this person Brinton, cut out
+thousands of little strips of paper and then put them on a mat basically
+moving them next to each other to capture sort of the underlying data. Okay, so he knew the different measures,
+how much things cost to produce, sales and so on. And use the little strips of paper
+to represent that information, but he had to move the strips
+of paper one at a time. And thankfully we don't
+have to do this anymore. Like there's lots of automated pieces
+of software to support this but this is how it was done in the early days. And one of the reasons why we don't see
+many of these visualizations from this time period, but
+we do see a lot now, all right. So this was very difficult to
+do at this early stage and so not many people could do this or do it. So in the 1950s, we started seeing
+the emergence of computers and graphical displays that would support some
+of the information visualizations that we will see today. And early examples were of course
+focused on things like wars, okay. So this was very few people could afford
+these very expensive computers and expensive displays. One of the groups that could do It was the
+army and so they would visualize things like the positions of planes and
+trajectories and so on. Again, very big machines very expensive,
+very slow, but kind of the earliest examples of computer-aided
+information visualization generation. Jumping ahead to the 1960s, it was when
+groups of statisticians notably Tukey, started thinking about different
+statistical charts and techniques. Is very famous for doing things
+related to exploratory data analysis. And one of his ideas was the box plot,
+he has many other things. He coined the word software and bit and
+so on, very famous and interesting man. But constructed the box plot, and
+this is an example of how to read it. There are different
+pieces of the box plot. Not everyone uses all
+the different features. Sometimes we use different
+subsets of this installing. But this is in the 1960s we had computers, we had some underlying
+question about the data and so Tukey and others started thinking about
+ways of representing the data in a way that we can answer statistical questions
+about them distributions and so on. Also around the same time we started to
+get people like Bertin who wrote a book called The Semiology of graphics
+started thinking about this idea that we were communicating
+through visualization. So visualizations were symbols, like symbols that were communicating
+some underlying concept. And so Bertin and others started to talk
+about how to think about taking data and transforming it into visual concepts
+using retinol variables as what they were called at the time. Things like shape, the size, the color,
+the color intensity, the texture and all these things were things that we can
+manipulate in order to encode the data. As a thought very deeply philosophically
+about how we might take data and represent it to an underlying to it, to a
+set of readers or viewers looking at that data and how we might communicate
+through visual techniques. We started seeing this emergence of
+computers that became easier to use and more people were able
+to get a hold of them. They became more prominent in the 1970s. And so this is Tukey again sitting at a,
+looks like a desktop in early desktop and demonstrating some visualization
+technique, using this display. And so we get computers being introduced
+into lots of other places people more readily being able to program them
+build a new kinds of visualizations. Jumping ahead 20 years. We're now seeing computers
+all over the place with very sophisticated graphical techniques. So we could start seeing
+things like 3D displays, within the 2D structure of the of the
+screen and so people said, this is cool. Now we can do 3D within this 2D structure. Let's start thinking about really
+clever visualizations that use these 3D effects within the screen. And so this is an early example from Xerox
+Parc and something called a cone tree, think of it as a basic tree
+diagram just in three dimensions. And of course,
+you need it interactivity and to be able to move these
+things in order to use them. Now, we don't actually
+use 3D much anymore. It turns out this is not a useful
+thing for various perceptual reasons. But there was a time period when people
+were really fascinated by the use of three dimensions and so they started
+building visualizations like this. Jumping ahead to the 2000s, now we're starting to see
+software available for everyone. So this is something that's
+not available anymore. But many eyes was
+a product brought by IBM. It was a web-based solution to allow
+people to upload their own data sets and get really interesting
+visualizations out of them. So there were lots of different
+kinds of techniques supported within this piece of software
+within this website. And so you could generate in your
+visualizations on your data get the visualization back and
+embed it on your website, which is really kind of cool and powerful. This is for people who weren't able to
+build visualizations on their own but could now use prepackaged services
+to basically get their data transformed into a visual thing that they
+could take away and put on their website. We started also seeing the emergence
+in the late 1990s, 2000s, 2010s and so on of really sophisticated
+and powerful pieces of software. So this is Tableau again, which gives you
+an interactive way to build visualization. It is intended for business analysts, people with some sophisticated
+domain expertise. But there are basically able to drag and
+drop different things from the data set. So they have the data over here and
+they're able to say, I want to drag so here we have segments and category, they're able to drag these
+things over into here. And the visualization in the middle
+automatically changes and is displayed in the most
+appropriate way possible. So if the most appropriate thing to do was
+use a bar chart, it would start with a bar chart, if it was a scatter plot, it would
+start with a scatter plot and so on. And so this is a really clever tool,
+does a lot of things automatically for you simply by dragging and dropping columns from one piece of
+the display screen to the other. People have started thinking about
+other kinds of tools that maybe not for business analysts. This is a tool called Data illustrator. It's intended for people who think
+in terms of things like illustrator, like Adobe Illustrator and
+want to generate visualization. So here there's a focus on drawing
+the things that you want and then combining those with the data. So you might draw a set
+of these boxes over here. So each of these will then be connected
+to an underlying piece of data and the boxes will change in
+size based on the data. But first you're going to focus on
+the drawing, the visual element of this. So if you're a very visual person you'll
+be able to sketch out what you want the visualization to look like and then
+connect that to the underlying data set. With the ability to generate
+visualizations easily. There was an increased expectations,
+but people working in specific domains. Like in this case the biologists
+that visualizations will be crafted specifically for them. So a lot of really custom crafted
+visualization systems, visual analytics systems that were catered to the needs
+of specific domain scientists. So this is a very interesting change and we will see in a lot of cases now specific
+pieces of software that you can download that are very targeted
+towards specific problems. So microarray data, learning analytics
+software all these things that have been custom-made to
+particular set of tasks. And it's possible to very easily
+build these things now and so lots of people have started making an
+industry of basically generating one-offs of these kinds of visualizations. Because you can do that by
+combining different elements and different libraries and to into
+these more sophisticated dashboards. The takeaways, the takeaways are that information
+visualization has evolved significantly. We've seen over a thousand years,
+a really significant set of changes. Things have basically gotten easier
+which I've made it very possible for anyone to generate information
+visualization, which is why we're going to focus in this class on how to make
+generate good information visualizations. So well, used to be expensive to encode
+you saw that kind of paper cutting now, it's cheap to encode. While most things were private, it was
+hard to sort of produce these things at scale and make them available to everyone. Now, it's easy to throw things up on the
+web and get very public visualizations. While it used to be that there were
+few very domain specific tools, was expensive to own computers,
+expensive to build software for them. Now, you can build a zillion
+different pieces of software and release them on the web. So there are many domain specific
+tools that are available now. So all these things have been changes for
+good largely, but they still require us to think about how to generate good
+information visualizations. So what are the appropriate techniques
+to use given different scenarios. And with that, thank you for listening.

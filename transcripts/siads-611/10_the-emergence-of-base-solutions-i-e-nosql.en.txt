@@ -1,0 +1,184 @@
+So now we're going to
+talk about how some of these early cloud
+experiments turned into the NoSQL movement. So the BASE-style database is
+you've got a fast network, you distribute it as
+wide as possible, you don't have any central locks, you have lots of fast,
+low-memory CPUs, lots of disk drives, not necessarily per CPU, but lots of disk drives
+because you have lots of CPUs. You basically use data sharding, and the indexes are more about figuring where things are at. You end up with documents, not rows and columns. Things like the friend list is just a document that
+they're friends, right? And another thing you do is
+instead of like coming up with a schema of exactly what your
+application wants to do that has rows and columns
+in one database, you're just like it's kind of a document and there's
+some key-value pairs. And if like on a Tuesday, I want to add another key-value pair, you've got a kind of nice migration. You just add another column. It's as if you had a schema
+but you could change it any time by just inserting into a column that didn't exist. And then they're all text, right? And the way to think about this
+is it's schema-on-read. You just write the document, and then you can read
+the document and look for values
+that you expect to be key-value pairs that you
+expect to be there. And so that's kind of like this
+next-generation NoSQL, no schema. But there is a schema, as
+we'll see when we play with these kinds of things. We'll see that there are schemas, but they're kind of late schemas, they're not early schemas. When we're doing ACID, we must have the schema
+from the beginning, and you've got to be real
+careful as you evolve it. Another trend that was happening during this time is JSON. And we talked about JSON. JSON is really awesome. It's a great way to just
+represent key-value pairs. It just is wonderful. There's fast parsers
+in every language. And again, I've never built one, but just imagine how awesome you could compress
+JSON if you really wanted to. And one thing about database
+is that it loves to do is squeeze stuff
+into less memory, so you can cache more and everything. And so just imagine the keys of
+JSON becoming just numbers. It's really cool. Compress
+it, save storage, save data transfer,
+everything. Just awesome. JSON is a cool format. It seems simple in the beginning, but then you realize that
+JSON has touched everything, and it's really a
+beautiful thing. So in this time frame, a series of open source
+NoSQL databases started to come out.
+A thing called CouchDB, which was funny. A cluster of unreliable
+commodity hardware, which is exactly what I
+was talking about, right? MongoDB also came out
+along with the Node system, which had the JSON storage. As we moved more of
+the application into JavaScript and started
+using Ajax and JSON, and even then micro-services, the MongoDB was really very
+much part of that movement. Cassandra is the
+Facebook engineers who figured out how
+they built Facebook, and they built some
+open source like Facebook-like capabilities,
+like Apache Hadoop. These are open source
+solutions in this NoSQL space. And then Elasticsearch. And Elasticsearch came from really trying to replicate
+Google search. It's less trying
+to be a database. Although in later years, folks are like, "I can use this as a NoSQL database, and its indexing
+ability is superior." So we're using indexing
+technology because in a way, a lot of NoSQL
+databases are a relatively simplistic document
+store layered with a really powerful searching
+capability and inverse index. And all the stuff we've talked about, except just specialize on that, Like, there is no regular index, there's only inverted indexes. And we're going to do
+that really well. And now you're kind of
+like Google, right? Google search is just a really
+awesome inverted index. But all the engineering
+in Google is not how to store the
+documents, it's how to build, maintain, understand,
+and make good use in a scalable way of
+the inverted index. So there's a whole bunch of
+these NoSQLs that come out. There's also a bunch of
+Software as a Service, and this is a really
+interesting trend that, in a sense, you use DynamoDB
+that comes from Amazon. We don't even know how it works. It is the stuff that
+Amazon uses for itself, so they're eating their
+own dog food as it were. But what's cool is instead of you having to install
+MongoDB and hire a person making a $150,000
+to run your MongoDB cluster, you just use DynamoDB
+and pay $10,000 a month for the amount of bandwidth you're pulling
+in and out of your DynamoDB. It seems expensive to pay
+$10,000 a month for a database, but if the option is to pay $150,000 for a
+software developer, and frankly, you need
+two or three of them if you're really going
+to be serious about it, and that's going to be a half
+a million dollars to have enough software developers
+to really run Mongo well, Amazon starts to look
+like a super bargain. Google has BigTable. I used BigTable when
+I used App Engine. I've actually used DynamoDB, found it a little bit slow, so I just use
+ElastiCache instead. I used it, and I
+stopped using it. Google BigTable, I used that. I went through a heavy App
+Engine phase in 2008 and 2009 and wrote a book on Google App
+Engine. I used BigTable. You could see how BigTable
+could be used to build a Gmail-like application
+or to build a web crawler, but not necessarily any
+other applications. And I kind of had my time with
+BigTable and kind of walked away from it. I was frustrated with Google's and Amazon, frankly, with DynamoDB. I could not do performance analysis
+because it was too magical. Now that doesn't mean
+you shouldn't do it. And I know plenty of people that have good experience
+with DynamoDB. I don't know so many people
+that use BigTable heavily. And Azure, Microsoft is always catching up, always catching up. But that doesn't mean
+that Microsoft is bad, it just means
+they're catching up. One advantage of coming late to the party is that you know
+what everybody else did, you can look at the
+open source stuff, and you can save
+yourself a lot of time. So of course Facebook
+is jillions of dollars, right? And so every startup
+decided that the way to make money was to build
+a single cloud-scale, truly second-generation
+cloud-scale application, and just make money. Because that was what
+Facebook did and YouTube did and Google did, and I
+want to be like them. And so there's a number of
+trends that were happening during this time. The emergence of
+client-side applications, which are JavaScript,
+Backbone, Angular, React, and Vue. Just each one is sexy for two to three years and then there's a new
+one that comes out and breaks all that stuff,
+and they go like, "Oh, that thing that was cool last year is not cool. This is my cool thing now." Which is cool, it's evolving. Frankly, I think there's
+a technology that's going to wipe them all out
+called web components. I hope to see that
+one of these days that we don't talk about
+those anymore, and we just use the
+browser-based web components. But that's a slow process, to take all the cool
+stuff of Backbone, Angular, React, and Vue, and sneak it into the browser itself. Also, the emergence of Node.js, which is JavaScript in the
+server, which allowed people to learn the JavaScript in the client, and JavaScript
+in the server, and certainly the JSON exchange and Ajax was all happening. And then you just picked
+a NoSQL database like MongoDB and
+Node, and away you go. And these startups, they
+don't know any better. They are starting, they
+have no customers, and they write code really fast. And a thousand people use
+it and it runs fast. And then they find that when
+they get to 100,000, it all falls over. And
+so that's the problem. So in 2012, if we look at
+the Gartner Hype Cycle, we saw that NoSQL
+databases were in the technology trigger, which means they're all talked about, talked about, talked about,
+moving up to the peak of inflated expectations
+and things go kind of from ooh, that's cool to we believe it
+solves all the problems in the world to like it doesn't solve any problem, and
+then things get better. So this is 2012, the time frame that
+I'm talking about. And so what happened, actually sometime like I
+think 2016, is they stopped mentioning NoSQL
+databases because it really doesn't mean anything. So NoSQL databases, which
+is how I kind of started all this, it doesn't mean anything. BASE-style databases
+does mean something, meaning the eventual
+consistency databases. So if you look at the Data
+Management Hype Cycle, you see a whole thing
+set of things that are like the progeny of NoSQL, like SQL interfaces to Hadoop,
+document store databases. SQL interfaces to
+object stores. So the whole notion
+that there was going to be this NoSQL revolution
+and SQL was going to go away, that's kind of been replaced by these cool non-ACID databases are cool for certain
+kinds of applications. And so that we talk
+a little bit about the start of the NoSQL movement and the end or the maturation of the sort of a true adoption of
+the NoSQL techniques. So I had a friend who
+founded a company and build it up and then eventually sold the company called BareSite. And they had a problem. They were going to expect
+about 100 terabytes of information because it was a cheat checker that would read papers and see if they were borrowing from
+Wikipedia or whatever. It was going to be cloud, it was going to be multi-tenant, it was going to be single instance, really a second-generation cloud. They started out with MySQL, like everybody does, as a
+proof of concept, but they did not want to then build so much skill
+in how to shard. And so they grabbed an open source
+NoSQL database, Cassandra, and they leased a
+bunch of hardware, they went because they knew
+they had to play with the disk drives and
+play with the memory. And it worked great until it didn't. And then they had to bring in somebody who was a
+Cassandra expert, and that was super-expensive, and it really didn't
+fix anything. And so the problem with
+all these choices of NoSQL scales forever? It doesn't. All it is, is you don't
+know when it fails, right? Nothing scales forever. And the problem is that we
+have things like Postgres, which are decades old. And then we have
+something that's just like a year and a half old, you're going to run
+into the problem. That's the problem with these,
+especially in 2013 and 2014. And that's why it was going up
+into this over-expectations. And the consultant failed. They had all this hardware. They had to throw all
+their Cassandra code away. They had to throw all
+their hardware away. They moved it all into
+Amazon and then they switched to Amazon DynamoDB. And all of a sudden, it
+started working just fine. And then they just
+started writing checks to Amazon because they were going to write checks to
+consultants and get bad results with Cassandra, or write checks to
+Amazon and have it work. Now the key to Amazon DynamoDB
+is it's not magic, you have to learn how it works. But once you learn how it works, you let Amazon upgrade it and do it and performance-tune
+it, and whatever. And if you are a big enough company, you hire like an Amazon helper from Amazon, and they can
+look at your stuff and say, you can fix it this way,
+this, this, this. But the use of the NoSQL database allowed this startup
+to compete against a much larger firm that was
+using their own hardware, and just it was really
+a much larger firm that was building their
+own data centers and all this stuff and
+sharding themselves and doing their own sharding. They were not agile because of those
+choices that they made. And so they were able to compete. And even though their Amazon
+bills were expensive, it was way cheaper than
+their competition. And so it's a really
+good story of NoSQL, but it's also a bad
+story of NoSQL. And that is, be careful of what you just read on a website
+to adopt a technology, and that's just a case study. So that's sort of the rise of NoSQL. And the modern interpretation
+of NoSQL is really just like these are really cool document-style databases
+that have their purposes. But the ACID vendors
+have not stayed steady, and we will talk a bit about the reaction to the
+rise of NoSQL next. [MUSIC]

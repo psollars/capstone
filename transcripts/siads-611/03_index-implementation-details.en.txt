@@ -1,0 +1,202 @@
+Now we're going to talk about indexes. We just got done talking about rows and
+blocks, and how a big file is broken into blocks. And then within there, we have free space,
+little gaps to do inserts and deletes, and sort of reorganize stuff without
+having to rewrite whole files. That's really important. Random access is a critical
+element of databases. Now I want to talk about how we limit the
+number of blocks that we have to load for a given query. And that's the purpose of indexes. And so assume that there's
+some kind of a logical key or maybe a primary key, and
+we're going to look something up. Maybe it's got a prefix, you know.
+like a LIKE with a prefix. But we'll just talk about logical keys. And so if you could somehow store
+the actual logical key variable, the value of the logical key, and then
+the block that it's in, and if that was so small that you
+could keep it in the memory, you could look in this little memory
+table that says oh, here's a clue. It says colleen@umich.edu
+is in block 21456. And boom, go get block 21456,
+and away you go. And so that's what an index is,
+it's a key-to-block hint. And there's a lot of different
+kinds of indexes, but then you're storing like 30 characters per
+row instead of 2000 characters per row. And then you can make those
+really as small as possible. And so the basic idea of an index, right, is we have this little cheat sheet
+of quick ways to go get a block. And then the index informs a WHERE clause. And the whole goal of a WHERE clause, you don't think of a WHERE
+clause like an if statement. You think of the WHERE clause as,
+it's sending it to all the rows. And then the rows respond
+with WHERE clause is true. And what we're doing with the index
+is we're making it so we can, in effect, ask the disk to send
+us a whole bunch of data, and then throw away the ones we don't need,
+or just give us the ones that we do need. So the less we ask of our disk drives, the
+faster our database system is going to be. And so it's really small. And so that's what we're
+going to talk about, is the different kinds of indexes
+that you can use in Postgres. So there are two kinds of indexes,
+forward and inverted indexes. And there are a number of
+different kind of forward indexes. You might call them normal and weird,
+instead of forward and inverted. But that's what we call them,
+forward and inverted. So the classic index that we use a lot,
+and we'll talk about this, is the B-tree index. Which is a balanced tree,
+which is a tree that fans out. And we try to minimize the depth of this
+tree, so that even if we have to read some of the index off of disk,
+we don't have to do too many. We sort of, for
+a certain number of records, the amount of reads that's caused
+by the index is like one, two, or three. And then you read one block,
+and then there you go, as compared to reading hundreds
+of thousands of blocks. Another one we'll look at is
+called a Binary Range Index. And it's a gross simplification from
+the B-tree, but it's appropriate for certain things. Hash is like hashing,
+where you have this little table. that instead of the key,
+it takes a hash of the key, which is almost always much smaller,
+and then goes straight to the block. Hashes, just like in everything,
+are great until they collide. So the hash is supposed
+to spread the keys out. And if you can make a hash work,
+you can make a hash work. And we'll talk about the different
+inverted indexes as well. In the regular indexes, where we're
+looking from a key to one or a few rows, you might as well just leave
+it default. Don't even tell it what
+kind of index to use. Let it figure it out. And it's almost always
+going to use B-tree. B-tree is good for string keys. It's good for number keys. It's good for date keys. It's a great balance between the cost
+of insert and the cost of updating. The BRIN, the Block Range Index, that's
+actually a lot smaller and it's very fast. But it depends on data that's
+kind of sequentially increasing. Maybe you do it on a date field, or even
+a primary key where it's one, two, three, four, five. And then you have these blocks, and they
+sort of have 1 through 10, 10 through 20. And then you just keep the largest and
+smallest number. And so we'll talk about
+the inverted indexes as well. But let's take a look
+at how a B-tree works. So you can read this. I'd encourage you to read it,
+it's pretty well written. Some Wikipedia pages are harder
+to read than others. I'm going to pop this image up
+to make it a little bit bigger. Now the key here to remember is,
+this is the index. And the whole idea of a binary tree
+is that it reorganizes itself. It moves things around. And so, for example, let's just say, and
+you can put many more of these things. Remember, your keys are there, and
+then it points to actual blocks. So you could think of like this 1 is
+pointing to a block, 2 is pointing to a block. These are all blocks that we know exist. And these are the primary key values. Now in this top one where we start,
+we have some number. And it's way more than four, but we're
+only showing four for the example. And what it really says is that
+we keep track of, this first, leftmost one has the keys below 7. The middle one has keys between 7 and 16. And the far right one has the above it. And so if we're going to insert
+a record, say 22, and we would go find a block on disk. And maybe it'd be in an existing row,
+we don't know. because all we want to
+know is which block the row that corresponds to key 22 is. We go through our B-tree. We just add a little entry to 22, and then point that at the right
+block on the index. And the same, let's just say
+we're going to do 15. We do 15, we'd look in. We'd find that we'd have
+to go on this middle one. And we put it in 15, after 12. And then we would put the row, and we'd
+keep track of which block we put it in. So you can think of insert the row,
+then insert the index entry to keep track. Now let's just say that we are doing 10. No, let's do 4, let's insert 4. So we're just talking
+about index maintenance. So you know it's less than 7, so
+it's got to go into this index field. Now you've got to rewrite some things, because we know it's going to
+have to go between 2 and 5. So what you have to do is
+you have to shove things. So you sort of shove the 12 up, the 9 up,
+the 6 from one block to the next, and the 5 up into that block. No, the 5 goes to here. And then the 4 is inserted
+between the 2 and the 5. And then we still have a block for
+the row, and we keep track of that. So this is how we balance it. And you can imagine if we just ended
+up with way too many things in, say. the middle block, and
+we filled it up, we'd have to split it. And at some point, this tree can be
+more than two deep, and we worry about keeping the depth
+of this tree constant. So there's many things, there could be hundreds of entries
+in each one, in each depth. And so you have this tree and it goes out. But the idea is with somewhere
+like three or four deep, you can have hundreds
+of thousands of records. And if you had to store
+these things on disk, you would read the first one,
+then you'd read second, third, and fourth. And then you'd read the block,
+which is way better than 200,000 blocks all having to be read and
+then scanned separately. So it seems like a lot of effort. And this B-tree is kind of beautiful in
+that, as long as you leave a little bit of free space in these index blocks,
+it's pretty easy to add new ones. And every once in a while, you have to
+kind of do a little reorganization. You might have to make the tree
+deeper once in a while. But it actually does that, and it amortizes the cost, the insert
+cost, over inserts pretty well. Every once in a while, an insert can
+sort of be a little more expensive. But most of the time,
+the inserts are really cheap, the cost of updating the index
+is really cheap, and the scanning cost is really good. So that's again why we kind of say,
+hey, B-trees are great, just use them. Now, let's take a look just for
+a minute at the BRIN, just to give you a sense that this
+is all about having a sense of a hint as to where to find a block. So the BRIN is something that's in
+a sense unique, at least right now, to it's unique right now to Postgres,
+but it's pretty cool. So the BRIN is a little different. So it's this linear list. And each one of these in
+a sense points to, so we have four things,
+points to one block on disk. And what you do is you scan the blocks,
+and you look for the minimum and the maximum in each of the blocks. And then you have just two numbers, you
+characterize each block as two numbers. So this first block is the key,
+the values for our logical key are somewhere
+between 1 and 6. The second block, you look at it,
+somewhere between 9 and 12. Third block, you look at it, 7 and 16. And then, 18 to 21. The key thing to look at here is,
+there is actually an overlap. 7 to 16 is actually a bigger
+range than 9 to 12. Which means if we're going to
+ask where block 10 is, or record 10, we would have to
+pull two blocks in. We'd pull two blocks in, because that's
+what the BRIN would tell us to do. It's reduced it from,
+100,000 blocks, but we've still got to pull
+a bunch of blocks in. And of course, then what we'd do to
+figure out where 10 really is, because 10 could be in either of those blocks, or
+it could be in neither of those blocks. Then you've got to read through the blocks. But remember, the blocks are only 8K,
+so it's not like the end of the world. It's how many blocks you read,
+not what you do with the blocks. And so if you say find 10,
+it might say, didn't find it. Or it might find exactly one copy of it. And then if we think about updates.
+Oops. If we think about updates,
+Here we go, click. Think about updates here, come back. Right, so think about updating and,
+you know, think about adding. So let's put some blocks down here,
+some more blocks down here, some more blocks down here,
+some blocks down here. And let's just say that they're
+sort of partially full, right? So there's a little space in each one. And let's say we're going to
+put record 4 in, here comes 4. So we'd look in the BRIN and say, is
+there a reasonable spot to put that in? And the answer is, well,
+we've got this block here. It wouldn't even change the index if we
+put it into this first, leftmost block. So yeah, you go ahead and
+you write, and you've got some space. And then you actually
+didn't change the index. You just extend that one,
+that's kind of nice. It's kind of like hashing,
+except it's like a range. And let's say, for example,
+that this block was, let's say this second block was full and
+the third block was full. And then, let's just say we were
+going to do, I'd better clear it. Let's say we're going to,
+we've got some blocks. Come back, pen. There we go. We've got some blocks,
+got some blocks, got some blocks, got some blocks. We've got four blocks for
+the four BRIN things. And let's just say these 9
+through 12s are all full, right? They're both, the 9 through 12 and
+the 7 through 16 are full. And we're going to put 10 in. So you can kind of imagine
+what's going to have to happen. You might come in here. You'll decide to come in here and
+you're like, crap, crud, it's full. You might check this second one and
+say it's full. So then what you would do is be like,
+I don't know what I'm going to do. I'll make a whole new block. And what you might do is pull
+a few records from one block, the second block, and the third block. Pull records, put the 10 in there, and then create a new BRIN entry that
+properly reflects the ranges. So this might be 9 to 10 in the
+leftmost one. And there might be 11 through 12. And this one might be, you know,
+13 through 16. So you can kind of see how that,
+it might be adjusted. And then you've got to shovel things,
+shovel things around, etc., etc., etc. And so that's kind of the update
+process for the BRIN. But the nice thing is if you have numbers,
+if you're building blocks that are kind of sequentially growing, and the index is
+like a primary key thing, the thing you're indexing is a primary key or a date, these
+BRINs just kind of add on at the end. And then it just kind of works. And then you just come in, and
+the queries are super fast, and the size of the BRIN is really super tiny. So there's a lot of data mining
+applications potentially for a BRIN index. That might not be, I mean, but that just gives you the sense that
+Postgres has these capabilities. And when in doubt,
+we will use the B-tree by default. Now, there are two basic
+categories of these indexes. We have forward indexes and
+inverted indexes. And I don't even like these words. I would rather the forward indexes were
+like normal indexes and array indexes. The forward indexes, like,
+I know there's a key value. It represents a column. And from that key value,
+I will find the row. It's like a logical key or a primary key,
+and I've indexed that logical key or the primary key. That's a normal index. That's what we've always done for indexes. B-trees, BRINs, ISAMs,
+they're all variations of, I've got a key, and
+the index actually sort of stores the key. So inverse indices work in
+situations where you have a column, and in that column,
+there's more than one thing. You could think of it as a Python list
+of things, or an array of things. Or you could just think of it as
+a document that has lots of words in it. So in a sense, these columns
+don't have a single key. They like have an explosive
+number of keys. And what we're interested in is
+not necessarily finding one row, but more interested in finding
+the entire set of rows. So if I'm looking for
+all the rows where SQL is mentioned, and you could think of this as
+it's sort of a wildcard, %SQL%. But how could we do that efficiently? Well, you have to break
+the string into pieces. And then index all the pieces, and
+keep track of all of the words in any row, and which rows, i.e., blocks,
+have those things in them. And that's what an inverse index is, okay? And so we have a couple of
+inverse indexes. We have a GIN index,
+which is a generalized, the generalized reverse index.
+The GIST index, which is a hashing-oriented index. And then there's this SP-GIST,
+which I wanted, I really want it to be the special one. But it's actually spatial, i.e.,
+for longitude and latitude, or for three-dimensional points or
+things like that, that have some kind of
+a spatial clustering. And so the classic use case we have for
+inverted indexes is text search. And up next, we'll take a look
+at the kinds of things that we use indexes for, and
+starting with Google search. [MUSIC]

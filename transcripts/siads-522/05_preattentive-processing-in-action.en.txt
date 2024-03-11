@@ -1,0 +1,45 @@
+So welcome back to
+perception and cognition. I want to show you how
+pre-attentive perception can be used in action and
+building a visualization. So if we look at our pile of puzzle pieces and think about domain abstraction technique
+and algorithm. Let's say, I give you
+a specific problem like I have this dataset that has
+a category like A, B, D and so on and it has two quantitative variables
+associated with it. The task that I have
+in mind is being able to find sets
+of related points. So very easily, being able to see where all
+the A points are, the B points, and
+the D points are. Can we do that very quickly? So what technique
+are we going to use? In particular, is there pre-attentive technique that we can use to make this work? The one I'm going to
+suggest is quite simple. We're going to take
+our quantitative variable. We're going to encode that
+using numeric encoding. Quantitative 2, again numeric. The category is
+a nominal variable in our language of visualization. We're going to map
+quantitative 1. We have to pick
+a specific retinal variable. So in this case, we're going
+to pick the x position. Quantitative tool, we're
+going to pick the y position. This again is in
+our grammar of graphics. Category here we're
+going to pick color. The mark will be a point. So a specific kind
+of a dot or shape will be the way that
+we encode this. We can make this a little bit more pre-attentive actually, by both varying the color and the shape of the
+categorical variables. So you're going to see
+this in the example. This will make for an interesting pre-attentive
+visualization. So we have our abstract task, which is finding sets
+of related points. The specific techniques
+that we're going to use is a scatter plot with points encoded using shapes and colors. So this is our visualization. That is the output of this particular grammar
+of graphics. So you see these three
+different years, this corresponds to
+the A, B, and D points. We have these two
+different quantitative variables that we had in mind. In this case, it's car weight in pounds and miles per gallon. The really cool thing about
+this is that it's possible to pre-attentively pick out the fact that there are these three
+different kinds of shapes, and be able to determine
+where they are on the screen and be able to
+focus our attention on any particular year. So if I say focus on 1982, you'd be able to do this quickly. If I say focus on 1976, you'd be able to do this quickly. So these are things
+that we can do pre-attentively now that we've chosen this particular encoding. These things that we care about, these different categories become things that pop out through
+pre-attentive encoding. So this technique is
+effective because again, we can pick out our targets using pre-attentive processing. The takeaways for this is
+that it's easy to find salient features on the data if we use pre-attentive
+processing. If we are strategic about it, we can use it in
+design to really help our visualizations when we need to make something pop out. All right, thank
+you for listening.

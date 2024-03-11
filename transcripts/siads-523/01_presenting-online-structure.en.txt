@@ -1,0 +1,303 @@
+Hi, welcome back. Let's talk some about
+structure of presentations. So we want to follow a structure where
+we're going to have beginning, middle, what in literature we would call
+the climax moment, and the end. We're going to think about how our data
+conversation could fit into that paradigm because structure is reassuring. People feel good when they
+know where they're going and where things might end up. It also really
+helps you to plan more efficiently. So if we think about beginning, middle, the climactic moment, and the end, we're
+going to think about our presentations for this course as following these
+sort of four dramatic moments. So we're going to start with
+a kind of introduction. In Dr. Mona Hanna-Attisha's case, she tells
+the story about Makayla the patient. So she uses an anecdote. There could also be a memorable hook.
+If it's a face-to-face presentation, it could be a moment from a YouTube video. Something that pulls people in and says,
+this is something that's important and worth listening to. Then in the middle,
+we want to unpack the setting. When and where is this data happening? What's going on that's at play at
+the time that we're looking at this data? And then we're going to have things that
+are characters. Not necessarily literally people, although some storytelling
+with data books do talk about having heroes of your data presentation. It might be following
+the journey of a person. It might be that you're
+going to use personas. So you want to think back to those
+Experian Mosaic profiles we looked back at in Week 1. How can they potentially become
+characters in your show? Characters can also be issues or
+phenomena. So things like inflation might be actually
+the leading character in your data. The climactic moment is going to be where
+there is what Atkinson talks as imbalance. And this for me means it's the moment
+where the tension is at its highest and it's clear that a change of
+some kind needs to be made. And from the delineation of that tension
+or that need for change comes the end. Atkinson calls them things like
+balance, solution, and conclusion. I might use language more like
+the recommendation you're going to make, the action steps, and
+then somehow bringing the whole presentation to a close with
+a memorable moment or a recap or even a return as in the memoir example of
+the return of the character of Makayla. And this again is going to
+give you a structure and it's going to give your audience
+a structure that they can naturally sort of fall
+into in your presentation. So some of you remember learning
+this in maybe Middle School, this idea of a plot line. And so, when we look at it as
+a plot line in literature, we would use these five words for
+what's happening. We've got the exposition. That's sort of
+the stuff you need to know before the story can really take off plot-wise. There's the rising action. You know, the big crisis in a story
+never happens on the first few pages. It takes a while. There may need to be some interactions or
+some conversations or some events that all lead up
+to this big moment in a story, this sort of showdown at the OK Corral
+moment. And from that, rather quickly, we come down to how things are going
+to resolve themselves in the story. So falling action might be what happens
+as a result of the climactic moment. And then, especially in
+traditional literature, they're sort of a nicely
+packaged ending to the story. So if we apply this metaphor to
+the presentations we're going to get, we might think of our plot line
+looking something like this where we've got an introduction,
+a short anecdote or hook. We have the rising action where
+we're explaining where is this data situated in time and space and
+the history of an organization perhaps and whose behavior are we tracking in here? Are we looking at people,
+phenomena, ideas? And we're unpacking that world so that
+when we set up the moment of imbalance, that moment of tension, that moment
+where something needs to be decided, we've already given our listeners or
+our viewers the information they need to be with you as you
+propose how to resolve that. And once you've revealed that moment
+of highest tension or change, then you can propose your
+recommendations and your solutions and you can bring things to a close with
+your ending or your conclusion. Maybe it's a return back to
+the anecdote from the beginning. Maybe it's an extension
+of the call to action. And sort of thinking about your
+presentation in these beats can be really helpful in how you
+add more of a sense of drama or story or narrative to this factual
+information that you have. So let's talk a little bit more
+about each of these phases. So in the beginning or
+the introduction maybe, like Dr. Mona Hanna-Attisha, you start
+by talking about a person or a persona who is someone who's going on
+a journey and we're following their data. Maybe it's a story about
+one of your customers or one of the players on your team and
+you're sort of setting the stage. Maybe you want to talk about a story from
+history or literature or current events. Maybe your boss really
+loves Harry Potter and you can figure out how to tell a Quidditch
+story that will set the stage for how your data has a parallel
+experience to that. Maybe it's about just asking the audience
+to consider a particular moment in time, which will get them in sort
+of the right head space. So maybe you ask them to think
+about the happiest time they ever spent with friends that primes them to
+carry those emotional things forward. Now if you have 25 minutes or
+half an hour to do that, you can spend about five minutes
+just on the beginning. Just on telling that story and
+sort of warming the crowd up and getting them in the right head space. The challenge for you in this course is that you have five
+minutes to do this entire assignment. So this will have to be something pretty
+short so that you have time to get to the meat or the middle of this,
+of your presentation. Here's one of the strategies that
+I sometimes use in the beginning. This is a slide template for a data literacy conference
+we had a few years ago. I have like an agenda slide or
+a "Today, We Will" slide. So if you are not feeling comfortable with
+this sort of anecdote version of beginning your presentation, another way is to
+think about it in terms of an agenda. And this can also be helpful because
+it again, like awakening an emotional framework, it awakens a sense that
+there's a structure in place for your listener or viewer. We also want to think about setting and the major thing we want to
+set here is context. What are the circumstances under
+which you gathered the data? Was there anything particular
+that was experimental data? What was in play? What were the variables? What were you looking for? It helps to know whether you're looking
+at current data or historical data or whether you've been making
+projections into the future. Help us know where the data sits in time. You might have to establish
+where are we talking about. Is this data just for Michigan? Is it data for the Midwest? Is it data that's international? As we move a little bit more
+abstractly from a sense of place and time, what are the key issues that are maybe on the company's mind
+at the time of this presentation? And sometimes things like
+visualizations can help there. Maybe a colored map helps
+establish a sense of where we are. Maybe it's a sense of two pie
+charts next to each other, showing how things have changed. Maybe it's a trend line on a graph. Then we want to think
+about the characters. Now, if you read some storytelling with
+data books, this is literally a person. And in the case of the memoir example,
+it is a person that she conjures here, but it could also be other things. So I mentioned that things like issues or
+phenomena can be the characters. So if you're in New Jersey and you are
+looking at data related to Hurricane Sandy and the kinds of weather patterns
+you saw before the hurricane arose, your character might be the hurricane or
+hurricane behavior. And that is the way in which you are sort
+of multidimensionalizing the data off the page. Sometimes you are the main character. Maybe what you're going to unpack is your
+process of making hypotheses, testing them with data, running the analysis, checking
+your work, seeing if the hypothesis works. And you're literally going to use as
+a through line your thinking process. And, as I mentioned before,
+it might be a persona. And that's why we looked at that Gale
+Business DemographicsNow tool way back in Week 1, is that it helps
+us very quickly get a sense of the type of people that live in
+the area that you're talking about. And you might be able to use that persona
+and their attributes as a way of walking through the data that you've gathered and
+the conclusions that you have drawn. So here we have the climax,
+or the imbalance, or the tension, which is
+anything from what's at stake? What will happen if we take action? What will happen if we
+let things stay the same? What will happen if we make a change? Why do we care about this? Why are we here having this meeting and
+this conversation? What are we trying to solve? And what might you need to change if you've run data based on
+a particular scenario? What particular lever would we
+need to flip for that to change? Maybe the question is, why is now
+the time to be thinking about the issue? Why are we thinking about outsourcing
+now, versus five years ago, versus five years in the future? And again, in some cases, it's that we
+see the data pointing in a direction and we see that it's going in
+a direction that doesn't feel right, or doesn't feel profitable,
+or doesn't feel successful. And so what will be the outcome
+if there is no change? And that's the Flint example. If there is no change, and the amount
+of lead being absorbed in the human body continues to go up,
+there are very dramatic health outcomes that are permanent and
+irreversible that can take place. So thinking about if you don't
+know what a moment of tension is, or a moment of uncertainty,
+or climax, or imbalance, or any of those words, you kind of have to
+ask yourself, why do we care about this? Why are we even dealing with this? And sometimes the reality is we don't
+care as individuals, but we know that executives care, or boards care, or
+people higher up in the pay scale care. So really having a sense of this
+goes back to what's your why? This is the moment where we really
+want to activate that sense that action is needed for
+the people who are listening with us. And finally, we think about the end,
+or the balance, or the recommendation. What do we think
+the organization should do? What do you think the executives
+should decide to do? In many cases, you also want to unpack
+why are you not picking the other choice? Because that's a way of
+thinking proactively. If we are making a decision, and we are weighing the benefits of putting
+apples in school lunches or pears, and our recommendation is apple, what's the
+first thing an audience might think about? Well, why not pears? So we might need to set up
+a situation where we say, I didn't choose pears for
+this because X, Y, and Z. And that lets you be proactive and
+anticipate pushback to your idea, and it also helps reassure the audience
+that you've thought of everything. And then this is the most important part, the evidence that supports your rationale
+that you've been playing out over time. And as part of the end, we also talk
+about the solution or the action steps. How are we actually going to take on
+the balance or the recommendation? So if the recommendation
+is to outsource to China, you might propose in the solution three
+things that will start that ball rolling. That you're going to contact a consultant
+who hooks up businesses to businesses. Or you might start on
+a long-range plan for not hiring new people in those
+roles when they retire so that you're thinning out the workforce
+naturally as you transition work to China. And finally, at the end, and
+remember you've only got five minutes for this in your assignment, if you opened with a scenario or
+a persona, it's a nice parallel structure
+to come back to it at the end. So you see that in Dr. Hanna-Attish. She comes back to the character
+of Makayla at the end to sort of tie a nice bow around things. So she's got sort of this bookmarking
+approach where beginning and end have the same character. If it's been a long presentation, it's
+often useful to restate the key ideas, to reiterate what the
+problem or the need is, and restate the recommendation
+and the action steps. For your presentation, you can probably
+skip the last two because you won't have time, and because mere minutes will have
+passed since you shared those ideas. And in fact, I learned this from
+our colleague Paul Edwards, that you want, in the end,
+often to have your last slide not just say the word questions, but
+to use that real estate. This is often the slide that's up longer
+than any other in a presentation. To use this space to talk about
+what were those big ideas. And that way,
+you've got that visual reinforcement as you are taking questions or
+wrapping things up. We also want to talk
+a little bit about rhetoric. And many years ago,
+when I began to study public speaking, there was a sense that we all should
+speak with a very sort of New York Times vocabulary, and
+with a rather patrician speaking style. And I would say that,
+as we're filming this in late 2019, we're seeing a pretty big
+change in rhetoric right now. That we are more interested in using
+vocabulary and jargon that the audience will appreciate, as opposed to this
+sort of objective, more patrician voice. We know that repetition of
+key phrases can be important. Think about speeches like I Have a Dream,
+or Barack Obama's Yes, We Can, where the same phrase
+gets said over and over. It lets the audience sort of be
+in on the game a little bit. So it could be anything from, and
+once again, the stock split. And then you explain something else, and
+you say, and once again, the stock split. And a little bit later, and
+once again, the stock split. Anything that can sort of keep connecting
+what you are talking about now to something that's happened earlier. And finally, especially given
+the short length of your presentation, you really want to think about precision
+of language and economy of language. Knowing how to say ideas in the smallest
+number of words and space possible. And the number one way you do that
+is to practice and to have a sense of intentionality by plotting
+your ideas of how you are being very deliberate and thoughtful
+about how you move from idea to idea. So let's talk a little bit
+about dealing with bad news. Sometimes data will show that a company
+is exactly on the right track and that they need to double
+down on something or you need to convince them to keep doing
+what they're doing because it's working. And that's a great opportunity. But we are living in complicated times,
+and quite often when you talk about data with folks, as in the example that you
+read, you're dealing with bad news. And I'm a big fan of the Ask a Manager
+blog and what Alison Green on that blog does is she handles the workplace. She's
+sort of a Dear Abby of the workplace. And she says often when we have
+bad news and we need to talk about it with employees or with bosses,
+we sort of hedge our way around them. And we don't actually come out and
+say what the issue is. So based on Alison Green and
+in honor of Ask a Manager, the first tip I have for
+you is to be clear. Oftentimes, one of the challenges of bad
+news is we don't actually come out and say what the bad news is. And so that can continue a piece of
+ambiguity and a sense of uncertainty. Whereas data will probably
+be showing you, and you'll be able to see to what
+degree it's showing you, it will point you in one direction or
+another. So be clear. If profits are tanking, then don't say, oh I don't know
+if sales are down a little bit. You need to just be clear
+about naming that behavior. So we call this minimizing
+opportunities for people to read ambiguity into
+something that isn't ambiguous. If you see that there's an opportunity
+to reverse course and to change that, bring that up sooner rather than later. So that you don't just keep talking
+about what's wrong, what's wrong, what's wrong, and your audience
+is getting more and more downhearted and more and more of
+a sense that this is a hopeless situation. So when you're storytelling,
+thinking about we've got this bad data,
+but I have a solution. Here's the bad data, but you don't feel so bad about it because you feel secure that
+we've got a good option coming their way. Also with bad news,
+especially if the news is surprising, you want to allow time for people to think
+about the news that you've just given. So you don't want to assume that they
+can come up with an action plan or a strategy immediately. But again, this is where you
+articulating what you think the recommendation would be is so helpful. And I know for some of you you're
+thinking like your job is going to be to do analysis and not decision-making. Sometimes the shift into
+decision-making comes as you move up the hierarchy in an organization. But also it can be an act of kindness to
+busy executives after you've said the data is showing this isn't going the way we
+want, here's an idea for how to fix that. That gives them either something
+to adopt or push back on. Both of which are less
+cognitively stressful than having to figure their
+own way out of things. So also you don't need to sugarcoat it.
+You don't need to ornament it. You don't need to say I know
+you feel bad about this. You don't need to overtalk about it. You just need to be clear and
+succinct and non-emotional. Don't try to anticipate
+how they'll respond. And often, I will say this is my
+own instinct, I often think, well, maybe if I tell a joke it will
+lighten the room, and it doesn't. So just stay away from making jokes or making light of the situation.
+Bad news is bad news. I also want you to think
+a little bit about flow. So you may know of the theories
+of Csikszentmihalyi, which talks about how when we are really
+doing something that we are really into, we have this sort of sense of flow. And flow also can help us connect
+the dots in our structure and make constellations out of our stars. So maybe that means that you play
+with the order in which you reveal certain pieces of data. So imagine a scenario where you
+are talking through your data analysis and you say, first we started by
+looking at median household income, and that led us to ask about home values. And so we took a look at that and
+we noticed that they were kind of moving in sync, and then we realized maybe
+we should look at commuting distance. And so we're following linearly in
+the same order in which the events happened, versus thinking you
+could show the ending first. You could say, so
+this is where we are today. This is data from
+last week's dashboards. What's interesting to
+me is how we got there. Let's go back in time and look at
+the data that led us to this point. And when you're thinking about sequencing,
+you can also think about it in terms of which data points do I want to raise
+first to set the stage for others? Do I want to put the most
+explosive bit of data first? Do I want to save it to the end,
+as the grand finale? What's the order and the priority in which
+this data is going to unfold for us? So two things that can
+happen as ways to help you. Some people literally
+storyboard their presentation. They sort of sketch out the words or sort of the emotions or the actions that
+they want to communicate in various times. So here's a Tom Ray example.
+Some people use sticky notes. This is actually from
+the Storytelling with Data blog. So it comes from your textbook
+author where she starts by moving in a pretty linear way
+through her presentation, and what she's showing you with the blue
+arrow was that she's playing with moving the recommendation up to the very
+beginning of the presentation. So what she, let's play with
+what each of those would do. So imagine the blue is gone.
+If we work linearly, you're helping people see your
+thinking process over time. And hopefully the recommendation
+comes as a natural extension of that thinking process. That's going to be right for
+some audiences. If we flip it and we do
+the recommendation first, then what you're saying is, hey guys,
+I've got this under control. This is what I think we should do. Now I want to give you some evidence
+to back up that recommendation. But I've gotten the most important
+thing out there right away. And by the time I finish, I'm going to
+have gone through all the rationales that you would ask me about otherwise, so
+that you're convinced by the end. Some people use slide sorter
+in slide presentation tools. I do this a lot where I just start
+putting an idea on a slide and then I move them around as I go. The one thing that can be hard about this,
+it looks easier and cleaner and more polished to do this
+than to do pen and paper. But sometimes this does not give me
+the through line that I'm looking for. And so oftentimes if I start in a slide
+sorter model, I actually end up going back to paper or to sticky notes when I start
+to feel that through line is weakening. One of these recommendations from your
+textbook is the idea of vertical logic, which means that you've got all
+the same idea on each slide. So your header of your slide
+matches the visualization of your slide if you've got one, and all of the bullet points match that slide. Now, let's take a look at
+a horizontal logical approach, which is that the main ideas
+from your agenda slide or your Today We Will slide should match
+the headers on the following slides. So two quick things you can do when you're
+at the point of making slides to get yourself to that point.

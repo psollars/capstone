@@ -1,0 +1,224 @@
+Hello. We've been looking at different centrality measures. Today, we're going
+to be discussing Betweenness Centrality. The assumption in betweenness
+centrality is that important nodes
+connect other nodes. So what we're going to do
+is we're going to measure the centrality measure of a node by taking all other
+pairs of nodes, finding the shortest
+path between them, and checking whether the node
+is in that shortest path. If it is, we give some
+credit to the node, and if it's not, we don't. Then we add it all up
+among all pairs of nodes. But let me show you a
+potential complication. Recall that the distance
+between two nodes is the length of the
+shortest path between them. Let's look at the
+distance between nodes 34 and 2 in this network, which is the karate club network, which we've discussed previously. Well, the distance
+between 34 and 2 is 2, and here's the shortest
+path that can show that. We can go 34, 31, and 2. There's no other path that
+is shorter than that. There's no direct edge that
+connects nodes 34 and 2, so that's the shortest path therefore, the distance is two. However, there are other
+ways that we can go from 34 to 2 in just two hops. For example, we can go 34, 14, 2, or we could go 34, 20, 2. So the complication
+is that there are multiple shortest paths
+between the nodes 34 and 2. It's unclear when we're measuring
+betweenness centrality, whether we should give
+the credit to node 20, to node 14, or to
+node 31 for being in the shortest path
+between nodes 34 and 2. What we're going to
+do is we're going to give credit to all of them, but we're only going to give them one-third because there are three shortest paths and they're each only in one of them. So that's the general
+formula we're going to use. The betweenness centrality
+of V is going to be the sum over all pairs of nodes
+excluding node V itself. Then we're going to take the ratio of two things
+in the denominator. We have Sigma S, T which is the number
+of shortest paths between S and T. Then
+in the numerator, we're going to take
+Sigma S, T of V, which is going to
+be the number of shortest paths between S and T that pass through
+node V. For example, if we're taking the betweenness
+centrality of 20 here, then whenever we let
+S and T be 34 and 2, node 20 is going to get a one-third credit
+inside this sum here because it has to
+share it with 31 and 14. There are three shortest
+paths between 34 and 2, and node 20 shows
+up in one of them. Let's go through a
+very simple example to show you how that works. We'll actually measure the betweenness
+centrality of a node in this very small network by hand so you can see how
+the whole thing works. We're going to do
+that for node B. We're going to find the
+betweenness centrality of node B. One thing I want to
+point out here is that because this is an
+undirected network, we're not going to have
+to worry about finding the shortest paths
+between nodes S and T, in both directions, namely, from S to T and from T to S. Since this is an
+undirected network, those aren't going
+to be the same. So we're only going to find
+them in one direction. In this case, there are
+three other nodes, A, C, and D, and so there are three pairs of nodes
+that we have to compute. Let's start with nodes A and D. The shortest path
+from A to D is A, B, D, and there's
+just one of them. So the denominator is one, and that shortest path
+passes through B. So the numerator is
+also going to be one. Next, let's look at A and C. The shortest path from A to
+C is going to be A, B, C, and there's only one of them, so the denominator is one, and because it passes through B, then the numerator is also one. Then between nodes C and D, the shortest path is just one because they're actually
+connected by an edge. Of course, this shortest path does not pass through node B, so that will contribute zero over one, for
+a total of two. We've been making the
+implicit assumption that when we pick two nodes, S and T, there's always, at least, one shortest
+path between them. But what if not all nodes
+can reach each other? As is the case for directed
+networks, oftentimes. For example, in this network, node D cannot be reached by anyone because it does not
+have any incoming edges. Well, what we're going to
+do is that we're going to compute betweenness centrality only considering nodes S and T that have at least
+one path between them. Note that we have to do this. Because the way we define it, we are putting the number of shortest paths between S and
+T in the denominator here. So this would be undefined
+if we just let it be zero. We're going to restrict S and T to only nodes that can
+actually reach each other. Let's run through an example here in this directed network. Let's compute the betweenness
+centrality of node B. Here, there are going
+to be four pairs of nodes that can
+reach each other, and some are going to
+reach each other in different ways when you go
+from one node to the other, versus when you go from the
+other node to the first one. That'll be the case for nodes A and C, so let me show you that. We will start with
+the pairs A and C. The shortest path between
+A and C is going to be A, B, C. That of course
+passes through B. This will be 1 over 1. Next, we're going
+to go from C to A. That one is just one hop away since you can go
+directly from C to A, which does not pass through B, so that's 0 over 1. Next, we'll look at D to C, which is just one hop which
+does not pass through B, so it's 0 over 1. Then finally, from D to A, which goes D, C, A and it does not pass through B, so that 0 over 1, so
+in total we get 1. Let's do another example. Let's find the betweenness
+centrality of node C. Again, we have to compute
+the shortest paths between all pairs of nodes that can actually
+reach each other, so we'll start with A and B, it's just one hop
+away which does not pass through C, so 0 over 1. B to A, which will go B, C, A and does pass
+through C, so 1 over 1. D to B, which is just one hop away and it
+doesn't pass through B, so that's 0 over 1. Then finally, D, C, A this the shortest
+path from D to A which passes through C and
+so in total we have 2. The next thing we're
+going to do is we're going to think
+about normalization. So far, we've been,
+for each node, adding up how many times it shows up in the shortest paths
+between all the nodes. This number can be any
+positive number or 0, but in general, it
+can get very large if you are in a
+very large network. This is a bit of a problem, because then whenever you're computing this in
+very small networks, then nodes are going
+to tend to have very small betweenness
+centrality, whereas if you take a
+slightly larger network, then nodes are going to have larger betweenness
+centrality. We typically want
+to normalize this, so that we can compare across networks and things like that. We're going to do
+something very simple. We're just simply
+going to normalize by the number of pairs
+of nodes in the graph, excluding the node V. When we are done computing our
+betweenness centrality, we're going to divide by
+one half times N minus 1, times N minus 2, which
+is the number of pairs of nodes in an
+undirected graph. If we're in a directed graph, then we want to
+apply the one half, since you have to check
+in both directions. That's easy normalization stuff. Let's go to our
+Karate Club network, which we started with, and let's look at
+the top five nodes with the highest
+betweenness centrality. There are nodes 1, 34, 3, and 32. After normalizing, these
+is the values you get. Now, one of the issues with betweenness
+centrality is that it can be pretty computationally
+expensive to compute. Depending on which
+algorithm you use, the algorithm can take
+up to order N cubed, which is a problem if you're doing this
+for a large network. For example, take this
+network which has 2,200 people in it and it's not really that large,
+relatively speaking. When we look at networks
+in social media, they tend to have millions of
+nodes and things like that, so this is not a very
+large network really, but if you count just
+the number of pairs of nodes that pull us
+up to 2.4 million. This can grow pretty quickly. One of the things
+that one can do is, rather than computing
+the exact value for a node for
+betweenness centrality by computing the shortest path
+between all pairs of nodes, one can approximate this by
+sampling pairs of nodes. We're going to show you
+in the tutorial how you can do this using NetworkX, the function for betweenness centrality gives you a parameter that allows you to sample
+the pairs of nodes, so that it doesn't
+take very long to run, and it can be efficient even if you have a
+very large network. If we apply this approximation
+using 10 random nodes to compute the centrality measures of the nodes in the
+Karate Club network, we get that these are the nodes with the highest betweenness centrality and you get node 34, 1, 3, 2 and 32. So you get the same
+nodes that you got when you computed the exact measure. When you approximated,
+you got this node to show up here
+and this one left. So for this network, you get a similar result. Of course this is a small network and so ten may be a lot for this. If you're doing this
+for a larger network, you may have to sample more in order to get a good
+approximation. Okay. The other thing
+you can do, and again, we'll show you how to do this in network x using this function, is that sometimes we're not interested in all pairs of nodes. Sometimes we're
+specifically interested in a particular subset of nodes. We're interested in knowing which nodes have
+high centrality with respect to this
+particular sets of notes. An example of that could be
+in transportation networks. Imagine that we have a network of airports and we're
+really interested in figuring out which
+airports are very important when people
+are traveling, say between South
+America and Africa. We're not really interested
+in figuring out which are the most central
+overall globally, but specifically when
+people are going between these two
+regions of the world. So that's exactly a case where you're interested in
+betweenness centrality, but only for a subsets of nodes. Again, you can apply this
+very easily in network x. We'll show you how to do that
+in the Karate Club network. I can show you an example here. Imagine that we're interested
+in finding nodes that are very good at bridging
+this set of nodes, and this set of nodes here. Which one of those B? The answer is you get
+this five nodes here. One thing to note
+is that if you just compute the global
+betweenness centrality, you get the red nodes. Now when you restrict
+to these two subsets, this node drops out
+and this one comes in. So this node here is
+very central globally, but not so much in terms of
+connecting those two subsets. Whereas this one is not
+as central globally, but it is very central for
+this two particular sets. The other thing we can do very easily with this measure of betweenness centrality
+is that we can actually find the
+centrality of the edges, not the nodes but the edges. What you do is you simply replace the edge rather
+than the node here. This is the function
+you would use, which is the exact same as the
+one you use for the nodes. You still take all
+pairs of nodes as t, which can reach each
+other and so on. The denominator is
+still the number of shortest paths between s and
+t. But now the numerator is in how many of those shortest paths does
+the edge, e, show up. If we apply this to the network
+of the Karate Club here, we get that the most central
+edges are these five, which all connect
+to node number one. Which makes sense
+because node number one is very central
+in that network. If you were to do it in
+the case of the subsets, then you get a slight change. So one of these drops out and then you get
+this edge to show up as most central because it's bridging something inside
+this particular set. This idea of finding the
+most central edges in the network is going to be very important when we
+get to week four, when we're looking
+for communities of nodes in the networks. One of the approaches
+we're going to take to find communities is to find the most central edges and start to take them
+away from the network, and see how the
+network fragments and then the communities
+stay together. This idea of centrality
+is going to come up again in the context of finding the centrality of
+edges specifically. Okay. Let's summarize
+what we discussed. We talked about
+betweenness centrality, and we said that the
+assumption is that central nodes are those
+that connect other nodes. We discussed this
+specific formula that we're going to be using
+for betweenness centrality, as well as other things like
+the normalization step. So we want to divide by the number of pairs of
+nodes in the network. We talked about how it is expensive to measure this because we have to compute shortest paths between
+all pairs of nodes. For large networks, that
+could be a problem. So we talked about how
+we may work around that by sampling instead of computing all possible
+pairs of nodes. We talked about how
+sometimes we are interested in nodes that are
+central, not globally, but for a specific
+subsets of nodes, like in the case of
+transportation networks. We can do that by defining specific subsets
+where we would pick the s and the t in order to compute the
+betweenness centrality. Finally, we talked
+about how we can apply this exact same
+framework in order to measure the centrality
+of edges as well as nodes. That will become important when we discuss community detection. With that, we'll
+end of discussion of betweenness centrality. Next we'll discuss PageRank.
+So I'll see you there.

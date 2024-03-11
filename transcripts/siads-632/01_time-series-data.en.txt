@@ -1,0 +1,93 @@
+Hello everyone, this
+is Qiaozhu Mei. We're going to talk
+about Time Series Data. In the past week, we
+have talked about how to model sequence data to make
+predictions for the future, in terms of future items
+or future series items, like a future part
+of the sequence. Starting today, we will spend
+two weeks to talk about the different data representation known as time series data. I'm sure that you
+have heard about time series before
+and you may have seen many different types of time series data
+in your real life. To understand what time
+series representation is, let's think about the difference between time series and sequence. Remember that a sequence is defined as the ordered
+list of categorical items. If we write down that
+mathematically, the capital X, the data, can be represented
+as the list of pairs. A pair of categorical items, x_1, x_2 to x_n, and zero position indices, 1, 2, 3 to n. In other words, in sequence data representation, only the order matters. We usually use sequence
+representation to model data like DNA sequences. As you can see that, a problem in using sequence representation is
+that the position indices, in different sequences,
+are not naturally aligned. The first position,
+the second position, and the third position,
+in one sequence, may or may not be the first, the second, and the third
+position, in another sequence. We often need to use sequence
+similarity measures, such as nutrition and distance, to find the best alignments
+between different sequences. Time series data is defined as a list of timestamped
+values or measurements. Mathematically, we
+can also represent the time series data
+as the list of pairs. This time, it's not
+a list of pairs of categorical items
+and position indices. x_1, x_2 to x_n are numerical measures instead
+of categorical items, and t_1, t_2 to t_n are timestamps instead
+of position indices. In other words, the difference between time series
+and a sequence is that we're measuring numerical values and we're recording
+the actual timestamps, not just the orders
+or the positions. Using this representation,
+we can deal with a time series with
+the single measurement. For instance, x_1, x_2 to x_n are the measurements of the single attribute, for
+instance, temperature. It is the single attribute. We take the measurements of the temperature over time
+at different timestamps, and that gives us a
+single time series. One example in reality is
+the price of a single stock. We could also use time series to model multiple measurements. As you can see that in this case, we no longer use just a
+single attribute, x_1. Instead, we use x_1
+vector and x_2, a vector, to x_n, a vector. A vector means that there are multiple dimensions
+in x_1 to x_n. These dimensions of
+the measurements could be the measurements of
+multiple same attributes, such as temperature and pressure. It could also be the measurements of different items,
+of different objects. But you can see that no matter what, these different
+measurements, these different dimensions of numerical values are naturally
+aligned by the timestamps. One real example is the number of active cases of COVID-19 cases. You can see that we
+can actually align the time series of the active cases of
+different countries, by what? By the timestamps. This is to say that
+multiple time series are naturally aligned by the timestamps versus
+multiple sequences may or may not be aligned, because the only
+thing that matters in a sequence representation
+is the order, not the actual timestamp. We can see even more examples of time series as the
+data representation. For example, when we're
+talking about sequences, we talk about the queries people type into a search engine. The search engine could
+also use a time series to model or to represent
+the search traffic data. What they usually do, is to measure the frequency
+of the search term. Measure how many times that
+people type in the term, University or the current University of Michigan and
+they measure that over time. If you go to Google Trends, you can actually see
+many time series that's corresponding to search
+frequency over time. Another example is to measure the groundwater
+storage over time. This case, we can see that we have naturally multi-dimensional
+numerical values. Each dimension corresponds to the measurements in a
+different location. In this case, we can obtain multi-dimensional
+time series and they are naturally aligned
+by timestamps. Another application of time
+series is sports analytics. Actually you can find lots of time series data in
+sports analytics. The athletes wear devices. These sensors can actually measure the different types of sickness and tracks
+them over time. You can actually wear
+multiple sensors when you are actually
+doing the sports. The sensor sickness give us multiple time series and they are naturally
+aligned by time. Another example, in healthcare, you can see that through
+those health devices, we can collect data, such as the ECG data or others. They're also taking the
+form of time series data. Of course, multiple
+aligned times. Yet another example, soundtracks. We're making recordings. When recording this video, the computer is actually
+collecting my sound, and that's also represented
+as time series. In this case, they usually use frequencies to record
+this time series data. We will talk about
+that next week. Time series data
+are not just used to record natural measures
+of data attributes. They can also be used to
+record more complicated, even data science results. You can see that in this example, we're also measuring some
+numerical attributes over time, over different weeks. This numerical
+attribute is not just like the count or
+the temperature. It is actually a result of a
+data mining analysis itself. In fact, this is
+measuring how likely is that different students will drop and book class over time. This numerical value, we're plotting over time, is
+actually correlation. If the user dropped one course, how likely they are going
+to drop another course in a similar category or in
+a different category. You can see that time
+series data can be used to measure real attributes of data as well as complicated
+data science results.

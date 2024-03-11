@@ -1,0 +1,226 @@
+Hi there, and welcome back. In this segment, we're going to
+talk about some case studies, particularly two case studies
+that have to do with sampling. And that's going to address our big theme
+question of does data science always leave something out. So I think you'll like these. The first example comes from the working
+world of data science, and to protect the innocent and the guilty, I'm not going
+to tell you the specifics of the example. But in general, this example comes
+from data scientists who were studying the Internet and how the Internet's
+quality varied between countries. So some of you may have noticed there's
+a there's an online website called speedtest dot net. And here's the result of speedtest dot
+net that I ran on my laptop just before recording this lecture. So speedtest dot net is
+a website that you go to and it tells you how fast your
+Internet connection is. That's actually not very good. I hope that's my upload. I forgot what it was. Anyway, it's my upload, I think. So so anyway, speedtest dot net helps
+you diagnose networking problems. Maybe it would help you see if you
+were getting what you paid for when you buy Internet service. You see I buy Internet service from
+Xfinity, which is Comcast Corporation. So that's the way that people
+use speedtest dot net. Speedtest has a number of competitors. So there's a bunch of sites that
+you can go to that do this. The sites run ads, so
+they make money based on ads. But here's the key thing. They also gathere data. So every time someone looks up
+how fast their Internet is, they record the information that they're
+able to collect about that person. Then they assemble a data set that they
+can themselves use or they can sell. Speedtest dot net actually
+produces these rating systems. I've taken a screenshot of some of them. This is an example rating where
+it shows the download speeds for different countries. And so and then it tracks I'm over time. So you see the United Arab Emirates
+is doing better than it was, a couple plus to there. It doesn't really matter why
+there are multiple columns, there are different ways of measuring it. But the key thing for you is just that
+this is an industry that exists that does this kind of data collection and
+produces these reports. So here's my case study for
+you about sampling. Sampling is a funny topic because
+you might think that sampling is not an ethical question that needs to be
+covered in a data science ethics class. Sampling is the term that we use to
+refer to how we gather the data, assuming that we usually don't
+have a corpus of data or a data set that includes all data. We usually have some smaller amount. And so, how do you decide which data are included in your data set and
+which are not? And so, usually, when we talk about
+sampling, we're referring to the fact that if we wanted, for example, a study of
+the population of the United States, we do not actually get to talk to
+every person in the United States. Instead, we talk to a sample. So that's what I mean by that. So you might say well, sampling is
+a technical area in data science. And if you do the sampling badly,
+your conclusions are wrong. So it's not really about data science
+ethics, it's just about data science. So if you construct your sample poorly, you will not have a measure of the
+opinions of everyone in the United States. So that's just being correct. So it's not really an ethical issue,
+it's more like a basic foundation. Obviously, there's some ethical dimension
+to being a good data scientist and working as a professional to
+the best of your ability. But that's neither here nor
+there, I think. So why sampling? Well, this example, I think,
+gives you a little bit of a sense of it. So in this example, a working data
+scientist was offered a deal with one of these companies like speedtest
+dot net to perform analyses on the data that they'd collected from
+people testing their Internet. And this was some time ago,
+it was over 10 years ago. It's not speedtest dot net, and
+I'm not going to tell you the specifics of the corporations involved, but
+some of them are corporations you'd know. So they wanted a data science analysis
+that would help them understand how different people in the world
+had better or worse Internet and how that was changing. They said well, we have this agreement with one of
+the companies like speedtest dot net. Can you run this analysis? So the data scientist was excited
+about it, and said sure, you bet, ready to do it, but
+noticed some anomaly in the data set. And one of the anomaly was that when they plotted a list of the top countries
+like this one, there was a surprise. So in the list that I have on my slide,
+you might notice that if you're from the United States, you don't think
+of Romania as having fast Internet, but it does actually have fast internet. And there's a variety of news stories
+about Romania having fast Internet that you can look up online if
+you're curious about that. So some of these items might be surprising
+just because I'm ill-informed, but I can use Google to figure out that,
+in fact, some countries have, and I just don't know much about Romania,
+so that's why I'm surprised. However, this wasn't that kind of anomaly. It was a particular
+country appearing high up on the list of countries
+with fast Internet, but there was no other indication that this
+country should have fast Internet. It was a developing country
+with a poor infrastructure. Why was it doing so
+well on this measure of Internet speed? And so, the data scientist was
+a little bit concerned about it. Why would this country show up so
+high on the list? He went to his colleagues and he talked it
+out and tried to figure out what was going on, and eventually managed to find someone
+working at the organization that wasn't from the country but
+had a lot of first-hand knowledge, had lived there in the past and had a lot
+of first-hand knowledge about the country. And that person said this. They said well, the difference in these
+rankings is that in the United States, if you want to use a service
+like speedtest dot net, you buy your Internet and then you use
+speedtest dot net to diagnose problems. So you're checking to see if my
+Internet seems a little slow, let's use speedtest dot net
+to figure out what's wrong. And he said yeah, that sounds right,
+that makes sense to me, okay. But what's going on with this one
+country that's way higher than I think it ought to be in these rankings? And the person said well, in this country,
+you use speedtest net very differently. The norm is that only the very
+rich have good Internet, and they're very few of them. And so, when you come over for
+a dinner party or something, it would be pretty normal if
+conversation turned to the Internet, that you would run speedtest dot net
+to show how fast your Internet was. Like wow, you've proven that your
+Internet is actually really fast. And so, what the person described is
+what we would call sampling bias, right? Because many of the countries, people were using speedtest
+dot net to diagnose problems. Problems produce low numbers
+if they're really problems. Sometimes they could test for
+a problem and not find a problem. That would produce a higher number,
+you would think. Maybe they would average out. But that in this one country there was a
+cultural norm, allegedly, that would lead the people in this country to use this
+service differently than everyone else, and that was to show off how
+fast their Internet was. So they wouldn't run the service
+like speedtest dot net unless their Internet was very fast,
+and this might give them a very high number which was at
+odds with reality in the country. Here's the crux of this case study. In discussing this with his colleagues,
+some of the other data scientists were really excited about the size of the data
+set, and that's the real pitfall here. So one of them said, well, it doesn't matter because this exciting
+thing about this partnership is we have so many records, we have millions of records,
+so we'll just get more data. And this is actually I think a kind
+of reaction you do see quite often in the profession, which is we maybe
+love data, maybe even fetishize it, so we want more and more,
+and we think more is better. There are specific reasons
+why we think more is better, and that has to do with things
+like statistical power and reducing certain kinds of errors and
+the law of large numbers. But it's really important to highlight, I hope some of you winced when you heard
+me repeat what the data scientist said, when he said it doesn't matter
+because we'll just get more data. The message I have from this case
+study is the law of large numbers will not save you. If you're not sure what I mean by that,
+look up the law of large numbers again. But in general, more data does nothing
+to correct for a sampling problem. In this case, because there's a sampling
+problem with one of the countries that I described, what will adding more data do? The law of large numbers tells
+us that more data are better because we're more likely to,
+with repeated experiments, approximate or
+approach the true result in reality. But if you have a biased sampling problem, you are only able to improve your
+measurement of the prevailing bias. So adding more data just makes you
+more confident in the wrong answer. So you will get, if you're doing,
+say, a frequentist analysis with a significance test, more significance
+asterisks and a lower p-value. But all that's telling you is that you're
+more confident in the wrong answer because you're better measuring the wrong answer. There's no way to solve for the sampling
+bias without being aware of it. You could solve for it, you could solve
+for it using maybe some sophisticated weighting, maybe even
+unsophisticated weighting. But I just want to emphasize
+that this is a problem. So in this case, I think the ethical issue
+is that there's a cultural dimension to the story that wasn't appreciated
+by the initial data scientist. And the way that it was resolved in
+the workplace was that there was another person at the workplace that
+had lived in the country and knew something about
+the cultural dimensions. So you can't solve for a sampling bias
+unless you know that it's there and you have some ability to measure it. And so that's a huge pit fall. I'll now cover my second sampling
+bias example in this segment, and that's sampling bias from surveys. I wanted to use this example because the
+one I just gave you is relatively obscure, and this example is very prominent. This is a sample of bias from surveys, and it comes from the American Association
+of Public Opinion Research report about the 2016 election
+in the United States. I'm not sure if you were following
+the news of the 2016 election, but the public opinion polling
+in that election was, and here's a quote from a news source,
+a disaster. The reason it was a disaster is that
+many reputable news organizations released public opinion
+polls that incorrectly and sometimes with great confidence
+specified who would win the presidential election in the United
+States, and then that person did not win. So a lot of the polling was wrong,
+and this had all kinds of real-world consequences for
+the data scientists involved. It led to restructuring of
+polling organizations and some publications pulling
+away from polling and sort of drastic lack of confidence
+in this kind of analysis. So the American Association
+of Public Opinion research did this autopsy, they called it, to try
+and figure out what exactly went wrong. So this is just some news coverage of
+the autopsy from Business Insider. I'll give you a quote from the report and
+then I'll just talk about it. People with more formal education
+are significantly more likely to participate in surveys than
+those with less education. Many polls, especially at the state level,
+did not adjust their weights to correct for the over-representation of
+college graduates in their surveys. So what this report is telling us is that
+the pollsters did the best that they could perhaps, except that they
+failed to appreciate a sort of built-in sampling bias in survey research. So in general, survey research
+tends to be something that people who are more privileged volunteer for. And normally, maybe this problem
+wouldn't rear its ugly head. But in this case, the presidential
+election really had a bifurcation in public opinion that was along
+the axis of education, where people with less education were much more likely
+to vote for a particular candidate, and people with more education were much more
+likely to vote for the other candidate. And so, the bias in the public
+opinion research process interacted with what was actually
+happening in the population and the opinions in the population
+to produce this bad result. There are other problems with the polling
+for 2016 that are covered in the report, but I just wanted to highlight this one. I think the reason that this one is so important is really that
+it highlights the fact that privilege is often a component in
+some of our data gathering processes. So people respond to public opinion
+polls when they have free time to actually take surveys on the web or
+to answer questions on the phone. And if you're really in dire straits,
+maybe economically, you might not have time. Or especially if you're doing it out
+of a sense of public-mindedness. We can address those kinds of questions of
+privilege with, for example, weighting, which is suggested by the American
+Association of Public Opinion Research. But generally,
+I think the nice thing here is that, while our last example focused on
+the concern that we might have some sort of lack of cultural knowledge that would
+lead us to be blind to a sampling bias, here, I think there's more of
+a general rule that, in general, we're more likely in a variety
+of situations to be able to gather data from people
+who are accessible. So I mean, there are many forms
+that this could take, but in this case it was college graduates. But I think this also,
+you would expect to find some variation in who gets into a data set based on all
+kinds of axes that relate to privilege. Sometimes the privilege
+isn't the right word, and there are all kinds of other biases that
+might also be important for sampling. In a medical data set, the fact that
+we tend to only have data about people that come into hospitals for treatment
+produces all kinds of weird skews because there may be people who are actually
+suffering from a particular ailment, but they don't have symptoms that lead them to
+go to the hospital or something like that. It could also be a kind of person. So for example, a rural person with
+less access to health care may be underrepresented in medical data
+sets just because it's harder for them to go to the hospital because
+there may not be one nearby, so the threshold for
+when they go would be different. And so, we generally, if we pay attention, can find some important
+bias in any sample. There's an old joke in demography, I don't know if you hang out with
+any demographers at the bar. But if you do, there's an old joke in
+demography that if you're attending a talk given by a demographer and
+you didn't read the paper in advance and you're not sure what to say,
+you can always raise your hand and say what about the sample,
+because there's always a problem. So that's a guaranteed sort of way
+that you can sound like you know what you're talking about the next time
+you're listening to a demographer. What about the sample? These samples also matter even if you
+might think that you're gathering data about the natural world or
+things that don't involve people. As we've talked about earlier,
+some datasets seem like they're not about people, but then you do actually find
+that there's a way in which people have biased or otherwise intervened
+in the data collection process. An example there might be it could
+be that one of the attractions of the speedtest dot net like data set for
+the data scientists in my first example was that this speed was
+measured directly by computer. So you could think that
+maybe that's good because if you just ask people via a questionnaire
+how fast is your Internet, how many people would give
+you the right answer? That would be a measure
+that had a lot of error. So you might say using the data that way
+would be would be much safer because it would be less likely to have error. But then, it also doesn't avoid
+these problems of sampling. The last thing I'll say about sampling
+in general is that many data science processes involve data that was gathered
+with what you call a convenience or a voluntary sample, and
+that these are always suspicious. Because if the data are gathered just
+by people who happen to be around for you to gather data from them, this
+inevitably produces a very skewed idea about reality that isn't going to hold
+up when confronted with other data sets. We also have examples of this
+in the other material for this class when we talked about
+training data and things like that.

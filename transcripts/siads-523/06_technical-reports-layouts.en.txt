@@ -1,0 +1,127 @@
+Let's continue our conversation about
+technical reports with some conversation about layout. Now, it's easy to feel like you're
+going to get stressed out about doing this. But I want to remind you that while we're
+all going to use slide software of one kind or another, you do have lots of
+choices for how you approach this. So you can, if you're comfortable
+sharing your email address, download Duarte's templates
+and just use hers. There are a couple of examples
+that you can use from that. Secondly, we've got some
+samples that you can use. So all you have to do is figure out
+where you want to plug in data and where you want to plug in text. Third, if you like a little bit
+more control over the look, you can go to a site that has slide
+deck templates like Slidescarnival.com and download templates for free or
+import them into Google Slides for free. And that way, you're
+choosing the color palette, but you are taking a little
+more responsibility for layout. And finally, some of you
+come from experiences where you're really comfortable
+using Adobe tools. And you'd rather just go off-roading and
+use a tool like Adobe Illustrator and design your own. The choice is up to you, the level to
+which you want to customize things. I want to emphasize that even though
+we are using slide deck software, we are not making
+a presentation slide deck. We are tweaking a presentation software
+to use it for report writing. So you'll actually be making
+two slide decks in this course. In this week, you're going to
+be making the technical report. And then when you come out on the other side
+next week, we'll talk about visuals for your technical report. When you come out in Week 4,
+we'll talk about presentation strategies. So you will find that you
+need to adapt for each one. So let's talk about some key goals for
+layout if you're choosing to do your own. One critical idea is this
+idea of alignment and grids. Robin Williams does a great series of updates to her book
+The Non-Designer's Design Book. And in that she talks about how one of the common
+mistakes we make as amateur designers. and most of us are amateur designers, is that we let things be
+populated all over the page. And we don't really know. We know something's kind of
+cluttery about the document but we can't put our fingers on it. And the number one way to
+begin to improve your design is to think about having the fewest
+number of margins possible. And that means we want to align so
+that we have a minimal number of vertical lines in our work and
+a minimal number of horizontal lines. This is why centering a lot of times
+creates more visual tension than we want because it means our eye is looking
+down that jagged center line. Instead, let's lean into using more
+left justification so things line up, and turning on grids and rulers in your presentation
+software to help you snap to items. Now, Duarte talks about having
+a four-by-three grid for your design and that's a good start. We can look at some formats for this and then we'll talk about a few places where
+maybe you off-road just a little bit. But her idea is that you always
+want to have elements that are hugging one of these lines. So here are a couple of examples and
+here I've used blue to represent text and yellow to represent images or
+visualizations. So we start by a very simple,
+on the top left corner, we've got room for a title or
+a subtitle and two big sets of text. Moving down from there,
+we see a four-column approach. Top right, we have a large
+visualization with a title and maybe a little bit of notes to the side. And in the bottom we have maybe it's
+a photo that creates a left column. And we've got three smaller
+columns of text and we've sort of hugged
+the title down a little bit. Here's three more examples. In the top left corner, we see room for
+a title and a subtitle, a large graphic. Maybe it's a map. I often find maps need a lot more
+space than other visualizations, especially if I need to annotate them. And underneath would go the caption or
+the source material or the organizational info. Below it, let's say you have a page and
+it has very little content. You might find that you can
+put a decorative stripe or a decorative banner or
+even a navigation bar across the top. Maybe you just have a ton of white space
+and you just have two columns of text. In the top-right-corner variation on that,
+we've moved the title down a little bit from the stripe and
+we've put a square-shaped image. There are hundreds of ways that you
+can work along the grid, as you saw in the slide deck that you read. Here's some other
+strategies that might work. Here we have just a quote on a page. Here we have a Table of Contents where
+we might just have two columns, which is the page number in one column and the description of it in the second. And then on the right-hand side,
+two versions of three columns. And these sort of break the rules, because these don't necessarily
+align perfectly to the grid. But they are equidistant
+between each column, and between each column and
+the side and bottom margins. Here's a version with an illustration. Here's a version without. So you can use grids if you
+start to feel like your design is starting to feel funky. Notice that in a lot of presentation
+software, you can click and drag, and little red dotted lines will
+pop up to help you line things up. This to me is the number one way
+when my design is going wonky to snap things back into place. You also want to think about white space. And this Is really where the tension
+between this is what I want to say and this is the room I have to say it
+can become challenging. And you may find that you need
+to snip out a few words or rework phrases that are wordy
+into more succinct ones or turn one page of
+content into two pages. Let me show you what
+this might look like. So I'm a verbose person by nature, so often my first draft looks
+something like this. And everything is lined
+up nicely to a grid but there's just no room for the eye to rest. And so it's hard to know
+where my eye should go first. Let's take a look at what happens when
+I try to aim for more white space. And here, by the way, lots of
+designers just use random Latin text so that people when they're looking at
+design aren't distracted by the words. They're just looking
+at blocks on the page. I decided to try it again. I cut out some words and
+I turned this into three columns. And here you can see I've got
+more space between the columns, because clustering information helps
+us know what goes with what visually. I've made wider margins on the
+side and the bottom, and a much larger margin at the top. And you can see how you're probably
+responding a little bit more positively to this one versus the other one. This meant I had to cut some of my
+beautiful Latin phrases to make it fit and so I may have had to expand this
+into two pages, for example. Here's another approach, even less text
+where we've got lots of white space. And suddenly it's very easy for
+the eye to rest and really take in what that
+text is telling us, right? So this is actually my favorite, even if it means I've got to then
+continue the text onto a second page. And here they are side by side so
+that you can get a sense of them. In many cases, I would go with
+version two or version three, but it's just find that
+the number of columns and the amount of text really do have
+an impact in the way people take in the words that you have remaining. You'll have to do a little
+bit of playing around. And this is again why I
+like using PowerPoint for that purpose, because it's so
+easy to resize images. It's so easy to type in a new column
+width and see what it is that I like. You'll also notice that
+this is also happening. For those of you who have been in
+the scholarly community, you know that we used to see academic posters that
+looked a lot like the poster on the left. And we're seeing that even academic
+posters are starting to reduce the amount of text and to really forefront
+what is really important. So white space is one of those bugaboos
+that your desire to communicate and your desire to be understood
+can really come into tension. But it can be really worth it to
+see the positive impact later. If you have a long report, and your
+report is not going to be a long report, then you might want to think about
+having some kind of navigation tools or navigation bars, and Duarte
+talks about this in her slide deck. So if I were making a slide
+deck about the four areas that we are going to look at in a technical
+report, I might have color coding by page. So all the pages that have to do
+with layout have a dark blue bar and all the ones with color have
+a medium blue bar, etc. I could also do this by putting
+an underline under whatever topic I was on at the time. I could also do it by graying
+out the other colors and just coloring the topic I'm
+talking about at one time. Or even graying out just text and
+having the navigation. I don't think your reports are going to
+be so long that you need this. But these kinds of, "hey, where
+in the process of this am I?" can come in really handy with
+extended-length reports. That's all we've got for that section. Let's pick up in the next segment.

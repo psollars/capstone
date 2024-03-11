@@ -1,0 +1,440 @@
+You'll recall that
+unsupervised algorithms only get access to
+unlabeled data. They are generally used for
+two important problems; to transform or summarize
+data in some way, or to find interesting clusters and other structure
+within the data. This week we're going
+to cover the second, we're going to look at lots of different clustering
+algorithms and what trade-offs they make, what assumptions they make. We're going to use those
+results from clustering to get better insight into data and
+in some cases to improve, for example, the performance of supervised
+learning algorithms. The basic thing that
+clustering does is just to partition
+data into groups of objects whose feature
+representations are similar to each other but dissimilar
+to objects in other groups. For example, this group over here might form
+a cluster because, you can see that the
+distances between the points, which you could interpret
+as a similarity between the features they
+have is much smaller between these groups of
+points than it is to points that are further away
+in this other clusters. These points are also
+share a common area of feature space and they're
+also separate from cluster. You want things in
+a cluster to be close to similar things, but far from dissimilar things. That's what clustering
+algorithms do in general, they partition the data to
+get that local similarity, but more global dissimilarity
+across clusters. Let's recall this web
+clustering example where you might be running an online shopping
+site and you want to understand more
+about the types of customers that visit your site. Perhaps the interactions
+to the site are logged in some HTTP log
+file on the server. You can extract information about what pages
+people are browsing, what site features they're using, as well as the things that
+they buy and you want to use this data to improve sales, but also to improve customer
+experience on the site. One thing you might
+consider doing is grouping users according
+to their shopping behavior. You can use these signals to map entries in the HTTP log
+file to some feature space. In this example, I'm showing a very simple two-dimensional
+feature space. Feature 1 is the number of
+product pages that somebody browsed and feature 2 is the
+number of advanced features. By feature I mean an affordance or something they
+can do on the site. The number of advanced shopping
+features they're using. That's a very simple
+representation of their behavior in this space. What we hope to do, as users come and interact
+with the site, we can look at their
+product pages they browse, the number advanced
+shopping features they use, put them into this feature space, we can do clustering
+in this feature space. One thing we might expect
+to find, for example, or that we might discover from our data because we don't
+really know ahead of time, there could be a group of users who don't browse very many pages but use lots of advanced, more focused shopping features. There could be another
+group of users who do lots of browsing
+on the site and don't really use many of the advanced
+features to compare or drill down into products
+and with this clustering, you might gain some insight into, not just who your customers are, but what they do and even get some insight
+into their goals, what site affordances they
+find useful in your interface. You could use these insights, you can determine that
+the cluster of users, similar users here, the
+little cluster here. There might be some
+additional users who are more outliers that don't really fit into any
+established cluster. They could be important as
+well to detect because they may have needs that don't
+match your current interface. They could be all reasons why their behavior is different and may need to be
+supported differently. You could use these
+clustering insights to improve the site's features for different groups of users, you might recommend
+products to specific groups depending on what they might be more likely to
+be interested in. If you could predict which
+group somebody belongs in, you might change the interface or personalize it in some way to fit the
+shopper they are. That's just one example of
+how E-commerce companies, for example, might
+use clustering to get more insight into
+their customers. Here's an example of a large-scale study from an actual social
+media site, Whisper. What the authors did here, was they looked at
+clicking events of users on their site. You can see below an example
+of a series of events that they considered to be a representation of
+a behavior pattern. Somebody would click on
+something in the interface, like to view a post. There might be a time gap
+and then they would pick another type of thing
+to click and so forth. By accumulating this
+series of events, they built up a representation of how somebody interacted
+with a site. Then they used this
+representation to do a clustering and they did a very nice hierarchical
+clustering. You can see from
+this diagram that the clustering did indeed
+identify fairly well, different genres of behavior
+in a hierarchical way. Here, the nested circles represent a series
+of nested clusters. Here's a smaller cluster. These are all sequences of click events that are similar and they're all contained within
+a larger cluster, which itself is contained within an even larger
+cluster and so forth. When they did the clustering
+analysis on Whisper data, they found that indeed these larger clusters
+here for example corresponded to users
+who tended to go through a series of Whisper
+posts sequentially. Another cluster corresponded
+to users that were fairly inactive or
+another cluster of users that did a scan of
+popular feeds within the site, other users that logged in
+occasionally, and so forth. In this case, the behavioral
+analysis produced some very interesting
+results that gave them a much better picture of how users interacted with their site. For this week, breakdown the learning objectives
+into these points. Clustering is a key form
+of unsupervised learning. We're going to cover multiple algorithms for doing clustering. For example, you'll learn
+how to apply k-means clustering effectively
+and what it is, and the kinds of clustering problems that
+is most effective for. We'll also cover something
+called agglomerative clustering and
+hierarchical clustering. Hierarchical clustering
+creates a tree of similar groups and
+that's really useful in situations where the underlying
+generative structure of the data might have
+more of a tree-like form, like in biological data
+for example with DNA. We'll also look at a
+method called DBSCAN, which is a very different class of clustering algorithm in k-means or agglomerative or higher
+hierarchical clustering. It's particularly good
+at finding outliers for example points that
+don't belong in any particular group,
+that are more isolated. One of the problems of clustering
+is how do you evaluate the quality of a cluster if you don't have ground truth labels? Well, there are
+methods for evaluating cluster quality if
+you had the labels, but also there are methods
+that you can use to evaluate how good your
+clustering is without labels. We'll talk about those
+and then we'll go through the various trade-offs and
+assumptions that [inaudible] about what different
+clustering techniques make. We'll try to cover some more advanced
+methods for data that doesn't cluster well with some of the methods
+I've just described, such as spectral clustering. Let's look again at
+the basic idea of clustering and its applications. The key concept that
+enables clustering is some definition of distance or dissimilarity between
+pairs of data points. Remember that operations on data points or sometimes
+as we call them data instances like similarity
+take place using a particular representation
+choice for these data points. When I show points like
+these, for example, these points are all lying within in this case it's a
+three-dimensional feature space. We have feature one, feature two, and feature three. When we speak about
+a distance measure on a pair of data points, that's a mathematical function
+in this feature space. Each of these points is represented by an
+n-dimensional vector, where n is the
+number of features. In this case, if it's a
+three-dimensional space, each point here
+would be represented by a three-dimensional vector. Of course, one widely used similarity measure
+in this kind of space is the Euclidean
+distance between two points. Instead of computing
+the Euclidean distance, we can compute the
+angle theta between the two vectors that represent these points and compute the cosine between
+these two vectors. That's especially useful. We'll see that used
+multiple times in this course for high dimensional
+representations like text. Whatever the measure is that's
+appropriate to the data, once a distance
+measure is defined, a clustering algorithm
+will search for a quote unquote good clustering
+that attempts to assign points to the same cluster if the value of their pairwise similarity
+is sufficiently high. We call these the
+intracluster differences. Those are the distances
+of the points. These would to be the
+distances of the points inside this group. We're trying to minimize
+those distances. We also want the distance between points in different
+clusters to be maximized. For example, the distance between these two points and that's known as the
+inter-cluster distance. We have inter-cluster distance, you want that to be large. Intra-cluster distance here,
+which we want to be small. Let's just take an example
+of a poor clustering. Suppose I ran some
+clustering algorithm. Instead of the clustering
+that it's showing here where it's
+grouping all the points together with the same color. Suppose my clustering
+algorithm decided that, these groups of
+points on the bottom, we're one cluster, and these groups of points up
+here were the second cluster. Suppose my clustering algorithm, my bad clustering algorithm, told me, "There are two
+clusters in your data, and here they are. The second one, especially has the two groups of
+points within it." Well, we would get alerted to the fact that this is
+not a great clustering. Because, if we look at
+our objective function, we want intra-cluster
+distances to be small and inter cluster
+distances to be large. You could argue that maybe
+cluster one and cluster two are well-separated here. There's some separation here. However, are the intra-cluster
+distances small? Well, no, because
+you can see that the points these are supposed to be considered
+the same cluster. But, you can see there are
+lots of points in here, who's pairwise distances
+are very large. That's a sign that this
+is a poor clustering. What motivates our study
+of clustering analysis? Well, it turns out that
+the ability to group similar points together has
+many important applications. You can think of clustering
+as the ability to add an extra column
+to your data set that assigns a label or a cluster ID to each data point according
+to its membership, and a cluster found by
+the clustering algorithm. You can think of it as a way to compute new features for the data points in your data set. You can think of the cluster ID a summary of the data point. For example, we might map a complex audio sample to the phoneme sound that it represents in spoken language. We can replace this
+large audio file that has millions of samples
+of audio signals. We could convert that simply
+into a list of phonemes. You can think of other
+examples based on images or other
+types of data where clustering could be used to
+compress or summarize data. This process is also
+called quantization. Data smoothing is another one. Sometimes we might have missing or incomplete
+attributes for a data point. If we know that two data points
+are in the same cluster, we might be able to infer likely values for the
+missing attributes, using what we did observe for these attributes from
+other cluster members. For example, we might
+have a cluster of users that prefer science
+fiction movies in general. Even though we didn't observe a user's rating for a given
+science-fiction movie. The fact that nearby users in
+that cluster gave the movie high ratings makes
+it more likely that this user would give the same
+movie high ratings as well. Data understanding and
+data navigation are also important applications
+of clustering. As we saw on the website example, we can use clustering algorithms to find interesting groups, outliers of users or
+other entities that may be useful in helping support how users
+interact with our site, how we can improve
+the website design or other aspects of
+the environment. Data understanding, we're
+trying to understand the underlying
+factors that could be a survey, for example, looking at how other groups of people who answer to survey in a similar way they
+maybe you representing an important types
+of demographics, you can discover from
+the survey results. Finally, the navigation example. People have long used
+clustering to, for example, group web search results to
+make them easier to browse, and drill down if necessary. Search engine might cluster them by topic or by
+their similarity. If it can group a whole bunch of pages that are redundant, basically say the same thing. It saves user's time because
+they don't have to look at 10 different copies
+of similar things. They can just look at one
+representative of that group. It saves time, browsing
+and in searching. It also is a way
+that search engines help suggest related
+queries to people, as a way to help
+refine their queries. You might do a search, discover a cluster of
+articles on a topic, and then realize you may need to refine your query a
+bit more to split the cluster into more
+precise sub-topics. When using clustering as
+part of a Cluster Analysis, there are a number of stages which we call a
+typical workflow that are useful to follow and think about when applying clustering
+algorithms to your data. I've shown one example
+of a workflow here. In the first stage
+of the workflow, it's similar to
+supervised learning, where you have to pick an appropriate representation
+for your data. What are the features
+you're going to use to represent the objects, the entities that you
+care about clustering? Effectively you have a data set, you decide which columns
+of the data set are appropriate for
+determining the similarity between two data points, and so you might want to leave out some irrelevant features. You could generate new features, for example, using PCA. But once you've defined the appropriate data
+representation, then you want to select
+a distance measure in that feature space. You have to define what it means for two points to be similar
+or close in distance. By defining this
+distance measure, you might choose a basic
+Euclidean distance if your objects are represented
+by real-valued vectors, where a Euclidean distance makes sense or it could be some
+other form of distance if you have features that are groups of different types of
+variables like categories. We'll discuss that later in the week and how
+to handle that case. You have a distance measure, you've got a representation
+that you're computing the distance on and then you
+need to select an algorithm. We'll discuss how
+to make that choice later and what sorts of things to think about when picking
+the right algorithm. Many of the algorithms
+that we look at require you to
+specify the number of clusters to look for in advance. Some of them have methods to
+attempt that automatically, but because this is
+unsupervised, typically, the process of determining
+the correct number of clusters can involve a sort of search or tuning process based on some clustering quality
+metric that we'll look at. After you've picked
+the algorithm, you look at the number of clusters that might be
+optimal for that algorithm. Then the big challenge
+of clustering, in addition to simply doing it, is interpreting what
+the results are. How do you interpret what
+comes out of the algorithm? How do you decide if those
+results have high-quality? If they're valid
+for your problem? We'll discuss tools for
+that stage later as well. This is sort of a typical list of stages that using
+clustering might involve. There's an implicit
+arrow here that you can draw where you might choose a data representation
+and distance measure. Then you might look at
+the results and say, "This doesn't make any sense. I'm going to have to go back
+and include, for example, a feature that actually might
+help discriminate between these two things that got
+put into the same cluster, but are actually supposed to
+be in different clusters." There's an implied iteration
+that happens here. If at any point the results of your analysis using clustering
+are not to your liking, you go back and revise some
+earlier stage and iterate. Let's look at a few
+real-world examples of clustering to give some further motivation
+for exploration. This example is from a system performing something
+called Scatter/Gather. It's an application of
+clustering to improve browsing for large document
+collections such as the web. The idea is that each
+person's information needs may not be that specific. So it's sometimes
+useful to start with a broad idea and then explore different
+refinements of that idea. Or maybe you're not sure
+what search terms you should use to
+express your search, so you try some, get back some results. For example, if you're searching international news stories, you might realize from the
+results of the clustering that your initial query terms
+need to be refined a little bit, get more specific. For example, perhaps you're interested in news stories about oil shipments and their implications for
+national security. You might get a set of results
+like the ones at the top, and you might see that there are specific subtopics that are associated with clustering of news stories in that group that comes back from
+your initial query. So they'll have different
+aspects to oil shipments and national security that you might be particularly
+interested in. Let's say, you're interested in the politics of two
+different countries like Iraq and Germany. You can put that as feedback into the
+scatter/gather algorithm. Get back a smaller set of
+stories that are more refined. You can iterate this process. You can continue to specify refinements to your
+initial search and you get a smaller and smaller
+and more precise set of international news
+stories that allow you to sort of home in on a particular subarea that
+is most relevant to you. Basically in the scatter phase, you're presented with a set of clusters that are associated
+with the keywords. In the gather phase, the user selects
+multiple clusters that appear relevant
+to their interests, then those selected
+clusters are merged, and a new clustering
+with that subset is performed in a new scatter phase. Here's an example
+of how clustering can find hierarchies of clusters, so this will be hierarchical clustering that's applied here. In this case we're finding
+similarity between different individual
+cancer cases according to the immune profiles present
+in each patient's case, for four different types
+of immuno profiles. An immune profile is defined by a series of tests
+that create a sort of signature for the properties of an individual's immune system. Then using this profile, it can be used to predict that patient's response
+to therapy, for example. Here each row in the
+matrix represents a case. The dendrograms on the left
+of each clustergram show the relatedness of
+the immuno profiles of individual cases. The longer the horizontal
+dendrogram arm, the greater the difference
+in immuno profiles between individual cases
+in a cluster group. Will look at this in more detail when we
+talk about dendrograms. But you can see, for example, here's one cluster found by
+the hierarchical algorithm. You can see that these
+individual distances in this tree here are
+very small compared to this larger distance between groups of cases in cluster three. Again, we'll talk about what these dendrograms represent
+and how they get merged. But basically what's happening
+is the similarity among all these different
+patients there immuno profiles and it's one
+cluster was very similar, the distance was very small, and so they got merged into this sort of subtree right here. The distance that separated this cluster from
+cluster number one, for example, is quite large. The nearest that any case from cluster three
+got to any case in cluster one was
+quite large and so they were eventually put into
+different clusters. Beyond web search and
+health applications, clustering problems arise
+naturally in any field you can think of that involves groups of similar instances in data. We saw an example from health looking at similarity
+and immuno profiles, you can imagine looking
+at cancer cell DNA, clustering variants of cells into treatment
+groups and so forth. Medical imaging,
+clustering is used in the image itself to
+find likely tumors. In addition to looking
+at different customers, companies use this to understand where potential
+market segments are, who their website visitors are. As we saw on social
+network analysis, clustering algorithms are used to find communities
+and a related group of algorithms is used to find key influencers within
+social networks. In information retrieval, we saw an example from
+scatter gather where clustering is used to cluster search results
+by similarity, by event or by topic. It's very useful in search and recommender systems to smooth across groups of similar users. If you don't have complete
+data for one user, you can maybe infer it from groups of
+similar users nearby, and that's very useful
+for personalization. Why is clustering a difficult
+problem in some cases? Well, let's take a look at the set of raw data points here. We haven't labeled them yet, they're all the same color. We haven't decided what
+the cluster should be, we can discuss about
+what it might be. How would you perform clustering
+if I gave you this data? Obviously one way to cluster them would be to put
+all these points into one cluster on the left and put all the points on the right
+into a second cluster. That looks reasonable because the data points here are
+more similar to each other than they are to the points in the cluster here and there's a decent separation between them, that might be a
+reasonable clustering. However, you could imagine that there are actually six different clusters here as well, so it may be that you could find a clustering that group
+these in this fashion. This is also not an unreasonable clustering
+because these points are all pretty close to each
+other within the cluster, and yet, relatively speaking, they're separated
+from the other groups by a larger distance. You could make a case that six clusters
+is the right number here or you could imagine there could be
+four clusters in reality. You could imagine
+maybe this cluster is a longer cluster of things
+that are the same in here and you might
+imagine that by using these longer
+clusters you get to find four clustering. This could also be a potential clustering solution
+for this problem. The point here is that
+the best clustering, quote, unquote, can be ambiguous. It's not always clear and even
+human judges can disagree. The right clustering is. We'll talk about later in a different module
+what types of clustering evaluation metrics there are to help us navigate these cases. Related to this idea of
+ambiguity and clustering, I wanted to briefly mention a very interesting
+fairly recent result, that tells you what types of conditions clustering
+algorithms can satisfy simultaneously or not. If we think about clustering
+algorithms in general, and the properties that need to satisfy one of them
+is scale invariance. For example, if I do a clustering and I've measured
+everything in inches, and then I change to measuring
+things in kilometers, even though the
+units have changed, the clustering itself should be what's called scale invariant. Changing the units shouldn't change the basic
+clustering results. Another desirable property
+of clustering would be what's called richness. So for any desired partition of the data points,
+wherever I want, suppose I have ground truth
+labels that describe exactly how a set of data points should be partitioned into classes, there should be some
+distance function that lets me achieve that. Thirdly, there's a property
+called consistency, so suppose we have
+a distance function ''d'' and we get a
+particular clustering. Then we create a new
+distance function called d*, whose effect is to shrink points that are closer inside clusters. The question is what
+get tighter inside. But it's function is also to enlarge distances
+between clusters. Generally, clusters
+are better separated. That shouldn't change
+our clustering either if we can shrink
+the points inside clusters and then expand
+clusters way from each other, that should obviously not change the clustering and that's called the consistency property. What Jon Kleinberg
+proved is that, there is no clustering
+function that can satisfy all three of these
+properties: scale invariants, richness and consistency
+at the same time. There exists a number of natural clustering functions that can satisfy two out of
+these three properties. But there aren't any that can satisfy all three simultaneously. In the paper which I've
+given you the link to here, examines some popular classes
+of clustering functions, such as single-link clustering, this agglomerative hierarchical clustering that we'll look at, as well as centroid
+based methods, k-means methods, for example. He shows that, for example, k-means doesn't satisfy
+the consistency property. He shows that other methods
+satisfy other properties, but can't do so with all
+three simultaneously. Anyway, it's a very
+interesting result about the possibilities
+of clustering. We've talked about
+clustering in the abstract. What are some specific types of algorithms that are
+used to find clusters? Well, there's a huge
+range of approaches and you can sort of group
+these approaches into broad categories. One property of a
+clustering algorithm is how it assigns
+objects to clusters. Some methods perform what's
+called a hard clustering that assigns each point to
+exactly one cluster. This is sometimes called partitional clustering
+because it has the effect of partitioning
+the data-set into separate, non-overlapping
+groups by cluster. On the other hand, other
+clustering methods perform what's called a soft clustering that
+allows a data point to belong to potentially
+multiple clusters. For example, a news article about software piracy might be assigned to both a
+software topic cluster and a crime topic cluster. Soft clustering doesn't fully
+commit to just one cluster, but it typically
+assigns a confidence, or a weight, to each cluster
+according to how strongly a data point is associated
+or assigned to that cluster. Another property of a
+clustering algorithm is whether it's hierarchical
+or non-hierarchical. Hierarchical clustering
+methods find nested sets of clusters, where the clusters form a
+tree-like hierarchy with precise clusters with very
+specific small groups of points at the lowest level. Then these are contained
+within larger, more general clusters
+further up the tree. An example of a
+hierarchical clustering might be a grouping of animals according to their genetic similarity
+based on DNA. We're going to look at two of the most widely used
+representatives of these families. In the hierarchical
+family we'll look in detail at what's called
+agglomerative clustering, using different
+distance criteria. In the partitional family will explore k-means clustering. Then in one of the
+assignments you'll have an opportunity to apply a variant of that
+called K-Means clustering. Other types of clustering, some of which we'll
+touch on briefly, include spectral clustering, information theoretic clustering, combinatorial optimization, and probabilistic general models. Let's get started by looking at k-means clustering
+in the next module.

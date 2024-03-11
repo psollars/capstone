@@ -1,0 +1,76 @@
+Hello and welcome to
+another SQL walkthrough. In this walkthrough,
+we are going to talk about stored procedures. So if you take a
+look, for example, at our favs slash d plus favs. Sorry, I'm close too. I always keep it singular. I keep my table names singular because it's a place
+that we keep a fav. So if we take a look here, it's real common to create created_at and updated_at variables
+in lots of rows. And we can make the default NOW, but that's only when the
+data is inserted. But sometimes you want to
+make it so that every time you updated_at is automatically changed every time you change it. So let's go ahead and insert
+a row. What's in here? SELECT star FROM fav. Let's see what I've got in here. Yeah, I got some stuff. So I got like 999 in there. So I can UPDATE fav, SET howmuch equals howmuch plus one, semicolon, I forgot
+the semicolon. And so it's up now 1000 and the created date is still
+the correct created date, but the updated
+date didn't change. And it's common that we want
+the updated date to change. Some database systems have a part of the CREATE
+statement that you can say, auto-update the updated_at. But it turns out that Postgres does not have that feature. So we have to use what's
+called a stored procedure. And a stored procedure is a bit of code that you can sort of stick in the server that when the server receives its SQL commands, it can add some of your code to all the work that it's
+going to be doing. It's a way for you to
+extend the behavior. So Postgres, stored
+procedures are their own little language and I don't expect you
+to really write them. I didn't write this one. I Googled like how do you
+automatically fix the updated_at in Postgres,
+and I found this. And this is probably the most
+common thing people do, partly because other databases
+do this automatically. But Postgres, for
+some strange reason, doesn't give you a feature
+to do this automatically. So the first thing we're going to do is create some code. So CREATE OR REPLACE FUNCTION. This is like inserting
+code into the database. And it's a little weird
+language, plpgsql. There's a bunch of
+different languages. I prefer to write them
+in Postgres native. These things are not portable,
+they're very unportable. And so you might as well just
+use the language you are going to use because if you say, I'll use Python or JavaScript, because
+there's other languages, you find that they
+have compromises and you're not allowed to
+do everything in them. So heck with it. Just use that built-in stuff and
+don't fight about it. So that CREATE FUNCTION put
+something in the database, okay? It put code in the database. And now we have to associate it. And so we're going to
+create a trigger. A trigger is this bit
+of code that like is an event that when it
+sees something happening, it like triggers our code. So it says, we're going to make
+a trigger in the table post. Each row that's going
+to before you update each row, run this code. And this code is basically
+going to go, here's the new row and
+before we put this thing in, change the updated_at, and then put it
+back in the database. So this is like deep, deep, deep
+in the database. There's no extra transaction. We could put our updated_at
+over up here on this UPDATE. But this way we are going to make sure every time this data changes, one way or the
+other, it's going to run. So this basically says go into the post table and mark a
+little event that says, run my little bit of code right before you
+finish the update. It's kind of in the middle
+of the update. The update is started and then we're going to run our trigger and then the update finishes. So between the time the update is sort of handled and the update is
+actually set in the database. And it's quite simple. And again, I'm not expecting you to write this
+but I expect you to conceptually understand
+what's going on here. And you have to realize that
+this just wrote code, this is associating it
+with the post table. So you only write the once. I'm going to put it
+on the post table. I'm going to put it on the
+fav table, the fav table. And this would be something
+you'd probably do in your creation statements, and I'm going to put it
+in the comment table. So now I have these triggers. And so the difference now is when I run this UPDATE statement, you will see that the update time now
+changed automatically. So I can do that again and then this update
+time will change again. The create time
+doesn't change but the stored procedure has
+caused that update to happen. So you will find situations where you want
+to write stored procedures. I tend to generally avoid stored procedures
+if I can help it, but in this particular situation, it's the way you
+solve this problem of automatically updating
+an updated_at column. So it's not outrageous to use a stored procedure in this
+particular situation. So this is one I
+want you to know. And you'll run into some
+problem and they'll say, this way to solve
+this in Postgres is to use a stored procedure. They're not as bad as you think. Writing them is a skill that
+only advanced Postgressers, which I don't even count myself as an advanced Postgresser. So I just go find them
+and then I use them. I understand what it's
+doing and why it works, but I don't write them
+as a matter of course. I write a lot of SQL, but not so much stored
+procedures. Cheers.

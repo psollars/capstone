@@ -1,0 +1,144 @@
+In this lecture,
+we're going to talk about querying DataFrames. The first step in the process is to understand Boolean masking. A Boolean masking is the heart of first and efficient querying in both NumPy and in Pandas, and it's analogous a bit to bit masking which is used in
+other areas of computer science. By the end of this lecture, you'll understand how Boolean
+masking works and how to apply this to a DataFrame to get out the data that
+you're interested in. Now, a Boolean mask is
+an array which can be thought of as a one
+dimension like a series, or two-dimensions
+like a DataFrame, where each of the values of the array are either
+true or false. This array is essentially
+overlaid on top of the other data structure
+that we're querying, and any cell aligned
+with the true value will be admitted into
+our final result, and any cell aligned with
+the false value will not. Let's take a look. So let's start with an example and import our graduate
+admissions dataset. So first we'll bring in pandas. So import pandas as pd, then we'll load in
+our CSV data file. So we'll make a new variable df
+as equal to pd.CSV, and remember we're going to
+use our index column zero, and then we're going
+to clean this up, and fix a couple of
+the poorly named columns like we did in previous lecture. So I'm going to use
+our list comprehension here x.lower.strip for
+x in df.columns. So these is just iterating
+over a bunch of strings, and turning them lower case, and stripping out whitespace
+from either side, and let's take a look
+at the results. So Boolean masks are
+created by applying operators directly to the pandas series or
+DataFrame object. For instance, in our graduate
+admission dataset, we might be interested in
+seeing only those students that have chance higher than
+0.7 of being admitted. To build a Boolean mask
+for this query, we want to project the chance
+of admit column using the indexing operator
+and apply the greater than operator where
+the comparison value of 0.7. This is essentially broadcasting
+a comparison operator, greater than, with the results being returned as
+a Boolean series. The resultant series is indexed where the value of
+each cell is either true or false depending on
+whether a student has a chance of admission
+higher than 0.7. So we'll create this thing
+called an admit mask, and we'll say df
+sub chance of admit, and then we're going to
+broadcast against this columns. So remember we're just
+projecting a single column. The greater than operator and
+pass it a value of 0.7, and let's take a look at what
+that mid-month mask it is. So this is pretty fundamentals. So take a moment to look at this. The result of broadcasting a comparison operator
+is a Boolean mask, true or false values depending on the results of the comparison. Underneath, pandas is applying the comparison operator that you specified through
+vectorization. So it's efficiently
+and in parallel to all of the values in
+the array that you specified, which in this case, is the chance of admit column of the DataFrame. The result is a series objects, since only one column
+is being operated on filled with
+either true or false values, which is what the comparison
+operator returns. So what do you do
+with the Boolean mask once you formed it? Well, you could just
+lay it on top of the data and to hide the
+data that you don't want, which is represented by
+all the false values. We do this by using the .where function on
+the original DataFrame. So df.where, and we're just pass in a single parameter
+the admit mask, and let's take a look at what
+that DataFrame looks like, and we'll add the dot head. So we see that
+the resulting DataFrame keeps the original index values, and only data which met
+the condition was retained. All of the rows
+which did not meet the condition have
+NaN data instead, but these rows weren't
+dropped from our dataset. They're still there.
+They're just not a number. The next step is, of course, if we don't want the NaN data that we use dropna function, and this is quite common. So we actually use df.where, passing the admit mask, and then, on that resulting
+DataFrame called dropna, and then on that,
+called dot head. So the return data frame now has all of the NAN rows dropped. Notice that the index
+now includes one through four and
+six, but not five. Despite being really handy, where isn't actually
+used that often? Instead, the panda devs created a shorthand syntax which
+combines where and dropna, doing both at once, and in typical fashion, the just to overloaded the
+indexing operator to do this. So here's an example. So we do df, and then inside
+of the indexing operator, we actually put our computation
+for the Boolean mask. So df sub chance of admit,
+greater than 0.7.head. So I personally find that
+much harder to read, but it's super common when you're reading
+other people's code. So it's important to be able to understand it and to write it. Just reviewing this indexing
+operator on the DataFrame, it now does three things. So first, it can be called with a string parameter to
+project a single column. So if we do df sub
+gre score.head, we get a single column, or you can send it a list
+of columns as strings. So df sub gre score,
+and toefl score, as sub parameter list, or now you can send
+it a Boolean mask. So df and then we put
+in here let's say df sub gre score is
+greater than 320, and look at the head of that. Each of these is mimicking functionality from
+either dot loc, or dot where, dot dropna. Before we leave this,
+let's talk about combining multiple Boolean masks, such as multiple criteria
+for including. In bit masking and other places
+in computer science, this is done with "and". If both masks must be
+True, for a True value, and to be in the final mask, or "or" if only one
+needs to be True. Unfortunately, it doesn't feel quite as natural in pandas. For instance, if you want to take two Boolean series and
+add them together. So here we do df
+sub chance of admit, greater than 0.7, and
+let's say we want df sub chance of
+admit, less than 0.9. So maybe these is the people who got close to getting admissions, we want to encourage
+them to apply again. But that didn't work and despite
+using pandas for awhile, I actually find a regularly try
+and do what I just did. The problem is that you have
+a series object and Python underneath doesn't
+know how to compare two series using AND, or, Or. Instead, the pandas author
+have overwritten the pipe and ampersand operator
+to handle this for us. So we actually have to write
+df sub chance of admit, and then we use the ampersand
+sign to and these together, and so here we can see
+this the combination, the bitwise AND of
+our two Boolean masks. So one other thing to watch
+out for is the order of operations and this gets
+me regularly as well. A common error for
+new pandas users is to try and do Boolean comparisons using
+the ampersand operator, but not putting parentheses around the individual terms
+you are interested in. So we could just write
+what we wrote before, but this time
+without parentheses. So df sub chance of
+admit greater than 0.7, ampersand df chance of
+admit less than 0.9, and we see that there's
+an error for this as well. The problem is that Python is
+trying to bitwise and a 0.7, and a pandas DataFrame, when you really want a bitwise and broadcast
+DataFrames together. Another way to do this
+is actually just to get rid of the comparison
+operator completely, and instead to use
+the built-in functions which mimic this approach. So we can say df sub chance of admit .gt for greater than 0.7, and then bitwise and
+this with the df chance of admit .lt of 0.9. So these functions
+are built right into the series and
+DataFrame objects. So you can actually
+chain them too, which results in
+the same answer and the use of No visual operator. You can decide what
+looks best for you. So df sub chance of admit .gt 0.7, actually returns our item, and then we can say
+.lt 0.9 right on that, and so we can chain
+these together. So this only works
+if your operator, such as less than
+or greater than, is built into the DataFrame, but I certainly
+find the last code example to be much more readable than the one with the ampersands in
+the parentheses. So you might want to
+consider using this. You need to be able to read
+and write all of these, and understand the implications of the route you're choosing. It's worth really going back and rewatching this lecture to
+make sure that you have it. I would say 50 percent or more of the work
+you'll be doing in data cleaning involves
+querying DataFrames. In this lecture, we've
+learned to query DataFrames using Boolean masking, which is extremely important and often used in
+the world of data science. With Boolean masking,
+we can select data based on
+the criteria we define, and frankly, you're going
+to use this everywhere. We've also seen how there
+are many different ways to query the DataFrame and interesting site implications that come up when doing so.

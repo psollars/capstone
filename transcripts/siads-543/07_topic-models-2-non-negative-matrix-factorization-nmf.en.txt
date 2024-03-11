@@ -1,0 +1,180 @@
+We're going to continue our exploration
+of topic modeling methods by looking at non-negative matrix factorization. Now non-negative matrix factorization or
+NMF is exactly what its name suggests, it finds latent structure by
+factoring data to two factors. And we're going to apply it,
+in particular, because we're interested in topic modeling
+to factoring the document term matrix. The same kind of document term
+matrix X that has Tf IDF values that we applied in latent
+semantic indexing, for example. It turns out that non-negative
+matrix factorization can be used for very effective topic modeling, and it's
+also a reasonably efficient algorithm. As input, it takes document term
+matrix X of TF IDF values and it also takes as input the number
+of topics that you want. You run the NMF algorithm and
+the result is two K-dimensional factors, W and H,
+that would multiply approximate X. Now the key attribute of both W and H. Again, as the name would suggest,
+is that there are non-negatives, so all the entries in W and all the entries
+in H are greater than or equal to 0. And this is in contrast to methods like
+singular value decomposition where the factors that come out can contain
+both positive and negative numbers. And this was one of the original
+motivating factors for the original paper by Lee and Seung. They were interested in finding
+what they called parts-based representations as opposed to
+holistic representation, so they wanted interpretable
+representations for objects like faces. And when the factors were
+constrained to be non-negative, the result was a sort of part space
+representation where the various pieces could construct an object by adding
+them together instead of adding and subtracting, which could be
+considered a lot less intuitive, at least as far as apart space
+representation is concerned. So the positivity of the factors
+contributes to their interpret ability in those kinds of scenarios. So, as an example, we're going to take this toy corpus
+that has a number of sentences. We're going to use the standard
+text preprocessing, and we're going to use tfidf weights
+as our term weighting method, just as we did for
+latent semantic indexing. So we apply the tfidf vectorizer with
+a list of stop words in English. We call fit transform by
+passing in the list of strings. Remember we have one string for
+each document in the list. And as always we can get
+the list of vocabulary from the vectorizer by calling
+get feature names, and that will return a list of all the unique
+words that appeared in the documents. So our input matrix X is
+going to be a sparse matrix. So what I'm showing here on the left
+are the document term entries. So the first coordinate, the row,
+gives the document number. Second coordinate gives the index
+into the vocabulary of the term. The actual value that stored in that
+location in the document term matrix is the tfidf weight. So we can see here,
+at the very first term, it has index 8. So it's the word friends, which for that document entry
+has a tfidf weight of 0.521. So this is our input to
+the non-negative matrix factorization. And here is a or slightly more
+graphical representation of X, and here I've shown documents in rows and
+the vocabulary and the columns. And I've shown the magnitude of
+the tfidf weight according to how dark the cell is shaded. So things that have
+a very high tfidf weight, like this over here,
+get shaded with a very dark color. So, we pass in the matrix X and
+we specify, we want two topics. Now if we go back for a second and
+look at the document corpus, we'll see that I've engineered this so that there are actually two
+sorts of topics mixed in. So each document is either about animals
+and the fact that they're being friends or it's got some
+computer-related terminology. So we're going to see if the non-negative
+matrix factorization can indeed find these two topics. So here I'm just going to mark
+the computer and the topics and I'm going to mark
+the friend-related topics. We'll see how. Sound like with matrix factorization does,
+in a minute here, okay. So, we specify two topics. We give it the input matrix,
+TF, IDF document term matrix, we run the algorithm and
+here's the result. And instead of showing numbers again, I'm showing the shadings indicating
+the magnitude of the values. And you can see from looking at
+the topic vocabulary matrix which is H. So these are the topics
+the two topics I asked for. And for each topic it's showing
+the strength of association of a term for that topic. And we can see right away that it
+did indeed find these two distinct topics that I sneakily encoded
+in the original document set. It found that there's one topic that
+consistently uses computer related terms. And it found another topic but
+consistently refers to animals and friends, so it's good, it worked. We can also examine matrix W because
+that has the document topic matrix. And we can see that it did indeed
+correctly identify the two documents that were most about topic 2,
+the computer topic. And if we go back, you'll see it
+did indeed find those to correctly. And it correctly marked the other
+three as being in topic one. So non-negative matrix factorization
+in this case sound exactly what it was supposed to find. Scikit-learn has an efficient non-negative
+matrix factorization implementation. The number of topics k specified
+by the property and components. And, by default, the factors W and
+H internally are initialized to random values, and then it starts
+from those random values in it, converges towards the final solutions for
+W and H. With default non-negative matrix
+factorization results it can vary each time with the same input, so
+there's a setting called nndsvd. And you said the innate
+property to that string. And that will give you more
+stable results by initializing internally with singular value
+decomposition initially. If you're interested in
+the justification for that approach, you can see the paper
+that I've cited here. When you run NMF which is imported from
+Scikit-learn decomposition library, the solver finds non-negative
+matrices W and H. Such that the squared norm
+distance of the product of W and H from X is minimized
+with respect to W and H. And technical terms,
+this is called a non-convex problem. So it doesn't have a unique global
+minimum, but the solver will find a local minimum using a fairly
+complex set of iterative update rules. So like many algorithms
+that find local minima, including clustering algorithms
+like we saw with k means that have to kind of optimize over this
+bumpy landscape of local minima. There could be different local minimum
+solutions that come out of NMF, depending on initialization, for example. Let's take a look at how you use the W and H factors that come out
+of NMF in scikit-learn. So as we saw,
+the H factor has each topics term weights. Each row corresponds to a topic. Each column corresponds to a unique
+term in the corpus vocabulary. We can get the top-r terms for a topic by sorting that row's values and
+taking the top r. So I've shown the example here and
+you can find this as well in the notebook. So here we're taking the matrix H for each topic in the range of
+topics we're accessing, the row of H and
+getting all of the columns. And using this expression we can get
+a list of the top magnitude values in that row and then for
+each of those top values we get its index. Because what comes back or
+a list of term indices. We could look up for each term index, the actual string that corresponds
+to that word in the vocabulary. You can append them to a list and through this process we can get a list
+of the top terms for each topic. So you can see that it
+correctly found words for topic zero and the words for topic one. Just like we saw on the example and
+that's how you do that in scikit-learn. It's a very similar process for
+getting the topic document weights from W. If you're interested to see, Which
+documents are most representative for a topic? This is what you would use. The W factor has one row per document, and each column corresponds
+to its topic score. So sorting a topic's column gives a
+ranking of the most relevant documents for that topic. And so
+you can see here we have the matrix W, very similar to what we did with H
+except now topics are in the columns. We can sort by weight, get the indices for
+the documents this time. We could look up the actual
+document in our original list. And here we can output in sorted
+order the list of documents that are most representative for the topic. So for example, it thinks that
+the most representative document for the first topic is this one,
+his dog gets along well with my friend. And it thinks that the most
+representative document for the technical topic is you will find
+the plug on the right side of the screen. For longer documents we could use the
+documents title or search result snippet. So that was sort of a fun toy data set. Let's look at something
+a bit more substantial, the standard 20 newsgroups data set. So here we can ask NMF to find
+us ten topics in this corpus, which is a mixed corpus of lots
+of different news articles from 20 different newsgroups,
+and these are the results. If we apply the code that I showed you
+before in scikit-learn to find the most representative terms for a topic and the
+most representative documents for a topic. You can see that it sounded
+pretty coherent, so you can see that one topic for
+example, it has to do with Microsoft, computing, Windows, DOS,
+that sort of thing. There's a religious one, Christianity one, there's something having
+to do with encryption. Something has to do with computer
+storage using disk drives, controllers, IDE, and so forth. And as well as a sports topic and
+some other ones. So these are all sort of fairly coherent. If we drill down and
+use the H matrix to get the actual term weights for
+the terms in the sports topic. We can get some idea of the magnitude,
+so it found the most important term in the sports topic was game and
+team, which makes total sense. And then if we look at top documents
+per topic, you can see that for topic eight it found some
+typical descriptions of games or answers to frequently asked
+questions about a particular sport. So it did reasonably well with
+this 20 newsgroups data set. Now you might be wondering
+how did the topics that are found by NMF compare
+with those found by LDA? Well, I ran both algorithms on
+the same 20 newsgroups data set, and this is the result. If you look at the results for both,
+what stands out for me, for example, is the fact that LDA finds topics that
+contain terms that clearly are related. But maybe they're not as semantically
+interesting as the ones found by NMF. So these might be very good at
+distinguishing a particular genre of document of some kind. But they're not as coherent as
+the terms that were found by NMF. And there are some objective measures that
+we could use to measure topic coherence. And we'll cover that in one of
+the assignments for this week. You might also be wondering
+about the rationale for NMF that I mentioned at the beginning
+of this video, which is the difference between a holistic representation and
+the parts based representation. So here's an excerpt from
+the original NMF paper by Lee and Seung where they applied
+this technique to faces. And you can see more visually
+the difference between the holistic global
+representation learned by PCA, which allows both positive and
+negative numbers to appear in the factors. And NMF which only allows positive
+numbers to appear in the factors, and thus only allows sort of this additive
+relationship between factors. PCA constrains W,
+if you think about what PCA is producing, what SVD produces,
+which is a left and a right matrix, you can think of those as
+the counterparts to WH. PCA constrains the counterpart
+to W to be orthonormal. And the rows of H to be
+orthogonal to each other. And the math constrains at W and
+H to be positive as we said. And in order to construct a face for
+example, the parts combine additively
+to form the whole. So when we look at the contents
+of these matrices, these representations that result. We can see that NMF indeed finds
+a parts-based representation. It identifies eyes, mouth,
+and nose, and so forth. Which is very different, from this sort of
+whole face representation found in my PCA. And that's a brief summary of NMF for
+topic modeling.

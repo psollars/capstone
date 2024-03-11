@@ -1,0 +1,133 @@
+Welcome back. In this lecture, we're going to explore
+another type of uncertainty visualization
+we call the spaghetti plot. We discuss ways of representing the parametric uncertainty associated with the
+regression line. The competence interval pictured here is the most
+commonly used technique. In today's lecture,
+we're going to discuss another way to represent
+this parametric uncertainty, something we call
+a spaghetti plot. A confidence interval
+around the regression line is a continuous
+uncertainty encoding. A spaghetti plot
+pictured on the right, is a discrete encoding
+where we plot some of the possibilities for
+the regression model given random draws of the data. This view of uncertainty has some advantages over
+confidence intervals, but again, it also
+has some drawbacks. Let's start with some of the advantages of
+the spaghetti plot. The first area of
+advantage is in something we call deterministic
+construal errors. Spaghetti plots are
+useful because they can address a common problem in uncertainty visualizations, deterministic construal errors. A deterministic construal error is when an individual
+attempts to substitute visual
+uncertainty information for deterministic information. A deterministic construal
+error is a substitution. We substitute a
+deterministic reading for the uncertainty expressed
+in a visualization. What's an example of this? Well, the best examples
+is in temperature. Suppose I was predicting the temperature a
+week from today. Let's say I was estimated
+to be about 20 degrees. But because it's a prediction,
+there's uncertainty, and so a reasonable range
+around that prediction might go from 18 degrees
+to 22 degrees. However, when I present
+this prediction to users, they may interpret
+this as saying the temperature expected
+to be 20 degrees, with a high of 22
+degrees in that day, in a low of 18 degrees. In doing so, they substituted in a
+deterministic reading of the data for what I originally intended to be a
+communication of uncertainty. Another common example of deterministic construal
+errors can be found in how people sometimes
+read cartographic maps. On screen we have a map of the potential path
+of a hurricane. You'll notice that
+a purple cone shows the potential path of the
+hurricane as it makes landfall. The purple cone gets
+wider the farther we are from the current
+location of the hurricane. Because the
+uncertainty increases the farther we are from
+the point of origin. The deterministic
+construal error in this case is that users
+will read the size of the cone as the size of the hurricane rather than as the uncertainty around the
+path of the hurricane. One potential explanation for why deterministic
+construal errors are so common is that the brain is
+an expensive organ to run, it takes a lot of calories. We have this
+evolutionary incentive to take the easy way out. If given an opportunity, viewers will mentally substitute something that is easier to understand over working at something that is
+complex to understand. What can we do about these deterministic
+construal errors? One possibility is to
+use a spaghetti plot. A spaghetti plot pictured
+here on the right, offers randomly
+generated possible paths for the hurricane. In doing so, it presents a reasonable range for the hurricane without
+giving the same sense that we are encoding the area
+of the hurricane or size of the hurricane as the uncertainty encoding on the left
+sometimes does, the spaghetti plot pictured
+here on the right offers randomly generated possible
+paths for the hurricane. In doing so, it presents a reasonable range for the hurricane without
+giving the same sense that we are encoding the size of the hurricane as the uncertainty encoding on the left
+sometimes does. This is a major advantage
+of the spaghetti plot. Another advantage is in the area of correlated
+distributions. Many times in data we deal
+with correlated distributions. Suppose we start at the origin
+point of the hurricane, but on the east side
+of the distribution, we would expect the path
+of the hurricane to end up on the south side of the
+distribution at the end. The same would apply
+if we start on the west side of
+the origin point. If we start on the west
+side of the distribution, we expect the hurricane to end farther on the north side
+of the distribution. What will be unusual is if knowing the prior
+position of the hurricane told you nothing about the future position
+as pictured here, where the path of the hurricane meanders through and travels a path that's somewhat erratic. The point we're trying
+to make here is that knowing something
+about where we start should tell us
+something about where we end, when the distributions
+are correlated. The spaghetti plots can show this relationship
+fairly effectively. Let's look at a non
+cartographic example. On screen we have some
+simulated time series data. Time is on the x-axis and
+the data are simulated on y. The y values that occur
+at later points in time are correlated with
+earlier points in time. We can contrast
+this with a dataset where the y data are not correlated across
+the time dimension as pictured on the right. You can see how the lines move in somewhat
+of an erratic fashion. Now what's interesting here is that if we put a
+confidence intervals, let's say 50%, 80%, and 85% around the
+high correlation data, and we do the same around
+the low correlation data. What do you notice?
+It turns out that the intervals on both
+are exactly the same. If we just show the
+confidence intervals, it's not possible to distinguish between the
+high correlation plot. In the low correlation plot, this is important because when
+we visualize uncertainty, we often don't show
+the simulated draws, we just show the intervals. But in this case,
+we can see how that obscures the nature of the
+underlying relationship. That's another advantage
+of the spaghetti plot. It provides more resolution to the underlying relationships. You may be wondering, It sounds
+like spaghetti plots are fantastic and should be
+used in all situations. While spaghetti plots are one of my favorite uncertainty
+visualizations, they have limitations. To illustrate a potential
+limitation of spaghetti plots, we'll start by
+asking the question, which point A or B
+is more likely to be hit by a hurricane
+given this prediction? As I look at it, I
+think the answer is B. B sits closer to the dense part of the
+hurricane prediction. But users may also
+notice that B sits on top of one of the random
+draws of the spaghetti plot. They may assume that because it sits on top of one of the lines, that is more likely to
+be hit by a hurricane. But this is not true. If we ran this ensemble again, while the overall distribution
+of lines would be similar, there's randomness to the data, and the lines will be in
+slightly different spots, so we can't over infer
+from any one line. In this case because B sits on a line and is closest to the
+dense part of the hurricane. Both of those facts run in the direction of
+saying B is more likely, so even if we're making
+the bad inference that B is more likely
+by sitting in the line, we're still going to make
+the right conclusion. That's not the case
+in the neck example. Let's look at the second
+example of point B and point A. In this case, point B again sits closer to the dense part of
+the hurricane prediction. But A sits on top of one of the random
+draws from the line. Some users may say that A is more likely to be hit
+by the hurricane, even though B is actually
+closer to the prediction field. Let's summarize. Spaghetti plots are discrete
+encoding alternative to confidence intervals. An advantage of spaghetti
+plots is that they're more effective at mitigating deterministic construal errors. The disadvantage, however, of spaghetti plots is that
+their random draws can be interpreted as the
+representation of the possible rather than a
+representation of the possible. That's it for spaghetti
+plots for now. I hope you enjoyed the lecture.

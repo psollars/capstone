@@ -1,0 +1,52 @@
+In this final video segment for
+the course, we'll cover the things that we went over
+and talk a little bit about the different names under which some of the
+methodologies that we covered are called. We of course,
+covered semi-structured interviews, affinity walls for
+doing qualitative data analysis, and we talked a little bit
+about storytelling as, a way to aid report writing. Now some of the strengths of qualitative
+research that you've learned cover a broad range of information and
+data, you can often use, incorporate rich information
+that isn't just numeric. And of course, you don't need quantitative data to be
+able to do a qualitative data analysis. I want to remind you also of the value
+that qualitative research might have to data scientists. Now you might never actually do the
+interviewing or the affinity walls that we learned in this class, but hopefully
+you'll have gained some appreciation for what qualitative research can
+get you as a data scientist. It might be that somebody else does
+the qualitative research part and hands over their findings to you. You can use qualitative data research to
+generate hypotheses, offer insights into causal mechanisms and otherwise to kind
+of to compile and synthesize information. One thing that some people say is that if
+you become a good qualitative researcher on top of already having
+the quantitative background, then what you can do is use mixed methods as
+a way to triangulate information and data. So that you have a more comprehensive
+picture of any particular situation that you're analyzing. The methodologies taught in this
+course were basically based on qualitative research methodologies that
+are sometimes called other things. For example, you might hear contextual
+inquiry, user-centered inquiry, human-centered inquiry, or
+simply ethnographic research. The affinity walls that we used in this
+course were a methodology that was invented by a Japanese
+ethnologist named Jiro Kawakita. And sometimes you'll hear them
+called affinity diagrams. In some entrepreneurial circles,
+they're called the KJ method. KJ being the initials of Kawakita, the way that they would occur in Japanese
+where you have the last name first. But what's interesting about
+this is that when he was thinking through this methodology, he
+thought that he was coming up with a way that was different from deductive
+reasoning or inductive reasoning. But ultimately,
+I think it's just good reasoning. One thing I will say is that all of the
+methodologies you learned in this course are actually applicable for
+a broad range of scenarios. You can use them on their own to do
+actually qualitative research without data without quantitative data. Or you can use them as a way to learn
+new things that you don't understand especially if you have access
+to that context. And then as far as qualitative data
+analysis goes, affinity walls are a great way to bring together information
+in all kinds of contexts. I've heard from some of my
+students who use them for just planning out, strategizing
+about their future careers, or thinking through something that, a problem
+that they've been mulling, whether or not it's specifically a project
+that is for their work. And finally, I want to say that,
+just like with all data analysis methods, that qualitative research is really
+a skill and so the more you practice it, the better you become. So hopefully you'll have a chance
+to practice your interviews and qualitative data analysis going forward. Ultimately, I'd like to thank you for
+joining us for this course. Hopefully, it was fun. And if nothing else, I hope you learned
+the value of what qualitative data researchers do, in addition to the work
+that you're doing in data analytics. Thank you.

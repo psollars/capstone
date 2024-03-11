@@ -1,0 +1,191 @@
+Hello everyone, this is Qiaozhu Mei,
+starting this lecture we will talk about how to discover
+patterns from time series and we will start with simple
+patterns like trends. Throughout these lectures you can see
+that there will be more math, but don't be afraid, you don't have to
+understand all the proofs, right? If you feel difficult of
+understanding certain maths, please refer to the textbook or
+just come to the office hour. So time series data as we discussed
+is the list of timestamped values or measurements. It is the list of pairs where in
+each pairs is the timestamp and associated value,
+usually of the same type of measurement. So X one X2, Xn annual miracle and t1,t2, to tn are actual time steps
+instead of just the orders. And this different representation
+would also reflect in time series in answers, so
+you can see that there are different types of patterns comparing to
+sequence data or matrix data. We have talked about, we use time series
+to represent continuous dimensions, instead of discrete
+dimensions like vectors. Essentially, we use the function overtime,
+instead of counting the number of time points to indicate,
+different dimensions of time series data. That is to say if you see
+the discrete time series, that is a list of pairs of values and
+timestamps. You should always have in mind that
+there's the corresponding continuous reputation is the function that the value
+X, is the function of time empty, and this will also reflect in
+the patterns in time series. What about the patterns in time series, how
+are they different from sequence data or vector data? As we said that in sequence
+data the patterns are n-grams, skip n-grams, and so on. Any matrix data,
+the patterns are principle components, singular vectors and so on. The itemset is data,
+the patterns are frequent itemsets, What about in time series? Actually you can see that patterns
+in time series are quite special, there are trends if you
+look at the time series, you can usually identify long-term
+movements of the values, right? Is the market going up or
+is the market going down? And that's describing long-term movements
+of the time series known as trends, so I also cycles or cyclic movements. Basically, those are long-term movements
+about the trend by or curve, for instance, the market is generallygoing up and down,
+down end up, so and so forth, right? So they're relatively long term,
+but we may or may not have periods. The other type is called seasonal
+patterns or seasonal movements, and those are similar to cycles, but
+they have particular frequency. They have periods so you can see that
+they occur in different periods, like you have yearly patterns, you have
+monthly patterns, so forth, and so forth. So the periodical patterns are known
+as seasonal movements, and beyond that we also have
+irregular patterns or irregular movements that cannot be
+described as trends or cycles or seasons. Such as anomalies, outliers or
+random noises, so these are the four types of
+spatial patterns in time series. And in fact you can usually view
+a time series a real world time series, as the combination of the four
+different types of patterns. In fact, you can use data science tools
+to decompose the time series into the four basic movements or
+the basic four types of patterns, and this is known as time
+series decomposition. There are two types of models that people
+usually assume one is called additive model. It assumes that the time
+series is the sum, or is the additive combination of
+the four types of patterns, trends, cycles,
+seasons an irregular patterns. Alternatively, some people
+also assume that a time series is actually a product or
+productive combination of the four panels. So X is the trend times cycle and
+times irregular ,either way you can decompose series into one or
+more of these four types of patterns. This first look at trends, trends are the basic time series patterns, also known as trim curves, right? Sometimes there also called trend lines ,
+if there's no linear pattern, the tell us the general direction in
+which a time series is moving over a long period of time. So we usually talk about trends
+over a long period of time. We don't say that a trend of two days,
+right? We say that the trend of the year or ten
+years, right, or the century so on and so forth. For example,
+if you look at this time series plot, that is the plot of
+the stock market price. You can see that the market. Is January going up? So that tells us that the trend
+of this time series is moving from the bottom to upper corner. It's moving up. So how to discover
+trends from time series? There are generally three
+types of methods you can use. Freehand method, which is essentially
+what we have been doing right now. We look at the time series data and then
+we just eyeball what trend there is, and there are also regression-based methods or smoothness methods that
+we will discuss later. Let's look at the free hand methods. So given the time series
+data plotted in this way, you can just look at the general shape,
+right? The general direction of the lines and
+you can identify that. Okay, this particular time
+series data is moving up. So mentally, you're trying to fit
+the curve, right or a linear line, depending on what you are thinking
+about and what the shape looks like. Essentially, you're doing this trick
+during this date mining task in your mind and then it's known as
+the free hand mixer, but you can see that you don't want to do this
+all the time, because this is costing. This requires every time series
+to be looked at by an expert or at least find the real person right and
+sometimes. Our freehand decisions are not reliable,
+right, epecially if you're looking at
+many time series over time. For example,
+looking at this particular time series, is there a linear trend like this? It looks so or you can see that well,
+he's action moving up and down, right? And maybe there's the teeny
+tiny kind of bell-shape, right? So this cannot be easily distinguished
+using the freehand measures or using your own eyebrows. Instead of just looking at the time
+series spiral like it eyes, you can also rely on data science methods. For instance, regressions. The regressions are also referred
+to as least square methods, or using your own eyeballs because they're trying to find
+the trend curve by minimizing the sum of squares of the residual. In this case, the division of points on the curve
+from the actually observed points. And of course, the shape of
+the curve that you feed through regression sensitive to your choice
+of what type of regression use. If you use the linear regression, then
+you can only find the linear trendline. That is the linear trend. If you use the quadratic regression,
+you can actually find more permanent. And if you use the even
+higher order regression, you can find something different. To show you some real examples, let's look
+at the real data set of time series and this is well-known as the Box and
+Jenkins data and this recording the month number of international airline
+passengers from the year 1949 to 1960. So every time stamp corresponds to
+the month between the 12 years and then you can also see
+that you know there are. You can argue that there are trends and
+there are seasons. They're probably cycles sensor 4th. That's why we like this data set and
+it's used in many textbooks. In the rest of the slides, again,
+see that we're actually using this particular data set again and again
+to show you some real world examples. So this look at this time series and
+tell me that what trend identifying? You can see that, okay? Roughly, the number of
+passengers is moving up. Well, also you could actually fit
+a linear regression to this time series. And if you do that, you can see that
+you can identify a trend line, right? That is moving from the lower left
+corner to the upper right corner, right? And from this linear, now you can also
+tell the slope of this regression, right? So this tells us the linear trend. Of course, you could argue that if
+you just look at this linear tread, it hides lots of not so obvious movements. So you could actually choose to
+use the higher order regression. For instance, you can say the quadratic
+line to this time series. If you use the quadratic regression, you can actually see that you have now
+a curve, right, instead of a linear line. But the curve is also telling
+us a story that is moving up and you can see that the rate or
+the slope is actually increasing. So it's moving up. And it's moving up more quickly. You can even fit higher order regressions,
+right? And you can see that in this example,
+we're fitting the 10th order regression and you can actually see
+some real shapes of this curve. You can see it's relatively flat and
+beginning and moving very quickly during the 50s and then snow start at the
+end of 50s and there's another peak 60s. If you use the even
+higher order regression, then you can actually fit tonight,
+that looks more informative. But also the process becomes slower and
+then just problem of overfitting. So besides regression based methods, there's a huge family of methods
+called smoothing based methods. And this smoothing-based methods also
+known as noise reduction methods. The basic idea is that, if you have a real
+world time series, its usually messy. And you want to reduce the noise
+in this time series, so that the shape becomes
+more obvious to you. The particular smoothing based methods, including binning, moving averages and
+some of the autoregressive methods. And we will introduce some later in this
+class but now let's just look at binning. So binning is actually quite simple. The idea is to divide the time
+stamps into bins, right? And you can see that this is
+the way to reduce the noise, because if you put multiple time stamps
+into one bin, then the information in this particular bin is less likely
+to be something that's extreme. There are many natural
+ways of binning the data. For instance, if you have observations
+at minute naval, you can binning them, so that the operations becomes
+plotted at the hourly table. Or if you have one observation per day,
+you can bin them by year, so that we can have a summary per year,
+right. So basic idea is to put multiple
+time stamps into the same bin and summarize the data before
+into the same bin. For instance using the average or
+using even the mean or max or the medium, depending on what you choose. For example, if you look at the airline
+data and if we put the data into bins, remember that the original
+data was measured monthly. Now if we bin them yearly,
+you can actually see that, looks like the trend is much clearer. So this is the power of bin,
+mathematically the original time series is the list of time stamps and
+corresponding values. Then we can transform it into another time series that has a fewer number of pairs,
+right? So instead of t1, t2, to tn,
+we now only have k data points, k time stamps and
+k is usually smaller than n, right? And these tk and
+its previous time stamp tk minus 1 defines the bin and
+all the time stamps and values for
+between the next two time stamps t. J-1 problem and
+tj prime are summarized into xj prime. In this case, xj prime is the value
+corresponding to the bin data. The j's bin and that's here, the average
+of values that fall into one bin. Of course you can use other
+stats other than the mean. So you can see that once we compute the
+some of the values, we normalize that by the number of time steps that
+fall into this particularly bin. And you really when you're binning the
+data, there's no overlap between the bins. For instance, every month has
+to be done to one of the years. You can put one month into two years,
+right? So be careful about
+the boundary of the bins. Well binning is quite easy and
+people like to use that, whenever you have the time series data and
+that looks messy. And especially if the time stamps
+could fall into natural bins. You can actually you binning
+to able the patterns, to able the trends and
+you can even like bin first. And then apply the regression or
+other pattern discovery methods. But binning has some problems. For instance, if you do the binning
+of the time series data, you don't have enough time steps now, why? Because you put multiple time
+stamps into one bin, right? So you're actually losing
+certain data points, right? And usually, the number of bins are much
+smaller than number of measurements and this will actually add some challenge
+to certain the many methods. Another problem is at the boundary between
+the bins are usually arbitrary right? In many cases that we have natural
+bins for instance yearly, monthly, or weekly but in many. The other examples there's no such
+natural division of your data. Then you have to find the boundary
+in arbitrary way, and that's usually not very
+straightforward task. In fact, if you made a bad decision
+on a number of bins or bin boundary, you could actually hide
+many useful patterns right? Then you could think that the time series
+has nothing, has nothing interesting. But in fact you just lose the opportunity
+of finding some patterns. Let me give you just one trivial example,
+right? Suppose were not binning the air
+passenger data into years and we're binning them into centuries. Okay, so what has become? There's only one bin, [LAUGH] and there's
+literally no pattern in this one big data. So in practice,
+we really need more sophisticated or more principled methods of
+smoothing the time series. And thank you for listening.

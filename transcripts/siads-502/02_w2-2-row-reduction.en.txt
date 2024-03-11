@@ -1,0 +1,136 @@
+Math methods for
+data science, row reduction. Row reduction can be used
+to solve sets of equations. It's also directly applicable to eigenvalues and eigenvectors. Let's start with
+a bit of notation. If I take Ri and
+switch it with Rj, that's essentially
+switching row i with row j. I can multiply a row by a
+constant and make a new row. I can also add two rows together, perhaps row i and j and
+replace one of those rows. This notation will help
+us as we go through the algebra of
+row reduction and matrices. We start with a system of equations that we want to solve. Our goal is to
+reduce the rows and the values such that we have essentially
+an identity matrix, where we have ones on the diagonal and zeros
+on the off-diagonal. You might also see
+a notation where a bar is drawn between the matrix that you're solving and the solutions
+on the right side. In this case, if we reduce our rows to an identity matrix, our solutions will
+be the x equals whatever value is in
+the far-right column, y equals whatever values in the far-right column and z equals whatever value is
+in the far-right column. Let's see how this works. I have a set of equations, where I'm solving for x and
+y. I have coefficients for each of those x values
+and coefficients for each of the y values
+and the solution. If I translate these set of
+equations into a matrix, I'll take the
+coefficients from each of the variables and the solutions and create a matrix for
+which I am trying to reduce the rows such that I have ones on the diagonal and zeros
+on the off-diagonal. I can see that row two, if I multiply row one by negative two and
+add them together, I can replace row two
+to start with a zero. What does this mean and how
+can I write it in notation? I'm going to take
+negative two times row one and add it to row two and replace row
+two with the new values. I already have that
+one on the top left, I don't have to do
+anything to it. In order to make
+that bottom left a zero, I'm going to perform
+these row substitution actions. So let's take negative
+two and multiply the first row and add
+it to the second row. Negative two times
+one is negative two. I'm adding it to the second row. So first off, this first row
+doesn't change. So negative two times
+one plus two is zero. Negative two times
+four is negative eight plus nine, equals one. Negative two times three is equal to negative
+six plus five, gives me negative one. Now, I have ones on my diagonals and a zero and
+my first off-diagonal. But I need to find
+out how to make this upper right a zero. So let's take
+negative four times row two and add it to row one
+to create a new row one. Again, row two isn't
+changing in this math, so let's write it out. Then let's take
+negative four times row two. So negative four times zero is zero plus row one
+plus one is just one. The next value, negative four
+times one is negative four, plus four is zero. Negative one times
+negative four is four plus three equals seven. So what this tells
+me is that x is equal to seven and Y is
+equal to negative one. This is another way to
+solve a system of equations and we can go back and prove to ourselves that this is correct. So I'm going to substitute these values back into
+one of the equations. X is equal to seven plus
+four times y equals three. Seven minus four equals three. Yes, it works. So this is one way using row reduction to solve
+a system of equations. Let's look at a more
+complicated example with three sets of equations and three variables
+that we're solving. If I take the
+coefficients of each of these variables and translate
+them into a matrix, I'll take all of
+my x values, y values, z values and then the solutions, I will have a matrix
+with one, two, one, two, negative one, three,
+one, negative one, negative four and then a
+vector of my solutions, six, one, negative three. Our goal is to make a matrix, that is a three by three
+matrix where we're solving for x, y and z. Let's see how we can do
+this with row reduction. Here, I've rewritten
+our system of equations as a matrix with solutions
+on the right side. I see that I already have a
+one in the top left corner, but I want to make zeros in the off-diagonals
+and so I'm going to start with this first column
+and try to make those two rows start with zeros. I can see that if
+I take row one and multiply it by negative
+two and add it to row two, I can replace row two
+and have a leading zero. I also see that if I take row one and multiply it
+by negative one, I can add this to row three
+and replace row three. So I will do these two actions
+simultaneously. So first, I'll take this
+negative two times row one and add it to row two. So negative two times
+one is negative two plus two is zero. Negative two times
+two is negative four plus negative one
+equals negative five. Negative two times
+one plus negative one is equal to negative three. Negative two times six
+is equal to negative 12 plus one equals negative 11. That creates my new second row. The first row on both of these equations here
+doesn't change. So I can just write that out. My next step here was
+to take negative one times row one and
+add it to row three. That would give me zero, one, negative five
+and negative nine. I can see here that row three would be perfect if I could just have
+this as row two. So I'm going to take row two and switch it with row three. It doesn't really
+matter what order these rows or in because they're just different
+equations and I can substitute them
+wherever I want to. So I'm going to
+rewrite this matrix, substituting rows two and three. Two steps I can do next
+are creating a zero instead of this two and a zero instead of
+this negative five. My first step will be to take
+a negative two times row two and add it to row one
+and replace my row one. Also, I could take a
+five times row two and add it to row three to
+then replace my row three. So we'll look at
+the algebra and then I'll rewrite this matrix
+on the next slide. My first step, negative
+two times R2 plus R1, creates my new R1. In either of these steps, my row two isn't changing. So I'm going to go ahead
+and translate this over. Now, I'm going to take
+negative two times row two and add it to row one. So negative two times zero plus row one
+is just a one here. Negative two times
+one is negative two plus two is equal to zero. Negative two times
+negative five is 10. I'm going to add that to one, that gives me 11. Negative two times
+negative nine is equal to 18 plus six, gives me 24. Then my second equation here, five times row two
+plus row three. So five times zero is zero
+plus zero is equal to zero. Five times one is five, plus negative five is zero. Five times negative five is negative 25 plus negative three, it gives me negative 28. We're getting big numbers here. Five times negative
+nine is negative 45 plus negative 11
+gives me negative 56. So I'm going to
+write this matrix on the next slide and
+we're going to keep solving since we're not done yet. Now that I've brought
+my matrix over, the next thing I can see
+to do is to try to make this negative 28, zero. Well, I could take
+negative one-twenty eighth times row three
+and replace my row three. So I'm going to do this. Row one and two, don't change, so I can
+just copy those over. Now, multiplying
+the first value by negative one-twenty eighth
+gives me zero, zero, one and then I need
+to multiply negative 56 by negative one-twenty
+eighth which will give me two. Next, I want to
+get rid of this 11 and five and make them zeros. So I'm going to take
+negative 11 times R3 plus R1 to replace my row one and I'm also going
+to take five times row three plus R2 to replace my R2. Here again, row three
+doesn't change, so I'm going to copy that over and then perform
+my algebra operations. Negative 11 times R3 plus
+R1 is going to give me one, zero, zero and a two. Five times R3 plus R2 is
+going to give me a zero, one, zero and one. So there we go. I've
+solved my equations. X equals two y equals
+one and z equals two. I can go ahead and plug
+these back into one of my original equations
+and prove that it worked let's pick 2x minus
+y minus Z equals one, two times two minus one
+minus two equals one. Four minus one minus
+two equals one, four minus three equals one. Check. These methods will come in handy when we're calculating eigenvectors in the next lecture.

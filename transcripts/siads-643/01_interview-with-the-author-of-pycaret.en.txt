@@ -1,0 +1,1178 @@
+I'm Michael, you-all know me. This is Moez, he's joining us. He is a data scientist. Not only is he a data scientist, he's used his data
+science skills to build an open-source library
+that we're going to get a demo of later on today. But before we get started with the demo and the exciting start, I've got some basic questions to get to know you a
+little bit better. Can you give us your background? How did you become
+a data scientist? How did you get to
+where you are now? Thanks, Michael. I'm
+thrilled to be here. My background before coming into data science is a decade ago I went to school to finish my program in
+business and finance, and I ended up
+graduating that program, and then followed by
+chartered accountancy. I practiced accounting for
+quite a number of years, then I did master in economics. My first half of the year was entirely into very operational
+findings in accounting. But me going to school for a degree was my source of
+securing my primary career. I was always interested
+in technology, and I'm talking 15 years
+ago when the culture of technology was not
+as high as it is today. I was born and brought
+up in Pakistan, so the access to technology, you can imagine, was very limited compared to if you were based in Europe and North America. But despite of all that thing, I continued my journey on
+learning things on side, and I transitioned myself over the years from typical
+accounting and finance roles into
+process automation roles because I think I very
+early recognized this, that this is going to go away. It's not a matter of why, what, how, it's a
+matter of economics. Over the time, any task
+that has repetition will have to go away because
+it cannot continue. I think I took this
+decision when I was in finance school to go towards
+technology and blend myself. Normally you would find
+people with careers, they would start in
+software engineering, BSIT and stuff like that. They would spend a couple
+of years and then jump into more business-driven
+roles or management roles. My story is kind of reversed. I started my career with
+more business roles and then four years ago
+when I moved to Canada, I spent a lot of time traveling, I have worked in four continents, mostly in healthcare
+organizations in Pakistan, Middle East, and Africa, and when I moved from
+Africa to Canada, unify my family in
+Canada, I was shocked. Living in regions like
+Asia, Africa, Middle East, coming to North
+America, I said man, it's faster than what I thought because the
+speed of change here, there is a cascading impact. Whatever inventions, wherever technologies get
+invented here in North America, there is a lag of
+number of years before that knowledge goes to Asia, Africa, and some of the world. So when I was here I said, okay, now this is because I have
+already moved to Canada, and obviously when you
+move to a new country, you do not continue your
+career at the same level. In finance world, I reached
+very high up in my career. So I said, okay, now this
+is my time to switch my primary career because I'm going to have to start a
+couple of levels down already, and since I'm doing that, let me take this opportunity
+while there is time to move. Then I went back for my
+third masters two years ago, and I started doing masters in analytics
+at Queen's University. I was always doing analytics, but not specifically data
+science and machine learning. Before this cool AI era, there was a 10, 20 years where BI
+was considered to be the state of the art analytics. I was in BI, but my introduction to the
+world of data science was two years ago when I started
+school here in Canada. It's a nice journey.
+As a data scientist, what do you think the
+high point of your job is and what's the low
+point of your job? Yeah. I think data science, eight years ago in
+October 2012, I believe, DJ Patil has published
+a piece in HBI that data science is the sexiest
+job of the 21st century. When you are just starting out and you're just in the beginning, you are still not into
+a full-time job role, everything looks cool
+to you because the example that you have learned in school and the things
+you have seen there, they're straightforward, and there is a lot
+of abstraction. Compared to real-world,
+there's a lot of abstraction. Number one being when you
+join a big organization, there is organizational
+politics that you have to navigate
+because essentially whatever a data science
+project that you would bring would either replace human
+decision-making immediately or it would give a
+sense that in future, for now you use
+these algorithms to support your decision-making
+process, but in future, these algorithms, once we have confidence in the next two, three, five years, these
+algorithms will replace you. The biggest challenge with
+any data science project, I think personally
+is when you go on to sell the project
+to project sponsors, that we should do this,
+this, this, this. There is a lot of
+politics that can get involved and you
+have to navigate. That's not necessarily
+the low point but that's something we should take care of. Now, in terms of highest
+and lowest point, I would say for any job
+related to technology, for me, the highest and lowest
+point is same, which is, being in data science, every day I have to
+learn new things. Every day I have to give
+two hours of my time, three hours my time
+learning new things. But after a certain time, you don't want to
+continue to do three, four hours learning every day. It depends on what stage
+you are in your career, but I think that's for me. I think I enjoy
+learning new things but nobody can do it forever. At some point, you
+have to just stop, focus on other skills, upgrade yourself to management or maybe more strategic
+leadership skills, but you cannot
+continue to do that. Another thing that we all
+should know today is, if it's not yet a problem, it would be a problem, there's a huge balances getting off between demand and
+supply of data scientists. If it keeps going like this, I think in five years, we would have more data
+scientists than the data in the world if it
+keeps going like this. Also, in your career, when you code for a
+couple of years progress, you realize you cannot
+continue to compete with the younger generation
+in the talent pipeline. Because if you have
+been to school, gone to school 20 years ago, you started with Java C plus and your school project maybe was build a library
+automation system. Students today,
+their school project is to build automated
+driving cars. This shift is
+happening really fast and that's where
+sometimes I think, "If I have to be on
+top in my profession, forever I am in school." It feels like I'm in school. I think most technology
+fields have that, I have to keep learning
+to keep moving forward. One of the things that we talk
+about in data science and in classes is data leakage
+in hyperparameter tuning. They're very different
+concepts but they both share this thing that until
+you're really in a data set, you don't really
+get used to seeing these patterns or where
+these patterns can emerge, especially around data leakage. Do you have a story
+around either of them or both of them where you had a surprise data leak
+that you weren't aware of and it was impacting
+your production outcome? Very common. I think
+everybody who is in data science has been there at some point and I have been there. I must admit, I have met
+analysts who do this in my team, and it's very normal. First of all, data
+leakage is basically, for the interest of the students, is when you're training your machine learning
+[inaudible] you use a data point which is not available at the
+time of prediction. The challenge is if you do that, there's no statistical test or there's no button that you
+click to detect data leakage. In order to understand and
+actually detect data leakage, you need to have very superior
+understanding not only of business problem but also
+of data generating process. I think that's where I personally feel data
+generating process is very underrated and I think it's the best way to figure out if the data leakage
+is happening or not. I have a very interesting story. Last year, I had an opportunity
+to work with one of the biggest real estate companies who owns a lot of malls
+in North America. For one of their mall, the problem statement was as follows: they have this data set of customer's entry into the
+mall, and their journey. The way they capture is there are GIS devices installed
+in the malls and I'm sure 90 percent of
+malls in America now has that. When you enter the mall, that GIS device send a
+ping to your cellphone, not to the network, but
+there's a chip in cellphone, and it basically tracks
+your journey in the mall. At the end of the day,
+it's a very huge data set. You can imagine that
+every row in the data set is basically a customer at one point in
+time at one store. One customer visiting
+20 stores at a particular entry
+would have 20 rows. Now, the problem statement was mall wanted to increase
+the dwell time of customers because
+their study shows that increasing the dwell time
+would increase the revenue. Dwell time means the time
+you stay in the mall. The objective was to build
+a classification model that can predict when the
+customer would leave the mall. That means if
+customer has visited 20 stores in a particular day at a particular entry point. Customer can enter
+the mall at 8:00 AM, do the shopping for two hours, can come back again at 2:00 PM, but at one point in time, if he or she visited 20 stores, there would be 20 rows, and we had to also create
+the target column. We had to invoke the target. Nineteen rows would say 0, 0, 0, 0, 0, and the last
+row would say one. What we have to predict is: after this store whether the customer would
+leave the mall or not. Now, obviously, you can imagine this is a
+terribly unbalanced data set because there is
+only one exit per customer but you can visit
+20 stores or 200 stores. Obviously because it was
+very unbalanced dataset, very huge dataset, there were limitations in terms of
+experimentation and exploring, but after doing a lot of
+feature engineering for a couple of weeks, one fine day, the model improved
+the performance by like 9-10 percent in AUC, and I was shocked, impossible, and that's when we start and because there were
+thousands of features. There were thousands of features. Some of them were automated, some of them were created logically after
+talking to business, you can imagine, if there were 100 million rows
+and 10,000 columns, it's very hard to eyeball, and there's no statistical test. But the signal is
+when your model, it takes a jump,
+always doubt that, always question that model. After doing a lot
+of investigation, we realized that one
+of the analyst has created a feature, and
+what's the feature? The feature was is that a second last store
+of customer or not? Now imagine you are basically
+telling your model, you are labeling your model, this is the second last store. Now if you do that, your model would obviously learn okay, if this is the second last store, the next time is time to exit. So I mean the idea was we should not predict which is
+the last store of customer. We should not predict that
+because even if we do, there would be a timing where the systems would send
+the request to algorithm, algorithm would return
+the prediction. By that time customer would
+have left them already. So the idea was to
+actually predict the second last point
+instead of last point, but the failure again
+you cannot have both the points in the dataset because it would leak one out. So that's a very really
+interesting story. Other thing I mean to all
+the students I would say, it's not a rocket science. If you understand the
+problem, and more than that, if you understand how that model would be
+used in production, there's one simple question
+you can ask yourself, is this data point would it be available at
+the time of prediction. So for example, if you are in healthcare another
+good example would be, if you are trying to predict
+disease ABC let's say, and you have a column in your dataset which says
+that if a patient has visited XYZ department in hospital and that
+department deal with ABC. If you have that feature, then in a way you're
+basically telling your model if you have been
+consulted in that department, it's not 100 percent leakage, but it could be a
+potential leakage. So one simple question
+we can ask ourselves is this data point is going to be available when I'm using
+this model in production, and if the answer is yes, then I think you're
+safe to proceed. If the answer is no, then that's a big question. So we talk about in the
+intro parts of this class, understanding the
+business problem is just as important as understanding the machine learning
+aspect of it. You have to understand the flow of data through the organization. Hundred percent. I think that's a very important point Michael. I mean over the time I think what would happen is and
+it's already happening, five years, 10 years, people would be using ML and AI just like Microsoft
+Word and Excel. There would be two
+kinds of people. One who would be irrespective of which
+field they are working in, HR, marketing,
+finance, they would be using these algorithms,
+these technologies, using software tools
+that Microsoft, Google, Amazon is creating today, they are fighting for that, to take that space of business scientists or
+whatever, business analyst. The other kind of
+people would be sitting in the background
+developing algorithms, developing research.
+That's separate. I think I can say
+that in five years, I'm not sure if 80 percent of the world would be
+data scientists, but I'm pretty sure that 80
+percent of the world would be using data science things
+without even knowing them, and I think that's totally okay. So let's switch gears
+a little bit to something a little bit
+more technical in nature. In your work which is
+obviously very varied. We all use a variety of tools. Obviously Jupyter Notebooks
+are going to be in that list. I personally like
+PyCharm which is an IDE. What are some of the tools
+that you see yourself using every day to make
+your life easier. So for my development work, I use VS Code which is a slim version of
+old Visual Studio. So VS Code, and I'm in
+love with this IDE, so that's in terms of
+development environment. In terms of Cloud at work
+we use Microsoft Azure. So we obviously use the entire technology stack for Microsoft Azure which
+would be SQL Server, SQL Analysis Services, Power BI for front-end visualization
+and dashboard, and for ETL processes, we use tools like Alteryx. Alteryx is a ETL workload. Other than my work and my teaching activities and
+some other activities, I use Google Cloud
+Platform a lot. I like that if I have
+to make a choice, I'll choose GCP,
+especially for beginners. I'm not advertising GCP, but it's really simple. It's really simple compared
+to other Cloud tools. In terms of library, when it comes to machine
+learning, I use PyCaret. I'm not just a creator, but I also use it at work. Whenever I have to
+rely on deep learning, depending on what kind of problem it is or how big the project is, I choose between
+TensorFlow and PyTorch. My personal preference,
+I like PyTorch because I find it
+relatively more Pythonic, I would say, compared
+to TensorFlow. I think that's it. In terms of Cloud,
+it's azure, GCP. In terms of visualization, we use Power BI and
+ClixSense a lot. ClixSense is another
+visualization tool. So you mentioned PyCaret. PyCaret is a low code machine learning library that you wrote. You're the primary author of this open source tool that's
+available for anybody. What was your inspiration
+for writing PyCaret? When I was in school, they were officially using R for all the machine
+learning tasks, and there's a library
+in R developed by Doctor Max Khun,
+it's called Caret. That's where the name is
+coming from, PyCaret. Py is for Python,
+Caret is for Caret. But my main motivation was, when I was in school,
+it was a team program. There would be 70 people in one team and there
+would be 14-15 teams, and I realized that, 70-80 percent of the people
+coming into this field, now they're Scientists
+and they're Analytics, their primary carrier
+is something else. They're coming from Finance, they're coming from HR,
+they're coming from Marketing. It's changing. There is a shift. Previously, if you would check the statistics
+10 years ago, you would find mostly people coming into this
+program are either from Statistics or
+Computer Science or any other quantitative field. That shift is changing. But what happened
+over the time is, in open source, actually nobody focused in terms of product. There's library, it does the job, but most libraries
+are building blocks. Even something as simple as Scikit-learn to me,
+is a building block. You can do so many cool things. You can do anything with it. But it's not a product
+that I can give to somebody who has no background
+in Computer Science. It's not a product. That's
+where the difficulty is. When I started realizing
+that 80 percent of the time, we are putting in students. Later on, I realized not just
+students, but also at work. Eighty percent of the
+time goes into coding and troubleshooting and
+maintaining that code, troubleshooting this
+error, that error. I thought, "Man, this is the lowest part of value
+chain in Data Science." Code gives you nothing. No offense to anybody, but we shouldn't be
+spending 80 percent of the time in coding. If anything, that's
+not efficient. That's where the idea came from. But the problem was, I have never used Python before. I'm not a Computer Programmer. I always had a very
+good IT acumen, but I'm not a Programmer. Obviously when you have this idea and you
+talk to somebody, the kind of responses
+you would get is, especially knowing that you
+are not a Software Engineer, people would say, "Well, if it was possible somebody
+would have done it already. There is a reason this
+is not being done." Then I ran out of options. I had to learn Python myself. Literally in the program, I started with print "Hello
+world" and you would be surprised the first
+release of PyCaret 1.0, was developed in Jupyter
+Notebook because at that time I had
+absolutely no clue, what is development environment or what is GitHub, I had no clue. I was literally copying the code from
+Jupyter Notebook and pasting into an online GitHub to get the repository
+set up. I had no idea. That was very very early days when I started building PyCaret. But over the time, obviously, I had to learn things on the way, to build things on the
+way and after 1.0, things got a little bit
+easier because PyCaret got a lot of attraction
+in the first month and so many people from community started contributing
+and PyCaret 2.2, which was released last week, is almost a complete rewrite
+of original PyCaret, without affecting
+functionality on front end. Because when I was writing code, I thought writing
+more code is good, so I wrote almost 90,000 lines of code in
+around 10 months. Now PyCaret 2.2 is exact same functionality in
+45,000-50,000 lines of code. The way this happened is, somebody opened the issue three
+months ago and said that, "It's a very good
+library, the vision is good, the idea is good. I'm not a Data Scientist, I'm a software Engineer
+and you really need a Software Engineer
+because I read your code, it's not what you can
+call production code." That guy, with so
+many other people, has actually rewritten
+the entire back end, like make it more Software
+Engineering friendly without affecting the
+functionality on front end. My motive to create
+PyCaret was actually, when ten people sit in a team, you shouldn't discuss
+linear regression, decision tree, random forest, because you cannot control that. These are algorithms,
+somebody has developed them. Unless you have good
+enough knowledge of statistics and maths that you
+can rewrite this algorithm, in which case you wouldn't
+be in that room, I believe. You wouldn't be talking
+about Jupyter Notebooks, you would be in a
+very different zone. Other than that, it's a
+pointless discussion to have. Code here, code there. If you are in a room,
+ten people sitting, you should be discussing, what is the problem? How do I convert this business problem into
+a machine learning problem? Because in real life, there is no plain,
+vanilla, Titanic datasets. In real life most of the time you have to create datasets
+to do machine learning. You shouldn't be spending any time into coding
+and all this stuff. Instead, you should be talking
+about business problem, how you can convert them into
+machine learning problem. At the end of the
+day, if you cannot quantify the value of your
+project in real life, your project is useless. I think most of the time people should spend in identifying. In real life, you
+would know this. The use cases are not
+lying on the floors. If you are hired as
+a data scientist, unless you are hired in
+a company like Facebook, Amazon, Google, where they have been doing machine
+learning from 10, 15, 20 years, for them machine learning is a
+very operational journey. Things are set up. Their research wings
+are doing development, but their operational
+data science teams, they know what they are
+doing every morning. But other than that, 80 percent of the
+companies in the world, they have the data, they
+don't have enough knowledge, but they also don't
+have use cases. You are hired to
+identify use cases. Your 90 percent of time should go into identifying use case. For me PyCaret was a time saver. My only intention when I
+created it, just saves time. But obviously, overtime we
+added bells and whistles. It goes back to your earlier
+point of automating things. PyCaret effectively automates a lot of the journey through machine learning,
+and that's amazing. I think at this
+point, would you be willing to give us a demo of how PyCaret works and walk us through exploring a sample dataset of your own? Let's start a fresh Jupyter Notebook so there is
+no pre-written code, because that's the whole point. PyCaret is supposed to replace
+the boilerplate codes, so I don't want to
+copy my own code. I think by the end of the
+session students would realize, if you are using PyCaret as more like SQL language or
+something like that, you really don't need
+to copy the code. Copying would take more time than just writing it on the fly. I'm starting fresh
+in this folder, opening a new notebook. I have these environments
+in notebook, and if you don't know
+about environment, environment is
+basically isolation. I have these eight, nine different
+environments which I use. Today I'm going to use
+"pycaret21", this environment. This is a fresh environment
+I created this morning. Let's call it
+"Training Notebook". Basically, this environment
+I have installed PyCaret. Let me zoom in so you can see. Can you read the [inaudible]? Yeah. Okay, perfect. Looks great. Let me just call the
+version to show you I am using 2.2.0. This is a newly released version. The use case that we are
+going to do today is, let me import pandas and let
+me insurance.csv, data.head. This is a very small dataset, and this dataset is collected at the point of
+entry in hospital. Each row is a patient, and when a patient comes in
+hospital, at the counter, their age, sex, BMI, children, how many
+children, smoker or region. These data points are recorded. Obviously this is a toy dataset. In real life insurance companies doing this would obviously have a very huge and rich
+information in their dataset. But basically, essentially the insurance company
+is trying to use these six data points:
+age, sex, BMI, children, smoker or region, to
+predict what would be the charges of this patient
+if he/she gets admitted. Why would an insurance company
+do something like this? Well, outside of North
+America and Europe, healthcare is not a
+public sector thing, so insurance companies
+pretty much run the show, and if insurance companies
+can predict this, you can imagine their cash flow planning
+would improve a lot, so that's the use case. Basically, if charges column
+is a continuous variable, then we are going to be
+doing a regression use case. Obviously, when you're
+doing modeling, you would be doing a lot of EDA to understand the dataset. I'm not going to do that other than the fact that I want to show you what's the mean. Without any machine learning, without any data science, if somebody asks you what should be the predicted
+charges for this patient, the best estimate you have
+available is $13,270. In absence of anything else, mean is the closest or the
+best estimates [inaudible] Sure. I just want you to
+know this number, 13,270 is an average
+bill per patient. Because this is a
+regression use case, I'm going to import a
+regression module from PyCaret. There are six modules in PyCaret, one for regression,
+classification, these two are supervised,
+then clustering, anomaly detection
+is unsupervised, NLP, and association rule mining. But irrespective of which module you are using in PyCaret, the code that you write is going to be exactly same
+and it was intentional. Lot of things that you would see today in design is intentional. From pycaret.regression,
+import star. Normally you are
+used to this idea from sklearn.metrics
+import log_loss. What you do here is, from metrics module, you
+import logo_loss, what I want you to
+understand here, we are importing everything available in regression model. Some people from computer
+science background may disagree to this idea
+of importing everything. But there's a reason we do this because when you're
+experimenting, we want you to have access to all the functions when
+you're experimenting. When you are using this
+code in production, then you can obviously
+do imports like this. On every function, you can
+call individual import. But for the purpose
+of experimentation, we think there's nothing
+wrong with doing this. Star means import
+everything in the module. Also the way you
+work with PyCaret is more close to the way
+you would work in R, so it's a functional style of writing the code
+as opposed to OOP. You can import everything
+from this regression module. Let me just run this
+out, it should complete. The first thing that you do
+is set up the environment. In order to set up
+the environment, you just call setup, pass your DataFrame
+which is this data, and then pass the
+name of target call. Everything else is optional and there are so
+many other things, but I first want to show
+you just the plain version. When you do that,
+you'll get this box. This box is basically trying
+to infer the data types. In our data, if you see
+age is a numeric column, sex is categorical
+that needs to be converted before we actually
+start training anymore, same goes for smoker, same goes for region, BMI and children is numeric. But in this case, children
+was inferred as categorical. There are some rules
+running in the background, so by default inference
+is categorical. If you want, you can change that. I'm just going to go
+ahead and press "Enter". Just run it that way. This is the setup grid, so that means setup has completed and this shows you a
+couple of information. Session_id is equivalent
+to random state. If you want to reproduce
+your entire experiment, you control it
+through session_id. This is equivalent to seed in R or random state
+in Scikit-learn. You can set the session_id. If you don't set it, it would generate a
+pseudo-random number. Let me just show you. If I want to reproduce this experiment 100
+years from now, I can just pass session_id 123, and now each and
+everything that you do will use this
+random state, 123. In a typical experiment, there's a lot of randomization. Your train_test_split has
+random element in it. Your cross-validation. Tree-based models mostly
+would have random splits. Random forest would
+have random splits. It's very painful to manage that and you
+can easily forget. In a typical experiment,
+you would have 20, 25 places where you have to manually pass the random state. Now you can set the global state, you can set the global
+environment in a NumPy, you can set the seed in Python. But if you're using Scikit-learn and couple of other frameworks, they don't have their own
+pseudo-random generator. What happens is if you go on their website,
+they would say, "Unless you pass random state in each function or each object, we cannot guarantee
+that you'll be able to reproduce the result because of the backend parallelization." Some people think
+that setting seed in the environment would work, but it doesn't get any. But this one, when you
+pass session_id here, we make sure that this session_id is passed as a random state in each and everything
+that we do. That's it. Target, this is just showing you the name of target column. Original data, this
+is showing you shape 1300 by seven columns. Missing values, there are
+no missing values in here. How many of them are
+numeric features, categorical features? From this point onwards, this is more like the seconds. These are knobs and these are
+mostly preprocessing step. For example, if you want
+to use instead of k-fold, you want to use group k-fold, you can change in second. This is a new
+functionality in k-fold. If you want to change instead of doing 10-fold
+cross-validation, you want to do five fold,
+you can change it here. You can see use GPU is false. If you want to use GPU, you can set it here as well. Log experiment, we're
+going to talk about that. You want to normalize your data, you want to transform your data, you want to do your
+Johnson transformation, you want to do data
+transformation, everything is here: PCA, removing outliers, removing
+multicollinearity. Ninety-five percent of the
+things you can think of in terms of pre-processing,
+like normal things, are here already
+and it is entirely using a back-end of scikit-learn. If there is a transformer
+available in scikit-learn, 99 percent it's already here; and if it's not here, in 2.2, you can also pass your own transformations
+in the pipeline. It's a home run in terms
+of flexibility, right? Yeah. Pass your own transformers, which is consistent
+with fit predict API. You don't need to use anything from PyCaret in terms
+of pre-processing, you just pass your transformer. We have also added
+a new parameter in 2.2 which says: pre-process
+is equal to true by default. You can set it to false, which means that you
+don't want to use PyCaret for your
+data transformation, you will just use it for
+modeling, which is fine. Because in real life, if you're dealing with
+10's of millions of rows, the chances are you already have a well-established process
+setup for a pipeline. That means you are
+using Databricks or you are using Data Factory, or you're using anything which has an EPL process
+already established. It is extracting data from
+source during transformation, it's putting out a CSV file, or writing it into a database. In that case, you really don't need to do
+any transformation. These are few things
+and we're going to talk about few
+things later on. But for now, let me just do log experiment is equal to true, and also pass experiment
+name is equal to insurance1. Press ''Enter''. So
+what happens here, when you do this,
+it's at the back-end. You realize that when
+you are doing modeling, you generate a lot of metadata. Simple thing is you would train multiple models
+and you would have multiple metrics for each model, you would measure
+MAE, RMSE, r squared. You have multiple
+metrics and you would train 50 models, 100 models. Keeping track of those
+numbers is very high. You don't want those
+numbers to stay in notebook because notebook is not a database, it won't save those. The alternate, that I
+used to do two years ago, is basically generate
+results in notebook, copy the number,
+and paste in Excel, and keep a table in Excel. You don't need to do that. Other than metrics, for each model, there
+are hyperparameters. Models like XGBoost has 40, 50 hyperparameters so you also want to keep track of those. Because if you cannot reproduce your result at a future point in machine learning, it's useless. Sometimes, depending on what type of problem you are working on, you may also get in trouble if you can't
+reproduce the result. Because you can go through
+a proof of concept phase, gets the funding approved, get the team rolling in, get the hopes high, and then three months later, if you can't reproduce
+that result, then. You're in trouble. It's a big trouble. But this would help you and I
+will tell you how. We have done this log
+experiment and experiment name. What it would do is:
+behind the scene, it would initiate MLflow server on your local host.
+What is MLflow? It's, again, an open
+source library, very cool library developed
+by people like Databricks. The team at Databricks has
+also developed MLflow, so MLflow is integrated
+with Databricks. If you are using Azure Databricks or any version of Databricks, it's actually initiated on their server, and
+it's really cool. PyCaret is also using
+MLflow back-end. Now, in order to
+see that back-end, you have to initiate that
+server, which you can do. If you are using notebook, you can do it through notebook. You can just say this sign,
+exclamation, MLflow UI. If you are in command prompt, you don't need to write
+this exclamation mark, but you have to make
+sure you are in the same folder as the notebook. I'm going to do it from notebook. I'll initiate the cell. You would see nothing
+would happen. The star would stay
+here, it won't go away. Now you can open browser
+and type local-host 5000. You will see this screen, and here, you would have
+all of your experiments. We have created this
+experiment. Let me stop this. Stopping the cell
+won't stop the server, so you're okay to resume. But you have to stop this; if you have to run more
+commands in your notebook, you have to stop the cell, but the server would continue to run. This is the name we
+set, insurance1. If you go here, this is the session we have
+initialized, 6421. This is a unique ID
+for each session. If you click on that, it basically tracks your time, it corrects all these parameters. Remember, we have
+seen this in setup. It would save all these things. It would also save the
+transformation pipeline as a pkl file in your folder. What it's doing behind the scene. Basically, if I go
+into my folder, PyCaret-demo-umich, you see it has created
+a mlruns folder, and in under mlruns, these files are saved JSON and
+all the objects are saved. I'm going to come back
+to the pipeline thing. It's just a pickle file, but we will talk about it. But there are other
+information as well. You can also use this as
+a documentation tool. I'll show you how. Let's go back. Once setup is completed, and at this point we haven't done any transformation, nothing, very clean and straightforward, you can actually check models. All the algorithms that
+are available to you, but just by typing models. Now, imagine if you
+haven't then this. You have just done this. That means on every step
+you have to write this. Now you don't have to
+do because we have imported everything
+together. But that's okay. All these models are
+available to you. These are untrained estimators. Most of them are
+from Scikit-learn, some of them are individuals like xgboost is different
+library, lightgbm, catboost. In 2.2 if you are using GPU, all these estimators
+they only run on CPU. But if you are using GPU, we replace these
+untrained estimators. Instead of Scikit
+learn we would use rapid AI CUDA ML project. CUDA ML is basically providing GPU enabled replacement
+for the CPU algorithms. It's not just that we are
+combining Scikit-learn, it's many other things, even outside of Scikit-learn. It's essentially a wrapper around all these libraries to provide you a unified interface
+to do things. All these models are
+available to you. The first thing,
+the first function that you would find
+yourself using a lot is called create model. As the name says, create model basically
+prints a model, and evaluates performance metrics for them using cross-validation. The way it works is these
+are the IDs of model. You just need to pass the
+ID in the create models. If you want linear
+regression, create_model, lr. It is basically fitting
+tenfold of linear regression. These are the metrics that
+will be evaluated by four. So MAE, mean absolute
+error, mean square error, root mean square error, R square, RMSLE, MAPE. I think something is running
+in my process because linear regression
+shouldn't take that time, but that's okay. You can see that these are 4,1,4,2,4,3, and
+these are tenfold. If you would do this, whole five, it would basically train and
+evaluate on fivefold. Anyways, I'm going to
+set it back to 10. If you want DT, decision tree, let me just look
+for decision tree, I know the decision tree
+is DT, so you can do DT. Similarly, you can do
+xgboost by just typing it. Now, this that you
+are seeing here. If you were to do it
+using Scikit-learn, train the model using
+cross-validation and evaluate these metrics and
+written a final data frame, do the average and
+standard deviation. This is 10,12,13 lines of code. If you do it for 10
+models, 13 times 10. You would say, okay,
+I'll just copy the code. But the point is, you make that 15 lines of code
+359 line overtime, and then you're forgetting somebody has to maintain
+that code as well. It's technical debt
+for a lifetime. If you're copying code,
+and you made a mistake, and you've copied it now you got to go through and fix it. This is much easier and much
+cleaner. It's also readable. Yeah, it's readable. That's
+a really good point. Create model is the function
+that now we [inaudible]. Now, what's happening
+behind the scene? If I go to ML flow, go to "Insurance", press F5. Look at what's happening. Let me make it a little bit
+cleaner by hiding parameters. Look at this. This is your
+basically Excel spreadsheet. This is each model
+that you are training. This was the session
+initialized that we have seen. Then we have obviously created linear
+regression three times, that's why you see
+these three entries, decision tree, extreme
+grading boosting. If you click on it, see, these are the
+parameters of xgboost. If you were to keep
+track of it on Excel, I don't know how would you do it. A long Excel spreadsheet. Yeah. These are the metrics,
+some other things. Also, we saved the results
+and hold out as an HTML here. At the moment, this is
+on my local-host 5,000. But the way companies are using PyCaret is they put it
+behind the firewall. Imagine you have a data
+science team in 10 countries. Put it behind the firewall, only instead of local-host 5,000, you would basically access, let's say depending
+on the platform, you'd say ABC dot company dot com slash ML slash
+one, two three. The way you would access
+it like that and also the power is your entire team
+would use this experiment. Insurance money is
+the highest level of accumulation, I would say. If you have 50 data
+scientists working in 50 different countries
+and they are experimenting on the
+exact same thing. If they just do this
+code, run this code, log experiment, and pass the
+insurance, experimenting. All those trainings would be recorded here and
+that's really powerful. If you think from the perspective of
+managing all these things, imagine like you are literally
+doing nothing and you are basically getting a back end system
+automatically manage itself. At the moment, I have hidden the user column because
+I'm the only user. You can imagine the power of this because if
+there are 50 people, this is not just
+logging your metrics, this is storing your model
+too. Here's your model. Alongside model this is storing all the conda environment things in a YAML file. It stores the schema. If you were to use this model in production, the model itself. This is also a schema,
+artifact model schema. Versions and everything else. In terms of ML Ops this is a
+lot of work to do manually, trust me. Let me go back. It makes it reusable. That's the beauty of this is
+you don't have to remember. Exactly. At the moment
+this is on my computer. It may not be as
+impressive as you think, because if you are setting
+it as an organization, this would be set
+up not as a file, but as opposed to
+the SQL database. The artifacts that are getting
+stored on my computer, instead of storing
+into a local computer, it would get stored in AWS S3 or Azure Blob Storage or anything your
+organization is using. Now, ML flow pica is good, but ML flow itself is
+really, really powerful. That means that ML flow has native integrations
+with everything. If you want to deploy
+the model using ML flow, you literally type this
+ML flow, deploying AWS. If your connections and
+everything is set up properly, you can just write three
+words to deploy your model. That's pretty good. Going back to experiment, create model is the
+base function which trains the models using
+default hyperparameters. Every estimator, every
+algorithm, every model. These three words, I use
+them interchangeably. Estimator modeling, orca, all of them have
+some default parameters. But you can actually tune
+those parameters as well. The way you tune is you pass the list of parameters that
+you want to iterate over. What this simply means
+that it would iterate over the random combinations or complete combination
+if you say so, but it would take a lot of time. It would iterate over
+and train the model, evaluate the metrics, login. Train the model, evaluate
+the metrics login. At the end of the process, whichever combination of
+hyperparameters is giving the best result in terms of metric that matters
+to you in this case. I don't know if R
+square is important, RMSLE is important,
+MAPE is important. Depending on the type of problem you would
+choose a metric. Let's say I want to improve
+my mean absolute error. Based on that, it would
+select the metric, and obviously if create
+model is for creating model, the function to tune model
+is also really simple. It's called Tune Model. It only takes your
+model as a parameter. We have created
+decision tree here. Let me remove energy boost. You can see Decision Tree. Let's see R square for
+simplicity, 73 percent R-square. Sorry, 73 is linear regression. Sorry. Decision Tree,
+let me create it again. Decision Tree is a base
+R square of 68 percent. To tune decision tree, you just pass DT in
+tune models function. It would basically
+use the cluster as valid. Let me run it again. Fitting 10 folds for 10
+totaling, maybe next time. But basically, the point is it is using all the course
+on your compute. That's why it's doing
+a parallel processing. You can see just bypassing
+the T into decision tree, I have definitely
+improved my model from 68 percent to 82 percent. Now how did I do that? Let me show you DT here. This is my default decision
+tree with 68% R square. You can see these are
+the default parameters. Let's see what is different. While tuning, we have changed the max_features
+from none to one. Impurity_decrease, we
+have changed from zero to 0.002 and n splits we have
+changed from minimum splits, we have changed from two to five. How did we do that? Well, behind the scenes
+for every estimator, we had teams who had researched
+some hyperparameters, some methods and there is a
+grid of values predefined. When you don't pass any grid, it would use our
+predefined values. But depending on the dataset, one grid cannot
+work on everything. But this is the
+most optimized grid that could work on majority of the problems in the
+minimum amount of time. But if you are doing
+real, real thing, you can actually pass
+your custom_grid here. You can pass the
+dictionary of parameters, just like you would
+do in a scale. If you just do this,
+by default this is using Scikit-learn
+random grid search, which you can change to
+anything else as well. Now, there are a couple
+of tuners available. One is Optuna, instead of a Scikit-learn,
+is a random grid search. It would randomly pick combinations and
+just drive them on. It's a matter of
+luck. If you increase the number of iterations,
+results may improve. If I come here and type
+n_iter is equal to 50, by default, there are
+only 10 iterations. Now you see totaling 500 fits. It is basically fitting
+500 decision trees behind the scene to bring
+back the best model. In this case, you can see
+8276 has improved to 8291. It's not dat material, if you are dealing
+with the problem where one percent can save you 100 million but sometimes there are problems where one
+percent wouldn't matter. For example, if you're building a classifier to detect cancer, one percent is a lot. If you're building a classifier to predict customer churn, I say company would say,
+well, there's cost-benefit. By improving one percent,
+what is the return? If the return is greater than the cost of improving one
+percent, the answer is simple. It's a matter of cost-benefit. Some other methods for tuning is you can just pass
+search_library is equal to Optuna. Now, this would use Optuna
+as a backend to tune. Now, if you have worked with Optuna, Hyperopt,
+tune-sklearn, Ray Tuners, each of them are
+really, really different. The way you input the data, the functions you
+use, and everything. Not just the maths behind
+the scene is different, but the usability
+is very different. In Pike edit, we have
+basic and it was the hardest thing
+for this release. We have unified these
+five different libraries and Ray works on cluster,
+so it's very different. We have unified them in one
+API and in order to do that, all these libraries tune-sklearn and they have shown
+their support. They have also
+changed few things in their system to make this happen. We are grateful to them. If I just pass tune_model
+search_library optuna, this is exact same thing. Basically you are saying instead of tuning through
+random grid search, use Optuna tuner to tune. Sometimes the result may improve. In this case, very surprising. My base R-squared was 68, I tune from SQL
+and I got to 8276. I increased the iteration
+in SQL and I got to 8291. I used Optuna, I got to 8352. You can see this is different. Scikit-learn made this
+1.0, Optuna did 0.98. This is using
+Bayesian grid search. Again, it's trying combination of parameters, which
+is predefined. You can also define,
+but it's predefined. It's doing the same thing,
+but the method is different. The way Bayesian grid search
+iterate over your grid and find the optimized parameter is different than the random. Similarly, you can
+use Scikit-Optimize. Look at this. This is
+using all your codes. You can silent these
+messages if you want, if they are bothering you. It's good to see them because you know the status
+of your progress. Eighty-two seventy-three. Now, it comes to a point where I should have
+used this time, because the point being, what I wanted to show you is each of these tuners
+would do the same thing, try that combination and
+select the best model. But the point being,
+who can reach the optimized point faster
+because time has a cost. This dataset is 1,000
+rows and seven columns. Real live dataset has 15
+million rows, 300 columns. I don't have that much resources in terms of time and
+compute also has a cost. The 4th method is basically
+I can do tune-sklearn and search_algorithm as Hyperopt.
+Let's try Hyperopt. For this one, if you are using tune-sklearn this is using Ray. Ray is like Spark, but Pythonic. Basically you can use
+this on a cluster. If you can set up a Ray cluster, you can use the cluster. Eighty-two-ninety-seven,
+pretty much level improvement. Not better than optional, but again, you can see
+this is different. 0.77, so it's totally
+different from the others. Again, if I refresh
+this, now imagine, literally you are tuning
+decision tree so many times and these parameters,
+it's impossible. How would you keep track of it? If you're not using
+something like this, how would you keep track of it? Similar to tune model, there is a function
+called ensemble model, which basically if you know
+about bagging and boosting, you can use that, so
+ensemble_model dt. This basically takes
+your decision tree, which is this one. I'm so even lazy to go back, I will just write
+decision tree here. Sixty-eight percent
+decision tree, and now you understand
+the power of session ID. I can reproduce this result. If there was no session ID, this decision tree would give you different results
+because it is using randomization in terms of
+deciding the exploits. You see that I do ensemble_model
+dt basically wraps my basic decision tree around
+the bagging regressor. You can see that my
+normal decision tree is basically 68 percent
+if you bag in. Mostly tree-based models, it would improve the
+performance if you bag and most tree-based
+models are already ensemble, xgboost is basically
+a tree boosting. If you do this, ensemble_model, dt, method
+is equal to boosting. This is basically, you are
+taking your decision tree, and you have boosting
+it to AdaBoost. It's pretty similar in a sense. Obviously xgboost
+[inaudible] different, but it's pretty similar. When you bag your decision
+tree, it's pretty similar. I would say it resembles
+a lot with Random Forest, except that Random Forest also
+randomly pick the columns, but other than that, I would
+say it resembles a lot. If you want, you
+can also do this. The way you would
+work in Excel or any functional programming
+language, you can nest it. Let's nest something really cool. Let's do ensemble
+of the tune model, of the create model of dt. Now what this is doing? This is basically
+just like Excel. It would execute the
+innermost function first, which is this, create model, would pass it to the tune model, and then the best tune
+model would be ensembled. You can see 8391,
+the best of all. Why? Because I created
+a decision tree, I tuned a hyperparameters
+of decision tree, and I then ensemble the decision. You can write crazy, long, nested statements
+if you want with this. In the interest of time,
+let's move really forward. There's another function
+called plot model, which you can use to
+examine the plots. In this case, this
+is a residual plot. If you want to see
+the error plot, this is the error plot. There's a function
+called evaluate model, which basically brings
+the entire grid. This is basically
+bringing the UI for you. You have to be in Jupyter
+Notebook if you are using this, so you can basically
+select a plot. Residual plots, error plot, feature importance, and
+decision tree as well. Some slides back,
+but basically we have edited a new plot into
+0.2 called decision tree, it would plot trees. What else? All this is good for understanding
+how is Pycaret working, but normally you don't know which model it's
+going to perform better. This is the huge list of models. Now, you don't know
+where to start. Normally the way
+you would start in Pycaret is with this function, best is equal to, best
+I'm assigning it to do a variable, compare models. What it does is, basically, think of it as a loop. In the background,
+it is using create model function to pass
+all the estimators. This is very similar to
+something like this for, i, in, lr, dt, et, create model, i. If you're to write your own loop, this is how you would write it. This is pretty similar.
+This is basically giving you an averaged
+cross-validation result. When you use create model, you see by foward, and you also see average here. If I go and show you dt. Let me just show you dt. You see I square 6855, but when you want
+to compare models, you see only one row for each model which is
+basically averaged. So 6855, this is 0, right? Again, as we are
+doing all this stuff, everything is getting
+logged in the background. Everything. Not just
+the parameters, not just the metrics, but actual models as
+well as a pickle file. When I say model, it's
+not just one model, it's the entire pipeline
+of things we do. We're going to talk
+about that in a while. We have talked about
+compare models. There are two other functions, blend models and stack models, which is again
+ensembling methods, I'm not going to cover them
+in the interest of time, but it basically takes
+a few estimators, and it blends them. Blending is basically building a voting regressor in this case, and a stack model is creating a meta-model on
+top of your base models. You can see with this one
+word, compare models, I obviously did
+all this because I wanted to show you
+how you can use, but if you are using it, well, this is your baseline. This is how you
+start, this is it. Also ordered, by default
+we're ordered by AiSquared. You can see gradient boosting regressor is the best model, catboost, random forests,
+lightgb, ada, blah, blah, blah. We were playing with decision
+tree here, which is this. So you've got the point. Why I'm saying you would start it here? Because you don't know
+which model would work. There are times where knn works better than
+everything else, there are times catboost works better than
+everything else. I have seen interesting times where Bayesian Ridge
+would beat xgboost. My answer is, it
+depends on dataset, it really depends on dataset. Okay, so we have going
+all these so far, so let's open a new notebook and let's do modeling as we
+are solving the problem. Let me name the
+screening, Notebook 2. Import pandas as pd data is equal to pd.read_csv,
+insurance.csv, data.head. What I want to show
+you is this setup data target "charges",
+log_experiment. This is the brand new file. I've closed the old file, this is the brand-new file, and you can think this file is in somebody's else computer. As long as I pass the
+same experiment ID, there's always a risk
+of making mistakes when you are doing the live demo, but I think that's okay.. That's the closest reality to life. When I do live demos, I don't pre-rehearse them, I always make
+mistakes because part of learning is troubleshooting. It's normal. What I
+want to show you, let me just create a K-NN, so you can see. Now if I refresh this page, what I want to show you is, so we have done K-NN, now if I go back here, refresh this, so see this. Up until this point, this is what we have done in the old file, all these things. This was the session
+we initialized, 6421. Now this is the
+session which is this. This is the session
+we initialize, C1 D1, and this is the k-nearest neighbors
+we just created. Think it this way,
+this is also doing file management and model
+management for you, right? Sure. Okay. Now, let's do the experiment. My job is to solve this problem, to build a regressive
+that could predict the charges column
+most accurately, and the way I would do is I would say top 3, let me do this. Compare models top 3, because I'm going to use
+n_select equals to 3. What this means is
+compare all the models, [inaudible] top 3
+models. Based on what? Based on this parameter, sort, which by default
+is [inaudible]. I'll keep it [inaudible]
+for the sake of simplicity, but in cases like this, you would practically use mean absolute error, I would say. Remember the average charges
+were $14,000 something. If you can build a predictor, that could predict charges
+plus-minus $2,000. I would say it's a
+very good predictor, it's a very good model. It can be improved, but
+it's a very good model. Because if you have no model, what you would do, you'd say
+$14,000 for every patient. Now, this is basically fitting all models. If you want to exclude
+or include models, there are parameters
+that does that. But by the time it finished, let me show you just the
+documentation part of it. Read the Docs is what we are
+using for documentation. Even just like the
+entire package, our documentation
+is also in English. If you go to "Documentation", go to "Classification module", and search for "Compare models", and you would read this. You can do this. I mean,
+without any background, you could distribute this
+into it because it's a very toned-down version of technical documentation,
+very toned-down version. You can see it does include
+parameter which says, list of string or Scikit-learn
+compatible object. Also, one big point
+that I missed is you're not limited to the
+models that we have seen, 20-25 models we have available. You can use your
+own model as long as it is compatible
+with fig predict API. You can use PyTorch models, you can use Crossway
+Learning models, you can use something like
+energy boost, for example. You can use anything which is
+compatible with fig predict and 99.9 percent
+things in the wall, is now compatible with
+scikit-learn [inaudible] group API because that was
+the goal standard for when things
+started to hype up. Going back to the experiment, I have already
+compared the models. Now I know my top 3 models are these and if I just
+go and check the top 3, this is a list of
+the top 3 models. Now, what can I
+do? At this point, I can just go ahead and use the gradient boosting regressor. Just go ahead and put
+it in deployment. I'm going to show you
+a few things also is there are a lot of preprocessing options
+that we didn't explore, which you can see here. All these preprocessing. I'm going to do few
+things and just to show you how would you
+actually use it. This is my base reserved without
+doing any preprocessing, and if you want to see
+the transform dataset, this is the function "Get conflict" extraneous
+for training data set. You can see that these
+are the columns. Age, BMI, sex-female. This is because our
+variable was categorical, so it basically created
+an encoded column. Same goes for children, the smoker, and region. There's absolutely
+no preprocessing. These are just the same columns. The only three
+things that we do by default is if there are missing values,
+we would include it. If there are categorical
+columns, we would encode it. There's one more thing
+I'm forgetting now. But these two things we do. Anything else you just have to explicitly define in setup, which we are going
+to do right now. That's why I showed
+you these columns. Let me go ahead, just
+copy this code here. Let me do few things. Before I learn that,
+let me do this, top 30, which is gradient
+boosting regressive. Let me show you the featured
+importance of this. You can see for
+charges smoker, yes. We could guess is the
+highest feature importance, BMI, age and children, and region has no impact. But let me go ahead and copy
+this now and do few things. Let me do feature interaction, which would create new features. Polynomial features, which would create
+polynomial features. Trigonometry features. We're just creating
+trigonometry features. Let me do feature selection because now I would have
+lots of new features, so I want you to select
+the features for me. There are two
+algorithms to do that. Recently we have also implemented Boruta algorithm to do that. Normalize. Do the normalization. By default, use Z-score. You can change it to min/max
+or ganache or anything else. Also, transform and also
+do the target transform, and the reason I
+want to do that is, let's say my focus is more
+towards using linear. This is my target column. Let's say my focus for
+whatever reason I wanted to use linear algorithms, they are simpler to
+explain, maybe that's why. Let me transform data here. Transform target "Enter". Now see this grid, we have now 17 columns. Let me just show
+the columns here. Do you see this? Smoker_yes_multiply_bmi_power2, bmi_power2_smoker_yes,
+region_southeast. These are all the new features created with other
+feature interactions. Sorry. Now you can
+see these features. Also if you see the numbers, this number do you see each? This is no more in
+the normal scale. Because this is now z-score. Now let's run. Everything is being
+recorded here, so we have initialized the new setup with all
+these transformations. If I refresh this page, I see that and you can
+see that where it is. Transform target
+true, and by default, we are using a Box-Cox method
+to transform the target. If I run "compare_models", you would see a
+difference in metrics, because essentially we have processed the data set
+in a different way. The whole idea of the experiment is you'll have to experiment, you'll have to try
+different [inaudible]. Now, most people
+would say that if you are just randomly trying
+everything, that's not real. That's wrong, you cannot try all the combinations
+in the world. I would say their
+right to an extent, but I would say you would
+never be in a position to exactly know which
+model would work best on which data set with
+which hyper-parameters. You would never be
+in that position, nobody would ever be
+in that position. So you still have to experiment. But it is important
+as you are now using these tools and
+you save a lot of time. Now it is important
+that you actually go behind the scene
+and understand, and the way it would help you is, instead of trying 20,000
+different combinations, over time you'll be able
+to limit the space. If you would gain
+an understanding of the jury and the
+mass to some extent, instead of trying 26 models, you'll be able to
+limit it to 10 models or at least you'll
+be able to limit it. That's where you add value. Because if we are dealing with 100 million rows and 50
+columns or 500 columns, you cannot try 26 models, it would cost you. Your experience as a data
+scientist would help companies. Instead of running 25
+models would not get. In this case, let's leave Bayesian Ridge and all
+the linear models. Let's go for a family of
+three based model and let's put vector machine and Nc1. In this case, you can see previously when we
+ran compare_models, our random forest was 8311. Now the random forest
+is obviously improved, but also it has affected
+GBR negatively. But I want you to see
+linear regression went from 73 to 57. It's not good. It has
+reduced in the models. There are 30 40 options. You can play with things. For example, one thing
+I know is if I remove this transform target
+feature from here, linear aggression
+would really haywire. Because I tried that in the past. I know that I'm not
+going to do that, but you get the point. Actually, in the
+interest of time, let me just remove
+these three things. Also let me remove feature. Now let me create random
+forest separately. The point I want to make here is get_config to check my columns. Now I want you to know that all these columns
+are new columns that we have introduced
+in our pipeline. They are not part
+of original data. If you were to do it
+outside of PyCaret, what you would do is each and every transformation
+that you apply, normalization, Yeo-Johnson, Box-Cox,
+missing value imputation, anything that you do, you need those transformers
+in the same exact sequence. You have to manage
+that orchestration because if you don't do that, you cannot use this model
+in production because the new data coming in would
+only have these six columns. All the other things
+that you have done, you have done on the fly. Now doing that manually
+is really painful. Basically we are talking about hundreds and
+thousands of lines of code, even for a simple scenario. Even in this scenario, we are using 1, 2, 3, 4 missing value, numeric five, categorical six. We have disabled normalization but if you were
+using normalization, this is seven transformers, and you have not
+just transformers, but you have to
+manage the sequence, whether you would
+do normalization before or feature
+interaction before. Whatever you are doing, you
+have to orchestrate that. In this case, what I
+wanted you to show is this object rf here is a model. It's a estimate. If
+you check the type, it would be a scikit-learn
+ensemble estimate. When you save random forest, let me save it as abc, you are actually saving entire pipeline which
+has all these steps, and the last part is the
+estimator, which is this. Let me show you visually. Let me load back abc
+in my environment, abc, and let me print this. This is the pipeline. Let me show you more visually, from sklearn import set_config, and set_config. Display is equal diagram. This is basically a
+utility in sklearn which basically gives you output as
+a picture instead of text, so this is easy to understand.
+This is our pipeline. We started with data
+types auto inference. This has no impact on production. This is only at the
+time of training, that's the input
+box that you get. We have a simple imputer
+behind the scene, although this dataset
+has no missing values, but we always create a imputer. The reason being? If
+the incoming dataset in production has missing values,
+the algorithm would fail. If you don't have imputer
+to impute that value one-way on the front
+end you restrict user, that you cannot pass
+data with null values. But if you're using APIs and it's part of a bigger system, then most of the times
+you cannot do that, you have to keep that open, so you need a backup
+imputer in the background. New categorical levels in test
+dataset, let's say region. There are four regions
+in this data set, North, East, West, South. Tomorrow there's a new region, region xyz. What happens? Trained algorithm
+has never seen that. This, we are in the background, we have a logic to reallocate that new observation or new level in categorical
+data to an existing level, you can define how, but we have a default method. Make time features. There
+is no timestamp here, but if there was a
+timestamp or date, you would extract
+features out of it. Make nonlinear features. That's basically polynomial
+features that we created. Passthrough is basically empty
+spaces, just ignore them. Cleaning column names
+because sometimes in production estimators
+like LightGBM, CatBoost and XGBoost cannot deal with the special characters. If you're thinking that, "Okay, I would write one script copy, it would work everywhere. Charm." No, unfortunately, XGBoost would behave
+differently than scikit-learn, that's why we have this
+API unifying those. Advanced feature
+selection method, that's our feature selection. This last thing is random forest regressor.
+This is the pipeline. Now let's do one simple thing. Let's push this model in production in a way that
+we have framed this model. Whatever the performance
+of this model is, somebody on the front end
+would actually use this model, give the input and what
+would be the input? Remember, your models. Now your estimator random
+forest needs 21 columns. It needs 21 data points
+to predict anything but your user cannot
+give 21 data points. The data points,
+they're only six. Rest of them you have
+created in your pipeline. Now we need a front
+end which takes the input six data points
+and give the prediction out. Now there are a couple
+of ways to do that. One simple way is you
+just create a Flask API. That means there's no front end, you would send a API request to a system and it would
+return the prediction map. You can also use Flask to create a front end,
+and I'll show you. You can use a Streamlit. It's a relatively new and a very lightweight
+iconic framework to build applications, and I'll show you
+Streamlit first. You can also use FastAPI. FastAPI is also
+another library in Python that allows you
+to build that API. But let's see Streamlit
+first of all. But let me save this model, or whatever random forest. Let me save this model
+as a final-model. Let me save this in my directory. Now this is saved and let me
+bring my Visual Studio code. Let me first show you
+pycaret-demo-umich. This is the folder. These are the notebooks we have worked on. This is the
+presentation I created. We haven't seen that,
+so we can go on, and this is the final-model.pki. This is the file we just saved. This is the file 8.72 MB file. This has the pipeline.
+Abc.pki we have seen that. Let me just go ahead
+and delete that. App.py, this is where the
+front end is being built. Let me first show
+you the front end so that you have an idea
+what I'm talking about. In order to do that, I'm going to activate
+my Conda environment, go to my directory and
+use streamlit run app.py. This is just the way
+you'd run a Streamlit. You can see it's
+literally 65 lines. Let me show you the front end, it's not beautiful because
+I'm not a graphic designer, but it's really functional.
+This is the front end. In 65 lines and maybe 20 lines or 30 lines
+we wrote in notebook, basically under
+100 lines of code, we have created a
+very complex machine learning pipeline that takes the input data, gives
+you the prediction out. This is the form, you can beautify it obviously. Put the age, select the gender, BMI, how many children, a smoker or not, predict. Sixteen thousand nine one nine. Let me change BMI to
+something else, 17,265. Let me just remove
+this [inaudible] flag. It should go down because
+smoker was really 4,301. Now this is one by
+one prediction. This is same as if
+you were to pass these exact values in Python notebook when
+using predict model, you would get the
+exact same results. Actually we haven't seen that, but for prediction
+you can just use predict_model rf
+data is equal to. This would be your new dataset. You can see that
+it basically takes your dataset and attach a
+new column to it, so 17042. If I go back for a second, and put these values, age is equal to 19, female, 27.900, children zero, a smoker, yes, and region Southwest. Basically when I
+build the front end, I didn't realize BMI could
+be, what do you call it? I took BMI as a integer that's why I
+cannot enter 9000 here. That's why there is a difference
+of maybe 100 or $200. But the point being it's
+exactly same as this. Now, there is obviously
+a option here for batch prediction in case
+you want to upload a file, which I'm going to do now. I'll just upload the same
+training data set because I don't have unseen dataset
+for this, but let's see. That's pretty slack. Yeah. This DataFrame that
+you see is exactly this. You can see 17042, 2284. Now let's see the
+app. It's not hard. This is importing libraries on the top, importing
+pycaret.regression model. You only need load_model and predict_model this time
+as training is done. Now it's just inference. You're importing
+Streamlit, pandas, NumPy. You're loading the model
+in the file, load_model. This is same as what
+we have seen here. Basically this is
+the same function. Instead of Jupyter Notebook, now we've seen VS Code, then there is a run function. We are loading an image
+which is basically this hospital logo.
+Let's go back. Sorry, this is hospital
+image, this is the logo. This is the sidebar
+we are creating, where we are saying that
+there would be two options, online and batch, which is this. If you read this, this is Python, with Flask and other frameworks, you would have to learn things but with
+a Streamlit you can actually write your
+normal Python code and it would translate
+it into things for you. For example, if I
+wanted to control two pages between online
+and batch, right? Think it out as a website, I have two pages. In a Streamlit, you just
+control that to a if statement. If add selectbox is
+Online, show this. If it's Batch show this. So when I'm selecting Batch, this is only executing
+this part of the script and what
+this part is saying, if file upload is not None because I don't want
+people to submit, just click it without
+giving a file, if it is not None, then upload the
+file using Pandas. Call predict model,
+pass your model, which is model, which
+is this. You loaded it. This is Pycaret, pass the data and data is
+basically just that. It will just load
+these three lines. Then just st for a Streamlit,
+write the predictions. When I upload file here. That's a really slick
+library for doing this. Yeah. This is a Streamlit. Now, similarly, this
+is basically Flask. Not very difficult. Whenever I have to do it I just copy this API code, right? I don't need to write
+all this again. This is like a template. The way you invoke Flask
+application is by doing python app2.py which is my app2
+file and basically, this one is relatively a
+little bit beautiful because I have used open source CSS
+designs to pin the webpage. When I open it, I'll
+show you what I mean. This will open on localhost
+5000 which is same as MLflow. Now I don't know
+if this would work because already
+MLflow is running. Because MLflow was running. They couldn't bind to the port. Yeah, exactly.
+That's a good thing to know if I'm going
+to change that. I think you do port
+equals under app.run. This one right? Yeah. Or it is equal to 1234 and now, if I go here, conda activate
+pycaret21, cd pycaret. I'm just navigating
+into my folders and now I'm going to
+do python app2.py. Only thing we changed is
+because I already have one server running on port 5000. I just passed a port
+here so I'm asking Flask to open a server
+on 1234 instead of 5000. Let's see if it does that. Yeah, so now if I go and
+show you localhost 1234, it would open a beautiful page which essentially is
+doing the same thing. Let's do this, think about
+that missing value thing. If I put Region in asdasdasd, in normal circumstances
+and instead of yes and no, let me put not sure. You've got a return, right? In normal circumstances,
+this would fail because your model was never trained
+on not sure and ABC, right? This is exactly the same thing. The reason it looks a
+little bit beautiful is because in this app there's
+a CSS file that I'm using. I don't know CSS, there's a open source template, I just imported it. You can do things but
+as a data scientist, I assume that your
+role would never be to build Front-end. But normally as a data scientist, this is the Front-end just for the purpose of demonstration. But in reality, the
+way you would use it, you'd have different systems
+in your organization and most systems would have a Python
+environment as long as your server is working, you can use request library
+to make a call to server. If I do that. Basically I'm
+importing a request library, setting my URL to local host
+1234, that's the server. Predict API is basically
+pointing out to this part here, and what predict API is doing, it's saying, get the data, convert into data frame, call the predict model function, which is exactly same as we have seen in Jupyter
+Notebook as well as in the Streamlit app and return the label written to JSON output for that and
+that's what we see here. This is normally
+how you would use. You would train a model, do the entire pipeline, push it, at the moment that model is on my local computer in real life, that model would be on S3. For example, let me just show you the way you
+would use PyCaret is deploy_model rf, 'rf-on- aws', authentication platform is equal to AWS authentication
+pycaret-test. That's the name of my bucket. If I go and show
+you my AWS account. I have a S3 account and I have a bucket
+called Pycaret-test. If I write this code,
+deploy_model rf, the name of the
+model is rf-on-aws, whatever the name could be, platform is AWS authentication, my bucket name is pycaret-test. If I write that, it
+would do something, but models successfully
+deployed on AWS S3. Now if I go and show
+you my pycaret-test and if you have and you can
+do the exact same thing for GCP Azure and now obviously there are so many other small
+Cloud service providers. What they are doing
+is they are editing our codebase to include
+their integrations as well, that's how it works in this way. You'd have a lot of
+options in terms of deployment and that's the part where we don't have to
+actually work very hard, people would do that because they want to integrate
+their Cloud platforms. But if you have done this before, this is time taking, this is painful and the
+fact that you can just write three words and deploy
+it. It's amazing, right? Yeah. Because now let's say new
+Python environment or let's say it's computer of Michael
+and he would just go in as he has the right permission, what he would do is from
+PyCaret.regression, import, lord_model, predict_model, load_model
+and you would this time, instead of giving a path
+to your local computer, you would just pass this L-A-W-S, laws and now this
+is coming from AWS. There is no local
+computer involved here, so if you're writing
+a script on the fly, like literally you're scoring a script if you know what I mean, your scoring script as this, whatever virtual machine
+or whatever service you are using this as
+your scoring script. Nope this, is not good. Let me show you visual
+code and let me open new file, asd.py. This is your scoring script. That's it, predict_model, laws, data is equal to data and somewhere here you would get
+the data from that function. Find your data. What's
+really great and I'm sure the students
+who are watching this are going to
+wish that they had learned this sooner
+because it's going to save them a lot of time. Yeah. We have talked about Streamlit flask and I
+think in terms of demo, I think I am done here. If there's anything, Michael
+you think [inaudible]. No, my only question is are willing to share
+your notebooks with us? Yeah, sure. I can create
+what I normally do. If you go to github.pycaret, and go to repositories, you would see
+pycaret-demo, dataquest. That means I've done
+a demo for dataquest, IBM, all these demos. If you go into them, there will be notebooks
+and everything. I would do a similar thing. I would create a repo
+PyCaret demo image , and just upload notebooks there. That would be awesome.
+I'll share that with our students.
+This was great. Thank you so much for your time. Thank you. This has been amazing. Thanks, Mike.

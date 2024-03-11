@@ -1,0 +1,103 @@
+So we can see that
+divisional editors gives us the quantitative measure
+of the closeness between two strings or between
+two sequences of items. The problem is, the
+definition edit distance is based on the
+smallest number of edits needed to do
+the transformation. In reality, it is usually
+easy to find one transaction, but hard to find the smallest number of edits,
+the best transformation. For example, if you
+look at the two words, a counter and computer, one intuitive way of making the transformation is to just delete the two
+letters; u and n, and then insert three
+letters; m, p, and u, but this intuitive
+transformation will cost you five edits while the
+optimal transformation only is three edits. So with data mining
+tasks, the challenge is, how can we calculate which transformation gives you the smallest number of edits? How can we find out the smallest possible
+number of edits? The solution through
+this question is through dynamic programming. Some of you may be familiar
+with this concept, some of you are not. Dynamic programming is the particular
+algorithm that breaks down the complex problem
+into simpler sub-problems. It breaks down the problems in a recursive manner
+so you can always back-off to simpler sub-problems. In programming, what this
+algorithm does is to store the solutions for
+all the sub-problems that you have solved. Then, when you're finding the solution of a
+more complex problem, you try to core from
+this simpler solutions. You try to make use of this solutions that
+you have already found for sub-problems
+to help you find the solution of
+a complex problem. Dynamic programming is very
+popular in data mining. We can show that calculating
+deviation and edit distance can be viewed as the practice
+of dynamic programming. Here, the complex problem is to find the edit distance
+of two sequences. Of course, this is the go. One of the sub-problems, we can define sub-problems as finding the edit distance
+of two sub-sequences. Here, the example
+of the prefix sub, that's the interesting example of the frequent security
+patents right? So the reason that finding
+the edit distance of two sub-sequences is easier is because the sub-sequences are shorter than the
+original sequences. So the hope is that, if we have already found the edit distance of
+all the sub-sequences, then it makes our
+life much easier to find the edit distance
+of two longer sequences. Also, let's first define d_xy as the edit distance
+between two sequences, x and y. So the computer and
+counter will be the edit distance between the two longer sequences
+counter in computer. The key here is that, if we know all the edit distances of shorter of
+sub-sequences such as, if we know all of the following, if we know the distance between counter and the sub-sequence
+of computer or compute. If you also know the
+distance between the word counte and
+the word computer, and if we know the edit distance of two shorter sub-sequences, counte and compute, then we can find the distance of
+the two longer sequences, counter and computer easier. In the next slide, let me
+show you how this works. So you can see that both the streams counter and computer can be interpreted as it's sub-string counte
+and compute plus one more character at the end. So how to find the transformation from counter to computer, we don't know. So this is why it's called
+the complex problem. What if I tell you
+that I have known how to transform the word
+counter into compute. You'll say, oh then
+the rest is easy. All I need to do
+is to just insert one more character into
+the string compute. So after one more insertion, I can transform
+counter into computer. Similarly, suppose
+you have learned how to transform the word counte. So counter minus r into
+the word computer. Then, we just need
+one more deletion. We first drop the character r from the word counter and then reduces the problem
+into this problem. So we first drop the
+letter r from counter. That gives us the word counte. Because we know how to
+transform counte into computer, so we can now transform the
+word counter into computer. There's a third possibility. Suppose we've known
+how to transform the word counte into
+the word compute, then, do we know how to transform the word
+counte into computer? Well, it's even easier. We do not do anything. If you know how to transform the word counte into compute, then you do not need
+to do anything else because the word counter and the word computer share the
+same letter r at the end, which also means that we need zero additional
+substitution. Does that make sense.
+So in other cases, if the last letter of the two
+words have been different, then we just need one
+more substitution to transform the first
+word into another. In this example, the three scenarios are called
+the three sub-problems. If we have found the solution
+of the three sub-problems, then we can induce the solution
+of the complex pattern by evaluating which way gives
+us a fewer number of edits. So we're looking for
+the minimal number of edits among the
+three sub-problems. Suppose we know that
+it takes four edits to transform the word
+counter to compute, four edits to transform the
+word counte to computer, and three edits to transform the word counte into compute, then we know that the
+smallest number of edits to transform the word
+counter into computer would come from this situation. You need three edits to
+transform counte to compute, and then because the two
+words share the mass data r, you do not need any
+additional substitution. So the number of
+edits you need to transform counter into
+computer is also three. It's three plus zero,
+that equals to three. If you have chosen the
+previous two situations, you would have need
+four plus one, that equals to five edits, to first transform counte into compute and then you insert another
+data r at the end. Or, If you choose to first drop one letter from counter into counte and then transform
+counte into computer, you would have needed four
+plus one equals to five edits. So you can see this
+is how you can actually get the solution
+of a more complex problem. From the solutions we
+have already learned for the simpler sub-problems, all you need to do
+is to find the path that gives you the
+small number of edits. You evaluate the
+three sub-problems. You look at which one would
+give you a better solution.

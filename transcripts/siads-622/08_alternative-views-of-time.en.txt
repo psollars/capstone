@@ -1,0 +1,209 @@
+Welcome back. We've talked about the standard
+visualizations of time, we've also talked
+about all the crazy alternative philosophical
+views of time, so let me show you some
+alternative views of time that are visual. This is a really simple example
+but one that's elegant, where time is correlated somehow with some physical space. This is a map of New York, and what the lines on here are representing are
+where people live. So the general tendency of the settlements in New York to basically move across
+the space over time. Here we've overlaid time on top of another piece of data,
+in this case a map. This is another example
+of time-based data. In this case, it's wind
+overlaid on top of a map, each of these lines represents a vague idea of wind
+blowing across, and this is an animated example of this, for a
+particular time point. You can see the lines moving, there's no actual
+time being displayed, it is being implied in the movement of the
+data over this map. You can see that
+there's a lot of winds happening over the Rockies
+in this particular case, whereas in the Mideast states, not much is happening, there's not a lot of wind. That animation of the data, is conveying a sense
+of time, again, overlaid on top of
+this geography, without having you
+draw a time series. You are not drawing a line at the bottom of corresponding to the x-axis which means time; we're finding an alternative way to include time within
+this visualization. Here's yet another example. This one is kind of
+harder to read. This is called a
+connected scatterplot. This is an example
+where time is similarly not as important
+as something else. In this particular case, we care about some
+other two variables that are more important, that needs to be put on the scatterplot with the
+x-axis and the y-axis. The lines between
+those correspond to the order in which
+the event happens. Let's say we're tracking
+two specific things, like the height and the
+weight of a person. What we might do is most simply plot height
+over the x-axis, the weight over the y-axis. Then we have lots
+and lots of points corresponding to
+different samples, different times when we've measured that for a
+particular person, height versus weight, and we draw the scatterplot
+and then we connect those in order based on when we
+collected that data. You can see here that
+up in the upper right, there's the swing back because
+whatever the value was, it happened to move
+downwards and back, we moved backwards on the
+x-axis and lower on the y-axis. It's a little bit hard
+to understand but there are visualization
+techniques, this is an example of a person basically manipulating two variables of interest, there's two variables, the green variable and the blue variable, that are being moved around. On the left visualization, they correspond to
+those values over time, and the right visualization
+is the connected scatterplot. As they're manipulating
+those two values, the connected scatterplot
+similarly changes, and so if you're
+trying to understand the way a connected
+scatterplot works, you can play with this
+and better understand it. This again takes some training. It turns out that this is okay. Once you've trained people
+on how to read this, they can read interesting
+patterns in the data. Again, where time is a little bit less important than some
+of the other values, than some of the other variables, we don't want to use time
+on the x-axis anymore, we want to use the x-axis for something that we
+consider more important, and we're going to use
+those connections to basically support the kind of
+temporal comparisons, that we might have been
+able to ordinarily do, had we not had that constraint. Here's a related example. This is called a hurricane plot. A hurricane plot works
+in a similar way. There are two variables
+that we care about. In this case, we have axis
+that's in the middle, corresponding to no change. Then we have to the right an increase and to
+the left a decrease. As things go up, we move the point to the right, as things go down,
+we move things to the left again it's
+anchored in the middle. Some other variable that we
+care about is on the y axis. In this case, we have increase or decrease in deaths per day. On the x-axis, we have the average number
+of deaths per day. It's all data about deaths, but it's increased or decreased,
+and then the average. If the line that connects to
+those points - so, we measure those points at
+different points in time and the line basically connects
+those things together. What we might see, depending on this pattern of the
+hurricane plot, is whether something is
+getting worse over time or the variance is
+increasing so that hurricane is spinning bigger
+and bigger over time, or with bigger variances, there's bigger other things. That's an interesting way
+of visualizing this data, again, with potentially
+a high learning curve. There is a similar
+visualization system where you can draw your time series and then see visually what the hurricane plot might look like for that. If you're interested in
+understanding whether your time series is suitable
+for this visualization, you can enter it and
+look within that context. Again, time is
+secondary in importance. We care about some other data, and the hurricane,
+like that pattern itself, is telling us
+something interesting. Is it moving a lot, is it moving a little, and so on. That's going to be an important distinction when we look at these visualization
+and once you've been trained to detect
+certain patterns, this visualization is an
+interesting alternative to standard time-series
+techniques. This is one that's a little bit more common and conventional, this is called a streamgraph. Very visually pleasing. There had been earlier
+versions of this, but this was one of the
+first versions that had a really nice algorithm that made sure that
+the colors made sense, that things were flipped
+in the right order. Basically, what we're
+looking at here is the revenue for different
+movies over time. Each of these different
+colored blobs corresponds to a movie. The height of the blob relative to something else correspond. The size of the entire blob will mean how much revenue that
+movie has made in total. You can find a specific movie and you look at the shape of that
+thing and look at the area, and you can read, how much money that
+movie has made. There's a double encoding
+here in the color, so movies that made
+more money are also colored a little bit more darkly. The way to read the value at any specific time point
+is to just read down from where the height of that blob at that
+particular point in time. That's a little bit
+hard to understand. It's not normalized to any particular axis line where there's no
+zero line anymore. It's the actual length between the bottom and the top of these things that tells
+us something interesting. This is a really nice approach. It's visually pleasing,
+you can interact, you can mouse over and
+get additional detail. The problem with this is
+that people find it very difficult to judge distances when data is overlaid
+and this way. All these different plots on the left correspond to two
+different time series. If I ask you to describe to me how much the two time series, the top versus the bottom, have changed over time. What is the distance between the top one
+and the bottom one, as you move over time?
+It's going to be really, really hard for you to
+do this accurately. So here are three different examples
+of the difference between, so if you subtract the
+bottom from the top, these are the differences
+between those. Can you tell me which
+of these corresponds to which of the
+visualizations on the left? Most people will find
+it very difficult. This is, what the answer is. Again, this is because if you watch the little animation in the two upper-left plots, you'll see that
+it's difficult for your eye to attract sort
+of these differences. There are places where you might expect that the
+difference is high, but it's just an artificial
+thing because of the slope. This is where we have to be
+careful about the use of this technique where it might be misleading in
+terms of the differences. If that's something that you
+care about the difference between these two
+different time series, this visualization is
+not necessarily ideal. Some of this can be
+resolved through the use of inactivity
+and animation. This is a not streamgraph, but a similar idea where we're plotting
+something over time. In this case, it's how
+people spend their day. This is hard to read again. It's hard for you
+to tell me how much people eat at a particular time. Like 12:00 PM, how
+much do people eat versus 1:00 PM versus
+2:00 PM versus 3:00 PM. That's really hard for
+you to extract from this. What they did was they added interactivity so
+that if you clicked on any specific piece of
+data that you cared about, it would normalize back and
+down to a uniform access. The zero would become uniform. So you clicked on it
+and everything would shrink down and now it becomes possible to read the behavior of that particular
+dataset over time. You get the benefit of both this comparison of
+these large effects. Knowing that one thing like sleep is very big in
+certain times of the day, versus working versus
+eating versus whatever, getting that high-level
+sense but getting the fine details by
+being able to isolate the time series of interest
+on an axis that actually makes sense for you to read as going from zero to some value. When it comes to cyclic time, this is an alternative approach to visualizing time series data. When it comes to cyclic
+time and the need to compare specific
+calibrated points in time, so all Mondays or all
+Januarys or all winters. We want to align the data in a way to support
+that comparison. A spiral visualization is
+one possible way to do it. A way of thinking
+about this is if you have your long-time series, what you might do
+is basically spin it along a spiral
+going from the middle. In the middle what we have
+is the earliest time, time 1 and as you spin outwards, follow that line outwards, you're getting the values at later and later
+points in time, out to the most extreme
+end of that spiral, so that we're the spiral
+ends on the outside, that's when our data ends. This is a spiral visualization. By setting the tightness
+of the spiral, what you can do is basically
+cause data to align based on some frequency,
+some seasonality. You can basically specify
+that this thing turns so that all Mondays are
+aligned or all winters are aligned or all every
+third days are aligned. Whatever it is that you
+want to align and contrast, you can basically do
+that by controlling how tight this kind of spiral is. This is the same underlying data using different
+spiral parameters. On the visualization on the left, it doesn't look
+like there's a lot of interesting patterns. In the middle, we're starting to get a sense that maybe there's some interesting patterns and on the visualization
+on the right, you can see that there
+are interesting patterns. There are high values,
+corresponding to that darker blue, at specific time points
+going from the middle. So if you focus your
+eye in the middle, you can walk outwards
+along an axis which corresponds to a time point
+or a seasonal time point, and you can see that all the
+values are high for that. How do we pick the
+right seasonality? This is where it pays to understand something
+about your data or have an interactive feature. In this visualization,
+you can see the spiral plot and
+you can see them tweaking basically
+the repetition. At 24 hours, you can see a highlight where there's lots of darks in one direction and
+lots of lights in the other. Let's say this is the
+amount of daylight. Clearly, there's going
+to be high daylight every 12 hours corresponding
+to the day and dark corresponding
+to the other aspect, the dark, the middle
+of the night. This is a spiral example that's
+interactive to allow you to tweak the seasonality
+and you can see the patterns emerging
+at 24 hours, 48 hours, and so on. There are many crazy
+examples of spiral charts, which I will not
+encourage you to do. This is just a couple of
+examples which are really nuts. You can basically use three-dimensional spirals
+and overlay additional data. I will caution you that as
+cool as these things look, there is a high learning curve. Be careful about picking to do visualizations
+that look like this. But for some tasks, it might be totally suitable. Takeaways. There are non-standard
+representations of time. Just because everyone else uses time on the x-axis and some
+other value on the y-axis, doesn't mean it's
+most appropriate for whatever task it
+is that you have. Think about what it is that you're trying to support
+for your end-users. Do they have cycles that
+they need to compare? What is it that they are actually trying to get out of the data? There will be learning curves. If you use any of these
+non-standard techniques, there will be learning curves. But we need to emphasize
+certain things. Certainly, I would
+encourage you to use these alternative
+techniques and be willing to pay the upfront
+learning curve cost basically, because it will make people
+better in the long run. With that, thank
+you for listening.

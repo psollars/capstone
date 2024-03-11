@@ -1,0 +1,241 @@
+Now we're going to move to essentially how to
+handle such situations. Sometimes, you can't
+avoid non-compliance. So for instance, if your
+treatment is implemented through e-mails people
+sometimes don't read emails, and you will have one-sided non-compliance or they might have forwarded their email, that treatment email to a friend who happens to be in
+the control condition. Then you will have two-sided
+treatment non-compliance. So the main technique that
+we're going to use both in our design and in
+our data analysis is called the instrumental
+variable analysis. This is a really important tool for empirical analysis
+for causal inference. So sometimes we just call an instrumental
+variable instrument. So in this unit of the lecture, I sometimes use the abbreviation IV for instrumental variables, sometimes I use instrument
+and this is common practice. So if you listen
+to other lectures, you'll find the same thing. So one way to control for or account for non-compliance is to use the IV
+regression approach. So IV can be generated, exempted or before you
+start the experiment. So for example, you can
+randomize the promotions, you can use an
+encouragement design or you can use randomized
+offering of a program, and we use an example for that. So what we're going
+to do here is to talk about the general
+principles behind IVs, and we're going to focus on the randomized promotion
+or the ex-ante focus in the experiment design
+and talk about how IV can be used to
+deal with non-compliance. So let's use an example
+to start off this unit. So let's say we want to evaluate a voluntary
+job training program. First of all, if it's
+a government program, usually any unemployed
+person is eligible. So we have universal eligibility but only some people might choose to register to participate and other people might choose not to register. So we call the first subset the participants and the second
+subset non-participants. So when such things happen, which happens to almost
+all government programs, there's some simple ways to evaluate how good the program is. How do you evaluate it? Then you look at the participants
+and you look at what is the likelihood that they find a job after they
+participate in the program. We can also collect
+information about their wages for their new jobs. We can also look
+at what happens to those who didn't participate
+and compared them. This is a very simple approach and is often used but
+it's not so good. So you can even use the before and after,
+remember diff-in-diff. So the third bullet, it says compare situations
+of participants and non-participants
+before and after. That's the diff-in-diff that we talked about in Lecture 3. In fact, none of these would be good approaches to
+evaluate the program. Why is that? Why
+is it not so good? So let's just take a look
+at the approach where we compare those who participate versus those who do
+not participate. Why is this the wrong approach? So the key here is
+selection bias. So in this case, we can write down
+regression model where Y is the outcome variable. It could be a binary variable, did the person find
+a job afterwards? Or it could be a
+continuous variable, what was the wage of the new job? So we can write down
+a linear model where P is a dummy variable, where P equals Y if the person participates in the training
+program and zero otherwise, and X is a vector of control variables
+such as age, gender, number of years of
+education and so on, and Epsilon is the residual. So why is this approach
+not a good approach? We have two problems. One is what's called the
+omitted variable problem. So variables that we omit for various reasons sometimes
+because we can't observe them, but are actually important. The second one is what I mentioned before
+which is selection bias. So the decision to participate
+in training is endogenous. It's not randomly assigned, so there might be characteristics which decide who participate and who don't. So let's look at the
+first problem first which is the omitted
+variable bias. Even if we try to
+control for everything, we'll miss characteristics
+that we don't know they mattered and characteristics that are too complicated to measure. So some of these could be
+talent and motivation. People who are more
+motivated are more likely to participate but we can't
+actually observe those, so the level of information and access to the service
+might be different, so some people are more informed, so they know that such job training opportunities exist and they participate. The opportunity costs of
+participation might also differ. For someone with young
+children at home, the opportunity costs of
+participation is higher than someone with grown children
+who are out of the house. So when you write down
+the correct model, the full model you will
+have Y equals Gamma_0. The intercept Gamma_1 times X. X is the characters
+of each participants. Gamma_2 times P which is the participation dummy variable, and Gamma_3 times M_1. M_1 captures everything
+that we cannot observe. We can also call this the missing variable, the
+unobserved variables. So this is the true model but unfortunately we
+don't observe M_1. So to recap, the
+true model actually includes this omitted
+variables which are important, might be important, but we're
+actually estimating a model that does not include the
+M_1s, these characteristics. In this case, if M_1 and participation
+decision are correlated, then the OLS
+estimators of Beta_2, the effect of participation
+on the outcome will not be a consistent estimator of Gamma_2 which is the true
+impact of the program. Why is that? So what M_1 is
+missing from the regression, then the coefficient of P, participation will pick up
+some of the effects of M_1. So the estimates is not precise. So that's the first problem. The second problem is the endogenous decision
+to participate. So the true model, let's say the true model is the first equation which
+is Y equals Gamma_0 plus Gamma_1X in the personal
+characteristics plus Gamma_2 times the
+participation decision plus Eta, where P is determined. So P the decision to participate is determined by the
+second equation which is Pi_nought plus Pi_1 plus
+Pi_2 times M_2 plus Psi. So M_2 is the vector of unobserved or missing
+characteristics. So we don't fully know why people decide to participate
+but that's the set of characteristics that determine the
+participation decision. So this is the
+endogeneity problem. So if we don't observe M_2, then we can only estimate a simplified model which
+is the origin of model; y equals Beta_nought plus Beta_1 times X plus
+Beta_2 times P plus Epsilon which is
+essentially missing the M_2s. In this case, is Beta_2 still an unbiased estimator
+of Gamma_2 so we know that OLS estimator has to
+satisfy the blue assumptions. The answer is no. So we
+estimate this equation. Whereas the true
+model is captured by this set of two equations, Y equals Gamma_0 plus and so on, whereas P equals Pi_nought plus Pi_1X
+plus Pi_2 M_2 plus Psi. Is Beta_2 the OLS, the coefficient for
+participation is that an unbiased
+estimator of Gamma_2? The answer is no. Why that's the case? It's because P, the
+participation decision and the residual are correlated, and these three lines if you want to know why
+they are correlated, what the correlation is, you can just break the right-hand side into three parts and
+undercut each part. So if there's correlation
+between the missing variables and the outcomes not explained by observed
+characteristics Epsilon, then the OLS estimator
+will be biased. So again, what you estimate from the first equation on top
+is not the true effect. So what can we do to
+solve this problem? A very commonly used practice is the instrumental
+variable approach. So let me define formally
+what an instrument is. So an instrument
+is a variable that determines the
+endogenous regressor. So in our example, is the participation decision, but only affects the
+dependent variable through its effect on the
+independent variable. In other words, the instrument cannot affect the dependent
+variable directly. So let's say we want to estimate this equation
+y equals Beta naught, plus Beta 1x, plus Beta
+2P, plus Epsilon here. Remember P, participation
+is an endogenous decision, or might be an
+endogenous decision. So the problem here is the correlation
+between P and Epsilon. So that gives us a biased
+estimator when we use OLS. So the idea of the
+instrument is we want to replace P
+with something else. The universal definition
+for an instrument is Z. So the Z has to
+satisfy two criteria. The first one is Z needs to be correlated with P. Remember
+we're replacing P with Z, so Z has to be correlated with P, but Z is not correlated
+with Epsilon. So let's go back to our job training program to
+see how this might work. So again, P is the
+participation decision, and Epsilon is the residual, which is the part of the
+outcomes that is not explained by program participation or by the observed characteristics. So what I'm doing or what you will be doing is to look for variable Z that is correlated
+with participation P, but does not directly
+affect people's outcome Y, other than through its
+effect on participation. So this variable must be
+coming from the outside. You want this variable
+to be exogenous. So how do we create an outside variable for
+the job training program? So this is when
+experimental variation might be very useful. Let's say that a
+social worker visits unemployed people to encourage them to participate in
+the job training program. But she only visits 50 percent of the
+people on her roster, and she randomly chooses
+whom she visits. So you can see that
+this is coming from outside where I'm
+creating an instrument. If she's effective, then many people she
+visits will enroll. When she visits, she can
+talk about the program, she can explain the benefit, the potential benefits
+of the program. So because of this, there will be a
+correlation between receiving a visit and enrolling. Notice that enrolling is our P, our endogenous variable, but the visit does not have a
+direct effect on the outcome. So for instance, you're salary after you finish the
+training program, you go look for a job, you get that your income
+should not be affected by the visit except from its effect through enrollment in
+the training program. So this is what we called a randomized
+encouragement design, or we can also in this particular case,
+is promotion visits. This is a good candidate for
+an instrumental variable. So in fact, in this example we're going to use this
+as the instrument. Again, it satisfies
+both criteria. First, it's outside,
+it's exogenous. The experimenter or
+the social worker flips a coin to decide
+who receives treatment. So it's not correlated
+with the residual Epsilon, and we can check that it should be correlated with the
+decision to participate, and the visit itself does
+not determine the outcome, such as people's wages after they finish the
+training program, except through the participation
+in the training program. So it seems to satisfy
+all of these criteria. So now let's be more general. We'll talk about
+the characteristics of an instrumental variable. So we define this variable Z. So in this particular
+case and in many cases, an experiment design Z equals 1, if the person was
+randomly chosen to receive the encouragement
+visit from the social worker, and it's 0, otherwise, if the person was
+randomly chosen not to receive the encouragement
+visit from the social worker. Now we're defining two concepts. One is called the
+inclusion restriction. So in the sense that the correlation between
+your instrument Z, and the endogenous variable
+P should be positive. In other words,
+people who receive the encouragement visit are more likely to participate
+than those who don't. The second one is called
+the exclusion restriction. So the correlation between your instrument Z and
+Epsilon the residual is 0. So there should be no correlation between receiving a visit and the benefit to the
+program apart from the effect of the visit
+on participation. So in this case again, Z is called an
+instrumental variable or simply an instrument. So we're going to talk about analysis using
+instrumental variables. So very commonly used
+regression method is called the two-stage
+least squares. So remember the original
+model with endogenous P, y which is, let's
+say wage or income, equals Beta naught, plus Beta 1, times x, personal
+characteristics, plus Beta 2 times P, which is the decision to
+participate, plus Epsilon. Step 1. So this, you basically break
+the estimation problem down into two parts. So in the first part, you regress the
+endogenous variable on the instrument Z and other
+exogenous variables. So I'm going to basically regress P, the participation decision, equals Delta naught,
+the intercept, plus Delta 1x, plus
+Delta 2 times Z, the instrument plus
+2, the residual. After running the regression, this will enable you to calculate the predicted value of P for
+each of the observations, and we call this P-hat. So use hat for predictive value is fairly common in statistics. Since Z and x are not
+correlated with Epsilon, then neither will be P-hat. So this is your predicted value. So how do you
+calculate your P-hat? So this is the estimated
+participation decision, would be your estimated
+intercept Delta naught, plus the estimated
+coefficient on x. So that's Delta y-hat, plus the estimated coefficient on the instrument Delta 2-hat. So this is your predicted value. So this is step 1. Now, we're going to look
+at step 2, our stage 2, then we can regress y on the predicted value P and the
+other exogenous variables. So the new equation is going
+to be y equals Beta naught, plus Beta 1x, plus Beta
+2 P-hat, plus Epsilon. So here at this stage, you have to be careful that the standard errors
+of the second stage OLS need to be corrected because P-hat
+is not a fixed regressor. In practice, the command should automatically does
+the two steps at once, and reports the correct
+standard error. So that's already been adjusted. So the intuition behind the
+two-stage least squares, is that by using Z for P, we cleaned P of its
+correlation with Eta. So we'll basically find
+something that's exogenous, which is the instrument for
+the endogenous variable, which is highly correlated with endogenous variable
+P, participation. Then we clean the
+endogenous variable of its correlation with Eta. It can also be shown
+under certain conditions, that the IV co-efficient, Beta 2,IV yields a consistent
+estimator of Gamma 2. So this you can find the proof in standard
+statistics textbooks. So now the question remains, where do we find
+instrumental variables? It works like magic. But how do we find it?
+Where do we find it? You can generate your dataset, and then search for an IV ex
+post after your experiment. This is hard and risky. A much better approach
+is to generate an instrument with
+your experiment design before you run the experiment. So in the job training program, if everyone's eligible to
+participate in treatment, but some have more
+information than others, and those who have more information will be
+more likely to participate, then you can provide this additional information
+on a random basis. We went through the example
+of social worker visiting a random subsample of the households to
+provide encouragement. We can also randomly
+choose a subset to deliver information
+brochures or emails, so that a random subset have more information
+than the others. So now let's link it back
+to the estimation formula. Remember, in stage 1, we regressed the participation
+on training decision on a dummy variable for whether the person received
+additional visit, where the additional visit is randomized by the experimenter. So that's the linear model. Then we compute the
+predicted value of participation P-hat. In stage 2, we regressed
+the outcome variable, the wages, on the predicted
+value of participation.

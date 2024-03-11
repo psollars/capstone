@@ -1,0 +1,184 @@
+Welcome back,
+we're going to switch gears again, and we're going to move
+from hierarchical data. So this is hierarchical data, which did
+not include these kinds of structures where there were cycles to supporting
+network data so a higher level category. So what is it that we now would like to
+consider when we visualize data that looks like this where cycles are involved and where it's not clear that there
+is a root or leaves exist. Those concepts don't necessarily
+make sense in the context of network visualizations, so we have to consider
+alternative strategies for networks. Before I talk about specific
+visualization techniques, it's probably helpful to give you a little
+bit of a primer on the language that is used again because networks, like hierarchies, are used in lots and
+lots of different domains, everything from understanding genetic
+interactions to social networks. Different communities have
+adopted different languages and there's also the language of math and
+graph theory, which is also developed its own names for
+things. There's an equivalence
+between a lot of them, but it helps to just cover some of the names. So, nodes and
+vertices are basically the little dots that you see in the node-link
+diagrams much like hierarchical data sets. Links are undirected edges,
+so sometimes we call them just edges just plain,
+they often imply a symmetric relationship. So, when there's no direction between
+them like there's just a link, then it implies, like, for
+example, friendship, right? So it has a meaning in the data and
+so we don't draw directions. There are directed edges that
+are sometimes called arcs or ties, depending on the community. Those are asymmetric, okay, so
+those are things with an arrow pointing one direction or the other and
+parent of might be an example. So somebody is a parent of somebody
+else that is an asymmetric relationship. So it goes one way, it's a parent of and
+the other direction it's a child of. So the edges have meaning and depending
+on whether the meaning is directed or undirected, we might
+draw them differently. All right, so these are nodes,
+these are the undirected edges and these are various examples
+of directed edges or some, the last one is a symmetric edge.
+Okay so, there are groups then of nodes and
+edges, which are called graphs. So a set of nodes and a set of links
+taken together are a graph and you can have sub graphs
+as part of that and you can have specific kinds of graphs like
+trees or hierarchies are specific types. But there's all kinds of weird mixing that
+might happen and depending on the domain, you'd see very different examples,
+so there's directed or undirected there's mixed. There's weighted graphs, so sometimes
+the edges have a weight between them. So how often I email another person or
+how much money they owe me, like those are weights that I can apply to the edges
+based on some underlying meaning. Okay, there are multi graphs that
+have different kinds of nodes, so there are graphs that are for
+example recommenders right, so recommender networks. So you have both individuals,
+people buying stuff and products and
+those are both nodes in that graph. So you might have an edge representing
+something a person bought, but you might also have edges that represent products that are similar to
+each other in that graph. There are things called forest which
+are a few disconnected graphs. Okay, so you might have a big graph, but it has a bunch of kind of components
+that correspond to a forest. So there's a big one where you can
+reach all the nodes within there and then there's a bunch of smaller ones
+that sort of exist off to the side. There's a notion of strongly connected and
+weakly connected, those are terms that are used for
+social network analysis. Strongly connected means that you can
+reach any node from any other node, you can basically walk the edges to arrive
+at some point to every other node in the graph. There's weakly connected where there's
+an edge that ties everything together, but you can't necessarily walk if it's
+directed, you can't necessarily walk from node to node to node to
+node to get to the end point. Okay, so the underlying data
+representation of network data there are various
+ways of implementing it. Algorithmicly, and
+logically within the computer, two of the common ones are the adjacency
+matrix and then sort of visualization, like the graph structure approach. So you can implement these things
+is kind of classes, right? So you have a class representing a node,
+and then you have a array that corresponds
+to the edges that are going outwards. That's what we will often visualize,
+right? So here's the mapping that exists
+between the adjacency matrix view and the visualization view or
+the kind of class based network view. So, the matrix has both rows and columns that correspond to
+all the nodes that exist. So in this case,
+we have four different nodes. Nodes A, B, C and D, and
+you can see that in the visualization. So, when we look at the first row,
+the way to read that is, those are all cells
+corresponding to edges that are going from A to every
+other node in the network. So the way to read that is
+you go from left to right. You see that AA has no edge,
+so it does not have a self loop. However A is connected to B, there's
+a one in there, A is connected to C, there's also one A is connected to D,
+there's a one and so we would draw edges between A and
+B, C and D. This is directed edges. We might have going
+the other direction as well. But for now, this is a directed graph. We go one row down B is not connected
+to A it's not connected to itself. It is, however,
+connected to C and not to D. And so we would draw an edge this way. And then we would draw something similar
+for C and a similar thing for D. Okay, so this is the network
+representation, the visual representation, and also potentially data structure
+representation of the adjacency matrix. The reason we might prefer one
+over the other is adjacency matrices tend to be quite sparse. They have lots of zeros and so that is
+problematic like it takes a lot of memory, a lot of disk space to retain
+those kinds of things. And so people often prefer alternative
+structures like the visualization approach or something called the Edge list,
+which is also compressed. So if we don't care about weights,
+for example, then the edge list representation
+is perfectly suitable, it says. Node A is connected to B, C, D. Next row, node B is connected to C. C is connected to D. D is connected to A and B and so on. Okay, so all these things are equivalent. But depending on the data
+distributions and whether you need to care
+about things like weights, you might prefer one underlying
+representation versus the other. Okay, so these are all equivalent. A few extra things. Some terms that you might hear me use. In the next a little bit is in-degree, which is the number of
+inward pointing links. So, how many links are pointing
+at a specific node? Out-degree: the number of outgoing links. So the out-degree of a node is five if it has five outgoing edges. And then
+the degree total is both the in-degree and the out-degree, or in an undirected graph,
+it's just the degree there's no in or out. And the thing to remember because
+this will come up when I talk about specific examples, is that nodes and
+edges can have attributes and sometimes we will want to visualize those. So a node might represent a person. The person lives in a certain place. The person works in a certain department,
+they might represent a gene. The gene is expressed in
+a certain place in the cell. Edges can also have attributes like
+the weights, the type of connection, whatever it is. So these things exist as additional
+data on top of the network data set that often we will
+try to visualize as well. So in terms of tasks,
+there's a wide range of domain tasks. As with all these things.
+Everything from like looking at food webs. So which animal eats? Which other animal this
+is studied in ecology, finding duplicate nodes when we have,
+like, Citation Networks. So, or authorship networks, like we're
+looking at people who have published papers and we see John Smith. We want to know whether this John Smith
+is the same as this other John Smith. And sometimes the way we can do that
+is by looking at the network structure, because we see that John Smith has offered
+something with Ben Bit Bodil, right? That was kind of weird, unique name. And then there's another John C. Smith that has also
+published with that person. So we might make the inference
+that those two John Smiths are the same, John Smith and John C. Smith are the same. We also might have social
+network analysis tasks. So things like, how have friends been
+added to my network over time, I'm looking at my Facebook graph or my Twitter
+representation of my social network. I want to know,
+how often do I have friends being added? Do they come in together all at once or
+just a little bit of the time? How do they linked to each other? So that is an additional element of the
+network data set that includes time and all these things are kind
+of high level domain tasks. Abstract tasks and these apply, whether
+you're working with genetic data or brain data or social network data involve
+things like finding adjacent nodes. What's connected to me, finding neighbors
+relatedly, finding common neighbors. So, if I'm connected to person A and
+person B, who are they also connected to? So not just me. They're connected to
+potentially another set. So who are those people finding clusters? So which are the communities that appear
+in this data set. Finding bridges like there's two different communities,
+whose connecting them? Finding nodes with specific values. Where do we have people who
+are sending email a lot to each other? Following an edge. How do I get from person one to
+person two? Like if I walk this graph. Or how does this gene sort of down like
+impact another gene way down at the end of this chain? That's the finding a path
+through the network. So all these things are possible
+abstract types of tasks, that we will see often in visualization.
+In terms of techniques, mostly what we're going to
+see is node-link diagrams, and there are many variants of this. For
+various reasons, this has become sort of the de facto standard when it comes
+to visualizing network datasets. So I'll talk about, lots of different
+variants that will make it more or less useful. But you should consider these kind
+of the primary ways of doing that. Also, talk about a couple of less used
+techniques but that might be reasonable for certain tasks, hive plots and
+matrix representations. So, as with the hierarchical data set,
+as you'll see with the text data. There's a lot of optimization
+that's involved in generating good network visualizations
+because the data is so complex and there's so many different
+things that we're trying to optimize. And variations in the data and whatever
+algorithms are going to be really, really important to our choices here. Okay, so we'll say,
+we want a node-link diagram and it should be like,
+just distributed on screen. But there's like hundreds of algorithms
+that are used to implement that and they all have different properties. Some of them work with well
+with certain kinds of data. Some of them aren't very memory efficient. Some of them take a long time and
+you wouldn't want to use an interactive scenario but
+generate very visually appealing diagrams. There are entire academic conferences just
+dedicated to graph drawing techniques, so this is a very serious business. Aesthetics are going to be important. Dealing with scale is going
+to be important, and so I'll show you different examples and
+you can get a sense of this. We're going to talk about specific
+algorithms again, just as a high level, point just to remind you though, those
+algorithms are going to be in support of techniques which are going to
+be in support of abstraction. So while there are these conferences that
+people do all this kind of deep math to figure out the optimal layout. We're going to only consider those in
+the service of higher level things like the technique that we want to
+implement and again, the algorithm, the abstraction and the domain tasks. Okay, takeaways,
+hierarchies are a sub type of network. So we're moving from a small
+type of network visualization, which was very constrained
+because it had that structure where things were contained,
+one and the other. Or there were levels,
+to a broader category. Networks for us now have cycles and that will
+introduce a whole new set of problems. Network and network components have
+very different names for things, but most of them will map like there
+will be some kind of mapping. If you work with people
+in different domains, they may use a word that sounds unfamiliar
+but you'll often be able to translate it to something that you've
+heard in this lecture. As many tasks as there are domains and
+the techniques, kind of that middle point, are a little
+bit more restricted like we're still going to do node-link diagrams or
+matrices or high plots. We're going to add extra features
+like interactivity and whatever, but there's a really small
+set of algorithms or sorry - There's a big set of algorithms and
+a smaller set of high level techniques. So just something to keep in mind that
+as many different algorithms were layout approaches that I'm showing you, they boil down into one of a few set of
+kind of high level techniques. All right.

@@ -1,0 +1,132 @@
+Good morning. You might be a little curious
+as to why I start off a lecture where you can watch it anytime you want
+with good morning, but I'll get to that in a second. This is an Introduction
+to pipelines. Hopefully by the
+end of this video, you have a general idea of
+the concept of a pipeline. There'll be more videos
+where we get more in-depth into what a pipeline
+is and how it works. But this is really like
+the 10,000 maybe the 100,000 foot overview
+of what a pipeline is. What is a pipeline? I want to be specific here, when we're talking about
+pipelines in this course, we are talking about
+software level pipelines. There's a lot of
+different types of pipelines in the
+technology sphere. Here in this class
+we are specifically talking about software
+level pipelines. Most of the time we're talking about Machine Learning pipelines. For the most part a
+pipeline is a set of discreet steps that
+are repeatable, that are isolated
+from each other. They don't have a lot of
+interaction with each other, and when they do interact
+with each other, the interaction
+points are very well defined and there's some type of configuration around how
+the steps get executed. This is a little weird, but I'm going to try to give a real-world
+example of this. I do a lot of real-world
+examples when I lecture. Between the time you
+woke up and the time you left for your house
+to go to work, assuming you leave your house to go to work in the age of COVID, what did you do? What are the steps you
+took in the morning? For me, that always starts off with pretty much the
+same step every morning. I reach over and I press
+that snooze button. But, if you sit down and you count with
+the list of steps, they might look
+something like this. These are mostly my steps. I start off with
+snoozing the alarm, and by the way, these
+are not in any order. Start with snoozing the alarm and eventually I leave
+for the office, I get up, I'm ready to
+leave for the office, which at the moment
+is my living room. But the order actually matters both in the
+steps that I provided, but also when you're dealing with information technology
+pipeline workflows, the order that you execute the steps and it
+really does matter. You can't shower before
+you get out of bed. I guess there are ways
+to make that work, but for the most part, you don't shower before you get out of bed. But, just as the order
+matters with that example, sometimes the order
+doesn't matter. Walking the dog, eating
+breakfast and reading the news, you can do those steps together. You can do them in
+any order you want. You can even do them
+simultaneously. Although I don't recommend
+walking with the dog outside while eating and
+trying to read the news. That doesn't sound like
+it's going to end well. Oftentimes with pipelines,
+order not only matters, but we take the
+output of one step and use it as the input
+for another step. In my example I had on here, figure out what to
+wear and get dressed. It's obvious that I can't get dressed until I figure out
+what I'm going to wear. But we actually need to take the output of the figure what to wear and pass it to the
+function that says get dressed. Oftentimes we don't think
+about it in these terms. We look in our closet
+and we say this, this, this, and this. Then we go and we
+put those things on. But if you were to design
+this as a pipeline, you would have a
+function that was figuring out what to wear. Then you have another
+function that would take the output of that function and use it as
+the input to getting dressed. That brings me to
+the next point here. We think about pipelines as organized into
+a series of steps. So far I've talked about
+figuring out what to wear and then getting dressed
+as two different functions. If we describe
+functions as steps, then they start to go together. We have the step of
+figuring out what to wear, and that leads into the
+step of getting dressed. When we think about our steps, we want our steps
+to be reducible. If you're writing the code
+to do this and you've got another pipeline you're going
+to build in three weeks, it would be awesome to take the code from this pipeline and use it over there to reuse
+your code it saves you time. But even within
+the same pipeline, we want to to make sure our steps are reusable for all the
+different conditions that our data might take. We'll see programmers make
+assumptions about the data. They'll look at the data, they'll assume that they understand
+the data and then they'll go and build
+their code around that. That works great in the environment of a
+homework assignment. But when you're dealing
+with real-world data, you want to be careful
+not to make assumptions. For example, if I
+were going to write a function about me
+getting dressed, I might write something
+that looks like this. Maybe the actual values here would be variables
+that I'd pass in. But you'll notice
+here that I'm making some pretty large
+assumptions here. I'm always going to
+be wearing pants. What if I want to wear shorts? I don't have the ability to do that the way this
+function is defined. But the only accessory I can wear with this
+function is a watch. What if I want to wear a hat? In a pipeline, this
+doesn't work well. It makes too many assumptions. What if I'm not the person getting dressed and the
+person who's getting dressed wear something
+completely different? I also want to take a little
+bit to recognize that we have different types of
+pipelines available to us. Obviously, there's machine
+learning pipeline and we're going to be talking about
+those in a lot of depth. Something else you
+should be familiar with that we're not
+really going to cover in this class is code
+testing pipelines. If you write code
+in any language, you should write tests to
+make sure the code does what you think it's going to
+do. This does two things. One, it makes it easy to know if you've achieved
+your goal, but two, future you when you
+go back to look at that code and you
+need to make a change, you can make sure
+that you haven't broken something by mistake. That leads to continuous
+integration and continuous delivery of pipeline. One of the classes I teach on agile management
+really gets into this. There was in a time too long ago where the mechanisms that companies use to put
+their software out in the world involve what
+would be called deploy day, where all the people who had their code that
+they needed to change in the
+production environment would get together in a room. They'd submit their
+changes and in one day they would deploy everything
+and if something went wrong, they'd revert it
+back. This was bad. This is a really bad practice. When your code is ready to go, if you deploy it immediately, your customer, your organization, whatever it may be, can get
+value from it immediately. If you have to wait a week, that's a week in which your code is sitting there doing nothing. But more importantly, if something goes wrong
+with that deployment, you have to revert
+everything back. Oftentimes, when we think about pipelines and software
+architecture, we really are thinking
+along code testing and continuous integration and
+continuous delivery pipelines. There's other types of pipelines. There's manufacturing pipelines, there's cleaning pipelines. If you ever worked
+at a restaurant, you're familiar with the way in which you must clean things. There's a very specific set of steps that one must follow. To summarize here, a pipeline is a set of reproducible steps where some steps may or may not take input from other steps. For some steps,
+the order in which you run the steps really matters. For other steps,
+it doesn't matter. Some steps can be executed
+simultaneously and some have to be executed
+in a specific order. We're going to start talking a lot more detail around
+machine learning pipelines. That'll be in one of
+the future videos that you will get to see where we break down what does a machine-learning
+pipeline look like? What are the steps
+associated with them?

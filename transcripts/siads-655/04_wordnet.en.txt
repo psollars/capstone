@@ -1,0 +1,140 @@
+Let's look at one
+common-sense inventory or knowledge base for looking at senses for natural
+language processing. This is known as WordNet. We can first try to
+contrast WordNet, we're thinking about dictionaries as a potential knowledge base. Here we have lemmas and
+senses and definitions. One of the things
+that's missing here potentially is the relationship between these senses and how they actually relate to
+each other structurally. WordNet is a lexical
+database for nouns, verbs and adjectives, and adverbs, much like a dictionary. But in this case, we've actually tried to
+group them together. In each sense is related to
+together in what's known as a synset or a set of senses. We can try to do relationships
+between these synsets. Let's look at an example
+of what this means. We can think about
+one particular lemma. Here we look at the
+lemma tip and thinking about how it is structured
+into different synsets. If you think about the
+different meanings, we can think of tip
+is the extreme end of something or
+something pointed. Each of these synsets
+has a particular gloss, which is akin to say, a definition, but sometimes
+also includes examples. We can think that a
+particular synset may have multiple lemmas that
+have the same meaning. Here, tip has the same
+meaning as gratuity. A relatively small amount
+of money given for services rendered as by a waiter. We can see that all
+the lemmas that share this same particular meaning are grouped together in
+the same synset. Here, the lemma tip has two different senses which are in two different
+synsets currently. Tip has multiple meanings. It could be a lead, for example, indication of a potential opportunity,
+like a hint. It could be a point of something. A V-shape like the
+cannibal's teeth were filed to sharp
+points or tips. Or it could be the top of something like a peak or a crest at the top of an extreme
+point is like a mountain. Each of these synsets has different structures that relate it to the rest of WordNet. Looking at the senses for tip, we can see that each sense
+has its own set of hypernyms. If you remember from
+the previous segment, if A is a hypernym of B, B is a kind of A. A tip is a kind of extreme, is it kind of location, is a kind of entity. We can work our way down. We can see this for each
+of the other senses. For example, gratuity tip is
+a type of fringe benefit, perk for benefit, type of
+payment, type of cost. Sense three, the hint
+sense of tip has guidance or council messages, communication, and abstraction. We can move these all
+the way down until this base concept
+known as entity. Together each of these
+census relates to each other and we can use
+this to navigate. In fact, in noun that
+relationships and WordNet, there's quite a diversity. We have our hypernym and hyponym we can think
+about instance of. Here's seeing that Austin
+is an instance of author. We have meronymy or holonym thinking about
+parts and wholes, we've antinomy and
+it derivational. For example, noting
+that the noun of destruction is related
+to the verb destroyed. Again, to point
+out, we'll see that Table two is related
+to Leg three. These typically referred
+to the sense numbers. We should always
+keep in mind that sense relationships
+relate senses, not the words themselves. Verbs too also can have
+relationships between the senses. For example, we have hypernym, although the complimentary
+relationship to hypernym for verbs
+is called troponym. We can have entailment,
+so to snore entails a tour sleeping
+though not always. We also have antonyms as well. Again, these are between senses. The WordNet structure itself can be used to encode meaning. We can even think about
+using this in practice. For example, thinking
+about the similarity of tip and wage
+versus tip and peak. If you wanted to do this, say, using the word vector methods
+that we did in Week 2, this actually might
+be problematic. For example, word vector encode each of these words meaning
+in the single vector. We'd actually be
+trying to compare a single vector for tip versus the vectors
+for wage and peak, which may have very different
+interpretations and give lower similarity scores
+given that we would like. However, WordNet, we
+can simply traverse the hypernym structure to see
+how close is tip to wage. This network distance or
+graph distance can be a useful proxy for thinking about how similar
+two concepts are. Similarly, we can
+think about looking at tip for the second
+tip versus peak. In fact, we could try to traverse the first one to answer
+tip versus wage. Or we can even notice
+that tip and peak are in the same synset taking into account the similarity
+accordingly. There are many such libraries for figuring out how to turn these network distances
+into similarity scores. Often they work quite well. We should also say
+that WordNet can be used for a similarity
+beyond just words. We can think about comparing the similarity for sentences. Here, thinking about the
+manager fired the worker, or an employee was terminated
+from work by their boss. If you look at these sentences, they have no overlapping content. In fact, this may be problematic if you
+want it to do say, a word gloss overlap
+or cosine similarity. It could be less
+problematic if you used it distributional
+representation. Yet, this is still
+quite challenging. However, if we know the
+senses of each of the terms, we might be able to compare them but to look at they align. For example, recognizing that manager and boss are synonymous, worker and employee
+are synonymous or fired and terminated
+are synonymous. In this way, we can
+say that, well, they actually have three content word senses that overlap. WordNet was actually used to
+label a large collection of data known as SemCor
+or a semantic corpus. In this case, 352 texts
+from the Brown Corpus were labeled with all content words
+for WordNet 1.6. senses, which is a particular
+version of WordNet. The Brown Corpus is only an American English Corpus
+and it's from the 1960s, which includes its
+type of content and dating that make it
+slightly less relevant, though, still quite
+a large corpus. In fact, it has around
+200,000 content words. Since annotation is extremely laborious and often
+a difficult task. This reflects multiple
+years of effort. To give you an example
+of what it looks like. Here's an original sentence. Historians have come to recognize two cardinal facts concerning nationalism and
+international influence. In the sense definition, we would actually label each of these words with their
+particular senses. Here I've shown you
+which sense number for the particular
+lemma for each word. SemCor is actually available
+free and they spend mapped to more recent
+versions of WordNet 3.0, which have refined
+and corrected some of the errors in earlier versions. Michigan's own rotamer
+Holcim hosts it currently. I should also point
+out that WordNet is available in many languages, often in almost
+all languages that we have natural language
+processing tools for. In fact, there's many
+for other languages that are quite rare that we can be used to study the semantics of. All of them use a
+similar structure, and that means in practice
+that you can often use a similar set of
+APIs into plug and play. However not all of them
+link across languages. For example, thinking
+about a tip or a wage, we're able to link the Arabic meaning of that
+to the English meaning. But that said, there
+are many such WordNets that are available that you can actually
+play around with. One recent advance from
+WordNet is known as BabelNet, which here is going to try to
+link WordNet to Wikipedia. I've shown you an example
+from their webpage. Here you can see
+that we again have the synset like we expect, and we have the
+definition or the gloss. But we also get
+category information both from WordNet
+hypernym structure, but also from the Wikipedia
+categories as well. We can get images from
+Wikipedia and we can also get translations which
+typically show up in the left hand
+sidebar of Wikipedia. This creates a rich
+multilingual structure that we can pull all of this information from
+different countries and languages Wikipedia's, along with WordNet and
+other knowledge sources, into one unified knowledge
+structure that we can use for trying to examine
+the semantics of sentences.

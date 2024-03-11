@@ -1,0 +1,134 @@
+Hi everyone. This is Paramveer Dhillon. I would like to
+welcome you all to the third week of this
+course on deep learning. In the first two
+weeks of this course, we have seen an introduction to the field of deep learning, where we also studied the simple multilayer
+perceptron as well as the training details
+of the neural networks. In week 2, we studied
+convolutional neural networks, which is a very powerful
+neural network architecture which is used for
+modeling image data. In this week, we will
+study another class of popular neural
+network architecture called the recurrent
+neural networks or RNNs, which are used for
+studying sequential data, such as text or speech data. Modeling text or human language has lots of practical
+applications. Perhaps, the two most
+common ones that touch our everyday lives are in machine translation and
+speech to text conversion, we have automatic
+speech recognition. I'm sure that most of you
+have used Google Translate. It has the interface
+as shown on the slide. That is, you enter the
+text in one language and can seamlessly translate
+into many other languages. Similarly, wise assistance
+such as Google Home or Alexa, convert our speech into text, which in turn is
+then used to take certain actions such as playing music or changing the thermostat. A natural question arises, how do we model text data which has this sequential nature? That is, what you're
+about to speak or write depends on what you've
+spoken or written till now. Can we use the neural
+network approaches that we have developed in now
+to model language data? The answer to that
+is a partial yes. We can use some broad ideas based on the models that
+we have already seen, but none can model sequential nature of the
+text or speech data. So we need a new class
+of models to do that. In order to motivate the task of language modeling and its
+inherent sequential nature, consider the task of
+language modeling. Assume we are given
+a sentence such as, "This afternoon we
+went for a stroll in the," and we want to
+predict the next word. Now there are several
+possibilities there. One can go for a
+stroll in a garden, or a park, or the woods. Such prediction tasks are
+the heart and soul of language modeling and
+require a language model, or LM for short. More formally, a
+language model is a joint probability
+distribution P of w_1 to w_n over a sequence
+of n words, w_1 to w_n. Let's think about some potential solutions to this problem. The first potential solution
+to this problem involves, what is known as a
+fixed window approach? It means that we take
+a fixed window of size w around the
+word to be predicted, and use the words in that window to predict
+the missing word. For example, for
+our sample sentence of window of size two, would equate to
+using the words "in the" to predict the
+missing word "woods". Essentially, the fixed window
+approach is relying on the sequential nature of language to infer
+the missing words. That is, what are the
+set of words that are most likely to
+follow "in the"? The fixed window approach
+that we just saw on the previous slide
+seems reasonable, but it is a little
+inflexible due to the fixed size of
+the context window. Due to this lack of flexibility, it is also unable to model
+long-range dependencies, which are very important
+to model as they're important aspect of any language. To be more specific,
+consider the sentence, "Michigan is a state in
+the Midwestern region of USA and shares a
+border with Canada. Its most populous
+city is, blank." Now, the immediate
+neighborhood of the missing word, "Detroit", that is words such as
+populous or city, or is, do not significantly narrow down the potential list of words
+that could fill in the blank. In fact, the strongest queue, which helps us predict the missing word is
+the word Michigan, which is too far apart
+from the missing word for a fixed window
+approach to incorporate. Even if we could use a fixed window approach to
+model contexts size that long, it will be computationally
+very expensive. Let's think about other potential solutions
+to this problem. Actually, it's a very simple
+approach that can let us model such long-range
+language dependencies. That approach involves
+using counts of how many times each word occurs
+from the entire sequence. For example, the word, this, occurs once, the word, afternoon, also occurs
+once, and so on. This approach is
+popularly known as a bag-of-words approach in natural language
+processing literature. The reason it is called
+bag-of-words is because it just gives about if and how
+many times a word occurs. It doesn't care
+about the position or order of the word
+in the sentence. Bag-of-words based language
+modeling approaches have been the mainstay of language modeling
+for a long time, and give comparative
+performance on several natural language
+processing tasks were ordering information
+is not very important. However, they can
+perform poorly on tasks where ordering
+information is important. For example, consider the two sentences
+shown on the slide. "Though the movie
+received bad reviews, I thought it was good", and "Though the movie
+received good reviews, I thought it was bad." These two sentences contain
+the exact same set of words, but contained totally different
+semantic information. For a bag-of-words
+based approach, there would be no difference
+between these two sentences, and that's why the bag-of-words approach would be problematic
+to use in this case. Another potential solution
+to the problem is, how about we fixed the fixed window-based approach to consider really
+big context sizes? This should solve our problem as this approach would
+incorporate ordering information and can also
+model long-term dependencies. However, such as seemingly brute force
+approach could backfire as it could be extremely computationally inefficient
+to compute and store. It also leads to an explosion in the number of
+model parameters. Now that we have seen
+a set of standard text modeling approaches and their
+shortcomings in modeling, let's think about what
+is the desiderata for a good model for
+modeling of language. First, it should
+be able to handle variable length sequences and adapt to longer or
+shorter sentences. Second, it should be
+able to track and model long-range language
+dependencies as they are an important
+feature of any language. Third, our approach should
+be able to preserve the information contained
+in the order of the text. As you saw on the last slide, two sentences could have the exact same bag-of-words
+representation, but totally different semantics. Finally, you should
+be able to accomplish the first three conditions
+without blowing up the parameter
+space or increasing the computational
+complexity by much. This week, we'll study recurrent neural networks
+or RNNs for short, we'll check all of the boxes above that we just
+listed and allow us to flexibly model sequence
+data while preserving the flexibilities of a non-linear neural
+network modeling approach. As we will see in
+the next videos, recurrent neural networks, or RNNs, are a powerful
+modeling approach for modeling sequences
+of any kind. Be it the task of
+mapping many words to one as is the case with
+sentiment classification, or be it one-to-many mapping
+as in image captioning, or maybe many-to-many as is the case with
+machine translation.

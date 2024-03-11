@@ -1,0 +1,103 @@
+>> So far we have been
+focusing on modularity as our only measure of quality of a partition. While modularity is a great measure, there are other alternatives that
+we'd like to cover in this video. We will cover 4 other measures which
+make different assumptions about what constitutes a good partition. They are coverage, performance,
+separability and density. Let's start with coverage,
+given an undirected network and a partition of the network into
+communities, let the intra-community edges be the edges (u,v) such that u and
+v belong to the same community. So if we have a network like
+this with two communities, all of the green edges are example
+of intra-community edges because they connect nodes that
+are in the same community. And the assumption that coverage makes is
+that a good partition is going to be one where most of the edges
+are intra-community edges. Most of the edges are indeed connecting
+nodes that fall in the same group in the same community. So coverage is going to be simply
+the ratio of the number of inter-community edges to the total
+number of edges in the graph. In this example,
+what we have is that we have 15 intra-community edges and
+a total of 17 edges. So the coverage for
+this graph is going to be 0.882. The next measure is performance. For performance, so let's first define
+inter-community edges to be edges( u,v )such that u and v belong now to
+different communities in the network. So in this network we have
+two inter-community edges. One of them is this one here which
+connects these two nodes that belong to different communities and
+the other one is this edge right here. Now the measure that performance actually
+uses is the inter-community non-edges. And these are pairs of nodes (u,v) that
+belong to different communities and are not connected by an edge,
+that's why they're non edges. Here are a few examples of
+inter-community non-edges in this network in this partition. We have this one right here, which is a pair of nodes that
+are not connected by an edge. This one here again, they have nodes
+that are not connected by an edge and are in two different communities and
+then this one right here, so those are all examples of
+inter-community non-edges. The measure of performance is
+going to be the following. In the numerator, we are going to have
+the number of intra-community non-edges, those are again edges that connect
+nodes that are in the same community, plus the number of
+inter-community non-edges. And then we're going to divide by
+the total number of possible edges. So the assumption of performance is
+that we're going to have lots of inter-community edges. And we're going to have lots of pairs
+of nodes in different communities that are not connected by an edge. And then we're going to be
+dividing by all pairs of nodes all total number of possible edges. In this example,
+this would look like the following, we have 15 intra-community
+edges as we saw in coverage. We have a total of 40 Inter-community
+non-edges and the way you can see that is that we have 2 communities, this
+one has 7 nodes, and this one has 6 nodes. So there's a total of 7 times 6 possible
+edges between nodes in different communities and we have only two of those,
+actually in the network. So we're going to have 7
+times 6 minus 2 none-edges. And then the total number of possible
+edges in a network that has n nodes is going to be n times n minus 1 over 2,
+this network has 13 nodes. So it's going to have 13 times
+12 over 2 possible edges, so that's just counting the pairs
+of nodes and that's 78. So performance for
+this example is going to be 0.705. The next two measures are going to be
+measuring something at the community level first, and then it's going
+to aggregate over the whole network by averaging that measure over
+all of the communities in the network. So let's start with separability,
+it makes the assumption that the ratio of the number of edges that are connecting
+nodes within a community, to the number of edges that are connecting
+nodes across communities is large. So what it's going to do is that is going
+to measure the ratio of intra-community to inter-community edges for
+each community, and then is going to average
+over all of the communities. So what does this look like for
+this network? Well, let's say that this is community 1,
+and this is community 2, and let's start with community 1. So for community 1, the ratio of intra-community to
+inter-community edges is 8 over 2, there are 8 edges that connect nodes
+within the community 12345678. And there are two that connect
+nodes across communities. 1,2 and so 8 over 2 is the number for
+community 1, and for community 2,
+the ratio is 7 over 2. There are 7 edges within the community or edges that connect nodes that are in
+the community 123 4,5,6,7 and then again, there are 2 that connect
+nodes that are in different communities. So 7 over 2, and
+then we simply take the average or the two communities and we get 3.75. Of course, this becomes a lot
+more interesting when you have a much larger network and
+you have lots of communities. And then finally density, which is also
+going to be measuring something of the community level and
+then taking the average. And what density does is that for each
+community, it measures the fraction of intra-community edges out
+of all possible edges. And then again,
+we average over all the communities. So one thing to note about density is that
+all it says is that, a good community is one that has lots of edges within,
+but it actually doesn't penalize for having many inter-community edges
+which is a bit of a weakness. Although it may depend on the application,
+what you want to do or what measure you would like to apply. So for this example,
+what we have is that for community 1, we have a total of 8 intra-community edges
+and then there are a total number of 7 times 6 over 2 possible edges within
+community 1 again there are 7 nodes. So the total number of possible edges in a
+network of 7 nodes is 7 times 6 over 2, so we have 8 divided by that and
+for community 1 that's 0.381. And for community 2, we have,
+again 7 intra-community edges. And a total number of possible edges is
+6 times 5 over 2, which gives us 0.470. And then we take the average
+over the 2 and we get 0.424. So as you saw, there are different ways to
+think about the quality of a partition, there are different assumptions
+that one could make. We had started that week, thinking about
+modularity, or defining modularity, and this is definitely a very popular measure,
+which controls for what could happen by random chance. And it even assumes that
+you can control for the degree of distribution of the network. And so it is definitely one
+that is very popular, but there are other simpler measures
+that don't want it can use. And when you're choosing a particular
+partition or a particular algorithm that you want to use for community detection,
+you typically want to choose one that is going to perform well,
+across a variety of measures. So you would want one that
+gives you high modularity, but also gives you high density, and
+coverage, and performance, and so on. In the next video, we're going to be looking at
+applications to community detection. So, I'll see you there.

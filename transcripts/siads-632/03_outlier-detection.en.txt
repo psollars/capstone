@@ -1,0 +1,112 @@
+The mass topic want to introduce
+when we're talking about predictions of time series
+is outlier detection. We have already introduced methods to
+extract out buyers were talking about time series patterns. And let's see what's knew after we
+talk about time series predictions. So as we discussed that, the definition
+of outliers could actually be interpreted as something that is so
+different from the expected value, right. And following this definition, there
+is the pedal way of detecting outliers. Basically, you can actually build
+a reasonable prediction model. And the prediction model could
+be either simple or complex. It could be as simple
+as just moving average. It could be as complex as ARIMA, right? Or even a machine learning model. Once you have this prediction model,
+you can actually make a prediction for any given time stamp. No the matter with this timestamp in
+the in the future or in the past. If the time step is in the past,
+then you can actually obtain. Y hat of I that is the predictive
+value of the measurement at time I. And then you can compare this predictive
+value with the actually observed value at that time, right? Because if you're making
+predictions in the past, you actually have the observed value. In fact, if the predictive value is so much different from
+the actually observed value. Then you have the basis to claim that
+the author value is actually an outlier, because it's just so
+much different from our expectation. And in reality you can also use confidence
+intervals to identify ndividual outliers. Because you need to justify how large
+the difference is large enough. Well, another trick in reality is
+that if you identify individual time points where the values outliers. Is usually not as interesting
+as actually identifying, let's say a range of time points or
+patterns, right of outliers. And as long as we can actually
+extract individual outliers, right? By comparing the predictive
+value versus the observed value, you can then try to expect patterns,
+right? To merge the individual observations
+into more sustainable patterns. And here the trick is no longer looking
+at the original time series, but to look at the residual series. So what is the residual series? Basically, once you have
+a prediction model, you can actually compute y hat for
+every existing. Time stamp, right? So then you can basically miners y
+hat from y for every time point. And that gives you an you time series
+that is different from the original time series y. That is Y minus Y hat we call
+this the residual series. And you can see that suppose we have
+a model that is ARIMA, right for predicting the airline passenger data,
+right? You can see that after making
+the prediction, and after subtracting the predicted values from the original
+values, we got this blue curve. That is actually the residual
+series of this prediction, right? Then we can then I thought
+that at some time points. The residual is actually two large is
+large enough that it's large enough for us to claim that they are outliers, right? A practical way to do that is to draw
+the first standard deviation lines and the second standard deviation lines,
+third standard deviation lines. Or other confidence intervals SP find and
+then any value in the residual series that is
+outside the confidence interval. In this case we actually
+have two data points that are outside the two
+standard deviation lines. And were fairly sure that those
+two time points are outliers given the prediction model ARIMA 212. So this is the basic idea of
+looking at the residual series to identify individual outliers, right? Note that once you have
+cut the residual series, you can actually apply all the techniques
+we have introduced in this course. For instance,
+extracting time series patterns, or even computing the similarity of the residual
+series of some other series, right? Or even using graduate causality, right? To try to extract even
+more interesting patterns. And this more interesting patterns can
+actually go beyond individual outliers and then to indicate more sustainable. Outliers or alumnus or
+even shots If you still remember that this is one example that we
+introduced from the KDD 2005 paper, where they actually extracted spikes
+from block mentions of certain books. And then they correlate the spikes to
+the spikes of Amazon self strings and then they discovered that there's
+actually a two day gap, right? Between the block mention of the book and
+the rank of the book. This is actually a very interesting
+example of graduate causality, right? But what we wanted to talk about
+here is that to discover spikes, which is a certain type of outliers, we
+can easily apply the previous procedure. So in fact, what authors used
+in the paper is quite simple. They basically generate
+the expected value, right? Or the prediction of any existing value
+by looking at the window before and after this current time point, right? And take the maximum, right? Value of the previous and
+the the next window. So in this equation we use
+yi minus K to i minus K plus 1 to I plus K as the big window,
+right? To the left and
+to the right of the observation i. And we use -i,
+not i to indicate that the original value why i is not considered
+in taking the max, why? Well, you don't want to do that
+because if you do that then basically if yi is the outlier,
+the max, you can stuff, right? So in this equation you're actually
+finding the maximum value of the previous window and
+the next window excluding yourself, right? From the time series. And you call this simple moving average or not moving edge, but
+moving max as your predicted y hat. And then you compare why y hat with
+the actually observed yi, right? And yi is considered as the spike or
+the spatial outlier if it's greater than predictive value,
+yi hat with a noticeable margin, right? So the authors you know apply the trick
+that they're computing the maximum value between either the predictive value yi hat
+plus the constant or times the constant. So that means basically,
+if the observed value is greater than predictive value yi hat,
+either with the considerable margin or with the considerable ratio,
+then we call yi a spike. So you can see that the data
+plan lots of heuristics, but essentially they basically
+applied two steps, right? The first step to generate an estimation
+or prediction of yi, right? In their case they use the rather
+simple heuristic that is the moving average, right? The moving Max, right? Of the time window. And then they compare the actual observed
+yi where is the predicted value yi hat. If yi is significantly different from
+yi hat, then they call this an outlier. So this basically concludes our
+discussion about time series forecasting. I hope you remember the assumptions behind
+time series prediction and forecasting. Basically the assumption that you
+can actually use the previous key observations to make the prediction for
+the future. The assumptions of stationary time series,
+right? And so on and so forth. I want you to remember
+the autocorrelation plots and always apply autocorrelation plots ACF or PSF before you actually do
+the time series forecasting. Because that will tell you
+approximately which lagged observations would actually have the predictive
+power of the future. I hope you remember how the order
+regression models work. You don't have to remember all these
+mathematics details of the regressions by at least the intuitions behind them and
+the critical parameters. Because when you actually apply them,
+you have to specify the parameters. And you should understand that the Granger
+causality is built upon multivariant autoregression or AR. But it is able to tell you which time
+series is driving which other time series. And finally, if you are interested
+in extracting outliers, right? You can always look at the residual
+theories of the prediction model, right? And spikes along these and other patterns are all
+special cases of outliers. I hope you have fun with
+analyzing your own time series. Thank you for listening.

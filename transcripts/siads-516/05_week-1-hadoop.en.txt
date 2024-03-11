@@ -1,0 +1,99 @@
+So we're continuing along our path of
+building up the pieces that we need to understand how we're
+going to cope with big data after we talked about mapreduce and
+distributed computing. We're going to operationalize that by
+focusing on something called Hadoop. So Hadoop provides horizontal scaling for
+us and Hadoop refers to an ecosystem of different software packages that provide storage and
+computation across distributed machines. Now, we're going to focus on the use
+of Hadoop as a storage mechanism because it turns out the computational
+piece has evolved so that Hadoop takes a bit of a background
+stance on this whole thing. Machines used for Hadoop, were conceptualized as being
+cheap commodity computing devices. And Hadoop is an open source project and
+you can go to Hadoop dot Apache dot-org for
+more information about the details of it. So one thing you might ask Is where do
+these computation devices come from? I mean machines you don't
+just trip over on the street. Well, here's an example one of the
+universities that I've worked with uses a Hadoop cluster underneath
+their Library terminal machines. So they have a series of computers
+that are in their libraries public access points. So people can come in and
+search for things in their catalog. Now the library's closed around
+midnight or 2 AM or something. So these machines are just sitting there. And almost nothing what the tech
+people at that University have done is created a system by which whenever the
+library is closed or shortly thereafter, the machines reboot as Hadoop
+commodity machines and then they use those machines to do optical
+character recognition on scanned texts. So they have historical books or rare books that they scan in they want
+to do OCR optical character recognition. Recognition that's
+computationally intensive. They do thousands of pages a day. So what they do is they utilize these
+relatively cheap machines that are hanging around libraries doing
+nothing in their off hours. So that's an example of how Hadoop can
+be used now Hadoop consists of four main modules Hadoop common is the core
+module on which all the others depend. It's provides the underlying
+core functionality the War is peace is provided by a Hadoop
+distributed file systems or hdfs. This is a way to distribute data
+across those commodity machines. In other words,
+We're trying to get the data and computation as close to
+each other as possible. Now, remember we're dealing with data
+that's distributed across a whole bunch of machines and we need a mechanism
+a heuristic or an algorithm to determine where to put the data how
+much data to ship to each machine. How computationally capable each machine
+is and map those things together. So hdfs the Hadoop distributed file system is what allows us to get the data
+typically in one file to start with broadcast out to all
+these different machines. The next component of Hadoop that I want
+to talk about is the resource negotiator. It's called YARN and this is an example
+of humor from open source developers. It's yet another resource negotiator so
+it is an acronym and this is the piece that helps
+US Marshal the resources. It says this machine is capable
+of doing this sort of analysis, YARN will know when that machine is
+available to do additional analyses. It will know if that machine
+happens to go offline. So there are some features of Hadoop
+that are really important for us. One of them is fault tolerance. So let's say we have this
+commodity system of machines. We have a hundred or a thousand machines,
+one of them falls over, let's say gets unplugged or it has
+a kernel panic or something like that. We need to be able to cope with the fact
+that that machine went offline to basically say to the other machines. Is anyone else available to
+pick up this computation and that's what YARN does for us. The last component that is one
+of the main modules of Hadoop is mapreduce and Hadoop mapreduce. This is where map Is kind of comes from
+is a java-based computation system. Now don't panic we're not going
+to do Java in this course. We're going to look at a python
+interface to mapreduce. So here's a diagram of how
+Hadoop works at the bottom. You see this collection of
+economy disks and processors. That's the example that I just talked
+about with the library computers their economy items. They're not huge powerful very
+expensive items that require special configurations to work. So we have this system
+of Hardware down here. We're not concerned very much
+with Hardware as data scientists on top of all that we have the Hadoop
+distributed file system hdfs. So that sits on top of this cluster
+of economy disks and processors and the data is actually farmed out to
+the different pieces of the cluster. Yarn, the piece up here. Helps Hadoop figure out well, which of these particular machines down
+here has the data that we need and how much computing power does it have so
+it Marshalls those resources? At the beginning of this course, then we're going to talk
+about mapreduce up here. We're also going to talk in subsequent
+weeks in this is where we're going to spend most of our time
+talking about spark now, it gets a bit confusing when we start
+conceptualizing spark spark is actually different from Hadoop, but
+works on top of Hadoop. So Hadoop provides the infrastructure not
+just the physical infrastructure, but the software infrastructure on which
+spark runs there are other pieces. Of the puzzle that we're not going
+to be focusing too much on and that's over here with storm. And Hive we're not going to be
+dealing with that very much. We're going to be actually
+focusing on spark and we are going to be using
+SQL over in spark. So that's how the whole
+thing hangs together. I want to talk a little bit about
+the Hadoop distributed file system or hdfs as I mentioned. It's all about getting the data close to
+where the computation is going to happen. Why is that important? Well, remember all these machines
+are connected using some sort of network. Typically ethernet. Typically TCP IP going
+across the wire on that and it turns out that that can be a real
+bottleneck for a computation. So we don't want to have to pull
+data across the wire you'll know this one you're trying. Pull down data for
+your work in this program. A lot of times you're
+pulling down sizable data. It takes a while. You don't want to have to incur that cost
+when you're doing your computational work now just to give you an idea of scale when hdfs distributes its
+data across that cluster. We're typically talking about
+something on the order of 64 128 or 256 megabytes blocks of data. So all of a sudden were into that
+sort of bigger, Scale of megabytes you can start thinking about how many
+256 megabytes blocks would it take to calculate something on an exabyte scale
+and then you can start thinking about how many machines would I need and
+what would that look like? So that's worth doing on the back
+of a napkin sort of thing and figuring out how big of a scale of
+system we're actually talking about now. We don't always do big data analyses and
+we'll talk a little bit about that soon.

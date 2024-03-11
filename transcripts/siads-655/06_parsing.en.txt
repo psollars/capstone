@@ -1,0 +1,72 @@
+So far, we've talked about grammatical categories
+of parts of speech and thinking about phrases and longer
+sequences of text. Let's think about some other
+types of structure to text. Today, we'll talk about parsing. Let's start with an example. I saw an elephant in the zoo. What's the subject
+of the sentence? Seems like a trivial question, but for many of you,
+the answer would be I. What's the verb? Here again, the answer seems
+quite obvious, saw. We can think about
+how these relate to another and then
+ask the question, what is in the zoo as a phrase. This typically relates to say either an elephant or it could be where that
+you saw the elephant, maybe in the zoo looking
+out at an elephant. How this phrase
+relates to the rest of the sentence is an example
+of structure in language. We can think about this as modifying the previous meanings. We'd like to capture
+this through parsing. Most sentences have lots
+of implicit structure. For example, while on vacation, my friend quickly saw a
+big elephant at the zoo. If we try to break
+it into chunks, we might say that
+while on vacation is one chunk, my friend another, quickly saw a third, a big elephant, a fourth, and at the zoo, a fifth chunk. We can think about how these
+relate to each other in the sentence in
+order to construct and interpret its meaning. One of the most obvious
+is thinking about, my friend quickly saw, thinking about who did what. We could think about
+while on vacation is describing when and
+that took place. We can think about what they saw. The who did what to whom. Here you're seeing an elephant. Again at the zoo could describe
+where the elephant was. We can think about even
+labeling these formally as say the subject or an object having an adverbial to
+clause describing the verb or a prepositional clause
+describing a noun. We can think of this as
+a syntactic structure or a tree structure describing how these units
+relate to each other. Parsing will try to
+uncover these types of tree structures that described
+the whole sentence in terms of how it's meaning can be composed of two main
+formalisms for thinking about syntax within NLP these
+are not exclusive and there are others but through that you'll
+run into commonly. One we've just seen is what's known as
+dependency parsing. Hear words are going to
+be connected to each other according to their
+grammatical relationship. I prefer the morning
+flight through Denver. You can see that I
+is the subject is directly connected
+to its verb prefer, which forms the
+root of this tree. Another formalism coming from linguistics is known as
+constituency parsing. Here you can see that there
+are many intermediate nodes and each of the lease or
+the subtrees to this, describe an entire sentence. For example, morning flight through Denver forms
+a noun phrase. There are many different
+linguistic properties this study extensively. Mostly that these parse
+trees often are useful for intermediate structure in
+order to do downstream tasks, that we'll talk about next. For constituency parsing,
+think about words that are connected to intermediate
+nodes that form a larger tree. These constituency
+parsing often form a representation that lets us do interesting things like
+questioning and answering. Using a database, we can ask
+questions like which states, border states that
+touch a great lake. They're ways to
+take this sentence, parse it into a
+constituency parsing tree and use semantic parsing
+to answer that question. Also, if you run into
+grammatical checking, say in your favorite word editor, often under the hood, it's using constituency parsing to identify potential errors in your writing. Dependency parsing is a
+slightly different formalism where we connect words
+directly together, into a tree based on their grammatical
+relationship with each other. In this case, there are
+no intermediate nodes. This often forms an
+alternative representation for thinking about language. Dependency parsing has been used quite a bit in practice for
+information extraction, argument mining as
+it makes it quite easy to identify who
+did what to whom. It also has some applications
+in summarization for removing a potential
+extraneous information. Also, there's quite a bit
+of support for looking at dependency parsing in
+multiple languages. If you're interested in multi
+documents are multilingual, often dependency parsing is a useful formulas and to
+think about and practice.

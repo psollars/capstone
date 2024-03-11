@@ -1,0 +1,209 @@
+So dates are an important
+part of databases. It's important to think
+about dates in two ways. There's kind of like
+the date and the time, I almost think of them
+as like string fields. If you're entering
+historical data, what are the significant events of the Civil War in
+the United States, right? And so, okay, this happened in 1862, and '63, and '64. Those are like
+historical dates and no one's arguing
+about like what time zone or what time of day they were. And so DATE and TIME are just things that you're reading and you're typing
+in and it's not time zone. They're sort of like
+what was written down at the time that
+something happened. Whereas, in computers, when
+we're doing things like you type in a blog post
+and you send it and it says two hours ago later, well, that's what I call a when time, right? That's
+when did something happen. And the key thing about the difference between
+a date and a time, and a time stamp, which is
+more of a when concept, when did something
+happen concept, is that the moment
+that I hit this key, is a moment in time
+that is simultaneously the same moment in time in all the time zones of the
+world at the same time. So if you start a meeting and
+you say, "Hello everybody" that might be five o'clock in the East Coast United States, it might be two o'clock in the
+West Coast United States, and it might be 11
+o'clock in England. And it's still the same
+moment, the same when. And so we use time stamps. Now, there's two kinds of time stamps. One I find almost useless and then the other one is a
+time stamp with a time zone. They're both eight-byte
+fields in Postgres, and for me, I just use
+TIMESTAMPTZ all the time. Now, the interesting thing about TIMESTAMPTZ is you can actually store a time zone in US
+Eastern Time and it knows, okay, this is one o'clock in the afternoon,
+US Eastern Time. And then if you pull it out, you can see it in US Pacific Time or British Standard
+Time, or whatever. There is this
+PostgresSQL function most all databases generally have this function called NOW, which is within
+whatever time zone it's at perhaps told to be in
+the Universal Time Zone, which is Greenwich Mean
+Time-ish, that is now. And that's this moment in time, right this minute, and it has a time zone
+associated with it generally. So we tend to put in our databases lots
+of these TIMESTAMPTZs. Now, other databases don't
+have this TIMESTAMPTZ, but this is necessary
+in Postgres. And so the other thing that
+you'll notice is that we have this little bit of
+text called DEFAULT NOW, right? This NOT NULL DEFAULT NOW. And this is kind of like a
+constraint or a unique key or whatever. We're talking in
+our schema definition, our CREATE statement,
+we are talking about what we want the database to do
+for us automatically. And so if you look at any database I created in the last 10 years, I always have a created_at which is either TIMESTAMP
+for some databases or TIMESTAMPTZ in Postgres, that has a automatically generated. When you insert the row, put the current time in, don't make me put that in
+every INSERT statement. So I name it a particular way and I give it the database an instruction as to how
+to pre-populate it. Now, we'll talk about updated_at. Some databases
+auto-populate UPDATE, which means that when
+you do an update, you can mark a field
+as auto-change to be NOW as the moment of update. But the way this works, and
+the way in Postgres it works, is that you cannot do
+that on a CREATE statement. You use stored procedure,
+which we're going to talk about in a little bit later. So in this one, both the
+created_at and updated_at are set to the current
+moment of the insert, but updates do not
+alter updated_at, which is counterintuitive and other databases have
+easier ways to do this. Time stamp with a time zone
+is the best practice. And it's not so much that
+all the time stamps have to be in the time zone, although the way I like to do it, is I like to pick the UTC, Universal Time Zone, I
+don't know when that is. Pick UTC, which is basically Greenwich Mean Time,
+independent of time zone. So that is the time in Britain. But Britain also has
+standard daylight time and standard time, and so UTC is always the same. There is no such thing
+as standard time and daylight savings
+time for UTC, and that's kind of the difference
+between, I think, Greenwich Mean Time,
+British Time, and UTC, even though they are
+sort of the same time zone. So no matter where
+we're at in the world, we tend to use the
+British time zone for time stamps, without
+daylight savings time. So the idea is, then you can tell Postgres to convert to
+whatever time zone you want. And this is why, if you've ever
+taken a plane flight and gone into a different
+time zone and you bring like Google Calendar
+up and it says, do you want to see these times in Pacific or do you want to
+keep seeing them in Eastern? Because you were sitting like me putting all these events in your calendar in
+Eastern time zone and then they want to
+show them in the Pacific. And the worst thing,
+of course, is when you're in a Pacific time zone, and someone sends you email, let's meet at three o'clock
+in the afternoon. So you go in and
+you're putting it in Pacific time zone
+at three o'clock, and then you fly back home
+and you say, what time is it? Like, oh, wait a second, it's noon, what's
+wrong with that? So it ultimately in
+databases because of this whole problem of an
+online application is working all over the world simultaneously quite often, we do that. But then we can say, look, I want to know what time this
+was in the local time zone. So for each user, you can
+give a different view. That's where it says
+at time zone UTC, EST, or Hawaii Standard
+Time, or whatever. So there's a whole
+bunch of time zones. If you look at the earlier
+versions of Postgres, there were some 14
+or so time zones but they realized that's
+actually not accurate. Just take a look at time zones, you'll be amazed at how
+complex time zones really are. Not all time zones, and
+you see even one here, not all time zones are
+even numbers of hours. This Indian/Cocos is six
+hours and 30 minutes away, right? And you'll see some that are 15 and 45 minutes and you're like, I'll bet it's tough to
+live in that area, and set up a multi-person real-time
+conference and get it right. Because that just means
+that like your calendar goes off by 30 minutes, right? If you get like a calendar invite from a person in
+the US Eastern time zone, and your place is going to be on the hour, it's going
+to be on thr half-hour. So we're actually
+going to play with this data a little bit later just because it gives us
+a little bit of data. The abbreviation is the
+commonly used thing like EST for Eastern
+Standard Time or BST for British Standard Time. is_dst is whether or not this is daylight
+savings time or not in this little table. This is a common thing
+that databases do is they make these sort of
+pseudo-tables that they realized
+that they could make a thing called,
+what_timezones_are available. Or they could just
+make a fake table that you just use SQL
+statements to do, and that's cool
+because now you can do things like a
+WHERE clause in it, right? So you'd say, well, SQL is
+a good way to look at data, so let's just make a fake
+table with this stuff in it. And when you install your Postgres, you might have to
+pick your time zones or you can add new
+time zones to it. And so looking at this
+pg_timezone_names, tells you what's going on in the particular database
+that you're working in. So this is a good time
+to talk about casting. I don't know where
+the word came from. Casting is the idea in
+programming of taking a variable or a constant that's in one type and converting
+it to another type. It might be converting from
+an integer to a string, etc. And so there are
+several syntactic ways that Postgres does casting. So there's this double colon,
+which actually I think is a really pretty
+syntax, that says NOW, and NOW is giving you a TIMESTAMPTZ,
+a time stamp with time zone, but turn that into a date. So that effectively is
+truncating that part off, The CAST function. So NOW AS DATE, AS is a keyword, DATE is one of the
+predefined types. That is a more
+standard way to do it, and this here is a
+contraction on that, okay? And then NOW AS TIME just chops off the part that
+is the time only. Think of this as a
+type conversion. So we're viewing this
+through a date lens or we're viewing this through
+a time lens. We can also do date
+interval arithmetic. This INTERVAL itself
+is a keyword, and it takes as as a parameter, a little language like 2 days, 5 hours, and you can go look up what this interval language is, And so this basically
+a common thing that we want do is like, what was two days ago, right? So this is NOW, and this is NOW minus two days, so you say it was June
+tenth and it was June eighth, right? And you can also just
+cast this to a date. So this is the date
+right up here. This right here, NOW - INTERVAL
+2 days :: date is casting two days
+ago into a date, i.e., throwing away the time part. So we can do various date
+interval arithmetic. There's also a function
+that's built in that allows us to
+it's called truncating. It's allowing us to
+throw away some of the accuracy that's
+in a time stamp, like just chop it
+off at some level. So I want to chop
+this off at the day, I went chop it off at the hour, at the minute, etc. And so this is a simple thing, it's is a little bit of
+a complex bit of code, where we're trying to find
+comments that were done today. And so what we're saying
+is created_at is greater than or equal to day, which is, if you take the current moment and you truncate it
+down to only be a day, and if today is greater
+than or equal June 10th, and created is less
+than or equal to day NOW plus one day, but truncated down
+to be only a day, that would be, this little bit
+here would be June 11th. Okay? So how did I find this? I think I went to Stack
+Overflow and I said, how to find things
+that happened today with a created_at or
+something like that. So don't feel bad about going to Stack Overflow on this stuff, I'm mostly giving you entry
+points into Stack Overflow. Now, this is a topic that will be coming up a lot in this
+class and in the next class, and that is that not all queries that return the same results
+have the same performance. And it has to do with the fact that sometimes the way
+you express a query, the way it has to do is
+retrieve a lot of rows from the database and then look at every single one of those rows. That's the slow way to do it, and we call those
+things table scans. And so when we start looking
+at the performance, we can say, "Hey, take
+a look at this query, how is it going to perform?" And then they'll say, "That
+thing you did right there is going to cause a full table scan," which means oh crap, we've got to read all the data
+and use an if statement, like a loop in an if statement,
+to read all the records. That's the slowest way to do it. And the problem with databases are they're big and the data is spread
+spread all over, so reading all the
+records is often has some consequence in
+terms of performance. And so the question is, is there a way to make
+it so that I give it a WHERE clause so that it's not reading all the records. A WHERE clause where you don't read all records is where you have like a unique index
+on a string field, and you say WHERE email
+equals csev@umich.edu. There could easily be millions
+and millions of records, but there's an index
+that lets it go straight to csev@umich.edu. So that's what I mean by, that's not a full table scan, that's like a 1-2 I/Os even
+for millions of records, okay? And so I'm just bringing
+this up now because this particular way
+of doing business, or this particular
+way of selecting the comments that happened today, you could say, let's
+take today and truncate it down to today's date, that's converting it to a date. The date of creation is
+equal to the date of NOW. Now I can't really explain
+to you at this point, and this could be a fun Stack Overflow thing
+for you to look up, why this is a slow query, and this is a fast query. I'll just say that at some point, there's like something inside the data that it
+can take advantage of with DATE_TRUNC
+that it can't take advantage when you're
+doing the casting. So it doesn't mean it
+couldn't in Postgres 14 learn to make this fast, right?
+That's the thing. Just because there's no rules, there's just the fact
+that this version of this query is slower than
+this version of the query, and we'll talk about that more. This particular one, you
+don't get to control much, you kind of just see that, if you were to do the
+explaining on this one, you would see all that
+causes a full table scan, and this one does not cause
+a full table scan. So I'm bringing that
+up because this will be sort of a running theme as we talk about some of
+the queries and say, yeah, this technique is better
+than this technique because one technique causes
+a full table scan and the other technique does not. So up next, we're going to talk about DISTINCT and
+GROUP BY where we're doing something with
+duplicate values in the columns vertically.

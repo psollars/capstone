@@ -1,0 +1,224 @@
+We're not going to discuss the details of how
+to train the HMM. But we will introduced
+the three major problems of this model. Where the first problem is
+known as the decoding problem. And the goal is to find
+the most likely sequence of states given any input. The second problem is
+called evaluation. The goal is to find the probability of
+any given sequence. And the third one is known
+as training or learning. The goal of which is to estimate the model parameters or
+to learn the HMM model. So you can see that there
+are three problem of HMM. Let's look at the
+first one first. The first one is decoding. Basically, given the
+observation sequence. For instance, the
+sequence of words. You want to find the most
+likely sequence of states. Remember that the
+states are hidden, so you need to find them out. You need to make the inference. In other words, if I know the word sequence or
+the item sequence or the output
+sequence, O_1 to O_n. We know all the model
+parameters of this HMM model. Then the goal is to find the
+most likely queue sequence, or the most likely
+assignments of words into named entities or the most
+likely boundaries of genes. You know, DNA sequence.
+How can we do that? We basically use the algorithm called the Viterbi algorithm, which I'm not going to
+discuss in details here. But just remember that decoding a sequence using HMM has
+lots of applications. And in particular, in
+sequence labeling tasks. Where the goal is to
+label a sequence. Basically label every element, every item of the sequence into one or more states that
+you're interested in. For example, named entity
+extraction or gene discovery. Both of them are
+sequence labeling tasks. You may have other
+sequence labeling tasks, such as if you observed the behavior
+sequence of your users, you want to determine
+whether they are in the mood of making
+a purchase or not. That's the sequence
+labeling problem. If you have students have their activity
+sequences in a MOOC, and then you want to
+determine whether they are experiencing
+fatigue or not. Then that's a sequence
+labeling problems. The second question,
+the second problem is evaluation and the goal is to find the probability
+of a given sequence. And here what we know is still
+the observation sequence. That is O_1 to O_n. So this is quite similar to finding the priorities
+of any given angle. Or any new sequence. Also, we know the priorities, we know the parameters
+of the HMM model. Then the goal is how to
+find the probability of the observations given
+the model parameters. Okay. You can see that, because we're finding
+the priorities of any given sequence. Then we can use it as before for sequence
+prediction tasks. We can also use it for
+sequence generation tasks. And in fact, before the invention of
+deep-learning models. HMM has been widely used for sequence prediction
+and sequence generation. For example, if you are running the search
+engine and you have been observing the user behaviors like the colors they typed in
+and the UIOs they go to, or the click-through data, then you're commonly making a prediction of what
+the next query will be. And sometimes you're also making predictions of the
+next hidden state. Basically whether
+the next query is about a car or is
+about something else. And in fact, machine
+translation can also be interpreted as the
+sequence generation problem. So given a sequence
+that is in English, you are generating a new
+sequence in Chinese. And basically, you're also
+evaluating how likely that a sequence of Chinese
+words should be generated. Given the English and
+the Hidden Markov Model. Of course, nowadays, all the machine translation where not based on Hidden Markov model, they're all based on
+deep learning models. So the third problem of
+HMM is known as Training. And this time we do not
+know the model parameters. We may know the
+structure of a chain. How many hidden states there are, but we don't know the
+initial probabilities, the transition probabilities, or the output probabilities. What we do know other data. We have observed many sequences. Some of them may be
+just the observations, the output sequences or words, but some of them may have labels. In other words, sometimes we
+know both O and Q, right? For instance, we asked scientists
+to help us label that, okay, for these DNA sequences, this part is a gene, the other part is another gene. But they can't label everything. Similarly for synthesis, we
+ask [inaudible] just to help us identify persons or locations. Or other entities from
+a set of sequences. But they cannot label
+all the sequences. So in many cases, we have
+either labeled sequences, both O and Q or we
+just have the outputs. The goal, is of course to find the model parameters, Lambda. Which is essentially the
+three sets of probabilities. There are two ways to find that. One way is to make use of
+the labeled synthesis. In this case, we want to find
+parameters that maximizes the conditional
+probability of the data and the states given
+the parameter. This is known as
+supervised learning because we're looking
+at labeled data. If we don't have
+labeled sequences, if we only have the
+output sequence O, we can still estimate
+the model parameters, and this time by finding
+the parameters that maximizes the likelihood of the output sequence,
+given parameter. You can see both of
+them are trying to maximize the likelihood,
+the data likelihood. That is the probability of
+the observed sequences. The matter whether they are just the output sequence or both the output sequence
+and the state sequence. We want to maximize the likelihood of that
+given the model parameters. There are many applications
+as well, but in general, what they do is to label
+some sequences first, to construct this Markov
+model, this network diagram. Once we have learned
+the parameters, we can use that for
+decoding or for evaluation. Although, we're just introducing HMM at the surface level, you should understand that it has been a very powerful
+and popular model. There are many
+applications of HMMs. In natural language processing, people use that for
+part of speech tagging, for entity/relation extraction,
+for machine translation, that's all for sequence
+labeled problems. In bioinformatics,
+people use that for gene detection that
+we have introduced, for sequence alignments,
+for structure predictions, motif discoveries,
+so on and so forth. They are much more powerful than the techniques we learned. What is that? The [inaudible] , HMMs are much more
+powerful than that. In speech recognition,
+signal processing, or time series analysis. You can also find
+applications of HMMs. Essentially, once your
+data has a sequence, can be composed as the
+sequence of innovations. If the Markov assumption holds. If there are hidden states
+that you're interested in, you can use HMM. In behavioral
+analysis, in finance, sports, business, transportations,
+or human education. If you are observing a
+sequence of user behaviors and you're interested in some hidden states of the sequences, you can apply HMM. I have to tell you that, although HMM has
+been very powerful, especially 10 years
+ago, nowadays, they are more oftenly replaced
+by deep-learning models, especially recurrent
+neural networks. Although, this is the case, HMMs are still widely used as reliable based states and building blocks for more
+complex techniques. For instance, they are
+very recent work that have been combining HMMs into
+deep learning models, and the results are actually better than just applying
+deep learning models. This is just foreshadowing of what you will learn in
+a deep learning class. Well, you may ask, I have
+introduced so many models, HMMs, Markov chain,
+Unigram Language Models. Even with Markov chain, always Hidden Markov Models, there are many variations. You can have three
+states, five states. You can add the input state, add a start state and end state, and you can do many other things. The question is, which
+model is better? Which one should I use? Of course, your theory, Hidden Markov Models are more
+powerful than Markov chain, and Markov chain is more powerful than the
+Unigram Language Model. But how do you select between
+the same type of models, but with different model
+structure and parameters? Well, the answer is usually
+using data likelihood, like the evaluation problem
+we have introduced for HMM. The assumption is that if a model, we're here in the model, inclusive structure and these parameters, if
+a model is better, then the observation, the likelihood of observing the sequence using this
+model should be larger. In other words, the
+conditional probability of the data of the sequences given the model should be larger. You can make use of this
+fact to select the models. There are many related concepts
+of this data likelihood, for instance,
+perplexity and entropy. You can find some of them from the textbook and
+they're all related to calculating the
+data likelihood of the observed sequences given the model structure
+and parameters. But to be careful
+that in reality, when you are selecting model, you want to use holdout
+validation data. Instead of the
+training data itself, because the training data is used for you to find
+the parameters, and it's a really applying the maximum likelihood estimator. To evaluate which model
+is essentially better, we normally want to test that on something
+where we haven't seen, that model haven't seen, or holdout validation data. Because we're usually interested in making predictions using
+this sequential models. You can also evaluate
+the goodness of a model using how good
+the predictions are. You use the model to make predictions about
+future of divisions of future states and then you compare that with what
+you actually observed. Note that this is saying
+that you're also doing this, an out-of-sample,
+unseen testing data. Then you can evaluate the models using precisions
+or recall or F1 or cross-entropy or any
+other metrics that people use to measure the goodness of classification
+and predictions, and you run the many
+of these metrics when you're learning machinery. With that said, this give you a quick summary
+of sequence modeling. As we can see that, we have introduced so many interesting models
+of signals data, and this is the first time that we're introducing data modeling. Previously in Data Mining 1, we pretty much focused on
+patterns and similarities. Basically, you always come up with a lot of sequences
+that you observed. If you don't have any real data, then you don't need to
+actually model them. So suppose you have access
+to lots of sequences, either labeled or unlabeled. You want to select a model from a serial families
+of models, for instance, n-gram managed models,
+or Markov models, or Hidden Markov models. You select a model, and then you design
+the structure, for instance, the
+number of states. Then you want to estimate the parameters of this
+model based on the data. This is how you combine
+the model with the data. You'll learn the probabilities, the initial probabilities,
+transition probabilities, or the output probabilities
+if you're using HMM from the data you observed. That's how you figure out what the white dice is and
+the blue dices are. This is known as
+the learning step. You have data, the
+designer model, and you learn the
+model parameters. Then you will be able to select a good model judged
+by data likelihood, and you know all
+these probabilities, then you apply this model
+and data you haven't seen, a data you haven't labeled. You do sequence labeling. For instance, using
+Hidden Markov model to figure out about
+the hidden states are. You do sequence
+prediction to predict what the next word should be when you're writing the email. What the next query will be, what the next user
+behavior will be. You'll generate new sequences. For instance, you
+generate poetry, you do machine translation, and you ask the machine to write sentences before you write
+your generating a sequence. Then you do sequence alignments, especially when you
+have, lets say, the protein sequence
+of different viruses, you do sequence alignments, or using sequence models. These leads to many interesting applications
+of sequence data. This would conclude our
+introduction about sequence data. As you can see that
+introduction of sequence data actually spend a lot of
+our two courses even, Data Mining 1 and Data Mining 2. In Data Mining 1, we only talk
+about data representation, finding patterns like
+n-grams and similarities. In Data Mining 2, we move
+towards modeling and data, and making predictions.
+Why do we do that? Because sequence data
+are naturally in order, so we are always interested
+in predicting the future. Using what we have observed to predict what we
+have not observed. You should know that
+signals modeling provides the solution to
+sequence prediction, as well as many other
+sequence mining tasks. We have introduced
+the family of models. Using this models, we can compute the parity of any given sequence. That is also why you
+can use this to make predictions and also to
+generate new sequences. We use the Markov assumption to simplify the dependency
+of long sequences. Remember that the genre
+is always correct, but it's very hard to use in
+reality because you have to find out as a dependence
+of the current word, are all these previous words,
+that's almost impossible. By using Markov assumption, you assume that one word only depends on
+the previous word, or two words, or a certain number for it if used trigram language
+model in such. Hidden Markov model assumes that the current state only depends
+on the previous state. Markov assumption really helps us to simplify that dependency. So these are the basic ideas behind n-gram language models, Markov chain, and
+Hidden Markov models. They have been applied
+to many applications. Especially Hidden Markov model, which is one of the
+most powerful models once you know history
+of AI and Data Science. But nowadays, they are pretty much replaced by
+deep-learning models, but they're still very
+useful in many tasks, especially in sequence
+generation tasks. I hope you enjoyed sequence modeling and
+sequence prediction. Starting from next week, we will introduce another type of data representation,
+time-series data.

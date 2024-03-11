@@ -1,0 +1,23 @@
+Hi, I'm back with an introduction for you for the guest speaker
+we're going to hear from next. We're going to talk to JM Porup, a journalist who's covered issues
+related to data science since 2002. He's a decorated journalist and
+has an impressive resume that we're happy he's able to bring to us and
+share his perspectives with you. Now, he's freelance cyber security
+reporter covering national security issues but also issues related
+to technology in general. His work has appeared in many
+venues that you've read, I'm sure. He's published in motherboard,
+ARS Technica, Vice, The Economist. He's also the author of
+award-winning novels and plays. So he's all around,
+a very interesting individual. My understanding is that he started
+his work as a journalist and then became more, and
+was also interested in and trained in technology and
+he worked in software development. He then moved a little bit
+toward the technical side, receiving his master's degree from
+UC Berkeley and Cybersecurity. He then kind of moved from being
+a computer security expert and a computer expert to a journalist,
+and then to kind of an important voice in helping the world understand
+the impact of technology. We're going to talk
+specifically about one article. We're going to start by talking about one
+article that he wrote, that's relevant to this class, about the Skynet algorithm and
+that you've had in your assigned reading. So without further ado,
+let's hear from JM.

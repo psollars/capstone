@@ -1,0 +1,172 @@
+Welcome back to our lectures
+about data models. I want to introduce you
+to a couple of concepts. One which we've talked
+about a little bit before. In another lecture,
+expressiveness and another concept called
+effectiveness These are going to be two terms
+that are going to be used often in the way we will make decisions about whether
+a visualization is good or not and how we'll evaluate
+those visualizations. So expressiveness
+and effectiveness are going to drive
+a lot of what we do. They're going to be
+the thing that help us understand whether we've made
+the right set of choices. So given the data and the tasks, that is what we have at
+the abstraction layer and the choice of representation,
+which is a technique. They're going to help
+us answer whether that connection is a good one. So expressiveness
+and effectiveness are going to be the
+things that we will use to measure
+whether something is good or not at this boundary. So what does this
+particular idea means. So again, we're going
+to come back to our dataset where we
+have names and scores. We have a set of things
+that we want to express. So this is the notion
+of expressiveness. So that A is one, B is five, C is two. That A is five times larger than, sorry B is five times larger than A and C is two times
+larger than A. This is express. The set of insights are expressed in this
+particular visualization. That is all these facts can be understood from
+this visualization. So we've made a decision about which facts we would
+like to express and made sure that the visualization
+actually supports that understanding in
+the mind of the viewer. We could've have picked
+a different set of encodings. So this one is a
+representation of this data through circles and
+a particular shade of red that is telling
+us the values. So we're going to use
+this white for A, this pinkish color for C, and this red color for B. Now from this, we're not expressing what
+it is that we want. So we have a set of insights
+that A is one, C is two, and B is five, but you actually
+can't read that from this particular visualization
+because we have no legend. We have no indication. So this particular
+visualization does not express what it is that we want. So this does not express
+the set of facts. So this is going to be important. If we added the legend, it might express it but in
+its current instantiation those sets of facts cannot be inferred from this visualization. The criteria that
+we're going to have is again these two full criteria,
+the expressiveness. A set of facts is expressible in a visualization if
+the visualization expresses those facts and only
+those facts. That's ideal. Effectiveness, it's going
+to be this other question. How is it that people are going to be able to read from
+the visualization. Are they going to
+be able to read it accurately or inaccurately? These are going to be
+two separate criteria. We focused mostly
+on expressiveness. I want to lead in a little bit
+into effectiveness. So this is our task again. Given the data and tests we're going to try and understand whether our choices are
+effective and expressive. So let me give you
+a few other examples just from real visualization,
+so you can see this. This is a visualization
+of cars from 1979. You have mileage
+per gallon mpg on the X-axis and you have
+price on the Y-axis. So mpg over here on the x, price over here on the y. You have these little
+plus marks which represents a particular cars. What this visualization
+expresses is the relationship between
+mileage and price. So you can basically
+see that there is this kind of correlation. You can see this kind
+of correlation that basically says the cheaper
+the car for whatever reason. Mileage per gallon
+goes up probably. The car is smaller and lighter, so you get better at
+miles per gallon. We can make all kinds
+of hypothesis about why this is true. But what this does not express is the relationship
+between specific cars. That is there might be
+specific cars that I care about, like a Ford and Toyota and it's not possible to read
+this visualization and figure out how much different
+the Ford is from the Toyota because I can't find those
+things in this visualization. So that is a set
+of things that is not expressed in
+this visualization. Now, if I added the labels, now I can answer both questions. It expresses the
+relationship between miles per gallon and price. So we still see
+this relationship, but we can also identify
+the cars that we care about. So if we want to
+compare this BMW over here to this Accord down here, we can find those points
+and make that comparison. So we can say
+how many more miles per gallon does this car
+get against this car? How much more expensive is this car relative
+to this other car? So that is something
+that is expressed. Now, again this might over express if we don't care
+about specific cars. So if all we cared about in the visualization was to
+make sure that the person should be able to
+understand that there is this correlation between
+miles per gallon and price, this data that has these extra labels is
+now full of clutter. It makes the task of seeing the correlation a bit harder because we have all this
+clutter on the screen. So this is over expressing if we don't
+care about specific cars. Let's encode this data
+in yet another way. This is a bunch of bar charts
+corresponding to the car. So it's the same data
+that we have over here. It's represented as
+two different bar charts. So we have our accord sitting
+at the top over here. We have the length of this bar telling us how much miles
+per gallon it was getting in 1979 and this bar over here telling us what
+the price was for 1979. So if this bar and this bar. The same data that
+is expressed over here is also expressed over here. Now, this particular dataset is not effective for the task
+of seeing the correlation. So if we had this correlation
+that we cared about, this one over here, you can't see
+this correlation anymore. That's gone. That's broken in this particular kind
+of encoding. The same data is expressed
+but this dataset is not effective for the task that we have which is seeing
+the correlation. So again our dataset, we are going to think about
+the set of rules that we're going to have in
+order to encode the data. This will help us
+understand whether something is expressive
+and ineffective. So the sender that
+is the person who's taking the data
+and encoding it is going to use a set
+of rules in order to transform the data. We're
+going to take the data. We're going to use
+a set of rules. Our rules are going to be this. We're going to draw a bar
+for every person and the bar height should be
+one inch for every point. So bar A representing person
+A should be one inch. Person B should be five inches. Person C should be two inches. That is going to be the rule
+that we are going to have to represent
+this on the screen. Why is encoding rule-based? It's rule-based because
+we have a viewer. The viewer is going to need to decode this using
+the same set of rules. So given what the reader understands about the rules
+that we're used to encode, they can decode the data
+and make this inference. So they can basically go back and reconstruct the dataset
+using the same set of rules. Now, of course, just
+seeing this figure, I can ask you is there
+enough information to decode and the answer
+is actually no. The answer is no because
+if thrown away the labels. So I'm missing a rule in this visualization that would actually
+allow me to do this. So I need to add a rule
+that says put the label, C is a little bit offset, but C down here. That's going to tell us which bar corresponds to
+which thing, sorry, which bar corresponds to which person and the axes
+is going to tell us how tall something is and what the value is
+in terms of score. So now we have
+enough information for the reader to be able to
+decode this visualization, but that of course depends on their ability to
+understand bar charts. So we have this
+assumption underlying all of this that someone actually knows how
+to read bar charts. So when I have
+encoded this data in a bar chart with these axis
+and these labels, we're making the guess
+that the person has actually able to read that, which is usually
+true, but not always. So let's take a different text. So we're going to
+have this encoding. We're going to now have
+a different set of encodings. So now we're going
+to have a rule that says draw a circle
+for every person, set one to y, five to red and interpolate
+everything in between. So this is our visualization
+that we showed before. But now we have
+the legend at the bottom, which actually makes this usable. So this is a different
+encoding of this data, a different set of
+rules which again we can ask is the person
+able to look at this visualization
+and decode back the table that was
+used to create it? Here's the final one. This is a set of rules that's based on stars and so the size of these things
+correspond to the values. We have again as star
+for A, a star for B, and a start for C and we
+have a legend at the bottom, which allows us to determine the size correspondence
+to the actual value. Now, we have these choices and what we're going to
+try and figure out is which is better and this is
+99 percent of our work is figuring out whether
+our visualization was the right thing, whether we made
+the right set of choices. So all these things are
+equally expressive. Our goal in
+the next little bit is going to be figuring out
+which is the most effective. Again, our takeaways are
+to find good encoding. To measure how good an encoding is we're going to use
+expressiveness and effectiveness and we're going
+to talk a lot more about effectiveness in future lectures. Expressiveness is the fact
+that can be decoded. Effectiveness is how
+well we can decode them. So that is a subtle difference
+that we're going to try and disentangle in
+a separate lecture. With that, thank
+you for listening.

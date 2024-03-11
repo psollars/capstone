@@ -1,0 +1,169 @@
+So welcome back from watching
+my three Google videos. I hope that you found them interesting and
+they didn't take too much time. So let's talk a little bit about the
+conclusions that I took away from each of these videos. So if we look at
+the Marissa Mayer video, the conclusion that I took away
+was first off Google search, we kind of ascribe Google search to being
+an "intelligent" life form, as it were. And if Google search
+takes a tenth of a second, versus a thousandth of a second,
+we have no difference in our perception. And so the fact that in early 2000s
+it probably took a quarter of a second or half a second, it's faster now. But if it took a half a second to bring
+back what seemingly were intelligent results, that was good enough. And so this is another sort of, that's
+not so much eventual consistency but more just distributed computing. And the idea of the scatter and
+then the gather, that is a costly way of solving a problem. But if it's the only
+way to solve a problem, and the problem is tolerant of a quarter
+of a second latency, we're great. So that was the first thing, and that is
+that it's not always about how fast. The second thing is if even though
+that's a quarter of a second, it's not like those resources were all
+busy for that quarter of a second. So it might take a quarter of a second to
+go through that network of systems and then come back to you. At the same time, it's only 1,000th or
+a 100,000th of a resources and there could be several thousand transactions
+that are in flight being scattered and gathered at the same time. And so it wasn't like it
+takes a quarter of a second and this computer is busy
+the whole quarter of a second. It was just kind of [NOISE] the stuff is
+just going like a giant hurricane flowing through. There's controller things. They send them out. They bring them all back. And so it's not like the quarter
+of second is a slow problem. It's the gathering and the scattering. But each operation was really,
+really, really tiny, and it wouldn't surprise me if there was
+relational databases sitting off and on all those servers for
+some of the aspects. Whether it's the crawling or the indexing
+or the searching, there could be places for little tiny isolated relational
+databases in that entire architecture. And, of course, as the web got bigger or
+as Google's copy of the web got bigger, you, instead of sending it to 200 servers,
+you send it to 300 servers. And whatever, you just shard
+the entire web over 300 servers. And if your search volume got too high,
+you make more sets of 300 servers, or you just make it 600 servers. And so what was really cool
+was the scalability of this, that it could stay consistently
+a quarter of a second no matter how much we started using it, right? And then the container tour. Again, I just figured
+there would be racks and there would be fancy equipment,
+but there's not. And part of this is a sense of waste. Why package all that? Here's the thing where it's just kind of on
+a piece of stuff, you plug some things in, because it's really just a computer and a
+couple of disk drives and a power supply. And they even have on-board
+really tiny batteries so that that if there was some kind of a power
+glitch these things keep on going. They don't even have a big, they might
+have a big power glitch thing for cooling and stuff if they've got to run
+their cooling on diesel or whatever it is. But in general,
+each one of these little little boxes, they can probably tolerate
+a two-minute outage, right? And then routers have their own batteries. And so it's these tough little
+independent things. There's nothing fancy about them,
+there's no wasted packaging. There's no beautiful colored
+plastic or lights. If there's lights, there's just lights. There's not like lights with a cool. So there was an eye to not wasting energy. And if you watched the whole thing, there's a lot more about
+energy management in this. There's an eye to these
+computers are just disposable. I mean, some of them get old, although
+they use them, they think a lot, if you read other things about this, they
+think about the lifecycles of how you can take older computers and use them
+for different tasks etc., etc., etc. And so I found this really exciting. And the other thing is,
+as you look at this, now start thinking about
+the Gmail application. And if you look at this guy's shirt,
+I think he was part of the Gmail rollout. And Marissa Mayer, by the way,
+was the UI expert on Gmail. So I think that's her biggest claim
+to fame inside of Google is her work on Gmail. And so in Gmail, you've got
+these little boxes, right? And you can imagine, I mean, when's
+the last time you lost data on Gmail? They have somewhere between seven and ten copies of your mail distributed within
+a rack, distributed within a container, across containers, and
+that's one data center. Distributed across data centers, and distributed geographically
+around the world. And so part of the way
+Google backs up your data, is they don't have a data backup. They just replicate it, right? They replicate your Gmail seven to ten
+places and eventually that's enough. And so you can lose a whole data center
+and you shouldn't lose Gmail, right? You can lose a whole container and you should not
+lose your Gmail, right? And so that's the other thing
+is the replication. And if you look at the architecture
+of these data centers, disk drives were cheap. They tended to do the high-performance
+things on only one part of the disk drive to keep the heads
+from moving back and forth. But then the backup copies of your email
+could be on the rest of the disk drive. And you can read up on this as well. They would only use the first ten percent
+for critical stuff that needed to be performant, and then they would use the
+rest of the disk to back up other disks. And so it's just like a beautiful thing. And eventual consistency
+is the essence of it all. So you update your data in your email, and
+there's like nine other copies of it and you delete a message and
+then those eight copies are out of date. But four or five seconds later,
+all eight copies have the exact thing, or in comes a message and
+it's the one you're talking to. You see the message immediately and a couple seconds later then
+all the copies have it. So if that copy went down, you might
+like lose one email message, right? And so it's just amazing the simplicity of
+the unit of computation that Google did. And now we have Matt Cutts and what I
+liked about Matt Cutts is how something that if you didn't know how it was done, like how to compute page rank
+across billions of web pages. You're like, oh, wait a second,
+you just distribute it. And at night when all the people
+in America are maybe asleep and not doing searches, you've got all those
+CPUs and you just run through and recompute the page rank. The PageRank algorithm is designed
+to be a distributed algorithm, it's designed to converge. New pages show up and they kind
+of disturb the force for a while, and then they recompute it, and
+how that page ranking is done. And after a while you realize,
+well, if you're smart enough, something as complex as Google search is
+somewhat simple and beautiful and elegant. And so this is sort of
+the transition from a company that bases its whole life blood
+on not relational databases. Or, if it's using relational databases, it's using a lot of little ones rather
+than one large relational database. Now the other factor in sort
+of this move to NoSQL and the move to distribute it and the
+move to eventual consistency was Amazon. And at the same time as Google was sort of
+being formed, Amazon was a book company. But of course, what they figured out was
+is they had to build server farms so that they could support their books. And they built things like DynamoDB so that their ordering system
+would be fast and run at scale. So they just built a really
+cool distributed database so that their ordering system would scale. But then they realized, oh, wow,
+that's a pretty cool distributed database. But the thing that Amazon did
+that probably changed the world the most is Amazon Web Services. So you think about the state
+of technology when everybody wanted to use
+cheap hardware and Amazon wanted to add virtualization
+on top of that hardware. And so you didn't want to buy
+a bunch of $40,000 computers and do virtualization there, which is what we
+were doing kind of in the private sector. What they wanted to do is do
+virtualization on commodity hardware, which is dirt cheap, right? But the problem then is how
+can Amazon give you a ten-CPU box because if they bought that ten-CPU
+box, people could lease it, let it go, lease it, let it go,
+lease it, let it go. And they're stuck with
+a $40,000 capital cost, right? And so it turned out in the early
+days disks were much larger than their performance, meaning they stored a lot of data, but
+you couldn't get it at it very fast. And in terms of virtualization,
+you had CPUs that were very quick, but the thing that was
+expensive was the memory. And so if you had like an
+eight-gig computer back then and you were going to break it into a couple
+of two-gig computers and virtualization, that was really quite costly. And so what they really wanted, the thing
+that was cheap was smaller computers. The CPUs were cheap,
+the volume of disk cheap, speed of disk was expensive, and
+the memory was expensive. So your move toward you
+get lots of slow disks, not very much memory, and
+CPU is basically free. Volume of disk is free,
+CPU speed is free, memory is expensive, disk transfer is expensive.
+And that's what you could buy. And so you think, well, that's what
+I can buy, and if I ask for anything else from Amazon,
+they're going to charge me hardcore. They're going to supercharge me, right? So we started thinking as application
+developers, we're either going to buy these $40,000 boxes that go obsolete every two years,
+and another 40,000 or 100,000 or 250,000. These could be very expensive boxes. Could we just rent for 10 bucks a month
+10 of those for 100 bucks a month and it's way less expensive, but we've got to
+completely re-architect our application because we can't use
+large amounts of memory. And we can't expect that our disks
+are fast, but we can have a lot of disks. Now if we can figure out a way to
+build our application to fit in that particular mold, then it's awesome. So these are what we call
+carpet clusters, right? And so this is sort of a
+visual metaphor for what Google looked like,
+what Amazon looked like. And the key is it's buying commodity
+hardware that is written at scale for all of us to have a desktop computer and
+then that desktop computer drives, the price of that hardware
+is driven way down. So you just buy a bunch of these things. And so the extent to which that you can
+use a network plus a bunch of commodity computers to make what we
+called a carpet cluster, if you could build an application that could
+work in that environment, it was gold. And so how do you use
+carpet clusters, right? Well, you spread your data out,
+replicate it, send queries broadly, bring it back across the network. Like MapReduce is another word for this. And it might take a little while, but
+you can have a whole bunch of them simultaneously in flight because it's
+not the CPU while you're in a system. It's the moving the data into the system
+and getting the data back out. And that can be done
+many ways in parallel. So you could create sort of like these
+database creatures with 128 computers and 128 disk drives and
+you could send them queries. And there was databases like Teradata, for
+example, that created that architecture and then put it all behind a black box and let you just send inquiries to it and
+they go [SOUND], send them out and in. Yeah, and you could just make
+it be a sharded database. I don't even know what Teradata was. But I wouldn't be surprised if it was just
+a bunch of little clusters with a bunch of just little tiny SQLites inside
+of them because SQLite is so super scorchingly fast and reads to disk
+really fast, makes good use of memory. But it's not good at multi-reader and
+multi-writer, so you want most of this layer outside of it that makes it look
+like it's multi-reader/multi-writer but really it's sharding. You're sharding
+the queries across all these systems. I never built one of these things. I was more into compute at that
+point than I was into database. But just imagine how much fun
+it would be to build a carpet cluster database system today. And so now we'll talk about second
+generation cloud applications. And the key to the first
+generation was data was in silos. You could have lots of silos, which meant
+just plain sharding and sending your data back and not having your data talk
+to other people's data was good enough. And so in the second generation
+of cloud systems, we can't depend on that simplicity. We can't simplify that much. And so that's what we'll talk about next. [MUSIC]

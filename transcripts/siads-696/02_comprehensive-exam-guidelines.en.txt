@@ -1,0 +1,111 @@
+Hi, we've made this short video
+to explain some of the main points regarding the comprehensive
+exam component of Milestone II. So if you haven't already,
+I highly encourage you to read the Comprehensive Exam guidelines document
+that's linked from the course shell. In the about Milestone II
+Comprehensive Exam in quiz section, you'll see this reading. The reading takes you to a link,
+to a document which is the official document for the course that
+explains all of the policies. The process and so forth for
+the Comprehensive Written Exam and the document looks something like this. Again, please read this carefully. It contains very important
+information that's critical to the process of successfully
+completing the exam. Perhaps most importantly, it also contains
+the written exam questions at the end. We'll talk about that in a minute, but
+please read this document carefully. The Milestone II Comprehensive Exam
+gives you an opportunity to sub synthesize the data analytic
+skills you've learned so far. And all the different records of courses
+that have led you to Milestone II. You've covered a lot of ground,
+you've learned a lot of techniques and Milestone II is an opportunity to
+synthesize those to kind of look to see what are the common ideas
+across courses that recur. How those apply to specific
+data science problems. And so the Comprehensive Exam part of Milestone II is designed both for
+depth and breath. So the synthesis questions which
+we ask you to respond to with written answers are an opportunity
+to kind of explore specific topics. But doing so in a way that synthesizes
+your knowledge across courses. So there'll be some theme where you
+draw on multiple examples from, let's say deep learning,
+supervised learning, data mining in order to
+answer a particular question. And then there's also a breadth
+component to the Comprehensive Exam, in that there's a set of quizzes which
+are low stakes they're unproctored. They're short multiple-choice,
+there's no coding required, but the idea of the comprehensive
+quizzes to give some breath. So there's a broader set of questions
+that touch on a variety of critical topics from the prerequisite courses,
+especially the immediate prerequisites like supervised learning,
+causal inference and so forth. In order to draw up the exam questions,
+we work closely with instructors from these other courses from the key
+prerequisites to Milestone II in creating these synthesis questions and
+the quiz questions. So the idea is that at
+the start of the course, you'll be given a list of all the possible
+exam questions that we might ask. So you'll have plenty of time
+to look at the questions, think about them,
+start preparing answers to them. And the complete set of
+questions are at the end of the Comprehensive Exam
+guidelines document. And then somewhere around Week 3, you can
+look at Coursera for the specific dates. You'll be told which two questions
+from this set you'll need to answer, and you'll be given a deadline with
+a specific limited time window to submit your answer to those two questions. So you don't have to submit answers
+to all the questions [LAUGH] that are in the guidelines document, you'll be told which to specifically
+you'll need to answer out of that set. So the idea would be that you spend
+some time in advance preparing answers to questions. And then by the time you're told which two
+you're going to be submitting answers to, you might take a little bit of extra time
+to refine answers to those questions. But in general, you should have
+plenty of time to study and think about the topics that are covered. So here's an example question
+that was used in the past. You can see that it asks you
+about the design of a system, a machine learning pipeline
+that achieves stated goals. So it sort of tries to synthesize
+your knowledge of data mining, how to track a set of popular topics and how that progresses over time. Touches on machine learning
+methods about how to model topics. They ask you to think about
+tradeoffs between performance and accuracy and so forth. So this is the kind of question. So the idea is that you would
+structure your answer in a way systematically that addresses the
+questions that are posed in the document. And you do so in a logical way where you, you draw on examples from
+techniques you've learned about. You develop a logical
+description of the answer, you justify your choice of methods. You talk about trade offs and
+you point to evidence for why these trade offs exist and so forth. The answers you get to these
+questions are graded according to a well defined rubric,
+which is available to you through a link in the comprehensive
+exam guidelines document. And we basically look for
+two dimensions to your answer. One of them is the content itself. Do you cover substantial related relevant information in your answer? Do you cover the questions
+that were asked thoroughly? Do you show that you have some
+insight into the problem? And so a great answer, content wise would
+be one where you kind of draw an abundance of material that's clearly related to
+the questions that are being asked. You're answering the points, you're making
+clear points to answer the questions. You're giving supporting evidence if
+necessary, you're justifying your choice of methods or approaches across
+a variety of approaches or materials. So poor answer content wise would
+be one where you give potentially a great deal of information, but it's
+not clearly connected to the question. Or it's not stated clearly as an answer
+where you're not supporting or justifying your choices, you're not
+stating your assumptions and so forth. And then the second dimension is on the
+coherence and organization of the writing. Great answer would be,
+are you clearly stating and developing your answers systematically and
+logically? Are you choosing specific
+examples that are appropriate? Is there a clear conclusion? Does it flow well? And in general,
+just is it well organized and logical? And poor answers in this category,
+this dimension would be, answers that are choppy,
+that where one point does not logically follow from the others,
+where the answers are vague. There's no logical order presentation. So these are the two main
+dimensions of evaluation. And then for the quiz,
+it's a low stakes quiz. There's no proctoring. As I said, there's no coding involved. These are just short multiple
+choice questions based on the same prerequisite courses you've had. For these, there is a time limit although
+it's a pretty generous one and there's a limited number of retry attempts so you
+don't get an infinite number of retrieves. They're just a small number
+of attempts you're given but you'll have time to study for these,
+at least one re attempt if necessary. It's relatively low stakes as I said,
+it's only about 5% of the course grade and you can take
+the quiz any time in Weeks 2-4. So the quiz has been broken
+into separate modules. There are three of them currently and so
+you can take your time to do each one, you don't have to do all
+the questions at once. So for both the written synthesis
+questions and the quiz questions, feel free to leverage Slack or email with
+your peers over the instructional team. The instructional team won't be available
+to help you work through ideas. Please see the course Slack channel and
+the Coursera calendar for details on office hours and
+appointments that you can make. And we encourage students to form
+informal study groups at a high level, you can discuss sort of ideas and
+solutions at a high level of course. Ultimately, the answers that you
+submit have to be your own writing and that's make sure you read the policy
+in the Comprehensive Exam guideline, you have to submit your own work. It has to be your writing. You can definitely discuss at
+a high level with other folks, but ultimately it has to be your submission. So some students have found study
+groups and to be helpful for this, instructional team isn't involved in
+setting those up or coordinating them, but definitely feel free to do that
+if you feel it would be helpful.

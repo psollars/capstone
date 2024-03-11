@@ -1,0 +1,253 @@
+All right, welcome back. Two
+more categories to go through. We've done select, explore, reconfigure,
+encode, abstract and elaborate. And we have connect and filter to go. These are going to be very important ones. So we're going to spend a little
+bit more time on these. But they're very powerful techniques, very powerful interaction techniques
+used in a number of different ways. So here we go. Connect, connection is driven by
+our desire to show associations and relationships, and this can be done
+in a number of different ways. So this is actually a very
+broad category of interaction. It can go anything from,
+like, linked brushing. So, if you've ever seen cross filtering,
+this is an example where we have multiple histagrams and pieces of
+data all displayed at the same time. And as we interact with
+one of the displays, that is going to filter
+out data in the other. So the connection, drives a filtering
+mechanism, but the brushing and kind of the ability to move the filters, one
+visualization versus the other is going to give us some control over what we're
+seeing and some additional details. So here we go. So notice again that,
+once you've made the selection, you can basically drag it around and
+see other pieces of data. And as you change the selection in
+one display, the data dynamically changes in all
+the other little visualizations. There are other ways of doing connection, some of which require additional
+encoding on the screen. So this is an interesting example where
+there are multiple visualizations being displayed. So there's kind of, that heat map in
+the upper left and scatter plot and so on. The same data is appearing in
+different parts of this visualization. So different sub visualizations
+contain the same underlying, row, perhaps in the data set, just
+they're encoding them in different ways. This technique basically
+allows you to draw on top of, the visualization or
+visualizations in this case, some kind of guide that implies
+the connection, is basically indicating to you where the data point sits,
+in one visualization versus the other. So this kind of blue line that's over laid
+on top of these visualizations allows your eye to track sort of the connection
+of the piece of data or the action or whatever it is between
+the different visualizations. So this is kind of an interesting
+approach that requires, you know, some ability to draw on top of all the
+visualizations that you put on the screen. This is another example. You know the same kind of idea in
+this case, we have a scatter plot. We have text, we have the image, and we're making these different
+kinds of connections. So where are the words
+that are being encoded? On, you know, the scatter plot. Where did they come from? From the original document. And when we zoomed in,
+where did they come from? This is again, this kind of interesting
+approach of overlaying additional detail to support our ability to connect
+information on the display that is basically being encoded or represented in
+different places in these connected ways. So that's the idea of connection. You're going to see more of this,
+as I show you some more specific examples. But basically there are different
+ways of initiating connection, which is again through interactive means. The brushing, the like,
+the link to brushing. So as you move things in one display,
+it highlights them in another. So that's kind of an implicit kind of
+connection versus the more explicit connection type, which is drawing
+something on top of the screen, which is actually showing you,
+this is connected to this. So it's not implied in sort of
+the actions that you're taking its explicit in this over laid
+representation on top. Alright, last thing filter. So filtering is basically
+showing things conditionally. You might think of this, in some sense,
+as kind of the opposite of selection. It's a very related concept. In some cases, you'll see it's really hard
+to distinguish between did we mean to select, or did we mean to filter? They're really, really related,
+and you'll see this in a second. Sometimes when we select we're implying
+a filter we're saying, this is the thing. These are the things we care
+about in our selection, and these are the things we don't care about. Those things we didn't select. And that's a kind of filter. So showing things
+conditionally is a filter. NameVoyager is probably one that,
+you know you might have seen. It's a very popular site on the Internet. If you haven't played with it I encourage you to. This is,
+the interactive version is quite slick. Basically, it shows a timeline or
+stacked area chart. Showing how different names were popular
+at different time points in history. The interesting thing about this, the
+filtering mechanism here is that there is both a text box into which you
+can start typing in names. So as you start typing in like Jo,
+it filters out only names that contain. Let's start with Jo and you can see this
+color encoding whether it's appropriate or not, doesn't matter. This is pink and blue for
+boys and girls names. And this is kind of one really simple way
+of doing filtering, the other is that you're actually able to click on things
+to get the display to focus on those. You can also sort by the two
+genders in this case, this male or female or sorry, exclude. It only can, only have names
+that are either male or female. From the census data set. So here's another example. This is when we've typed the letter O. And you can see that in this example,
+O names were very popular early on, and kind of in the middle they
+were not as popular, not a lot of names that start with,
+an O. And then again, there's some rising
+popularity, but only in some names. So, like the name Olivia
+grows in popularity. But a lot of the other O names
+are sort of gone and don't exist. So again, this is a less about, it's more about the encoding in that case, but again, the filtering is
+the ability to basically select and in this case, through text,
+the kind of data that you want. So the other kind of filtering that is
+very common that you're probably familiar with is faceted browsing. And maybe you don't think of this as
+applying to information visualization, but it actually does. So filtered browsing is often on
+websites that are selling you something, so they're selling you diamonds, or
+they're are selling you travel and there are tradeoffs to be made right, so
+you can't always get, the ideal thing. That sort of satisfies
+all your constraints. But what you might want to do is be able
+to express which constraints you do have and which ones are most important to you. So sites like this basically allow you to
+select those things that you would like to include based on some categories. So in this case, it might be you
+are able to filter by price. It might be that you were able to
+filter by distance to a location. It might be that filter by brand
+of the hotel, whatever it is like, there's a bunch of different facets
+on which you can filter the data. And so many websites implement this and many visualization systems similarly have,
+this kind of idea and this actually, faceted browsing,
+emerged from this original system. Which is somewhat old, and
+I'll show a video of this in action. Basically, it allows you to find homes. You know, based on a bunch of different
+variables, as you see on the right, whether they have how many bedrooms they
+have, you'll see in a second how distant they are,
+to specific points that you care about. And so let's watch the video,
+>> And we see on it a map of the Washington DC. Area with the Potomac here and
+this is an improved version of where we were a year ago in
+terms of dynamic Home Finder. The scenario I present to you is
+that we're coming up on the new administration and you've taken a job
+with the Clinton administration. And your spouse is going to be
+working at the University of Maryland. You're looking for a home. So the first thing to do is to mark where
+you want to work here at the University of Maryland. Right about let's say there, the A marker,
+and then your spouse is going to work downtown in the Executive office building
+right about over there as the B marker. Okay, and
+now each of these points of light on the display represent a home for sale. And if I move to the right,
+I can control this display by choosing the distance that
+I want to be from point A. And now it's set at 30 miles and
+I'm going to bring it down, and you can control rapidly, incrementally, and reversably the distance that
+you wish to be from point A. So let's say you decide. You see there's plenty of them, so
+you say you want to be, let's say, five miles from work so
+that you could let's say bike to work. And now you want to be somewhere
+inside that range from B, so you slide down and
+we now can see the set and this is looks like we've got a 40 or
+50 homes over there. If I now choose about the number of
+bedrooms, I really want three or four bedrooms. So I move this double box
+slider to be three or four. I've still got about 30
+houses on the display. So why don't we look at the price now? And we want to keep the price down? Let's say about 170,000
+between 140,000 and 170,000, and that's given us
+a set of about a dozen here. We could trim a little
+further by choosing, we can choose from houses,
+townhouses or condominiums. Let's eliminate the town houses and
+condominiums, so we're selecting only houses. Yellow indicates selected fields, and
+I can see now I've got about 10 of them. If I click on any one of those points,
+if I just click here, then the bottom of the display gives me
+a description of that house in Takoma Park in newer middle class neighborhood,
+colonial brick and fireplace garage, etc. This gives you a way of
+posing a very specific query, seeing the feedback immediately, so
+this technique is called dynamic query. This kind of faceted browsing in
+the context of information visualization is dynamic queries. It is popular is useful. Most modern systems offer
+some version of this, and there's a lot of great things about it. So, basically, what it allows you to do is construct
+what is kind of a hard query to do. If you were using something like SQL,
+for example, just by moving around a bunch of range sliders or
+checking off a bunch of different boxes. So we have this again difficult
+underlying data model that requires, learning how to make these really
+sophisticated queries, like select the house address from listings or have certain price ranges that
+I'm accepting and bathrooms and garages and so on. I have to learn how to do this and
+how to do this correctly and instead, what dynamic queries offers is a mechanism
+by which you can do this visually, and as you're doing it, things automatically
+update and change in the display so that you're able to see the impact
+of your particular selections. So this is the standard database query. And again there are, so
+there are a number of positives and some issues with dynamic queries. First, as we mentioned, is that you
+don't have to learn things like SQL, and you don't have to
+understand necessarily anything about the schema that is
+represented just in the widgets. On the right of this display,
+it's dynamic and interactive. So as you make the changes, things happen. And it is again great for seeing
+trade offs, as I discussed before and faceted browsing when you have, like
+something that is not going to be optimal, perhaps, but you're willing to make
+certain kinds of trade offs, and you want to see how much of your decision
+space is restricted by those trade offs. This kind of interactive approach is
+great because you can select sort of the ranges that you'll find acceptable and
+be able to expand and contract those to sort of see how
+many of your options stay or go away. Now, of course,
+there are some issues with this. First is that there are only conjunctions. So if you think about the underlying
+sequel query, it's just a bunch of ANDs. So, price, between this and
+this, between this number of bedrooms and this number of bathrooms, you can't make OR
+kinds of comparisons. So you can't say I'm willing to tolerate
+a five bedroom home, which is very far away from my address, because it's
+going to be a large home far away. That's great. Or I want a home that's really close
+to work and very cheap, right? So I can't make those kinds of OR
+kinds of statements using this interface. I have to do them one at a time. So first I have to see how many
+satisfy the first part of that query. And then I have to see how many
+satisfy the second part so I can't do everything at once. Most of these dynamic query approaches
+do not support fuzzy matching. So sort of, I'm willing to
+tolerate this radius and maybe like a little bit more if
+it was cheaper it's a kind of OR query, but it's a little bit
+more sophisticated than that. So again, no fuzzy matches are supported. It's kind of a hard threshold. If it is
+this value than I'm willing to accept it it is not, then it's rejected. And then there's the difficulty of what
+it is in, what is going to happen when you when you make these different
+kinds of transformations to the data using the widgets. It's, in this kind of display, it's really hard to anticipate the effect. So as you saw in the video,
+he would make these changes, and then he would after the fact, to be able
+to say, I'm now left with 30 points or eight points or whatever it is. It's really hard to anticipate
+the impact of any kind of widget change, like it changed the range slider or the
+selection in terms of how much data will be remaining or
+how much data will be excluded. So this is a limitation of
+the dynamic query approach. People have thought of ways of extending
+this to handle some of the problems in this space. So one is that you can sometimes embed
+aspects of the data within the controls themselves, so you can have a little mini
+visualizations inside of the widgets, things like histograms or
+ranges that you sort of know how much of your data will go away when you
+use a range slider or selection. So here's other examples of implementing
+these are called scented widgets. In this particular implementation,
+where we add visualizations or encoding on top of the widgets themselves
+basically understand the impact of what our selection is going
+to do to the underlying data. Are we going to see
+a lot of data removed or are we going to get to keep a lot of data? So the first example in the far
+left is kind of a histogram. So we know how much of the data
+we're going to exclude. The third visualization, the one that's kind of this list has
+this highlighting colour coding, basically telling us how much, perhaps
+data fits into a specific category or not. So things that are maybe a brighter
+shade of orange indicate that there's a lot of data there. So if we remove that,
+we're going to see a lot of data go away. There are different ways of using this
+technique, but again, adding additional details within the widgets themselves will
+give us some power and some ability to understand what our actions are going
+to cause to the underlying data. One more kind of interesting
+example that is filtering. But it is basically
+the flip side of selection. So this is called a technique
+called generalized selection. Again, this kind of combination, interesting combination of
+filtering and selection. In this case,
+there are elements within the display. So this is maybe a scatter
+plot that is ordered by time, because time is hierarchical,
+sometimes we want to say, let me expand my selection to include
+additional things that are like this. Okay, so I want to find additional
+things that are like this. In the case of time, it might be giving more things that
+are like this around this time. And if I like this more,
+I'll double click again and expand. So maybe the first time I click, I get,
+from the point, I get to the day and then maybe I go to the week, and
+then maybe I go to the month, right? So every time I click
+on the particular item, it expands the selection
+in an intelligent way, because it realizes that there is this
+hierarchical structure to my data. In this case, maybe hours, to days, to
+weeks, to months and to years and so on. So it knows how to dynamically
+expand using the selection. And it is consequently filtering
+things in or out, right? So we are saying add these additional
+things based on your understanding, your conception of what the underlying
+data set actually means. Again, an interesting way of implementing
+both selection and filtering. And this is done just by clicking
+repeatedly on the items, and it cycles through the selections. And eventually it goes back to
+selecting nothing as you do this or selecting back the original point. So it goes from again, the point,
+to the day, to the week, to the month and then maybe back to the point
+if you click again. So just some takeaways from this, connection as we saw are ways of
+bridging visualizations or the data. So we saw both the implicit and explicit
+version of this, the brushed histograms, cross filtering is another name for
+it, was one approach that over laid network kind of visualization
+was the more explicit type. Filtering is this mechanism for
+allowing us to focus, to include or exclude data through widgets. The techniques that we saw for adding
+additional data on the widgets will allow us to solve some of the constraints in
+faceted browsing or dynamic queries. And then two last important points,
+one is that, I've gone through kind of seven
+different techniques so far. But what's important to distinguish
+is the reason for the interaction, that is like the type,
+the category of interaction. So selection, obstruction, elaboration,
+those are the types, and it's important to distinguish those from the actual
+technique, the actual implementation. So are we doing mouse over? Are we doing click? Are we doing drag? Are we shift clicking? Those are techniques that are used
+to implement the interaction that is corresponding to the desired kind of user
+focused behavior of the visualization. And the second most important thing
+that I want to bring up is that, and I brought this up a little bit before,
+is that most of the effective systems in the space will actually combine
+lots of different categories. This is going to be a little
+bit of an art form. What you want to end up doing when
+you build visualizations that have sophisticated interactions is think
+through the process by which people will use your interactions. That high level overview first,
+zoom, filter, details on demand, like that's a reasonable mantra to start,
+but you have to think about the order in
+which interactions will take place. The other thing that you have to think
+about is how to make those interactions consistent. Okay, so it doesn't work very well
+if you're using shift click for one thing and then using weird
+multi-touch gestures for another. The end user does not expect
+changes in either technique or radical differences in
+the types of interactions. So you have to think a little bit about
+the user experience when designing multi interaction visualization types. All right, and with that,
+thank you for listening.

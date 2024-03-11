@@ -1,0 +1,184 @@
+So now we're going to talk
+about how we actually run SQL commands to talk
+to the SQL server. So even though you may be running everything
+on your laptop, or you may be running it in a server with the SQL
+server running on the same hardware as you're
+running your SQL commands, the best way to think about SQL is that there is often
+a database server. And so in production systems
+and in scalable systems, in effect, you have a client, so this is a client, and then you have a server. The client and server might
+be on the same computer, but the key thing is
+to mentally understand that this client is very different software than the server is. The server is the
+magical software that comes from a decade or more of amazing software
+developers who figured out the math that joins all this stuff, the
+magic performance. Just let's thank these people
+who wrote these servers and how smart they are so that we don't have
+to be that smart. Now, if you want to be
+computer scientist, you can spend your
+whole career making one tiny corner of
+this a little faster, and that's what PhDs are written, PhDs in computer science. In fact, my Master's degree
+can be thought it's a dot, it's so small that you
+could barely detect it. So a lot of smart people have
+made this database server. What we do is we basically
+type in SQL commands and we send them to this server
+and then the magic happens and there's disk
+drives and stuff like that, data comes in and
+out, there's memory, it's all cached, all kinds of
+fun stuff, and then we get our answer back.
+Right? So the way we perceive this, is we talk to some kind of a client which forwards
+the commands to the server, which does all the work and then gives us this thing back. And so you can have software that runs in a web browser
+like Postgres Admin, or that can run as a
+desktop application, but I'm going to focus on
+using the command line, and I'm going to
+teach you most of this class to use command line. Everything that I'm
+going to teach you, you could use in the other clients, but I like command line in particular because it's
+easier for me to document and I'm not spending so much
+time making screenshots, but it's also more accessible, meaning that people who have
+visual impairments can use the command line I
+think a lot more naturally than some
+full-screen software. So we're going to do Postgres
+on the command line. The other thing that I'm
+going to do in this class, is I'm going to teach you Linux. Now, most of what I'm going
+to teach you in Linux would work in Mac OS
+under the Terminal, it could work in Windows with the Bash shell
+if you're doing that, but I'm just going to show you the Linux and if there's a
+little bit of adaptation that you have to do or if
+the output is a little different on Mac or Windows Bash, or you can figure out how
+to use Windows native, I just think ultimately
+the world is accepting the fact that on the servers we're
+going to run Linux. Linux on the desktop, that's a different kind of religion, but Linux on the
+servers is just done. So there's a lot of stuff
+we're going to do on servers and so I'm not going to hide it and I'm going to
+teach you Linux. So we have a dollar sign prompt, it's Linux, and I only have to
+show you one command. Sorry, I've taught a lot of
+classes that I just have to say in Windows
+and in Mac and in Linux. Actually, what I do is I
+teach Windows and Mac and never teach Linux, which
+probably was the wrong thing. Now I'm going to teach Linux
+and not Windows and Mac. Chuck, back to the lecture. Remember, there is somewhere
+magically out there on the other side of the
+Internet, a database server. This client, psql is a client that we're
+going to run locally. Now somebody, either you or us, have set up a
+Postgres server out there, and there is when you connect to that server an
+account and a password. And based on that account
+and password, you get permissions
+in the server. So when you first
+set the server up, you create what's
+called the superuser. And there is the postgres, and postgres is the superuser, and that's all we're saying here. Let's log in as postgres, and then you have made
+a superuser password, usually that's part of
+the install process. You may or may not have this, it's okay if you don't, and then we get the prompt. And so it's a command line prompt, and the pound sign is kind of the Unix old school way of
+saying you are the superuser, and you can do things.
+In particular, we can create other users. So this is a joke from xkcd. I love xkcd in particular
+because he makes his comics Creative Commons attribution which means I can put
+them in this lecture. So this person on the left says, "Make me a sandwich" and the person on the
+right says, "What? Make it yourself." And the person
+on the right said, "S-U-DO. SUDO, make me a sandwich" and the other
+person says, "Okay." So what's going on there? So S-U-D-O is a Linux
+command to upgrade your session from a regular user to a superuser, so you might say, delete these files with the rm command and it won't
+do it, but then you say, S-U-DO, sudo rm, and it works. So this is basically pulling the whole concept of superuser
+into a human context, and I've many friends who
+have this as a t-shirt. So, you're starting
+out as a superuser. Like I said, you may not be a superuser and so some of these commands that I'm going to show you that superusers do, you may have to have
+someone else do them or we may have done
+them for you already, and you know this every
+time I'm showing you a superuser prompt because
+it has the pound sign. But this \l command, is the command to
+list the databases, and this is a Postgres
+server instance that I just started, and you'll see that the owners of these three databases are all postgres, which
+is the superuser, and these are databases that you probably shouldn't
+touch because these database systems tend to store their own
+data in databases, and the reason for that is
+efficiency because they have figured out how to make stuff in database accessed very fast. So in a sense, when you make your own database or create
+a table in your database, it stores that information
+in its own database tables, right? And so you delete these and then Postgres is going to start blowing up in a bad way. So right now, I'm showing you how to see the
+databases and for now, there are no databases you're
+to mess with at this point. These databases will
+change based on commands that you're going
+to type to Postgres, but don't do anything to these. Don't think, oh I'll save
+myself some disk drive, so I'm going to delete
+the postgres database. Well, then Postgres
+will stop working. Maybe it'll warn you.
+I never even tried, so I don't know what happens because I'm not going to do it. Okay. So the first thing that
+you want to do is you want to create your own
+database because you're not supposed to mess with the
+ones that are already there. So this is your
+first SQL command, and so I'm putting them all in uppercase, they don't
+have to be uppercase. The first thing we see about SQL, is SQL is a little wordier than most
+programming languages. That's because single
+SQL statements are so powerful that we want to be able to have the best
+chance of sort of reading them. So we don't just like call it
+C-U-Z for create user, we call it CREATE USER. That's actually one command. So CREATE USER, and I'm
+going to make an account, and then I'm going
+to say WITH PASSWORD and I'm going to give it
+a password of secret, and then I'm going to say,
+CREATE DATABASE people, that database contains multiple
+tables, WITH OWNER pg4e. So now I have in my database server I've made a new empty
+database and I have access credentials that
+I can get in to that, so my SQL client can now talk to that database as long as
+I present these credentials. And then \q gets me out of
+that particular session because all I really
+wanted to do as the superuser was create the user and create the database. Now, in your situation, you might have been
+handed a database, user, and password, and
+that's enough to connect and start doing stuff. And so I'm just showing you this in case you're
+doing this all by yourself on your own computer how to get the whole
+thing started. So now we're going to
+connect to the database. And so we're going to say psql, start the client under at Linux, name of database, name of user, and then you enter
+your client, right? So now here, you got this database people
+sitting on a server, and then we have some
+credentials that allow us to get into that. So
+that's what we're doing. Okay? And now, for me the first thing
+I always do is like, what's here? In Linux, I type ls or pwd like, where am I
+at? And what do I got? You'll also notice we're
+not superusers anymore, right? And that's because you want to be careful when
+you're the superuser in a sense you want to type as few commands as you
+can in the superuser, we are now a reduced user, so we could have lots of different databases in here
+with different credentials, but this particular pg4e can't
+break any of these things. And so you sort of want to keep your credentials scoped
+as low as you can and not use the superuser
+except to make credentials and then use those credentials to
+do everything else, and that's what
+we're showing here. dt shows the tables, but this is a good example of where you see sort of
+two terminologies. There's dt says tables, and then we hear relations. So relation is the more
+hoity-toity of the terminologies and tables is the more like I'm a nerd version
+of those terminologies. So we have no tables and
+we're not a superuser. So let's make a table. So here we go, we're
+going to make a table. CREATE TABLE, the
+name of the table, and then a parenthesized
+list of schema. Remember I talked
+about the spreadsheet. The schema is our contract
+with Postgres that says this table's got two columns and it's got
+two character columns, and each of those columns is
+up to 128 characters long. This is the schema, we're making the schema here. And it's a contract,
+meaning if you try to put 129 characters into this, Postgres is going to blow up, and you're like, you're
+so mean, Postgres. No, Postgres is doing
+what you told it to. You told it that you're never going to store more
+than 128 characters. Why is it so picky about this? That is because Postgres takes every hint that you're giving it about the shape of your data, and it's storing it
+as efficiently and most compactly and
+fast retrieval, and it's got to solve a lot
+of problems so you have to tell it what and how
+you're going to use it. And if you wanted to
+store 129 characters, just store 129 characters, but don't tell it you're
+going to store 128 and have it build
+a whole structure efficient for storing 128 and then try to store 129
+and complain about it. Now, we'll see there are ways to store
+this data to say, "Look, I don't even know how
+long it's going to be, just give me a
+space," and it does. And it does that as
+efficiently as possible. But if you know you're
+going to be 128 or less, then tell it. So that's
+what we're doing. So we have this kind of column
+name and then data type, comma, column name, data type,
+and then parenthesis. This parenthesis here matches
+the users parenthesis, and then you end these
+things with a semicolon. And so now I made a table, and I can see the
+table, and I can see oh yeah, okay, I got a table named users, it's a table
+and the owner is pg4e. Now, I'm not a superuser
+so I'm only seeing the ones that belong to me which
+is pretty cool, and I can say \d+
+which says show me the schema because
+sometimes you made a table a long time ago and you forgot what the CREATE TABLE was, and so you could say, show me the schema
+of the users table, and so you then see the
+schema of the users table. So up next we're
+going to talk about how we take these tables that we just created and type SQL
+commands to put data in, take data out, the
+actual CRUD: Create, Read, Update, and Delete. Okay? So that's what we're
+going to do next.

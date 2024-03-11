@@ -1,0 +1,158 @@
+Welcome back to math methods for
+data science. In this video, we're going to
+talk more about the expectation, including properties and
+how to use those properties to compute it. The first property is
+the linearity of expectation. Linearity of expectation means
+expectation of the sum of two random variables is equal to the sum
+of their expectations. This can be stated more generally. You can multiply any set of random
+variables by some constant and add them together. And the resulting formula that
+you get means that you can sum over the expectations. Notice that nothing is required
+of the random variables here. In particular,
+they need not be independent. So let's use that to compute
+some expected values. What is the expected sum of dice when
+we roll four six-sided fair dice, okay? Well, we're going to find x as the sum of the dice, x1 + x2 + x3 + x4. So x1 is the roll of the first die,
+x2 the roll of the second die, etc. And we're tasked with computing
+the expectation of x here. Now notice,
+if we wrote down our previous formula for expectation, it would say,
+well, it's the sum, and we sum over all the possible sums,
+which would be x. It could be as small as 4 and
+as large as 24, and we could get anything in between. And we want to compute
+the probability of x times x. Now this looks like a mess. In particular, we'd have to, what's the
+probability that we got a 20 on the dice? Okay, so the linearity of expectations allows us to
+do this in a much simpler manner, okay? Instead, we'll write the expectation of x, right, as the expectation, because x = x1 + x2 + x3 + x4, okay? And this, by the linearity of expectation, is just the expectation of x1,
+plus the expectation of x2, plus the expectation of x3,
+plus the expectation of x4. Now, we've already computed that
+the expected value of a die rolled is seven-halves. So this just equals 4 times seven-halves, for summings each of seven-halves, and this is just equal to 14, okay? So the expected sum of the dice,
+when we roll four six-sided dice, 14. Notice how the linearity of expectations
+trick allowed us to substantially simplify the calculations. Let's say we have a 3-regular
+graph with n vertices. Recall, a 3-regular graph means that
+each vertex has three neighbors, okay? To each vertex, we assign a random
+number in the interval [0, 1]. Okay, a vertex is selected if its label
+is larger than that of its neighbors. What's the expected size of
+the selected set of vertices, okay? So let's let x be the size
+of the selected set. It's going to be x1 + x2 + xn,
+where xi is whether or not the ith vertex is included in the set. It'll be one if it's included in the set
+and 0 if it's not included in the set. And therefore,
+the sum of indicator variables is going to equal the size of
+the selected set of variables, okay? And we would like to compute, again,
+the size of this expected set. Now, again, figuring out what
+the probability of the selected set being a size 20 is going to be
+extremely [INAUDIBLE]. But we can use linearity of expectations
+to substantially simplify the matter. Okay, so the expectation of x
+by linearity of expectations is just equal to the expectation
+of x1 plus expectation of x2, Plus up to the expectation of xn, okay? Now, what's the chance that
+x1 is in our selected set? Well x1 has three neighbors. X1 is included if its random number is
+greater than that of all of its neighbors. Now, all the numbers air
+selected in the same way. So the chance that x1 is greater than
+its neighbors is just equal odds, it's 1 out of 4, okay? So the expectation of xi, For any variable i, not just x1,
+is going to be one-fourth, okay? So again, this expected value of x here,
+each of these terms is one-fourth, there are n of them, so
+it's just n over 4, okay? That was easy for
+such a complicated problem. In fact, this is a very famous algorithm if you do this for a general graph, the expected size of the selected set is a summation over the vertices of 1 over the degree of the vertex plus 1, okay? And you get this selected set
+is called an independent set. The property that it will have is that
+there's no two edges that are connected that are both selected. Because one of them had to be
+bigger than the other, and so only one of them could be selected. And so
+this is a famous distributed algorithm for creating a large independent set. But that's kind of an aside. For this course, the important part here is that it's an
+easy way to do these complex calculations. And notice that the xi variables
+are not independent at all here. The next property that we'll study
+is the product of expectations. Here, if X and Y are independent random
+variables, then the expectation of the product of X and Y is equal to the
+product of the expectations of X and Y. Now, if X and Y are not independent,
+if they're dependent, then this property may fail. So let's see this in action. Example three,
+what is the expected product of dice when we roll four six-sided fair dice? Okay, so again, we're going to let x here equal x1 times x2 times x3 times x4, okay, so x is the product, and xi is the value of the ith roll. Okay, and
+if we're just computing expectation of x, this equals to the expectation
+of x1 times x2 times x3 times x4, just by definition. And this equals,
+by the product of expectations, because these rolls are all independent,
+expectation of x1 times the expectation of x2 times the expectation of
+x3 times the expectation of x4. Remember, each of these is seven-halves, just as before, so
+this is 7 over 2 to the 4, which is, well, we won't multiply
+that out, there's no need. Okay, so it's 7 over 2 to the 4th, okay? So again, a very easy method for computing the expectation of
+a somewhat complicated value. The final property that we're going to
+examine is conditional expectation. So here, if you are trying to compute
+the expected value of some random variable X and you have an event xi, you can break
+it up into two different calculations, when xi happens and
+when it doesn't happen. And what you'll do is, you'll take
+the expected value of X conditioned on xi times the probability that xi happens,
+plus the expected value of X conditioned on xi not happening times
+the probability that xi does not happen. So you're basically taking a weighted
+average over the different situations. In general, you can apply this many times. And what you get is that as long
+as A1 to Am are events that partition the total space of events, then your expectation is just a weighted
+average of these different partitions. The expectation in the partition
+is weighted by the probability that you are in that partition. So let's apply this to an example. You roll a six-sided die. Whatever value you roll,
+you roll it that many more times. What is the expected value
+of the sum of all rolls? Okay, so
+we we want a condition on some event. The natural thing to
+condition on is the role of the first six-sided die,
+okay, so let's do that. So x is going to be the sum
+of all the rolls and we'll call x1, x2, up to x7, the rolls of these different die. And we'll just let xi be 0 if that
+die is not in fact rolled, okay? So expectation of x equals, and we're going to sum over, The different x1 values, so X1 has to belong 1 through 6. So we're going to do expectation of x conditioned on x1 equals x1 here, okay? And now we need to figure out this, sorry, this should be times
+the probability of this event, not the probability that x1 equals x1. Okay, so
+this value here is just equal to 1 over 6. And so this value here is
+what we need to compute. Expectation of X condition
+on X one equals X one. Okay, so Well, first of off,
+if we roll x one equals x one, we get the first role the first guy is,
+in fact X one. What's the expected value of the some
+of the roles of the rest of the die? So what's expected value of x 22 x seven? Well, we're going to roll x one of them
+and each of those by a linear linear narrative expectations will have
+expected value seven halves, so it's actually going to be x one. The number of dicey role times
+expected Value Patrol, which is 7/2. Okay, all right, so
+let's plug that into our formula here, so this equals will
+bring the 1/6 out front. It's the same for
+all the different next one values. And then we're summing
+over X one equals one six, and we're plugging in this formula here, so this is equal to x one
+plus seven halves x one. But this just equals. We can add the coefficients of
+X 11 plus seven halves that's nine halves times x one again
+we can bring the nine halves out front if we multiply 16 times nine
+halves we get 3/4 reduces to 3/4. This just equals 3/4 times of some of X I one six sorry, x one and
+we saw before that the numbers one through six equal 21. So this equals three times 21 which is
+63 over four, and that's your answer. That's expected value off all the dice if we roll as many additional dices,
+we got on the first role. Example five,
+let's say we have six sided die. What's the expected number of
+roles until the first one appears? Okay, so this is a little tricky, and
+we're going to use a trick to compute it. So the first way you can compute
+it is okay, We're going to, let x be our random variable the number
+of roles until the first one appears. We want to compute
+the expectation of acts, and just by our expectation formula,
+we can let t equal want infinity. And this is probability of tea times t. And this then equals the probability that the first role of a one
+occurs in the teeth time step Is going to be, well, you had to get not one roll on
+all the time steps before that. So that would be 5/6 times t minus one times one of our six, okay. And then, the value of t here
+is just while it's just t. Okay, so
+you can pull the 1/6 out front and you get this kind of looks
+like a geometric series. But you have this this
+goofy t term in here. You can certainly look this up on
+infinite Siri's sums on Wikipedia and it will give you the answer. A formula that allows
+you could be the answer. But there's a neat trick that allows
+you to compute the answer here. So, in actuality, this expectation of X, we're going to use this condition value, what happens if one appears
+in the first roll or not? So it's the expected value of X condition that the first role which will just call X one equals one times of probability that X one equals one plus the expectation of X condition that X one
+does not equal one times the probability that X
+one does not equal one. Okay, so, this value here is easy enough. The expected value of X given that the
+first rolls one, well, that's just one, because the first role was one. The probability the first
+role is one is just 1/6. The probably the first roll is not
+one do the easy ones first is 5/6. Okay, what's the expected value of
+X conditioned on the first role, not being one? Well, it's the same as it was before. We're just rolling for one. Except we know the first
+role kind of didn't count. So it's this here is the is actually equal to the expected value of X plus one. We're rolling for our first one, but
+the first role doesn't count, so we just add one to it. Okay, so when we put this together, we get this equation here, which is that the expectation of ax equals 1/6 plus 5/6 times the expectation of X plus one, okay. And now we can simply solve for
+the expectation of X. We have an equation we can solve, will subtract 56 expectation
+of X from both sides. This leaves 16 times expectation
+of X on the left hand side and leaves one on the right hand side, and so the expectation of X equals six. So it takes six rolls on
+average to get an X or a one. This is a more general phenomenon. If you repeat a trial until an event
+occurs and the trials are all I'd and event that you want to occur
+happens with probably P the number of trials you need
+an expectation is one over P. Hey, why is that? Well, because if the event we care
+about happens with probability. One over P then are formally
+here is going to be expectation of X equals the chance that happens in the
+first round, which is just one times P. That's probably happens plus expectation
+condition on it not happen in the first round, which is expectation of X
+plus one as before times of one minus B. That probably didn't happen. And if you solve this same way, we have
+the expectation of X equals one over P. This is a handy expectation to know and
+remember, and it's computed in this simple way. Finally, to recap,
+we looked at three properties. The first was linear narrative expectation
+that if you have the sum of random variables or
+waited some of random variables. You can just look at the expectation
+of each random variable separately and linearly combine them, and
+they need not even be independent. For independent, random variables,
+the expectation of the product of X and Y is equal to expectation of X
+times X expectation of Y, and also you can decompose the expectation
+of X across a partition. And look at what happens to the expected
+value of X within that partition and then waited by the probability
+of being in that partition

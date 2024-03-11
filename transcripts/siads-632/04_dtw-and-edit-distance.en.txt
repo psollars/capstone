@@ -1,0 +1,62 @@
+As I said, that interesting readers. If you look at this table, if you look at
+how we actually fill this table to our right, to the one on the lower
+right corner, right? And also the traces. That should actually remind you something
+that we have introduced before, right? And in fact,
+your sequence data mining, right? There is another table that we filled
+that is computing the nearest and edit distance. Now I'm giving you the answer, right? And you can see that these two
+algorithms are very much alike, right? They have lots of things in common. In fact, both of them have three
+choices to make filling every cell. Basically, you're looking
+at three neighbor cells. You assume that the three neighbor fields
+of three neighbor cells are already filled before you fill the current cell. And in fact,
+this can be verified using the equations. Dynamic time warming, right, basically
+computes the unit distance XI and YJ. And add that up to
+the minimum of the three dynamic time warping
+distances of subsequences. And to compute ED distance,
+we don't have the unit cost, right? We directly find the minimum
+among three options, right? If we're inserting one
+element to one the cells, we add the number of EDs by 1, right? If we'd delete one from one of the series,
+we add the operation by one. And then if we're just
+substituting the current elements, XI and YJ,
+then we're actually adding the cost. This cost is 1 if the two elements,
+if the two items are different. If the cost is 0,
+if the two elements are the same, right? So you can see that in DW, there is actually a unit
+cost no matter what, right? Why?
+Because Xi and YJ are real numbers, right? Instead of category items,
+so this is the fixed cost. The cost only depends on
+the difference between the current observations of XI and YJ. And the edit distance, right,
+the cost is not a unit cost, right? It depends on whether you're
+inserting one element or deleting one element or
+substituting one element. So if XI and YJ are the same,
+then the cost is 0. If XI and YJ different,
+then the cost is 1, right? So you can see that one
+difference between the DW and ED distance is that one
+uses the fixed cost and then one uses a cost net depends on XI and
+YJ. But what we have in common is that they
+are both starting from three options and three options corresponding
+to the three neighbor cells. One to the left, one to the top,
+and the one to the upper left. For those who are interested in pseudo
+codes, right, you can actually compare the pseudocode of dynamic time warping and
+language thing edit distance. I'm not going to go through the details,
+right? From the slides, you can actually see
+that most of the parts are the same because they're essentially
+just filling the table, right? So they have two things
+different in pseudocode. One is in the initialization,
+and the other is, of course, the cost, right, as we introduce early. The unitization in DTW basically
+ask you to assign the infinity, and in fact, it's the very large
+value to DTW0J or DWI0, right? Why is that, right? Remember in the table,
+we don't actually have a DWI0 and that's actually the Gray area, right? That's the great walk, right? And this is because,
+in DTW we never go back to DTW 0. And differently, in edit distance,
+we do want to go back to 0. And that means you're comparing one
+sequence to empty sequence, right? So in this case, we initialize EDOJSJ and
+EDI0 as I, right? In DTW, we don't do that because
+we don't come here one time series to the empty time series. We have to go to DTW11 because
+the first elements have to be aligned. So in reality, DTW,
+dynamic time warping is not the only algorithm to find
+alignments of time series. In fact, there other algorithms,
+and there are more or less related to the edit
+distance of sequences. One of them is called time
+warp edit distance, so they even put edited into the main. Another interesting algorithm which
+I strongly suggest you to read is called longest common subsequences. And this is actually very commonly used, especially when you are actually finding
+the alignment of partial series, right? If you are actually searching for
+subsequences but we'll not go into details of these two. If you're interested, please look
+at the textbook or other materials.

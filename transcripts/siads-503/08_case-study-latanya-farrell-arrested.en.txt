@@ -1,0 +1,229 @@
+Okay. This next case is one of my favorites not because I'm
+happy about what happened, but because I think it's
+a very interesting case, it's not as widely known, I guess we could call it the case of Latanya Farrell and whether
+she was arrested or not. That's the name
+used in a sidebar, in an illustration in
+the article that was first published about
+this Latanya Farrell. It's actually research
+by someone named Latanya Sweeney and a group
+of researchers at Harvard. Here's the scenario for you, I think you're going to
+be interested, I bet you, that everyone listening to
+this video right now at some point in their
+life has probably done what you'd call a vanity search. That means that you've
+probably put in your own name into a search engine and hit
+enter to see what came up. So if you've done that in
+the United States right now, I don't see this anymore, partly because of this case, but it used to be that you would usually get along sidebar of advertisements suggesting to you that you should click on them in order to buy records
+about that person. So for example, a service that sells phone
+numbers would say they could sell you the phone
+number of that person or a service that collects
+public records would say, "Oh, we have public records that we found about that person, credit reports, home address". So these are data brokers
+of some kind usually and they would offer you
+a report on these people, on you, if you search
+for your own name, on any name that you searched. Now, Latanya Sweeney, a professor at Harvard was searching Google probably for her own name or perhaps I believe
+it may have been for a member of Congress
+that she was interested in. Some of those suggested ads used the phrasing of her search term, which in this case
+was Latanya Farrell, comma arrested question
+mark, and she thought, wow, I mean that's really
+attention-grabbing to suggest that
+Latanya Farrell was arrested and then she went about living
+her life, I suppose. At some point she started
+to realize that it seemed like when she searched for names that sounded black to her, it was more likely
+that they would have ads attached to them
+that said search term, comma, arrested, question mark
+as the headline of the ad. So being a researcher, she decided to do a study
+of this phenomenon and used the census to estimate the likelihood that
+a particular name, was associated with
+a particular race or ethnicity and then she conducted searches on Google and looked at the ad headlines and
+found that in fact, somewhat shockingly,
+if you search for a name that was more likely to be a name of a black person, the ads that came
+up would be more likely to suggest that that
+person had been arrested. This is an interesting
+case because it's fundamentally not resolved, after this scandal broke, search engines in
+the United States stopped carrying these ads. So when Latanya Sweeney
+spoke about this, she said that there
+had never been a satisfactory accounting
+for why this was happening, but there are a number of theories and that makes this
+an interesting case for us because I'd like to
+put these theories to you and to discuss
+them a little bit. So one theory that came
+up almost immediately, I think we don't need to
+spend that much time on it. We can discount it. So one theory that came up
+was in the United States, African Americans
+are more likely to have arrest records
+than Caucasians, and in fact then other races. So the algorithm
+or the analysis or whatever it was
+that was producing this result was
+acting accurately. So that's maybe our
+first explanation. Explanation number one. I think we can discount that and the reason we can discount it is that at the time this was using Google's
+AdWords technology. I think at the time, there was no mechanism
+for the advertiser to actually query a database and
+return a different result. It's just, I don't see how
+that would have worked. So the ads could be targeted
+to particular names, but it seems unlikely that they were actually
+looking up address records in real time or
+that they had compiled gigantic database of every
+possible search term and fed that through
+the ad system. Because the way that
+ad system worked, it did seem really hard to do. So it's not the
+case that this was actually revealing
+arrest records. That leads to the
+ethical problem, right? I mean, maybe this is obvious, but just in case
+it's not obvious, so that we're all
+on the same page. We expect to be judged on our own actions and we
+don't like the idea that a computer system will suggest that we have
+an arrest record because of the circumstances of our birth that we
+had no control over. So just as it's wrong to
+suggests that because I'm white, I am more virtuous than
+someone who's not white. It's wrong to suggest
+that someone who's black has an arrest record
+because while it's true, arrest differ by race
+and many other factors, it's the judgment of
+the individual that produces the ethical
+problem in this case. It's not fair to suggest
+that a person has an arrest record
+when they don't just because they're black, right? It may still be true
+that the police are more likely to
+arrest and the courts are more likely to convict
+black people but that still is a bad assumption to
+make and it's partly because of the way we
+want the world to be. We want the world to be a
+place where we're judged on what we do and not the circumstances that
+we have no control over, the circumstances of our birth. So all right, so if that's
+not the explanation, if it's not number one, what are some other explanations that
+might explain this case?. Another explanation that could
+explain this case is that, the advertisers could have decided that African
+American names should be tagged with the headline arrested comma
+after the search term. Now, that seems possible
+but it seems very unlikely. The reason it seems
+unlikely as that this was a big
+scandal when it came out and I think many people
+would have recognized that, that is quite incendiary
+way to conduct business. So I think someone at some point in the companies would have
+said, why are we doing this? This is crazy, we can't do this. So I just find it
+very unlikely that that was the case and that feeds into what we were saying earlier about responsibility in part, because quite often in
+some of our analysis, we find that when we're looking
+for an ethical problem, it may not be that there's someone who's really racist
+and wrote a racist system. I think instead, that's
+somewhat unlikely in this case, although it's possible, I
+mean, there was still no. We still don't have
+a great explanation about what happened
+here in this case. Here's our third explanation of what might have
+happened, which is, I think you're getting the sense as my favorite explanation, but it's still unknown whether
+that's the explanation. The third explanation
+is that Google had rolled out a tool before this study
+and the tool allowed advertisers to optimize
+their headlines. So the way that the tool
+worked is fairly simple. It would allow you, instead of buying one
+headline for one keyword. So if you wanted to sell cars, you could add "buy a car"
+to the keyword "car", if someone searched for it. Instead of doing that
+one-to-one relationship, this new system allowed
+advertisers to specify many different
+possible ad headlines. The reason they do
+that is in part, it wanted to help advertisers optimize their
+choice of words and to get more clicks because
+Google made money by click. So it's in Google's interests, as well as the advertiser
+to maximize clicks. So for example, if
+you're an advertiser and you really suck at writing ad headlines, which
+could happen-. Google doesn't make any money. So Google wants to help you
+write better ad headlines. So they had this system, where you would specify
+multiple ad headlines. Then a feature added
+to this system was that if you specified
+multiple ad headlines, the system would
+try to track which headlines were most clicked
+on for which keywords, and then it would be more likely to offer up that headline. So it would learn over time that if you bought a
+whole bunch of key words, and it had a whole
+bunch of headlines, that certain headlines
+were likely to get clicks on certain keywords and it would show
+those more often. So I think this might be the explanation for what was
+going on with this system. It's a really
+fascinating explanation, I think it is. I
+think you'll agree. The reason I think
+it's fascinating is that what this means, if this is the explanation
+that's correct, is that there may have
+been a list of headlines and most of them were innocuous. So they were things like, "Buy public records
+about Latanya Farrell" or "Check to see if Latanya Farrell has an
+unlisted phone number." Then that could be a headline,
+so things like that. So it had a bunch of headlines, but then maybe one
+or a small number of the headlines
+referred to arrests. "Latanya Farrell, arrested?" Then after the system was
+deployed in the world, people started clicking on ads, and when they were
+searching for a black name, a name that was more likely to be identified with
+African-Americans, they were more likely to click on the ads
+that said arrested. If they kept doing that, then they trained the system to show the arrested suffix
+or ads having to do with arrest records
+to names that were black when names that were
+black were searched for. I think that might
+explain what happened. The reason I say
+it's interesting is that from an ethical perspective, I'm pretty sure again, the people at Google
+implementing this system, thinking about it from
+their point of view, unlike some of our other cases, it doesn't seem to me like this is immediately something
+they could have thought of, especially if they're building a general purpose
+system for all ads. Nonetheless, it seems like
+if this is the explanation, they built a system that learned to be racist
+by people's clicks. Now we could talk about whether those clicks are rational. Like we could say, "Oh well, maybe it's right that the
+people clicked on the word arrested when they saw
+a black name because black people are more likely to be arrested, so
+they're rational." Some people made that response to Latanya Sweeney's article. I think that's really not
+the point here, though. The point is more
+that we don't want individuals to be judged by things they have
+no control over. So building a system that
+systematically suggests that innocent people
+have arrest records, and that suggestion varies by race is bad, that's a bad idea. So if we take it from
+that perspective and we think about this
+explanation for the case, it then produces some
+interesting questions of responsibility. So the people who
+built this system, they were trying to do
+a good job, probably. The advertisers, you could say, were trying to do a good job. They just listed all of
+the headlines that they thought would be
+reasons why people might want to buy records. But then in combination, all these systems working together with biases
+among the users, and clicks, and time produced this system that
+learned to be racist. I think this is a great example. It's partly why important
+scientific publications like science and nature have issued warnings by the editorial board saying
+that it's the task of science, and particularly data science, to try and figure out
+how we don't just reproduce the problems of
+society and exacerbate them. Like you could even say, depending on how much the
+system was suggesting these comma arrested headlines, you could actually say that
+although the system started out unobjectionable and
+neutral, over time, it got trained to offer a suggestion that black people have
+criminal records, even though they are
+frequently innocent. If it pushed those
+headlines enough, you could then argue, I think pretty safely argue that, Google is quite widely used. You've created a system
+that actually could feed back and
+produce more racism. Like it could suggest to people over and over
+again arrested, arrested, arrested,
+arrested, arrested, and you could come to
+the situation that, well, Google AdWords
+has taught me that black people have
+all been in jail. That's not something
+that we want. So the interesting thing about
+this case is how we get to an ethically
+problematic situation from possibly a bunch of inputs that were
+difficult to foresee. I think they were, you
+can argue differently in the discussion forums. So yeah. Now the last thing I'll say about this Latanya Sweeney case is, I think it's interesting case
+because of responsibility. But it also relates to our theme this week about maybe
+hubris or responsiveness. When the problem was pointed out, there was very quick
+action to stop the system. Maybe they've been
+reintroduced now. But before coming
+here to record this, these ads wouldn't
+appear anywhere because the search engines won't carry
+them for vanity searches. So I think that's
+a nice thing about taking responsibility to not perpetuate something when you realize it's doing
+something you don't like. But it is interesting
+that there was never any kind of accountability
+for this problem. So when Latanya Sweeney spoke
+about it, as I mentioned, she said we really
+don't have a lot of clarity as to what was
+really going on here. We have these
+theories, and I mean, it could well be that they kept list of black people's
+names. We don't know. So the question then relates to another week of
+the course is about like, how much accountability do
+we need for these things? Is it something that if it's
+sufficiently egregious, we would want something
+else to happen here. In this case, it's not
+clear that there is a law that was broken or what the mechanism of
+accountability might be, but we're left with
+unsatisfying void. Like something was
+happening with these ads, we're not really sure
+what, now it stopped. It's good that it stopped,
+but it was a weird thing. So that concludes the
+discussion of this case.

@@ -1,0 +1,332 @@
+Hello and welcome to another
+Postgres walkthrough. In this situation,
+we're going to start talking just about
+JSONB in Postgres. Everything we've been doing
+is leading up to this. And so we're going
+to take a look at my original from many
+years ago export of my library in iTunes and
+I've converted it into JSON, and so it's got curly braces and double quotes and colons. And I've got one record
+per line in here. That's the format to do really simple imports
+for really simple JSON. So I'm going to go
+in and I'm going to drop this table if this
+is not going to exist, but it's not there.
+So we're fine. I'm going to drop the jtrack table then I'm going to create the jtrack table with a id
+column and a JSONB body. There we go, we're just
+like that body is JSONB and B stands for
+better but I like to think of it as binary because it's compressed
+and it's efficient and the indexes are like really intricate, it knows a lot. It's not just a big text field. The old JSON was, but JSONB
+is not just a text field. So the next thing we're going
+to do is we're going to copy down on a terminal in a terminal, this jstxt file and that was not
+found, but here we go. So if I take a look at
+this library.jstxt file, you see that it's got this
+JSON in it, one per line. Now what we're going to
+do is we're going to pull this in with a \copy command. Now the copy command is only
+to this pgsql and so we're going to copy into
+the jtrack table into the body column from the file
+library.jstxt as a CSV, now it's not CSV,
+where the quotes are an irrelevant non-printing
+character and the delimiter is an irrelevant
+non-printing character. So Ex01 is actually is ASCII number 1 and
+Ex02 is ASCII number 2 and neither of those
+characters are in because really the trick is we're only going to pull one column in and we want the whole line, and we want CSV processing, but then we're breaking
+CSV processing by telling it the quote is a thing
+that doesn't exist, and the delimiter is a
+thing that doesn't exist. So the dear CSV, treat each
+line as just a thing. Don't parse it at all, because we're only
+inserting one thing anyway. I wish there was a way to just tell it's like it's
+lines, insert lines. We've done this before
+in previous things. It's kind of like if Postgres would
+just let us say insert this thing as lines,
+because often that's it. And so we just inserted that. So we can say SELECT COUNT star FROM jtrack. Three hundred eighteen records, there was 318 lines in there. So there we go, okay? So let's take
+a look at what we've got. Let's look at some selections. So we can see, we can
+pull this out. When it shows us this stuff,
+it reconstitutes it. So this in a sense is not
+that string that we put in. It's been parsed, it's been stored, and now it's
+reconstituted. And we can kind of tell that
+it's a little bit different because we can say what kind of thing is this using the
+pg_typeof function. It is
+I forget the semicolon. It's a JSONB, right? It's not really a text string,
+and that's a string. It just happens to be
+showing it to us as a text representation
+of that data structure. We can pull one thing out with this body
+dash arrow arrow. Greater than greater than. The key thing to remember is the thing that comes
+afterwards all's got to have quotes because the keys
+are quotes in JSON, and so we're going
+to pull that out. Now you can pull out one, and we'll see in a second,
+you can pull out one or both. This is the one you
+tend to want to use over and over
+and over again with two arrows because that says and convert it to a text field. So that's the kind of
+SELECT statement. Boom, now we got that. But we can see if you
+only have one arrow, we can use typeof
+body dash greater than name, and we'll see what comes
+back is actually a JSONB. And so JSONB are both documents
+and fragments of documents, and so this body name is
+really a tiny little document. And then if we want to, we can
+convert this to text. But the problem is if
+we do it this way, you'll see it's not going to work. If we say body name colon colon text, we get a jsonb and
+that's because the association for the parentheses, for the colon colon, it's a higher
+precedence operator and so it happens before the
+arrow operator happens. And so you've got to put
+parentheses around it. Oh, this one doesn't work
+either because we're going to do the typeof. So if we do this parentheses, it's going to do this and then convert the result
+of this function. So that means that the function is going to be converted to text. So that's going to
+break just as bad, it's still the word jsonb so it just means that you do sometimes have to add
+extra parentheses so that it actually
+pulls out the name, and that is a JSONB object. And then we do a cast into text and that's
+really what you want. So we get the text. But why are we even doing that? Because if you just
+do double arrows, it says get it and
+turn it into text. Right? And so that's really nice. I like explaining in
+gory detail some of these syntaxes because
+we just throw them out there and
+we don't know why. So this is another example, SELECT MAX of body count. This is body double arrow count is a string, but then we're going to
+convert it to integer. Now you've got to be careful because the MAX will work without
+converting it into an integer, but it'll be a
+string max which is like sorting, which means 99 is greater than 1,000 because nine
+is greater than one. So when you're doing
+numeric things, you got to be careful to
+cast them to integers. So there we go. So that actually gets the integer. If you take out the
+cast at the end, you will see that you'd get 93, which is nowhere near
+the numeric maximum, but it is that letter nine, that's like a letter, might as
+well be Z, for all we care. And so this means that body
+arrow arrow count is a string, so that's the max string from a correlating perspective. from a sorting perspective,
+from an ORDER BY perspective. So if we're going to
+order by something, we're going to this body
+count cast as an integer, we'll do a SELECT body name
+AS name FROM jtrack ORDER BY body count cast as an integer and then we're going
+to descend it LIMIT 5. So we can see my most
+five popular pieces of music that I played. And that's because this is some really mellow music that I play in my
+car all the time. So it gets a really
+high play count. And so even though count
+is an integer in JSON, you still need to
+pull it back that way because it comes back. This first one comes back, body arrow count comes back as a JSON object and then body arrow
+arrow count comes back as a text. So you've still got to cast it because the double
+arrow makes it a text. You see that the
+single error makes it a JSONB fragment and then the double arror makes it a text and then you
+have to say colon, colon int one more time. And you've got to get
+your parentheses right. So it just is a
+little bit tricky, okay? So let's take a look
+at a WHERE clause. We're going to count the number of tracks that
+have a name of Summer Nights. And because it's a body arrow arrow name equals Summer Nights, that says convert it to
+a text string for me which again most of the
+time you'd just use arrow, arrow and we see that
+I have one track. We can also say that this is a JSONB operator. So that equal operator
+is a string operator. But the JSONB operator,
+the at greater than, says "Does this body contain
+this JSON fragment?" Now it's going to convert this. There's an implied
+it's smart enough to, there's an implied colon colon jsonb on
+the end of this. Let me actually go
+just put that in there. It's kind of this is implied because
+that is a text string here. So that's implied. Let's even put a
+parentheses in to make it super explicit for us. But it doesn't need
+that because it knows that if it sees
+a string as one of the parameters of the at sign greater than, to
+convert it to JSONB. So this second version here
+with a parentheses and colon colon jsonb is really just, it's being explicit of something
+that's done implicitly, right? So these two things and we'll see when we
+start doing indexes that these two things
+give us the same thing, but this one is a string
+comparison and one is a JSON comparison
+with the contains. So then what we're going
+to do is we're going to show how to use this
+concatenation operator. We've used this concatenation
+operator to concatenate strings but now what we're
+going to do is use it to concatenate JSONB. And so the body is a JSONB and we're going to
+add favorite equals yes. Now, this is a string. It's just a string, and inside the string is JSON. It's got to be syntactically
+correct JSON "favorite" "colon" "Yes"
+and it's implied, there's an implied conversion to JSONB because it's
+being concatenated in. And again, the concatenation
+operator says, "Oh, if it's a string
+I'll convert it to JSONB if the left-hand side is JSONB". And so that's going to work. And so we're going to
+look up the body. We're going to look at
+the count variable, convert it to an integer. If there's more than 200, we're going to go
+ahead and get that. So this is basically
+going to update the body, right? So it's going to update the body. Let's do this first
+and take a look at some of these
+things. So here we are. So what we're doing is
+we're going to read and find the count and then
+we're going to add at the end a new key. So that's what this
+update is going to do. So we take the JSONB, it actually pulls
+it out of the database, sort of reconstitutes it,
+adds this little thing to it, and then stores it back. And that's what an update does, right? It pulls something
+out of the database like update x equals x plus one. We've done that
+many times before. So it found 33 rows that the body count is greater than 200 and it added favorite yes. Now, if we run this greater than 160, we should see that some of these now
+have favorite yes. Now, again it's not a string, it's JSONB. But not all
+of them, right? So this first one here
+Winter Wonderland has a count of less than 200, and so it never got favorite. So now what we have is we
+have some that have favorite. We could also could have written
+a Python program to tweak this JSON and the
+fact that we're just, this is very simple.
+But I'm showing you how this concatenation
+operator works, right? And so we see some with and without the favorite
+but then it gives us a wonderful time to play with this question mark operator. So SELECT count FROM jtrack WHERE body question
+mark favorite. That's just saying show me, select the things where the
+body has the tag favorite, I mean a key of favorite. So that's not saying
+a key-value pair. That's just a key. So how many do I have? There's 33 that have
+favorites equals anything. I'm not asking what
+it's equal to. I'm just saying is favorite in that JSON and there's
+33 of them, okay? So let's throw a large amount of crud into our jtrack just to make sure
+the indexes work. So I'm going to put 4000 lines of unrelated JSONB junk. So we're going to select
+this parentheses this is a string concatenation. We're going to concatenate some
+type colon "Neon", "series" "24 Hours of
+Lemons" "number" colon That's a string,
+that's just a string. This a string concatenation,
+the vertical part here. And then generate_series,
+if you recall from our previous lectures, creates a vertical replication of rows generating the number 1000, 1001, 1000 all the
+way up to 5000. Then I'm concatenating
+with a close curly brace. So that's going to, if you were to just look
+at this thing right here, that would just be a
+look like JSON. It would be valid
+JSON and carefully constructed to be
+valid JSON and then I take that concatenated
+string and then I cast it as JSONB so that I
+match the type of body. And so let's go ahead and
+insert all those. Insert 4000 more rows. Sometimes you have
+to insert a bunch of extra rows or your indexes just, you'll do an EXPLAIN ANALYZE and you should have used
+the index and it's like, well, there's only 12 rows, I might not use the
+index. And I cannot for the life of me
+figure out how to convince Postgres to either tell me I would have used
+the index if there were more rows or a little
+thing that says pretend there's a
+lot of rows in it because I'm really trying
+to debug my index. But you see when you look online at blog posts and stuff, you see that they just put
+a lot of rows in there. And so I've just got to
+figure out how to generate series and
+put some more rows in. So we're going to have
+to make some indexes. These indexes aren't
+there because I just built it but we'll
+drop them anyways. So let's go ahead and create three indexes.
+I'll create them. I'll fire them off, create them all, and
+then we will see. Sometimes you've got to wait.
+So I'm going to explain. We'll let Postgres in this tab grind away and make sure
+those indexes are ready, So our explains start working. So I'm going to
+use three indexes. One is a B-tree index and
+in that my expression is to pull out and convert
+to a string the name key, right? So pull out the name, not the
+fact that the name exists, but the fact that name equals
+the name of the track. So like Summer Nights. So this B-tree is going to hit that WHERE clause where body name
+equals Summer Nights. So that's a B-tree index. And so this is more of a
+traditional old-style index. B-trees want to index,
+in a sense, a field. One string is what they want,
+or a combination of strings. You can put more
+than one in there. And so the key is that
+this B-tree will hit body name equals
+Summer Nights, but in a query like body
+artist equals Queen, that will not hit
+it because we did not make an index on body artist. We could make another index
+on body artist if we want, and then this would work. Now the key is, the operators of the WHERE clause are critical. And so the question mark and the at sign deal with
+the GIN indexes. The equal sign is a
+string comparison. In this respect, it's not
+at all a JSONB operator. It's the data stored in JSONB, but the WHERE clause is
+reading the JSONB, pulling out the artist or name, and then doing a
+string comparison. And so that's why it hits the B-tree. There's just no way that these last four would hit the B-tree. and there's no way that the
+first four would hit the GIN, because equal is
+not a GIN operator. Okay, so that's the B-tree. I should stop here and talk about like how gorgeously beautiful this is. You can have a JSONB and you can dive in and you can make a beautiful B-tree index. You can put a logical key deep inside of JSON if
+that's what you want. And it for all intents and purposes is going to be super fast, as fast as even if you pulled
+that name out and made another column as you've seen me do in a couple of other places. So that's like awesome, okay? That's easy and awesome. You got to know how to
+construct your WHERE clauses to make use of
+that particular thing, but that's like any other query. Okay, so let's take a look
+at the GIN one. So CREATE INDEX jtrack_gin
+ON jtrack USING gin body. Now, we're going to do a
+GIN of the whole body. Now, the default is that what
+this is going to click is this is going to
+figure out whether or not this is going to
+remember the keys, not the key-value pairs, okay? And so it'll click this body
+question mark favorite, which is like, "Is
+that key there?" But then to get the things
+like name Summer Nights or artist Queen or name Folsom Prison Blues and
+artist equals Johnny Cash, which is what we're doing
+in these last three, we're going to make another index that's asking for the path_ops. And so the difference
+between a GIN on the body and a GIN with
+JSONB path objects on path_ops on the body is that it looks at key-value pairs
+and is super fast. Now, of course, the
+jsonb_path_ops is bigger and slower and
+harder to maintain, but it does hit on more
+of the WHERE clauses. So the GIN and the
+GIN path_ops hit these question mark
+operator and does body JSON contain this
+little bit of JSON, right? So let's just take a look at hopefully which of these things hit and which
+of these things don't. Now, you might think it'd
+be nice if because we've got a GIN with a json_path_ops
+that it would figure out, "Oh, name equals
+Summer Nights," and in effect convert that to this body at greater than
+name colon Summer Nights, but it doesn't. But it could. Some future version
+of Postgres might decide to make the
+equal sign operator smarter when it's dealing
+with JSONB, but who knows. We can't expect that. So let's take a look at
+these one at a time, see if our indexes are done. No. Oh, yeah. Okay. I freaked out because
+I saw a sequential scan. That's what you're
+supposed to do whenever you do an EXPLAIN ANALYZE. But this is body artist. I did not make. I
+made it on body name, and so that's supposed
+to be sequential. Now, if we name Summer Nights, this is going to use
+the B-tree index, and there you go. It hit the B-tree
+index because that is the thing that I made
+the B-tree index on, is body arrow arrow name, and so it hit just fine. And again, I think of this as just as efficient as if
+I had made a column, right? So if we ask, look for the ones where
+the word favorite, where there's a favorite key, not any particular
+key-value pair, that's going to successfully hit the jtrack GIN because the
+GIN says what keys are what. I don't know, I tend to feel
+like if I was doing this, I can't figure out how often I'm going to want
+this unless I have some really diverse
+documents that have widely differing syntax
+and I've got some kind of a thing where I just have an
+indicator that says, you know, blah, blah, blah equals blah, blah, blah, you know, and I'm just like, "It's a marker," which is
+what this favorite yes is. It's kind of like a marker. So just the presence of it. Again, the GIN is faster and smaller than the
+GIN with the path_ops. Now, we're going
+to have some fun. So now we're going to say go find me the name Summer Nights, and now we're going to be
+using the GIN path_ops, right? So we're doing name. So does this body contain this little JSONB fragment
+name Summer Nights? And the answer is, "We'll find it," and this is
+going to find it. And that means that there's
+an index that's smart enough to look at nothing but this and pick the rows and
+then only retrieve those rows. Now, because we did it, it doesn't really care which of the keys we're looking at. We can say artist Queen, because
+it's got that one too, right? So it did all of them.
+Unlike the B-tree where we picked which one it did, the GIN path_ops
+just picks them all, just all the combinations, and then we can say, and
+read this one carefully, SELECT COUNT star FROM
+jtrack WHERE body contains "name" "Folsom Prison Blues" "artist" "Johnny Cash". This is like an AND
+because we're saying, is this entire subset
+of JSON, name, Folsom Prison Blues,
+artist, Johnny Cash, is that contained
+within the body JSON? Got it? So that's like
+an AND operation. Okay? And that one hits the JSON path_ops, and it works just fine. So that is sort of really beautiful, really impressive like most
+things in JSON, in Postgres. Once you get down
+to doing the work and you know what to do, it works out pretty cool. And so this last little bit, we're going to do an update. This is just kind of an advanced thing. So let's say we're going to take, we want to add 1 to a count, right? So we want to take this
+count somewhere here, count 55, and we want
+to add 1 to that. It is an integer and it
+knows it's an integer, but we've got to get stuff a
+little tricky in this. It kind of gets you to the point where you have to construct this stuff, and it takes a while
+to figure out. And that's why when I figure
+this out, I write it down. So let's start by saying
+SELECT body count jtrack plus 1 because we'd like to be able to do that
+because it's an integer, right? And hey, give me this thing as an integer, that would be my instinct. I'd like to be able
+to use that syntax, and the answer is, sorry, you have given me a
+JSONB and an integer, and I'm not going to allow you to add those things together. So that's where you've
+got to cast it. So cast the body count, cast colon colon int. Now, we can actually
+calculate the updated. So now it was 55 and now it's 56. Let's just select
+it so you can see what it is without the plus 1. So it was 55. And so now if we add 1 to it, cast it to an integer
+and add 1 to it, we're going to get 56. So we can do a select here and add 1 to it
+for the Summer Nights, and we're going to add 1. So we can also take the plus 1 away and we see
+what the old one was. So we can put a WHERE
+clause on here. That's just putting
+a WHERE clause. So 35 going up to 36. Now, this is the mess. This part here is the mess. UPDATE jtrack SET body
+equals jsonb_set. So what this is doing
+is it's actually, I would love for this to be some kind of concatenation or
+something a little prettier, but they put this
+into a function. And so what it does is it
+takes the old JSONB and it takes a path, which means go find
+the count thing. That's a really weird syntax, but it's the right syntax. And then take the body count, convert it to an integer, add 1 to it, then convert it to text, and then convert it to JSONB. I don't like this syntax. I think there's a more
+elegant way to do it. And perhaps in a future
+version of Postgres, they will make this more elegant. And then I can throw a
+WHERE clause on this. So UPDATE jtrack SET body equals. So this is retrieving
+the entire body, tweaking it with this
+function, and then storing it. Now, the hard part is really retrieving and
+then storing this new data, so it's not all that bad. It's just I don't
+like the syntax of it, it's a little bit hard. I have it here in case you
+want to do it in the future. For me, I would be like, no, I think I'll
+just make a column. I'll just pull it
+into its own column, and then mess with it there. Okay? So now that we're
+all done with this, I'm just going to
+clean things up. I like to drop my tables, and so I'll DROP TABLE jtrack
+CASCADE because I'm using a Postgres server that has
+a limited amount of memory. So I hope that this
+sort of walkthrough of the general use of JSONB
+has been useful to you, how the operators work, how the casting works, etc.

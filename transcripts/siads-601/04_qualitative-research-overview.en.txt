@@ -1,0 +1,80 @@
+Let's go a little bit deeper into what
+qualitative research is really all about. So again, think back to this example
+I gave, where maybe the local police department has dumped a bunch of data on
+you about traffic stops and citations. And as often happens with data scientists,
+the people who give you data might just assume that you can work your
+magic and come up with all kinds of interesting analyses without
+knowing much more about the situation. Of course, we all know that
+that's not quite the case. Quantitative research, of course, is very
+good at putting numbers to phenomena, revealing all kinds of statistical
+trends and patterns, and confirming or rejecting hypotheses. But quantitative research is
+not necessarily as good at incorporating non-numerical,
+heterogeneous data. In fact, you could argue that it's very
+difficult to do that unless you come up with ways to quantify that data. Also, oftentimes the data that you
+have to work with has blind spots. There is data that
+hasn't been collected or that should have been collected, but
+which you don't have access to. And then certain kinds of
+hypothesis generation are also very difficult through
+quantitative means alone. And that's where a qualitative
+methodology can be extremely helpful. So for example, if you wanted to know, just even before you begin
+your quantitative analysis, what kinds of trends in the police
+data matter more to residents? Or is the police department concerned
+about some form of bias that maybe they want you to look into? Or possibly,
+if they know that there is bias, how might bias actually
+creep into officers' work? These are all questions that,
+if you knew in advance, and you knew that somebody
+was interested in them, then it would help guide your
+quantitative data analysis as well. And so one thing that qualitative research
+methodologies are very useful is actually getting answers to exactly
+these kinds of questions. So qualitative research is, of course, dealing with all kinds of data,
+not strictly non-numerical. In fact, qualitative research can also
+incorporate numerical data as well. But it's very good at handling
+heterogeneous data sources. Qualitative research also often involves
+direct interaction with the people or the context that are relevant
+to a particular problem. And it results in very
+rich information and detail that is very hard
+to get purely numerically. Again, some of its strengths are rich,
+in-depth information, that you can cover a broad range of
+things and topics relatively quickly. It's also very flexible to whatever access
+you have to people or data or information. And then one of the great things
+about qualitative research for the sake of data scientists is that
+it's very good at hypothesis generation. You can often generate a whole bunch of
+hypotheses that might give you hints into what kind of quantitative data analysis
+you do by performing qualitative research upfront, or
+even during your quantitative analysis. Qualitative research methodologies,
+as I mentioned before, involve things like interviews and
+focus groups. Many qualitative researchers also use
+observations of various kinds where they go to a context and
+actually observe what's happening. There's many, many other methodologies. And then data analysis
+itself is a rich area in which you can do
+what are called coding. In which you take text or video or
+other kinds of information, and have human coders go through and try to explain what
+different themes that a content covers, or what different polarities
+people might be expressing, whether they're angry or sad or upset. People do content analysis
+on actual text documents. There's also something called thematic
+analysis, in which you try to extract the themes and the highlights
+of particular qualitative data. And all of this are things that people
+who use qualitative research methodology tend to use. In this particular course, I'm going to
+kind of focus on the barebones qualitative research methodologies that
+you need to really take advantage of the methodology for
+the sake of quantitative data analysis. So we'll focus on interviews,
+primarily semi-structured interviews that you conduct with real people,
+of course, and do thematic analysis on that content through something
+that's called affinity walls. And part of affinity walls, you'll see, is
+a process by which you cluster information and then hierarchically organize it,
+so that you can come up to higher and higher level insights about what
+people believe about the data, or what they expect to see in the data. The nice thing about qualitative
+research is that it complements what you would otherwise do through
+quantitative data research. So for example, qualitative research is
+excellent, again, at generating hypotheses that you can confirm or
+reject through quantitative research. Qualitative research can supply
+rich details that you won't get in any data set. Oftentimes, qualitative research
+is a good way to combine and synthesize different types of information. Even as a quantitative data scientist, you will often have situations in which
+you're given documents, you're given the chance to talk to other people
+who know something about the domain. And you need to combine
+that information with the hard numbers that result
+from your data analysis. And then finally, qualitative research methodology is very
+good at developing narratives, so that you can tell a strong story about the analysis
+that you ultimately do, whether it is quantitative entirely, or involves both
+qualitative and quantitative elements. So in the next set of videos, I'll talk a lot more about semi-structured
+interviews and how to conduct those.

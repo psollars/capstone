@@ -1,0 +1,51 @@
+Close patterns and max patterns shrinks
+a number of frequent patterns, but it did not directly measure the usefulness
+or the interestingness of the patterns. To find interesting patterns to support
+decisions, we're usually looking for associations. In other words, we want to find
+association rules from X to Y that has the high support and
+high confidence. Remember that the support
+of the association rule is the marginal probability of X and Y, which means the fraction of
+transactions that contain both X and Y. And a confidence of
+the association rule from X to Y may just the conditional
+probability Y given X. That means the fraction of transactions
+that contain X that also contain Y. Once we calculated the two
+important numbers, we put them into the bracket as
+the representation of association rule. So in reality, we usually need to
+find the frequent itemsets X and Y first, and
+then check the confidence of Y given X. As we discussed, association rules
+are very useful in recommendation. If X is the pattern, if X is the item
+that the customers have bought and Y is another item, we can recommend
+Y to X if both the support and the confidence of the association
+from X to Y are high. In this case, we recommend
+the following books because people frequently bought them together
+with one of the books. And the confidence,
+the conditional probability is also high. As we discussed, association rules
+can be used for classification. We will use the association rule for
+classification. We usually require the Y
+as the class label. And in reality, we can just treat
+the class label as yet another item, and we can us frequent itemset mining for
+the classification property. In this particular example,
+suppose X is the frequent itemset of the particular URL and
+image and Y is the single pattern that is
+whether the email is a spam or not. Suppose we compute the support and
+confidence of this association rule that we know that among 1%
+of all emails that we receive, we observe this particular URL and
+this image. So that's pretty high. 1% is a really pretty high in reality. And we know that the confidence is 90%. That means 90% of emails that have
+this URL and this image are spams. Then we can safely make a rule that
+any email that contains this URL and this image or any email that contains the
+pattern X can be classified as the spam. So this is what we do for our inboxes. And usually, we're making multiple
+rules instead of one rule to filter the emails to our spam folder. When we have multiple rules available, we can blend them using
+the machine learning algorithm. We can just use these association
+rules as features, and then combine them based on
+a downstream machine learning model. Frequent patterns and association rules
+are commonly used for classification tasks whenever the data object can
+be represented as the set of items. For example, in text mining,
+we can usually represent the document as the bag of words,
+where every item is the word and a bag of words means that we
+do not care about the order or the number of appearances
+of a single item. Once you represent your
+data object as the itemset, you can apply the association rules and
+frequent patterns for classification. In particular, you can represent your
+data object as the set of features, where the features could be single items. The features could be frequent patterns,
+frequent itemsets you discovered or association rules you discovered. And then you can apply any
+classification algorithm on top of this feature representation.

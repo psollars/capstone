@@ -1,0 +1,275 @@
+Hi. Welcome to the Collaborative
+Data Science segment 4 for Science 591. In this segment, I want to introduce you
+to collaboration, talk a little bit
+about what that is, and then talk
+specifically about how collaboration applies
+to data science. It requires a little
+bit of a stretch when you're thinking about it. There are three
+things that I wanted to talk about; repeatability, reproducibility, and
+replicability, the 3Rs. Then finally, in this segment, I want to talk about the
+tools that can be used to support collaborative
+data science. So collaboration, simply defined, is two or more people working
+to achieve the same goal. I want to talk about that
+in contrast to cooperation, which is very similar, but that's when you
+have two or more people working towards different goals. Then you can imagine
+how both of these can interplay in team dynamics. But what we're interested in
+right now is collaboration. So imagine you have
+more than one person working towards that same goal. For collaboration
+in data science, we really want to think about those shared goals in terms of repeatability, reproducibility,
+and replicability. This material is
+largely drawn from the blog post that you see below, and that's an excellent resource. I'm going to try to summarize
+the important parts here. So the repeatability component is really a focus on the process. It asks the question of, can the process be repeated to produce exactly the same results? Quite often you hear this, you might have shared this
+actually in office hours, so this notion that, "It worked on my computer." Or actually, "It worked on someone else's computer and it works a little bit
+different now." So the idea is that
+we're going to set up a system by which all of our work is repeatable irrespective of the
+setup that someone has. So you need to be
+able to do what's called a bare metal buildup. So given a machine that
+has nothing on it, what would that look like? Some of the technologies that you might want to experiment with are ones called docker
+or anything like VirtualBox or virtual systems. So you can look that up, look
+up docker as a container. It's a very interesting system
+by which you can create machines that are essentially
+standalone machines. You can spin them up as Windows machines
+or Linux machines, Mac is a little bit harder, but it's quite fascinating. You can set up this environment that's exactly the
+same for everyone. In fact, that is very
+similar to what happens with the Jupyter instance that
+you have available to you in the Coursera environments for all of your Maths courses. So those are containers
+that are running. We know that everyone's machine with the exception
+of their home directory, but the underlying software, we know exactly what that is. The other thing to
+watch out for in repeatability is the underlying
+libraries or versions. So you'll notice in some cases, if you're working
+on a local machine or you set up something
+in the cloud, that things will look or behave
+a little bit differently. I was struck by this in one of my residential courses recently when a version of a
+visualization library, Seaborn, which you
+probably have encountered, looked very different
+with the new version. They actually corrected their color palette so
+that it's much more in line with what we expect
+as visual designers. But that was a big change, and it took a little while to figure out what was going on. You'll also notice that
+there are sometimes incompatibilities between different versions of libraries, and upgrading one library can force the upgrade
+of another library, which can break a dependency
+for another library. So the idea about repeatability is important when
+you're setting up your machines and when you're setting up your
+environment to work in. So all these little things
+have to be lined up, and you have to be
+able to communicate that to the people you're
+collaborating with. Now, reproducibility is I think the most important and
+core concept here. We'll get to another
+concept in just a minute, but reproducibility
+is where we're going to spend most of our time. This is Victoria Stodden's work. She talks about three important
+hierarchical pieces here; statistical reproducibility, empirical reproducibility, and computational
+reproducibility. Let's take a look at each one of those and see what they mean. So statistical reproducibility is probably as you much imagine it, it's the choice of statistical
+tests, model parameters, critical p-values, your thresholds, all
+your hyperparameters, that you decide either ahead of time or in the course
+of doing your analysis. These are typically written
+up in a reference document. So for example, you might encode this into
+Jupyter notebook, in your narrative around it, but it might be something like a standard operating
+procedure manual for the company that
+you're working with. So these things are
+typically decided ahead of time or in the course
+of the analysis, but they're recorded
+for posterity. Empirical reproducibility
+is a little bit different. It's information about
+non-computational information. So it might include things
+like data provenance, that is, documenting where
+the data came from, how it was collected, what the nature of it is. It could contain a data
+dictionary, for example. I also want to get into this
+idea about data versioning. As we take data and move it through a data
+manipulation pipeline, you can change the
+nature of that, and you might write that out. In fact, that's a
+good thing to do, to write out your data
+at intermediate steps. What we want to make sure is
+we always have some measure of the version number
+of a data-set. So if you've modified the data, say you filled in
+some missing values, you excluded some missing values, you even re-coded missing values, say they were encoded as minus nine or
+something like that, and you re-coded
+them to NaNs, well, that's a change and you need
+to document that change. Think of someone
+who you don't know, who's following your
+footsteps and is trying to figure out
+what exactly you did. The third type of
+reproducibility that we're interested in is computational
+reproducibility. This refers to a set
+of analyses that exactly reproduce the
+results of an analysis. How do you convey that? Well, that's what
+we've been doing mostly in our work in Maths. You've been writing out source
+code primarily in Python, maybe a little bit
+of Shell scripting, maybe a little bit
+of visualization. But it's the source
+code that allows us and allows you to
+convey to someone else how to follow the
+analysis that you did. I want to introduce these
+eight tenets from Sandve, Nekrurenko, Taylor, and Hovig that underpin
+reproducibility. So when we talk about
+reproducibility, this is sort of a checklist
+of things you can go through. So first of all,
+track your results. Write things down, say in a Google Doc that
+you can share with someone. So keep track of your results. The second thing, that's a basic tenet for
+reproducibility, is to script
+absolutely everything. Now, you know that I generally encourage
+people to use something like Excel for initial
+explorations of data. There's nothing wrong with that. I know we're all big on Python in this course or
+in this program, but there's nothing
+wrong with other tools, except for the fact, and you've probably experienced this when you come back to something like in Excel
+spreadsheet a few days, weeks, months later, and you have no idea how you created
+these analyses. So that's why we want to use scripting instead
+of just point and click graphical user
+interfaces to do our analysis. We want to be able to reproduce
+these things exactly. We also want to create
+reproducible environments. I talked a little bit
+about that with things like containerization and docker, and making sure
+that we have things like virtual environments set up. Now, the other thing we
+want to do in conjunction with that is to also
+use version control. Now, this can be Git, which I think many of
+you are familiar with and any sort of versioning control is
+helpful in this way. As I mentioned with
+the previous slide, we really want to store data, write that out, version it, comment on it, and make sure that any intermediate result in
+your work are also stored. This becomes increasingly
+important as we deal with more and more complex
+models that require considerable resources to
+create in the first place. Now, one thing that's
+really important, and some of you may have seen me do this in some of my courses, is to set a random number seed. Now, as it turns out, computers aren't really good at generating truly random numbers. They actually have more or
+less something like a list of numbers that they start
+at random points in, but run through that list. So it's weird,
+they've actually got a stored series of random
+numbers that are pulled from. So to make any sort of
+random elements predictable, I know it sounds weird, but we really want to do this. So if there's some
+stochastic process, some random element to any of the analysis
+that we're doing, we want to be able to create that absolutely with high
+fidelity again. The way we do that is
+we set a random seed. Now, in Python, we do that by doing something
+called a random.seed. We import the random module. So you'll see import random, and then random.seed, and
+we'll give it a number. It doesn't matter
+what that number is. You might want to call it random.seed 2020, it's the year. You may want to call
+it 591, were in 591. So all these little
+pieces together so far, it gives us these
+reproducible results. The other thing, and I hinted
+on this with visualization, is we want to make sure that we store the intermediate
+results that we're going to feed into that visualization so we can again recreate
+that visualization. Visualizations are a
+little trickier to do because there are different
+types of analysis. We can't follow them
+exactly numerically. Sometimes the layouts change, those libraries
+change quite often. So we want to be a little
+bit careful that we always store the input values
+to the visualizations, that way we can recreate
+the visualizations easily. Finally, we want to set
+things up in our analysis so that others can change
+the level of analysis. So that is, they can
+use your analysis as a sub-analysis of
+a bigger analysis. They might want to dig down into the components of your analysis. In another words, we can change the granularity of the analysis. So those eight things
+taken together, if you have a checklist
+and you can check off all eight of those boxes, then you're in
+pretty good shape to set up a reproducible
+environment. The last R that I
+wanted to talk about in our three Rs is replicability, and this is really
+the highest level of collaborative data science. In which you can repeat an entire experiment
+at least twice, and that's right back to
+the collecting data stage, performing analyses and actually arriving at the same conclusions. Now, in data science, we often don't have that luxury of collecting
+the data again. Remember, some of the differences
+between statistics and data science has to do with
+this notion of found data. The data's out there,
+and we want to analyze it as opposed
+to setting up a very carefully
+controlled experiment where we rerun analyses or we design experiments
+exactly to test a hypothesis. So it's a little trickier
+in Data Science, but the idea that
+you could go in, and completely replicate
+an entire study is that highest level, and it is underpinned by the
+other Rs of our three Rs. So let's talk a little bit about tools to support
+collaborative data science. We might, for example, have computational notebooks, and I want to talk about a couple of them.
+Jupyter and Zeppelin. You're familiar with
+Jupyter, and finally, I want to talk about
+revision control systems. Git and git branching. So Jupyter Notebooks. All of you know this,
+this is what we've been doing for the
+last few months. You've been working almost exclusively in Jupyter Notebooks. They are computational notebooks, and they support a number
+of different languages. The environment that we have
+set up for you on Coursera, I think is set to currently just having one language, Python. But you can use Jupyter
+notebooks with other languages. You could use them with R, you could use some with Julia. There's a lot of other languages. You can look this up on
+the Jupyter website, and get an idea of the diversity of languages
+that are available to you. The other aspect that I
+want to introduce you to is the difference
+between Jupyter hub, Jupyter notebook and Jupyter lab. Now underpinning
+all of our work in the Coursera environment
+is something called a Jupyter hub, and that maintains, and coordinates the
+containerized versions of Jupyter that are launched
+for you when you log in, and the environment
+that you've been working in is called
+a Jupyter notebook. Some of you might be installed locally on your local
+machines, and in particular, you may be using a system
+called Anaconda or Conda, if you've done that,
+you might want to experiment with something
+called Jupyter Lab. Jupyter Lab really has the same underpinning layer
+that Jupyter notebooks do. It just has a slightly more
+advanced user interface. There are a few
+things that are not available to you in Jupyter lab, but for the most part, it represents, in my opinion, an improvement over the more traditional
+Jupyter notebook. I want to call your attention to an alternative notebook
+just so you know about it, it's called Zeppelin, and if you go to zeppelin.apache.org, you'll see some
+information about it. These notebooks that behave
+a little bit differently, they're written in a
+different language. They're focused primarily
+on Spark, SQL and Python. I could have used them
+in my Spark course, but I chose to keep
+things the same for you using Jupyter
+across the board. Similar to Jupyter, Zeppelin supports a whole
+bunch of languages, and I strongly recommend
+you try it out, just so you know what it's about. Some of you might
+come to love it. Others might say, Well, I'm
+glad I'm using Jupyter. Let's talk a little bit about
+version control systems. Git is the most common
+version control system, and there are others. Git is a relatively new player in the source code
+control systems or version control systems that
+we've seen historically, and it's really great because it allows different
+team members to work on different branches or different versions of
+a complete codebase, and Git Hub, as you
+probably know as well, is a very well-known
+repository host. I want to introduce you in case you haven't seen it before, to something called GitFlow, and get flow is a workflow model that's based on using Git, and I'm going to take
+you to this link here that describes GitFlow, and we'll share this URL out. So GitFlow is something
+that was first proposed by Atlassian Bitbucket. I'm just going to
+leave this here. I'm not going to replicate
+this in my slides, and what it represents is
+a way to develop software, and you can think of software
+in our case as notebooks. For those of you who are
+familiar with Git and Git Hub, this will make a lot of sense for those of you
+who are new to Git, just follow along with me
+and you'll get the idea, you'll get the gist of
+what I'm talking about. GitFlow is important because
+it distinguishes between a master branch that's
+typically the one that you're always doing your work on in a traditional Git environment, and a development branch. So the biggest change
+here is that all of the development work is
+done off the master branch. So this could be in a
+development branch for example. So what we do when
+we're developing work, when we're developing code
+for the math's courses, is we will adopt a
+GitFlow workflow. So all of our work is
+done in a develop branch, and in fact, it gets a
+little bit more complex. When we decide we're
+going to add a feature, say a feature for me might be in your
+homework assignment. I'll take my development branch, and you can see this that's
+in the purple colors here. That's my development branch. As I'm working on, say, homework number one in a course, I will create a replica
+of that branch. That is, I'll branch a branch, and that might be that
+first series of green dots that you see running across
+that bottom dashed line. So I'm checking in changes. There could be other
+work going on by other team members on
+the development branch, or as you can see, there's that small dip off the development
+branch where we see two green dots right there. So those two green dots
+might be another one of my colleagues developing
+another homework assignment. Now it could be
+that in my branch, the lower green one,
+I just abandon it. I didn't like that
+homework, and in fact, I'm going to adopt the branch that my
+colleague developed, those two green dots, so that those are two check-ins, and what we'll do is we'll
+merge that back into the main branch using something
+called a pull request. I will request that these changes be merged
+into that branch. Now, ultimately that
+development branch may be merged into
+the master branch, and that's what you
+would ultimately see. So that's the gist of
+the GitFlow workflow. So in summary, I think I gave
+you a quick introduction to collaboration and distinguished
+it from cooperation. We talked about repeatability, reproducibility and
+replicability as the three R's that
+underpin collaboration in data science. Finally, I went over two
+broad types of tools, that is computational notebooks. All of you know Jupyter, some of you may be
+introduced to Zeppelin, and the other tool set, the revision control systems
+or things like Git and Git Hub that can be used to support collaboration
+amongst data scientists

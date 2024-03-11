@@ -1,0 +1,145 @@
+Hello, and welcome to
+another code walkthrough in Postgres for Postgres class. So we're going to go
+through now the loading of the text of a book and we're
+going to be using Python, and we're going to be
+using a bit of code called loadbook.py that I wrote. So the first thing we're going to do is
+we're going to grab ourselves a book using
+wget from gutenberg.org. We're going to grab a pg19337.txt and I'm just going
+to download that. ls -l. If we take
+a look at this pg, and the funny thing is
+that pg is for Postgres but pg19337 actually stands
+for Project Gutenberg. And so this is a Christmas
+Carol from Thomas Dickens. So what we're going to
+do is we're going to write some code that's going to grab out the paragraphs and then merge all these paragraphs
+into one line and insert those paragraphs into a database so that we can add a
+full text index to it. So it's going to have some definitions about
+what a paragraph is, etc., etc. One of things we're
+going to do is because we're using ts_vector, we are not going to worry about punctuation because
+actually ts_vector knows all about that. So that's a local file
+with 186,809 characters. So then we're going to grab
+this loadbook.py using wget. loadbook.py. We'll pull that one down. And then this one uses a bit of
+library code called myutils.py. So we'll wget
+pg4e.com/code/myutils.py. So I have all that downloaded. Now, it always is
+going to remind you that you've got to fix hidden.py. But you don't have
+to fix hidden.py if you just finished the
+previous example. So you don't have to keep
+editing hidden.py. Then we're going to run it. But let's take a look at the code first and you'll
+see how this works. So loadbook.py. So here's loadbook.py
+and it's going to tell us how to do all this
+stuff blah, blah, blah. So we import the hidden stuff and we're going to use the time
+and we're going to ask for a bookfile, then we're going to split it and take off
+the txt because we're going to automatically
+name the table the bookfile minus the suffix. We're going to make
+sure we can open the text file before we bother even opening
+the database connection. Then we load the secrets and make the database connection
+just like we did in the previous assignment and then we grab ourselves a cursor. So our cursor is effectively
+the same as our client, our pgsql client. We just almost do
+exactly the same thing. So now that we have a cursor, I'm going to drop the table. I'm going to use the
+name of the book as the table and then
+I'm going to create the table with a SERIAL
+and a body of TEXT, right? Just two columns, one is a
+big text and so I do that. Now, this here's a bit of Python. And we're all suppose to
+know Python already. I got some counters. I'm doing things like
+throwing away blank lines. One of the things
+I'm doing, I guess, I've got to open another pg, one of the things I'm
+doing is I'm taking multiple lines until I find a blank line and I'm kind of concatenating them together and
+moving a new line. So it's like one big
+long line like this. I'm joining them all
+together, one big long line. I just did that on my text editor to show
+you what I'm doing. And so one of the things I'm
+doing is I'm looking, do I see a blank line. If I'm in the middle
+of blank lines, I throw them away. If I'm in non-blank lines, I concatenate them together. And if I find myself on a blank
+line and I've got a para, the para is my variable for
+accumulating a paragraph. If I hit a blank line, then I take insert, then I insert the paragraph, right? So I insert it into the
+table name with a body and a substitution parameter
+percent s base in a body VALUES percent s and
+I cur.execute the thing go ahead and run that SQL
+and pass in a one-tuple in the weird format
+parenthesis para comma paraenthesis which is the weird
+format for a one-tuple. And I'm counting how many
+times I found a paragraph. So here's where I'm going
+to do a connection.commit. Now if you made this
+connection.commit every time through, you'd actually run a lot slower because you'd retrieve something, read something, and then every
+insert would be a commit. So I'm going to make it
+so every 50th record I commit, and then
+every 100th record I'm going to tell it how many was loaded and then I'm
+going to sleep. And the reason I'm going
+to sleep is to allow, I put this in a lot
+so I can blow it up. So I hit Control-C in this
+particular situation. And that just gives me a
+chance to slow it down if I've got a runaway train. So then this part
+here is accumulating. The strip is taking out
+the newlines and throwing away whitespace at the beginning and end and then
+I concatenate it. This is what's concatenating, para equals para plus quote
+space quote plus line. That's what's actually
+concatenating all the lines together to give me one very
+long text string. And then when the loop is
+all completely done, then I commit the
+connection and I close the cursor and then I print out some loaded
+messages and tell me what to create the GIN index which I've got here
+also in my SQL. So that's the basic idea. You can look at it
+as much as you want. So let's get out of here and just say python3 loadbook.py. Now if I hit Enter,
+it's just going to assume that pg19337.txt, which is the one I want to do. So now as you're going
+and so I can go over here and I can say dt and I can say SELECT COUNT star FROM pg. SELECT, I can't. I wanted to catch it
+while it was running. This gets to 700. It's at 800. OK, I did catch it while
+it was running. If you come back over here
+you'll see it's 100 loaded, 200 loaded, 700 loaded and it was pausing and
+it was committing. And you'll notice that the
+numbers that you see here are all even
+multiples of 50. I didn't catch it at 50. It does wait every 100 but
+it does commit every 50. So that's why you're
+not going to see like 143 because it's not going
+to commit until record 150. And that's this bit of
+code right there. Every 50th record it
+actually commits, which means the inserts come to the
+database in like blocks of 50. This greatly improves the
+database's performance. And the amount of network traffic
+that goes back and forth. Okay, so at this point, it's
+loaded 814 paragraphs. If I do that SELECT COUNT, you see that there's 814 rows. So let's take a look a bit. If I say SELECT star FROM pg19337 LIMIT 1,
+that'll be kind of long. Oh, that was my first. Let's do LIMIT 5. Yeah, you see how these
+paragraphs are getting kind of long. Let's go LIMIT 10, see if I get to a
+really long one, limit. No. LIMIT 20. Okay. Some of them get kind of long. So that's one paragraph and it was one Python code
+that built all that stuff. Now, if you think about
+this as an inverted index, if you just broke this on spaces, Christmas comma
+would be something, right? double quote who would
+be something, kindness dot. If that was just a pure
+inverted index based on words as defined by spaces, that would be a problem. Okay? And so the good news is
+that Postgres knows everything there is to know about this and we are
+simply going to say, let's make an index using to_tsvector of the body
+using the English language. And so that knows everything. What punctuation is in English, it knows, you know, is kindness
+and kind map to the same stem. And all that magical
+stuff is happening, okay? And so now let's just see
+what we're going to do. So select where the tsquery. We're going to look to see if goose is somewhere in
+the body, right? And so there it goes. LIMIT 5. Let me add the id from that so you see it a
+little bit better. So we can see which
+paragraph it was. SELECT id, body FROM pg19337 WHERE to_tsquery english goose
+double at-sign to_tsvector english
+body LIMIT 5. So here we go. So you'll
+see in paragraph 412, 415, 428, 429, and somehow
+there's a goose everywhere. I didn't know if we'd
+find it, right? So there we go. So it's there. Now let's check
+to see if the EXPLAIN works. Sometimes this EXPLAIN takes a while for the GIN to catch up. But now it's done. And so again, whenever you
+are doing an EXPLAIN, it looks really complex
+and all this stuff is useful to somebody
+somewhere, I'm guessing. You just don't want to
+see sequential scan. Your sequential scan is
+what slows you down. It's kind of like in order
+of algorithms. If you see order
+n-squared, it slows you down. But we've got
+a Bitmap Heap Scan. It says that it's
+using pg19337_gin, which is exactly
+what we expected, okay? We can, in this one, see the thing where
+we do a to_tsquery of tiny followed by tiny tim. The less than dash greater
+than means followed. And so now we can ask for that. tiny followed by tim and there's 21 bodies where the word
+tim comes after tiny. It doesn't have to be exactly right after it at that point. And we can do an EXPLAIN
+on that to make sure that that uses that query. That's a pretty
+complex thing because that's tiny somewhere after that is tim and so
+can that use the, oops, I didn't copy it. I need to explain
+that, yeah, okay. Yay! EXPLAIN ANALYZE with a tsquery
+of tiny followed by tim. But you'll also notice
+something here that this tiny has been stemmed, right? So it's not t-i-n-y, it's t-i-n-i. So that's cool. Okay, so that kind of gets us
+through the effort of just kind of loading a book
+in, using Python to concatenate all the lines of a paragraph into
+one big long line, making a real simple vector, and then being able to do efficient searches
+on all that stuff. So I hope this walkthrough
+was useful to you. Cheers.

@@ -1,0 +1,23 @@
+Hi, we're back in the studio now and
+welcome to week one of size 515. This week, we're going to be talking
+about the Linux command line interface. As an overview of this week, I want to talk about why we're
+not going to use Python. We're going to talk really
+quickly about that case study of collecting wearable data. We're going to talk about the Linux shell,
+command-line editing. We're going to go over
+some filesystem basics. We're going to talk about different
+ways to view and edit files. And we're going to do a little bit of
+data manipulation with sorting and filtering and we're going to close
+up this week talking about how all the shell commands
+are integrated with Jupyter. So one thing you might want to ask
+is why aren't we using python? In the rest of the program,
+we're really focused on Python. This is perhaps the one week
+departure from that paradigm. So it turns out that sometimes Python is
+not the best choice for data processing. Python scripts may not be great for
+super quick data manipulation. I mean we know Python is good for
+data manipulation in general, and at this point you can probably write
+a Python script pretty quickly. But sometimes you can go even faster
+by using the command line interface. You can often use just one or two lines of Linux commands to accomplish
+what would take many lines of Python. So there are some particular tools that
+we're going to focus on that can really shorten the amount of code that you write. In other words, and this is where we tie
+back into efficient data processing, Python might not always be
+the most efficient choice.

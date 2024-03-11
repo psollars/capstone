@@ -1,0 +1,78 @@
+So, let's talk about the project,
+overall, the goal of the project, is to give you the opportunity,
+to bring your unique interests, creativity, and ingenuity,
+to our data world. Demonstrating your ability, to apply
+the skills and concepts that you've learned in the courses so far,
+to real data sets of your choice. >> In particular, tour project should show
+off your ability to take at least two data sets, that have very different formats and
+or access methods and clean manipulate and combine them. In order to extract,
+a useful by product, in other words, in a sense of very new data set, something more that you could have gotten
+from either the data sets by themselves. The manipulation could involve, filtering,
+format conversion, handling, missing or noisy data, matching records from one data
+source, with corresponding records, and the other and so on. You must make significant
+use of programming tools, that we've covered in the prerequisite
+courses, you'll also be expected to demonstrate your ability to
+visually explore your data. >> Now we're going to encourage you,
+strongly encourage you, to work in teams of two, or three, which in our experience yield superior
+experiences and results, right? You get the ability to collaborate with
+other people, to cooperate with others, but you're not in such a big team
+that you can sort of hide, okay? So, it's a very visible,
+yet powerful environment, now will facilitate the team formation,
+although we're encouraging you to self organize and slack,
+advertise your interests. Say, this is what I'm interested in,
+anyone else? And odds are someone's going to try and
+say yeah, I'd like to work with, you know. >> The teaching team is also going to
+work with you to help guide you through the early stages of your
+proposal formulation. If you you're unsure about what
+data sets you might want to use, we can help you find something
+that you're interested in, and that would form
+the basis of a good project. Some of you might have data that you
+can access from another context, such as your workplace. However, that data must be public, and it must be accessible by all members of
+the class, including the teaching team. With no additional licensing waivers,
+or other technical, or legal restrictions on accessing the data. >> Now, before you start
+work on the actual project, you'll need to write a short
+project proposal, and that's going to be based on a template,
+that we give you. This is meant to be a high level summary,
+and doesn't need to contain
+technical details or code. You can refine your project
+goals later if necessary, as your project progresses,
+we're going to ask you to check in with your faculty
+mentor if you're going to do that. Submitting the proposal early in the
+course, is intended to get you thinking about the questions, and
+data sets that you might be interested in. And how those might be addressed with
+the tools that you have been exposed to, in the program so far. Now, some of you, may have already
+taken some more advanced courses, maybe something on machine learning. Maybe classification supervised,
+unsupervised learning, causal inference, or
+something like that, that's great. But say that from milestone two, or the
+capstone course, what you need to show us, is that you can first of all, define
+a problem, second of all, source data. Third, clean, manipulate, and combine, different data sources into a new
+data set forth, leverage visual and analytic techniques that you've acquired
+in prerequisite courses to gain insights. And finally, number five, communicate
+those results in an effective manner. >> You'll also be asked to review
+each other's project proposals, it's got two main purposes. The first, is that provides additional
+feedback on your proposed projects, above, and beyond what the teaching
+team provides you. Second, it also provides you with
+the opportunity to be inspired by each other's work. The process of peer review in this
+course is modeled on scientific or academic peer review. And please note that you will be
+awarded credit for coursework, for providing your feedback, and
+a minimum of two other projects. You're assigned score for the proposal,
+is not going to be based however, on the feedback that you receive,
+it's just the feedback you give. >> Now, once you have your feedback and
+you've provided feedback to others, you'll submit your proposal to
+the teaching team for approval. And once you get that approval, you'll
+be clear to work, on the project for the remaining duration of the course. So, how do you complete this part
+of the course, successfully? Pick data that you're passionate about,
+you're going to be spending a lot of time with it, so you've got to be engaged
+with what it is, in order to do well. Take some time to dig deeply and
+reflect on what generally inspires you, then try to find data on it. Stuck, reach out to your peers, and
+to the teaching team to help you, odds are that someone will have ideas
+that you'll be able to leverage. Finally, don't freak out about this,
+it's designed to be fun, and to give you a chance,
+to take the skills that you've learned, in the courses you've completed so far,
+and apply them to real world scenarios. Good luck, and remember, that we're
+here to help support you as best we can. [CROSSTALK]
+>> And talking about being here, just to let you know, right now we're
+going to move away from this camera here. We are on the eighth floor of the Hatcher
+building, and you are looking south, out towards the La quadrangle. And if you can see the black and,
+further on to the southwest, that is known as the Big house, or
+the or Michigan stadium, take care

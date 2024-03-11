@@ -1,0 +1,212 @@
+Hi, welcome back. We're
+going to continue on our Adventure 3 design
+and I want to talk a little bit about this idea
+of wicked design. Information visualization
+as a wicked design problem. In many cases what you'll
+find when you're looking at really simple visualization
+tasks is you can solve them directly with
+just a simple bar chart or a line chart or
+whatever it is. But in many of the more
+sophisticated examples that you'll build or see, you're going to have to make
+lots and lots of trade offs, because there aren't going to be many many tasks that you need
+to support simultaneously, and you can't always
+actually achieve that all at the
+same visualization, so this is this notion of
+a wicked design problem. A wicked design problem
+is one in which it is difficult or impossible to
+solve the problem completely, you're going to have to
+make some trade-offs. So you'd have
+incomplete information, sometimes you're going to
+have contradictory needs, some people are going
+to want something, some people are going to want something else or you're going to be restricted in
+the information that you get. There are always going to
+be changing requirements, so over time the tasks
+that people might have when using your visualization
+are going to change, and whether that's at
+the individual level or at the group level, you have to take that
+into consideration, but that's what makes
+this so wicked design problem. Any solution that
+you create will go away over time or
+evolve over time. So there are
+six main characteristics of a wicked design problem. The first is that
+you don't understand the problem until you have
+developed a solution. We'll come back to
+this, we'll bookend in this discussion with
+a similar point. But basically you've
+been given a data and maybe some questions and insights and you have to
+develop a solution. But until you actually
+build something, you have no alternative, so you have nothing to
+compare it against. So you're going to have to
+build a few different options basically to understand
+the best way to do it. With information
+visualization specifically, you really need to actually
+put the data on the screen in a visualization to understand the best way to represent it. The second thing is there's
+no stopping rule to making developments in improving
+your visualization, so this is a nice example from researchers describing
+the design process. What you can see is
+all these arrows swinging back in every step, because you can learn you
+can basically try and identify tasks, you
+can discover things, and this is all you're
+talking to other analysts, you're talking to
+potential clients, and they basically have
+new information all the time, and as you give them
+solutions they might say, "Oh, we have to go
+back and fix things." So you see this constant arrows
+going back at every step, because at every point, we want to be able
+to go back and make changes based on what we learned, and there is no stopping rule, there is no thing that says, "Stop now," other than
+running out of time. Solutions in the case of wicked design problems are
+often not right or wrong, so there's not just a
+purely correct solution, this is not like
+a homework assignment where there is a right answer
+and a wrong answer. But we can still talk about
+things being better or worse. So I want to give
+some examples in a second, but when you think
+about comparing even the two numbers as we've seen in a few of
+the other lectures, there's a very simple bar chart, but there's other ways of
+comparing the numbers 12 and 7. We saw lots of
+different examples, some of which are appropriate for certain tasks and not for others. So let me give you
+a real example. So this is from a set
+of visualizations, actually put out by the same newspaper The New York Times, where they want to rank countries based on the number
+of Olympic medals. So they want an absolute score that basically says this
+is the best country, this is the worst
+countries, and so on, listed on the screen, and they need some way
+of representing that. Now the problem is, there's
+questions like what's a gold worth relative to
+something like a silver? Like how do we add up the medals? Should everything count the same? There are other questions like should we take into account, how big the country is or how much income
+the country has, like what's the GDP? All these things are interesting
+questions but they might restrict our
+visualization choices, and depending on what
+we want to focus on, we will do different things
+in the visualization. So I will show you two vastly
+different examples that all support the same
+high level question but different sub-questions. So this is a very
+clever example that The New York Times developed
+around the Winter Olympics. What they were showing here
+is a trade-off between how much gold medals
+and silver medals are worth relative to bronze medals and how that might
+change the ranking. So it turns out that when
+all medals are valued equally or we only care about gold medals
+Norway always wins. So that's why you see one
+solid color for Norway, and it doesn't really matter. As I'm brushing
+over, you're going to see this list changing, because the other countries will depend on how you value
+some of these other things. So Germany is always
+in second place, Canada is always in third, the US is always in forth, Netherlands is always in fifth. But when we get to South Korea, we start to see
+something interesting which is that there's a trade-off between how much we value these different medals. So gold medals and silver
+medals and bronze medals all being worth the same as
+this bottom left corner, but as we drift over to this side where these other medals
+don't really matter, we see that South Korea
+moves from sixth to seventh. Some of the countries
+are actually really fragile when you do this. So you can see these are the Olympic athletes from Russia, you can see as we move from this display over
+all these different regions, the ranking actually
+changes quite dramatically all the way
+from sixth down to 13th, depending on how you
+value different medals. So this is one example of trying to answer
+the question of which is the best country or what's
+the relative ranking of countries based on the number
+of medals they've won? So here's a vastly
+different example. This time they're
+focusing on changes in time and also adjusting for
+things like population. So you can see here that the United States
+dominates over China, this Summer Olympics
+instead of Winter Olympics. So you see where
+these different countries rank and how they dominate
+the other countries. So you see when countries
+are equivalent, they're sitting at
+the same level. The interesting thing
+about this visualization is it allows you to
+compare over time. So by clicking on 2008
+or going back to 2012, you can see how
+the rankings change, and you can do things like
+adjusting for population. So in this case,
+the authors felt like it was important to adjust
+for population counts, which is perhaps a
+reasonable given that the US and China
+are quite large. If you do that, you see the United States and
+China falling dramatically and smaller countries that are winning more than you
+would expect like Grenade, Bahamas Jamaica, dominating in these rankings once we
+adjust for population. So depending on which version
+of reality you want, which version of
+the best country you want, whether it should be
+based on population, time or other factors like the values of gold versus bronze versus
+silver medals, you're going to pick
+a very different kind of encoding and a very different kind
+of visualization that emphasizes
+these different things. So we saw from this example
+that there are many cases where the solution
+is neither right nor wrong. We saw two equally
+good visualizations, but they can be treated better or worse depending on
+the kind of tasks. So whether we were
+focusing on time or we were focusing on some
+other attribute of the data, different solutions
+were better or worse. To other interesting things
+about wicked design problems. Each is essentially
+a unique and novel. Once you've created one, they may not work for
+any other piece of data or any other time
+point in history. Every solution is often
+a one shot operation. That is, you're
+building this and you may have to throw it away because it might not work ever
+again the entire solution. Now, when we focus on information visualization and we look at other people's
+visualizations, we will try and understand
+their choices in building the visualization and
+hopefully be able to integrate some of those into
+our future visualization. So being able to find interesting encodings
+and using those, that's going to be a key, but with wicked design
+we often have to throw away the actual solution
+like the complete thing. So here's an example
+that basically, because of the different
+data questions and contexts which creates
+this vast space of choices, we have one solution
+that we've built for that particular point
+in time that context that we're going to have
+to throw away if we try and build some similar thing
+in a later time point. So this is another example from the New York Times that
+supports this point. It was from the election when Obama was running against Romney, and you saw different ways
+in this visualization, where Obama can
+win versus Romney. So you can see here, there are
+431 ways for Obama to win, 76 for Romney, and five ways
+to do a tie in this tree, which is basically forced
+using whatever they understood about
+the election at the time that Florida was
+a key determinant, and then Ohio, then
+North Carolina, and so on. These were going
+to be key states. So for this particular election, Obama and Romney are unique as are the different
+kinds of states, as are the different kinds of polling data they've collected. The visualization was
+interesting in that it lets you explore different pathways
+through this, based on who was going to win what and what the outcome
+was going to be. So if Romney won Florida then
+Ohio then North Carolina, Obama could still win
+a number of these cases. So this tree allowed
+you to explore it. Now, the tree itself is something we can use
+in a future election, but the particular levels and
+the encoding of the tree, that was unique to
+this particular point and time, this particular election, this particular data that
+they've collected. So just to bookend
+this conversation, I want to emphasize the fact
+that this last point, there is no given
+alternative solution often when we talk about
+wicked design problems. There might be ideas
+that we can use, like the idea of a tree
+or some specific charts or encodings or
+interaction techniques that we can borrow, but there might not be a complete solution
+to the problem. So there's no alternative that we can compare ourselves to. That would make life
+easier for ourselves, we can say this is
+better than this, but we often have to
+be the ones creating the different alternatives in designing these solutions
+to wicked design problems. So we would still like to know that we're heading in
+the right direction, and this is what a lot of the conversation around
+some of the design ideas, some of the design suggestions that we'll see will lead us to. So to put it another way,
+we still want to make sure that all the pieces can
+fit as well as we can. Often that will
+require understanding within that particular contexts
+whether the pieces fit, but we're trying to find
+more general rules if we can that will guide us
+and help us along the way. So the takeaways are
+that information visualization is broadly a wicked
+design problem, and this comes about
+with more complexity. So very simple infovis, might not have this property, but the more sophisticated
+information visualizations that we built are
+going to have this. The properties of
+wicked design problems make it hard to build something
+that is absolutely perfect, but we are working
+towards better, so we can do that certainly. We can still borrow ideas that we see in to the new designs
+that we built.

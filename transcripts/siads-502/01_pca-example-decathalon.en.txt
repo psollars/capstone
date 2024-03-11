@@ -1,0 +1,162 @@
+Welcome back to math
+methods for data science. In this video, we'll
+be talking about a principal component analysis
+example for a decathlon. In a decathlon there
+are 10 events. Let's just say for this
+example there are 50 athletes. We can represent in
+a data matrix X, how well each athlete
+did and each event, so the columns of this matrix
+are going to be the events. There'll be 10 columns and the rows are going
+to be the athletes. The 10 events in a decathlon, just for those who don't remember which you're going
+to be the columns here, are the 100 meter, a long jump, shot
+put, high jump, 400 meter run, a
+110 meter hurdles, the discus, pole vault, the javelin, and the
+1,500 meter runner. For each event j, that is for each column of X, we're going to find
+the mean of the column Mu_j and the standard
+deviation Sigma_j. For each athlete i is
+results in event j, which will denote r_ij, which is the ij entry
+of the matrix X. We're going to subtract the mean of the event from the results, which is given by this
+Python code here, and then divide by the
+standard deviation. This is going to normalize
+all the results of events, so that they look somewhat
+like a normal distribution, or at least they
+have expectations 0 and standard deviation 1. The reason that this is
+important to normalize the data in this way
+is because otherwise, our principal components
+will be unduly weighted by events that just
+have smaller units. For example, the
+1,500 meter just takes more minutes to run, or more seconds to run, and thus it'll be
+weighted more heavily. So this, by dividing by
+the standard deviation, means that each
+event will be given equal importance and our
+principal component analysis. It also means that
+the eigenvalues will sum to the rank
+which is 10 here. Now, we have our
+normalized data matrix X, and we're going to use that
+to make a covariance matrix. Recall that the
+covariance matrix, the i and the j elements are just the covariance between
+variable i and variable j. Is so for example, we could be having
+the covariance between the results in the
+high jump and the long jump. The covariance measures how related the variables
+are together, so if they have a
+high covariance, then when one is high, the
+other is likely to be high. If they have lower
+negative covariance, then when one of them is low, the other one is
+likely to be lower. For example, height and weight, in the US population should have high covariance because people that are tall
+generally weigh more. However, height
+and intelligence, we would think would have
+near zero covariance, because your height and your intelligence
+aren't particularly related to one another. However, something like brushing your teeth
+and cavities, should be negatively correlated, that's have a
+negative covariance. Because, if you brush
+your teeth a lot, you're likely to
+have fewer cavities. The covariance matrix
+equal X transpose times X, this is our normalized
+matrix divided by n minus 1. Now, where does this come from? Well, remember our X matrix
+will draw that here, had the rows being athletes, and the columns being events. If we take the
+transpose of this, it'll be the opposite. The rows are going
+to be the events and the columns are going
+to be the athletes. Notice if we take the product of these two matrices,
+X transpose and X, the athletes entry
+is just going to be the results from the event I, dotted with the
+results from event J. If the same people do well at this event and
+poorly at this event, we'll have a large dot-product. Because when the one
+value is positive, the other is positive and when one value is negative,
+the other one's negative. On the other hand,
+if these events are completely uncorrelated
+with one another, we'd expect this
+to be near zero. If one of these is high,
+the other one's low, we'd expect our covariance to be negative, as we said before. That's how we compute
+our covariance matrix. We're normalizing by n minus 1. You might ask, why
+not normalized by n? That is, we won't dwell
+on in this course, but an artifact of the
+fact that when you estimate the standard
+deviation or the variance, you are getting a very small
+underestimation of that. This n minus 1 as opposed
+to n corrects for that. Now we have our
+covariance matrix. How are we going to find
+our principal components? We did Step 1, which is standardize
+the data and Step 2, which is create this
+covariance matrix. What is left is to find the
+eigenvalues and eigenvectors. You compute the eigenvalues and eigenvectors of this
+covariance matrix. Then we order them
+the eigenvalues with their corresponding
+eigenvectors from biggest eigenvalue
+to the smallest. We put them in an order. The principal
+components are the ones that have larger eigenvalue. Each of these eigenvectors puts weight on each of the
+original 10 events. Each eigenvalue tells
+you how much of the total variation that
+eigenvector captures. The more important eigenvectors will have higher eigenvalues, which has a capture more of the variance in the
+matrix of the data. The eigenvectors will tell you how important each event is
+to that principal component. For example, in our
+decathlon data, we might hypothesize
+without the data that one principal component
+might represent strength, whereas another one
+might represent say, explosiveness, and a third
+might represent speed. For example, a
+principal component related to strength
+may put a lot of weight on pole vault and shot put and discuss
+and javelin. Whereas a principal
+component associated with the explosiveness
+of the athlete may put a lot of weight on the a 100 meter dash or the
+long jump or the high jump. Now, if we make a matrix, a 10 by 10 matrix with
+our principal components, and we multiply it by our
+50 by 10 data matrix x. Recall these are rows that were athletes and columns
+that were events. We would be able
+to see how strong, explosive or fast each athlete is because what this
+will do is it will multiply the row corresponding to an athlete here,
+so an I throw. We'll multiply by each of the principal components and that will give us
+a matrix result. In the I throw of the result, it'll be how correlated that athlete is with each of
+the principal components. The result, we can
+interpret how explosive or strong or fast a
+particular athlete is. Normally with PCA, we're
+interested in reducing the dimension of
+the data and only taking a few of the
+principal components. In PCA, it can be looked at as a data dimension technique, and it does it in
+such a way that it maintains as much
+information as possible. Once you reduce the
+dimension of your data, you can do faster computations and be less concerned
+about overfitting. Because the principal
+components are ordered from largest eigenvalue to
+the smallest eigenvalue. Each additional principal
+component captures less of the total variation of the
+data than the previous one. A principal component
+with eigenvalue Lambda I captures Lambda I divided by the sum of the remaining principal components, and we call this the proportion
+of variation explained, or PVE for short. We can then map each of our principal components
+to a scree plot. On the x-axis is going to be which principal component
+we're concerned with. On the y-axis is going to be the proportion of
+variation explained, and these are going to
+decrease from one to the next, and oftentimes, what people do is try to look for an
+elbow in this graph here, or where this graph
+takes the biggest turn, and that will explain where the principal
+components are going from helpful to less helpful. Now, this is more of
+an art than a science. But nonetheless, this is
+what people often do. It's fun to hypothesize
+but to have real fun, we can look at real data. The data that we're using
+is from this Kaggle link, and it's fairly simple to
+open it and analyze it. I will show you the results
+of our analysis next. When we run this, again, this is the events
+are listed here. We get 10 principal components with the following eigenvalues. You can see that the
+first principal component has about twice explanatory
+power as a second, and after that, it's pretty
+similar for the first four, and then it lessons quite a bit. We'll look at the first
+four eigenvectors, which are as follows. The first eigenvector, corresponding the first
+principal component, puts most of its weight
+on things like 100 meter, the high jump, the 1500 meter, and the 110-meter hurdles,
+and the pole vault. Whereas principle opponent
+three puts weight mostly on the 400-meter dash and
+the 1500 meter dash. You can stare at this, and it's good fun to
+look at this for a while and see if there's any patterns
+you can find in the data. What these principal
+components are measuring, and how the athletes
+tend to differ. You might ask, are these principal
+components interpretable? Well, beauty is in the
+eye of the beholder. Maybe there's some
+similarities between high jump and 100 meter
+and 110-meter hurdle. Or maybe we're just
+seeing things. Things are not always as tidy in the examples as they
+are in real life. However, we do have a problem
+for you on the problem set. Looking at a principal
+component analysis of senators and their
+voting records. Where the eigenvectors,
+the principal components, do tell a story.

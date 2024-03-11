@@ -1,0 +1,110 @@
+So we have introduced a family of
+autoregression methods, AR, MA, Arma and Arima, right? So all of them are assuming that we can
+use the lag observations of the same time series to predict the future
+value of the same time series, right? But in reality our needs may
+actually go beyond just making predictions of a single time series. And in fact we're usually concerned
+about how to make predictions or forecasts of multi variant series. In other words, suppose we have
+multiple align time series, for instance X and Y, that you have
+two different measurements, right? Or two different variables, right? They're measured at the same timestamps, that's why we call that their
+aligned on their different aspects? How can we use one to make
+predictions of the other? All right, can we still use the autoregression
+based methods to make the predictions? One example in the following is that we
+have align time series of the GDP and the personal consumption expenditures and
+the private domestic investments. So all of those three are actually quite
+interesting, financial variables and we take the measurements overtime,
+in this case over 50 years, right? The question is can we use
+one to predict for another? Or can we use two to predict for
+the third? Or can we use all three to predict
+one of them in the future? And in this case you can see that you
+cannot directly apply all these methods, because in all those regressions they only
+take the previous values of the same time series. So in the scenario that you have
+multiple time series available, you can still use autoregression based
+methods, but you have to add something fancy on top of it, that is known as
+the vector autoregression or VAR. Finally, we have an acronym that I like. If you watch European soccer, right? Or they call football, right? This is known as the video
+assistant referee, right? Well, not really, right? In this context it is
+vector autoregression. So VAR or vector autoregression is not so
+much different from autoregression, but it works with the input of multiple align
+time series or multidimensional series. And what it can do is to predict the
+future of the vision of one of the series using the past of the visions of every
+series, including itself, right? As you can see this is how that way
+are generalized over autoregression. If the input is only one time series,
+then VAR is just equivalent to AR. Let's look at one particular example where
+we actually have two time series, X and Y. They have measurements taken
+at the same timestamps. And then we use VAR(p) to actually
+make predictions of either of them. As you can remember that p is the critical
+parameter for AR, for autoregression. That is the maximum number
+of path of divisions, right? So if you use VAR you still
+have this critical parameter. And this way our regression if
+you write down the equation, it is actually quite intuitive. So to predict the future value of Yp,
+you actually summarize, right? The autoregression values of
+the previous observations of Y, right? In this case,
+there's no difference right from AR, you basically compute the weighted sum of
+the previous p of divisions in Y, right? Then if you look at that,
+you also have a mu and you also have an Epsilon T, and
+these are the trend mean an error. But what's different from AR is
+actually the second component in this regression, right? It is very similar to
+the previous component. It's also summing over the weighted
+sum of lack of divisions. But this lack of divisions
+are observations from a different time series, X. Does it make sense? So you still compute the weighted
+sum of the previous p observations, although that in this case you use the
+observations from the other time series. So this is to say that to compute
+the prediction of the future value of Y, you need to consider the past of
+the visions of both Y and X, right? And then you compute the weighted sum
+using different sets of coefficients. And then you add them over, and then you
+add the tread mu and white noise Epsilon. It gives you the regression
+of the future value of y, so you can see that using VAR
+different from using AR, right. You actually have multiple
+sets of parameters. Multiple sets for different series
+as the independent variables and for different series as
+the independent variables. You can see that whenever you see,
+the index one, that means you're trying to make
+predictions on Y instead of X. But you have different coefficients
+of the previous values of Y and previous values of X. So this is actually the difference
+between VAR and AR, right? You're basically combining both
+the previous observation of Y and the previous observations of X
+to make the predictions of Y. Then as we see that with VAR we're
+not just making predictions of one series were actually making
+predictions of all the theories. Similar to making predictions of Y
+we can also make predictions for X. And in this case you can see that X
+also can be written as the regression of the past observations of itself. End of Y, right. And of course you have a different trend
+mean for X and the different error. So you can see that
+the set of parameters for the regression for X has the index 2. That means that all these
+parameters are actually targeting at making predictions for X instead of Y. So we actually have hence groups
+of parameters using different time series both aspects independent
+variables and dependent variables. So this is basically the idea behind
+the VAR, you can see that it generalizes autoregression, but
+the difference is not that much, right? You basically add in the observations from the other time series from other
+dimensions to make the predictions right? We can apply VAR to this
+particular example of GDP, expenditure and investment, right. And before we do VAR We
+can again compute the ACF. Still remember ACF that is
+autocorrelation function plot right in this multi dimensional setting. And all of them are actually
+correlating each time series to GDP. You can see that from this ACF curve
+we can see that all the three variables all the three time series are predictive
+of GDP, including GDP itself. Including the consumption expenditures and including the private
+domestic investments. So this actually legitimize
+our approach of using VAR that not only the previous values of GDP
+is predictive of the future GDP. But also the previous records
+of exposure and investment so all three series can be combined to make
+predictions of the future values of GDP. So then we can actually apply VAR to this
+multidimensional time series, right? And this time we have three
+series instead of two. And then as the result of VAR
+we can see that we are able to make forecasts of each of
+the three time series. And you can see that the forecasts
+are all good right there moving up. So applying VAR to the data is not too
+different from applying AR to data. The other differences that
+input right of VAR is actually multidimensional time series or multiple aligned time series versus
+the input of AR is just one time series. So whats the connection between VAR and
+AR, we can see that the difference is
+essentially adding in the vector. Vector of what? The vector of time series
+of align time series. Although we just showed an example of
+using two series or using three series. This vector generalization can be
+easily applied to k dimensions, where you actually have
+k aligned time series. The same idea could actually be applied
+to other auto regression models. So as we can see that VAR is especially
+the vectorized extension of AR, right? What if we also apply the same idea to MA,
+to ARMA and ARIMA? Can we do that right? Of course you can, and
+in fact you can actually get VMA right, vector moving average VARMA right and
+VARIMA. So you can see that it's really confusing
+to remember all these acronyms what I wanted you to remember,
+not just the acronyms, but Intuition behind, then you can
+always look them up in a textbook.

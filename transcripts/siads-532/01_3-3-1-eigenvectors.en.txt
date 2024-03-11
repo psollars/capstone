@@ -1,0 +1,81 @@
+Hello, this is Qiaozhu Mei
+from School of Information, we'll talk about
+patterns in matrix data. As we talked about, the pattern is a structure
+of attributes that describes intrinsic
+and important property of data objects, and sometimes we
+refer to the pattern as the feature of
+the data objects. We have talked about how to extract patterns from itemsets. Now let's look at what the
+patterns are in matrix data. Let's start from
+our understanding about patterns in itemsets, if we look at a
+transactional database, in this database each of the transaction cut hence the set of items that indicates the number of items that
+people have bought. Then we know that a
+pattern from this database is essentially a subset
+of this itemsets, and we usually support to indicate the strengths
+of a pattern. Now, we know that there
+are limitations of the itemset representation we're looking at the matrix
+representation of the data, then the questions, how can we define a
+pattern in a matrix, and how can we measure
+strengths of these patterns? So what is the pattern
+in the matrix? As we know that how matrixes are correlated to
+transactional databases, and how vectors are
+related to itemsets, we can make a lot of analogies. So in this analogy we can say that a transactional database is a collection of itemsets just as to matrix is a
+collection of vectors. Here the itemset in a transactional database can be really represented
+as the binary vector. All right, still remember that. Then without that patterns in trasactional databases
+or frequent itemsets, what do you expect the pattern in the
+matrix dataset to be? You may think that, a
+pattern in a matrix data could be the frequent vector
+just using this analogy, but what is the frequent
+vector anyways? If a computer has this analogy, we see that the
+itemset pattern is the subset of a transaction, it may or may not be the
+complete transaction. As in the pattern vector in the matrix data may be different from the original
+vectors in the matrix, and since we know that
+the itemset pattern is frequent because it appears
+in many transactions, you may also expect
+that vector pattern must be related to many
+vectors in a matrix. Is this helpful? So now, what are the patterns in matrix? We will start to introduce
+some type of patterns, and one particular
+type of patterns in the matrix is known
+as the eigenvectors. So many of you may have already learned eigenvectors,
+and eigenvalues. In the following of
+this lecture we will use many concepts
+in linear algebra, and if you're not very
+familiar of this concept, I recommend you to go back to check materials of the algebra, and also the lectures in the
+mathematic basics course. So in matrix data, the eigenvector is the
+implicit direction of a square matrix. It can be indicated in
+this following equation. So in this equation when we multiply one matrix A which
+is the square matrix, you can also call it
+the n by n matrix if it has n rows and n columns, we multiply that
+with the vector v, and you can call this vector
+also the n by one matrix. So this is essentially
+a column vector. If this multiplication
+yield the same value of the same vector v just times
+a scalar value lambda, then we call lambda as the
+eigenvalue of the matrix a, and the corresponding vector v as the eigenvector of the matrix a. So essentially, if you multiply a matrix and a vector
+that yields the same, the original vector
+times just a scalar, then the scalar value is the
+eigenvalue of the matrix, and the vector is the
+eigenvector of the matrix. You can compute the
+eigenvalues and eigenvectors of any
+given square matrix. Essentially, all you need to do is to solve the
+following equation. So here we use det to notate
+the determinant of a matrix, and this equation says that determinant of a matrix that is A minus the scalar value lambda times the identity
+matrix I equals to 0. If we can find the
+solutions of lambda that makes the equation work, then the lambda values we found are the eigenvalues
+of the matrix A. So we can solve this equation, and we can find our distinct
+solutions for lambda. R is usually greater than
+1 and smaller equal to n, that is the dimensionality
+of your square matrix. Then for every
+eigenvalue lambda you found that satisfies
+this equation, you can find the
+corresponding eigenvector v. So why do we care
+about eigenvectors? It has many interesting
+properties. As patterns in matrix data, eigenvectors are
+invariant directions of a linear transformation, and this linear transformation is defined by the matrix A. Another nice property is that eigenvectors
+that corresponding to distinct eigenvalues are linearly independent
+to each other. We will talk about how
+this is useful in reality. So as patterns in matrix data, eigenvectors have the
+following nice properties. Now, suppose your matrix
+is not only square, but it's also symmetric. That means if you transpose the matrix you get
+the same matrix, then the eigenvectors
+of this matrix have an even nicer property that they are orthogonal to each other, and this is going to be very
+helpful in real world tasks.

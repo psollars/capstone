@@ -1,0 +1,122 @@
+Hello, in the last video we discussed
+a new centrality measure called PageRank. And I showed you how to
+compute it on a network. I also told you that this definition
+of PageRank has a problem that we're going to discuss today. And I'm also going to show you how to fix. Before telling you about the problem,
+I'm going to discuss a very useful way of interpreting what the value of
+PageRank of a node means for a network in the context of a random walk. So what is the random walk? Well a random walk of k steps,
+does the following. It starts on a random node and
+then you choose an outgoing at random and follow it to the next node. And you repeat this k times. So as an example, let's take a random walk
+through five steps on this graph first we have to choose a random node. Let's say we choose node D. And now we have to choose
+an outgoing edge at random. So we may choose the edge that goes to C,
+the one that goes to a or the one that goes to E. In this case,
+let's say we chose the one that goes to A. So now we follow that edge and
+we have two noding. Then we choose a random edge from A, and in this case there's only one option so
+we hop to B. Then we choose a random edge from B. This might take us to C or to D. And in this case let's say we go to C. The we will choose a outgoing edge from C,
+and the only option is to go back to B. Now that we're back at B,
+we again choose a random edge. This might take us again back to C,
+or maybe now we go to D. and in this case we went to B. And now we're done with our five steps. The way you can think about a random
+walk in the context of the web and web pages that are connected by
+hyperlinks, which is the context on which PageRank was developed is that you may
+have a person who's browsing the web. And so they may started up random page and then they start following these hyperlinks
+for a while and visit different pages. And where they go will be determined
+by the structure of the network. And so that's the thing you can imagine
+when you think about this random walk. Now the nice thing about this random
+walk is that it can be connected to PageRank in the following way,
+the PageRank of a node step k is actually the probability that a random walk
+lands on the node after taking k steps. Now last time I told you how usually
+we want to take this k to be very large because that's when you get
+the convergence of the PageRank values of the nodes. And so for this network what we got after
+we let k become very large were this values that we see here. So the fact that B has a PageRank value of
+0.38 would mean that if we take a random walk for a large, very large number of
+steps, again, because k is very large, then the probability that
+we land on node B is 0.38. Okay, so having that in mind,
+let's take our network and let's make a small change to it. So I'm going to add a couple notes and
+a few edges. And now what I want you to do is
+think about what the patron of each of these nodes is. If you think about the random
+walk interpretation, so don't do any computations. Just look at the network, think about the
+random walk interpretation, and try and figure out what the patron value for
+each of the nodes is. Maybe pause the video for a minute and
+try to answer that question. Okay.
+So hopefully what you discovered is that if you take k to be large enough,
+then the notes F and G are each going to have a PageRank of
+a half while all of the other nodes are going to have a PageRank of zero,
+and why is that? Well imagine that you're doing
+your random walk in this network. Eventually you're going to
+find yourself a node B. And once you're a node B,
+then eventually you're going to find that you actually
+hop to either node G or node F. And once you do that, once you're
+in one of these two notes, then for the rest of the random walk, all you're
+going to be doing is hopping back and forth back and
+forth between notes F and G. And you're never actually going to
+go back to any of the other nodes. And so the probability that you will find
+yourself in one of these two notes after taking a long enough walk is going to be
+half for each of the nodes in zero for any of the other nodes. And this is a problem as well it may
+be true that these two nodes are very important because they end up
+sucking up the random walk. The fact that all of the other nodes have
+zero PageRank is not that great one, it seems a bit inaccurate. It seems a bit strange. But most importantly, this doesn't give us
+any information about the differences and importance of all of these other nodes. So if you get stuck in a small
+part of the network and all of the sudden the value of
+PageRank of the rest of network is completely useless because it's zero for
+everyone. And so we need to fix this problem. And the way we fix this problem is by
+introducing a new parameter which we call the damping parameter alpha. And so now I'm going to define a new
+type of random walk that is going to incorporate this parameter. So a random walk of k steps with damping
+parameter alpha starts at a random node like the other random walk did. But now what it's going to do
+is that with probability alpha, it's going to choose
+an outgoing edge at random, and then it's going to follow it to
+the next note, just like we did before. But now,
+this only happens with probability alpha. With probability one minus alpha what
+the random walk is going to do is simply choose a node at random and go to it. And this is going to repeat this k times. So if you think about the random walk
+with damping parameter alpha on this network for some value of alpha
+that is less than one now, the random walk doesn't get
+stuck in these two nodes. Because if it's there once in a while,
+with probability 1 minus alpha, it's going to jump to a random node and likely
+go back to this part of the network. And so it doesn't get stuck anywhere
+because it does this restart at some point. If you think about the person who
+is browsing the web at random, once in a while,
+they get bored of following links and they kind of restart and
+jump to another part of the web. And what we can do is we can define a
+another version of PageRank, which we call this scale PageRank, which lines up
+with this definition of a random walk. So the scale patriarch of k steps
+in damping parameter alpha, alpha, node n Is going to be the probability
+that a random walk with damping parameter alpha lands on n after k steps. So the exact same thing as
+the other version of PageRank, which is the basic PageRank. But now with a random walk
+that has these damping factor. Now, just like for the other PageRank
+questions come up about well what happens if I let k become
+larger are the value is going to be jumping around all over the place or
+the value is going to converge? The answer is for most networks, as k gets larger the scale PageRank
+converges just like the other one did. But now the values to which it converges
+are going to depend on the choice of alpha. So that means that that choice of alpha, how you set that is
+actually going to matter. And so you have to pick it wisely. In practice what we do is we use
+a parameter alpha that is between 0.8 and 0.9. This has been tested in
+different types of networks. So what we want to do is most of the time
+we're following the edges of the network, but once in a while with 10 to 20%
+probability, we're going to jump randomly. So let's look at the scale PageRank
+values of the network that we have created where the walk could get
+stopped here with a alpha value of 0.8. And for
+k very large what we get is that F and G indeed have a pretty
+high PageRank value. But all of the other nodes now don't have
+a value of 0, they have a positive value. And the nice thing is that all of these
+other nodes recovered their ranking, so B among the five notes A,B,C,D,E,
+B now emerges as the one that's most important, followed by
+C followed by A and D and then E. So while F and
+G have a high PageRank value, they don't take up all of the PageRank. Now, one thing I will say is that this
+damping parameter works better when you have very large networks like the web or
+very large social networks. So let me summarize. The basic PageRank value of a node can
+be interpreted as the probability that a random walk lands on
+the node after k random steps. And this basic PageRank has
+the problem that in some networks, a few nodes can suck up all of the
+PageRank from the rest of the networks and now, the PageRank value for
+the rest of the network becomes useless because it doesn't
+provide any information. To fix this problem, we came up with
+this idea of a scaled PageRank, which introduces a parameter alpha, such
+that a random walk chooses a random node to jump to with probability
+one minus alpha. And we typically choose the value
+of alpha between 0.8 and 0.9. And the choice of this parameter
+alpha actually matters. In the tutorial we're going to go
+over how to compute this version of PageRank using network X. So there you'll be able to do it for
+very large networks and you'll be able to figure out which parameter is
+the damping parameter and all of that. In the next video,
+we're going to look at a network. And we're going to compare all of
+our centrality measures to see how they can give us
+slightly different results, depending on the assumptions
+that they make. So, I will see you in that video.

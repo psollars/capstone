@@ -1,0 +1,247 @@
+Welcome back. In this lecture I'll cover
+some of the key concepts and vocabulary we will use in this course. These statistical ideas form
+the conceptual foundation for much of the work in uncertainty
+in this course, and in the field. This is the first installment of
+statistical concepts in this course. We'll do several others. Let's get started. We're going to start with some of
+the very basics of statistics. Now, you may be familiar with some or
+perhaps even most of these terms. But reviewing them is an important
+investment in your success in this course, and how well you'll be able to translate
+these ideas to your data science practice. We'll focus on the differences
+between populations samples and sampling distributions and
+then also their supporting statistics. Then we're going to turn our attention to
+a key statistical theorem and uncertainty, the Central limit theorem and
+discuss its implications in several areas. We'll end by describing quantiles and what role they play in
+distribution description. Let's go ahead and get started. So we're going to start with the first
+block of concepts we're going to learn together. It's going to be population samples and sampling distributions because they all
+relate to each other in different ways. Let's start with the very basics,
+the difference between a population and a sample. Whenever we want to conduct research,
+there's a group by which we wish to generalize, to know, to understand,
+we call that group the population. Population is basically the group we're
+really interested in understanding something about some aspect of them and
+the population can be anything. It could be, for example, I don't know, all first grade students
+in pick a country. It might be all zebras in Africa, it might
+be parents of teenagers and so forth. On screen I'm showing you
+a population which is a population of an exotic caterpillar
+species that I wish to study. One way we understand the population
+is through population parameters which are characterizations of data computed for
+populations. Now importantly,
+we sometimes use Greek letters or capital letters to represent
+population parameters. Here we have, mu which represents
+the population mean and sigma which represents
+the population standard deviation. We often don't have access to the full
+population of data as you probably well know, we may only have a subset of the
+population's data which we call a sample. While we ultimately
+are interested in the population, we often only have access to
+the sample of that population. So I want to study all
+exotic caterpillars. I may only have a sample
+of some caterpillars. We use sample statistics
+to describe the sample. For example,
+an X bar represents the sample mean, and lower case s represents
+the sample standard deviation. If the sample is representative
+of the population, we can use sample statistics as reasonable
+estimates of population parameters. Notice that word reasonable,
+that's where uncertainty comes in, we're not quite sure. To summarize, we use sample statistics to
+estimate the thing we really want to know which are population parameters. We take the mean of the sample to
+represent the mean of the population. This estimation process has uncertainty. And in this case,
+we call this parametric uncertainty. To solidify the point, and to can I
+just give you something to refer to from a note taking standpoint,
+we use sample statistics to estimate population parameters and we
+use a lot of symbols to represent those. And on screen right now, I just have some
+of the more common population parameters in their Greek or Capital Roman Latin
+letter and then their corresponding sample statistic and its symbol that
+you can just keep as a reference. A sampling distribution is
+a distribution which again, distribution just means collection of
+values of some statistic of interest. And again, a statistic is something like
+a mean, a median or standard deviation, each one of those taken from
+a different sample from a population. So notice how it's using two of the terms
+we've already used, sample and population. This sampling distribution is a very
+important concept in statistical uncertainty. And it's one that we're going to
+revisit multiple times in the course. In the picture above, we have teams of
+biologists who capture multiple samples of our exotic caterpillar species. With each sample,
+we find their mean weight. That's the statistic that
+we're really interested in. We can form a sampling distribution. When we collect all those values,
+all those mean weights and form a distribution, which is,
+as you can probably imagine a fundamental way we can describe how much the mean
+weight varies from sample to sample. Moving on, we're going to talk
+about another set of concepts, standard deviation versus standard error. You're likely very familiar
+with standard deviation. You may be familiar with standard error,
+but it's good to review. So now that we understand the difference
+among population samples and sampling distributions, we should look at
+the differences in the way in which we measure the variants and why these
+different statistical measures exist. Pictured on the slide is
+a very simple population. It's a collection of numbers, in measuring
+the variants of this population, we can use standard deviation. The most probably important statistical
+description of how numbers vary within a data set. The calculation for standard deviation of
+population is pretty straightforward and it probably is familiar to you already. It's a four step calculation which
+will animate a little bit here. We're going to start by subtracting
+the population mean from each observation. Then we take that and we square
+the difference of the population mean from each observation, which takes care of
+the fact that some differences might be positive and some may be negative. We add those all up, we find the sum
+of the squared differences and then we take the square root of that and
+divide by the number of observations. And then ultimately,
+we have the population standard deviation. Notice how we're using the Greek letter m,
+to represent the population mean and the capital letter N, to represent the
+observations in the population, this is all just a signal that we're pulling these
+values right from the full population. And again, you may be thinking, but
+I don't have access to the population, you probably don't. So how does this change if we're going to
+use the standard deviation from a sample? That's my next component. Of course, the problem is I just mentioned
+is that we often don't have access to populations. Instead we have samples or
+sometimes multiple samples. We can use samples to estimate
+population parameters. We don't have access to,
+I've already mentioned that as well. In fact, we only care about samples
+to the extent to which they help us describe the population. That's why we have samples. So let's assume we have a single
+sample from our population, and we want to calculate the standard
+deviation from that sample. How would we do that? The formula for standard deviation
+of sample is very similar to the standard deviation in the population. It's really just different in two primary
+ways which I'll describe right now. The first is in notation. So notice how we use Roman letters instead
+of Greek letters to represent the values that are coming from a sample
+instead of the population. That's an important distinction. The second you'll notice is
+that we are dividing by n, not minus one instead of having capital n. So we're dividing by
+the sample size of the sample. But we're also subtracting one for
+that as a correction for bias. And that's how we calculate
+the standard deviation for a sample. Now, the goal of this section is to
+understand the difference between standard deviation and standard error. We've just looked at two
+versions of standard deviation, population standard deviation and
+sample standard deviation. The standard error is a measure
+of variation for the sampling and distribution. So it's similar to the standard
+deviation of the population and sample and
+that they're all expressions of variation. It's just what are we
+expressing variation around? Now, instead of talking about
+populations and samples, we're focused in on
+sampling distributions. Recall to identify sample distribution,
+we need two things. We need multiple samples which we
+have pictured on screen right now. And we need a sampling statistic, some
+parameter that we're really interested in. In the example above,
+we calculate the mean of each sample which gives us the sampling
+distribution of the means. Now, if we have a sampling distribution,
+that means the standard error is simply the standard deviation
+of that sampling distribution. Put differently, the standard error
+is simply the term we use to name the variation in
+the sampling distribution. If we have a sampling distribution, we can calculate the variance directly
+with the standard deviation formula. Although again,
+we call it the standard error. Often you're only going to have one sample
+to work with instead of multiple samples. So then what do we do? One trick we can employ to still
+calculate the standard error when we have a single sample is to divide
+the standard deviation of that sample by the square root of its sample size. This gives us an approximation of the
+standard error of in this case, the mean. This analytical approximation of standard
+error is commonly used because we often only have one sample. And we can use this estimation of
+uncertainty on the sample mean. If our statistic that we're interested
+in is a little bit different, then the formula for how we analytically calculate
+standard deviation is going to vary. For example, if I were interested
+in estimating the standard error of the median, I could use the formula again,
+that's on screen here. This one's different as you'll know, it's the formula is similar to
+standard error of the mean. But you can see that the standard error
+of the medians is about 25% larger than the standard error of the mean. You see that multiplier in front of it. This is again due to how
+means are calculated, [COUGH] they're more susceptible
+to sampling fluctuation, should be important to note that in
+order to use this analytical estimate of uncertainty in this case, the sample size
+should be large and normally distributed. This brings an important point
+to really all of this work. There's an expression in
+the United States and perhaps other places in the world
+of garbage in garbage out. And in data science,
+this means that if we collect bad data and run it through a model, any insights we
+extract from the model may be flawed. In the case of analytically
+estimating standard errors, these various methods may rest
+on underlying assumptions. So it's important to be aware of what's
+required in order to make quality estimates using these techniques. It varies the assumptions that is, depends
+on what the statistic you're discussing. But in general be sure your
+sample is sufficiently large, it's representative and
+it conforms to assumptions. So generally speaking, for sample size
+quantity helps, generally speaking for representation, you
+could ask the question, are the observations collected
+under a wide variety of conditions? And then of course,
+do they conform to assumptions? Are the data normal if
+they need to be normal? In the next section, we'll discuss an
+important theorem called the central limit theorem, used to help us calculate
+statistical uncertainty for means. And it's one closely related to
+the standard error of the sampling distribution. I love chai tea, and suppose I work for
+a large company that produces chai tea. Now, my manager wants to know how many
+ounces of chai tea people drink in a year, on average, you could see why
+they'd want to know that. Let's just assume the underlying
+population is not normally distributed. I don't know what the underlying
+population looks like. Let's just say it's not normal. Let's assume for this example that
+it follows the distribution above, called the F distribution. Now, I don't have access to the drinking
+habits in the entire world. Who drinks chai tea and
+how much they drink in a year. So I'm going to need to draw
+a representative sample. I have my sample and
+I calculate the mean from that sample. The person who ran the sample survey
+didn't disable the survey script. And so
+the company kept on contacting people and collecting samples
+against that population. And each sample we drew from
+the population, we collect mean and we store it. When we examine the sampling
+distribution of these means we notice something unusual. The sampling distribution of the means is
+normally distributed even though again, that underlying population is not normal. So what do you do here? Any time the numbers
+don't make sense to you? I always say check the numbers. So we check the data, we check our code,
+we verify everything's correct. So how can this be? How can the means be normally
+distributed if the underlying population distribution is not. So we try to research things, maybe we
+search the internet all to no avail. So we decide to send a message to our old
+statistics professor around this issue that we've identified. The stats professor reads the question and
+cryptically replies, sounds like the central limit theorem. So what is this central limit theorem? Bruce Thompson,
+one of my favorite statisticians provides a simple explanation of what the central
+limit theorem is, I'll read it for you. He says as n becomes larger,
+the sampling distribution of the mean will approach normality even if
+the population shape is nonnormal. Now there's a couple of really
+important things about this. First of all notice the conditions
+that he places on his definition. First of all, it's the sampling distribution of
+the mean that we're talking about here. This theorem only applies when we're
+talking about a sampling distribution of the mean. Second of all,
+he says we need a sufficiently large n or a number of samples. So if I only have a few samples and
+collect the means of those, there's no reason to think that that's
+necessarily going to be normal. And if I use a statistic
+that's different than a mean, it's not necessarily going to be normal,
+although it could be. Now, this theorem is important because
+it's really useful in parameter estimation, as we've already shown,
+it's also useful in hypothesis testing and many other kinds of
+statistical applications. You'll also see that we work
+with bootstrap samples of means, the central limit will also play
+a critical role in that application. Our last concept for this initial
+lecture in statistical foundations is the concept of the quantile, which is
+an important descriptive statistic for when describing distributions. A quantile is a generic term for a section
+of the distribution that encompasses a specific proportion of that
+distribution, that's a mouthful, right? But you're probably already
+aware of quantiles. If I mention the most common quantile,
+the percentile. Pictured above is an approximate
+normal distribution. Now, let's assume this distribution
+represents the heights of Canadian 10 year old girls. So let's say a child brought
+to the pediatrician and the child's height is recorded,
+and it's your daughter. And if your daughter's height is,
+let's say 145.1 centimeters. When we compare that to the national
+population of 10 year olds in Canada, we see that value sits right in
+the middle of the distribution, we call this the 50th percentile. Now, what does that mean? The 50 percentile means that approximately
+half the data are below that value and approximately half the data
+are above that value. And that's what really quantiles help us
+know is where do data set relative to other data in a distribution? Of course, percentiles that is
+dividing a distribution into 100 pieces of equal probability
+is the most common quantile. But there are many others,
+some of which are shown on the slide. In my experience, you'll use quartiles,
+quintiles, deciles and percentiles the most. One of the properties of quantiles is
+that they follow the distribution they're applied to. Consequently, quantiles are not
+always equal interview. That is the unit distance between two
+percentiles is not necessarily the same. What do I mean by this? Let's take a look. Let's say we're looking at the distance
+between the 40th and 50th percentile and the distance between, let's say
+the first and the 10th percentile. Those are roughly the same in terms of
+how far we're spanning in percentiles. But if you look at the picture on the
+screen, you can see the actual distance in the underlying distribution
+is quite a bit different. Now, the reason why this happens is
+because we're applying these percentiles against the normal distribution. And you can see the mass of that
+distribution is a lot thicker in the middle than it is on the tails. So it makes sense that
+the probability distribution is going to be a little bit different out in
+the tails than it will be in the middle. What does this mean? Why am I even mentioning this? What this means is that we generally
+can't do math against percentiles or really kind of other quantiles. When I say math, I mean addition,
+subtraction, multiplication, division, they're, they're really descriptive only. The only time this doesn't apply is
+when the distribution is uniform, meaning that the data are evenly spread
+from the first percentile up to the 100 percentile in this one situation, the
+percentiles would be equal in interval, but generally speaking,
+percentiles and quantiles are not. In a view, there's a few key points
+I want to make clear, first, the focus in this lecture was on the
+statistical foundations of uncertainty. It's really important to
+develop rapid recall for these concepts as these terms are going to
+be used, not only in these lectures, but really in many of the statistical
+readings you'll do in your career. And they formed the foundation for the
+applied nature of presenting uncertainty. Of all the things we talked about here,
+the particular importance is to internalize the ways we describe
+the variants in samples and sampling distributions and
+that concept of a standard error. So if there's any confusion on that,
+I suggest you go back, rewatch it again until it
+becomes very familiar to you. As you will see,
+we'll use some of these concepts and key terms in the forthcoming lectures. Let's go ahead and get started.

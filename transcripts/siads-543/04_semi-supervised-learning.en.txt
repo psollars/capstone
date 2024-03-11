@@ -1,0 +1,413 @@
+In this module, we're
+going to review semi-supervised learning with a particular focus
+on classification. Traditional classifiers use only labeled data to learn from. But the problem is
+this labeled data is often expensive or difficult to obtain since it requires
+experienced human annotators. It's much easier to
+collect unlabeled data. The natural question
+to ask is how could we use unlabeled data to build better classifiers and get higher accuracy with
+less effort and cost? You might ask, "Does using
+unlabeled data really help?" Well, yes, but there's
+no free lunch. It's not good fit
+for some problems. Some cases, it can make
+the classifier worse. It's actually an open question on how to tell automatically if a particular problem is a good fit for using
+unlabeled data. The good news is that you avoid labeling effort if you use
+semi-supervised learning. But that effort is
+replaced somewhat by the effort you'll need
+to design effective models, features, and
+similarity functions for semi-supervised learning. What I'm going to do in
+this module is describe three scenarios where
+unlabeled data can help. In particular, we're
+going to focus on what are called graph-based models and a technique called label propagation that's
+implemented in scikit-learn. Before we do that, we're going to look at
+a simple scenario involving generative
+models, mixture models. You may recall that in a
+particular mixture model, we have particular class. We can think of
+this as a cluster. You can think of a distribution of data given the cluster. We have lots of unlabeled data. We've seen examples of how you can identify the
+mixture components. For example, using
+Gaussian mixture models. That's an unsupervised technique. Once we've identified
+the mixture components, all it takes is one
+labeled example per mixture component to fully determine the mixture
+distribution. Let me show you an
+example of what I mean. Let's look at the case where
+we have some labeled data. We assume that this data is drawn from two
+different classes, so the circles and the crosses. Furthermore, that each class has a Gaussian distribution
+of the same shape, essentially the same
+covariance matrix. If our assumption is correct, adding a whole bunch
+of unlabeled data can help estimate the mixture
+model distribution. For example, if we have this
+labeled data on the left, we add these green
+dots representing unlabeled data to our
+existing labeled data using the many unlabeled points. Together with the labeled data, we can estimate much
+more accurately the true underlying Gaussian
+distribution of each class. There's just a lot
+more evidence to base our calculation of the
+mean and the variance. That's an example of how adding unlabeled
+data can help you. If we had only used the labeled data and
+not the unlabeled data, we would have learned
+classes like this, which didn't really match the true underlying distribution. In that case, our classifier will have much worse accuracy. Just as an example of
+what can go wrong if your assumption about the underlying
+distribution is incorrect, let's take a look
+at this example. On the left, we have
+example of two classes, class decision boundaries here. All the points on
+this side or class one of the points on
+this side or class two. Each class you can see
+is clearly generated. It's a mixture of two
+different clusters. It's clearly not generated
+from just two Gaussians. But if we did assume
+that each class was generated from
+a single Gaussian, because these two clusters are closer across the
+decision boundary, but they're closer to each other than these two clusters
+here, for example. If we told a mixture model to estimate based on the assumption that each class was
+a single Gaussian, you would end up with
+the situation in b. This is the most likely
+high probability estimate. This model has high probability. In other words, the data is
+very likely the scenario, but remember the decision
+boundaries here. It's only got about
+50 percent accuracy because half the time it's predicting things that
+are in the wrong class. On the other hand, this model on right, has lower probability, but is much more
+accurate because again, it maintains a separation between the classes is much more
+accurate classifier. That's an illustration
+of how things can go wrong in
+semi-supervised learning. If you add a whole bunch
+of unlabeled data, and your assumptions about the underlying class
+structure is wrong, you'll end up with a
+classifier like in b, which is much less accurate
+than the alternative c. Second scenario where unlabeled data can help,
+it's called self-training. We won't spend very
+much time on that, but I wanted to make
+you aware of it. Self-training is the
+scenario where you first train a classifier with a
+small amount of labeled data. Then you classify
+the unlabeled data, and then you add the most
+confident predictions on the unlabeled data
+to your training set. When you retrain
+the classifier with the expanded training
+set and repeat. So this approach has
+actually been used in a number of real-world
+scenarios, in particular, things like text classification, increasing the recall of finding legal documents,
+things like that. But you have to make sure that your classifier as well
+calibrated so that the confidence predictions that
+come out which you use to determine which data points
+to keep the labels for it, so that when it says
+it's very confident, it actually is
+accurately predicting the actual perceived
+probabilities with classifier match
+actual probabilities. This also has the
+obvious issue that if the early predictions
+turn out to be incorrect, that can change the
+whole trajectory of the model that's learned and it can actually go off in a
+completely wrong direction. So some sort of controls
+have to be in place to monitor the quality of the
+predictions along the way. A third scenario, which is the one we're going to focus on, deals with graph-based methods. So in this scenario, the imagined the data instances, the things that get
+labeled or maybe not, are represented by these nodes. Maybe they're close to
+each other in space, or maybe they're similar movies or similar text passages,
+things like that. So this assumes that if you have a bunch
+of dead instances, you can define a graph
+between them that in some way captures the similarity
+between the nodes. These nodes could be labeled
+or they could be unlabeled. The weight on the edge flex the pairwise similarity
+of examples. So as we'll see later, one of the assumptions is that labels vary smoothly
+over the graph. In other words, data instances, the nodes that are close in the graph tend to
+have similar label. So that's an assumption of
+these graph-based methods. Then using a technique
+called label propagation, you can essentially let the labeled examples in form the likely labels for
+the unlabeled examples, and we'll look at specific
+examples of that shortly. You can constrain this
+graph-based method if you have prior knowledge about the prior class
+proportions, for example. If you know that
+one class is very rare and has very few
+labeled instances, and one class is very common, then that can inform this
+type of graph based approach. So where does this
+graph come from? Well, it could come from domain knowledge that you
+have about the problem. So the edges could reflect
+similarity in location, in time, type of activity. We can use the k-NN algorithm, I'll show you an example
+of that in a minute. That's typically a sparse graph where each examples connected to its k-nearest
+neighbors with usually small k. You could use something called
+a kernel function, which has come up
+again in some of our examples from both supervised and
+unsupervised learning, that weights the
+edge of the graph, and we'll look at
+an example of that. The graph could come from taking a bunch of
+high dimensional objects, projecting them into
+an embedding space like a word embedding, and then creating the graph based on the distance
+and the embedding space. So doing dimensionality
+reduction. So there are lots of ways
+that this graph could arise between data instances, whether they're
+labeled are unlabeled. So here's an example of
+a distance space graph. We have data instances. We might represent
+shopping center locations. The edges between
+the data instances represent the distance
+it takes to drive there, or perhaps it takes, or perhaps it represents
+the time you'd have to spend in traffic to get between these
+two locations. The important thing to note about these distance-based
+graphs is that the edges can have very
+different weights. You can run the weight through a kernel function to
+exaggerate the way to make it very strong for things that are close or very weak to
+things that are far. In the weakest case, we can eliminate an edge altogether and give it a weight of zero. The point is that many times we're operating with
+this fairly dense graph, which connects most pairs of points with these weighted edges. They represent the
+strength of association or similarity between
+those pairs of things. Let's look at classification now. Suppose we had a
+bunch of data points. Let's suppose we're
+trying to classify stores as profitable
+or not profitable, based on their location. In this case, we
+have two classes. We have several points, where we are able to measure profitability based
+on statistics. Then maybe we have some
+proposed store locations or stores where we
+haven't been able to observe activity because that can be time-consuming
+and expensive. The question is, in this
+classification tasks, can we assign good labels to the unlabeled points knowing that some of the points near by have already been labeled. The idea would be that if a point that's unlabeled as close to a point that has
+an existing label, then maybe, for example, this point because it's so close, might end up also
+being class zero. Likewise, this point here, because it's so close,
+might be class one, it's very similar the
+idea of nearest neighbor, you can actually construct a nearest neighbor graph, and I'll show you
+that in a minute. All these points are unlabeled. How should we classify them? We could use the k-NN algorithm. We could set K equal to two and find the two nearest
+neighbors of each point. If we did that, we'd get a graph that looks
+something like this. It's fairly sparse. What I've done is take
+a point here and it finds the two closest neighbors
+and then connects them. In this case, we have these
+two nearest neighbors here. The reason this has three edges coming into it is because this is the nearest
+neighbor of that, but when you consider
+this point as the origin, the two nearest neighbors are
+this point and that point. In some sense it's directional, but I've left out
+the arrows here. The point is that you
+can connect these using the nearest neighbors
+in the graph. That's one way. We could use that. We could apply the K-Nearest Neighbors method. The problem is
+though, there aren't enough labeled neighbors sometimes for the points and
+the corresponding graph. If we wanted to label
+this point, for example, there are no neighbors
+that have a given label. All of its neighbors
+are unlabeled, so K-Nearest Neighbors
+doesn't quite work here. However, you relax the idea of nearest neighbor so
+that label values can flow along
+adjacent graph edges. You can think of this like
+flowing labels through pipes, or whatever analogy works
+for you, to nearby nodes. To classify this point, it's okay that none of the
+neighbors have labels. The neighbors of the neighbors have labels, and we can use that. If you think of it as this
+label energy is flowing, here's the graph,
+through these pipes, you can see how we can
+infer the label of a given point from the visible labels of the
+ones we have acquired, even though it's not
+directly neighbor. We can look at the paths
+between the unlabeled point and the labeled points to infer the label of this labor point. That's the basic idea
+of label propagation. Let's try to formalize this idea of labeled
+propagation mathematically, we can look at label
+propagation as estimating a labeling
+function F on the graph. F is a function that takes a node's input and then outputs
+the label for that node. If we have labeled examples, we have labeled nodes already, like these red ones, for class A. Then whatever function F
+is two in the labeling or a graph should agree well with the examples
+that we already have. That's one property and that's quantified by the use
+of a loss-function. The second aspect that's
+important for the function F is that it should be
+smooth over the whole graph. This is the property that
+if two nodes are nearby, if they have high similarity, that the likelihood of having the same label is also high. When we write the
+objective that we want to optimize as a learning objective on this graph for
+label propagation, find that it has two parts, the loss function that
+measures how accurately the given labeled
+nodes are predicted. The regularizer, which enforces a smoothness of the
+labels over the graph. One thing it's important
+to note here is that the underlying graph quality
+generally is more important than the specific method and the details of the
+Loss function and the regularizer
+that you might have happen to use for
+labeled propagation. It's critical to have
+a very solid idea of similarity between the start that's what's going
+to define the graph. Here's an example of what our original graph might
+look like after we apply a simple
+LabelPropagation method across these weighted edges. If these are the original labeled points that
+were provided, then we can see that
+applying LabelPropagation gave high probability to these nodes being
+labeled as class zero. I've shown that as
+being a darker color. It gave some probability to
+these also being in class. I've shown that with a slightly lighter
+color but still gray. The same is true for that point. Likewise, it filled in
+with high confidence. This point over here, based on its proximity
+to the class one points, so it predicted that label, is also class 1. Other important
+thing to note here, is that in order for
+labeled propagation to well propagate the
+labels through a graph, the edges have to have
+nonzero weight between nodes. For example, if you have
+a disconnected subgraph where the items are
+connected to each other, but they're not
+connected to any of these other parts of
+these other graphs, then LabelPropagation
+doesn't work here, can't infer anything from
+these labeled examples, because there's no path that
+connects these nodes that are unlabeled in the subgraph to any labeled node
+and the other graphs. Scikit-learn provides
+LabelPropagation functionality in the SKLearn
+semi-supervised Library. In fact, the simplest
+Label propagation class is called appropriately
+enough LabelPropagation. When you instantiate the
+Label propagation model, you first decide what
+Kernel function to pass in. I'll explain more about
+that in a moment, but basically I have two choices, the radial basis function,
+or k-Nearest Neighbors. If you pass in the
+radial basis function, then you also pass in
+with parameter gamma. Basically, you can think
+of this kernel function imagine a Gaussian centered
+on a particular node. It controls how strongly the label influence
+propagates in the graph. The other parameters,
+max_iter equals 30 here, and tolerance control
+the behavior of the algorithm until convergence, so that these dictate the criteria that the
+algorithm uses to decide when it's finished with the LabelPropagation
+through the graph. The way it works is that
+you start off with a set of labels that are either, in this case we have two
+classes, zero and one. You can see that some data
+instances are labeled zero, some are labeled as one, but then you'll notice there
+is a third category here, these are instances that are labeled with a minus
+one and that's how you indicate that
+something doesn't have a label and needs
+to be estimated. I've simplified x here, but basically x in this
+case is your data, so x would be all the features
+that describe the nodes, and then Y underscore miss the thing that goes into the Fit for LabelPropagation
+as negative one for any node that
+doesn't have a label, otherwise it has the
+actual label value. Those are the two
+things you pass in to fit the LabelPropagation object, and that's what it will go
+through and do its thing, run LabelPropagation
+throughout the graph. It estimates the graph over x
+using this kernel function. Once the model has been fit, you call the predict method on the original data to get
+the updated predictions. You'll notice that if you look in the array that comes back,
+y underscore predict, you'll see that the values
+that were negative one, when you pass that
+into the fit method have changed to the class label. That's the effect of
+LabelPropagation. One very important
+thing to note about the LabelPropagation class is that if you specify that something has
+a particular label, that label value is clamped. In other words, it
+can never predict in the output from the predict method for this
+LabelPropagation class. The input labels are clamped to their values so
+they could never be different. Y prime here will
+always be predicting the original label value. This can never change. That's why we say it's clamped to this value and fixed essentially. On the other hand, there's a slightly more
+sophisticated class called label spreading. With that class, there
+is some possibility that the input
+labels might shift. Now in this case, I
+didn't show it, but, the flexibility of the shifting, you'll notice, is the additional
+parameter Alpha here. Unlike the label propagation, which algorithm, which performs hard clamping
+of infinite labels. Label Spreading class allows
+you to relax that criterion. The relaxation is controlled
+by this parameter Alpha. If parameter alpha
+is set to 0.1, then, the algorithm gets to change its confidence in the
+label distribution within about 10 percent. What's eternal calculation? Alpha equals zero, corresponds to the fixed
+label propagation case. As you increase Alpha, the algorithm gets
+more flexible and more willing to modify the original
+labels that you provided. But you can see that the
+mechanism is exactly the same as label propagation class. You still pass in a kernel
+and associated parameter. You still pass in the
+convergence properties. Still make sure that the missing labels are
+sets of negative one, when you call the fit method. You still get when you call
+predict on the dataset, you'll get those slots filled
+in the output from predict, with the predicted labels
+from label propagation. I mentioned there were
+two types of kernels. The first type is the
+radial basis function, which we just saw. That will create a
+fully connected graph which is represented in
+memory by a dense matrix. Now, for very large datasets, we have lots of points. The resulting matrix
+would be large. Internally the cost and performing these matrix
+multiplications. Each iteration of the label
+propagation algorithm can make this quite slow. Not to mention that
+uses lots of memory. On the other hand, it's probably best quality
+labeling that you can have. The KNN kernel on the other hand, produces the sparse matrix
+using the KNN rule, which can drastically
+reduce running times. But of course, the
+trade-off is that, because there's less
+information about how the nodes are
+connected to each other. It might give a lower
+quality labeling on average. The parameter for the
+k-nearest neighbor kernel is just the number of
+neighbors to consider. I wanted to provide one slide
+for those of you who are interested in starting to take a closer look at the label
+spreading algorithm, and something called
+spectral embedding. You can derive from the graph. I'm just going to describe what the spectral embedding is. Then I'm going to
+give an example, and discuss briefly, an intuitive notion of what it
+does and how it's related to some other things
+you've seen in the course. Every graph has an adjacency
+matrix called W, and the i, j entry of w has a distance
+between node i and node j. You can think also of
+a second matrix G. It's a diagonal matrix
+with each node's degree. The number of
+connected neighbors. If you take the matrix G, which is the degree matrix. It's called the diagonal matrix with all
+node degrees in it. For example, if this
+was a node and it had three connections
+to neighbors. This is node three, let's say. Then the third entry
+diagonal would be a three. You can imagine each node has a certain number
+of neighbors, and that's the matrix G. If
+you take the matrix G and subtract the adjacency
+matrix W. You end up with this matrix L called
+the graph Laplacian. You can do some
+interesting things with L. Remember how we
+can take a matrix, and do singular
+value decomposition. Essentially do PCA. Well, basically we can do
+the same thing for graphs. It's a PCA for graphs. What you can do is you
+can take this matrix L, you can compute its eigenvectors and corresponding eigenvalues. It turns out that if you ignore the eigenvector with the smallest eigenvalue,
+throw that one away. But if you look at
+the second, third, and fourth smallest eigenvalues, you can do some
+interesting things with those eigenvectors. In fact, the second
+and third eigenvectors can be used to create
+this spectral embedding. The intuitive idea is that, nodes in the graph that are closely connected according to the adjacency matrix
+will be close when projected to this
+spectral embedding space, this graph PCA space. Here's an example of what I mean. The reason this is interesting
+is because you can do some really incredible clustering
+of non-standard shapes, if you do a spectral embedding of the graph created
+by the points. Here's an example of
+a clustering problem, and this is a two-dimensional
+original feature space, you could see there are some clusters of different shapes, and if you give this to k-means and tell it that there
+are three classes, this is one solution
+that it might find. But with a spectral embedding. Imagine this is like a graph, So each of these
+points is like a node, and you can imagine each
+of this connected by an edge that's proportional to the distance between
+them and so forth. You can imagine
+this is a big graph and if you construct
+the graph Laplacian, as explained in the
+previous slide, you can essentially project, just like you do with PCA, you can take the
+eigenvectors from the graph Laplacian and
+project these points into the spectral
+embedding space. When you do that, you find
+some remarkable things. You find that it clearly
+separates all these points. What it's doing is it's operating on principle
+of graph locality. It's taking all the points that are close neighbors
+of each other and putting them together in the
+spectral embedding space. That makes it really
+easy to cluster. Basically what you can do is
+take the original points, transfer them to the
+spectral embedding space, do k-means in the spectral space and that will give
+you the clustering. That algorithm is called
+spectral clustering. It's a way to separate
+clusters according to how connected they are in
+the original data. You can do k-means or any
+of the clustering method in spectral space
+instead of trying to do it in the original
+feature space. It turns out that DBSCAN, which we covered in
+week two, clustering, is a special case of this
+spectral clustering. Here's an example of how graph-based semi-supervised
+learning has been applied to a fairly large-scale
+real-world problem. In this case, this is a paper applied it to sentiment
+categorization. Probably they wanted to infer a rating score for a movie
+or other reviewing item. But in some scenarios, the reviews they had
+didn't come with ratings, they just had the text. The main assumption
+that they encoded in the graph was that
+similar reviews, according to their words
+that were used in the text, should have similar ratings. This is a simplified example
+of the graph that they had. They had labeled examples of high-quality movies using words like captivating and amazing. Then they had low quality movies where words like weak, re-used. Am going to have a bunch of
+unlabeled reviews and text. Basically they define
+a similarity measure between reviews by looking at, for example, the words
+they shared in common. You can see that this could be the basis of a
+label propagation algorithm. If you have a review
+that uses lots of the same words and reviews that were
+labeled as high-quality, then you would tend to label that unlabeled example
+as high-quality movie. If you're interested
+in more details, you can check out the
+paper at the bottom here, I've provided the link
+to the PDF as well. That wraps up our summary of
+semi-supervised learning. In short, semi-supervised
+learning can help supervised learning
+in some situations. We looked at three
+situations, in particular, generative models, self-training, and
+graph-based methods. We focused on
+graph-based methods. Those are supported
+in scikit-learn. LabelPropagation and
+LabelSpreading classes. I also included just a brief
+digression into some of the slightly more
+technical details of how LabelSpreading works. Because it's closely
+connected to something called spectral embedding s and spectral clustering that has
+connections with methods like DBSCAN that we saw
+elsewhere in the course.

@@ -1,0 +1,142 @@
+In this session, we'll
+be discussing heatmaps. A heatmap is a useful
+visualization method to illustrate the
+multivariate data when there are many variables
+to compare such as in big data analysis involving
+categorical variables. It's a plot that
+display the values in a color scale on a grid so that our eyes catch the relative strength of
+various variables in the data. They come in especially
+handy if you want to maximize space efficiently. For instance, in
+the finance world, color-coded blocks
+can give investors a quick glance at which
+stocks are up or down, or in the research world, heatmaps allow
+researchers to visualize the expression level of
+thousands of genes all at once. Let's play around
+with some finance data for this example. So let's load in all the usual suspects that we'll need like pandas and matplotlib. So import pandas, import numpy, and matplotlib, and
+matplotlib pyplots. Now, to get the stock data, we'll need the datetime and the pandas
+datareader package. The pandas datareader
+package is pretty neat. It allows us to get and read in data from sources like Google, the World Bank, and Yahoo! If you're following along, you'll need to install pandas datareader using your terminal. So just open up your
+terminal and type in pipe install pandas-datareader
+and you should be all good. So import and after that
+we can import the pandas datareader in our
+Jupyter notebook as PDR and import datetime. Let's write a little
+function to download some stock data so that we can explore it using the heatmaps. You can easily do this by
+making a function that takes in the ticker or
+symbol of the stock. Then, we can use that and adjust it with our
+start date and end date. So we'll do def get tickers,
+startdate, enddate. The next function you see
+is the data which takes in the ticker to get your data from the start date and end
+date that we specify later. Then, it returns this
+to us so that we can let the get function continue along and do
+what it needs to do. We will map the data with
+the right tickers and return the dataframe that concatenates the mapped
+data with the tickers. Then, we'll specify our tickers
+as APPL, the MSFT, IBM, Google, and GSPC, and we'll
+do get tickers, datetime. We'll do it from 2006
+datetime to 2016. So in this code, we're basically
+extracting the stock data from Apple, Microsoft,
+IBM, Google, and the S&P 500 from January 1st, 2006 to January 1st, 2016, and gathering it
+into a nice big dataframe. Using the.head, we can see that the variables include
+the high and low, open, close, volume, and adjusted close stock values for
+each day and company. You can also find the data
+in the course material if you have any issues
+with the part above. So if you prefer, you can just load in
+that data from a CSV, and so we'll just walk through
+how that might happen. We'll load in the stocks data. We'll say stocks equals pd csv and then the
+columns and type date. So either way you got the
+data, we have the data now. To get Python to
+manipulate the date, how it's formatted,
+we need to import the native datetime model. So from datetime,
+import datetime. Once we have that, you can make sure our date is in
+the correct format. So stocks equals date equals
+pd to datetime stocks date, and we'll create a new
+variable to hold the year, which we will want to format
+in the full year format. So stocks here equals
+stocks date and the percentage Y argument there is saying that we
+want the full year instead of some abbreviated year. Let's also change the ticker
+column name to company. So stocks company equals ticker, and this will just make it
+easier to interpret it later. So let's check it out
+using stocks.head. So we worked that work nicely. Let's pull out the
+company year and the high stock price value for each company so that
+we can focus on those. We'll create a new dataframe
+called high stocks, and we'll just put company, year, and the high
+stock value for that. Again, let's check that out
+using the head function. We can see that now we just
+have the company, the year, and the high stocks because we used the subset function above. So unfortunately, we can't
+supply the whole dataframe to matplotlib's heatmap
+directly since it expects the company
+names as columns, date as index, and high
+price as the values. If you're familiar
+with Microsoft Excel, you might have experience
+using pivot tables. Pivot tables are a powerful
+technique that allows us to summarize the levels or values of a particular variable. Well, we can do the same thing using
+pandas.pivot table function. We'll just create a
+new dataframe called stocks high pivot and
+pass that function as stocks high dataframe
+and specify that we want our index to be year and
+our columns to be company. Inside the pivot data
+table we can also pass numpy's mean function to get the mean high stock value for each month across all
+of the companies. So we'll do stocks high pivot, which is what we're
+going to call it and then we'll do stocks high pivot table to
+employ this function. So index, year, columns, we want company, function, the agg function to be mean, to get our means, and then we'll just put that
+in the correct format there and check it out
+using the dot head. This is giving us the
+mean high stock value for each unique combination
+of year and company. This way, we are able to
+use heatmaps to explore patterns in each company's high stock price
+across the years. Let's set up the visualization by first creating our figure and axis objects using matplotlib's
+plt.subplots function. Since matplotlib
+subplots function returns a tuple containing
+a figure and axes objects, we can unpack this tuple
+into variables fig and ax, which is useful if we want to change figure level attributes. For instance, we can specify
+the figure height and width size using matplotlib's
+fig size attribute. This creates a figure object
+which can then be used to adjust the width of 220 inches
+and 15 inches in height. So for this, we'll just do fig, ax equals plt.subplots 1,1 and then the fig size, 20 and 15. The heatmap itself is
+in the imshow plot. So we will pass this, the dataframe stocks high
+pivot that we just created and set the color of the heatmap with the cmap to blue purple shades. So we'll do im equals plt imshow, stocks high pivot,
+which is our dataframe, cmap to change our colors, and we'll do blue purple. Next, we'll set the xticks to be the company names and the
+yticks to be the year. So plt.ticks range equals length stocks high pivot columns, stocks high pivot columns, and then we'll do the same
+thing for the y axis. The cbar can hold
+our color bar which will pass in the im
+figure we just created. We'll need to use a
+fraction and pad arguments to scale this to
+the size we want. The fraction controls the bar
+height and the pad controls how much white space we want between the actual
+figure and the bar. So cbar equals plt colorbar im, fraction equals, let's say, 0.086, and pad equals 0.04. Finally, we'll just
+give the figure axes, and labels, and a title. So ax set title and we'll call this heatmap of high stock
+price from 2006 to 2016, and x-label as company,
+y-label as year. So now we have a categorical heatmap
+that allows us to compare the high stock price value over time within and
+across each company. The first thing I noticed from this figure is that it's not very useful. All right. So hopefully you took a moment to ponder that and notice that the values for the GSCP are significantly higher
+than the other companies. As a result, we
+aren't really seeing the benefits of the color coding of the heatmap visualization. Scaling the data to the z scale
+just helps us to even out any creases that may still exist in the data and also help
+for general visualization. So let's norm the values
+and plot this again. So first, we'll load in the
+z score from scipy stats, and we'll create this as a normed dataframe and plot the norm values
+just as we did before. So fig, ax equals plt subplots will keep the
+same dimensions of 2015. The actual figure as
+we discussed is in the imshow and so we'll do im equals plt imshow
+with our dataframe, and we'll keep the
+same colors as well. Again, we'll add our
+xticks and our yticks, and our cbar color, and we'll keep the same fraction
+and pad specifications. So then we'll just, again, annotate this a bit
+with heatmap with the title being heatmap
+of normed data this time for prices from 2006-2016 and the x label
+company and the y label year. Now, we can see that
+the high stock price has been increasing over time
+for all of the companies. Because the boxes are
+getting darker over time, we can also compare
+companies and see that, for instance, IBM's
+high stock price value was much lower in 2015. So why did IBM look
+in such bad shape? Well, over 2014 and 2015, the US dollar strengthened, meaning that the
+revenue earned in other countries translated
+into fewer US dollars, and since IBM is a
+global business, this currency shift had a major negative effect
+on its reported revenue. So as you can see, heatmaps are a very useful
+data visualization approach. They allow us to quickly
+visualize changes over time and across different groups. We only looked at
+one example here, but heatmaps are literally
+everywhere these days. You see them on weather
+and real estate websites. Basically, anywhere there's data, you'll probably see a heatmap.

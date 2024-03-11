@@ -1,0 +1,200 @@
+Of course, in reality there aren't so
+many single word sequences, right? We need a way to generate longer sequences
+using the unigram language model. And this is actually quite easy too. All you need to do is to generate
+one word in the sequence at a time. Similar as you generate
+single word sequences. You generate one word at a time in order. And every time you generate the word,
+you toss the dice, and it does not depend on the previous words. It does not depend on how many times
+you tossed the dice before and what are the faces. For instance, if the vocabulary or the sample space,  or the number of faces of the dice is the following,
+then you generate one word at a time. If you're lucky enough, you will actually
+see the sequence "to be or not to be". So this simple dice tossing exercise,
+or unigram language model, explains how to generate single word
+sequences and longer sequences. If you can decompose
+the sequence into single words. Remember that we also
+need to formally calculate the probability of a  long sequence. We need the number. How  can we
+calculate the probability? Well, essentially you can
+formally compute the probability of observing the n-gram, w_1, 
+w_2, to w_n, as the product of the probability of single
+words in that sequence. For instance, if you have the n-gram
+like this, you can rewrite that as probability of w_1, times probability of
+w_2, times probability of w_3, so and so forth, until 
+probability of w_n. And of course, to abbreviate, 
+to save time and space, we usually write this product 
+as this expression: Big pi product from 1 to n, and that indicates that you're
+writing a product of components, and every component in  there
+is the probability of single word w_i. So with this way, suppose you 
+have a really got the probabilities of single words. 
+You can look that up, you can look up those probabilities
+from Google Ngram Viewer. Or there's a way that we can calculate 
+them by ourselves -- we will introduce later. Suppose we have all these 
+probabilities of single words. Now you can calculate the 
+probability of longer sequences. For instance, you can calculate
+the probability of this trigram, "the dark side", as the product of
+the three probabilities of single words "the", single word "dark",
+single word "side". And then if you look up the table, you can write down the 
+probability numbers like that. You don't need to actually do
+the calculation, we will show that later, all you need to do is to get a comparison. Similarly, you can calculate
+the probability of this trigram, "the dark path", as the product of the three
+probabilities, "the", "dark", and "path". And you can actually write down
+what the probability numbers are. Now, instead of calculating
+these two numbers exactly, you can now do the comparison. You can see that both of the products
+share the first 2 words, "the" and "dark". So the only difference comes from
+the probability of the word "side", and probability of the word "path". And apparently, the probability
+of the word "side" is greater. So, math actually tells us that
+the probability of observing the trigram "the dark side" is actually greater
+than probability of observing the trigram "the dark path". So that helps us make the prediction. Note, we are actually applying some very
+important assumption in this calculation. And that is, the probability 
+of the trigram can be decomposed as the product of
+the probability of three single words. That's of course not always true. In fact, this is known as the 
+independence assumption. And we can see that the independence
+assumption connects the unigram language model to  the
+chain rule we talked about. If you still remember the chain 
+rule, from the chain rule, we can calculate the probability 
+of the n-gram, w_1, w_2, to w_n as the product of each  of
+the words P(w_1), P(w_2). But now this is not the 
+probability of the single word. This is the conditional
+probability  of w_2 given w_1. And the probability of w_3 given
+the two previous words w_1, w_2, until the probability of w_n given
+all the previous words. This is the chain rule. And we say
+that according to probability theory, this is always true. Now, based on the 
+independence assumption, based on the unigram language model,
+we're essentially calculating the same joint probability
+of the n-gram, but as the product of the probability
+of single words one by one. So what assumption  we're making here? We can assume that  w_1 is still w_1. But w_2, if you use the chain rule
+that depends on the previous for w_1. But if you use unigram  l
+anguage model, that's itself. And so forth. You can see that the only
+difference is whether the probability of observing a word depend or
+does not depend on the previous words. So this independence assumption told
+us that the probability of any one word does not depend on
+any of the previous word. If that is the case, we call this
+language  model a unigram language model. What case? If for any word w_k. So k could be greater than
+1, and all the way towards n. If for any word w_k, the conditional
+probability of this word, given its previous words or
+its previous words in a sequence, w_1 to w_k minus 1. If this condition probability
+just equals to the marginal probability of w_k, then this 
+independence assumption holds. In this case, we call this language
+model a unigram language model, which is quite simple  and quite powerful. So now you know ways
+probabilities of single words. How you can calculate
+the probability of longer n-gram. The question is how can we
+find those probabilities? How do we know the probabilities of
+single words in the first place? Well, to use the unigram
+language model we need to find the probability of every  word
+probability of w, like these. We don't know how to calculate that, but you may have the vocabulary, that is
+the set of all distinct words. We know that although we now we
+don't know what the probabilities are, we know this probability  is
+sum to 1. Why is that? Because if you toss the dice, it has
+to give you one of the faces. It cannot give you nothing.
+It has to give you something. And in that case the probabilities
+of all these faces will sum to 1. In the unigram language model,
+the probabilities of all the words, every word should sum to 1. And more generally, this is 
+known as the inference of language models  or sequence models. And it is the opposite
+process of generation. What is generation?
+We've  already discussed that. Suppose we have the model, and we
+call this model the language model, a unigram language model, because this
+is essentially a dice that every word is associated with the probability,
+the probability is sum to 1. If we use this model,
+if we  know the probabilities, if we want to generate
+a  document, a sequence, all we need to do  is
+to toss the dice once, we basically sample a word
+based on these probabilities. And then once it's done, we sample
+another word, we sample another word. These words could be the same, it could
+be different, from the previous words. And then if we do this many times
+we can generate a document, we can generate a sequence of words. And this process, as we said, is called
+the generation process of the data. Of the sequence data in this case. So what we can do here is to calculate
+the probability of whether a long sequence is generated from this model. And
+this is called the data likelihood. That means how likely that
+this sequence of words is generated from this  particular dice? And here, suppose we  don't
+know the probabilities? In that case, we don't see the dice.
+All we see is the black box. Then fortunately, we've
+seen  the sequences generated by the dice in this black box. 
+So there's the opposite operation action that based on the data, based
+on sequences we observe, we can actually infer what's
+actually in the black box. Or we can actually estimate the parameters.
+And here the parameters are what? Are P(w) or the probabilities 
+of single words. So based on the data we observe, we can also estimate the 
+probabilities of these single words. We can estimate probabilities of actually
+any language model that's given. So we no longer need to look
+up the Google Ngram viewer. We just need to calculate
+the probability based on the data. This is known as the inference process. So how to estimate a unigram
+language model in particular? Well, there are some intuitions. If we know the probabilities of a word,
+then we know that it's more likely to appear if the probability is larger than
+probabiity of other words. And vice versa. If I don't know the probability, but
+we have seen this word many times, then we know the probability
+of this word is larger. In other words, the probability 
+of a word is proportional to how many times we have seen it. 
+But note this only applies when you actually see the
+words many, many times. When you actually see the 
+observations many, many times. In other words, if you have a dice,
+you have an unfair dice -- if it's a fair dice then you don't
+need to estimate probabilities, right? If you have unfair dice, and
+you  toss the unfair dice many times, then the count of each face,
+the  count of number 6 you observed, indicate its tendency to appear again. If you know that that dice is unfair and
+tossed it, for instance 10,000 times, And 5000 are the number 6, then you know that the number  6
+is more likely to appear again. So in fact, this intuitive 
+process is known as the maximum likelihood estimation. 
+Which is essentially finding the probabilities or the parameters 
+that maximizes the data likelihood. If you're interested, we will see some more 
+advanced materials about maximum likelihood estimation. But in this class, all you 
+need to do is understand this simple process. That you 
+toss the dice many, many times, and you count the number of
+times in each face appear. And then from that you
+calculate probabilities. Or if you see many many sequences, 
+you count the number of times that each item, each word appear. So to write down this mathematically,
+the probability of w of a word is essentially the count of the
+word normalized by the count of all words. Why is that? Because we  know
+that the probability of all the words should sum to one. So here, C(w) indicates the count of this
+particular word in the entire database. And remember that the database
+or  the number of documents should be large enough. So that you can trust this
+maximum likelihood estimates. So this is quite simple, right?
+This process looks quite simple. Let's look at a concrete example.
+Romeo and Juliet. This is the famous Shakespeare work. See, if you've got the
+text of  Romeo and Juliet, you can break the text
+into single words and you can actually count
+the  number of times that each word appear. So you can think about what 
+data structure you should use. You probably want to use
+the dictionary in Python. And some people have 
+done that for us. So they have calculated
+the  number of times, the count, of every word appearing in
+Romeo and Juliet. And you can see that words like "And",
+"The", "I", "To", appeared way more times than other words like "Addle", "Adjacent",
+"Admired", so and so forth. So based on this counts, we can now
+calculate the unigram language model. Here's how. We first count
+the total number of words. And then, let's see,  there are 24,545 words in total in Romeo and Juliet. And we also know now the 
+individual counts of the words. Then all we need to do is to normalize
+the individual counts of the words by the total number of
+words  in this whole collection. So now you can see the probability of
+the word "And" is around 0.027. Probability of the word "I", is close.
+Probability of the word "Night" is lower. And the probability of
+"Acknowledgement"  is way lower. So this is basically how you can
+estimate the parameters of a unigram language model or calculating
+the probabilities of single words. Now that you have these probabilities, you can now calculate
+the probability of any n-gram or you can make a prediction 
+whether this n-gram is likely to be from Romeo and Juliet, or even whether this n-gram is likely to be
+written by William Shakespeare or not. Well, you can see that even a unigram
+language model is quite powerful, because based on this model you can calculate
+probability of any given sequence. But there's actually a problem
+with unigram model. How so? Back to the  example that we want to calculate the trigram "the dark side" and
+"the dark path" and we can actually decompose both of them into the product
+of the probability of three words. And then you know that probability of
+the trigram "the dark side is greater than the probability of "the dark path".
+So all of these are great. It's actually less likely for
+the word "path" to follow "the dark" then the word "side". However there might be another example. There might be an outlier, for instance. What about the trigram "the dark the"? Well, intuitively, it's very unlikely
+that he will see this trigram. But using the Unigram language model, We may arrive to a different
+conclusion. You can see that if you take this trigram, you decompose
+the trigram into the probability, the product of probability
+of three individual words. You have probability of "the",
+times  the probability of "dark", times the probability of "the" again. 
+And then because all these trigrams share the first two words, 
+so they cancelled out, and because the probability of the word
+"the" is way greater than probability of the word "side" or "path", that
+will  tell you that it's more likely not less likely, to observe the trigram 
+"the dark the", than "the dark side", and then "the dark path". 
+Does that make sense? You will of course say that this is
+not intuitive. Something is wrong. What is wrong? Well, the independence
+assumption is wrong. We said that in unigram language
+model, we assume that the occurrence of any word does 
+not depend on previous words. But in fact, every word, when
+we write down in a sentence, does depend on what
+we have written before. So to solve this problem, there's
+only  one way. We need to consider longer dependency in this 
+n-gram language model. And you will see how we do
+that in the next video.

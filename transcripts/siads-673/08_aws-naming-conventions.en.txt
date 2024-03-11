@@ -1,0 +1,117 @@
+Let's spend a little bit of time talking about names today. Back when we created
+individual servers, different systems administrators
+had really cool names. I worked in a place
+that used like Star Track ships as
+servers for a while, I worked at another place that
+used Futurama characters. There's a lot of
+Futurama characters. Then another place and
+it's Simpsons characters, there's even more
+Simpsons characters and names got to be cutesy. You'd have the Homer server or you'd have
+Bender as a server. You had to do that mental
+like keeping track of okay, well bender is our file server and that worked and it
+was fun for a while, but that's what you had 20, 30 servers at most. As we grew and grew, our servers began to take
+much more descriptive names. File server 1, file server 2, file server 3, got a lot more boring with
+the naming conventions. In the Cloud naming
+is really important. You can create lots and lots of resources very
+quickly in the Cloud. And if you don't have a good
+naming structure for them, you're going to end
+up trying to figure out what is this thing. In the Cloud when
+we create things, we get to give them
+a name here I've got my S3 buckets listed. Over here I've got my databases
+and I've got lambda here. Everything we've
+created has a name, mlhess-demo-recording,
+mlhess-test-bucket-3. That's not really
+descriptive, but it's there. RDS my-cool-database. If we look at our database list, we can see all of our databases. Then I've got a function
+here called test. It's a human-readable way to explain what's
+happening here. I can send somebody and say, hey in lambda in North
+Virginia, US East 1, go find my function called test or go find my database
+called my- cool- database, or go find my bucket called
+mlhess-test-bucket-3. But there's a couple of things that this doesn't
+allow us to convey. We don't get to keep
+track of metadata. We really want to keep track of our metadata through
+our Cloud providers. What do I mean by that? Well, who owns this bucket? Who's responsible
+for this database? If this database has an
+issue 2 in the morning. Who do I call? What
+business unit owns it? How do I handle billing
+if I wanted to bill, another organization for this? Every Amazon Resource, everything you can do in Amazon
+has the concept of a tag. Let me pull up this bucket
+will go under properties. Here's where we can
+put our tags in S3. Here at RDS, we can go to tags and we can
+add our tags here. Here in lambda, we can add our tags down here. Now, you might be saying, "Okay, well, great, that's nice. What you keep in tags?" Well, what you want to keep an tags is something
+similar for everybody; everybody who creates resources
+in the account should just create a default set
+of tags automatically. I typically will
+create a contact, who's responsible for something. I might create a department tag. I might create other tags
+based on my use case, I might have a project tag. Tags are useful in
+a variety of ways. You can use them to restrict and control access for resources. You can use them for billing, you can use them to find things. Let's go back to the other
+thing I mentioned earlier, I was giving you the
+directions to find a thing. I said, "Hey, you
+can go into lambda, go into US East 1 and find
+a function called test." That's really great for a human being to follow
+those directions. But what if I need the
+computer to do it? What if I need to
+programmatically tell one Amazon resource how to access another Amazon resource. Amazon has this
+concept of an ARN. You'll see this show up in a
+bunch of different places; in RDS, I think it's under here. No, maybe under configuration. This is short for the
+Amazon Resource Name. The Amazon Resource Name is the programmatic manner
+in which you can refer to different
+Amazon resources. You'll see this show up a lot. If I wanted to write a
+lambda function that touches or accesses
+the database, I might use the ARN to do it. If I wanted to
+have an S3 bucket, make a call to a lambda function when somebody uploads a file, I might use an ARN to do it. The place where you'll
+see this the most though, is when you're writing policies. Let's assume for a
+second hypothetically that I want to
+write a policy that allows anybody to upload a file into that
+bucket over there. I'd come in here and I'll do
+this in the visual editor. I'm going to choose S3
+as my service name. I can say, we're going to
+allow putting up the object. Where do I want to
+allow this to happen? When Amazon refers
+to a resource, it's really referring
+to the ARN. Sometimes there's
+other parameters that are required to get there. Now, when Amazon
+refers to a resource, you can actually
+say all resources. I would recommend that
+you never ever do this; it's really bad from a
+security perspective. Here we go. You'll see that
+it's actually started this. It's saying, hey, arn:awss3. If we come over here, sorry, I close the window. Let's go back to
+S3 for a second. If we go into S3, we can
+actually open this up. We can copy that ARN,
+clicked off by mistake. It's showing us that, hey, it's auto-fill that bucket name. Now if you're not familiar
+with how to use ARNs, Amazon actually will
+help you write it. What this is
+basically saying here is I can type in the
+bucket and then I can choose the object
+name here it might make sense to do
+anything or I could actually specify that a user can post only to a specific object. You know what, you can
+overwrite data.csv. What that's effectively saying
+is that anybody who has this policy could access
+that object in AWS. Most of the time, you might specify a
+project or you're going to say any, either way. This is what that means
+when you say ARN. Now, ARNs are made up of
+the word ARN, the word AWS, followed by the
+AWS service name, followed by the region, followed by the account number. There are some services
+that don't have a region and don't have
+an account number. S3 ARNs look a little bit weird. We've got ARN, AWS, S3, and then we've got
+some empty fields. While AWS buckets
+are put in a region, the names for them have to be global and unique across
+the entire service. You can't go to your
+account and create an mlhess-demo-recording because
+I have it in my account. It's one of the few
+services that's globally unique
+across all of Amazon. While yes, it's in this region, you can actually access
+it from multiple regions, it gets a little complicated
+with how that works. They're not necessarily tied to account because they're
+a global resource. In fact, you can grant other AWS accounts
+access to your buckets. When you download resources from AWS S3 for your homework, you are accessing my
+account to do that within, even though you don't have
+a login to my account, I've granted your accounts access to get data
+out of my S3 buckets. Lambda functions are pretty much limited to the account
+that you're in. There are ways to not do that, but for the most part they
+are tied to an account. You can actually grant another account access
+to run lambda functions. Same with our AWS concepts. They are pretty much limited
+to the account there in which is why the ARN has
+the account number in it. ARNs. We're not going to go over this in
+much more detail, but you're all going to be
+expected to recognize and use this for some of
+your home works in the future. Thank you.

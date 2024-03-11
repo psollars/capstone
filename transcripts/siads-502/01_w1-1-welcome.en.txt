@@ -1,0 +1,27 @@
+Hello, and welcome to Math Methods for
+Data Science. I'm Professor Grant Schoenebeck, an assistant professor at the University
+of Michigan School of Information. I'm a theoretical computer
+scientist by training. My recent research has focused on studying
+social networks and mechanism design for information elicitation. I have a passion for mathematics,
+and while I love both useful and useless mathematics,
+this course focuses on the useful kind. As you look at the syllabus, you'll notice we have an ambitious
+amount of material we are covering. That said, we will not cover
+all these topics in depth. We're doing more of a survey approach, picking out the important concepts you're
+going to need later in the program. So think of this as a foundations
+course that you can refer back to as you get deeper into the machine
+learning and data mining courses. A familiarity with these topics should
+serve you greatly in later courses, as well as any further
+practice in data science. You're all coming in with
+a wide range of math skills. On my end, this makes it difficult to pin down the
+level at which the course will be taught. So hang in there and keep the course objectives in mind,
+which can be found in the syllabus. This course is four weeks, and
+has a math review assignment to see if or where you need some refreshers on
+math concepts, a problem set for each week that involves
+Jupyter notebooks and Python. And two short writing assignments designed
+to get you to see how these concepts are applied to data science research. You will notice that I'm not in many of
+the videos, which were created by Dr. Erin Ware, a research professor at
+the Institute for Social Research. Math Methods is one of the first courses
+you're taking in the data science program. As the online experience may be new for
+you, the online teaching experience
+will be new for me. I hope you are looking forward
+to it as much as I am.

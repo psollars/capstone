@@ -1,0 +1,71 @@
+Hi, welcome to week three, where we're focusing on the analysis
+phase of data science projects. As always in this intro course,
+we're building up vocabulary and concepts not teaching specific techniques. I'll often refer to pairwise correlation
+and simple linear regression as analysis techniques just to be concrete because
+those are things I'm assuming you've already been exposed to in
+a prerequisite stats course. But the concepts I'll be talking
+about are more general and will come up in other types
+of analysis that you do. At the end of this week, you should be
+able to get started on an analysis for any of the problem types in the taxonomy
+that we had from week one, and know what some of the techniques are,
+even if you're not yet ready at this point in your studies
+to do all of those techniques. At the end of this week, you should be
+able to explain the following concepts, overfitting, signal and
+noise, cross-validation, the problem of multiple comparisons,
+P hacking, confounding, conditioning on a third variable and
+Simpsons Paradox. And you should be aware of
+some related vocabulary, maybe not necessarily able to explain
+it clearly yet to others, but you should at least be aware of
+this vocabulary of regularization, the bias-variance tradeoff,
+mediators and colliders. Finally at the end of this week, you should be able to recognize when
+you're automatically assuming causation or leading others to assume causation, even
+though you've only observed a correlation. To become a data scientist,
+you'll have to start thinking in terms of some of these concepts to be recognized as
+a data scientist by others, you'll have to incorporate these into your vocabulary and
+that's going to take some practice. You're going to have to try using them and accept that initially,
+you might get it wrong. So you're going to have to try using
+the term overfitting maybe even in your everyday life, but do a little check to
+make sure that you're using it correctly. So to get some practice, use
+the communication channels that we have, the slack office hours and so on,
+use those as an opportunity to test out your understanding of
+the concepts and vocabulary. Please do try to correct each other,
+gently of course, it's also okay to be wrong
+in an attempted correction. We're going to be monitoring
+with being instructional team, we'll be watching out for
+interesting discussions and trying to keep things on track,
+so give it a shot. The homework on developing content for
+your manifesto also continues to be structured around giving you practice
+at using and applying the concepts and vocabulary. You'll be assessing your knowledge and
+and making plans for where to acquire it, especially about the repertoire
+of analysis techniques. And you'll be filling in
+questions maxim's and ethical commitments related
+to the data analysis phase. As always, these can come from things
+you glean from these video lectures or things you glean from interviews
+of data scientists or things that you compose yourself. There are five more video lectures for this week each with short
+readings accompanying them. The first, revisits the taxonomy of
+problem types from week one, naming and giving some intuitions about some of the
+analysis techniques that are appropriate for each problem type. The rest, I'll look at common
+pitfalls in data analysis and some of the approaches to preventing them. One video lecture looks at
+the danger of overfitting and an antidote cross-validation. Another looks at the problem
+of multiple comparisons and the potentially creates for
+interpreting noises signal. A third one looks at the dangers of
+assuming causation based on correlation with some humorous examples
+of spurious correlations. And the last one examines
+Simpsons Paradox and points out that you should condition your
+analysis on confounding variables, but should not condition your analysis
+on mediators and colliders. So we're not going into a lot of
+technical depth in this course, but this week we'll be dealing
+with some deep concepts. I've really enjoyed
+preparing these lectures. It's involved a lot of digging around, discovering new levels of
+understanding for myself. I hope you'll enjoy digging in as well. And I hope you'll use these lectures as
+a springboard rather than as an endpoint. All of these concepts will come up again
+often repeatedly throughout your program. Since when do the data
+analysis part of this course, let me close with a statistician joke. There was a statistics professor
+who when driving his car, he'd always accelerate really hard
+before coming to any intersection. He whips straight through it and then slow down again once he
+got past the intersection. And one day, he takes a passenger, and the passenger was understandably
+a little unnerved by his driving style. He asked him, why do you go so
+fast through these intersections? The statistics Professor replied,
+well, this is strictly speaking. You're far more likely to have
+an accident during an intersection. So I just make sure that
+I spend less time there. I'll see you next time.

@@ -1,0 +1,112 @@
+So far we've seen a number of
+supervised learning methods. And when applying each of these methods,
+we followed a consistent series of steps. First, partitioning the data
+set into training and test sets using the train
+test split function. Then calling the fit method on
+the training set to estimate the model, and finally applying the model by using
+the predict method to estimate a target value for the new data instances, or
+by using the score method to evaluate the trained models
+performance on the test set. Let's remember that the reason we divided
+the original data into training and test sets was to use the test set as
+a way to estimate how well the model trained on the training data would
+generalize to new previously unseen data. The test set represented data that had not
+been seen during training but had the same general attributes as the original data
+set, or in more technical language, was drawn from the same underlying
+distribution as the training set. Cross validation is a method that goes
+beyond evaluating a single model using a single train test split of the data
+by using multiple train test splits, each of which is used to train and
+evaluate a separate model. So why is this better than our original
+method of a single train test split? Well, you may have noticed for
+example by choosing different values for the random state seed parameter in
+the train test split function when you're working on some examples or assignments. That the accuracy score you get from
+running running a classifier can vary quite a bit just by chance, depending on the specific samples that
+happen to end up in the training set. Cross validation basically
+gives more stable and reliable estimates of how the classifier
+is likely to perform on average by running multiple different training test splits
+and then averaging the results instead of relying entirely on a single
+particular training set. Here's a graphical illustration of how
+cross validation operates on the data. The most common type of cross
+validation is K fold cross validation, most commonly with K set to 5 or 10. For example, to do five fold cross
+validation, the original data set is partitioned into five parts of equal or
+close to equal size. Each of these parts is called a fold. Then a series of five models is trained,
+one per fold. The first model, model one,
+is trained using folds two through five as the training set and
+evaluated using fold one as the test set. The second model, model two, is trained
+using folds one, three, four, and five as the training set and evaluated
+using fold two as the test set, and so on. When this process is done, we have
+five accuracy values, one per fold. In scikit learn you can use the cross val
+score function from the model selection module to do cross validation. The parameters are, first, the model you
+want to evaluate and then the data set. And then the corresponding ground
+truth target labels or values. By default, cross val score does
+three fold cross validation. So it returns three accuracy scores,
+one for each of the three folds. If you want to change the number of folds,
+you can set the CV parameter. For example, CV equals 10 will
+perform 10 fold cross validation. It's typical to then compute the mean
+of all the accuracy scores across the folds and report the mean cross
+validation score as a measure of how accurate we can expect
+the model to be on average. One benefit of computing the accuracy of
+a model on multiple splits instead of a single split, is that it gives us
+potentially useful information about how sensitive the model is,
+the nature of the specific training set. We can look at the distribution of these
+multiple scores across all the cross validation folds to see how likely it is
+that by chance the model will perform very badly or very well on any new data set,
+so we can do a sort of worst case or best case performance estimate
+from these multiple scores. This extra information
+does come with extra cost. It does take more time and
+computation to do cross validation. So for example,
+if we perform K fold cross validation and we don't compute the fold results in
+parallel, it'll take about K times as long to get the accuracy scores as it
+would with just one train test split. However, the gain in our knowledge of how
+the model is likely to perform on future data is usually well worth this cost. In the default cross validation set up,
+to use for example five folds, the first 20% of the records
+are used as the first fold, the next 20% for
+the second fold, and so on. One problem with this, is that the data
+might have been created in such a way that the records are sorted or at least show some bias in
+the ordering by a class label. For example,
+if you look at our fruit data set, it happens at all the labels for
+classes one and two. The apples in the mandarin oranges
+come before classes three and four in the data file. So if we simply took the first 20% of
+records for fold one, which will be used as the test set to evaluate model one,
+it would evaluate the classifier only on class one and two examples an not at all
+on the other classes three and four, which would greatly reduce
+the informativeness of the evaluation. So when you ask ccikit learn to do cross
+validation for a classification task, it actually does instead what's called
+stratified K fold cross validation. The stratified cross validation
+means that when sliding the data, the proportions of classes in each
+fold are made as close as possible to the actual proportion of the classes
+in the overall data set as shown here. For regression, scikit learn uses
+regular K fold cross validation. Since the concept of preserving class
+proportions isn't something that's really relevant for
+every day regression problems. At one extreme, we can do something called leave one
+out cross validation which is just K fold cross validation with K set to the
+number of data samples in the data set. In other words, each fold consists of
+a single sample as the test set, and the rest of the data is the training set. Of course,
+this uses even more computation, but for small datasets in particular, it can
+provide proved estimates because it gives the maximum possible amount of
+training data to a model, and that may help the performance of the model
+when the training sets are small. Sometimes we want to evaluate the effect
+that an important parameter of a model has on the cross validation scores. The useful function validation curve makes
+it easy to run this type of experiment. Like cross val score, validation curve will do three
+fold cross validation by default. But you can adjust this with
+the CV parameter as well. Unlike cross val score,
+you can also specify a classifier, parameter name, instead of parameter
+values you want to sweep across. So you first pass in the estimator
+object or that is the classifier or regression object to use. Followed by the data set samples X and
+target values Y, the name of the parameter to sweep, and
+the array of parameter values that that parameter should take
+on in doing the sweep. Validation curve will return
+two two dimensional arrays corresponding to evaluation on
+the training set and the test set. Each array has one row per
+parameter value in the sweep, and the number of columns is the number of
+cross validation folds that are used. For example, the code shown here will fit
+three models using a radial basis function support vector machine on different
+subsets of the data, corresponding to the three different specified values
+of the kernel's gamma parameter. And it returns two four by three arrays,
+that is four levels of gamma times three fits per level, containing
+scores for the training and test sets. You can plot these results from validation
+curve as shown here to get an idea of how sensitive the performance of the model
+is to changes in the given parameter. The X axis corresponds to
+values of the parameter and the Y axis gives the evaluation score,
+for example, the accuracy classifier. Finally as a reminder, cross validation
+is used to evaluate the model and not learn or tune a new model. To do model tuning, we'll look at how to
+tune a model's parameters using something called grid search in the later lecture.

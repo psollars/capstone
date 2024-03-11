@@ -1,0 +1,162 @@
+Well, congratulations,
+we're finally here. I know that this course has
+been hard for some of you. Lots of math, lots of algorithms, lots of course content, for sure. We particularly includes these materials because
+that sequences, time series and data
+streams are just so common. They're just so powerful
+in robot applications. Through this summary, you
+can actually see that why we include these three deterring mutations in the same course. Just to remind us one final time. Sequence data is actually an ordered list of
+categorical items. You have x_1, x_2 to
+x_n as categorical, discrete items and the
+asserted with orders. Only order matters
+in sequence data. Differently, in time series data, where the only way is a list
+of timestamped measurements. If you look at the
+mathematic permutation, where the only way
+is numerical values associated with
+actual timestamps. In time series data the
+timestamps actually matter. Data streams are different from both sequences and time series, in a way that they are a list
+of ordered or timestamped, data points, data
+objects or events. See in the data stream, you can see that we have either simple or complex data
+objects that could either be as simple as category items
+or numerical measurements, or they could be as
+complex as the network, as the sequence, or as the
+combination of so many things. They're either associative with orders or the actual timestamps. Data stream, we can either access the entire history
+or we can deal with this [inaudible]
+because the events are arriving continuously
+into the future. Why do we actually put
+them into the same course? What do these data
+representations have in common? You can see that in
+sequences, time series, and data streams, all the
+observations are ordered. No matter whether you record
+accurate timestamps or not, you know the relative position
+of these observations. In other words, a
+common assumption about all three representations
+is that the next of the vision depends on previous observations
+and you can see that is the basic assumption
+behind many sequence models, Markov models, hidden
+Markov models, or time series chances, like moving average, like time series forecasting,
+so on and so forth. In this case, making predictions, especially making predictions
+into the future is the common task or common concern with all three
+representations of data. How to make predictions, how to make forecasting? We can see that in any of the three data
+representations modeling this sequential
+dependency is the key. In sequence data, you model the sequential dependency
+using Markov models, n-grams models,
+hidden Markov models. In time series data, you model a sequential
+dependency using autoregression. Data stream is actually a generalized version
+of all three. Dealing with data stream, you keep the synapses structure and you update it over time. You can see that many
+of the concepts, many of the techniques in the street data representations are closely related
+to each other, especially in terms of the
+intuition and the passes. For example, Markov
+models and n-gram models, you can see how similar they are to the autoregression models. If you still remember
+the acronyms, AR, MA, ARMA ARIMA, so
+on and so forth. You can also see that there's a huge connection
+between edit distance and dynamic time warping
+DTW, the airport. You can also find connections, even between moving average
+and reservoir sampling. All these techniques, although
+they look very different, they function very differently. But the intuition
+behind are the same, that they're all trying to model the sequential
+dependency of your data. The difference is
+whether your data is discrete or continuous, whether your data is
+categorical or numerical, and whether you can look
+into the history of either you're attributing a model to predict for the future. Outlier detection is
+another common task. In all three representations, you can see that finding alternatives is
+essentially identifying observations at deviate too much from the model or
+significantly from the model. You can also identify considerable differences among the three types of
+data representations. These differences
+will actually guide our selection of the
+data representation in our real world tasks. You can see that sequential
+data are categorical. If you're dealing with sequence, assumptions that the observations
+are categorical items. That's why we use
+probabilistic models. To model the appearance, to model the likelihood that certain items appear
+in the future, that certain
+sub-sequences appear. Time series data are numerical. We're dealing with
+numerical attributes. That's why that we use
+regression models to model the sequential dependency
+to make predictions. Data streams are different because you don't have
+access to the history that you have to consider the continuous arrival of
+items into the future. You have to rely
+on online updates. In reality, if your data
+has such properties, you know how to select between these three
+data representations. You can see that in seconds data, the order is discrete. You don't actually have
+the actual timestamps. You have to rely on
+n-gram models that you can actually know
+that the previous item, the previous two items,
+so and so forth. You extract sequential patterns, you look at skip n-grams. But the time domain
+is continuous, that's why with time-series data, we talk about trends, we talk about seasonality, we talk about cycles, right? Although they're
+intuitively are quite connected to ngrams and
+sequential patterns. You can see the difference, because we are dealing
+with continuous patterns. Usually, we frequently transform between continuous
+and discrete spaces, we talk about sampling, we talk about regression, right? We also talk about particular techniques
+like Fourier transforms. In fact, what we usually
+do is to proceed between the different data
+representations, in that way, we can actually leverage
+the tools we have already learned for one
+data representation to the self derivative, with a slightly different
+data representation. For example, from sequences and time-series, we talk about, if you have the input
+as a time series, you can actually use
+symbolic representation, to transform that into
+the sequence of items. By doing that, you
+can actually apply all those powerful
+sequential mining techniques to my time series data. The other way around, if you have sequence data and you are able to measure the properties of your category items
+over time, right? Or if you can actually
+count the items in each, let's say, pockets, right? There you are essentially
+constructing a time series from sequence data as there
+you can actually apply those powerful time
+circumstances techniques. Now what about data streams? You can see that, if we use reservoir sampling
+or use bucketing, where you essentially
+are transforming a data stream into the sequence, or even into the item set. If you use sampling and you measure the statistic or
+the numerical attributes, or if you use counting, right? You know how to do
+counting and all, you're essentially
+transforming a data stream, into time series. By doing that, you can apply all these powerful techniques
+in sequence data mining, time-series data mining, to deal with the continuous data stream. Where you may ask, what
+about the other way around? In fact, that you can
+see the algorithms of data stream or
+what triangle solve the problem that you cannot
+store the entire history and you're handling
+your upcoming events. If a sequence is too
+large to fit into memory, if your time series, is too
+large to fit into memory, if you have to deal
+with concentrating, then you can actually transform sequences and time series
+into data streams. How so? Well, you just treat
+every item as the event, or every time series
+measurement as the event. Then you can apply all these
+nice randomized algorithms in data streams to
+solve your big data, to solve your big data problems,
+sequence, time-series. That's why we put all these sequential
+recommendations together into one course. But you can see that beyond sequential
+representations there are also other data representations. We know that basic principle of dealing with sequences,
+time-series, and data streams, is to handle sequential
+dependency, right? In fact this principle
+can be found in many even more complex
+data mining tasks, such as, building a machine learning model
+that handle sequences, such as, beauty in natural
+language processing algorithm. In fact, these models for
+instance, in particular, recurrent neural networks that you relearning, DE learning, or conditional random
+field that you may learn in natural
+language processing, or trying to model this
+sequential dependency. But of course, in a much
+more complex way than what we have done with Markov
+models or ngram models. In other data representations, we have even more context
+dependency structures. The sequential dependency is essentially dependency in order. The previous observation has the impact on the
+future observation. But in other data representation
+like in a network, the one data
+observation will have impact to multiple data
+observations, right? Also known as its neighbors. In spatial temporal data, one data observation have impact on its neighbors in space, and the future items in time. Image data similarly, image data is different
+from metrics data, because you cannot swap the
+rows and columns, right? One observation in one pixel, actually has the impact on nearby pixels or nearby regions. When you are dealing with more complex
+dependency structures, think about the simple case, how did you deal with
+sequential dependencies? Then try to generalize
+these ideas. As a summary of this course, I want you to know
+what sequences, time-series, and data
+streams have in common. In reality, I want you to know which data representation
+you want to choose from. If you have your
+real world datasets, and real world data mining tasks, you do a selection based on the differences between
+these data representations. I hope you understand that
+although we talk about this different data
+representations separately, there are ways to transform between these data
+representations, and to leverage the
+power of each of them. Remember, the principle is that you want to handle
+sequential dependency, if your data appears to have
+this sequential dependency. Anymore context data reputations, you want to handle more
+context dependency structures, as these are the takeaway of
+this data mining two course. I hope you enjoyed the
+past months. Good luck.

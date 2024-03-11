@@ -1,0 +1,109 @@
+Affinity walls are one way of doing qualitative data analysis. I personally like using
+affinity walls because, they make the actual clustering and sorting of
+ideas very visible, and also they're fun just
+because you're using lots of Post-it Notes and
+moving them around. You've probably seen
+or at least heard of people using Post-it Notes
+to think through ideas, and now we'll get to see
+exactly how that works. So an affinity wall is basically, you take all of your
+affinity notes in this photograph it's
+the yellow notes, and then you cluster them. Then after you cluster them for each cluster, you're
+going to create a summary. So the idea is that
+you cluster first, write summaries, and then depending on how
+much notes you have, you'll end up with
+lots of summaries, which themselves
+could then be further clustered and you can
+repeat this hierarchically. Ultimately, you're
+going to stop when the summaries themselves
+either become too broad to be informative or when you have a relatively small
+number of summaries. For affinity notes, when
+you're constructing them, the first thing is to lay out
+all of your affinity notes. You're going to make the
+clusters very quickly. Just try to find affinity notes that seem to have something to do with each other. At this stage, you want to create clusters
+relatively quickly. Don't think about it too much, and also don't get too
+attached to any one cluster. You're going to move
+your notes around. Whenever you see a new clusters
+form, you might say, "Oh, this note actually belongs
+in a different location". You can keep merging clusters together or
+breaking them apart. Generally you want to aim
+for clusters that are about 3-7 affinity notes. These are not strict rules, so you can definitely
+go beyond it or have even clusters with
+two or fewer notes. But generally try to think, if I have seven or more notes or certainly getting into 10, 20 notes, you want to break
+them up so that you can find more granular clusters that can be summarized at an
+even more precise level. Or if you have a,
+very small clusters that seem to be about
+the same thing, you want to merge them. After you form these clusters, you're going go to
+the next phase, which is the most important. So as you can see
+in this photograph, on top of sets of
+clusters of yellow notes, you're going to see
+these light blue notes. In these light blue
+notes, what you see are this particular group handwriting the summaries of what the yellow notes
+underneath them represent. Now the colors don't
+matter that much. But the important part
+is that when you're writing these summary notes, this is where a lot of the interesting
+analysis is happening. So you want to make
+sure that you're taking enough time
+to do them well. The goal is to summarize the information of all of
+the notes in the cluster, you want to write
+a summary that is a full sentence and that
+makes sense on its own, so that if you read
+only the summary, you can still get
+a sense for what the notes are about
+underneath it. Then you want to
+balance abstraction and precision. So
+what does that mean? On the one hand, you want
+to write a summary that is an abstracted version of the summary of all of
+the notes underneath it. On the other hand, you
+want it to be specific enough that it captures something interesting about
+the series of notes. So for example, if you have a series of notes
+about, let's say, potential police bias
+in police data records, you might write, "There
+seems to be a bias". That's a very abstracted thing that's certainly likely
+to summarize everything. On the other hand, it
+doesn't tell you that much. So you want to be
+even more precise. For example, you might say that, "According to the
+notes underneath here, there's bias that is
+specific to gender. Maybe male traffic, male drivers are being treated
+worse than female drivers," and if that's true, you want to mention that fact
+very specifically. In any case, you
+want to summarize the affinity notes that
+are within the cluster, and then as I mentioned, you want to repeat
+this hierarchically. So for every cluster you'll have a summary and then once you
+have a lot of summaries, each of those summaries
+could be again, clustered and then summarized. You're going to stop creating
+these new levels when the summaries themselves seem
+to become uninformative, usually because so much gets
+pushed under one cluster that the only statements
+you can make are super broad and largely not
+saying anything again. A good affinity wall,
+if you do this, will naturally lead to a good
+report because now you have an organization of
+the different ideas that are in all of your data, and they're clustered,
+they're 'summarized, and then those summaries themselves are further
+clustered and so on. We'll talk more about how you
+put together these kinds of affinity note summaries into a final report in
+a future segment. Now in the assignment
+for the affinity wall, what I would like you
+to do is to complete the affinity wall using
+your own affinity notes. Now I strongly encourage that you actually try this with
+actual Post-it Notes. It's helpful if you have
+several different colors. You want most of your affinity
+notes, of which you'll have the most, in the color that
+you have the most of. Then at different
+levels of the summary, it's useful if you have
+different colored Post-it Notes, but it's not strictly necessary. The important thing is that the hierarchy is very
+clear for you to see and that you can very
+easily move these notes around. There are also
+online tools for you to create either affinity walls explicitly or to just organize virtual Post-it
+Notes on the screen, and you can certainly use those. At some point, it
+might be helpful, but I find that this exercise
+is actually more fun, and also you get a sense for the clustering much
+more quickly if you do it physically on
+physical Post-it Notes. Ultimately, for this assignment, you're going to submit
+a photograph or a file. The resolution of the photograph should be high enough that you can actually read
+individual affinity notes, if at least you zoom
+into the photograph. For further details,
+please see the assignment. Ultimately, again, I think that affinity walls are a lot of fun, so try to enjoy the process. It can be really interesting
+to see physically how your thinking process
+evolves and how the analysis of data
+happens. So have fun.

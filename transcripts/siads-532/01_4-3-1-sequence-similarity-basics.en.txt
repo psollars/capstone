@@ -1,0 +1,91 @@
+Hi, this is Qiaozhu Mei
+from School of Information. Let's talk about sequence similarity. As we have discussed,
+a sequence gives you the representation of their data as they ordered set of items,
+right? So there are categorical
+items that followed and organized in particular
+orders in a sequence data. In a sequence representation,
+we care about the order among items. We care about repeating items. But we do not care about
+absolute positions of the items. So when we consider to measure
+similarity between two sequences, this need to be taken into consideration. As you can see that computing sequence
+similarity is not a trivial task. There are multiple challenges. It makes it harder than computing
+similarity of two itemsets or two vectors. And why is that? Let's see how we can compute
+the similarity between two sequences. The first try you may have in mind is to
+flatten the sequence into set of items. For example,
+given the sequence x1 to x2 until xk, where the indices 1, 2 and
+k indicate the orders among items. By flattening the sequence,
+you end up with the itemset with k items. And then you can just apply
+the itemset similarity metric, such as Jaccard similarity. Alternatively, you can choose to flatten
+this sequence into the vector of items. Sometimes the binary vector, sometimes the numerical vector if the same
+item appeared more than one times. And then you can apply the similarity
+metrics of your favorite, such as cosine similarity, such as dot product to calculate the
+similarity between two flattened vectors. Isn't this the good approach? Well, there are lots of
+problems with flattening. And this is all because the order is
+the big factor in sequence similarity. Let me give you a simple example. If you look at similarity of two words, where every word is
+the sequence of characters. Then the word live and evil, all right? If you flatten this word
+into a set of characters, you can see that the characters
+are just identical, right? But everyone would know that
+these two words are completely different in terms of sequence similarity,
+right? Live is the opposite of evil. So if you choose to flatten
+these two words into the vector of characters,
+they will not help you. You will still end up with
+the perfect similarity, although the two words
+are completely different. So you can see that both itemsets and
+item vectors fail to handle the order, which is very important in
+assessing the sequence similarity. So you will see that if the order
+is important, let's try it for the second time to consider the orders
+into the similarity or distance. So there is the metric that
+is particularly defined for sequence distance. It is known as the Hamming distance. What it does is very straightforward. Suppose we have two
+equal-length sequences. Remember that the number of positions
+are identical in two sequences. So we just need to look
+at how many positions in the two sequences that have
+different items, right? For example, if we measure the distance
+between the two names, Carolyn and Karolin, in this case, the Hamming
+distance of the two names will be 2, why? Because in the two strings, in the two
+sequences of characters, there are two positions where they have different items,
+position 1 and position 6. They have different characters
+that makes the Hamming distance 2. Well, this sounds intuitive. It does consider the order and
+the positions among the items. But what about the two words awake and
+waked? Well, if you compute the Hamming distance, you can see that the Hamming
+distance is five. That indicates that two strings
+are completely different. But apparently,
+there's the subsequence, wake, W-A-K-E, that is shared
+in the two sequences. The reason is that Hamming
+distance considers the absolute position of the two sequences
+instead of the order. And if you consider the absolute
+position instead of the order, by just moving one of
+the items out of the position, it could actually create a huge difference
+among the positions, but not in order. So you can see that the first two tries of
+sequence similarity both failed, right? So that force us to think
+what are the intuitions behind a good sequence similarity metric? Apparently, if two sequences share a lot
+of items, the more items in common, the more similar the two
+sequences should be, right? And because of the order,
+you can see the more aligned the order in the two sequences,
+the more similar they should be. So those two are very intuitive criteria
+for a good sequence similarity. But the question is how can we measure how
+well the orders are aligned to each other? To motivate particular examples
+of good similarity metrics, let's look at the real applications
+of sequence similarity. One of the applications
+of sequence similarity that you're seeing everyday
+is a spelling correction. You see that in your
+favorite text editing tools. You see that in search engines. You see that in many online
+forms that you submit. This is the study by a scientist
+working with the Live search engine, which becomes the Bing
+search engine later. So they look at the query log, right? They look at the recorded
+queries that people submit. And they measure the frequency of
+particular strings in the queries. So they found that when people are looking
+for the famous scientist Albert Einstein, there are many,
+many different ways of spelling that, which is reasonable because not
+all people know how to spell Albert Einstein, the two words, correctly. You can see that there's actual
+distribution over frequency among different ways of spelling the name. So the spelling correction task in
+a search engine is essentially taking the input of a misspelled query,
+in this case, alber einstien, right? And then you find strings,
+you find correct spellings, where correctness is measured by whether
+the word appears in a dictionary. Or in a crowd sourcing sense, whether the
+word is very frequently used by the users. And you find strings that
+are not only correct, but also close enough to the input. So you know that the input could
+have been a misspelled version of the correct string, right? And this particular example,
+according to the distribution over frequency of different spellings,
+you can find Albert Einstein, the correct spelling that is both
+close enough to the input query and also is very frequently used by the users,
+right? And then you make a suggestion
+to your search engine users.

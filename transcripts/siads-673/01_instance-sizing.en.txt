@@ -1,0 +1,131 @@
+When you are getting
+dressed in the morning, you often choose what
+you're going to wear based on what you're
+doing that day. If you're going to be going
+out to a fancy dinner, maybe you'll wear a nicer shirt, if you're going to be
+lounging around the house, maybe you'll wear sweatpants. When you're spinning up EC2 instance or any type of virtual machine in the Cloud, you also have choices based on the type of work
+you're going to be doing. Each Cloud has its own what are called instance types
+or machine types, and they all are a
+little bit different, and when you're spinning
+up your instance type, you need to be thinking through what am I doing with this work? What is the workload? Let's start with
+Amazon for a second. Amazon has what they call base machine families
+across the top, and this is under the
+general-purpose machine families. You can go to this page, I'll link to it
+on the video page , and you can see here, Mac instances are a
+little bit special, but pretty much each
+one of these has a specific feature that
+it has available to it. In this class so far, we've used T2 instances. T2 instances are some of the cheapest instance
+types that are out there, and the concept here is, I think I had you do a micro. Basically, with a T2, you get what's known as
+burstable CPU credits. I really think of
+these as web servers, where you might have
+not a lot of traffic, then a lot of traffic
+for a little bit, and then going back down
+to not a lot of traffic, that'll even out over a while. If you've just got
+general workload, the M5s are pretty
+good for that. They're not burstable,
+you don't have limits, you get dedicated CPU resources, and you can choose based on the resources you
+need, where you go. Speaking of that, I don't know if we
+covered anywhere else in this program
+but in the Cloud, we've got these metrics
+of virtual CPUs and RAM, and every single
+Cloud provider has a metric for measuring
+CPU and RAM. CPU is basically the number of simultaneous things
+your computer can do at the same time, and RAM is the amount of
+data you can load in. If you're using pandas to read
+in a very large CSV file, you want to make sure you
+have the RAM to do that. If you've got a 250
+gigabyte CSV file, you're probably not
+going to be very happy trying to work on that
+with eight gigs of RAM, you might be able to do it, but you're going to have to
+do a lot of work around that. You might want something
+a little bit larger. All the Clouds have
+their general purposes, they're compute-optimized. These are ones that have
+either specific types of CPUs or a high density
+of CPU to RAM. We saw our M5 large, these are our compute
+instance larges, they'll have more CPU
+typically than RAM. Memory-optimized are the
+exact inverse of that. If we go to our R5s here
+just for comparison, two CPUs with 16 gigs of RAM are metal instances 96 CPUs
+with 768 gigs of RAM. When you start
+scrolling through here, there's some around dedicated
+accelerated computing. This is where you can find instances that have
+GPUs attached to them. If we look at our
+P3s for a second, you can see in here that
+a p3_8xl has four GPU, that's four GPU cards
+in the machine, 32 virtual CPUs, and 244 gigs of RAM. If we switch over, here's the Azure space. Azure has pretty
+much the same thing, they've got their
+entry-level VMs. They've got their B-series, these are equivalent
+to your T2 and your T3 from the Amazon side. Your D-series, these
+are your M5s your C5s, and your R5s, and then you get into your
+specialized compute instances. Google does the same thing, where you've got your
+general purpose, your compute-optimized,
+your memory-optimized, and your accelerator optimized, and so when you start
+scrolling down through here, you can see they do
+a really nice table. Google does to help you figure out where
+you might want to be and then they'll walk you through in
+general what you can get for each
+type of instance. Ultimately, you want to get the smallest instance you can use for the workload
+you're running, and some instances
+pun unintended. Sometimes you just have
+to play with that, let me start with a
+little bit smaller one, I'm getting memory errors,
+I'll move up to a bigger one. When you're in the console, one of the things that
+you're able to do and all of them support this is, let's say I come in here and
+I spin up a M5 instance, and so I'll do
+that quickly here. We're going to run
+our Ubuntu instance, and we're going to say,
+instance families m5. We'll take our base
+M5 instance with two virtual CPUs and
+eight gigs of RAM, and you come through here, and we'll use our
+security group here, and we'll let it start. Our instance is starting, we've got an M5 instance here, we'll give this a minute
+to finish starting up. We'll get its IP address, and we'll get ready
+to SSH into it. I'll open up my console here, and we'll do an ssh -l ubuntu, and it's still starting, so we're going to
+have to give this a minute until we get a prompt. There we go. Here I
+am on my instance, I actually can use
+a Linux command, cat /proc/cpuinfo, and what this is
+going to show me is the information about the
+CPUs that are in here. You can see that
+I've got two CPUs, processor ID 0, and processor ID 1. Now, I'm doing my work, I've got whatever I'm doing in here and I
+realize, you know what, I need more, either CPU or I need more RAM,
+whatever it may be. One of the things I can do is
+I can come back over here, and I can stop my instance. This will take it
+a minute to stop. We're still logged into it, it actually logged
+us out already, and we'll go ahead
+and refresh this, and we'll see that the
+instance state is stopping. We give this another
+minute or two, it will be in a stop state. Instances have many
+states available to them. Typically the ones we interact
+with are running, stopped, sometimes stopping
+and terminated, and this will take
+it another minute, and when it's ready, what we can do is we can
+actually tell Amazon, hey, this instance that we set up
+that we were running before, we need to change
+the way it works, we want to increase the amount of resources available to it. You'll see it's now
+in a stop state, I can right-click on this
+and go to instance settings, and I can say change
+instance type. What this is going to do
+and let's go to something, we'll do a 24xl for a second. When I start this now, everything I did before, my hard drives, the
+data I was running, and I currently my rate limit on Amazon for this class
+does not actually allow me to start instance that large, so we'll do a little bit
+of a smaller instance. Amazon has some controls
+in place that prevent you from starting off
+too many instances, you're obviously getting
+billed for these, and so we'll start that one. That'll take it a minute. Now, as I was saying earlier, when you start an instance up, when you restart that
+instance, your hard drive, everything that you were doing before is still going to be there and none of that's
+gone anywhere at all. The only thing that's
+changed is the amount of resources that are
+available to you, and the other thing
+that is likely to change is the IP address
+of the instance. What we'll do is we'll
+do an ssh -l ubuntu. We'll say yes. We're now logged in here. If I press the up arrow, you'll see that cat /proc/cpuinfo
+is on there because that's the last command I typed before I shut this
+instance down. You'll see now when I scroll up, this is CPU number 15. This is CPU number 14. This is CPU number 13. Before I only had
+two CPUs in there, zero and one, now there's 16 CPUs
+available for my use. Instance types are the
+way you're able to scroll your workload based
+on what you're doing. If you've got a Jupyter Notebook running on here and you're
+running out of RAM, you can increase the size of your instance to
+get around that. Or if your notebook
+is running slowly, you could add more CPUs assuming
+the code you're writing is spreading load over multiple
+processors. Thank you.

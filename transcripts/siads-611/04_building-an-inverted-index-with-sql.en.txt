@@ -1,0 +1,102 @@
+So now we're going to take
+a look at inverted indexes. Like I said before, inverted indexes are generally
+used for text search. So let's just say
+you're going to build a blog or you're going
+to have a bunch of blog posts in your
+database and they have a bunch of words in them and you want to have a search box. That's the classic thing. And we will see as we go further sort of these
+inverted indexes have other uses than just text but text is the easiest
+thing to start. Inverted indexes have been
+around a long time, long before Google and even search
+engines and even the Web. It's a sort of computer science concept. But certainly, the way search has become so important
+and so enmeshed in our use of the Internet and the Web, we have learned a lot. And so in a way, it's nice to think about how Google
+thinks about searching and how Google thinks
+about keywords and how Google thinks about matching. And there's a lot of innovations
+that Google has added on top of the basic
+inverted index. So it's kind of nice to see. I've got a couple of
+presentations here that give you a little sense
+of Google's take on search. One is the Google I/O 2008
+keynote by Marissa Meyer. I was at that conference
+in the audience. It kind of blew my mind. In 2008, Google decided to
+show a lot of its magic. Up to that point,
+they'd been very interested in saying "Oh
+Google's all magic. Don't worry about it," but they wanted to get us as
+developers to begin to make use of Google products
+as developers and so they started talking
+about it. It's a great talk. I've got a short
+link right into it where you can go right into the part where
+she talks about search. It's only about a
+minute and a half. Then there's another one
+by Matt Cutts that just tells about keywords and inverted indexes and how they all work and how once they have an index and how they order and
+rank and that really is a nice outline about the
+things that we're going to talk about in this class. So the first thing
+we're going to do is we're going to build an inverted index without using the built-in
+features of Postgres. And Postgres has some wonderful built-in features, but
+we're going to first build it by hand so that we better
+understand the magic. So we can understand how to
+tune the magic and how to make better use of
+the magic stuff. So as I mentioned, inverted indexes
+work on columns that are sort of on multiple things,
+so like an array. And so basically, what we're going to do is the first two functions are going to make a big difference in how we can do all this stuff. And so the first array is the
+string_to_array function. And what it does is it
+takes any string, it's like split in Python,
+and it just splits it based on a delimiter and
+gives us back an array. And so we could think of a
+blog post after you split it is a bunch of
+words splitted based on whitespace as
+a bunch of words. So string_to_array
+is Hello,world. And this also shows you the syntax
+of arrays, curly brace, Hello world is sort of the pretty
+syntax of a string array. It doesn't need quotes. It's a bit of a weird syntax. But when you see
+those curly braces, it's an array of something. In this case, it's
+an array of strings. So string_to_array is a function. The other function
+that's really important, that what we're going to
+do here is unnest. So unnest is similar to the generate_series things
+we did in the previous, the text-based lecture where you say generate series one through five, and that would actually
+make rows 1, 2, 3, 4, 5. If you concatenated it with
+neon, generate series 1, 2, 3, 4, 5, it will be neon1, neon2, 3, 4, 5. And so this unnest is one of these things where if you use it, it takes an array and
+expands it into rows. It's kind of like a JOIN
+in a way where it's reintroducing
+vertical replication. It's turning something
+that's horizontal into something that's vertical. And that's why it's called unnest. I might call it vertical to horizontal.
+I mean, horizontal to vertical, actually. Okay? So if we take a look at the string_to_array Hello
+world and we unnest it, we get two rows. Now, with those two things, we can build an inverted index. Well, what is an inverted index? Well, an inverted index
+takes a bunch of documents, pulls all the words of
+those documents out, and then ends up basically with a mapping from the keyword
+to the document, right? Those are the keywords
+of document 1, the keywords of document 2, and the keywords of document 3. That's what the
+inverted index is. And then what we can
+do is we can look forward through that
+by going down and finding a keyword, maybe SQL, and we find that
+document 1 has SQL, document 2 has SQL, and document 3 has SQL. It's not surprising in an
+SQL class that all three of my documents have the
+word SQL in them. Once you can parse a sort of
+complex column of text and you
+can split it based on spaces and you can turn each of those spaces into the rows, into rows, you end
+up in a situation where we just have to do
+a few SELECT DISTINCTs, because, remember, we
+can select and we can insert from those
+selected things. And so we're going to basically take a simple text document
+management system which has a primary key in a text field and we're going to put some
+documents into it. Then we'll create an index
+which has a keyword, not unique because
+remember the keywords have to point to
+many documents, and then a foreign key back into the
+documents called doc_id. So we'll create that. Then I'm going give you a
+whole lecture showing you all the gory detail of how all those SELECT
+DISTINCT work. Then when it's all said and done, we're going to have this table
+called docs_gin, which is a mapping between all the
+keywords in the document, space-delimited words
+in the document, and not worry about
+punctuation or anything. I didn't put punctuation in,
+otherwise I had to do something
+about the punctuation. And it just basically says
+that there you go, The word SQL is in document 1, SQL is in document 2, and SQL is in document 3. And away we go. And then
+what we can do is we can use a WHERE
+clause to look things up here and then use
+that to get a set of rows and then that set of rows works its way to a set of blocks. And so that's what we're going
+to cover in the next thing. Then the thing we'll
+do after that is, once we do it the hard way, we will show you the
+easy way to do it leaning on all of
+the Postgres SQL built-in text
+processing capabilities, which are way better
+than the manual stuff. [MUSIC]

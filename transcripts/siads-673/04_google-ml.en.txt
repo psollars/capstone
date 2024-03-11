@@ -1,0 +1,581 @@
+Recording [INAUDIBLE]. >> So I'm going to clap because
+they use it to sync audio. So [SOUND] okay, good at well, hang on. [SOUND] Good afternoon, evening, morning,
+whatever time zone you happen to be in. I'm here with Giovanna
+today from Google cloud. And we're going to have kind of a
+conversation about the Google cloud space. And we're going to get into kind of some
+auto ML within the Google cloud space eventually. But can you tell me kind of little bit
+about your career path before we get started in this? How did you end up working for
+Google and what exactly do you do for Google while we're at it? >> Okay, well long, long, long story. I've been at it for quite a while, actually got a machine learning degree
+20 years ago when it was not popular. And it was totally different from what
+it is now and then ended up working for a variety of companies including IBM and
+Microsoft. Where I work for 18 years,
+about two and something years ago, just in time for
+the pandemic I moved to Google. And at Google,
+I have sort of my dream job, frankly. I work on very interesting machine
+learning problems with clients. So that keeps it varied and
+interesting and that's what I do. I get to advise people
+on machine learning. >> And a little side note here,
+not cloud related. But can you talk a little
+about how the field has changed since you've been
+in this space for so long. >> Yes, so at the beginning actually
+it was all about expert systems. And effectively codifying deductive
+reasoning in languages such as prologue. And listen for
+machines to perform productive tasks? That's sort of the polar opposite
+of what we're doing right now. Where it's all about inductive reasoning
+with things like neural networks. And all learning by example
+from a set of data. I guess that the holy Grail
+is when you will be able to merge the two into artificial
+general intelligence. But just to give you an idea of
+the difficulty of the problem, Aristotle started in. Think of this problem something
+like 4,000, years ago. So we have a long way to go yet. >> And at Google, can you talk a little
+bit how Google internally uses the cloud? Obviously you're hosting
+servers in your cloud. But how do you think about
+the cloud internally? That might differ from say, a client. We think it as a first resource,
+that's where we go and develop everything that we produce from. We have our own internal
+cloud as you can expect. It looks very much like what you
+get outside of Google as well. So we use our own tools internally and
+do quite a lot of research directly aimed at the cloud at
+machine learning in the cloud. At anything in the cloud collaboration
+in the cloud with Google dogs and machine learning in the cloud
+with our vertex AI products set. It's all cloud based and
+as server less as we can make it. >> And can you talk about some of the
+problems you've been working on recently? Either for a client or internally and you
+can be generic if necessary due to NDAs. >> Okay, so client wise I have the fortune
+to be working in the public sector. And there's a very large span
+of problems that we can address. And as you can suspect in
+public sector there's a lot of work that's been going on automating
+document processing document AI as we call it here Google has
+been a major focus of my work. Automating document processing can mean
+simply parsing the document ID documents, certificates, any type of
+government issued documentation. But also enriching the content
+that you extract from those documents with knowledge
+that exists in the wild. If you want in the wild in
+this case means on Google's knowledge graph with data that
+pertains to the people or to the objects in that document. So that you can provide whoever is using
+this documentation a more complete picture. So I spent quite a lot of time
+working on that developing models for that models that are made out of
+a combination of services that Google offers that you can expect. OCR is just one aspect of it. I need to parse but you also need
+to know where to go in power. So you need to think about things
+like object detection on the page. And object classification on the page
+to figure out which documents you're passing and what use they have. So it's a complex problem that
+people think normally isn't. I'm just reading a page. Actually no,
+you're trying to do a lot more. You're trying to extract
+knowledge from the page and that's quite an interesting aspect. Other things that I've been working on for instance have maybe more
+appeal if you want. Image processing and
+classification are always quite popular because they're
+visually appealing. But when you think of the fields
+of applications recently, especially in the medical sector. Their complex, they have a lot of
+ethical issues that go with them and the impact is potentially very high. For instance, we'll we'll have a look in
+a little while at the demo where we end up using X ray images to figure out whether
+the patient X ray it is asthma pneumonia. And they have pneumonia,
+which type of pneumonia. When you think of what has
+been happening with Covid. And how overwhelmed hospitals
+have been machine learning can help definitely accelerate
+the diagnosis of viral versus bacterial pneumonias of Covid induced or
+not Covid induced. But you need to consider
+the ethical implications. There are what if I get it wrong and the
+patient gets their own type of treatment. So it's appealing but it's also difficult. I would say to do properly and consider the only implications thereof. >> Can you talk a little bit about
+what the knowledge graph is? That's a term that I'm not familiar with? >> So the knowledge graph is actually
+a graph structure that links a variety of entities that you find in Google search. So let's say that you want to look for
+Albert Einstein on Google. You'll find information that
+pertains to Albert Einstein and links associated to and
+like theory of relativity. You go click on that link and you find information about
+the theory of relativity. So what we're trying to do
+with the knowledge graph is. Provide a structure that connects
+concepts that are interrelated and allow you to effectively
+derive knowledge from the data that each node of the graph contains. >> And just to follow up again, can you
+talk a little bit more about some of how ethics play into what
+you do on a daily basis? Either related to x-ray images or
+just in general? >> I would say that specifically because
+of the fact that I worked with public sector customers, it is a major issue, an
+issue that you have to consider every day. When you do work on these models, you have to think about who's going
+to use them and for what purpose. And there have been,
+I must say a few occasions where we've had to go to the internal ethical
+review because I personally adults that these models
+would be put to good use, although the intentions of
+everybody we're correct. Where humane if you want the opportunity
+to misuse them was also relatively high. So, well you need to consider the impact
+effectively your knowledge on the public. That's actually going back to my
+career a very long time ago when I was studying this, the university
+at the time provided of course on the philosophy of science for
+that and it was compulsory. You needed to consider the morality
+of what you were doing? >> So
+moving a little bit into the Cloud focus, how do you use Cloud
+resources on a daily basis? And what Cloud services are you using from
+Google, do you fire up virtual machines? Are you doing a lot of server less work. What about document storage in Cloud,
+what type of services, if we were to look at your bill,
+what would we be being billed for? >> You would be mostly be built for
+AI notebooks. So we provide a server less environment
+where you can run your Jupyter notebooks, it's called Vertex AI Workbench. And you go and I'll demo it in
+a little while, but you go and effectively provision an environment that
+has the major frameworks in Pytorch, TensorFlow, if you want R, you can have R. And/or any other popular
+ones that are common today. That is where I do most of my development, now that environment is integrated
+with the rest of Google services, so I can read data from,
+let's say BigQuery data warehouse. Or from just a blob storage
+where I can store files, pictures, any type of data in. And of course I can also write
+the results back to those environments. So, that's where I would say
+most of my work happens. There are other services of
+course that you need to take into consideration once your level of
+complexity reaches a point where the machine that's running
+the notebook is no longer sufficient. Let's say you've written
+a very nice piece of code and now you need to paralyze
+the training across. I don't know, 40 GPUs because you
+just got so much data to go through, the platform itself provides
+a survivalist training environment? It's called, well, Vertex AI Training,
+we don't have that much fantasy, frankly. And the you submit a job to it,
+it's got a scheduler, the job is run for you and
+the results are collated and returned back to your
+submission techniques. So if you use a common line,
+you get the common line and so forth. And of course once the model is done, you
+want to deploy it and run it somewhere. We have a prediction service called
+Vertex AI prediction where you run a container with your models and you can
+go and submit data and get answers back. So I would say in order of mention, those are the services that
+would make up what I do mostly, there's a lot more in Google Cloud, but
+those are the ones that I use mostly. >> And so just to think through
+this in a little bit more detail, I've got my notebook and
+I got a small data set and I've got, the way I want to
+do my training figured out. And now I want to train it
+on a much larger data set. And without using the toolsets Google
+provides, I'd effectively have to spin up multiple VMS and manage how I'm going
+to distribute that work across them. And so
+you're automating that behind the scenes? Are you actually spinning up
+virtual machines behind the scenes, how does that kind of work or does it,
+is it just a black box and it just works? >> We're automating the process, you don't actually see what's
+going on behind the scenes. There is of course a cluster of
+machines that run your code in a containerized fashion, so
+we spin up containers effectively. But we handle the distribution of the
+workload, the distribution of the data, the synchronization between
+the various workers, so that you can get a model
+trained in peril in the end. Now there are techniques to be
+aware of in Tensorflow Google's computational framework to
+make that more effective. But even just with the basic
+multi worker mirror strategy, which literally means your
+work is mirrored across multiple workers,
+you can get quite a lot of it done and you just submit it and
+we take care of everything else. >> And so it sounds, so I'm trying to make
+the comparison here, with Google Cloud services, I can submit my job and Google
+takes care of the scheduling and the job. Running the jobs, collecting the data and
+then presenting it back to me. Hypothetically if I didn't have
+Google Cloud or any Cloud available and I wanted to do that on physical machines
+that I just ordered from a vendor. What would that process, like if I
+were going to try to run that myself, what would that look like
+from your perspective? How much more work is that going to be? >> So I can tell you exactly
+because I used to have to do that. So you get the machines in and you need to
+image all of them with a consistent image, with the updated libraries that
+you need for your work, and of course that needs
+to be kept up to date. So let's say we released Tensorflow
+2.7 which is the latest, and now you have an environment
+where you can run, well, you need a schedule to
+take care of the scheduling. You cannot just submit a job in the eater
+and hope that it will work everywhere and definitely you don't want to go to
+the council of each machine and type Python 3 random pie block. So you need to go and
+install the schedulers such as, well in my days it was
+the sun grid engine. Today's SLOM is the most
+commonly used one. So you need to no about SLOM, install it,
+know about the peculiarity of SLOM, know how to share data on SLOM
+across multiple nodes and share code which they
+call application modules. So create application models to be
+shared across the SLOM cluster. Then you submit your script for execution. Now the script needs to be aware
+of where to find the data and. How to best partition the access
+that lay across the notes. So you need to take care of it. Code run on each nodes depending on
+the type of computation that you're doing, you may need to be aware of things
+like message passing between nodes, which is used by most computational
+frameworks to synchronize the computation across different processes and
+different nodes and therefore latency. So once you've taken care of all debts and each process runs
+successfully on each node, you get the results back from each
+process which you need to collect and collate and
+then present back to the running console. Basically to the console where you
+submitted the job in the first place. When you think about it and you compared
+to are you going to Google cloud, which is basically job.run,
+provide me a container and I'll take care of it then
+you see it's a lot simpler. You don't have to worry about
+the infrastructure for it. >> So what, what is Google
+cloud currently working on or recently worked on that is setting it
+apart in the like cloud ml space overall? So like all the clouds have their toolings
+that they ultimately run a Jupyter notebook and manage resources but what's
+unique about Google cloud's offering? >> I would say there are three
+aspects in Google cloud's offering the first one is the sheer amount of
+research that we do on the subject, which we make publicly available. So if you've ever looked
+at Tensorflow hub, that's where we publish all the latest and
+greatest models. There are hundreds of them and
+our competitors actually read them from there and
+then they run them on their cloud. So I'm not saying that they
+don't have their models, they do have quite a good number and
+of course they have their research, but we're unique in our open source
+contribution on this subject. We contribute pretty much most of
+the research that we make to open source. So that's the first aspect, you can
+download any of those models and run them, not only in Google cloud,
+but anywhere else. The second aspect, I would say,
+is our focus on serverless in that we want to make
+the adoption of these models and these technologies as
+painless as possible. And we want to provide a consistent
+working environment where you don't need to worry about your infrastructure, cluster deployment,
+cluster management, etcetera. You use our cloud as a platform to run
+your work, not as an infrastructure. I read somewhere there's no cloud,
+it's just someone else's computer. Well it's true ultimately,
+but in our case it's someone else's platform that you're using. And it's structured in such a way that
+you can use it with the tools you're already familiar with, like your vital
+notebooks, let's say you wanted to, for instance, make a whole pipeline
+into a python notebook and then run the notebook with the whole set
+of tasks, data ingestion transformation, training, deployment etcetera,
+all in one notebook. May not be best practice, but
+it works so on google cloud, you can write your notebook, click
+a button and we build a pipeline for you. There's no 3000 lines of code
+that are completely extraneous to what you're trying to do
+just to make the thing work. We automate that. And number three is the readiness
+to consume these results. So as we publish these models, we also make them available as
+a [INAUDIBLE] For you to use. So, we have quite a complete
+set that covers anything from translation to object
+detection to video action tagging all immediately
+usable if you're happy with the pretrained versions of it and
+we pre train on Wikipedia, The New York Times, YouTube content,
+a vast amount of data. So most common cases are covered. So you don't even need to worry
+about the actual model themselves, you can just use them. And I think that's a big differentiator in
+the variety of offering that we have and the variety of people that we cater
+to from the developer that may not know much about ml, just wants to
+do this cool video where you're tracking player during the Super Bowl and figuring out where the ball is,
+whether it went into the goal or not. Two, the hardcore machine learning
+scientist that is developing the latest and greatest storm
+prediction model for Nova for instance. >> So you've mentioned TensorFlow and
+our students have used TensorFlow you mentioned Tensor Flow as if it's
+our TensorFlow, meaning Google. Does Google create TensorFlow? >> Google creates TensorFlow and
+publishes it Open source. Yes. And there's a lot of contribution to
+TensorFlow from the Open source community, which we incorporate in the distribution. So it's a collaborative effort but
+we managed the core of TensorFlow. >> And just to point out a little bit
+more with google, google also kind of manages the core or historically
+manages the core of kubernetes. Can you talk about how those two
+toolsets kind of work together? >> Yes, there is actually again a little
+fantasy, a toolset called Cube floor, which basically allows you to run
+TensorFlow pipelines on Kubernetes. And both of them are Open source
+Kubernetes and TensorFlow. CubeFlow is effectively
+a set of Kubernetes modules, which you can run to build
+pipes of data processes and each step in the pipe will do data
+ingestion data pre processing run the training for a model and
+that training for the model can be run on [INAUDIBLE] If you like on
+your own hardware or on Google Cloud. And then incorporate the results back
+into the next step in the pipeline that could be a model validation for
+instance. So you could have thanks to Kubernetes and
+TensorFlow together, CubeFlow hybrid environment where
+the data is on premises, you do some training in the cloud and you get
+the results validated back on premises and then maybe you deploy on both depending
+on zones where you want to employ. So they do work and
+interact together quite easily. I would say you still need to code for
+it, but it's easier than having to do
+it separately if you want. >> And you were going to do some demos for
+the Google space and I'm interested in kind of the interaction
+with ml tools on Google cloud and also kind of the automatic machine
+learning of space that Google has available where it kind of tries
+to automate the process for you. So are you able to share your screen and
+do some demos? >> Sure. I have a couple that may
+be of interest to you. Let me share this window
+>> And. >> I get to see myself. >> There you go. You should be seeing a page
+that says data sets on top. Yep, I can see some datasets. Okay, so this is literally
+my working environment and it is the vertex AI dashboard
+vertexAIi being our main AI product or umbrella products. I would say there are a variety
+of services in here. And what I'm doing is I'm using one
+of the projects that I'm working on, that I typically reserved for demos. So you can split all your data sets and
+computation across a variety of those. And within a project,
+I am focusing on data sets that are hosted in one of the region's
+US Central one Ohio. There are a lot of regions
+all around the world, so you need not worry about where
+you want to run your computation. So let's have a look at what a workflow
+would would be like effectively and if you wanted to use these tools. The first thing you do
+is create a dataset. Now datasets can be created for
+a variety of purposes. And here we're talking specifically
+about cloud managed datasets rather than generic data files have still
+the possibility to use just any file. But let's have a look at the managed
+environment that world Cloud offers. So there are a variety of purposes,
+as I was saying for the dataset, let's say image and
+classification, single label, multiple labels,
+object detection for segmentation. These are the tasks that are paid for
+by and this managed data set environment. Of course you're not limited to image. You have more traditional tabular
+data where you can do regression and classification or
+also time serious type forecasting. Text where you have classification, multiple single label entity
+extraction and sentiment analysis. And video quite popular for
+demos where you can do actual recognition, classification and
+tracking within the video itself. In this particular case we choose image
+and classification, always popular. We create a dataset. When you create it, the data set is empty. And what we're effectively doing is
+creating a container, a logical container, not a natural docker container
+that represents a set of data and a set of pre processing steps
+associated with that data. So let's say that we want to
+import a bunch of images for classification purposes. What I'm going to do is an upload a file
+from my computer which sits here. Where is it? This one. And the file will be
+stored on a certain path. Now the file contains pointers to wearing
+google storage you find images and the label associated to those images for
+training purposes. So in this particular demo
+that I'm showing you, we're going to have a look and try and classify X ray images
+to identify pneumonia, whether it's normal, viral or
+bacterial pneumonia. The data is structured in such a way
+that there's a path that looks very much like this one with the addition
+of the file name of the image and labeled normal virus or bacteria. So since I've already done it I'll stop
+here and actually show you the data set that has been already loaded because
+it takes a few minutes to do so. And it's this one. It's got 4600 images all anonymized X rays of course not reasonable to anyone. And these 4600 images are roughly
+equally distributed across these three categories bacteria, normal and virus. Now what we want to do
+is training model that classifies this X rays
+into the correct category. And to do so we just go on train
+new model where you can see where the datasets we're
+working on is pneumonia tree, the annotation sets or the set of
+labels associated to the images. Any objective of the model
+which is image classification. Then you see the options that you have. The standard one is auto ML,
+automated machine learning. What we're doing here is we're taking
+a model that google has published. So the same models that you can
+find in terms of low hub and we're automating the data pre
+processing and training pipeline for you behind the scenes so
+you don't have to write any code. And then we're producing
+a model artifact which is a tensorflow model safe
+file that you can go and deploy on google cloud or
+if you select the edge option you can deploy on premises or
+on a device such as for instance one of the quarterly
+tensorflow boards that you can just build into
+cameras on premises computers or any other type of offline scenarios. If you do want to run your code on
+this platform because you do have your own tensorflow model that you're happy
+with, you can provide a container and we will just use our platform
+to run the training for you. Let's stick with the default option
+which is automated machine learning. Continue, give it a name and
+we can also provide a split for data to be used in training validation or
+test. Let's say that for instance I want to
+provide 5% in tests and 15% invalidation. You see another option that
+is useful when the data is sensitive such as for
+instance medical images. You could provide a customer
+managed encryption key in which case you control the encryption of
+the data that you've provided to us and the encryption of all intermediary
+files that may be generated and have the facts that
+are provided in output. So we click continue here. Other interesting option is
+to generate explanations for whatever category is then decided upon for
+that particular image which is particularly relevant for
+clinical images or anything like that. In fact impacts the public. So if you provide a diagnosis of
+bacterial pneumonia, the next question is going to be so why, what makes
+you think so, or more in general? Let's say you provide a public service and the public services denied
+because of an algorithm. The next question is why did you deny it? So it's very important that we are able
+to explain, what the artificial intelligence determines and
+not treated just as a black box. So in this case, we are using
+a technique called integrated gradients, which will help us identify which regions
+in the image that's being submitted, is actually most impactful
+in its final classification. And here you can provide the input for
+the integrated gradient algorithms such as,
+the visualization type color map, where you want to clip in terms of
+relevant scores, below and above and the number of these integral calculation
+steps that need to be provided. There is in the case of
+image classification, another technique called XRAI,
+that you can use. It's actually more indicated for natural light, high contrast images for x rays,
+integrated gradients is a better fit. So, we can use both actually and
+generate both, and click continue here and
+the last step is compute hours. So, let's say 24,
+you can provide the maximum not hours that you think
+are going to be useful, for this particular model or
+that you have money for, but very importantly you can
+enable early stopping. So you don't have to pay for
+all the compute hours. You only pay for the time it actually
+takes for training your model, so until your model converges. >> And I'm going to ask a question here,
+what do you say 20 for node hours? It's not actually that when you press
+start training, it's going to take 24 hours to complete this, because you
+can paralyze it across Multiple nodes. So up to 24 simultaneous notes. >> Yes, so roughly, rule of time, I would say that eight
+not hours corresponds to, about one hour in the bit of actual,
+world clock time. So what I'm saying here for
+24 is I'll give this training about three something hours
+to run world clock time, we call them north hours because
+there is actually a cluster that you are running on behind the scenes,
+and you are paying for the use of the cluster
+the nodes of the cluster. That's why it's stated
+in terms of north hours, but our documentation actually states, it's about, 3-1 if you want, okay. And then we click start training and
+you can see that, the training has now started and
+you can actually see all the training that has been happening,
+finished, failed or still running,
+right here under the training tab. And if I click on it, it will tell you
+when it was created what the budget was, how much of it you already used,
+which data said you used, what algorithm and what type of objective. Now let's have a look at one
+that has already been trained, we don't want to wait three hours for
+it to happen, so we'll take this one And once the training finishes you
+are provided with the evaluation metrics on the validation dataset. You can see here, that for
+each category and for their own model we have generated
+precision recall curves. She's going to call by thresholds and overall metrics of 81.3% precision and 78.8% recall for
+this particular a training run, now they are not equally distributed
+across the three classes. So the normal class actually there's a very good precision, very good recall, the bacteria class 71 75 virus, okay, but not so great. Which actually brings us
+to a very important point. You don't need to take these results
+at face value, you need to go and understand what the actual
+implications are. If this model was to be used in a clinical
+setting, it would be more important for instance to have a high recall
+than a high precision, so I can treat everybody as close to
+everybody as possible that shows up, and has a viral infection
+that determines pneumonia. Even if I get some false positives at
+least, the doctor looks at them and can provide some sort of treatment for
+them. So I can go and play with a threshold
+here, to enhance my recall or I can just move around on the recall
+curve and let's say select this point. If I select this threshold which is 015, I have an 83.8% recall
+on the 53.4% precision, which means that about a bit less than 50%
+of my forecast will be false positives, but I get to treat 83.8%
+of the patients correctly. So to me that is in this
+particular scenario of application, a good compromise. And if I want to see why things
+have been categorized this way, I get to do that and get an explanation
+by going to let's say deploy and test. Now this model is not deployed
+to any particular endpoint, which is the next point I wanted to make, once you have trained a model
+you need to put it somewhere. So if you click on deploy to end point, you can actually create a new endpoint, we call it pneumonia,
+may be something like that. Select the location and whether you
+want it to be publicly available or only privately available. You assign traffic split in this
+case 100% of the traffic is going to descend point, a number of
+computer nodes the minimum being one, that you want to run the model on. And then you get to enable explain ability actually in type -2 for
+some reason no one. And you select one of the methods
+that we train the model for, integrated gradients, for instance. So you've now configured the deployment, to an endpoint that as a interface on
+the internet a rest API as it's called. And then you go click deploy and
+the endpoint is created, the model is deployed for you. Now let's go and
+have a look at actually endpoints that are already deployed like this
+one that I've created before. It takes a few minutes, so
+in the interest of the, I have a model already here and
+we want to go and submit an image to it for
+testing purposes. Let's say submit this one. The upload is not actually just
+an upload were also pre processing the image resizing,
+doing all the contrast announcements etc. And here you see the result
+with an explanation. This is a normal image. It's been classified as such. So the model is actually doing the correct
+forecast and it's also telling you which pixels in the image determined
+that classification as normal. Now I'm not a doctor so
+I'm not going to comment on this. All I noticed is that a normal
+image looks very much like this. The ice impact is actually provided
+more or less in the sternum region and the diaphragm region of the picture. But if I go and
+upload a image that actually as pneumonia like this one for instance. Give it a few seconds and
+we should see the result. The demarcation is not so clear. These pixels are a lot more
+diffused around the pictures so I don't know whether that's
+a useful diagnostic tool or not. But that's what the algorithm
+has picked on the picture that the term is that classification. So it's effectively simulating
+what the radiologist would do with these pictures for
+diagnostic purposes. And it's doing so in seconds rather
+than having to print the scam, find the radiologist,
+give it to him, get a report back. It's a matter of seconds
+you get a diagnosis back. Okay, so that concludes
+the auto ml demonstration and if you have some more time,
+I'm happy to show you the development environment for it if you like
+the development environment. Okay, so the development environment is
+called the workbench and there you go. There are effectively two
+flavors of IT user managed notebooks and just manage notebooks. The most commonly used
+one is the user managed. The user managed means that
+you can install pretty much anything you like on them on
+top of what's already there. So let's click on new notebook for
+instance, you can select the environment that you want to run on tensorflow
+pytorch, we support quite a lot. Not just our tensorflow here, let's select tensorflow with
+long term support and one GPU. You get to choose where
+you want to deploy and confirm that this is what
+you'd like to be deployed. If you don't particularly like this, there is actually a variety
+of options available to you. Let's say that you want a bigger machine. Yes and 30 gigs and
+rather than the T4 that was proposed to you want to be 100 which is more
+powerful, install the drivers. In one of the other lectures,
+I talk about how google is nice and transparent their pricing. And it's showing you exactly what your
+changes are doing in real time on that right hand panel there. So when you added that larger, CPU your cost went from 200
+a month to 1400 a month. Whereas some of the other clouds
+don't make that as transparent and it's nice to see that's
+carried through this library. It's actually very useful to
+me as a google employee to figure out how much what I'm
+doing is costing the company. But and most importantly to customers
+that have a budget to worry about and don't have the luxury of
+morning the platform. So, then we click create and
+the environment gets provisions for
+you somewhere down here. So as this works,
+you can see that I have a variety of them provisions already with
+a variety of flavors, frameworks and
+versions thereof in machines. So you can basically tailor the
+environment that you need the problem that you're trying to solve. Let's go and have a look at one of these development
+environments wants his provisions. I'll take, let's say this one and
+let me just refresh so that's the connection
+to it is reestablished. Okay, so you're thinking, well it looks like a Jupiter notebook
+that's because it is a Jupiter notebook. And I think that's a strength actually
+that's what you're familiar with and what you're already working on in
+most cases as a data scientist and make it a bit bigger. The differences in the libraries
+that are preinstalled that allow you to interact directly with
+the rest of the google cloud and for instance a load and
+store in from google cloud storage. In this particular case it's
+a completely different problem set that I actually studied a little while
+ago and published an article on. It's about developing a if
+you want a catastrophic event predictor based on
+time serious analysis and actually on bifurcation theory. The idea is to figure out what will
+happen to this time series and you can see that in some cases,
+they're noisy but they sort of remained
+relatively stable over time. In some other cases there is an inflection
+point where they go critical and the purpose of this particular code
+is to develop a model that does that, now classification for you. It will tell you which ones will go
+critical and which ones weren't and in which type of criticality they
+will incur what we're doing for that. We're using a model called
+an inception time classifier. You may have heard of,
+model that google has invented for image classification called inception. There are a variety of versions,
+I think we're now at version four. You can apply the same concept and
+study multi scale phenomena in time and this is what inception
+time classifier does. So what we're doing here, we're using
+differentiating one of those and we're training it on this particular,
+machine. Now the model is actually
+quite complex and the training takes quite a long time,
+so this is what it looks like. I'm not going to go into the details but
+you can see it is quite a deep model and we're also taking only four
+cells of our inception time classifier here and
+you can actually have a lot more. So we train the model and
+then we do a very quick evaluation, you can see that it actually gets
+us some pretty decent recalls for most of those classes and
+a pretty decent overall accuracy. Now the question now is can we do any
+better by using the google cloud and that's where from within
+your development environment you want to launch a tuning job. So figuring out what is the optimal set
+of parameters that I can pass during training, through the training process for
+that particular model. And what I'm doing here is
+I'm configuring a opportune, hyper parameter tuning when google jargon. Hyper tune job in the cloud and
+the parameters that I want to tune are the number of filters
+kernel size depth of the model, batch size and whether to use
+the residual structure or not. So I passed these parameters configure
+a hyper parameter tuning job on google's ai platform. There you go. Give it the maximum
+number of trials of 50 or which five in parral at any point
+in time and launch the job. So overall not that much cold to do a parallel computation on a complex model on up to five GPS at the time. But really the limit here is
+the GPS that you have quota for and so
+this takes quite a number of hours but I've launched it before and
+I can show you the results. >> And so to clarify what's happening
+there is you're using a Jupiter notebook to tell google to assume some
+resources to do a task on your behalf. And then effectively let google
+run off and do that work and report the results back into
+your notebook when it's done. >> Exactly,
+that's exactly what is happening and this is where it's happening. You can see the console here. My hyper parameter tuning
+jobs that have run so far including this one that
+I ran on 14th of January. Took about 15 hours and something to run. And that's a job that was launched
+by that particular notebook. You can see all the trials that have
+been happening and you can sort for the metrics that is most relevant to us. In which case we want to know
+what the maximum accuracy is and you see the parameters that
+have been associated with that maximum accuracy achieved during training. So 192 filters,
+24 kernel size and so forth. It is. We take those parameters that
+the tuning job has found, use them for one last final pass and training our model
+and then put the model into production. With reasonable certainty
+that we have an optimal set of these parameters for our model. Now, what has been happening
+during the training for 15 and something hours is that I've
+been using five GPS at a time. At 100 and something percent,
+actually anything from 80 to 100%. And that is a good thing actually,
+if you use that expensive, you don't want them to be idle. So having them running at 100%. Also means that your batch sizes okay. Overall data pipeline is efficient,
+you're not spending too much time in IO. You're actually paying for
+a computation time and the computation is actually happening
+during that time, not just waiting either. And there's 50 trials over time,
+five at a time. Similarly, memory on
+the GPU is highly utilized. And the other thing that you want
+to make sure of is that if the GPU is running your CPU
+shouldn't be overly utilized because it's not doing any
+computation at that point. The computation is on the GPU,
+this is just providing a IO. So GPU, high utilization is a good thing. CPU, low utilization in this particular
+case is actually a good thing as well. And of course you want to keep an eye on
+your overall memory and avoid the job crashing the job because of basically too
+little memory in your computer nodes. But here we're okay,
+we're using about 40%. Overall this console gives you
+a very good view of what is happening on multiple nodes in parallel. And how well you're utilizing the
+resources that the cloud is providing for you and that you're paying for it. Last but not least of course. You can also review
+the specifications in Jason. Now, Jason is not the most user
+friendly of ways of displaying it, but at least you have a very
+good idea of what is happening. You're trying to maximize accuracy. These are the parameters and
+the values that you considering. And you want the best measurement for that particular accuracy to
+be used as the optimal set. Once you're happy with the results and you have your eye platooned model,
+you go deploy it and you can then score your results with
+other code in this particular case. So here I'm computing the predictions on the model that has been
+generated by the cloud and in the end, I get my predictions here. Area under the curve and
+comparisons with established models. So, this is actually
+the picture that tells us whether we've done a good job or not. The area under the curve of this
+particular ml model is zero and 85 which is comparable with the performance you
+can get from the variance algorithm 086. So overall I would say it's
+a decent model for it. >> Well, that's quite a comprehensive
+set of tooling there. Is there any tips you want to leave our
+students with before we end for today. >> I would think in my career,
+the most relevant thing that has accompanied me since I ever got
+my masters is not what I learned in terms of deductive and
+inductive reasoning as I was saying. It's not a problem for
+LISP or even python or R. It's math. So all your exams, your calculus exams,
+your statistics exams that you hate now. Those are the things that
+would be most useful. Yeah.
+During the rest of your career. >> Okay, well, thank you so
+much for your time. I'm going to go ahead and
+end the recording right now. >> Thank you.

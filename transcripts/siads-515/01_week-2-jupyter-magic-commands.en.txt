@@ -1,0 +1,69 @@
+In this next part, we're
+going to take a look at some Jupyter magic commands. These are things
+that are specific to Jupyter that can make
+your life easier or can really help
+with our exploration of how efficient or
+inefficient your code is. We're going to dabble in
+a couple of other Jupyter magic commands just to
+complete all the set. One of the things that you may have encountered already is matplotlib in your
+visualization courses. It's typically invoked
+as %matplotlib inline, and that's the
+contents of a cell by itself where it can be embedded with other
+commands in the cell. %matplotlib inline
+allows graphical output to be shown inside
+the Jupyter notebook. The next magic
+command is actually a series of three commands that are all very tightly related, %time, %timeit, and %%timeit. These commands will
+time the execution of a command or cell. I tend to use %%timeit the most of any of these
+three commands. Let's take a look at what this looks like in the notebook. So if I have a cell
+here where I'm simply assigning a value to X and then iterating over a
+range from 0-1,000 and adding that value
+of the iterator to X, I can go ahead and run
+that without much to do. If I insert %%timeit at the beginning of this
+and rerun the cell, you'll notice it
+takes a little bit longer than it did before because there's actually running some profiling on the code. So when I run this %%timeit, in addition to any output that I get from the commands
+that I write, I get an estimate for how
+long each loop takes to run. So this is a very simple loop. So each iteration of
+that loop takes 59.8 microseconds plus or minus
+705 nanoseconds per loop. So that's the mean plus or minus standard deviation of running this seven times with
+10,000 loops each. So it runs this
+loop 10,000 times, runs that whole
+thing seven times, and provides me with
+a summary statistic. Now these are
+incredibly fast times because this is
+such a simple loop. In some of the work that
+you'll be doing on your own, you'll be creating
+more complex functions that will yield larger times. So we can change this to
+become more or less efficient. Let's say for example that
+we had this as a list, and instead of adding one to it, let's say we said x.append(i) and then ran that instead of 59 microseconds plus or
+minus 705 nanoseconds, we find out that it
+takes 90 microseconds, so almost twice as long to append instead of
+just add a number. So that's an example of timeit. We talked last time a little bit about the system command. We abbreviated that to! or!!. So in this, and you recall that we did!!ls, we can also use!!ls or files ls. We could also use %system. So it's exactly the same thing. We tend to not use
+%system in favor of using either the
+one or two form of! or exclamation marks. Whos is an interesting
+magic command that can be used to
+list the variables that are currently active, and it's easiest just to show
+you this in the notebook. So if we used a %whos here, we would find out
+that these are all of the variables that
+we've defined so far. So we see our Decades, our Hello function
+our hellow-generator, which is a function, the generator that we
+generated from that function, we have decade_list, decades, we have hellos as a
+generator and so on. So if you're ever not sure which variables are
+active in your session, you can always use the whos magic command
+to find that out. The last two magic commands
+that I want to go over, set us up for some
+profiling that we'll be doing in a subsequent segment. The %load_ext, stands
+for load extension, and it loads a kernel
+extension to Python. The most commonly used %load that we'll be doing is to load a line_profiler that
+will allow us to do a very fine-grained analysis of the efficiency of our code. That is explicitly
+done as %load_ext, and then the name of the kernel extension we want to load, in our case typically
+line_profile. Finally, that's going
+to set us up for looking at line profile
+runs or lpruns. We have to load the
+line_profiler extinction first, and the format is %lprun minus f, the function name, and the
+statement that we want to run. So this gets a little
+bit more complex. An example of that is shown here, %lprun minus f. This
+means that we want to actually do the line_profiler run on the function normalize, everything has to be done in that function when we're
+using the line_profiler, and then the actual line where we're going to use that function. We'll go over that in one of the examples that
+you'll work on your own. So that's a brief overview of
+our Jupyter magic commands. We'll be using some of those in the next segments
+of this lecture.

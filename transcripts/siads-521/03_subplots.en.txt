@@ -1,0 +1,247 @@
+So far we've learned how to make
+single plots by making calls directly from pyplot using commands
+like plot.plot or plot.hist. However, sometimes it's useful to show
+several plots side by side in the same figure. In this lecture, we're going to talk
+about some of Matplotlib's subplotting features and discuss how to
+construct a scatter plot matrix. This goes back into the Matplotlib
+architecture discussion. And while I'll be showing you how
+to do this with scatter plots, you can map almost anything to a matrix. Let's bring in pyplot numpy. So we'll bring in Matplotlib pyplot and
+numpy, and let's start with creating
+a single sine wave plot. And this is actually just data for a sine
+wave, so there's nothing special here. We're using this numpy linear
+space from 0 to 4 * mp.pi and we want it broken up
+into 200 discrete bins. And then Y, we're just going to broadcast
+the function sine across that and make it the sine of X. All right, and let's take a look at this. So we're going to plot the X and
+Y values and we're also going to put
+a title on this axis. That's probably good. So remember we can just go,
+get current axis settitle a single plot. All right, now,
+let's say we want to make a grid of plots. Well, once we've created a figure
+object we can add subplots by using the Add Subplot function. Notice that it takes in three parameters. So first two numbers specify that
+we have two rows and three columns. The last number is an index. It lets you refer to a specific subplot,
+so let's do this. Let's create a basic figure,
+so fig = plt.gcf. Remember, pipe lot's going to create
+that figure for us underneath. Now, we'll iterate over our six
+potential spots in our figure. So for I in range one to seven, and let's decide not to plot something
+if we're in position five or three. We'll just leave these as wholes,
+so if I is not equal to five and I is not equal to three. So now, let's add a subplot where we
+specify this is the overall structure as we're expecting the figure to take. So two rows and three columns, and
+the position of this item in the figure. Note that while we're iterating linearly, the figure then is mapping our index
+into this two-by-three row column space. So the numbering goes from left
+to right and top to bottom. Okay, so here's an example. So let's create a new axes,
+fig.addsubplot, so it's going to return an axis object. We're expecting this to be a two-by-three,
+this figure as far as a grid. And then I is just where we want
+our item placed as if it were just a linear data structure that went
+left to right and top to bottom. And we'll just add some text to
+the figures to make this even more clear. Remember from the lecture on annotating,
+the text goes at the bottom-left corner by default and
+we're using relative positioning. So we'll just say axes.txt and
+we'll give it 0.5 and 0.2 and we'll add a string to this. So that we can read it and
+set some nice text, font size and such. Great, so we can see our figure
+now contains six subplots and two of those index three and
+five are empty. Important to note here is that
+the indexing of subplots, again, starts at one and not zero. Okay, we see that each subplot has its own
+axis object which is rendered the X and Y axes objects respectively. Actually, we can see things
+look super crowded here too and that there are axes tick labels
+that overwrite other axes objects. So it's a little crowded. Now, you don't have to create your
+figure like this iteratively as you go. Instead, you can call the pipe lot's
+subplots function and specify its shape. This function returns the figure object
+in an array of axes subplots object. So let's take a look at that. So we can actually say plot.subplots and
+say we want a two-by-three plot. And it's going to return to us both
+the figure and an array of axes objects. Let's take a look at that array. Now, like most functions in Matplotlib,
+we can pass a list of keyword arguments to the function to control
+the formatting of a particular artist. And the available keywords are often
+not shared in the docs directly. For instance, in the subplot documentation
+this is just listed as **fig keyword. Which means a dictionary of other keywords
+that'll just be unpacked automatically. And all additional keyword
+arguments are passed through to the pipe lot.figure call in this case. So this means you will most
+certainly have to experiment and hunt through function calls
+when using Matplotlib. But we've already seen that we can pass
+the fig size as a tuple to the figure function. So that means we should be able to
+pass that to subplots function too. So we can just go plot.subplot,
+say we wanted two-buy-three. And then we can actually just
+pass the figure in here. Even though we haven't
+seen that as a label or a parameter in the documentation,
+because of this **fig keyword. All right, so that makes a bigger figure at the same
+time we're building our subplots. And as you can see, the pipe lot scripting
+layer can feel like there's a lot of magic going on especially if you're
+used to object-oriented libraries. But with the docks of hand,
+it's actually pretty straightforward and you'll get used to it. So let's re-plot that figure and then adjust the subplots using
+the Subplot Adjust feature. This is actually not available
+in pipe lot per sé, so we need to get the current figure
+to make the adjustment directory. So we call plot.subplots and
+we want to get a two-by-three figure. We'll set the fig's Is, and then I'm going to add a 0.35
+relative bit of white space here. So then I just call plot.GetCurrentFigure. Remember, I can always use the scripting
+interface to get the object that I want to interact with. And then .subplotsAdjust and
+we'll pass in each in space. Okay, so
+those are the mechanics of subplots, but I teased you with a sine
+wave at the beginning. So let's go back to our example and
+talk about wave interference and how we can visualize this kind of data. So here's a picture. So when two waves collide with one another
+as shown in this picture, their amplitudes or heights, in this case of the water
+wave here, are summed together. If the two waves are synchronized,
+or in phase we call it, this results in constructive interference. And we should see a larger wave. On the other hand, if they're perfectly
+out of phase then this will result in destructive interference
+where the flat dips are. So let's try and
+plot two different waves and show the result of adding these
+waves together all in one figure. So first, let's specify some X values and these will be shared across all
+of our waves, all of our axes. So we're just going to use
+the numpy linspace function, go from 0 to 4 * pi, and
+we're going to get 220 values in there. Now, I'm going to shift
+one of our waves by pi, so feel free to play around with this
+shift value in your own notebook. So I'm just going to
+create a shift at 1 * pi. Also, I'm going to round our
+values everywhere to five digits. And this is actually just to prevent
+a really annoying roundoff error so you can ignore this. But I'm going to create our Y values. Remember, everybody's got
+the same X values, but I'm going to create our Y values for
+one are just going to be the sine of X. And then for the other is going to
+be the sine of X plus the shift. And then our third wave is actually
+the one where these two waves are being realized together. So now we have essentially three waves. Y1 and Y2 are just sine waves and
+Y3 is a combination of these two waves. And you should be able to follow from this
+logic how all the broadcasting is being done underneath by numpy. These are all arrays of data values, from 505 how the linspace is working and
+so forth. So let's plot these, so
+let's create a subplot. So I'm going to put them all side by side,
+so just one row of three images. I set that fig size up,
+and on the first axis. Remember, the EXS object is
+actually a list of axes objects or an indie array of axes objects. So on this first one,
+I'm going to plot X * Y1. On the second one, I'm going to plot X by Y2 and
+the third one I'm going to plot X * Y3. Cool, so when the two waves interfere
+exactly, they cancel out and form a straight line. Now, the previous setup isn't
+really ideal, because it's hard to see the relationship between these
+two plots and how it results in a third. So let's try stacking them vertically and
+share the X axis so the points line up with each other. So we're going to double the length of
+the X axis four cycles instead of two. So I'll just do the same thing here
+with our linear space and once again, feel free to play around
+with this shift value. So I'm just going to copy this
+from above our shift value at pi. The first wave is going to be just sine of
+X, the next one sine of X plus the shift, and the third one is just
+the two waves together. And let's stack the charts at this time. We can also indicate that they're
+going to share an X and Y axis. So when we call plot.subplots remember
+we can pass in because of the ** keywords dictionary. We can pass in all of the things that
+we could've passed into plot.figure. And those will be passed automatically for
+us, so we say we want a three-by-one plot. Then we pass our fig size in,
+our share X and our share Y in, and then I'm just going to
+plot our same three values. All right, so now you can see
+the pattern much more clearly. Just focus on a single point and
+notice how the peaks and the troughs of these two curves
+line up and cancel each other out. There's also no need to manually set the
+wide balance since we specified that with the axes that the markings
+should be shared. So I think that that makes it
+quite nice and easy to see. I want to go a bit further here and
+show you a bit of an easter egg. And while there's a couple of ways to
+make this a bit easier to explore, I'm just going to do a very simple
+animation using a animated gif. In this example, I'm going to use
+the Python Imaging Library PIL to do so. So let's import that now so import PIL. Now, our top image is going to be static. That's just the first wave form. So let's create that now, so create the
+same linspace and create our Y1 for it. Now, we're going to hold individual frames
+of the animated gif in a new variable. These are just like film frames and
+we're going to call this IMS for images. So I'll just make
+an empty list calamities. Now, let's create a bunch of shift
+values ranging from zero to pi. Before We just use pie. I'm going to create 20
+of these shift values. But the more you create the more smoothly
+and slower your animation's going to be so feel free to play with these. And of course we do
+this with our linspace. So we just want a linear
+space from zero to MP.pi and we want 20 of those that equal chunks. And we're going to store this into
+an indie array and call it shifts. So for each shift value, we're going to create a new
+subplot just like we did before. So for shifting shifts, we're just going to create exactly
+the same plot we did before. So a 3,1 so that we're stacking
+them all on top of one another. We've got our fig size the same. We're sharing X, sharing Y. It's all the same, and
+then we're going to plot our shift value. So X + shift then our addition of these. So this is just the same as before. And then I want to plot the X and
+Y values, so the first axis,
+the second axis and the third axis. So I've just rendered this
+exactly like we've done before. Now, we need to set the Y axis size
+of one of these plots from -2 to +2, because the waves will interfere and
+form peaks. Remember that we set the shared
+Y already in the image. So we don't have to worry about setting
+this on each of the axes' objects. So here I'll just take axis sub2 and
+set the Y limits to -2 to 2. Okay, the next bit of code just renders
+the figure then copies it from the figure canvas, the rendered part, as an indie
+array of bytes into a PIL image. The PIL function from bytes
+will read a set of bytes and turn that into a PIL image object. Now, this is a little inside
+baseball around how images work. You don't have to worry
+too much about this. I really just wanted to
+demonstrate what can be done in Matplotlib to better understand your data. So we'll take our canvas. We'll get it from
+the current figure manager. We'll render our figure,
+make sure it's rendered, and then I'm just going to do
+this PIL.image.frombytes. And then I'm going to pull it from
+the canvas with this tostring RGB. You can look these functions
+up if you're interested. The key is I'm taking this
+creating a PIL image and I'm putting it into this
+list of our images. And now, we can just free up
+the memory from the plot and so we can just close the plot. All right, so at this point what we've
+got is we've got this list of IMS, which are PIL images captured with
+different shift points throughout. The final step is to save our
+image list to a single file. We can do this by taking
+the first image in the list and calling save with the Save All
+parameter equal to true. And pass in the rest of the images
+that we want to append. This is a little weird-looking maybe,
+but we just go IMS sub-zero. So we just take the first image out and
+we say we want to save that. We're going to save it to a file. I'll call it out.gif. You can call it whatever you want, and
+then we want to save everything, so all of the others. And then we're going to pass in all
+of the other images in this list. So it looks a little bit wonky, but
+that's essentially what we're doing. Okay, so depending on how many images
+you decided to generate this might take a little bit to run. The result is that we have an image on
+the file system though called out.gif. And now we can side to render it in
+line in a markdown cell like this. So I'll just render out.gif. And so you should see this
+nice image rendering and your waves interfering with one another. Of course, you could just head to
+the Jupiter file system by clicking on the logo in the upper left. And navigate until you
+find that image too. And look at it in the browser, even
+download it and put it in a publication. All right, let's talk about SPLOMs. So we now understand why there are
+abstractions of axes in a figure because a figure might actually
+have several axes objects. Which show multiple views of data. A common data science visual exploration
+technique is called the SPLOM, which stands for scatter plot matrices. These are particularly useful for getting the relationship between a number
+of different variables at a quick glance. For this example, I want to load in a data
+frame of information regarding people's credit-card balance information. We'll explore that quickly. So let's bring in pandas and
+load our data frames will import pandas. We'll load the file. It should be called credit.CSV,
+and take a look at that. So we're only going to be looking
+at a subset of this data. Specifically, we're interested in
+exploring relationships between people's income in tens of thousands of dollars. Their credit rating, their age and
+number of years, their level of education. And their balance, their credit-card
+balance in American dollars. But if you're curious,
+the descriptions for all of these variables can
+be found at this link below. All right, let's first capture a list of
+all the variables we're interested in, so I often do this. I make something called calls,
+which are actually the columns I want. And I just make it equal to
+a list of all the column names. Now, we're going to create a grid
+of subplots of size width and height equal to the number of different
+variables we want to explore. In this case, that's a five-by-five grid. So we're going to go plot.subplots and
+we'll just pass in length of calls and length of calls as our width and height. And I'm just choosing our
+fig size at ten-by-ten. It doesn't have to be ten-by-ten. It could be anything. Now, if we add more calls, this code will just work if we
+wanted to look at other values too. So now, we want to iterate across
+each column in our data frame and compare it to each other
+column in our data frame. And we'll do this with
+a couple of nested for loops. So for I in range land calls and
+for J and range land call, so now we'll have every combination of IJ. So we'll have 1,5 and 2,5 and we'll end
+up having, 5,1 and 5,2 and so forth. So now we just want to plot a scatter
+plot comparing the columns I and J, and sometimes this will be the same column. So we're actually going to expect to
+see a diagonal line trend where I and J are equal. I'm going to set the marker
+size here to five, just to make things a little
+bit easier to read. So all we do is say AXS, so
+remember we've got that back as an array, and it's a shaped array or indie array. So AXS sub I,J. So that's going to be 1,1 for instance,
+and we'll just call scatter and we're just going to compare DF
+sub calls J and DF sub calls I. And I'm going to set S equal to 5. Also, we can see when we plot multiple
+axes things are going to get cluttered with the axis tick marks and the labels. So I'm actually going to
+shut all of those off. So we're just going to get
+rid of the axis objects and the tick marks, set them to false. Then I'm actually going to turn them back
+on only if we're at the last row, so I want to see the labels along the bottom. So if the length of calls is -1, then we're actually going to
+turn that X axis back on. And we're going to set the labels
+to whatever the call value is. And similarly, we're going to show the Y
+axis labels only for the first column. So if J is equal to zero,
+Y sub J will turn that back on. All right, let's look at our data. Okay, so this takes a bit to run,
+but we can see that there's quite a bit of information contained
+in this compact figure. For the most part, many of
+the variables seem to be uncorrelated. For instance, there does not seem to be
+any relationship between age which we can see in the third row. And education which is
+in the fourth column, as there are points all over the space. However, there does seem to be a
+relationship between one's credit rating, the second row from the top,
+and income, the first column. And that there's a large positive trend. So what other relationships or
+trends do you see in this data? Now, there's a lot that we had
+to do here to build the SPLOM. But it turns out that this is a very
+useful visual exploration technique and a lot of libraries can
+make it much easier. In fact, in the next video, is going to
+demonstrate how to explore this kind of data much faster using
+the Seaborne Library. And it's often convenient
+to do a quick Google and grab the library that seems to look like
+it answers the question you have quickly. And there's nothing wrong with that. I want to encourage you to do that. But sometimes you need to understand
+the mechanics underneath, such as when you want to
+build a custom visualization. Or when you want to tweak
+the output in a specific way. So my goal in showing you how
+to build the SPLOM by hand here, is to build your confidence. That you can work with a broad range
+of tools as the situation arises.

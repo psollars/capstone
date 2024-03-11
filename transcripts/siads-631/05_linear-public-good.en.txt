@@ -1,0 +1,149 @@
+Hi everyone. I hope you all enjoy playing
+the linear public goods game. So let me give a brief
+overview of the game. And then we're going to analyze
+the game and look at the data. So in each round, each group member receives the same
+amount of money, that's your endowment. And you can simultaneously choose how
+much to contribute to a public good, and in the mob lab experiment, they
+call it the water purification project. In the sense that, you know, that's
+clean water which will benefit everyone. And each individuals
+benefit from the project is the total group contributions
+times the rate of return. So this is a screenshot
+from your experiment. So in this experiment,
+there are four people in each group, and the rate of return from
+the group account is 0.5, and that's in the project details. So your strategy in
+each round is to choose how much of your endowment to
+keep in your private account, and how much to contribute to the group
+project or the public good? You can also, there's a history page, so you can also view what
+happened in previous rounds, how many tokens or
+how many dollars other players invest? So what's your pay off? Your payoff depends on
+your contributions and the contributions of
+the other group members. So here's an example,
+we'll go through a numerical example, and we'll do a little more of
+a high-level analysis. You started with $20 in each round and the rate of return is 50%, or 0.5. Let's say that the group of
+four contributed $20 in total, and you contributed $12. So what is your pay off? Your payoff is what you start with, which
+is $20 minus your contribution of $12. So that's how much is left in
+your individual private account. And your $12 go into the group account,
+and the other people from your
+group contributed $18. So altogether, there are thirty
+dollars in that group account. And each of the thirty
+dollars had a rate of return of 50% to you, which means that you derive $15 of benefit
+from the group account. So your total payoff in this case is $23. Notice that is higher than what you
+started with which is twenty dollars. So this game is meant to
+represent the provision of public goods through
+voluntary contributions. So there's a question of why
+people donate to public goods. Lots of the public goods such as,
+you know, Wikipedia, United Way were provided through private voluntary donations people donate time or
+money to a good cause. People might be doing that for social rewards or punishment,
+if they if they free-ride. And sometimes the incremental
+increase of the public good is worth that much to them. They might do it out of altruism or,
+you know, positive emotions such as fun or
+interests. And so
+what's relevant in this context is what economists call free-riding, which means
+you choose not to donate to a public good, but still benefit from
+the donation of others. For example,
+you listen to the public radio and you don't contribute to the public radio,
+that would be free-riding. There are similar terminologies
+existing in other disciplines. So social psychologists
+call it social loafing. And so
+what we see in this example is that each participant had 20 tokens to start with,
+and they can either keep it in their private account or
+contribute some to the group account. The private account is converted
+to cash at a constant rate, whereas the group account yields
+lower return to the individual. So in our experiment its 0.5,
+which means your private return from your donation is half of what
+you put in, but each additional dollar contributed by others also give
+you this additional return of 0.5. So in the numerical example that we did
+before, other people contributed $18, and you derive nine dollars of benefit
+from that donation as well. So let's do a simplified analysis, with only two people, and then we'll
+increase it to more than two people. So with only two players, so it's let's
+say player one contributes X1 tokens or X1 dollars to the group account, and
+player two contribute X2 tokens. The rate of return from
+the group account is 0.5. So what is your payoff? Let's say your player one, so your
+payoff Pi1 is going to be 20 minus X1. So that's what remains in your
+private account, plus 0.5 the rate of return times the total amount
+in the group account, which is X1 + X2. So now we simplify this expression and
+combine terms. That becomes 20- 0.5X1 + 0.5 X2, and you can do the same thing for
+player 2 and it turns out that, for player two,
+player two faces very similar incentives. Player two's payoff is going
+to be 20- 0.5 X2 + 0.5 X1. So now we're going to focus on
+player one's payoff, your payoff. After considering everything, both
+the return from your private account and the return from your group account,
+you will see that to maximize your own pay off, the best thing that you
+can do is to contribute nothing. Which is to set X1 equals 0. Why is that? Because every dollar that you donate is
+a subtraction of 0.5 from your payoff, but you would argue that, well, player two is
+also putting money in the group account, and I derive benefits from
+player two's contributions. That's true, but you have no control over
+how much player twowould be contributing. So the more player two contributes
+the more payoff you will have, and the more you contribute, you know,
+it's a net subtraction from your payoff. So we say that, in this case,
+no matter what player 2 does the dominant strategy is to contribute
+nothing to the group account. So this is actually true for
+both player one and player two, which means that X1 = X2 = 0. So that is the game theoretic prediction,
+assuming that everyone's self-interested. Now what if you have more than
+two players, let's say you have an arbitrary number of players, n players
+and they all face similar incentives. It is straightforward to generalize
+this into the n player case. So take player I as an example. So we call the payoff Pi i,
+and that equals 20- 0.5Xi + 0.5 times the sum of
+everybody else's contribution. So that's the big summation sign XJ,
+J does not equal I, that just means the sum of
+everyone else is contributions. So again, with the n player case, it is still a dominant strategy to
+contribute nothing to the group account. So basically X i equal 0 for all i. But when n is greater than 0 the Pareto
+optimal outcome, the efficient outcome is actually to contribute everything,
+because individual i loses 0.5 times X i, but others gain 0.5nxi. So everyone else gained this amount. So the total welfare actually is greater
+when everyone donates everything. So that is the trade-off
+between the private incentive, which is predicted by your equilibrium
+strategy, dominant strategy, and the social welfare maximizer. So this, if you have heard
+of the prisoner's dilemma, this is just a generalized version
+of the prisoner's dilemma. So let's take a look at the data. So this is the data from
+the previous cohort of students in the actual experiment. Yes, you are endowed with $20. So 20 ECU for each round. You're in a group of four,
+in other words n equals 4, but the three other
+players are actually bots. So that gives people flexibility
+to log into moblab and to play the game whenever
+it's convenient for them. So what is the bot strategy? In the first round the bot randomly
+draw an amount between 0 and 20 and donate that amount. So on average the robots
+donate 10 per bot, but it's a random draw from
+the uniform distribution. In subsequent rounds, the bots act as conditional cooperators
+in the sense that they would contribute the average contribution of the other
+three players from the previous round. In other words, if the others
+cooperate in the previous round, I will cooperate as well. But if they defect I would defect. So it is a very common strategy
+that we observe in these games. And if you look at the right-hand
+side of the slide, this is a summary of the individual
+contributions over the five rounds. This is this is all human data. So what you see here is the box and whisker plots and
+the green bar is the mediancontribution. So what you see is in the first round,
+it's 10 and it goes up a little bit
+in the second round and move back to 10 in rounds 3 to 5. And what you see is that, you know,
+overall the average contribution especially in the later
+rounds is about 10, but there's again a fair
+range of contributions. So there's some people
+contributing all 20 tokens and there's some people who free-ride and
+contribute zero. So what have we learned
+from this experiment? Again we showed that theory
+makes very precise predictions, assuming everyone is selfish. So if everyone only cares about their
+own pay off, the dominant strategy or the, you know, the equilibrium
+strategy is to contribute nothing. What have we learned from the data? We see that more students are contributing
+nothing in the last three rounds, but some students contribute everything,
+and most students are actually
+conditional cooperators. Meaning they basically match
+what everybody else contributes. So that's a fairly robust behavioral
+pattern that we see in voluntary contribution to public goods experiments,
+especially linear public goods. So you might be wondering why
+we include this experiment. This is to illustrate
+the incentives to free-ride on other's contributions when
+a public good is present. However, people don't really behave as if, you know,
+you don't get everyone contributing zero. So there are some people who
+are conditional cooperators, some contribute a lot, but
+you will always have some free-riders. And it basically lay out
+a theoretical basis for the field experiment that's coming up in the next
+module, which is online movie ratings. So we will present an experiment
+on movie lens, and you'll be asked to do a homework
+assignment using that movie lens data. It turns out that movie
+ratings is a public good, in the sense that your ratings will
+benefit other users on the site. And there's also an incentive
+not to rate as much. So hopefully from this stylized
+moblab experiment you get experience the incentives to contribute
+when there is a public good present. So let me emphasize again that,
+you know, for this section we analyzed the data
+from the previous cohort, and I'm going to do the data analysis for
+this cohort during office hours. So please come to office hours
+if it works for your schedule. Otherwise, you know, please download
+the recording of the office hours. Thank you.

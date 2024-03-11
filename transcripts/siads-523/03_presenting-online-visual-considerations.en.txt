@@ -1,0 +1,85 @@
+Now let's talk a little bit
+about visual considerations. So our goal here is to
+have visual elements that work cohesively together
+to support your argument. So we're going to think about fonts and
+colors and graphics and designs. And a lot of this carries over from
+the third week of this class, but where I really want to concentrate for
+this week is on this idea of mobile. So increasingly, we know that people are
+accessing video conferencing software or webinars or online presentations
+of one kind or another on a phone device and not
+on a desktop screen. So as you are planning
+the appearance of your slides, I would highly encourage you to think
+about how to simplify things so that they can be seen in
+a very small setting. So you want to think about
+things like larger fonts, which can be a good move anyway, because
+we have an aging population, and so eyesight is not our strong suit. You want to think about less text but
+more slides to compensate for that. So less text that I need
+to read all at once. So no cramming a ton of text
+on a slide that I can't see because I'm looking at a screen
+the size of a deck of cards. And more slides not only helps me
+maximize comprehension and that big font, it also keeps the visual landscape
+moving, which helps keep our audience more engaged in
+what we're talking about. It also may mean that you need to
+bump up the size of your labels so that they are larger than they would
+have been in your technical report. You also want to think about
+are there required corporate or organizational branding requirements. So we talked in an earlier week
+about brand standards as a way of standardizing colors and logos and
+how they're used in an organization. And so you will want to keep those
+in mind as you come up with this. Sometimes there's even a PowerPoint kit
+of designs that are already approved. If you don't have those restrictions, then
+one thing you might want to think about if you don't do your own design is to use fresh templates that people
+haven't seen 100 times. So going outside what's in PowerPoint or what's in Google Slides to just make things
+spark and look a little bit fresher. So I like slidescarnival.com,
+some people design slides in canva.com, that's C-A-N-V-A.com. I like SlidesCarnival, because it can
+easily become a PowerPoint template or a Google Slides template, so it gets us moving really quickly. And people point out that they
+noticed that it's a fresh design. And it just gives sort of a nice way
+to emphasize your sense of freshness and currency. Make sure that you if you are sharing data
+that you've gathered as part of a funded project, also known as a grant, there may be rules about where their
+logo needs to appear, how your project needs to acknowledge the funder, and
+you'll want to ask about those as well. Oftentimes those logos appear either
+on a separate slide after the agenda or they appear on the very final slide
+where you've got your major points and your questions and contact information. I do recommend that you check your work,
+so you can do that in a couple of ways. You can adjust the view of
+your slide software so you're only looking at a very tiny slide. Or actually have a rehearsal event and log
+in with your phone while you're practicing so you can see what it looks like
+on your presentation screen and what it looks like on your mobile screen. And this is just another reminder
+of the importance of being clear about what you're trying to communicate. So here is an example of a graph
+that I threw together in FRED. You guys know I'm a big fan of
+the FRED economic data repository at the Federal Reserve Bank of St. Louis. And the green line shows
+the total value of charitable donations that have been
+reported to the IRS over time. And the blue line at the bottom shows the number of returns
+that itemized deductions. And so what you can see in this graph is
+you can see that the amount of money of donations is up, but not the number
+of people making those donations. And I think this data is really
+interesting, but when I look at this on a mobile device, I just can't see some
+of this information. It's just too tiny. Now let's look at how we've adjusted
+this so it's friendlier on mobile. We've stripped out a lot of
+the other information. We've swapped out that scrubbable
+timeline at the bottom. We've stripped out the header that
+said FRED on it and instead moved that citation to appear in text format
+in a very light version of the font. And we've remade the labels so
+that they're a little bit larger. And I just did this by putting the
+original image in PowerPoint and making text boxes to sit on top of the existing
+text to make sure I was staying accurate. You could also use a variation of Lauren's
+strategy that she showed you in the video in Week 3 and trace the existing
+image and then make new labels for it. But here you see we've really
+stripped down how much stuff people have to take in and we've made it
+more viewable on smaller devices. Now there are going to be times when maybe
+you have proprietary visualizations, or you have specific visualizations that
+continually are used to benchmark your organization or your company. If there is no way to
+shrink a visualization or to simplify it so it
+looks good on mobile, you are going to have to realize
+that you'll have to spend extra time to describe it. So we've used the coxcomb example,
+the Florence Nightingale example, in Week 3 and you saw it in
+the data visualization course. That's a graphic that would take
+a long time to describe, which in Victorian England people
+had time for. If there's no other way to
+make that data apparent, and you remember from Week 3
+there are ways to do that, then you need to be able to explain
+what each of the rays means, what each of the colors mean. I don't like that approach, I like using simple visualizations
+that people understand. Because when we have to tell people
+how to interpret the thing we made, the potential for condescension, or for people to feel condescended to even if
+it's not an accurate feeling, is increased. So really try to think about
+how to make things simple. And remember that even the most
+complicated data dashboards, as we looked at in Week 3, they feature
+very simple communication structures.

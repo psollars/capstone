@@ -1,0 +1,274 @@
+Hi everyone, this is tutorial five about optimization
+in the Pytorch tutorial series. And there's notebook here is again adapted
+from the official Pytorch tutorial on optimization. So in the previous tutorials, we have seen
+how we can prepare data for training and how we can build a new network and
+now it's time to put those together and train our model by optimizing its
+parameters on our training data. So Australian tutorial here,
+training a model is an iterative process. Each iteration, the model tries
+to make a guess about the output which also means the model is
+trying to make a prediction about the labels and
+then we'll calculate the error or sometimes known as a loss between
+the guess and the true answer. And then we'll collect the derivatives of
+the error with respect to all the model parameters as we saw in the last tutorial. And then finally we will optimize our
+parameters using those gradients and also using an algorithm
+called gradient descent. Okay, let's try to see
+how that can be done. So first we have some prerequisite code
+which we saw in some previous tutorials. So I basically just copy
+paste was called here. So let's first load our data and define our model as we have
+seen in previous tutorials. So let's import torch. Again, we're using
+the California housing dataset. So let's import that from secular and split the dataset into training and
+test using a 80, 20 split, 80% of the data would be in the training
+set and 20% in the test set. Okay because in this tutorial
+we're really going to train model. So [COUGH] in this case I
+added an additional step here, which is to normalize the features. You have probably seen this practice
+in your supervised learning class, where we normalize each feature by its
+mean and standard deviation across the data set, so that each feature is
+roughly measured on the same scale. And I think this is actually
+especially important for deep learning because in deep
+learning the model is so complex and it's better that each feature of
+the input is roughly in the same scale. Otherwise it's possible that
+we will be learning some crazy ways in our neural network. Of course after this tutorial,
+you can definitely try it on yourself by removing this standardization part and
+try to see what happens to training. Okay, so after the standardization we can import our data into a data loader, right? Here everything here, you should have seen
+before, so I'll just quickly run those. Now we have a trained a loader and
+a test data loader for trained test and
+each has a batch size of 64. Okay, and also we can define our model. So in this case we're actually taking,
+I believe is the version two of the neural network in the building
+model tutorial where we have a and sequential container, right,
+contains several modules. So it's a pretty simple neural network. So just define this one and
+of course we can define an instance and also print out the structure
+of the network. And now once we have our data ready and
+also our model ready, we can start to set up
+a optimization loop. So we can train, optimize our
+model using optimization loop and each iteration of that
+loop is called an epoch. So each epoch basically means we know
+we go through the entire data set once. And within each epoch
+there could be two parts. The first part is the training loop where
+we iterate over the entire training set. Each time we compute
+the prediction of our model, then we compute the loss and
+then computer gradient, then we do a back propagation,
+which we'll see in more detail later. And similarly,
+we could have another validation or test loop where we iterate
+over the validation set or the test set to monitor
+our models performance. But in that we won't do back propagation,
+we won't do any optimization. But that loop is usually done after
+the completion of the training loop. So let's try to look
+into the train loop then. So one component of the training
+loop is the loss function. We have introduced the loss function
+in the auto grad tutorial, right? So when presented with some training data, our entry in your network is
+unlikely to give the correct answer. So the loss function is
+a measure of the degree of this similarity between
+the the true result and also our model's prediction and it can guide the neural
+network to adjust itself so that it can make better
+predictions next time. So and also the loss function of course is
+what we try to minimize during training. And to compute the loss, we have seen some
+example in the autograph tutorial but basically means we compare the prediction
+on our data with the true label. So there are some very common
+loss functions in Pytorch. For regression we have
+this mean square error, MSC loss that's the same loss you have
+seen your maybe supervised learning class. And of course similarly we also
+have one loss and one loss, right? It's the main absolute error loss can
+also be used for regression tasks and for classification tasks,
+we usually use the cross entropy loss. Of course a more complete list
+of loss functions can be found following this link here. And to define a lost function
+is very simple, basically, we just because all the loss functions
+are defined under the n package. So you could just initialize,
+allows function in this way, it's just like how you initialize a class,
+right. Usually we don't need to pass
+in any parameters to the loss function unless you have some
+special reasons for that. For example, maybe maybe you
+don't want the average loss. Maybe you want the loss for
+each for each prediction component. Then PyTorch does provide
+that kind of flexibility for you to adjust how you want
+to aggregate your loss. But if all is the mean over the entire
+batch and over each prediction component but of course there's
+some flexibility to that as well. Okay, so that's the loss function. Another very important component
+is of course the optimizer. There are many choices of the optimization algorithms to use. And in this tutorial
+we're going to use the so called vanilla Stochastic Gradient
+Descent, or SGD algorithm, for minimizing the loss function. Of course, we don't need to worry too much
+about the details of those algorithms. Because those algorithms are all provided under the torch.optim package. If there is any particular
+algorithm you want to use, we can just define an optimizer
+that executes that algorithm. And in this case we will
+use the SGD optimizer. And following this link, you will see
+some other optimizers that you may use. Just a note on the choice
+of your optimizer. There are many factors that
+can influence how you choose your optimizer,
+such as the nature of your problem. Whether it's a regression problem or a classification problem or
+maybe your data is some images. Or whether your data is some text or
+some audio, videos. The nature of your problem can determine
+the best choice of your optimizer. And similarly the model architecture
+may also have an influence there. Whether you're using some
+convolution in your network or you're using a recurrent neural network. Or maybe you're using some
+transformer based neural network. Those architecture choices
+can also influence which optimizer is the best for a problem. And of course,
+everyone's go-to optimizer for initial exploration, which is the so
+called the Adam optimizer. The optimizer itself is called Adam. Adam is basically everyone's go-to but,
+of course, depending on your problem, it may not be the best for
+your specific problem at hand. And in fact,
+some research papers such as this one. You can follow the link and if you're
+interested, you can read this paper. Those papers have suggested
+that models trained with Adam,
+the go-to optimizer or the like. There are many other algorithms that are
+similar to Adam or its precursors of Adam. Those models trained with those
+optimizers do not generalize well. Meaning their training
+performance may be great. The optimization may be great but
+their task performance may not be as great as those
+models that train ways. For example the SGD,
+the Stochastic Gradient Descent algorithm. That's a very interesting
+phenomenon that I believe a lot of research is still trying to
+investigate what's going on there. What are the reasons for
+models training with the Adam optimization algorithm not
+generalizing well to new data? I believe a lot of research
+is going on there. Okay, so
+that's about the choice of our optimizer. Initializing optimizer is equally simple
+compared to initializing a loss function. You can just initialize optimizer by
+passing in all the model parameters. Remember in the building
+model tutorial we have seen that if we have a model we
+can just call parameters. That's a function and
+that function will return us a of all the parameters in that model. In this way we can pass all the parameters
+of our model to this SGD optimizer. And the optimizer will know how
+to handle those parameters and passing in any required hyperparameters. Hyperparameters means those those
+configurations we can adjust, for example,
+in this case the learning rate. Learning rate controls
+how much step forward when we are taking a optimization step. It controls sort of the amount of parameter update. Usually a good value for SGD would be around maybe 0.001 to 0.01, that's 10 to the -3 or
+sometimes 10 to the -2. Those are pretty good values for SGD for
+the learning rate hyperparameter. We can define our optimizer in this way. And we don't need to worry
+about how the SGD algorithm actually works because it's all
+captured within this optimizer here. PyTorch will do all those work for us as long as we invoke the optimizer in a correct way, so how can we do that? Within the training loop, the optimization
+actually happens in three steps. There's a very important three steps and
+you better pay attention here. The first step is to call, this particular
+function is called optimizer.zero_grad, to reset the gradients
+of all the parameters. Remember in the past tutorials,
+where we have seen that PyTorch actually accumulates
+the gradient by default. Which means that if you call backward multiple times the gradients will be actually accumulated for each parameter. I actually did a simple
+example to demonstrate that. That's not the behavior we want here because what we really
+want is We call backward, we compute the gradient,
+then we do an optimization step. But then we had to clear out those
+gradients for the next optimization step. So because of the default behavior we have to call optimizer.zero-grad every time before we call a loss.backward. So that's a very important step. If you don't call zero-grad properly, then you may end up with
+incorrect optimization loop and therefore you may have
+incorrectly trained model. So that's a very important step,
+zero grad. So once we call that then we can
+assume the loss is already computed, so we can just call
+loss.backward as we have seen in the last tutorial to back
+propagate the gradient, and of course, PyTorch will compute all
+the gradient with all the parameters. And finally,
+we have those gradients over there and then we can finally invoke our
+optimizer to take an optimization step. So the way we're doing that
+is by calling optimizer.step, and PyTorch will know how
+to adjust those parameters. PyTorch will basically use
+the optimization algorithm defined in the optimizer to
+adjust the parameters, so we don't need to worry
+about the details of that. So basically those are the various three very important three steps
+to optimize our model. So now let's take a look
+at how those steps are taking place in a real training loop,
+right? So let's try to define our
+training loop and test loop here. So in this case we define our training
+loop as a function that takes in several parameters. As you can see here we have to pass in
+dataloader as a trained dataloader and our model and some loss function and
+some optimizer and also probably the device as well, right? So here we just define some
+variables that will be useful later. So the total is a total number
+of examples in our training set, the number of data seen is a number
+of example we've seen so far. And here is actually an important step
+that's actually missing from the official tutorial, which is to set
+your model in the train mode. Well, this little step may not
+be important for all the models, but when your model has for
+example a batch norm layer or a dropout layer is actually very important
+to set your model in the training mode. But for
+other layers it usually doesn't matter, but I mean it's a good practice
+to make sure the model is in the training mode to avoid
+some incorrect computation. So my advice for
+you would be to always set your model in training mode before you
+ever start to train. Okay, so, anyway,
+that's just a simple line, right? Just model.train,
+you'll set the monitor training mode. So how can we train our model? Well, we'll just iterate
+over our dataloader, remember the dataloader can be used
+in a four loop like this, right? So in the photo we'll
+get the the batch index, the index of the barches,
+and also we'll get X and Y. Those are the features and labels, right? The first step is to send X and Y to the device that we
+want them to be on, right? It could be the Gpu and then we'll
+invoke our model to make a prediction. So remember, the way to invoke our
+model is simply treat our model as a function then passing
+the input which is X in this case. So model X will return the prediction, but in this case because we're
+doing a regression problem, and the prediction of our model
+is actually in the shape of N, 1. Where N is a batch size,
+1 is just the prediction is just a scalar. So it has a dimensional 1 but
+in this case it's better to reshape that into
+just a one dimensional tensor because our labels
+are one dimensional. So it's better that our prediction and
+the label have the same shape. So we'll just do a simple
+reshape negative one to reshape into a 1 dimensional tensor. Of course you can also incorporate this
+step in your model definition, right? You can,
+at the very last you can just reshape your predictions into one dimensional tensor. And you can also do it
+here that's a prediction. And then we can compute the loss between
+the prediction and the label Y, right? And then here comes
+the optimization steps, right? First step is to zero grad, right? Optimizer zero grad,
+clear all the gradients and then we do a backward
+compute all the new gradient. And then we take an optimization
+step on optimizer step, and then the parameters of
+the model will be updated according to the optimization algorithm. Okay, so up to here is well,
+it's a basic training loop, but sometimes you may also want to
+print out some stats, right? To monitor your training progress. So the comments that we were interested
+in will be the training loss and also probably also how many data we have
+seen so far out of the total, right? So you can do something like
+that with some cold like this, for example, we can always compute
+the number of data points we have seen. But I just adding the batch size, by just accumulating the batch size,
+because well, each batch contains batch size,
+number of examples and we just accumulate those values,
+and sometimes we. May not want to print out the stats for every batch because if you have a lot of
+batches then that's going to be a lot. And also your model,
+the training loss actually won't change much after just a single batch. So those stats for every batch
+may not be very meaningful them. So we can do something like
+we can print out the stats, say every 20 batches, right? And here is a question for you. So what is this lost art item here? What he does here? So we can print out our loss here and also the number of examples
+seen out of the total. So that's our training loop. And similarly we can define our test loop. So test loop would also be a function that
+accepts similar parameters except for the optimizer because we don't need
+an optimizer anymore in the test loop. In the test loop, we only need our
+model to make a prediction and probably compute some loss, but
+we don't need to do the back propagation. Similarly define some
+variables to be used later. Here for task loop or for
+validation loop is a better practice to cellular model into the evolve or
+the evaluation mode. I mean, it's just like a counterpart
+to model.train, right? And because in this case we don't
+need to do back propagation, so we don't need those gradients. If you remember in that case to speed up
+computation and to save some resources, we can use this with torch down no
+grad to dis enable the gradient computation because we don't need
+those gradients in this case. And simply we can do a four
+over the data loader, got x and y and pass those to the devise and
+make a prediction. Computer loss is all the same
+as in the training loop, except we don't have
+the optimization steps here. For the test loss in this case we're
+not computing test loss for each batch, but we're trying to compute the test
+loss for the entire data set. So in this case we need to
+accumulate the test loss a little bit because the loss here it's
+actually averaged over the batch. So in this case we need to compute
+actually the some of the loss over the batch. So to compute the sum from average, we basically multiply
+the size of the batch, so that this expression gives us
+the sum of the loss in the batch. And after the loop, finally we
+can do an average over the total. Right, because that's actually
+the correct way of computing the average over the entire data set from
+the average of each individual batch. So test loss divided by the total,
+that would be the average loss for the entire data set. Okay, so now let's execute
+our train loop and test loop. So here we can just define those,
+just redefine those things. We can define a device or
+model loss function, optimizer and
+here we're going to do 10 epochs. And within each epoch we're going to do
+a train loop and also a test loop, right? Let's see how this goes. Because our new network is so simple and our data set is it only contains
+like eight features and so the training is pretty fast,
+we can try to see some stats here. So this is basically we're printing out
+all the training loss every 20 batches. And finally after the training we print
+out the test loss which is this number. So if you just look at those stats, you can see actually it's not
+bad here because the test loss actually closely follows
+the training loss, right? You see the training loss
+is a little bit lower. The test loss really kind of
+closely followed the training loss. So that means our model is
+probably not overfitting, okay, you can just see all the stats here. Of course, the training loss here is a loss for each batch. So it could fluctuate
+across the batches but the test loss here is
+over the entire data set. So it gives you an idea of how our
+model is really doing on this data set. You can see the test losses
+clearly declining so indicates that our model is doing great. So in this tutorial we have
+seen how those pieces, like the data loaders, also our model and optimizers, how those
+pieces can work together. So this actually concludes
+sort of the introduction to Petrovic part and moving forward, we'll just basically see
+the same sort of content, same kind of interactions
+between those three pieces. But probably with a different problem
+with a different data set and with a different model architecture, but basically the essence would be
+the same for the future tutorials. So I will see you there.

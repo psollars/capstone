@@ -1,0 +1,191 @@
+Welcome back to
+our discussion around design. What I want to talk about
+a little bit more now, is sort of opinions both small and large that
+people have had and have provided for you to use when deciding how to design
+visualizations. So there are some that
+are going to be great and some that are going
+to be less great. We have to be able to
+look through the space of design suggestions and identify those ones that are useful
+and appropriate for us. So as I mentioned
+in past lectures, there are often these chart
+suggestion visualizations, these graphic selectors that basically attempt to help you. So you are asked a question like, what
+are you trying to show? Are you trying to
+show a comparison? So if you're down here, are you trying to
+show comparison? Are you trying to
+compare different items? Do you have more
+than two variables? If you are, then maybe you want variable with column chart. Like maybe that's
+the best solution for you. So if you trace through
+this diagram and depending on your answer
+you're going to get different kinds of
+charts suggestions. Different people have crafted these kinds of charts suggestion things for very specific, very small kinds of
+statistical things. They're great and you
+should take a look at them and understand
+where they come from. This is something that's coming out of Northwestern University. You can take a look
+at it in more detail but again making
+suggestions about the appropriate ways
+to visualize data given certain sets of
+comparisons. Here's another one. This is a qualitative
+chart chooser by Jennifer Lyons and
+Stephanie Evergreen. They're both quite prominent in the visualization
+space and have made this meta visualization
+to help you pick a chart. Here's another one from
+the Financial Times. That is a visual vocabulary, sort of a list of
+things to pick given different charts objectives
+that you might have. So these are a great, these are all perfectly
+reasonable places to start. Sometimes they're going to agree, sometimes they
+disagree a little bit. If you have very specific small
+kinds of choices to make, like you're trying to
+build a very specific kind of visualization around
+statistical data, these would be
+a great place to start. Or you start running
+into problems of course is when you're
+combining these things. So that's when we have to look at slightly more general rules. So some of what we've
+seen from Tufte so far and what I'll show you
+right now from Tamara Munzner, who was also a very famous
+visualization researcher. In her book, she comes up
+with a set of rules of thumb for making
+visualization choices. These are going to be
+at a very high level. Whereas these are very low level, these are going to
+be very high level. So things like this. No unjustified 3D. This is a little bit
+corresponding to some of the chart junk discussion
+that comes from Tufte, but it's actually driven here by sort of an understanding
+of cognition. 3D is hard for people
+especially when you're displaying
+something on a 2D surface. The paper or the screen,
+these are two-dimensions. Now 3D is a little bit weird. Even if you had two 3D, it's really often hard
+for people to understand. There's issues of occlusion, things sitting one in
+front of the other, perspective,
+interpretability, and so on. 3D is great when
+you need see shapes but often really is unjustified. The other converse thing is that, unjustified two-dimensions
+is actually a bad as well. So if a list is good enough, you don't need to do
+two-dimensional visualization. So why have a visualization that looks like this if you
+have very few data points? Maybe you just want to show
+a table with the numbers. So you shouldn't be
+using visualizations just for the sake of
+having a visualization. Eyes Beat Memory, I'll come
+back to this in second, and then get it right
+in black and white. So make sure it works
+in a standard print out before you try to use fancy
+things like colors and so on. So you can add all kinds of
+different kinds of things but the last point that
+I want to make coming from Munzner's
+roles is that, function should come
+first and form next. That is not to say you
+should not have chart junk, you should not add
+embellishments, but make sure that the function that you want to support is actually available first and then you can add
+stuff to it later. So this eyes beats memory point is an important one that
+I just wanted to push. Again this is a high
+level piece of advice, but it's a pretty decent one
+to start from. We haven't talked much
+about animation or interaction in
+this series of lectures, but you will see
+that in the future. So don't go to
+those things immediately. Thankfully I haven't
+taught you about them, but don't go to
+those immediately. It's often easier to
+compare things that are on the screen than to
+compare them in memory. So if you think about a
+display that's changing, and you need to compare version 1 and then you interact with
+it and you see version 2, it's often difficult
+to do that rather than just having both visual things on the screen at the same time. So remember this notion
+of change-blindness. If you have this kind of
+weird interjection between the things that you're seeing as you're interacting or animating, you're going to run
+into change blindness. So that's not going
+to be great for you. Eyes beat memory,
+this notion encourages you to think about the fact
+that you can probably get more data density on the screen than you
+think you can get. There are ways of layering data. So when we think about
+building different kinds of visualizations that have
+lots of sub-visualization, we can often think about layering or having
+visual hierarchy. Basically allowing the person
+to walk through a space of different sub-visualizations
+to understand the data in this
+much more rich way. So it doesn't need to be
+the case that you always have, does really simple charts
+one next to the other. You often can layer them in a way that supports
+different kinds of things. So you can guide a person through like a visualization
+that looks like this. You can pull out the data and have like maybe a scatter plot for this particular
+thing if it's important. You can do other things like overlaying additional data
+on top of here and so on. So there are
+other tricks that we can apply to layer on top of visualizations to
+support more things on display than you might
+think are possible. To do that again, use
+your knowledge of perception. With Tufte what we got is, a set of high level things
+like graphical integrity, ways of measuring the lie,
+life factors of one. We talked about caveats to that, using no chart junk but
+we talked about that. Sometimes it's appropriate.
+Data is static. Data ink ratio, chart junk, these are things
+that are often about the aesthetics and not
+necessarily about function, and so you have to balance that when you're thinking
+about Tufte rules. Again, these are very high-level
+rules and not specific. So what about small decision? Like do we have any guidance
+for small decisions like Tufte rules,
+Munzner's rules? These are not often really
+great when we have to think about really small tiny things. So what's a kind of
+small decisions? The good news that I want
+to push for here is that, if you care about
+this enough someone somewhere has probably
+done an experiment on it. So you can often
+find good literature and good examples online
+like in the academic space, where people have done
+experiments to support this. This is a great place to start, if you're trying to
+figure out based on some principled way whether to make a certain
+decision or not. Of course you should always
+read the fine print. This is going to be important in the example that I
+showed you in a second. Now, let's say I have
+these high-level tasks. Again, this is our puzzle pieces. We have Task 1, Task 2 Task 3. They are abstractly comparison 1, comparison 2, comparison 3. Two different
+visualizations, same data. Basically the only
+thing that's different between these two
+visualizations is the ratio of the number of
+pixels for the X and the Y. So the visualization
+on the right here, this one, is much more squished
+than this visualization. So here there's more
+of a one-to-one ratio, here it's a little bit different. Which one should you pick? Is one more readable
+than the other? Is the same underlying data
+but it sort of emphasizing slightly
+different set of things. So equal expressiveness, but
+which is more effective? So as I said, people have done
+experiments on this. So Cleveland and
+and others in 1988, published this paper called the Shape Parameter of
+a Two-Variable Graph. Is online chart. They said, the human eye can judge best when the lines that
+are going up and to the right or basically
+in this direction, they can do much better
+if they're 45 degrees. This is more than 45 degrees and this is about 45 degrees. So what they argued for, is compressing
+the visualization in this particular case to
+maintain these slopes. Slopes of about 45 degrees are great for showing
+rises and falls. Using this idea, people have created automated software that figures out what
+the optimal ratio of y to x is, so that you get as many 45
+degree slopes as you can. So it automatically
+computes for you, how much you should squish the aspect ratio in order
+to get that kind of thing. So the general rules
+that come from this, you're not automating it is that wider is better than taller, but can access aspect ratio that roughly maintains 45 degrees
+on the rise and fall. Now, here's the problem. In 2013, people re-approached this and did
+additional experiments. It turns out that
+this 45 degree idea, comes from a limited set
+of experiments. Ones that did not
+test the broad range of different degrees,
+different banking angles. It turns out that 45 degrees
+is not actually necessarily. There are other situations
+where you can pick different aspect ratios that are still perfectly reasonable, even though they don't
+yield 45 degrees. So in 1988, we said
+45 degree angles only, 2013 we revisited Cleveland gate. This is what this was called because academics
+are funny that way, and basically revisited
+the idea and said, well, this is not entirely true. We actually get perfectly
+reasonable answers without adhering to just
+this 45 degree thing specifically. So the takeaway. Lots of rules, lots
+of chart choosers, lots of experiments, these
+are great places to start. Take lessons from
+them when you can, but take them all
+with a grain of salt. So often try to update
+your learning, your readings. People are constantly
+doing experiments, people are constantly
+revisiting and revising rules, offering new kinds
+of charts choosers. So it's really important
+in this space to be up to date on the different choices that we might have
+available to us, and the different kinds of
+ideas that are being pushed by both academics and
+design professionals. All these will be
+great places to start, but you have to treat them again with this little bit
+of a grain of salt. Taking their ideas and implementing them in
+your own visualizations. With that, thank
+you for listening.

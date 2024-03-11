@@ -1,0 +1,309 @@
+Hi Dwight, thanks for sending me the link. Hello? Steph, Stephen or Tyler. Can you guys hear me? Hello? Can you all hear me? >> Yeah, we're here. >> Hi Dean. >> Hey, how's the going? >> Good, yeah thanks.
+So I don't know what happened. I just checked my calendar and it says
+that I didn't have anything scheduled, so I don't have the link or anything. It's weird. I want to email about them but
+okay hopefully you guys are all here so how Okay,
+I think Dwight you're the first so I guess I'll ask you for any questions. >> Yes I do. For question three I have a question. I was trying to do the layer
+on there with the Mark rec and I'm having a hard time trying
+to get my key to pretty much work when I'm trying to layer
+it with my image, Mark image. >> Okay, yeah I guess I
+would have to see your code. Would you mind sharing your screen or
+do you want to send it to me? >> Yeah, I can share it,
+it's not an issue. >> Okay,
+yeah I'll have to make the co-host. Okay, you're the co-host now. >> Okay. >> [INAUDIBLE]
+>> Okay. >> All right, can you see? Is it sharing? I'm not sure. >> Yeah, I can see it, but right now I can only see your web browser. >> Okay. >> It's on the Zoom tab right now. >> Yeah. >> Okay, sorry. >> Okay, I can see it now. >> Okay, great. So here I was trying to get right here. When I do it, I just get a empty
+sheet [INAUDIBLE], yeah. >> [INAUDIBLE]. >> So what happens when
+you try to run that blog? Okay. >> Yeah. >> Okay. >> I was just figuring out
+maybe I know it's not orange. I thought since it was a 1 in a 0,
+maybe it's the type of put in here. >> So asking about the color? >> Yeah, just to get it where it's
+separate because there's only 1s and 0s in this column, but
+when I tried to put the column and and I thought it would give one color for
+a 1 and another color for 0, but
+instead I get this frame here. I was thinking maybe it's the wrong
+type I'm using, something like that. >> Mm-hm. Okay, all right, I got it. I understand now. >> You got it? >> Yeah, it was data type and
+I could take the rest in here. I was just confused on that. >> Okay. >> But I mean just quickly, does it look
+like I'm headed in the right direction? I know I gotta do size and stuff with
+my configure and everything like that, but okay. All right, great, thanks. >> Good. >> Stop sharing. >> Okay. I didn't keep track of
+who came after Dwight, so I guess just an honest system,
+which one do you think you showed up after Dwight and
+I'll attend to? >> I think I was one of the last ones
+that joined, so if others have questions. >> Okay. Yeah, okay, it's Stacey, I guess. Yeah, I can see you're in a hurry, right? >> No, I Stacy you're in a hurry, right? Because I think you said you have to get-
+>> You got my message, okay. Yes and no, I forgot you were
+having office hours though, so I'm so happy you put that in slack. And I have several questions and so
+I'm not totally organized with them, but if you'll bear with me I will bring up
+my screen and also to give you a heads up. Well, actually I have one question in Week
+2, but I'm at the moment I'm looking at Week 3 so I don't know if you're
+going to be okay with looking at that. >> Week 3? >> Yeah.
+>> Yeah, I don't, I'm not limited to Week 3. >> Okay, so I don't know if you
+want me to share my screen, but my first question in Week 3
+have to do with the tree maps. And I've done a couple of different ways, I think one of them I did way
+more work than I needed to. But it has three different layers, I don't
+know if you're familiar with that one. It's got the layer,
+it's the Simpsons data and it's got a layer for seasons,
+a layer for episodes and then a layer [COUGH] or
+a level for characters and then [COUGH] the tree map is
+a rectangle for each season, there's six seasons that
+we're looking at [COUGH] and then within that each of those rectangles
+there's the level of episodes. So you have rectangles for
+the episodes and then you have the characters within there,
+if you want I can share my screen and show you--
+>> Yeah it might be better because it's a data visualization course. >> Okay, just a second I'll share. >> I'll make a call so
+that they can actually share. >> Okay. All right [COUGH] you can see my courses. Okay so sorry I'm back up up here. Okay so this is the the example
+visualization that were given that we're trying to to make. And one of the hints that's given is
+that you'll have to do some layering. And I did a lot of manipulation with the
+data frame to make smaller bits to do some of the layering but then I couldn't figure
+out how to put those pieces together. But I did in a in a much simpler form created do do do created this but it's not it's not like
+the example in that it's it doesn't have the the black around the episode it's a little more sparse. Okay so. Okay Yeah so
+I haven't haven't gotten that far yet but I honestly it'll be easier for me to answer your question
+if I have the rubric for assignment three right now so
+I can tell you if this will be an issue. But for me right now it looks
+like is it interactive? Like no that's that's the next step,
+that's the next step. And I haven't I haven't worked
+with the interactivity yet because I just wanted to get this correct. Yeah and I'm guessing that it
+will not fit the rubric because it does mention something
+about the color scheme whereas the little rectangle seemed
+to fit the color scheme but the fact that there's not gray around
+the the individual characters and then black in between the episodes
+I'm thinking it's not right. Yeah. Yes it's was your mind like on slack? Dm me the code that you used to
+generate this and I'll look at it. Yeah. Yeah like I said the code that I used for
+this is really simple. I had had more elaborate code. It's supposed to be simple and Yeah. Yeah because this is assignment three. I want to get through to people that have
+to assignment was just just Dm me and I'll look and and I'll try to get
+back to you since I can Okay and if other people can ask questions
+now then if nobody asked questions, I do have one simple one for for
+week two and I'll try to bring that up. Well other people ask questions. Thank you very much. Alright who's who's next? If no one speaks,
+I'll just pick a random person. Yeah. I also had a question
+about question three. On assignment one. Okay Yeah. Let me make your co host again. God this thing is not. Yeah. Yes thanks. Right. Tyler, you're the co host now, yep. Okay. Alright can you see this? I can see if I can't read it
+because it's too it's too small. Okay so expanded a little bit more good. Cool so I can create this
+by itself the base chart. And this looks fine. But then when I create the wrecked
+chart and layer them together I don't know if one needs to appear
+above the other or something like that. Do I? This looks awfully similar to yours? Yeah I was trying to kind
+of do a similar thing. I had the image, I was the rep
+chart when you're doing the layers. I did the red chart before
+the image chart and then with the data type,
+I've made it nominal for the red chart. I don't know because I
+know it's supposed to be like this is like what I would
+input into the function. You can't just okay you
+can't just do that. You have to be like yeah
+it didn't put into clothes. Well I at this point, your note is
+pretty much identical to twice, right? Like do I? Yeah. Yeah that's I can't let me move this
+out the way, just so I can get it. I don't mean to put you on the spot, but this is basically what you had,
+I did something different up here. I don't know if that has
+anything to do with it. Like I don't think you had properties. No, I didn't have the properties or
+anything there, but pretty much I had read chart and then cause I hadn't got
+to the part of making it a function yet. I was just testing it. Like we're putting oval frame
+in their phenomenal and then I was going to use a form. I mean, let me just look at it. Mm Cause yeah, yours is. Did you could you try like refreshing
+your kernel or something like Yeah. At this point I feel like
+it's practically the same. Right? That's what I thought too, is it? Yeah. Right. Deep. Did you layer them? Like I was looking for the plus? Yeah, I had that before [INAUDIBLE] Something went wrong. >> Yes. You have to go even higher
+than did you assign VR. >> And it flipped. >> [LAUGH] There we go. But so
+it's appearing over everything else. >> I used to read first. I said you got when you layered it. >> [CROSSTALK]
+>> For space. >> And from there. >> Yeah, I think something went wrong. Even need the mark damage. >> When I did that over frame,
+I get orange for my blues are zero and my ones are orange. I'm not on my legend. Yeah. Over frame. >> Same. >> Gear oval frame, the F is capital. I think that's it. >> There you go. >> Now I can tell the difference. >> You adjust the eye adjust in
+the actual mark wreck inside that in those two quotations. That's where I adjust the heightened with
+and then I think it's sizing from there. I think. >> Okay. Here we go. Did you have the legend figured out too. >> Not yet. That was the next thing I was
+about to start working on. >> Okay. >> Yeah, actually I'm trying to figure out
+that the instructors that I think problem. Figure out how to the legend and alter. >> If the instructors are having problems,
+then [LAUGH] it's not a good sign. So I like out dot legend. I think. There's all that legend. I think inside of encode. >> It's somewhere inside an alternative. >> Okay. >> Or I think it's like you have them
+create a new column in your data frame that specify. It's the proper database. The proper legends. Also just cares that anyone here
+figured out the legend for. >> Yeah, just a minute. >> I'll pull mine up and
+see what I can figure out. But I know I finished this so
+just a minute. >> Okay, that works for
+when you put in the function. >> Yeah. >> Key plus and. What we're reading on that had
+a question for if that's okay. >> Sure, yes. >> Okay. [COUGH] Excuse me, I was basically just going to try to recreate this [COUGH] because it seems all right. What's that? >> That one's pretty open ended though,
+all right? >> Yeah,
+it doesn't have to match exactly right? >> Maybe it shouldn't all right. I need to check the rubric but
+I don't know if you would even get points deducted if it
+looked exactly the same. >> Okay. >> So you shouldn't try to
+make it look exactly the same. >> Okay. Does that mean this method is off limits? A bubble shirt? Okay, I I'm just reading off
+the rubric for a problem for here. It says most things are okay. As long as a they are small multiples. So it has to scale,
+I don't know one multiple for each episode is a general different
+display for different seasons. And at the bottom it should
+be trying different multiple. Season.
+One and 2. Yeah. Okay. I guess.
+Make sure you're not hard coding anything that's a big minus. It has to like look like small multiples. That's that's the big
+thing we're looking for. Yeah. Yeah, I guess actually likes
+scale besides that's a bit for. Yeah. So what's your question? I cut you off I'm kind of
+wondering like going off that cause I was going to do
+something similar to this. Just a bubble chart or
+if it can't match this that's as long as it's not exactly
+the same that I think it's fine. I could also do like a tree map for
+each or are they called tree maps? The square broken up by each color? It yeah. Honestly I think it's and basically I think the big
+thing is to look for that you're not hard coding anything and it has to look like you
+have small multiples. You know what I mean? >> Well, I went down the path of
+trying to do something like this. >> Yeah, then you should be fine. >> Okay, but I got stuck along the way maybe in the right direction. I basically have the data for this was from season five. So I can narrow down by season,
+episode if I wanted to. I have all the data here. But then I was having
+trouble plotting it too. There's a mark point and I figured I could change the size depending on the value and then the color depending on there's the x. >> Season, right. >> But I was having trouble plotting this. I tried to create an x and y coordinate. I think they would all be-
+>> Yeah. >> If it's for one episode,
+it would all be, they would all have the same y coordinate, but each one would have go up by one. But that would only work for one episode. It wouldn't work for all of them. So I guess I'm kind of stuck with putting
+this together and could use any input. >> It's so
+you want your x to be the episode number. I guess my advice would
+be maybe create a new column that you could use to keep
+this stuff and then use that column. It's like either your x or your y. >> What do you mean by that? >> Like grand,
+you call them here to use as your x and y. >> Yeah, the x and
+y coordinates right here. >> Yeah, that's what you've created. >> Yeah. >> Okay. Let me see what other
+people have come up with. Here are small multiples. Right, so couldn't you make the x
+the paint and y the titles? >> Could you plot with that though? >> What do you mean plot? >> Like if you're creating a graph like
+this, don't they need to be coordinates? But like the >> Was he cutting out for
+anyone else or is that just me? >> No, he was cutting out. >> Okay.
+>> Yeah, I thought it was just me but. >> Yeah. >> Can you guys hear me? >> Yeah. >> Okay. >> Sorry,
+I guess my WiFi just got up again. Okay, so Tyler,
+did I answer your question? >> Still a little confused. Trying to share my screen again. I'm just having trouble conceptualizing
+how I would plot this information. It was transposed and transposed. So each row is an episode in
+the season I filtered down to and I have all the values for
+all the colors in the row. So that's basically
+the same layout as this. >> Yeah, that's fine. >> But not a graph. So before in all the charts that we made, there was an x coordinate and
+a y coordinate. But I'm trying to graph
+multiple columns or the value that's in multiple columns. >> Like the row names like bright red, brown, amber. Hey down here we've got yellow. >> Yeah,
+like if I'm doing this right here episode, this is the crimson, this is bright red. >> Yeah, like that. You can use something like this. >> So I would need an x column
+that has no, never mind. What do you mean by paints? >> That's the paint, right? The bright red, the brown,
+amber and dark cyan. Okay. Tyler, I'm sorry but I think I need
+to move on to the next person. >> Sure. >> Tyler. >> Yeah, can you hear me? Tyler, can you hear me? >> Yeah, I heard you. >> Can you guys hear me? >> Yeah, we can hear you.
+>> Yeah, I can hear you. >> Okay.
+Okay, all right, who was after Tyler, is there a delay? I'm hearing issues now and
+then I'm not sure where it's coming from, I have bad internet so it's hard for
+me to know if it's me or somebody else. Well, same here,
+sometimes a little bit frozen and in and out,
+the overall speaking it's okay so hey Jay, is he gone? Yeah, I think he disconnected. Yeah, and
+I think it was him that I was having the most trouble hearing, there he is. Sorry, I don't know what the f
+is going on with my Wi-Fi, but yeah, I'll just move on to
+the next person, so who's after Tyler? I have a small question. Okay, go ahead. Yeah, the question number two,
+I am stuck at calculating that will be, are there any ideas how
+can I approach that, I don't have any clue on that. Question two? Yes. And which one,
+is it the condition probability? Yes. I think they just scare you, the formula right? It's pretty simple, it shouldn't create data frame of what they asked for, but stop calling one us a year for which to calculate the probability. I guess, where did you guys find the formula to implement conditional probability? I can share the one I use. Going to the rescue because yeah, I think
+this one you just gotta implement it. Yeah, okay thanks Stacy, recommended I turn off my video for a better connection, thanks Stacy. Yeah, Siva did you see the link that Dwight gave us? Great girls, yeah. Yeah, the probability of A given B is
+just A and B divided by probability of B. Okay Siva,
+does that help clear it for you? I will look into this [COUGH]. So basically, you want that given that everything in column two and one that happened in
+the year that they gave you, the probability of it happening in,
+column one and column two divided by the probability of it happening just in column one. I'll call him too, sorry, so basically you find out the number of times that it occurred in the same year, the year they gave you
+in both column one and two, divide it by the number of times it happened in just column two. It's very basic Bayesian probability,
+do you understand? Yeah, so I am difficult to understand,
+how a transpose, or how a extract-. No, no, you're not going to transpose, literally just filter it out in
+the frame that they gave you. Find out all the roles that happened,
+that the year is equivalent to the year they
+gave you in the parameter, and then you just find out
+all the current times where column one is equal to one and
+column two is equal to two. And then just find out how many rows that are like that, you know what I mean, you don't need to transpose anything. But I just told you the columns,
+you know columns, and then you know the year number,
+do I need to group? No, no, you don't need any group by,
+it's just simple filtering. Okay. If you still can't figure this out in an hour just ping me, and I'll see if I can help you. Okay yeah. Yeah, but just don't overthink it,
+you don't need group by, you don't need transpose, it's just
+simple filtering out the columns. Okay. All right, who's next? I guess that would be me. Okay. Hey Jake. Hello. Okay so mine is,
+hopefully it should be very quick, so you don't actually have to call for
+me to make me share my screen and I send you something through Slack,
+so can you hear me by the way? Yeah, I can hear you. So it's about the question two. So just send you my screenshot see. So my problem is like well for
+somehow I end up with the the multiple child without
+the the gray line see. So like each right? So I checked the the the other
+office hour video. It seems like it has something to
+do with the I think the label. E.
+Xpr but there's some kind of parameters needed to you know I have
+some travel to to find out what exactly I need to
+put in To achieve that. >> Yeah, but even in the example they
+gave you, they only have two years, three years right? >> Well,
+we were supposed to get three years right? >> Even in the one that they
+gave you only lasts three years. >> Right,
+see as I need to stick on screen shot, that's the example right? >> Yeah. >> Do you need me to send you my code? >> Sure, it couldn't hurt but what is the difference between
+the first and the second? >> The great line. >> The what? >> The great line. >> The grate line, so one has multiple and the other has just, honestly Zac,
+this doesn't matter. >> Really? >> I don't think it should matter, it's such tiny inconsequential stuff, I just don't,
+okay I want to check the rubric and see. How about that, well I see some
+we have multiple person here and I gotta go anyhow so,
+maybe I send you my code. >> Okay Zac, I just said, if you have six
+by six rows and columns then yeah, and and the titles and the numbers, the data,
+the line most importantly matches, then you have the great
+stuff it doesn't matter. >> Okay, all right. >> And also,
+you're getting hard coded anything. >> No. >> Yeah it's fine, don't worry about it, this is way too small
+of a detail very well. >> Okay, all right, thank you. >> Okay, all right cool, then who's Dean, I think Dean you're,
+did I talk to you already Dean? >> No some other people already
+asked some questions and they kind of already went over
+what I was going to ask, so if there's anyone else
+that needs to go they can. >> Well I guess I call Shamil,
+you're the one person that's answered. >> Hello, yes, I have a question,
+I'm currently doing the assignment one, question number three,
+with figures to the Legend. >> Yeah.
+>> Let me just share my screen is it okay? >> Yeah sure, I need to make you co-host again, I need to find you for, here we are, I can, okay. >> So you see my screen? >> Yeah, I can see your screen. >> So it's pretty simple,
+it was just to create a plot of course with the X and Y and
+then just to filter it with the key. My question is, so
+it's a layer chart basically now, and I already have a legend,
+but its default one so basically I need to change it,
+so it's it's this one. >> Yeah, that one. >> Yeah, so normally I should do it here,
+just I wanted to double check with you, I remember in 522 courses I have the same
+issue but I need to modify it here. When I say rectangles plus
+when I was basically saying that let's overlap to two charts,
+is it correct or not? >> Sorry, I have a harder time here,
+I don't know why but zoom is super, super, super quiet today, I can't hear. >> Okay do you hear me now? >> Yeah. >> Yeah, what I'm saying basically, when
+you're doing layer chart in the altair, there are some issues basically
+with the legend sometimes. So and I saw many examples that if
+you would like to see the legend, if we would like to modify the legend, we should modify it in
+the in the layered one. In the final one here, with the configure
+legend, something like this, is it correct? >> I don't think it, but as long as
+you can modify the way you want to. >> Or I should modify it
+somewhere here in the local one. >> Yeah, I'm getting a lot of questions honestly about the legend, I want to see what the Rubik has to say about the legend. It says, if they have a legend, it should be categorical/original, not quantitative a gradient. No, no, my question is that,
+if I would like to modify the legend, I need to modify it in the final chart
+here when I'm overlapping two charts, is it correct here? >> Yeah, I think it should be
+when you do the color code right, if it works then it doesn't
+matter when you do it. >> Okay, under color code here,
+it's okay, thank you. >> Okay, yeah, as long as it works,
+it doesn't matter. Yeah color, wait, let me, because I'm getting a lot of questions. Yeah okay, about legend, I think there needs to be a column that has what you want to
+say in that legend and you just use that, a column, you call that column when you sign to the color in your graph. >> Okay, I got your point, so I need to create a new column that
+means you're in the data frame. >> Yeah,
+like I have a column that says, has and then this key or does not have and. This key and then that's like
+your column for that specific and then you just signed
+that column to the color. >> Okay. >> Like the column with just strings,
+basically. >> Okay. >> Okay. >> Thanks. >> No problem. All right, who's next? Who else has a question
+about homework one? I guess that's what I'm asking. Okay, if not,
+then I'll just go back to Stacey. because you said you had
+a question about assignment two. >> Yeah, actually,
+I just sent you my question for week two in Slack because I thought
+we weren't going to get to it but if you peek there, you'll see. Or I can bring it up on the screen, but
+I'm seeing that I'm having a problem with something else that I didn't
+have a problem with before. So,
+>> [INAUDIBLE] >> What's that? >> No, I'm just reading what you wrote. >> Okay. >> Yeah, so what, here's a picture of
+my fist as they first come out and pictures since I'm announced over it,
+I'm not working. So basically, when you put your
+mouse over your visualization, the percentages go away? >> Okay so the way it's supposed to
+work is when you mouse over it, it's supposed to show you the two percentages
+corresponding to the closest point on X. But when the visualization first comes up
+and you haven't moused over it, you're getting that picture with all of the-
+>> Okay. >> Percentages. >> Okay, so it's kind of like doing
+the opposite of What you want. >> Yeah, but if you mouse over it,
+it does what I want. It's just that I want it to
+just show up without all of the junk before [LAUGH] you mouse over,
+you know what I mean? >> Okay, so it's just like the default
+should be, there's no mouse, just don't say anything. >> Right but I'm having a hard time, I thought it would be something
+like an initial value like in it or something like that but
+the problem I'm having [CROSSTALK]. This is 2, it's the very last one in week two 2.1. >> 2.2 >> 0.2 sorry 2.2.2 [LAUGH]. >> Okay. Metric Nearest selection, okay. I guess it would be helpful
+if you send me your code. >> All right. >> Okay. There is, Although selection, My mouse over field equals to, Okay. All that. Okay, you just need to in your selection, >> In my opt and selection, sorry. >> All that selection multi. >> That selection-
+>> That's why you specify the mouse. >> Yes. >> Add this as a parameter. >> Okay.
+I did kind of see that but I didn't think that was this. All right. >> Yeah, I just assess that by default. All data values are considered to
+lie within an empty selection. So if you said to none then empty
+selection this container data values. >> Okay, that gave me an error but
+I'll play with it because something else seems to be happening at
+in my notebook at the moment. >> But I think that's the parameter. You need to make sure it stays quiet
+if you're not selecting anything. >> Okay, thanks. >> Yeah, that works. Yeah, I guess I should look at your
+question for a simple version. Week three, Seizing character. I think you need for week three. I think you use all dot layer,
+right, instead of all dot chart. >> Okay. And whereas when I was reading that,
+I thought it meant that you're going to have to make a couple
+of different charts and layer them. But it's actually-
+>> I mean it's a layer. Yeah, that's why I was thinking I had
+to make a couple of different ones and layer them but that was not working. Well, okay, I did try a little bit with that but all right. >> Honestly,
+I think you're like halfway there, it's just like you just need to make
+three out dot charts and then layer them. >> Okay. >> Yeah.
+>> All right yeah, I can do that. I still did way beyond that, so that will still be easier
+than what I had done [LAUGH]. >> Okay, cool. So yeah,
+I thought you had a good time here. Right? Okay, whatever. Cool, so Stacy I assume you don't
+have any questions, you're good? >> If I found them it wouldn't be good for
+two minutes, so [LAUGH] thank you. >> No, it's okay. I mean if yeah, I don't mind staying for
+like five or ten minutes even longer. >> No, I'm not prepared for the next ones,
+so I'll play with what you just gave me. But [COUGH] I'll be very busy
+the next couple of days, so if somebody's around to
+help that'll be awesome. >> Okay. Cool, so Dean,
+do you have any more questions? >> No, I'm good. >> All right. >> Thank you though. Everything here is really helpful. >> Okay, who else is here? Okay, I guess Siva, do you have any
+are you still do you get what I'm saying? The condition probability? It's really not complicated. >> Siva, if you look at one of the other
+office hours, Alan goes through it. She goes through the PowerPoint and her PowerPoint was really helpful that
+she showed because this shows just exactly what you need to actually do for
+the equation. What numbers you need to use,
+their values. I kept doing the wrong equation
+until I saw that PowerPoint, that was really helpful. >> Yeah, just basically, fine in
+the data frame they gave you, the year. Although, they may not that's
+happened the year they gave you that first match all the ones
+in condition one and condition two. Those two columns equals to one, find out
+how many roles there are and then for the second that's your first number. The second number is same year,
+but only for our condition two. And then just divide those two numbers. That's all you need. Okay, I know he isn't here, but hopefully he'll watch this recording and yeah, he'll be able to get this. Yeah, so I am going to I want to stop the recording. I'll stay on, but does any of you
+have the power to stop the recording? I can't do it from my end for some reason.

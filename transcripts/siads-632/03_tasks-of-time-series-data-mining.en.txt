@@ -1,0 +1,210 @@
+Having introduced how to use time series to represent
+real world data. Let's look at the
+data mining tasks or the functionalities of
+time series data-mining. As we introduced,
+we're interested in the outputs of mining
+time series data, just as we're interesting outputs of mining other types of data. What are the common tasks, if you have time
+series in your pocket? Well, the first
+thing you could do is to visualize the data. You plot the time series data, and there are many types
+of visualizations. You may have seen lots of
+presentations of time series. In following lectures, we
+will introduce a few more. Now they're more related to the analysis of time series data. We will also talk about pattern discovery and similarity calculation
+of time-series data. If you still remember that
+patents as humanities are the two building blocks of many more complicated
+data mining tasks. The same mass sequence data. We're also interested in
+modeling time series data. We want to model time
+series data in particular, because we want to
+make predictions and we are making
+predictions to the future. This is also known
+as forecasting, while it's modeling that time series data and the
+ability of making predictions, we can also detect anomalies or outliers
+from time series data. Of course, we're
+also interested in classification and clustering
+of time series data. The two data mining
+functionalities corresponds two supervised and two unsupervised
+learning tasks that you will actually encounter when you're in the Machine
+Learning Courses 2. There are many other more
+complicated data mining tasks. In this lecture, we will
+focus on pattern discovery, similarity calculation, modeling, and making predictions,
+or doing forecasting. We'll touch a little bit
+about outlier detection. We believe classification and clustering to suppressed learning and
+unsuppressed learning. One of the patterns
+in time series data, remember that in sequence data, the patterns are n-grams
+or skip n-grams. In vector data, the patents could be principal components,
+or singular vectors. What about patterns
+in time series? In particular, there are
+four types of patterns, common patterns in
+time series data. They're called the trends, the cyclic movements or cycles, seasonal movements, or seasons,
+and irregular movements. The trends, also known
+as trend curves, indicate the long-term movements. Is the market going
+up or going down? Is the market going up
+in the past 10 years? This are describing the long-term movements
+of time series. Cyclic movements corresponds to relatively long-term movements of other trend line or curve. As we may know that, the stock market is
+going up and down, it's going down and up. This is describing a cycle. This pattern indicates a change of the trend going up and down. We know that's happening, we know that's going to happen, but we cannot predict
+when it will happen. Normally, these are known
+as cyclic patterns. There are cyclic patterns that
+are very much predictable, especially if they
+are periodical. These are known as
+seasonal movements. For example. We know that in the Summer there's almost
+no student on campus. In the Fall, students
+will come in. In the Winter, students will
+take a break and come back. These are periodical, this
+will happen every year. If a time series has such
+periodical patterns, we can actually extract seasons of movements
+from time series. One would argue that,
+this is not true. Sometimes even if you
+have periodical patterns, there are other times. For example, this year
+because of a pandemic, we're not sure how many students will actually come
+back to campus. These are known as irregular
+movements in a time series. These could be patterns
+that cannot be described by the trend
+or cycles or seasons. They could refer to, anomaly or outliers, or just randomness
+in time-series. Well, why 2021 Pretty much anytime series
+can be decomposed into the combination of these
+four types of patterns. Let's look at some examples
+of these patterns. This is a typical time series
+data of a stock price. This is actually
+the stock price of Google over the year 2016-2021. Well, writing anything you want apparently is making
+some predictions. You can see that in general, the stock price of
+Google is moving up. In this case, we're describing the trend of this time
+series, is moving up. You can also see that from
+undefined time periods, the stock price is
+going up and down, up and down, up and
+down, and up and down. These are known as the
+cycles or cyclic movements. We know there are going to be
+this up and down patterns. We just cannot time the market. Some of the cycles may be wider, some of the cycles
+may be shorter. You never know whether this is at the beginning of the cycle or at
+the end of the cycle. Interestingly, you can also see that these are some
+data points that are apparently very distant
+from other data points. In other words, these
+data points, actually, varies from the trend
+or the cyclic patterns, and these are usually considered as outliers of the time series. Now, what about
+seasonal patterns? Let's look at another example. This is what we talked about, the measuring of
+search frequency of given queries submitted to
+the Google Search Engine. We're looking at the trend of the particular query results. You can actually see that there's the repeating
+pattern over time, and actually the width of those patterns
+are almost the same. In particular, you
+can usually see a big jump of search wall
+during Christmas and New Year. You can see another peak over the summer as this pattern repeats over and over again. This is known as the
+seasonal pattern, and it's very easy to interpret. Because people want to go for vacations during
+the winter break, and during the summer break. Now, what's interesting from
+this is that you can see that in the spring of 2020, because of the pandemic, we are seeing some pattern that's very different from
+the seasonal patterns, and this can be known as
+the irregular patterns. From these examples, we are
+seen the examples of: trends, cyclic patterns,
+seasonal patterns, and irregular patterns. We're also interested
+in measuring the similarity between two
+different time series, or multiple time series data. For example, it is very
+curious to find out whether the tweeter sentiment score over time is correlated
+with the stock market. Because there's the beliefs that if the sentiment of
+the public is low, then the stock market
+might go down. If people are very polished, people are very positive
+about the economics, then stock market may go up. But there are two problems. You don't know whether they
+are truly correlated or not, and you don't know which
+one is ahead of the other. Whereas computing the
+similarity between time series, you can actually find out whether two time series are
+indeed correlated. If they are, whether one is leading the other, or
+the other way around. In other words, you can also align two time series and we will introduce how to
+compute similarity between time series
+later in this week. We're also interested in
+modeling time series data. Remember that time
+series could be represented as the continuous
+function ft, mapped. Given any timestamp t, you can obtain the output x_t. But this function's
+usually unknown to us because what we
+usually clicked from the wild are the discrete timestamps
+and their values. Usually, to model time series, we're actually learning
+this function. Now, once we learn this function, we can use this function to make predictions about timestamps
+that we haven't gathered. This is also known as generating
+the time series data. From the discrete, the
+sampled time series data, we can also try to infer what is actually
+in the function. What the function
+should look like, and this is known as the inference. We learn a function
+as the model of a time series and we make use of the function to make predictions. Of course, making predictions
+is very important. Many people who are interested in time series is because they
+want to make forecasting. In the Google stock market
+example we have seen, you can see that we're actually plotting the time
+series into the future. The plotting is not rumors, it's actually based on
+what we observed so far, and this is known as
+time series forecasting. Another example of time
+series forecasting is, of course, weather forecasting, which, unfortunately, we
+are not doing very well. So you can say that if we
+know the temperature or the other parameters
+in the past 10 days, we can actually make a prediction of the temperature tomorrow, and the day after
+tomorrow, so and so forth. In all these examples, what we have observed on the timestamped values up to now, the whole history of
+timestamp values, either a single dimensional
+or multidimensional. We're trying to predict the values and the
+future time point. We reintroduce time
+series forecasting in the third week of the class. With time-series modeling
+and forecasting, you can also do
+anomaly detection. For example, you can discover which timestamps have values that are so much different
+from their neighbors, or which values now the
+actually observed are so much different from the predicted value
+using time series model. Don't take that all
+anomalies are bad. Sometimes anomalies are good too. For instance, in this paper, people are looking at the
+spikes of block mentions of certain books and Amazon
+substrings of certain books. They found that there's
+extra two day gap that the block mentions
+of a certain book, predicts the sales of
+the book on Amazon. So in this case, you can
+see that a spike which is the surprising peak of the time series is
+essentially an anomaly. This time the anomaly or the outlier is
+good. It has value. Of course, based on all these lower-level
+data science outputs, data mining outputs, we can do classification on time series. For instance, if we gather the sensor data,
+the accelerometers, sensors of running, walking, and jogging over time we
+can make predictions. We can classify any
+given user activity into walking or into running. This is basically how Apple transfers steps
+where using the House app. We could also do clustering
+of time-series data. In the previous example, we know what the classes are. We know that people
+could be running, could be jogging,
+could be walking. But, in this example,
+in clustering, we don't know what the
+classes should be. Instead, we can
+listen from the data. We can just learn the categories that you know can summarize
+model time series the best and that will review many different clusters or many different aggregated
+patterns of times of state. You can see that no
+matter what we are talking about
+classification, clustering, they can literally be built upon the lower labeled data mining
+outputs such as patterns, such as similarities, and
+such as time series models. What about classification? Clustering will be introduced
+in Machine Learning. I strongly recommend you to use what you have
+learned in this course to extract patterns and similarities to build fancy
+Machine Learning models. With so many strong data
+mining functionalities of time source data, you can actually apply
+time series data analysis to almost every domain. In finance, of course,
+we make predictions. If you can predict the
+market, you'll become rich. In health care, you gather the ECG data and many other
+types of clinical data. You use time series
+analysis to either make predictions or just
+do classification. You do the diagnosis which is essentially a
+classification task if the patient has the
+particular disease so that he can provide
+timely treatments. In Business Intelligence, you try to predict the supply and demand, and you can also predict the success or failure
+of the product. You do that through analyzing
+multiple time series. In sports analytics, you gather the behavioral data of the athletes and you
+make predictions, you estimate the risk of injury, and then you also want to make predictions of your opponents. There are many
+other applications. Don't forget that you
+don't just need to use time series to represent a
+raw measurements of data. You can also use time series to record the more complicated
+outputs of the mind. So through mining many
+different types of data, you have the output such as
+the estimated probability. You can represent the estimated
+probability over time. You can represent the
+estimated correlation over data over time. You can actually use
+time series analysis to do the second level
+science research. In Engineering, the
+entire field of signal processing is built upon time series analysis
+as the basis. There are many
+other applications. I'm sure that you have
+encountered times series data in your domain, whatever your domain is. Then after learning the
+techniques in this course, you can try to apply the time series techniques
+to your domain. To summarize what we have
+talked about so far, I wanted you to understand how the time series is different from a sequence and a vector. Basically, is different
+from a sequence because it's module is majoring
+numerical attributes, and it records actual timestamps instead of just the orders. It's different from the
+vector because there are only ways infinite
+number of dimensions. I hope you understand the difference and
+connection between discrete representation and
+continuous representation. That is exactly why we need time series as the spatial
+data representation. I hope you remember the
+basic data mining tasks of time series analysis and know that they had been applied
+to almost every domain.

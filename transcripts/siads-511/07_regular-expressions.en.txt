@@ -1,0 +1,148 @@
+Regular expressions are a powerful
+part of data analysis, and they're sort of a little weird at the same
+time, but they're also mysterious and magical and mystical. And so they are something that you can
+kind of impress your friends with and once you know regular expressions,
+you can use them in lots of places. And so what regular expressions are is
+they came out of some stuff in the '60s and the '70s having to do with programming
+languages that were all about strings. And the analysis of strings and
+languages and formal languages and these kinds of things, the kind of thing you'd study like when you
+build a compiler in computer science. And regular expressions are one form
+of languages that can be specified. All that hardly matters, but what matters
+is that it's a text-based programming language that you use little
+characters instead of the word if. You can have loops, you can have if
+statements, you can have all kinds of stuff and pull stuff out. And
+it's for working with strings. And it's basically wildcards but
+it's also just matching but also parsing. And it's used lots of places. Like if you use like Linux, you can use
+commands like grep, which stands for generalized regular expression parsing,
+where regular expression are the r and e. Every programming language, JavaScript,
+PHP, Java, they all have it, and there are some subtle differences
+across implementations. Just one language would pick a thing and then they would add
+a couple of cool features. Another language would
+sort of start doing and they would add different cool features. So there's kind of this core of regular
+expressions that are common and then there are sort of extra features
+that are implemented differently, not all things implement them the same. So Postgres uses one
+particular regular expression, I think Postgres in a sense came
+to regular expressions late, and so they just like picked like a very
+conservative set of regular expressions. So if at first you don't
+understand regular expressions, they seem to make no sense, it's okay, that's normal. They're
+actually kind of fun and it's like learning a new
+programming language. So just if you learned Python and
+then you learned SQL, there's like a whole different way of
+looking at the world when you learn SQL they're both programming
+languages in a sense. Regular expressions are yet another programming language and the
+implicit thing that regular expressions are doing is looking through a string and
+doing things. Searching for things,
+pulling things out, searching for one thing, then search another thing after
+that. And it's a very compact language. And it's fun on Stack Overflow to say, find me a regular expression
+that pulls out email addresses. That one, of course, is pretty easy, but
+there's a lot to learn so. So there is a xkcd comic for everything.
+This one is talking about regular expressions kind of in
+perl a little bit. And basically the story line is, there is a whole bunch of data that has
+to be searched for email addresses and someone types perl and a couple
+characters of regular expressions and then searches all the data and away it
+goes. So you can go see that on xkcd. One thing I like about xkcd is
+that it's accessible and so you can feed the accessible version of it. And I believe in this slide if you grab
+the slides I got the accessible version of the narrative there. So here's our little regular expression
+what I call a quick guide and this is like the keywords
+of a programming language. So caret is not just a caret, it
+matches the beginning of the line. Dollar sign matches the end of the line. Dot is a wildcard character which
+some wildcard systems like Linux or DOS use asterisk as a wildcard character.
+In this language, asterisk means we're going to repeat a character. There is greedy and non-greedy,
+which we won't cover too much here. There's plus, which is one or
+more characters. There is a series of bracket expressions
+which are single characters. That's a set. So [aeiou] is either an a or
+an e or an i or an o or a u. And then if you put a caret at the
+beginning of the bracket expression, you see how this is
+a programming language? If you put a character,
+that's any character other than capital X, capital Y, or
+Capital Z. And then you can even have ranges, so you can have [a-z0-9], that's
+lowercase letters and numbers. Then parentheses, which we'll talk about in
+a bit. When you have this big search thing and you don't want to pull it all
+out if you're extracting from a string, use the parentheses
+to kind of mark the parts of that the matching expression that
+you want to actually extract. You'll see it when we get to an example,
+so come back to this. So the documentation in
+Postgres is really good, I'm not going to repeat it here. I
+just encourage you to go take a look. They've got all of the sort of
+regular expression things and really simple regular expression examples. And I'm not going to
+go through them again, I just I really like how
+Postgres documents it. They document it without going overboard
+and without going sort of not enough. So here are the basic WHERE clause
+operators, which is what we're going to use. There's the tilde, so
+~ is matches. Which again, does this string match
+this regular expression? So regular expression
+either matches yes or no. You can say you want your
+matches to be case-insensitive, !~ says anything but the match. And then !~* says it does not match case-insensitive. Okay? So when I first started looking at this
+I'm like why didn't you use the word regex or something? But you know, hey regular expressions
+are cryptic and so these little operators are cryptic too so. Now it's a little bit different than
+the LIKE that we've talked about before. So if we say tweet ~ 'UMSI', the key
+to a regular expression is if it has a string, it's going to sort of run that
+expression along the string, check for a match, check for a match, check for
+a match. It's more of a for loop. Whereas and you're not matching the whole
+string, you're matching a substring, That's the tilde operator, the regular
+expression match operator. If you're using the LIKE operator,
+which is actually part of standard SQL, you have to put a wildcard character
+at the beginning and the end. So %UMSI% says, I want to match
+UMSI anywhere in the line. Whereas in regular expression, when
+you say find me UMSI, it implies that it's going to kind of work across all
+the characters of the column before it decides if it matches or not. So
+there's an implicit loop in these things. So here's a bit of data that I put in
+just sort of so that we can play with it. And we start out by building
+the simplest regular expression. It functions like LIKE, right? And so it functions like LIKE. We use
+the tilde operator, and so this basically takes the email and in a sense it slides
+the umich across each of those columns. And sometimes it matches and it finds
+a match here, sometimess gets to the end and there's no match. So that basically says, I would like to
+see the ones where if I slide umich along this line I want those and I don't want
+the ones that don't have umich in them. And so it's kind of like a WHERE clause,
+it's like a LIKE but with percents at the beginning and the end. Again, implicitly in
+regular expressions there is a loop, it's moving it along the way. So here is our first, and I won't go
+into too much detail on all these because again,
+there's a lot of good documentation. But just to give you a sense of how
+this programming language works. So this umich basically says, I'm going to
+slide umich along each thing, right? But here I add a special character, so
+in this case, I'm adding the caret. So what that says is I am looking for situations where the email
+address starts with the letter c, meaning this matches the beginning
+of a column and that means c. And so now we have grounded the match
+to be at the beginning of it and you could, right? And so ^c basically is going to say,
+this one, this one, csev and Colleen and
+the other ones don't match. I could do something like, say, m$ as my match and then that would
+hook this instead of going across the whole line, it connects
+it to the end of the line. And so now the ones that end in
+m are those apple.com ones and the other ones don't match. And so all I'm trying to point out
+is these things here are functioning as like calling ends with or
+starts with or something. And so you basically are writing code
+by controlling the regular expression. You can't do everything
+in regular expression, but you can do a lot of stuff
+with the regular expression. So here's a thing where I
+do the dollar sign, and I basically say select
+where they end in $. So it's edu that regular expression
+that's going to slide but then because of the dollar sign it's
+locked to the end of the string. And then we're looking here for this is
+matching the first character. If it was inside the brackets, the caret matches
+the first character. If it's inside the brackets it would not, but
+it's outside so it means first character. It's a programming language, right? And then we have a bracket pair and
+this is the letter g or the letter n or the letter t. So what this is saying,
+^[gnt], is I am looking for email addresses
+that start with g or n or t lowercase.
+I could've had that ignore case. And so g, n, or t, where's g, n, or t? n, g, and t, so that's going
+to match these three, and there we are. It matches those three. All right, here's the ones that
+match with a dollar edu, edu at the end. So you get the idea. Again, I'm not going to go
+in super great detail. This shows a range. And so I'm saying I would like, any time
+you see bracket you've got to remember that's one character. That's 0 through 9.
+0 1 2 3 4 5 6 7 8 9. And remember that this regular expression
+is slid across the whole thing. So what this is really looking for is having a single digit
+anywhere in the email. And so then we go ted79 and glenn1 match
+because both of them have a digit. Then I can tweak it a
+little more and I say, you know what, I want a two-digit sequence. So now I have [0-9] [0-9] that says
+one digit immediately followed by another digit. I could put something in here like .* and
+that would say one digit followed by any number of characters followed
+by another digit, right? So there's all kind of fun
+things that you could do here. And so what this does is this
+finds me in this case two digits. Again, it's searching, it's moving that
+two-digit matcher down the string and it finds two digits next to
+each other in ted79@umuc.edu. So these are super simple regular
+expressions that are very basic and you will have a lot of fun as you
+learn more about regular expressions. So up next we're going to
+talk about how we then, that was the WHERE clause,
+how you pick things. Now, we're going to take and pull stuff out of columns by
+using regular expressions.

@@ -1,0 +1,167 @@
+We've seen a preview of how
+Pandas handles missing values using the None Type and the
+NumPy and NaN keywords. Missing values are pretty common in data cleaning activities, and missing values can be there for any number of reasons, and I just want to touch
+on a few of those here. For instance, if you're
+running a survey and a respondent didn't
+answer a question, the missing value is
+actually an omission. This kind of
+missing data is called missing at random if there are other variables that
+might be used to predict the variable
+which is missing. In my work when I deliver
+surveys I often find that missing data say interest in being involved in
+a follow-up study, often has some correlation with other data like
+gender or ethnicity. If there's no relationship
+to other variables, then we call this data
+missing completely at random. So these are just two examples of missing data and
+there's many more. For instance, data might be missing because it
+wasn't collected. Either because the process
+responsible for collecting the data
+such as the researcher, or because it wouldn't make sense if it were to be collected. This last example is extremely common when you start
+joining DataFrames together from multiple sources
+such as joining a list of people at a university with a list of offices
+in the university. Students don't generally have offices but they're still
+people at the university. So let's take a look
+at some ways of handling missing data in Pandas. So let's import Pandas,
+import pandas as pd. So Pandas is pretty good at
+detecting missing values directly from underlying
+data formats like CSV files. Although most missing
+values are often formatted as NaN, NULL, None, or N/A, sometimes missing values
+are not labeled so clearly. For example, I've worked with social scientists who
+regularly use the value of 99 in binary categories to indicate that it's
+a missing value. The Pandas read csv function
+has a parameter called na_values that allows us to specify the format
+of missing values. It allows scalar string lists
+or dictionaries to be used. So let's load a piece of data
+from a file called log.csv. So df equals pd.read csv
+and we'll say datasets, actually will use
+class grades.csv. If we do df.head
+and we pass in 10, we can see the top 10 rows. So we can actually use the functions .isnull to
+create a Boolean mask of the whole DataFrame. This effectively broadcasts
+the isnull function to every cell of data. So we'll say mask
+equals df.isnull, remember this is now just that isnull function has been broadcast across
+that whole dataframe, and what we've gotten mask
+is something that size and shape of the DataFrame
+but it's a Boolean mask, and we can take a look
+at the head of that. So this can be useful
+for processing rows based on certain
+columns of data. Another useful operation
+is to be able to drop all of those rows which
+have any missing data, which can be done with
+the dropna function. So we can say df.dropna.head. So note how the rows
+index with 2, 3, 7, 1,1 are all gone now. One of the handy functions that Pandas has for working with missing values is the filling
+function called fillna. This function takes
+a number of parameters. You can pass in a single value
+which is called a scalar value to change all of
+the missing data to one value. This isn't really
+applicable in this case, but it's a pretty
+common use case. So if we wanted to fill in all missing values with
+zero we could use fillna. So we just say df.fillna, we pass in a zero, here I'll just change
+the DataFrame in place. Remember most
+DataFrame operations returned copies of DataFrames. So if you want to
+do it in place you often have to use the
+in-place parameter, and then let's take a look
+at the head of that. So note that the in-place
+attribute causes Pandas to fill those values in line and it does not return a copy
+of the DataFrame, but instead modifies
+the DataFrame that you have. We can also use
+the na filter option to turn off whitespace filtering. If whitespace is an actual
+value of interest, but in practice this
+is pretty rare. In data without any
+na's passing na filter equals false can improve the performance of
+reading a large file. In addition to rules controlling how missing values
+might be loaded, it's sometimes useful to consider missing values as actually
+having information. I'll give an example
+from my own research. I often deal with logs from
+online learning systems. I've looked at video use in
+lecture capture systems. In these systems, it's
+common for the player to have a heartbeat
+functionality, where playbacks
+statistics are sent to the server every so often, maybe every 30 seconds. These heartbeats can
+get big as they carry the whole state of
+the playback system. Such as where the video
+play head is at, to where the video sizes at. Where the video is being
+rendered to the screen. How loud the volume is and so on. So if we load the data file log.csv we can see
+an example of this. So df equals pd.read_csv, will bring in log.csv and
+we'll take a look at the head. So in this data
+the first column is a timestamp in
+the Unix epoch format. The next column is
+the username followed by a webpage they're visiting and the video that
+they're playing. Each row of the DataFrame
+has a playback position. We can see that as
+the playback position increases by one, the timestamp increases
+by about 30 seconds, except for user Bob . It turns out that Bob
+has paused his playback, so as time increases the playback position
+doesn't change. Note too how difficult
+it is for us to try and derive this
+knowledge from the data, because it's not sorted by
+timestamp as one might expect. This is actually not uncommon on systems which have
+a high degree of parallelism. There are a lot of
+missing values in the paused and volume columns. It's not efficient to send this information across
+the network if it hasn't change, so implementations rarely do. So this particular
+system just inserts null values into the database
+if there's no changes. So next up is
+the method parameter. The two common fill values
+are ffill and bfill. Ffill is for forward filling and it updates
+an na value for a particular cell with the
+value from the previous row. bfills for backward filling which is the opposite
+of ffill. It fills the missing values
+with the next valid value. It's important to note
+that your data needs to be sorted in order for this to have the effect you might want. Data which comes from traditional database
+management systems usually has no order guarantee
+just like this data, so you have to be careful. So in Pandas we can sort
+by index or by value. Here will just promote
+the timestamp to an index and then
+sort on the index. So I'm going to say df
+equals df.set index, and I want the timestamp, and then df.sort index and
+let's take the head of that. So now we have sorted
+timestamp data. If we look closely at
+the output though we'll notice that the index
+isn't really unique. Two users seemed to be able to use the system at the same time, and again this is
+actually a common case. So let's reset the index and use some multi-level indexing
+on time and user together, and promote the username to a second level index to
+deal with the issue. So I'll just reset
+the index of the DataFrame, and then we'll say df.set
+index and we pass in a list and we want time to be the top level and then user, and let's take a look
+at that DataFrame. Now that we have the Data indexed and sorted appropriately we can fill the missing
+datas using ffill. It's good to remember
+when dealing with missing values
+so that you can deal with individual
+columns or sets of columns by projecting them. So you don't have to fix all missing values in one command. So df equals df.fillna and we want to set the method
+is equal to ffill. So we can also do
+customize fill-in to replace values with
+the replace function. It allows replacement
+from several approaches. Value-to-value, list,
+dictionary, regex. So let's generate
+a simple example. So I'm going to create
+a DataFrame here, let say we want column A
+to have these values 1, 1, 2, 3, 4. B we'll say 3, 6, 3, 8, 9, and C we'll just make a bunch
+of different characters. We can replace one's with 100, so let's try the
+value-to-value approach. So we just say df.replace. We give it the first value, thing we want to replace
+and what we want to replace it with, so 100. So about changing two values, so let's try the list approach. For example, we want
+to change 1's to 100 and 3's to 300. So we could just do df.replace
+and pass in two lists; 1 and 3 and then 100 and 300. So what's really cool about Pandas replacement is that
+it supports regex too. So let's look at our dataset
+again from the logs.csv. So pd.read csv will bring in logs.csv and take
+a look at this again. So to replace using regex, we make the first
+parameter to replace the regex pattern that
+we want to replace. The second parameter the value that we want to
+emit upon a match. Then we pass in a third parameter that just says regex equals true. So take a moment to pause this video and think
+about this problem. Imagine that we want to detect all HTML pages in
+the video column. Let's say that this just means
+that they ended with .HTML, and we want to overwrite that
+with the keyword webpage. How could we accomplish that? So here's my solution. First, matching any number of characters then ending in .HTML. So I'll do df.replace. I say to_replace, so I'm going to put
+in here that pattern, any number of characters
+so .star, .HTML, and then I don't want to get out things that have dot
+HTML in the middle, so I'll anchor this to the end. The new value I want
+is called webpage, so value is webpage and
+just regex equals true. We see that that does
+the trick there. So one last note
+on missing values. When you use statistical
+functions on DataFrames, these functions typically
+ignore missing values. For instance, if you
+try and calculate the mean value of a DataFrame the underlying NumPy functions may ignore those missing values. This is usually what you want, but you should be aware of the values that are
+being excluded. Why you have missing
+values really matters depending on the problem
+you're trying to solve. It might be unreasonable to infer missing values
+for instance, if the Data shouldn't
+exist in the first place.

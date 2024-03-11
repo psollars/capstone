@@ -1,0 +1,271 @@
+Hello, my name is
+Alexis Castellanos. This is my office
+hours for Milestone 2 and today what we're
+supposed to do is just have students drop in and we can answer any questions about either the comprehensive exam or about any of the projects that everyone might
+be working on. It's now, 07:00 P.M. If anyone drops by, then I can answer
+those questions. If not, I guess I would put myself on mute and camera off up until
+those students show up. Thank you. Hey. What's this? I haven't seen you in a while. I know. How's it going? It's going great. How's
+it going for you? Great. Good. How's life
+after graduation? It's odd because I've been
+in school my whole life, but it's nice having a
+little bit more freedom. Well, good, it's awesome. How's the program going so far? Pretty good. Pretty good? Now, I'm about two-thirds
+of the way in. That's pretty exciting for me. I'm learning a ton.
+That's excellent. I even think I'm
+learning more than I even thought that's going on. That happened to me too. I don't think I will learn that much, especially within
+just one semester, I guess it's just doing a lot of it consistently
+really builds on itself. I do appreciate a lot of the courses are set
+up so that they give you like weekly assignments
+and stuff like that, you stay on top of everything
+and that's really good. I have a couple of
+questions regarding, it's said on the exam prep that we could come
+to office hours. Take a grim. Let me just see what it said. I can't remember exactly. Once again, I'm
+just looking at it. It was something we could
+work through our ideas. I was wondering if
+we could do that. No problem as long as you're
+not specifically giving out a full breakdown
+or game plan, then we can converse
+and go back and forth. I was wondering if I was going
+to be giving a game plan. Maybe can we just turn off
+recording and then you can tell me if this is a
+okay thing to say? Sure, we can turn off recording. I'm pausing recording
+just for now, and I'll turn it on
+back once we're done. Thank you so much, Alexis. Hello? Hey. These office hours
+just to provide for students any general
+questions or answers about the comprehensive exam or
+about your projects that you might be going through
+my background as with natural
+language processing. I'll feel free to ask away. If you don't have any questions, just I think to answer
+Marianne's question, we can just do a breakout room and I can
+answer your question there. I have two quick
+questions about the exam. Sure. I guess you guys are already in the conversation, I joined, so sorry if this has been already answered
+somewhere but I'm not really sure
+whether they are alike, for the exam question three, which is on the CNNs, so on. I'm wondering, let's say
+I'm relatively confident that CNNs are not a good
+decision or not the best choice. The latter part of the question is worded in
+a way where it feels like it's like regardless of how you feel about whether an
+application of CNNs is feasible. It continues to
+ask how would you design it or the
+benefits and so on. How would we answer those if we answer the first part
+of it more negatively. You give all the reasons why a neural net wouldn't
+be a good application, even though the question
+is forcing you to do so. If as long as you provide a strong statement and not only, well, this is
+important everywhere, just reject an idea, but also justify it. Give a suggestion of why you would use some
+other type of model. Justify why is it more suitable for the
+given application. That makes sense. Thank you. My other question was for the question 8 which was
+on the data scientist, if you're a data scientist working at a healthcare
+company and so on. I'm just wondering, is
+there a specific guideline for what is meant by
+a technical issue? The technical issues
+I would think,of I guess could also count
+as pre-processing, like which was
+like the previous. That's what I was finding
+too, for number 8. Perfect. Yeah, I was finding that
+too. That's a good question. Yeah, it was a great question. I also had a fun time with
+it when I was a student. Well, I could easily tell you. You both of you have taken
+milestones to, correct? Just picking one and then
+putting it into the, deciding what was a
+technical issue and what was some three pre-processing issues and then explaining everything. Is that what we should do? What exactly is the
+question for that one? Because I don't have them
+memorized by numbers. We recently changed them. The question is,
+imagine that you are a data scientist working for
+a healthcare company and your task is to develop a machine learning
+model to predict which patients are at risk of developing a certain disease based on the medical records. The first part is
+first describe and justify at least three
+specific steps you might need to take on to
+pre-process the data. Then it's a state one particular technical
+issue related to the data that you need to be vigilant about and
+how you may avoid it. I'm just not sure how to differentiate technical issues from the pre-processing steps. Technical issues arise when you do any of your I would say
+general pre-processing. Things I would say applying some type of
+balancing algorithm. That is not necessarily
+a pre-processing step, but it's a technical issue. What if we have in a case where, say we have only 100
+samples of class A, but we have 1,000 of class B. That's more of a technical issue that we're trying to handle. It's no longer in the
+pre-processing step because the
+pre-processing would just be first identifying all the
+noise that's in our data, reformatting it, and identifying key features
+that we're going to use. Now, something like
+that is considered a technical step that
+you need to take. There's other ones that you
+might see within all of data. Say for something like
+image processing, you don't have the
+appropriate cases. A lot of times what happens
+is there's too much noise. What we do is we do something
+like augmentation of data. Again, it's no longer a
+pre-processing step but a technical hurdle
+that we're trying to resolve. Does that make sense? I think that makes sense to me. Okay. Yeah, thanks. That
+was really helpful. No problem. No, I got to go back and look at my answers for that. I see. If you guys who are already
+in the conversation, I guess I can pop off.
+Thank you so much. No, we were done. Well, that's all I had to. Great. When you're
+answering these questions, try to be as direct as possible and say if the questions
+are formatted in a way where they
+give you almost like bullet points just write
+small paragraphs or maybe write a bullet point your
+method and then explain it because that makes it a lot easier for the people
+that are grading it. I'm not exactly sure
+who will be grading it, but it's so that all
+your answers are easily identifiable
+when you can map them back and see if you can
+be awarded full points. Thank you. No problem. On question Number 8 that has all of the different questions, I get your point about outlining it nicely so that you
+can make sure that you can get points for every
+single one of the questions but like it says like
+describe one technical issue, like what if you
+want to put two? Make sure that you can
+describe at least one very valid and clearly
+explained technical issue. You won't get any extra points for going over the question. I'm just wondering if it's like, well that technically was more pre-processing or
+something like that. Then if I had like put my
+second technical issue and explain them both clearly about what you're
+thinking was then, like because I don't want
+to like lose points if I. I understand your concern. I don't see a problem with it. As long as you just
+make it very clear, like I said, make sure
+you're outlining. I'm saying these are
+technical issues that you could identify
+in such a problem. For Question 8, especially some of
+the other ones, I feel like there's
+a right answer but for Question 8 it
+seems like a lot and then is there a correct answer that we should be or is it more like an answer with explanation? Where we're going on that one? Majority of these questions, we're looking for the
+explanation and reason, where there is no
+one strict answer. It's not like mathematics. It's, this is more
+of a use case, and same thing as if you were to interview
+for our company. They might ask you a
+question and you might not exactly fit what they were looking for but as long as
+you give your logic and reasoning behind it and do
+have very valid points, then you will be
+awarded enough marks. That's really
+helpful. Thank you. Now, there is some fundamental techniques
+that we are looking for. It doesn't mean you make
+up your own algorithm and say that it's better
+than anything else. I think that's fair. Now, I'm just thinking it's like there's not that much specifics, like there's a lot of
+specific questions for particularly Number 8 with the one that he was just talking about but it's like there's not a lot of information
+about the problems and so it. I could see lots of people making different modeling
+choices, for example. Just because maybe you need to state some assumptions I was. That's a great point. If
+you do decide to any model, really state your assumptions upon whatever statement
+you're replying to. Say, assuming this and that, and then give your reason how and just like everything else, make sure you're very
+thorough and well explained with your ideas. I think that's good. With a project, this is
+a little bit of a side, but with project we're not necessarily sure what
+all the best methods to pick for all the
+different scenarios. We're actually going to try a whole bunch of stuff just to gain experience on like with
+the models, with our data. Is that not a good idea? Maybe we should be like
+methodical bullet before we like. Learn by doing and I learned through trial and error just
+like any other algorithm. Need a lot of examples. What I would recommend
+and would be a great exercise for you and your teammates would be to identify what possible
+models are the best choices. Write them down and there's also libraries that can automate
+this model process for you. You can use PiCare, and that's one of the
+very popular ones and you can put in your problem and maybe a small sample
+of your data set, run it and it'll
+train and parallel anywhere from 3-15 models, it depends what you choose. Cool. That's helpful. That will save you a lot of time because the library is optimized using C underneath
+just like Numpy. If you were to use
+something like sklearn to train one model, it will take you about, I think it was like
+four and a half times versus the one model in PiCare. Just be aware that it does
+tax your system so if you only have two or
+four gigs of ram that you might run out and
+that's when usually we want to resort to something like the Great Lakes
+computing resources. You can just run it there and see what models
+perform best. Then you can go back to your
+assumptions and see, hey, were the models that I was thinking adequate
+for this problem? That's how you start
+learning more and be able to get better ideas of how to
+approach different things. I'm so happy you said that, that makes me super
+happy. The best one. That was great because
+that's where we were like, what's our team
+planning on doing and I think we're
+going to learn a ton. We're really excited about
+getting to the project. That's good. Let me just go
+ahead and share the link. In case you want to check it
+out you can always do that. Also if you create
+your own model, I forget exactly how to do it, but you can actually
+test that in parallel with the
+standard models. The models they use are directly
+from sklearn so they're the same ones you'll be
+importing from sklearn. However, in your
+report and everything, don't just upload
+the PiCare pipeline and say that that's your
+work and that's pretty much all you did because it's just something for
+you to test and see what type of model works best and then you can
+tune it yourself. I would say one of the most important things
+that you need to learn, because everyone can
+just do sklearn import, run a model and turn it in but it will really take
+someone with some type of expertise to be able to
+take base model and improve its accuracy and scores
+further than the base. You guys can see my screen. First of all, go and
+figure out like, this is saying like hey, probably this model is going
+to be a good one to use. Say it's between decision tree and maybe logistical
+regression just for example. Then you can try out
+both of those models here and then you
+can figure like decision trees is working way
+better and then you go into the decision tree and then you do you prune it differently, or you do some other stuff or do some different
+layers and you experiment with it more after
+you've decided, okay. I'm going to go
+with decision trees versus logistical regression. Is that the idea here? Yeah, but that's the idea here. If you look at my screen, this is just a regular dataset. I think it's the PM
+diabetes dataset. Just by calling compare models, you can download
+all these models and the run them in parallel. You go to whatever
+metric score you're trying to achieve
+or maximize and you see here I'm going for F1, F1 looks like it's
+the highest for extreme gradient boosting
+and then I go to sklearn and then try to build it manually and then improve it. Maybe I do some boosting, maybe some bagging and so on. Perfect. But this gives you
+the base scoring and it saves you a lot of time. When I was an undergrad,
+I didn't know about this and plenty of times I would run into just like hours of trying to go
+pipelines and they will break, run out of memory and this
+really helped me out. I found it, I think it was the first month that
+I started MADS, I just had a bunch of
+data science stuff coming up on YouTube
+and I found a short. I was like, wow,
+this is amazing. It's going to save me hours. There are things like
+the optimized functions, however, I feel like whenever I was using their
+optimized functions, I kept running
+into, I would say, not the best solutions and doing something
+like Brit search by myself would end up yielding better results,
+just as a warning. But who knows what you can
+do with specific module. They have other
+metrics too like you can plot your model so you can see the learning
+curves and so on. Break down your matrices. That's awesome. Thank you. No problem. It might be good to
+post in the chat. Or the link I sent it out
+on the chat to both of you. You can just click on it
+and access the website. I would book market for you
+because it can be super helpful even outside of mad like say you're doing
+personal projects. It can help speed
+things up at least. Or give you some idea of
+what you're working with before you approach
+the problem yourself. Does it do mainly
+machine-learning models that aren't deep learning? This is the base for supervised
+and unsupervised models, it's all the popular ones. There are some
+statistical models, although I have not used them, but I know they do exist
+within this module. I know when it comes
+to deep learning, they don't have any, but you can add it to their
+system yourself. You can run it under
+their metrics, so you can do or have access to all their
+plotting features. I've done that before with Bert. It did allow me to create like 12 graphs within a
+couple lines of code. It was worth it because
+it saves you time. Well, these look the best and, actually to write them myself. That's awesome, so helpful. Thanks. This is been
+really helpful. I think I have to leave
+now. Have a good night. You too. Good night. Thank you. Since I'm just going to ask questions
+and no one else came. It says that the
+maximum is 1,500 but like a number of my
+answers are only like five or 600 words. Am I like really on
+the wrong track? Like some of them are like that number eight or has like 1
+billion questions. That one's long and some of
+them are longer than others, but like I felt like I answered every
+single one of the pieces. But I'm like maybe a depth
+or something. I don't know. Is it about three paragraphs
+that you have so far? Three or four paragraphs? Yeah. There's like
+multiple paragraphs but it's still only
+like 500-words. I think you should be fine. Just make sure that
+you're answering all the questions and you're
+giving your reasoning why. To be frank, when I took
+the milestone exam, my answers were also very short, but I was able to
+score pretty decent. I was also worried
+about the same thing. I think one of my responses was three paragraphs and
+I earned full credit. It really depends
+on your content. Let me pause recording
+it right now. Well, since I didn't [inaudible] We have I think just two exams
+and a couple of quizzes in each course just to make sure you're up to date and
+getting all the information. That I would say one of
+the highlights about, it's no nightmares about
+midterms and finals. That's true. Thank you so much. I really appreciate it. All of your time and have fun with your projects
+that you're mentoring. Will do. Thank you so much, Alexis. Bye. No problem. Have a good day. That concludes my office hours. We paused for a little bit
+because she was explaining her approach to one of her questions or
+responses for the exam. We were like thinking
+through the logic of it, the reason why it was possible, is because that really shouldn't be shared
+because other people can copy her logic and reasoning on how to answer
+the specific question. But, if anyone has
+any questions, feel free to reach out
+to me or the rest of the instructional team and
+have a good night. Bye.

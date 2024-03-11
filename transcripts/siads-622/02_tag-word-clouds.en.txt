@@ -1,0 +1,279 @@
+All right. Welcome back. We're going to switch gears
+right now while still keeping a focus on
+single words, to a very common kind of
+textual visualization. One that you've probably seen, and I've called in a
+bunch of different names, tag, and word clouds. Okay. We're going to focus on these as our starting point and think about why they
+might be good or bad representations of text. For whatever reason, they
+exist, they're very popular. You will see many many different
+examples on the web, and as I go through the
+examples that I have to show, you'll see quite a few different ways that people have done this, and some of them
+will be familiar. This particular
+visualization that's on the screen right now
+is a Flickr tag Cloud. Flickr being the image service, people would load up images
+and they would put in tags, basically, metadata
+associated with each image. Flickr had this
+display for a while, they might still have
+it, I'm not sure, but for a while, they basically displayed the tags
+that were most common. This is a visualization of the most common kind of
+pictures that were available
+within this collection. It's a very interesting
+visualization, you can quickly see
+certain things popping up. The word wedding,
+the word London, all these things, quickly
+will catch your eye. That's great. That's
+a mechanism by which you can explore the data. It was actually intended for
+that purpose originally, that it was a way of jumping
+into the data collection, and getting a sense of
+what was available, especially because image files were equally hard to navigate. How do we get a sense of what's
+in our image collection? The way they did that is by using the textual representation. This ended up being useful
+for a number of reasons, but social tagging is
+the first emergence of these tag and word
+clouds that we see, now all over the place. Tag clouds, just as a
+definition are this, the tag cloud is a visual
+representation of social tags, organized into paragraph
+style layouts, usually in alphabetical
+order where the relative size and weight of the font for each tag corresponds to the relative
+frequency of its use. Think about that for a second. You've probably recognized
+this to be the case, if you've seen tag
+clouds or word clouds, the height of the font
+represents how common it is. The ordering is ambiguous. There are many different ways
+of ordering these things. But this is the
+high-level definition. These are other examples.
+This is del.icio.us. This was a social
+bookmarking system where people would load up their bookmarks
+and also tag them. It was a mechanism by
+which you could pivot. The extra encoding here, the red and the blue, correspond to tags that you use yourself for your bookmarks, versus tags that other
+people have used. You can find things that
+you care about within this collection quite
+easily because they become very salient through
+this color encoding. But you see things that
+other people might care about that maybe you
+haven't bookmarked at all, and might be a jumping-off
+point for exploration. The word education,
+for example, it's big. The word photography and
+programming are quite large, and you might decide that you want to go explore those things. On the positive side, there are a number
+of reasons why we might want to use tag clouds. They're compact, you can fit
+lots of words on the screen. The alternatives
+are not so great. This is a visualization
+or four different ways of representing the passwords. These are the most common
+passwords that people use. Unfortunately, the word
+password 1,2,3,4,5,6, are the most common
+password terms in this dataset. Don't do that. Use stronger passwords. But these are different
+ways of visualizing this. In the upper left, you have the standard tag cloud, you see all the words,
+you can read them. That's a great way of
+representing them. You have TreeMap's style
+things in the bottom left. You have a bubble map
+in the lower right, and then above that,
+in the upper right, you have a bar chart
+style representations. You can see that, in
+terms of compactness like the amount of information you can put, that's still readable. The tag clound respresentation,
+word cloud representation, in the upper left, beats all
+of the other systems. Even though we can say, oh, this doesn't really seem the best way of
+representing the data, it's really hard to read, it turns out that the
+alternatives are not so great. There is something
+positive to say about word clouds as being
+a great representation, when you need to compress lots
+and lots of textual data, in a still readable way. So: compact, lots of words fit. The next thing is that
+it draws the eye towards the most important
+frequent tag or word. We also get three-dimensions
+simultaneously. In most standard representation of tag clouds or word clouds, alphabetical order is what you start with. It makes sense. People would like to be able
+to search if they don't know what's in the dataset, but they might have some concept of what they're looking for. Like the word photography, they should be able to find that by basically
+searching through, and doing that
+alphabetically makes sense. Size indicates importance,
+that's that dimension. The tags themselves,
+like the content of the tag, is meaningful. The words that are appearing
+as instances like that, the mark on the screen
+is the actual word. There are negatives to this. Okay. There are negatives that emerge in the use of word clouds, and we should acknowledge that. There are perceptual issues, which we'll talk about a
+little bit more in a second. Sophisticated groupings are gone, things that are related to
+each other go away. Okay. Words for all different
+programming languages, for all the different
+operating systems, are kind of hard. For some tasks, it was discovered that
+they under-perform. There is a set of tasks and I'll point you at this paper
+if you're curious. There is a subset of
+search kinds of tasks where people do better with
+other kinds of encoding, even though they might
+have to scroll or zoom around in order to find things. You have to consider that. It turns out that this
+was a problem originally, I'm not sure, it's such
+an issue these days. Even the people who made
+Word Clouds and use them, it was kind of a feature of the software that you
+can just turn on. If you had a blog or if you installed WordPress or whatever, you can flip a switch
+and suddenly you had a Word Cloud visualization
+on your system. People just used it because
+it was available, other people used it, too. It turns out that the developers
+of these sites didn't always know what was
+being displayed or shown. That was kind of potentially
+problematic if you're using visualizations but don't know what's actually
+being represented. Okay. To narrow
+down or focus down, on the more specific issues we talked about, these
+groupings problems. Meaningful associations are lost. If I put up a tag
+cloud over here, Word Cloud, and I asked you to find all the
+different country names. You're going to find
+that difficult. You're going to have to scan through looking for these things. If I tell you to find the operating systems
+that are mentioned here, similarly, you're
+going to have to scan to find those things. This is going to be a
+little bit problematic. The perceptual
+problems are varied, but there are a number of sort of underlying processes
+that are happening. If you remember back to our first InfoVis
+set of lectures, we talked about
+different kinds of perceptual problems and they will emerge in Word
+Clouds quite often. Longer words, will grab your attention regardless
+of how tall they are. Remember, it's hard to do that integral versus
+separable thing when it comes to blocks. If we think of a word as being a rectangle in the
+representation in a Word Cloud, the length of that block, based on the length of the word, is going to factor into your decision about
+how big the word is, how important it is. Really big words like
+antidisestablishmentarianism, regardless of how often
+they appear in the text, are going to grab your attention, which may be undesirable. That's problem number one. Problem number two is that people often interpret
+white space, so this is gestalt perception stuff. White-space implies meaning
+when there isn't any. Sometimes people read that there are gaps in the text that just sort of are
+happening because of the way the text is justified, or the way the text is laid out, or just the
+alphabetical ordering. They'll start to see meaning in the text which isn't
+actually there. They'll find these
+groups and that will call their attention.
+The ascenders, the letters that go tall, or descenders, like a lowercase
+p that goes really low. That will also drag
+your attention because it might sort of fit outside of the block and intruded in white-space or
+create weird white-spaces, that you wouldn't
+know of otherwise. Another thing is that when people do kind of
+vision experiments when looking at Word Clouds, the eye is jumping around erratically from place to place. People have a hard time focusing because they're going
+from one big thing, to the next big thing,
+to the next big thing. They're not necessarily getting
+a sense of all the data, they are just kind of all
+over the place looking at maybe important things
+which is possibly good, that's drawing their
+attention to salient things. But possibly not so
+great because they ignore possibly interesting
+or important things, because their eye is jumping around and it's
+kind of unfocused. Proximity does not hold meaning. We often expect, remember
+Gestalt Principles, that things that are near each other have related meaning. But this doesn't hold when we
+sort things alphabetically. The paragraph-style layout
+will make things difficult for some people and they will decide that there's meaning
+when there isn't any. The position within the
+paragraph affects saliency. In the English language
+that we read from the upper left down
+to the lower right. Your eye is also going to jump. When given a Word Cloud or
+kind of these Tag Clouds, your eye is going to
+jump to the lower left. After you've looked at sort of the big
+thing in the middle, you might start to read
+from the upper left and miss things that are
+important in the lower right. You might think that things
+in the upper left are important because that's often the way we structure text. Visual comparisons are
+going to be hard to see. It's going to be very
+difficult for you to tell when we have two words that are very far away from each other, how much more important one
+word is from the second. These are all
+problems that emerge, as perception problems when thinking about these
+kinds of encoding. There are improvements to this. The use of interaction will
+often make our lives better. This is an example of an
+interactive Word / Tag Cloud, that was done on Many Eyes,
+which is no longer there, unfortunately, it was a
+system put by IBM, which has this little
+search bar at the top. In addition to being able to scan through and find the words
+that you care about, you can basically type in a specific letter or
+continue that into a word. It would focus down to the things that started
+with that letter. Here we type the letter B
+and you can see back, bloom, and so on emerge from this
+collection as, being salient. So this is a way of
+you to focus through interaction on specific things that you know, you're
+interested in. So if you knew what word it
+was that you cared about, you could start typing that in. The other thing that is now common is Word
+Clouds or Wordles. Beyond that kind of
+structured format where it was all in a
+paragraph structure, now we have things like this, where the words are laid out in all different
+kinds of directions. The nice thing about
+this is that you can fit a lot more information
+into one visualization, you can sort of get rid of
+a lot of white-space because you can fill it in with text that you've rotated in some way. So this is an example. The alphabetical stuff goes away. Clearly, we don't have that
+and there's some randomness, so the algorithms
+that are used to generate this are a
+little bit random. This is another example. So this is kind of
+a more cloud shape without the rotation. This is in a different
+language, German, I think. So Word Clouds, what
+are they good for? Word Clouds are good for signaling that there
+are tags or words of interest that you
+might want to use as an entry point basically to jump into a textual collection. When used in that kind
+of social tagging sense that you saw earlier on like the
+delicious stuff, Flickr, they're often great for
+showing you the difference between you as an
+individual in the group. So we can have colors for
+those different things. Tags that you've used
+versus other people. Also, people really
+like them, they're fun. So when asked like, why do you like these things? They're fun like they're
+good to explore. Like you basically
+can dig through them and find cool things. There's something to
+be said about that. Like it is engaging it
+as an engaging format. You now see people
+printing these things, these Wordles on t-shirts
+and selling them. You can see all
+kinds of these uses for Word Clouds that extend well beyond their
+original intent. In part because of
+this engaging thing, people know what they
+are now, they're fun. So that's great. It has also emerged over
+the last few years. So originally, the academic
+community was a little bit dismissive of this kind
+of representation, but people have studied
+ways of improving it. So given the fact that we're sort of stuck
+with these things, that people use them
+a lot and they're useful because of
+various properties, can we eliminate sort
+of the bad properties, the bad aspects of these. So this is a study
+that basically looked at four different alternatives
+for representing the data. What they found is
+a number of things. Things that, the systems were effective in time
+constraint kinds of tasks basically, and
+understanding category. So if you represented the Word Clouds or Wordles
+using formats like this, where they were grouped
+together and colored, people could rapidly grasp
+not just specific words, but specific categories because words that were related
+to each other were placed near each other and colored in a way that
+drew your attention. So this kind of representation or the four representations
+on the screen here that are colored, would allow you
+to see not just the words, but also higher-level categories, things that were
+related to each other. The other thing is
+that grouping could be done using a number
+of different techniques. So you could use the
+whitespace to your advantage. Things like the upper
+left visualization or the lower left, where we've grouped things, the Gestalt principles come into play that basically
+draws your eye, that's as these things are
+all related to each other, there's the extra boost in this particular case because
+we've also used color. You could use one or
+the other or both. It turns out that the
+whitespace version is preferred for analytic tasks
+like the organized version. The two on the left are probably preferable
+for analytical tasks. But the caveat for all this
+is that the results were done when there were semantically
+distinct categories. It's clear that these
+words all belong together. If you had all
+months in the year, so January, February, March,
+April, May, whatever. All of those things were put
+together or different kinds of sports are different
+capital cities of different countries
+were all put together. In that case, it made
+sense to do this kind of grouping and that's
+the data that they used in the experiment. But when you don't have these
+kinds of natural groupings, when it's done on like sort of topic model or other kinds
+of inferential things which may not have these very
+clean kinds of distinction, these semantically
+distinct categories, you might run into problems
+with it because you're then creating categories visually that may not actually
+exist in the data. We're gonna come
+back to that later on when we talk about
+reading tea leaves in text. I'll end here by just
+saying that Word Clouds should be considered
+pie charts for text. You should certainly
+be able to use them. They're great for a
+narrow set of tasks, but I do encourage the
+use of them judiciously. So think about whether the
+task that you have actually requires them if
+the people who are using them will
+benefit from them. Think about their
+applications specifically, just as we would with pie charts, there are cases where
+pie charts are great, so they are very effective
+for certain kinds of tasks. Same thing applies
+for Word Clouds. Just the takeaways.
+They're problematic. Hopefully, you sort of
+understood that there are perceptually problematic
+things about them, but they are more effective
+than many many alternatives. So when you have certain kinds of datasets, they're great. There are strategies
+that can help you improve the way people read them. So that kind of grouping, color or white
+space-based grouping. As I mentioned, like pie charts, there's really a
+place to use them. Alright, and with that,
+thank you for listening.

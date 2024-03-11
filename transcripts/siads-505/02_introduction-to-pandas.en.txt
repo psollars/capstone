@@ -1,0 +1,44 @@
+This week, we're going to deepen our
+investigation into how Python can be used to manipulate, clean, and query data
+by looking at the pandas data toolkit. Pandas was created by
+Wes McKinney in 2008. It is an open source project
+under a permissive license. As an open source project,
+it has a strong community, with more than a 100 software developers
+committing code to help make it better. Now, you should use the tools within
+the course to engage with the instructor, the course assistants, and your peers
+in order to get help with pandas. But I also want to encourage you to go
+beyond this, and frankly, you'll probably have to, and use question and
+answering sites such as Stack Overflow. Stack Overflow is used broadly within
+the software development community to post questions about programming, programming
+languages, and programming toolkits. What's special about Stack Overflow
+is that it's heavily curated by the community. And the pandas community in particular
+uses it as their number one resource for helping new members. It's quite possible, if you post
+a question to Stack Overflow and tag it as being pandas and Python related, that the pandas
+developer will respond to your question. In addition to posting questions,
+Stack Overflow is a great place to see what issues people
+are having and how they can be solved. A second resource you might
+want to consider are books. In 2012, Wes McKinney wrote the definitive
+pandas reference book called Python for Data Analysis, and published by O'Reilly. And this was updated in
+2017 to the second edition. I consider this the go-to textbook for
+the class and an important resource in
+understanding how pandas works. But I also appreciate the more brief book, Learning the Pandas Library
+by Matt Harrison. It's not a comprehensive book
+on data analysis and statistics. But if you just want to learn the basics
+of pandas and want to do it quickly, I think it's a well laid out volume. The field of data science is rapidly
+changing, there's new toolkits and methods being created every day. It can be tough to stay
+on top of all of this. Marco Rodriguez and Tim Golden maintain a wonderful blog
+aggregator site called Planet Python. You can visit visit the webpage at
+planetpython.org, subscribe with an RSS reader, or get the latest articles
+from the Planet Python Twitter feed. There are lots of regular Python
+data science contributors, and I highly recommend that you
+follow it if you're into RSS feeds. Similarly, if you're into podcasts,
+I like Python Bytes by Michael Kennedy and Brian Okken. Their episodes are short and
+more Python news related, and this is a great way to keep up with some
+of the activity in the python ecosystem. All right, here's my last plug
+on how to deepen your learning. Kyle Polich runs an excellent
+podcast called Data Skeptic. And while it isn't Python-based per se,
+it is well produced and has a wonderful mixture of interviews
+with experts in the field, as well as short educational lessons. Much of the work he describes is
+specific to machine learning methods and will serve you well
+throughout this degree. With all of this in hand, let's jump into learning more about the
+Python data manipulation toolkit, pandas.

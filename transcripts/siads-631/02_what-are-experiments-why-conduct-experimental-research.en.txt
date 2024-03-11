@@ -1,0 +1,157 @@
+Hi everyone. I'm Yan Chen, I'm a professor at the
+School of Information at the University of Michigan. So I'm here to discuss
+experiment design and analysis, and so we'll go through this
+course in about four weeks. So the first lecture is an
+introduction to experiments. We'll go through
+the basic concepts, and we'll first talk about
+what our experiments are, why we want to conduct the experimental research given the abundance of
+naturally occurring data. We'll also talk about
+experiment design, some of the brief
+the basic concepts in experiment design. Then we'll go through two papers, one is the foundation
+for lab experiments. We'll talk about
+induce value theory by Vernon Smith in 1982. The other one is an analysis and a framework for field experiments by
+Harrison and list. Then the last topic is online field experiments or
+sometimes in tech industries, it's called A/B testing. We will go through a paper
+by Chen and Konstan. So let's first go through
+the definition of experiments and why we want to conduct
+experimental research. So there are many different
+definitions of experiments, but the most important feature of an experiment compared
+to let's say naturally occurring field data is
+that the experimenter has a lot of control when she
+designs or runs an experiment, and it is a consensus
+among experimentalists and empirical researcher
+that there are no other empirical method which allows a similar tight
+control as do experiments. One of the features in
+experimental design and implementation is the
+procedure of randomization. So we will go through various
+methods for randomization. An important feature about
+randomization is that, selection bias can be
+entirely removed when individuals or groups
+of individuals are randomly assigned to the
+treatment or the control group. So let me first elaborate
+on the control part. How is it that experimenter get to have better control over
+the data that's generated? This is through varying
+certain variables in an exogenous fashion while keeping everything
+else constant. So as an experimental
+you know whether variables are exogenous
+or endogenous. You can isolate the possible
+causal relationships. So let me first define, here's a little footnote on, what is considered exogenous
+versus endogenous. An exogenous variation
+is a variation that the study participants
+cannot control. So for instance, this year
+there's a lot of rainfall, and that's something that we as decision-makers
+cannot control. In comparison an
+endogenous variable is something that the
+decision-maker can control. So I can decide whether
+to join the team or not, or I can decide whether I
+want to be an Umber driver, or how much I want to
+drive if I joined Uber, and those are called
+endogenous variables. So in an experiment
+an experimenter can first know which variables are endogenous versus exogenous. Second, through careful
+experimental design I summate the possible
+causal relationships. A second part about
+better control is that the experimenter controls
+the information decision, and so the experimenter can decide how much information to release to the participants, and this is also important
+for replication. The third part about control is that participants are randomly
+assigned to conditions. So whether you are in the treatment group or
+the control group is not controlled by you but by a randomizing device controlled
+by the experimenter. So through randomization,
+we can eliminate the selection bias and
+we're going to discuss more about the selection
+bias using examples. As a result when you get experimental data if it
+is carefully designed, you would need
+simpler econometrics or Data Analysis methods. So more about better controls. So the experimenter can observe variables that are often not
+observable in the field. So when you look at eBay data, you cannot observe the
+maximum willingness to pay from the bidder, but in a lab experiment you can. More control also means
+that the researcher can calculate the predicted
+equilibrium exactly, and you can observe both equlibrium and
+nonequilibrium behavior, you can also observe
+equilibrium dynamics, how fast or slow people converge to the
+equilibrium prediction. So later on we'll actually
+use an example of first-price auctions to first theoretically
+Compute the equilibrium, and then we're going to give you a dataset as part of your
+homework assignment. So you can look at how people behave and whether it conforms to the
+theoretical prediction. So the next topic
+about why we use experimental methods is the idea of being able to isolate
+causal relationships. So we say that A causes B rather than A just correlate with B, there has to be a number
+of conditions which enables us to make
+these conclusions. The first condition is that the two variables have to be
+correlated so they co-vary, and the covariation between the two variables is not
+spurious or they're not random. Thirdly, there's a
+logical time orders, so A must precede B in time. Lastly, again we're going back to the role of theory that
+theoretically we know that a mechanism is
+available that explains how an independent variable
+causes a dependent variable. So let me go through each
+of these points.The first is extremely important which is correlation is not causation. We often observe two
+variables co-vary and that let us conclude that
+these are correlated. But correlation is a necessary but not sufficient
+condition for causation. So for example, we observe
+that countries with a high rate of infant diarrhea also have bad road conditions. But we know from common sense
+and from data that that road conditions cannot possibly cause infant diarrhea
+or vice versa. So these are correlated, but there's no
+causal relationship between these two observations. The third part the third
+aspect is spuriousness. So for A to cause B the covariation between
+the two variables should not be spurious. So what would be a
+spurious correlation? One example is that
+ice-cream sales are highest in the city when the
+rate of drowning in city swimming pools
+is also highest. So in this case the high temperature is
+the common variable, and ice-cream sales does not cause drowning or vice versa. The third aspect is that
+there has to be a time order, a logical time order
+between A and B. So if for A to cause B, A must precede B in time. So for example, I kicked
+the table and hurt my toe. Then kicking the table
+precedes hurting my toe, and this gives us a
+plausible time order which says that
+kicking the table is the cause for hurting my toe. So the last part is
+the role of theory. So a good theory it could
+be mathematical or not, it provides a mechanism which explains how an independent variable causes a
+dependent variable. There are several
+rules for theory even though this is about experiments, experiment design and analysis. So the role of theory is
+that theory explains facts, theory can also make predictions. Oftentimes these predictions
+are quite precise. The last part is theory
+formalizes intuition. So implied in all of these is the idea of confounders
+or lurking variables. So when we design an
+experiment we want to make sure that there
+are no confounders. So what is a confounder? A confounder is a variable
+that influences both who is selected for the treatment and the outcome of
+the experiment. Another more common definition is that a confounder
+is a variable that influences both the
+dependent variable and the independent variable
+causing a spurious association. So here is an example. So the question is
+does SAT preparation costs courses improve SAT scores? If you just look how
+the correlation, the answer is positive. So in this case SAT
+preparation courses is one factor is the independent
+variable we call it X. SAT scores is the outcome
+variable that we call Y. But if you think deeper about this relationship you
+will realize that there are unobserved
+factors which predict SAT scores that are also correlated with
+taking a prep course. What are some of these? One example is family wealth. So these rich families are able to provide their kids
+with SAT prep courses, they're able to pay
+for the tuition. But they might also
+provide other resources that would help
+improve SAT scores. So in this case we
+say family wealth which has Z variable is a confounder because it is positively correlated
+with both X and Y. So experiments can be a solution to the problem
+of unobserved confounders. In experiments, let
+me first define some of the terminologies
+that we often use. We say that there is usually a treatment group or at
+least one treatment group, and at least one control group, and these terms come
+from medicines. So when you're in a
+control group you take a pill which has no
+active ingredients, whereas if you in the
+treatment group you take a pill that contains the active ingredient that medical doctors
+might want to study. So in the generic experiment we also use the same terminology, the treatment group
+versus the control group. So one thing that experiments can do is random assignment. So subjects are randomly assigned to treatment or
+control conditions, that help generate statistically
+equivalent samples. These can all be tested. We'll talk about examples
+later on on how you might test whether the random
+assignment gives you statistically
+equivalent samples in the control and
+the treatment group. So going back to the SAT example, if we use random assignment
+if this can be done, then we will ensure that
+subjects or students taking SAT prep courses
+versus those who are not given SAT prep courses
+are randomly assigned. Which means that if you look at the distribution
+of family wealth, you will have the
+same distribution in the control group and the treatment group which resolves the issue
+of confounding.

@@ -1,0 +1,119 @@
+Hi everyone. We're going to discuss reputation systems and contributions to public goods. We're going to first go through some well-known Q&A sites and then talk about
+potential biases. This is a short paper
+that essentially tried to reconcile predictors
+of answer quality in online Q&A site. Two papers were published, essentially both about field experiments
+at Google answers, which is one of the
+earlier Q&A sites. The first paper find that higher price leads
+to better answers. The second one found that higher price leads to longer
+but not better answers. It turns out that
+these two papers have different ways of
+analyzing the data. There are lots of
+differences in the design. For instance, how did they
+treat unanswered questions? The rate of background
+was different, the rating protocols
+who was also different. This is essentially
+a reconciliation, if two papers report field
+experiments on the same side, the conclusion should not
+conflict with each other. In a way, this is a
+small-scale meta-analysis. What we end up doing is to re-analyze data from
+both experiments. The analysis procedure was
+to re-rate Harper et al. data by applying Chen et
+al.'s rating procedure. Then the rating
+procedures are the same. We apply the Heckman method
+to the original Harper et al. data and the re-rated data as well as the
+original Chen et al. data. We find that the price
+effect is actually two fold. A higher price
+significantly increases the likelihood that a
+question receives an answer. But condition are receiving has are the price has no
+effect on quality. That reconcile the effects
+the original differences. The technical side is, how do you handle
+a selection bias? The first paper, Harper et al. assign the lowest quality score to the unanswered questions, whereas Chen at al. excluded the
+unanswered questions. To resolve this selection bias, we apply the Heckman method, which is very similar to instrumental variable
+regressions. But the Heckman method uses a more stringent
+set of assumptions. The Heckman method was
+introduced by James Heckman in his 1979 paper on selection bias. It provides a way to
+correct for selection bias by using a two-stage
+statistical approach. Remember when we were doing IV, we use the two-stage
+least squares approach. Heckman started his research along this line by looking at something that labor economists
+we're interested in, which is; what's the effect of women's education
+on their income? It turns out that when he
+started this line of research, it was in the 1970s
+and that's when women started to participate
+in the workforce. Sometimes, until they have their first child or sometimes even after they
+have their children, they might return
+to the labor force. The selection bias there is the fact that whether
+a woman decides to become a stay-at-home mom or participating in the labor force is not a random decision. The Heckman method essentially is looking at the decision
+as a two-stage process. The first stage is, you use the covariates to estimate the likelihood
+that a woman is employed. The second stage is
+that given a woman is employed to estimate the effects of education on woman's income. The equivalence to the Q&A sites you have questions that did
+not receive any answer. Here you have, you observed
+some individuals in your sample who have an education and maybe sometimes
+a very good education. They are stay-at-home moms, which means that they
+don't have a salary. I mean, should you conclude
+that education has no effect on their income. The Heckman method enables us to break it down into a
+two-stage process. What we did was to
+evaluate the probability, the factors that determine that a question receives an
+answer on online Q&A site. It turns out that price has a
+significant effect on that, regardless of which
+dataset you'd look at. That's consistent and
+it's highly significant. The second stage is, given that there is an answer, what determines answer quality? Well, then you look at
+the effect of prize. It turns out that it doesn't have any effect on any
+of the data sets. However, it turns out
+that the reputation of the Google researcher who
+answered the question has a robust effect on answer. Quality. This pinpoint the effect of reputation in these Q&A sites. Let me just summarize
+this short paper, which is a comment. In itself, a comment on
+two previous papers. One is price has an effect on participation but not quality. The second one is that reputation has a positive
+effect on answer quality, conditional on a question
+receiving an answer. I'm going to now leave Google Answers and look at
+some of the other Q&A sites. It turns out that
+there are lots of different ways to construct
+its reputation system. For several of the
+well-known Q&As sites, the site employees, what's
+called a virtual currency. This was in Baidu Knows, in Knowledge In, and
+also in Yahoo Answers. Here is a brief history
+of these different sites. If you look here, when these
+websites were founded, it turns out that Naver in
+Korea was the earliest one. Naver was founded in 2002, Baidu Knows in 2005, Yahoo Answers also in 2005. Each of the three websites which are variance of Naver's
+original system, you can earn points at
+a flat rate per answer. If you get a best answer, you get more points. There's also incentives
+for asking questions. For Yahoo Answers, for instance, they pay a flat rate
+for asking questions, whereas on Naver and Baidu Knows when you
+post a question, there's also an option to offer flexible points
+for best answers. You will see this feature
+in Stack Exchange as well. Stack Exchange right
+now is probably the most well-known Q&A sites
+in the technology field. It was set up in 2008 as a Q&A website focused on
+programming questions. It was known as Stack Overflow. In 2010, it was
+expanded to create a network of Q&A sites
+called Stack Exchange. Today, Stack Exchange
+is a network of a 173 websites covering a
+wide range of subjects. Stack Overflow is the 41st most engage website in the world so that's quite remarkable. Here is an overview of the various websites
+on Stack Exchange. You will see there's one right under Stack Overflow
+is called Mathematics. It turns out that a field
+experiment that we're going to discuss soon is
+going to be conducted there. The current reputation
+system on Stack Overflow is, you can get reputation
+when your question is voted up or when your
+answer is voted up. These are each worth 10 points. When an answer is accepted, you get 15 points. When a suggested
+edit is accepted, you get two points
+and there's also a bounty awarded to your answer. In fact, it's interesting that Stack Overflow actually changed
+this reputation system by downgrading downgrading
+the number of points that a question receives from
+10-5 and then back to 10. It might be an interesting
+thing to look at, an interesting
+variation to look at. This slide basically talks about the various reputation systems. Upvotes initially, upvote some questions
+are awarded 10 points, in 2011 was reduced to five and then in 2019 this was
+bumped up to 10 again. It seems that if you don't
+have enough questions, you can raise the price and
+that should increase supply. The law of demand and
+supply also applies in the Q&A sites and
+to virtual currencies. There's also badges. These are the reputation systems. Another fairly lively
+Q&A sites is Quora. One feature about Quora is everyone has to use
+their real name. I think the quality of
+the site has a lot to do with the fact that people are using their real identities. There are several
+salient features such as personalized feed of content and also your ability to
+upload or download answers. Usually the most upvoted answers are displayed at the top. There are also various
+user engagement drivers such as the Top Writers Program, Partner Program, and Meetups. These are all ways
+to engage the users. This is an overview of why reputation is important
+and the types of reputation systems that you see on websites providing
+user-generated content.

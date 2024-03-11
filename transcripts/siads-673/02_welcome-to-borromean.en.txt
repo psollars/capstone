@@ -1,0 +1,75 @@
+Hello. If you've taken
+another class from me, then you've seen
+these slides before. I am a huge fan of replicating certain
+environments in the real world. I don't believe in typical
+homework assignments, where I give you a problem set, and you just answer
+the problems for the sake of the
+homework assignment. You are all going to
+be professionals, and part of being
+a professional is understanding the business value behind
+certain assignments. For this class, you are now
+working at a fake company. Welcome to Borromean digital. You've got an email
+here from Kelly that's welcoming you to
+your new fake job. There's a wonderful
+Borromean website. If you go take a look at it, it's actually really bad, but it's a fake company
+designed to show a point here. We're waiting for you to
+pass your background check. Most of you will have access to sensitive data and will have
+to pass background checks. Here at Borromean, there's a group of
+people who work here. You will get your homework
+assignments posed as emails from the individuals
+who work here looking for help
+solving their problems. In this case, in the Cloud. Kelly is our CTO. She's got two degrees. She's not really the most
+technical person in the world. She's your boss's boss's boss. Without question, she is
+really a business person. She's got some cats and a dog. She likes to read the
+physical newspaper in the morning, printed
+on newsprint. She's in her early 50s, and she's married to Ian, who works in the
+product team here. Sometimes, there's
+some drama there, although I don't
+think of this class. Raj is your supervisor. He's got a degree from Oxford. He really likes
+playing with Alexa. He used to be on the web team. He's been here for a while. He also has a really fat cat. We've got our
+director of security. He's been here for five years. Really he's unhappy
+that somebody keeps taking candy out of his drawer. He doesn't really
+like that very much. Then Lawrence is head
+of our research group. Definitely, not a
+technical person, likes to ask a lot of questions. He was an Analyst 11 years
+ago and has slowly moved up to be the director of
+research and development. One of the things
+that happens in this class is there's
+a lot of ambiguity. There are multiple ways to
+complete the assignments and not necessarily
+one of them is right. There are multiple correct
+ways to get to the answer. There are some
+questions that are worded in a manner that
+it is to be ambiguous. In most classes, we have one
+way to get to the answer. We have an Autograder
+that comes in and says "This is how you
+get to the answer. If you don't get to the answer, that way I fail you
+on the Autograder." That's not how the
+real world works. In the real world, your boss or the person who's asking you to do something
+doesn't know the answer, and may not even know how to
+go about getting the answer. So we try to recreate some
+of that within this class, and that leads to
+some ambiguity. In your homework assignments, if you don't know what to do, just describe what you did. If the answer is, "Hey, give me the data
+from the database, and tell me about our sales
+results for last year." Well, that database may have 25 years of data and in
+across multiple regions. You may interpret
+that request to say, "I'm answering this for the
+European region because my boss happens to be the director of sales for
+the European region." They probably don't
+want worldwide sales. They want the European
+region sales. When you answer the question, you might provide that
+additional clarification. Likewise, you may get a
+question that says, "Hey, we need you to spin
+up a server to solve this Python
+problem for this class." Well, there's not a lot of
+detail around what type of server there is or the
+requirements of that server. So you might actually have
+to look at the problem, and respond back in
+writing saying, "Hey, I spun up a small server. Answer this because
+it looks like this is a pretty simple problem." Your ambiguity, it is where you bring your business
+value back to your customers or your employer. Your ability to read
+between the lines. In this class, we have a
+decent chunk of ambiguity. If you get stuck or you're
+feeling stressed out about it, please do reach out
+to the teaching team, and we are happy
+to help guide you down the path. Thank you.

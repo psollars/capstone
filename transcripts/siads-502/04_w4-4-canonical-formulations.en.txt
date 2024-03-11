@@ -1,0 +1,46 @@
+Math methods for
+data science optimization, canonical formulations. What does a canonical
+formulation mean? A canonical formulation is
+the root form of something. If you're data problem
+matches one of the canonical
+formulations or could be transformed into one of
+the canonical formulations, it's like a guidebook for
+solving your problems. Canonical formulations
+include linear regression, linear regression and
+variable selection, compressed sensing,
+support vector machines, logistic regression,
+matrix completion, inverse covariance estimation,
+deep belief networks, image-processing, data
+assimilation amongst others. We're going to walk
+through the intuition of linear regression
+optimization. See we have a labeled dataset, meaning this is
+a supervised method and we know the outcomes, and we have two input
+variables; age and sex. Our output variable
+will be height. This is what our raw dataset
+might look like and here's a mathematical notation representation of our data. The subscript corresponds to the variable number and the superscript is
+the person number. For our general linear model, we're regressing
+height on age and sex. So by on variables x_1 and
+x_2 along with an intercept. Our hypothesis for
+our linear model includes this particular
+function Phi, such that h_w of x_1, x_2 equals some intercept plus x_1 w_1, plus x_2 w_2. Our objective function
+would be to minimize over all of the coefficients in
+the set of real numbers, the mean squared error. Our objective function
+is to minimize over the set of all
+coefficients in the set of real numbers the average
+distance between our predicted values and our observed values in the set of linear
+regression values. What does this mean? Let's look at
+a visual representation of linear regression. We have variables x_1, age, plotted on
+the x axis, and y, height, plotted on the y-axis, and we're plotting
+our data colored on sex. We then put in our function
+based on our hypothesis. This is the training algorithm
+based on my inputs. The objective function is the function of
+the average distances between my observed points
+and my training algorithm. Does the training algorithm have to be a linear regression? No. Training algorithms
+can be anything; linear, polynomial,
+even neural net. Matching our data to
+the training algorithm through a canonical
+formulation will give us a set of appropriate
+objective functions we can use to evaluate
+the algorithm. Throughout this course,
+we're going to focus on the simple cases of optimization including
+linear and logistic regression.

@@ -1,0 +1,83 @@
+So now I want to talk a little
+bit about using JSON in Python. We're really lucky in that sort of
+JSON has been in Python for a long time and it has a really
+beautiful support for Python Python has really beautiful
+support for JSON and the data models that are JSON are very
+similar to the data models in Python. Other languages like say Java or
+PHP, their mapping is fine, but it's not as, the Java one is
+probably the most difficult one because Java is a very
+highly structured, highly typed. Python is a less structured language,
+because it uses lists and dictionaries over and over and over and
+that's pretty much what JSON does. So we have a JSON library, we've got
+a couple of bits of sample code right here like
+www.pg4e.com/code/json1.py. This little bit of code shows how you
+actually create an internal data structure and then serialize it. Remember you've got an internal data
+structure, you serialize it, you send it, you receive it, you deserialize it, and
+have you have a new internal structure internal data structure. So I'll show you all those. This json1.py, we import the json
+library and then we start making a dictionary, a variable named data, and
+we say data sub name equals Chuck. And then we say data sub phone equals a
+new dictionary because we're going to put a dictionary inside of a dictionary. And then we're going to say data
+sub phone sub type equals intl, data sub phone sub number
+equals a phone number. Then data sub email equals a dictionary,
+and then data sub email sub hide. So that's like a dictionary
+within a dictionary and a key within a key of a dictionary. And then we're going to serialize it. So dump s stands for dump this out as
+a string and the first parameter is either a list or a dictionary, and best
+practice is at top levels to be a dictionary. indent equals 4 is a pretty printing
+that says, you know, don't just run it out all in one line
+because the computers wouldn't care, if we're going to show it to humans,
+put it out with an indentation and show the matching, you know, do
+indentation and make it look pretty. So this produces the following
+output, right? We have an outer dictionary,
+and then under the name, the key that's name, we've got Chuck. Under the key that's phone we
+have another dictionary and that dictionary itself has
+type and number. And then email has a single
+value of hide equals yes. So that's as simple, you simply
+construct whatever data shape you want inside Python of lists and dictionaries
+with whatever nesting you want, and then you just say, convert that
+to JSON and send it out. So that's pretty beautiful. So you send out the serialized data,
+and then you receive it and then deserialize it and json library
+has a similarly simple load s. And so this is from
+pg4e.com/code/json2.py. So we're going to import the JSON. Now in this case, instead of reading
+it from a network or opening a file or whatever, I'm just
+going to make a big long triple-quoted string of that exact same
+JSON, as if we somehow received it. In this case, I'm having Python
+be on both the sending and the receiving end of this. But then data is a string, and then I call json.loads and
+pass the string data in. Now this could blow up if there's a syntax
+error because JSON has a syntax you can, like if you have a single quote that
+is supposed to be a double quote that should be, you use a single quote instead
+of a double quote, you can make so many mistakes in it. And so this could blow up and so you might
+have to try put that in a try block, print out an error message, or whatever. But when it's all said and done,
+info, this variable, comes back and given that this outer thing is a curly
+brace, we get a Python dictionary. And then we have dictionary sub name, we have dictionary sub
+info sub email sub hide. So we can just look these things up. And so it's really quite natural
+and quite nice. You just see this serialized, nested
+structure, you deserialize it, and then it's just an internal structure
+that's really easy for you to use. You can also serialize lists. The best
+practice is to make objects, but there's json3.py and json4.py. And you can look at those,
+they look almost exactly the same as those other ones. We put a
+for loop in, of course, because it's a list. Now if we take a look at
+doing this in XML with www.pg4e.com/code/xml1.py, you would read some
+serialized XML data and there is a built-in library
+in Python to parse XML. And so say take a tree from string. Now the key thing that's kind of weird
+about XML is it can be nested infinitely deep, right? And again, it's self-describing,
+which is quite nice. So we know what a person is,
+we know that, things like that. And so you'd call tree.find. And if you
+watch the Douglas Crockford interview he talks about how you end up with
+a tree that you then send queries to. Well, that's what we're doing here. We're actually like querying the tree. The tree is not a natural internal
+Python data structure like a list or a dictionary, it's a object that
+we have to send queries to. And those queries kind of
+work their way through, etc. And the key is when you do JSON,
+when you do JSON, you get back a native Python
+dictionary or list. And so that's, again, this is kind
+of why XML is not preferred when you're just sending lists or dictionaries
+back and forth between various languages. Now that is not to say
+that XML doesn't have its place, I mean, Microsoft Word has documents
+that are DOCX, and that's an XML format. And you have like chapters and sections and
+headers and lists and paragraphs and sub-paragraphs and figures and that's all
+very structured data, very hierarchical. And so XML is a great format for that. And XML and HTML are very similar and HTML is
+also a very hierarchical document because it's trying to represent and mark up text
+to produce a pretty looking document. So I don't want to beat
+up too much on XML. I mean, JSON is superior for those
+things where we're exchanging lists and dictionaries with different programming
+languages or across the network. XML has its place as well. So up next we'll do some demonstrations
+with some code that uses JSON. [MUSIC]

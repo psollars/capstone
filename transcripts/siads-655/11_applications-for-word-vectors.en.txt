@@ -1,0 +1,139 @@
+So far, we've talked
+quite a bit about how to learn word vectors. Let's take a look at what
+they're good for in practice. So what can we do with these vector representations
+of meaning? Well, there are many
+methods that you can use them as for, as features, essentially word vectors
+form a representation, you can do use for
+NLP learning tasks. There are also
+intrinsic applications that we can use word vectors for, to study language or
+the vectors themselves. Finally, there are extrinsic applications to study culture. Let's take a look at
+examples of each of these. We can think of vectors as useful for features
+for machine learning. Many of the applications
+that we use in NLP depend on knowing
+the meaning of words. Machine translation parsing
+or even classification, benefit from having word vectors that effectively capture meaning. These vectors provide powerful representations of meaning, in the essence because they capture all different aspects. In practice they often
+work well because they allow models to
+generalize better. We can train large models
+of word vector meaning, over billions of words. So that then, if we only have a small amount
+of training data, but we're using vectors
+that are pretrained, we can actually join use
+them to generalize better. These dense vector
+representations, through SVD or Word2vec often are efficient representations
+of meaning as well. Let's look at an example, for classification on vectors. Returning to one of
+our earlier examples for classification on movies, let's say that we have a bag of words representation
+for two movies. We might also have a set of
+pre-trained word vectors, say trained over lots
+of different words or different corpora or
+more movie reviews and say that we have
+in our collection. One thing we can do with these, is to say to convert the
+documents into word vectors. Or there were there average
+word vector representation. So we can essentially
+embed the documents here, by taking the
+average word vector. Say for Movie 1,
+we would look for drama and then find the word vector
+corresponding to drama. We would do this
+for all the words that occur in the Movie 1 review, and then create a
+movie representation, in the embedded space, with two-dimensions
+corresponding to the word vectors, two-dimensions. In practice, when we train word vectors on much
+larger corpora, that can potentially enable our document vector
+representations, to generalize a lot better, especially, when being
+applied to domains. Or to word instances that they haven't seen
+before in training. Let's take another example of intrinsic application
+for word vectors. Here, we'd like to study
+the word vector themselves. Or typically, try to use
+intrinsic applications to evaluate whether we've actually learned a good representation
+of word meaning. Some of the tests
+include looking at word similarity or
+word relatedness. This can actually also
+be used to figure out, what the word vector has encoded, what it has learned as
+a process of trying to capture this distributional
+information? As one example, we can think about looking at
+words similarity. Here, a set of human judges has estimated how similar
+are two words meaning. If we rate these on a scale, we can then try to
+correlate them with how similar are the
+vector similarities? One of the most common of
+these tests is SimLex 999. Here, we have annotated
+everything on a 1-10 scale. For example, we
+might say insane and crazy are rated quite
+similarly by humans, where his arm and neck,
+although thematically related, are dissimilar, ideally, any vector-based similarity would have a high correlation
+with these judgements, if that vector representation is capturing word similarity. Another evaluation is known
+as semantic relatedness. Here, rather than similarity, we want to measure
+whether just two concepts are related in practice. One of the most famous
+datasets that's still used, is worth some 353, which captures both notions of similarity and relatedness, on a larger scale. Here we see things like
+computer and keyboard, have a high relatedness, although a computer
+and a keyboard are dissimilar in practice. Finally, what are more exciting tests that have
+come out recently, which was known just
+analogical reasoning. The idea, is if we have
+two pairs of tuples, say A is to B as
+C is to D. We can try to test whether the model has effectively learned
+a representation, that we could use algebraic
+performs defined. Here saying, if we take b and subtract a from
+it and then add c, can we still recover the d? So let's take an example. If we have Greece
+and subtract Athens, but add Oslo, do
+we recover Norway? In practice, we can actually
+do this for quite a few, say for currency or for other
+types of adverbial forms, for superlatives
+or gendered roles. These are actual
+examples that were solved by Word2Vec.
+It hits paper. In practice this works, because the orientation
+of vectors in these vector spaces actually reflect analogical similarity. For example, if we have the vector between
+King and Kings, we can potentially subtract
+king and add Queen, to recover the vector that
+would point close to Queens. Take another example from the
+nerves paper for Word2Vec. We can see here that,
+when the word vectors for countries and their capitals
+cities are projected into two-dimensional space, that the reflect some
+particular form of orientation that reflects
+analogical similarity. Let's take a look at another
+word embedding method, known as glove from Pennington
+Socher and Manning. Here we can see that,
+it too captures analogical similarity and
+how it's words are embedded, here shown for gender roles. This can even be done, for looking at triples of words, such as slow, slower, slowest. We find that the relationship
+between these three words matches other kinds of
+superlative like words. Let's take a look at
+an extrinsic task, here using word vectors or word embeddings,
+to study culture. The idea is that we can train
+word embeddings on text. Say from different time
+periods or different regions, and study how those words
+relate to different categories. Here in one example, I'm going to show you words, that reflect occupations
+and to see what did these occupations captured
+gender differences? This is a paper and
+the proceedings of the national academy of
+Science from Garg et al. On the x axis on the right, I'll show you a
+women's difference in participation in the
+particular occupation. On the y-axis, we'll see
+whether the word vectors themselves are more similar
+to female gender words. You can clearly
+see from the plot, that the words on the right are more similar to women
+and female words, or also reflect the presence of higher female participation in that particular occupation. In essence, the word vectors are capturing the presence of female participation and encoding some form of gender bias. Let's look at another example, how we can use the word
+embeddings over time, to measure their similarity? Here we're going to
+try to look at bias with respect to certain
+demographic groups. In the same paper
+from Garg et al, we see that Asian names
+have less bias over time, when you create word vectors
+from different decades. This corresponds to a
+decrease in cultural bias, that was has been
+observed in other papers. However, and unfortunately,
+there's been an increase in bias
+towards Islamic names, which we see although
+dropped in the late '80s, it picked up again in
+the mid-two thousands.. Finally, we can also think
+about another application, to study how embeddings
+changed their meaning. Again, the idea is that we
+can learn embeddings across different time
+periods and see what the nearest neighbors to
+words look like over time. In a study from Hamilton et al or we can see how words like gay, broadcast, and awful
+change their meaning. For example, in the
+middle, broadcast, typically used to refer
+to the sowing of seeds, to a broad cast of seeds. Whereas in today's
+present meaning, it refers to typically
+a news broadcast, which is spread throughout. I point these things
+out to point out, that there are many latent
+biases toward vectors, in a paper from Caliskan
+et al, in science, showing that these biases
+persist for both gender, as well as for age and race. When we use these
+embeddings off the shelf, we actually may unintentionally
+bias our models, something to be aware of, although they're
+useful in practice, it may have downstream
+implications.

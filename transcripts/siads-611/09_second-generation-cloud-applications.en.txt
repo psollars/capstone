@@ -1,0 +1,128 @@
+So now I want to talk about the second generation of
+cloud-scale applications. Gmail and Google search were
+kind of the first generation. The second generation would
+be like Facebook and Twitter. They have a more
+challenging problem and that is we weren't all looking at our own little corner of the world with very simple
+interactions between people. Again, Gmail, we've got
+our little silo of mail when you want to send a
+message or get a message, but most of the time we're
+like reading and deleting our own messages, or indexing, or searching, or whatever, and we have some little
+corner and we find our way to that
+corner of the cloud and then we work in that corner. But in Facebook, you had friends. You've got to know
+who your friends are, you have to add, you have to have a way to manage them, you have to find them, you've got to approve them,
+etc., etc., etc. There's very complex
+privacy rules once you sort of start
+doing social media. And if you go into Facebook
+and you go search, you're not searching
+all of Facebook, there's not one search the way there is Google one search, you're searching your view of the world. And so
+now you've got to create like a search index for every single person so
+that you can type that. And so we are going to shard it,
+we're going to replicate it, you just can't use
+a database RDMS, you can't use a single
+database instance for this. So the idea is
+now we're going to shard it the way
+we do for Google, and you've got your little corner, but what we're going to do is
+we're going to find ways to get the data to migrate to you. And so if you're Facebook, you want to make it so
+that when you log in, the thing you see
+can be shown to you efficiently without going
+to 1,000 servers. It's not like Google going to
+1,000 servers of search, you're going to one server and
+you're saying, what's new? What's my status?
+What's my timeline? What pictures came up? And so what they want to do
+is they want to move that data to the shard
+that you're at, right? And so the idea is then now
+you post a status update. And so this is kind of the first picture
+of sharding that I've given you. And just imagine that you're building Facebook
+for the first time and you could even be reusing relational databases
+and you say, look, okay, we're going to do four
+servers and everyone whose name starts A through
+F goes to one server, G through M goes
+to another server, N through R goes
+to another server, and S through Z, and
+maybe there's databases but those databases themselves
+do not communicate. The application is now responsible for moving
+data back and forth. And so Annie's got some friends, Greg and Sarah, and
+there's a status. Annie can log in
+right now and see, whoa, here's your friends. Greg just talked about pizza. And Ron can log in to Ron's server
+and Ron sees all of his status, and Sarah sees her
+status, right, and Greg. And so the friends are
+not in one place, the friend list is
+all over the place, and there might be privacy
+configuration, etc., etc., etc. And so let's just say for example
+something as simple as Annie logs in and gives a thumbs up to
+Greg's pizza comment. Now, certainly we've
+have got to send that thumbs up fact
+to Greg's server. So Sarah is also Annie's friend, so I guess do we send the thumbs up to Sarah or is Sarah
+a friend of Greg? Oh wait a second, we probably
+should have sent that to Ron, I think, because Ron actually
+is also a friend of Greg, but has Ron blocked Greg? So you see the problem, right?
+So you see the problem. There's privacy rules, there's whatever, and we
+want to get back to the point where when any of
+these four people log in, they don't have to go to the other servers
+to pull in the fact that Annie has done a
+thumbs up on Greg's post. So at some point, you've got to get this fact
+that Annie did a thumbs up on Greg's pizza comment to the right places so that
+when everyone logs in, they don't have to talk to any other servers to see that in effect their status line and how many likes and
+how many dislikes. So this is really
+dependent on lots of things and you say, well, if Sarah is a friend of Annie and Annie liked
+Greg's pizza comment, does that mean that we
+also have to send Greg's pizza comment to
+Sarah and the thumbs up? And Ron is friends with Greg but not friends
+with Annie and Greg made the pizza status update
+and Annie did a thumbs up. Does Ron see the thumbs up? Certainly he has to see Greg's comment,
+because they're friends. This is hard, Facebook's hard. And this is why the privacy
+options in Facebook are so complex because I just gave you the simplest
+example and my head has already like got question
+marks all over the screen, okay? But this really isn't
+about Facebook. This is about eventual
+consistency databases and Facebook as an example of
+eventual consistent databases. So there are engineers
+who are going to try to make this sort of
+push to the edge, and I've built some
+of these applications of what I'll call
+push to the edge. It's all sharded and you just
+have to migrate the data, replicate the data, so
+that the cost to show you a timeline or a timeline update
+is as cheap as possible. The cost of moving it to ten different servers, because
+that's how to get to all your friends, is cheaper than when you log in to talk
+to those ten servers. To say oh, my friends
+are on ten servers, let me pull their thumbs up. No, no, thumbs up has got to
+be there before you log in. And so this is very much
+eventual consistency because you literally could do a thumbs up and it might take 5 to 10 minutes before
+everyone sees it. Now, Facebook works really
+hard to get that latency down, but Facebook is absolutely
+an eventual consistency. And you'll notice things like let's make a friend
+conveniently are done in sort of a two phase where like send a note to try to be a friend and then the person
+accepts the friend. And so it's all kind of
+slowed down so that an eventual consistency
+database can work. So you can imagine that the
+Facebook engineers are like just every morning they're solving a new problem
+of how to do this fast, and how to move it fast, and how to figure
+out the privacy, and how to get everything to the right place that it needs to be within, say, two
+seconds or something. And you're like this is the
+biggest data center in the world. We're
+talking worldwide, right? And there's going to be
+some central control, things like who paid for
+what ad or something. And there might even be
+some combination of databases. Just using a database that's not like an
+application-wide database is like a common technique. It's not a problem
+as long as it's just one database on one
+server and it's all sharded. That's not it. Because
+the whole view of it is the base view or the
+eventual consistency. So this is a comic
+strip from xkcd. And it basically explains what happens to engineers. And the
+person on the left says, "Can you pass the salt?" And the person on the
+left is waiting for the salt and the person on
+the left says, "I said." And the person on the
+right says, "I know, I'm developing a system to pass you arbitrary condiments." And the person says, "It's
+been 20 minutes." And the person on the right says, "It'll save time
+in the long run." And that is that lots of
+engineers when they solve a problem overgeneralize to say, "I've built this thing for
+Facebook and it's cool. And look how easy it is for me in Facebook to solve this
+problem of friend lists." And then you solve
+it, and it's cool, and it runs really fast. And then you say, "I
+wonder if other people could use this exact
+same solution." And then you say, "I have a
+new form of a database." So now we'll talk
+about the emergence of BASE-style databases, non-ACID databases, that came out of successful experiments in these second-generation
+cloud companies. [MUSIC]

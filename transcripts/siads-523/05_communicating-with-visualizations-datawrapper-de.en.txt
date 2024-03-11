@@ -1,0 +1,120 @@
+Now, if you've been having hives at the thought of having
+to learn Inkscape, or play with Excel, or Google sheets, maybe you're looking for an even
+simpler solution. There are tools that are increasingly being
+created online that are designed for folks who
+are not coders to do data, and they work really well
+when you're trying to visualize demographic data and consumer data like you're
+doing for this project. So I want to show
+you one of them, which is Datawrapper. And
+notice that it's .de, not .com. You do have to make an
+account for this site but one of the things
+that's really nice is that it prompts you for some of the best practices that we've been talking
+about throughout. So let's take a look. All right, here we
+are, I'm logged into Datawrapper and I've pulled this out of my library of
+charts that I've made. And I wanted to take a
+moment in Datawrapper to show you something we
+haven't talked about yet, and that's mapping index data. So you've got a ton of
+data in DemographicsNow where you are comparing consumer preferences related
+to the average American. And the average American
+gets the score of 100 and you show whether you
+want maybe to visualize are they more likely than
+the average American to agree with a certain
+sentiment or less. And you want to be
+careful not to make this just a laundry list
+of every possible thing. So what we've done here is we've created this really
+nice visualization, and I would say we're right on the cusp of this
+being too much data. But you'll notice that
+when we go through this list of visualizations, that we don't have
+numbers like 100 or 112, and that's because we made
+an executive decision that with index data, we actually turned
+our spreadsheets so instead of saying 100, we had a second column
+that said number minus 100, and that got us
+to single-digit numbers. And the reason that
+that's worth doing here is because if we were
+using scales of 100, we would have much
+wider visualizations that would take up a lot more space than
+we want to use here. But what I like about Datawrapper
+is here's your title, your subtitle, your
+visualization. Again, we're using
+red as the bad color. There's room for an
+explanation of the data, and places to show who made it, and where the data came from. You can also publish it, embed it, download it, and if you share this digitally, you can even click
+here and get the data. And what you'll notice is that a little CSV file
+just downloaded. So let me show you one way, we're going to go back
+to that Wisconsin example, to use the data. There is a couple of things here that are
+really helpful, though. One is you have the option
+of mapping data here. So if you're trying to compare state to state
+or region to region, you might find that helpful. You might choose to
+use a new table here. In general, I would
+have probably just done that right
+within PowerPoint. And you also have the
+option of a new chart, and that's what I'm
+going to show you here. So I have already, over here we have that Annie E. Casey data that we used a while back, so I'll show you that. And
+there it is all highlighted. And what we're going to do
+is we're just going to copy and paste the data table. You can also upload it. You do want to be
+careful in doing this with DemographicsNow data. If you have downloaded
+it as a spreadsheet, just be aware that DemographicsNow will put commas in 1,392,492, and you'll want to
+remove those commas before you upload the
+data because it's essentially treating
+the cut and pasted data like a CSV file and those extra commas will
+get confusing for the system. And I'm going to click Proceed now. We're just going
+to wait a second. You can see there's a
+progress bar up here, we talked about progress
+bars in Week 2. And now it's asking us
+to check the data. And right away I have the
+option of swapping rows and columns, or even
+adding data later on. Right now, let's see what happens if we leave it as it is. And we're going to keep going. And here, we see, just like
+we saw in Google Sheets, we can see right in one example, all kinds of ways
+to visualize data, including the dreaded
+donut chart. And here, we could see,
+I'll bet you anything, this will let us visualize it not only in pie charts but
+a bunch of pie charts. And again, you know that this
+is a bad visualization, right? So remember that computers
+aren't as smart as we are yet and it can't always tell you that you've picked
+the wrong version. Okay, so here I am, I did
+the line graph. And again, if the story that
+I wanted to tell was, "Even over the passage of time, Michigan is still not
+looking great," I could leave this as it is, But I'm looking to
+make that slope graph instead. So I'm going to go
+back to Check and Describe, and that will give me the option to swap
+rows and columns, and are you breathless
+with anticipation? Here we can see that it's
+done that visualization. That's more what we
+have looked for. And notice too that if I
+were embedding this, you see how it is pulling, it's actually superimposing
+some of the data. So that's kind of nice if
+you're doing a lot of digital work or you share
+things in a Google Spreadsheet. For example, you might be able
+to have layers of meaning. And notice over here, you can
+even do a colorblind check. You can also choose
+different sizes, you can predict what it would look like on
+different devices. I can change the
+scales of things, I can change the grid lines. So maybe I want to
+hide the grid lines. That's a little better. Maybe I want to change
+the color scheme. Maybe I want everything
+to look kind of orange. And I can adjust
+the labels as well. And then I can add annotations. So here is where I
+might put my title and then I might
+have my description. I hope you'll say something
+more professional than this. I even can put notes down here. So I can say pre and post recession data. Here, I can say who
+published the data, and I can say it's
+the Annie E. Casey Foundation and I could actually
+even link to the report. So again, making it
+easier for other people. And I can say who made it. I can also choose to
+add text annotations, and I can make even more design decisions
+than I made previously. And then I can click Publish. And here, I have the
+choice to export it, to duplicate it, or to embed it right in my
+website or blog post. Now obviously, I've
+rushed through this, so we haven't done
+enough work with color for this to
+make a lot of sense, but you should get a
+pretty good baseline of what's working and not working, and what
+are our possibilities here. So if you spend a little
+bit more time here, I think you can outdo me. And don't forget that there is this mapping tool
+which I think you'd really like as a way of getting at some of
+that more visual data. Some of you might find as you do your research that
+you want to map existing competitors to the Chicken Kitchen
+scenario, for example. So this will make that
+quite a bit easier for you. All right, so that's all we have to talk
+about visualizations. I'll see you in office hours, and have fun exploring
+this very simple data and the myriad of
+ways that you can visualize it. See you next time.

@@ -1,0 +1,77 @@
+All right, so even though we focused on
+text as kind of written word kinds of things up till now, there are many other
+kinds of texts that we might consider. And people have built visualizations
+to support encoding and analysis and understanding and communication of different interesting
+features of other kinds of texts. So, code, for example, is a kind of
+thing that could be viewed as text. And so, the software engineering
+community, for example, has built various visualization systems
+to help them understand code as text. And this is an example, it's a little bit hard to read because of
+the green over laid on top of the black. But what is being shown
+here are lines of code, and there are multiple things being displayed,
+so the lines of code each line is represented
+in green text on this black overlay. And this is another one by Bradford Paley,
+by the way, but the green text is representing
+the actual program. There's two other kinds of colors
+that are being activated, so there's the yellow and the whitish or the greenish thing that are being
+activated, you'll see that in a second. Basically, corresponding to the order in
+which the code was written, so as the code they basically looked at the time in
+which each line of code was written. And as you'll see in
+a second when it's animated, the lines will highlight based
+on when the code was written. And sometimes the author jumped around,
+like they jumped to other lines of code somewhere deeper in the file and then came
+back, and worked on something earlier. So you'll see this kind of jumping around,
+it's not just linear straight down. The other thing that will be represented
+is the order in which the code is executed. So, when they run this program, what is the order in which
+each line of code is executed? And that additional line you'll see
+them jumping around will indicate the line order. So you'll see this kind of mismatch
+between the order in which the code was written and how the code is
+actually executing, so here we go. So you can see sort of over
+time this thing is evolving, these green kind of swirls as it's
+jumping around or the execution things. And the order in which the code is
+written is kind of being in yellow. So there's a long periods of things
+being written in the same order, but these things are jumping around a little
+bit as well, and it's kind of interesting. The really meta and cool thing about this is this program
+is actually this visualization, so the code used to generate this
+visualization is this program. So, as this kind of meta art piece,
+it's kind of interesting, and this visualization was actually
+part of a museum show at some point. But there more specific things where
+maybe they're more practical for the actual software engineering community
+that is a little bit less meta, but using similar kinds of encoding ideas. This is a program code, and
+the colors here represent sort of how many errors are in the code or
+places of likely errors. So this is a system for debugging code,
+it's called Tarantula, and you can go to the link and
+sort of explore more about this. But this again similar kind of idea,
+we've taken code as text and we've done this additional thing of adding
+color as an additional layer of encoding, in this case errors, so that's kind
+of metadata on top of the text. There are other kinds of textual
+collections that people look at or things that they treat as text that
+didn't naturally start as text. So biological data sets and
+bioinformatics, of course, genetics, if you look at DNA sequences, you have
+your As, your Ts, your Gs, your Cs, that is often represented as text. And so, people have come up with
+visualizations that use the techniques of text encoding for
+specifically analyzing genetic texts. Where there's only four different letters,
+or five if you're looking at RNA as well, but that is a common thing that people do. And beyond that,
+people also do combinations of genetic structures versus other things,
+like documents about biological data. And so, people often have
+representations like this, or basically, you have collections of documents
+that are talking about genes. And if their documents
+are mentioning the same genes or the same interactions in the same
+document, you draw an edge. And so, it is a mechanism by which
+you can analyze relationships and interactions between genetic construct, using textual documents as well as
+their underlying genetic structures. So, there are many other
+kinds of texts as well, this was just a really simple
+example of code and biological data. I guess, my high level point, though, is just an encouragement that
+there are sometimes opportunities for taking things that are not
+naturally conceived of as text. And transforming them
+into text structures, which then opens up opportunities for
+all kinds of different visualizations. The same thing applied for
+network datasets, often things that we don't
+think of as network datasets. We can take that and
+transform it into a network and then visualize it that way, text works
+often for that purposes as well. You can actually take text and transform it into a network visualization
+as we saw some examples already. But think about your data,
+does it make sense to view it as text? And, what of the many
+visualization techniques then apply is the next consideration, and
+there will be some cool things that you're able to do if you're
+able to take your data and find ways of representing it in this way. All right, and with that,
+thank you for listening.

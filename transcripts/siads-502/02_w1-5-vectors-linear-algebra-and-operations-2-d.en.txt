@@ -1,0 +1,84 @@
+Math methods for
+Data Science vectors, linear algebra, and
+operations in two-dimensions. Many different algebraic
+operations can be performed on vectors
+including addition, subtraction, scaling, dot products, length,
+and cross-products. All of these vector operations
+have specific formats. Addition and subtraction
+will produce vectors when adding two or more vectors
+of two dimensions. In this case, most
+of our notation will include a u vector and v vector, representing two
+2-dimensional vectors. In addition, subtraction we will create a new
+vector where we add the components together from each of these two vectors
+or subtract them. Scaling, where we're
+taking a constant a and multiplying it by vector u, which is equivalent
+to multiplying the components by the letter a. The dot product will
+produce a single value. Dot products are represented by a dot in between two vectors. The length of a vector, again represented by placing the vector inside of two bars, is equivalent to
+the square root of the sum of each of the components
+of the vectors squared. We will also talk
+about cross-products, but only for vectors of
+three or more dimensions. Instead of looking at vectors in terms of mathematical notation, we can think of vectors as just a set of numbers in a list. Instead of writing them
+in mathematical notation, I can write them like this. Either represented
+as points were in the coordinate system or I can put them inside of brackets, and represent them stacked
+on top of one another. These are two-dimensional
+vectors or two vectors. A two vector has a size of two, basically telling
+us that there are two elements inside this vector. What would a one
+vector look like? We don't typically
+differentiate one vectors from numbers since a one vector
+would have one element, and therefore just be
+equivalent to a single number. An n vector would
+have n elements. So a three vector or a seven vector would have
+three or seven elements. These would just continue
+stacking numbers on top of one another to represent
+this particular vector. Another unfortunately
+confusing part about vectors is
+how we index them. Indexing vectors refers to how I should refer to each of
+the elements within the vector. How should I talk about
+the value negative 2.4? Well, since negative 2.4 is the first element
+in the vector v, I could call this v1. To refer to any element
+or component of a vector, we can use the notation v sub i where i is the position of the component from i
+equals one to n. Meaning, this first component
+here starts at one, and the second component
+would be two. When we talk about computers
+and indexing vectors, computers typically start
+from i equals zero. It's just important to note that there is
+a difference between computer indexing and mathematical
+indexing for vectors. We will stick with a mathematical
+indexing for vectors, but do be aware of this
+in future courses. Let's see how some of these
+operations work with vectors. Say we have two
+2-dimensional vectors, u and v. Let's draw
+them on our plane. Here I've drawn both vectors, u and v. When I want
+to add these vectors, I follow the format given. So I take the x components
+of each vector, six from u and five from v, and I sum them, and then I take the y components 4 plus 2. This creates a new vector, (11,6). You can see when we sum these two positive vectors
+that we create a third vector that
+splits the difference between them and
+increases the magnitude. Let's take these same two
+vectors and subtract them. We will take vector
+u subtract vector v. This is equivalent to taking the x
+components from vector u, and subtracting 6 minus 5, and the y components 4 minus 2 to produce a new vector, (1,2). This new vector is
+the difference between u and v. Now let's look at scaling a vector where
+we have a constant a, let's say 1.5, and we're scaling this vector u
+by that constant. In order to scale, we will take the constant and multiply it by each
+of the components. Here 1.5 times 6, and 1.5 times 4 producing
+a new vector, (9, 6). This vector will be
+the same direction, but a greater magnitude
+than the original. Dot product between two vectors, u and v will produce
+a single number. In order to calculate
+the dot product, we will take each of
+the components from each vector and
+multiply them together, and then sum them
+across components. In this case, we have
+two vectors u and v, the same vectors
+we've been working with and we'll multiply their components and then sum them to find our dot-product. I'll take the x components from each vector six and
+five and multiply them, and then sum the product
+of the y components. In this case, I have 30 plus 8 giving me a dot product between these two vectors of 38. Let's calculate the length
+of the vector u. In this case, we have
+a two-dimensional vector u, and we're going to plug in our components into our formula. So to calculate the length of u, we will take
+the x component squared, plus the y component squared, and the square root of the sum. So here we have
+six squared or 36, plus four squared or
+16, all square rooted, gives us the square root of 52, which you can leave as
+the square root of 52, or you can solve this
+into decimal form. Or you could simplify the square root as
+2 times the square root of 13. This is the representation of
+the length of the vector u.

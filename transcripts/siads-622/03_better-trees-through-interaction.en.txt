@@ -1,0 +1,170 @@
+Hi, welcome back.
+We're going to talk about interactivity and how that might actually improve some of the hierarchical
+visualization techniques that we've seen. Remember, we have to deal with this problem of too
+much branching, too much data, the single
+branch depth is too much. What we'd ideally like
+to do is apply some of the interaction techniques
+that we've learned about. Remember we have these
+seven different types. Can we use them to
+basically improve our visualizations and make them easier for certain tasks? There might be things
+to help us select different sub-trees to
+filter pieces of the tree to get details on demand to get better exploration and so
+on. How do we leverage this? I'm going to talk
+about a couple of different high-level
+techniques and base them on specific
+case studies, so you can see specific
+examples with real data. The first case that
+we are going to look at is when we want to visualize nodes that have
+basically represent entities, so think about
+Wikipedia categories or an org chart or phylogenetic
+tree like we have these different
+levels that represent real things and we would like to basically be able
+to move through them. The domain tasks that we're
+going to target are finding specific people in an org chart or comparing different
+sub-organizations. Is this little sub-organization bigger than this other one? If we're an analyst trying to understand the way
+a company works, maybe we will have
+a task like that. Abstractly, this applies across all the different
+domains that we might consider that has support for finding the entities like we have something specific in mind, how do we find it within the
+hierarchical visualization, the dataset and then support the comparison of these
+different branches. These are the domain
+and the abstract tasks. The example that I want to start with is something
+called a space tree. This is a highly interactive
+hierarchical visualization where basically you don't
+see all the data at once. It doesn't give you that overview first where you see everything. You just get a sense of
+what's underneath through these little triangle icons that you can see at
+the end of each node. At the end of each node,
+there's a little bit of an icon which is indicating
+the branching, how much branching you
+can see and the depth. The size of that triangle is telling us how much
+deeper we have to go. You can see in the
+bottom right there's a triangle which is telling us we have a little bit more
+to go in terms of depth and it's an average width. We don't have a lot of branching. Some of the other examples
+you'll see in a second have much wider triangles
+and will look like there's a lot more data, that is siblings or cousins, basically
+sitting under that node. In this particular example, the person has searched
+for something. When they do that, all
+the branches that match become open and visible and
+highlighted, so made salient. There's a little search bar at the top that supports that. Let's see another example of
+browsing through the space. Here, the person is clicking
+on a node and it expands. Notice the smooth expansion, notice these triangles again indicating how much more
+data is underneath. As we click, we basically are able to go deeper
+and deeper and deeper but there's a breadcrumb
+that's always retained. The path that we took
+from the root to the lowest level is
+retained visually, allowing the person to basically track through that experience and basically be able to back out and go and maybe branch
+off somewhere else. We're not ever showing
+all the data at once. There's a hint through
+these little icons of what exists underneath and these breadcrumbs of where we've gone. The visualization is
+quite expressive just to summarize its power. It's expressive, it supports
+all tree-based comparisons. You can load up multiple branches simultaneously in
+different places and compare them if necessary. But you can't see
+everything at once, which is reasonable given the
+constraints that we have. It is effective,
+there are lots of great functional features like the single-direction
+preservation. It's always going
+from left to right, you're moving through this. The branches re-scale as we go to basically
+fit the screen. If we have lesser real estate, you can make things a
+little bit smaller, the font size, the squares, the rectangles can become
+a little bit smaller. You saw that smooth
+optimized camera movements, so the things slid nicely. The visualization
+slides as you move, those preview icons are great. Again, the filter functions are another powerful tool
+because you can focus your attention on
+the things that you know exist that are
+of interest to you. There are some trade-offs.
+You can focus on specific branches and entity but some other contexts
+might be lost, because we're never showing you the high-level overview
+of everything, and so you might lose a little
+bit of that information. Everything is seen
+in the same detail. There will be other
+examples that we can go through that do it a
+little bit differently, maybe the rectangles representing entities that you're currently focused on become much bigger. That's called the
+Degree-of-Interest tree. But there's an effectiveness
+trade-off there. We are making it possible to see lots of data at the same
+time on the screen, but maybe the current
+thing that we're actually focused on looks
+the same as everything else. The question is, can we get back some of this
+focus plus contexts? The thing that we're focusing
+on should be bigger, and the thing that's
+maybe a little bit less interesting can still be retained and seen
+on the outer edges. To do that, we're going to apply a technique called
+focus plus context, and that is hyperbolic
+transformation. Think of it as a fish-eye lens. If you've ever seen a camera
+with a fish-eye lens, it takes pictures that
+look something like this. It gets the thing
+that's in the middle of the shot and it's quite
+large and in your face, but everything else that
+is on the outskirts, the peripheral vision of that fish-eye lens
+is still retained, and visualized, and captured just simply on a
+much smaller format. This is a distorted view, this is not the way
+humans view the world. Some animals view it like this, fish-eyes, but humans do not. This is a little bit of a mental model weirdness for
+people to do this. But we might imagine
+overlaying one of these fish-eye displays sitting on top of a tree visualization, and that is precisely
+the technique that I'm going to
+talk about next. Basically, laying out the
+tree on a hyperbolic plane, so this distorted thing,
+we're going to map the plane to disk. We're going to have the circle
+that we're going to see. We're going to start at
+the center or at the root, and then as we click
+on things and animate, we're going to basically
+imagine moving the fish-eye to basically center on whatever it is
+that we clicked on next. Always we are going to get, on the outskirts,
+the broader context, the broader tree, but we're going to get
+a high-level view. We can make the font bigger or show a
+picture, whatever it is, to basically give us more detail about
+the thing that we're currently looking at.
+How does this work? This is an example of a
+fish-eye visualization, this is a corporate org chart. There's a person in the middle, and you can see who's the head of the entire organization, and you can see
+their subordinates. At the outer edges, you can see that a lot of the leaves don't actually
+have labels any more. They're basically
+considered too far away, and the font would be
+unreadable at that level. We only show sort of
+the full name for things that are more central where the fish-eye is
+currently focused, and as we move, you'll see that the labels come in and out. Using this technique, it's great because we can fit
+up to 10 times as many nodes as a regular tree within that space while
+still making it readable. This is an animated example
+where someone is essentially dragging a node into the center and
+reorienting the display. Notice as this happens, nodes that may not have had
+a label before get labels. At some point, they start small, so maybe an abbreviation
+of the person's name, and as they're pulled
+into the middle, the full name gets displayed. This is a very basic example of a hyperbolic tree display used for visualizing
+hierarchical data. Key features, we've talked
+about some of these, magnification is on the center. The layout only depends on
+the two or three levels. This is less of an
+issue these days, we have sort of
+computational power to figure out the layout of
+really big hierarchies. But at a time, this was
+important because the computer basically had to
+recalculate the layout all the time as you are
+moving stuff around, and because of the way
+this was structured, it only had to consider optimal placement for the
+two or three levels out, because at the outer edges, remember we weren't showing labels and didn't have to figure out the optimal placement
+to get the labels to work. The other key feature again is the smooth animation and the smooth semantic
+zooming that things, as they were coming in, the names became longer and
+longer unless abbreviated. That's a very kind of
+powerful visualization. Just a couple of
+takeaways for this set, hierarchical data, not a graph.
+We've talked about this. The tree design
+decisions that we've had are problematic because of the way we've
+had to lay them out given really complicated
+hierarchical data sets. The interactivity
+that we've seen, the space trees, the
+hyperbolic displays, those are mechanisms
+by which we can recover some of the
+effectiveness of a hierarchical
+visualization through interactive means and through different kinds of encoding. These two techniques are things that you might
+consider are variants, or these are things that you
+might consider when you have really complex hierarchical
+data-sets and need to find alternative ways of showing all the data at once while still supporting various tasks. This is just the end
+of our takeaways. Node-link diagrams,
+as I mentioned, can be enhanced
+within our activity. The focus plus contexts
+displays are really powerful. But the thing or the word of
+caution that'll throw-in at the end is that they are
+a different mental model. As I said, the human eye does
+not work like a fish-eye, and so you're asking someone
+to basically understand a very different
+kind of distortion spatial mapping that
+you've overlaid on top of this data that they might not be familiar with it, and so it might take
+them a little bit of time to understand how to
+move around in the space. Alright, with that,
+thank you for listening.

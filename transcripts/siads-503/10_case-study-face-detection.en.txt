@@ -1,0 +1,119 @@
+I'm back. For this next example, I'd like to talk a little
+bit about face detection. Face detection is distinct from facial recognition,
+but they're related. Face detection is
+the process by which a computer identifies
+that there is a face. When you're using the camera,
+sometimes the camera, will draw a little square
+around someone's face to help you focus on it or to adjust the cameras
+focus automatically, or to allow you to apply a tag identifying that
+person on social media. So that's face detection. So it's not matching a picture
+to a particular person, it's just saying this
+looks like a face. Now, face detection has
+been around for awhile, and it's easier than
+face recognition, which is to actually identify
+a particular person. Now, the face detection
+case is interesting because when face
+detection systems began to be more mainstream, usually implemented in
+consumer products like webcams and phones and cameras, the people who implemented
+these systems ran into a number of hurdles
+that I think are illustrative of our topic about data science and
+classification and bias. So the case I'd like
+to talk about is a Hewlett-Packard camera that was implemented a few years ago. I'm showing you a slide now. That's a still frame of video
+that you can check out. This person is named Desi and he works at a store that
+sells HP computers, and he found that the HP webcam, or maybe it was the camera
+built into the laptop, he found that the HP webcam had this new feature at the time, which was called
+follow or follow me. The feature would use
+face detection to keep the cameras centered on your
+face while you were talking, for example, on a telecon
+or something like that. So it was intended to produce better quality video by automatically keeping the
+camera center on your face. So Desi and Wanda produced this somewhat viral
+video in which they just talked into the
+camera of the HP system, here's a picture, Wanda. The funny thing is that
+it's a funny video, and the reason it's funny
+is in part that they're so good natured about it and
+they are having fun with it. So basically, whenever both
+of them are in the frame, the camera follows
+Wanda, but not Desi. So it stops recognizing that Desi has a face and
+just follows Wanda. But if you repeat this situation with people of other
+races, for example, two white people, it doesn't
+exhibit this behavior, or at least it didn't in
+the tests that I saw. So the video was
+humorously entitled, HP cameras, are they racists? I think this is a
+useful case for us to think about because again, we have an interesting
+case of hubris. Now, it's well known in the
+literature that there is differential effectiveness
+by skin tone for face detection
+and face recognition. There was a famous
+study more recently than this called the
+Gender Shade study, which is very widely
+known in Data Science. Gender Shade study
+by J. Buolamwini and her co-authors was highlighting the fact that most of the commonly used facial
+recognition algorithms were not doing as well on women with dark skin as they were
+on men with light-skin. The interesting finding was that that was a
+difficult thing to see if you only focused
+on men versus women, or white versus black, or light versus dark. That actually was the
+intersection of the two that show that there was some
+differential performance. Now, just like the
+face detection case, in the case that HP after
+this video went viral, they issued a statement about how it was
+unintentional and there sorry and they
+fixed it very fast. That also happened years later
+in the Gender Shades work. I think one of the
+most interesting parts of that paper is the conclusion where the authors, maybe it wasn't the
+conference reshape, but they they described
+what happened when they submitted their results to the companies that
+made these systems. Some companies were extremely responsive and
+immediately addressed the problem in a
+remarkable amount of time actually and other companies
+were uninterested in it. The reason I mentioned
+this is that in some ways it's hard to believe that if you're
+working in this area, you're not aware
+of these problems because the face detection stuff had been happening for years and years before we got to the face
+recognition stuff today, but we still are having
+the same problem. So I mentioned Desi and
+Wanda and the HP camera, but there were a series of fairly high profile
+instances like this going back over a decade. Another example was that a number of camera manufacturers, in order to try and
+help with red eye, they produced cameras that
+would automatically, again, use face detection
+and try to adjust for red-eye to
+eliminate that problem. But these cameras
+didn't recognize people who are Asian
+as having eyes. Now, this has been
+going on for so long. The interesting thing
+about this, I think, is that I've got a
+couple of questions. One is, if you know that this is a problem in the
+area and you know what we started with this week about the data from the majority and the problem
+with the minority, it seems like in some way you should have
+fixed this problem. Like it seems like something
+that you could address. Here we have a case where
+with many of these systems, if there was Machine
+Learning involved, you'd say it seems like a
+problem with the training data. It seems like there
+wasn't enough data available on the cases that the system is
+performing badly with, that's a very likely
+reason for the problem. You could also go further. People have said this isn't
+just about the training data, it's about the fact
+that why do we keep having this problem years apart? That's the question I'd
+like you to consider. If this is well known, if you read the news, if you're studying
+face detection, face recognition, this is the thing that you
+probably know about. Why do we keep releasing
+systems that have this problem? Another reason that's
+been identified is the composition of
+the teams themselves. Like because in some cases
+you could argue it's so rare to have people of color working in
+some of these teams. Some of the detection problems with people of color's
+faces wouldn't come out because you just
+might not have anyone around who would
+trigger the problem, so it's just less
+likely to be noticed. This has been a reasoning
+that people have used to talk about the really importance
+of diversity in teams. I think it does also
+point to hubris. So I think in some ways, the companies involved
+in many of these issues just really quickly
+fix the problem and recognize it was a problem
+and some of them didn't, and that lead to
+differential action. The reason I say that as I'd like us to think about data science, not as something
+that stops in time, but that is something that we're accountable for even after a system is deployed and that we continue to have
+responsibilities. It's not just a moment
+in time where we do our analysis and
+then we're finished.

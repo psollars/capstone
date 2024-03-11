@@ -1,0 +1,102 @@
+Hello. This week we're going to talk about diffusion
+in social networks. Our goal will be
+to understand how things like viruses, ideas, and even behaviors spread on a population that sits on an
+underlying social network. In order to do that, we're going to be exploring
+different models of information diffusion that make different assumptions about
+how the model plays out. How does an idea, a behavior, or a virus spread
+into a population? Well, clearly the properties of the pathogen or the idea
+itself should matter. For example, how contagious
+virus is should matter, more contagious viruses
+will spread more widely than non
+contagious viruses. How long day infectious period
+lasts, should also matter, and if we're talking
+about an idea, how good the idea is
+should also matter. We would expect that,
+or at least hope that good ideas tend to spread more than bad ideas.
+These things matter. However, the network structure of the affected population
+also matters. How does the network
+structure impact the way that the diffusion dynamics play out when something diffuses on it? What we'll do this
+week is will cover a variety of models
+that again make different assumptions
+about the dynamics of the diffusion process, and we'll compare and
+contrast the different types of cascades that they generate. Our goal will be to model both the spread of
+diseases such as viruses and also the spread
+of ideas and behaviors. At first, this might
+seem a little strange. How can we model these things that seem
+so different from each other under the same model
+or through the same lens? In fact, why should ideas
+spread like viruses at all? Well, when we look at diffusion
+of innovations theory, which aims to understand
+how innovations such as technology diffuse
+from person to person, we see the following. We see that when people
+are trying to decide whether or not to
+adopt an innovation, they will observe the decisions
+that other people made, and these would be people who are their neighbors in
+their social network. They will observe their outcomes, so how well this worked
+out for their neighbors, and after that, they'll
+make a personal decision. We can think of people as
+infecting each other with these new idea or this new behavior that's
+spreading on the network, much like it happens
+with a virus. The very first model and
+we're going to be looking at, is probably the simplest
+model you could ever imagine or you
+could ever think of. It's called the SI model. This model assumes that
+individuals go through two stages during an epidemic or during the spread of a virus or an idea. First you have the susceptible. Susceptible are nodes
+that have not been infected by the virus
+or by the idea yet. Then you have the ones
+that have been infected, these are the infected nodes. Next, let me tell you how
+the model dynamics play out. You started with a set
+of infected seed nodes. The seed nodes are going to be those that get infected first. You can think of
+these as being maybe the first adopters of some
+technology the people who are very excited to try out something new when no one else in the
+population has tried it out. Or maybe the first
+few people who joined this population and bringing in some type of virus with them. These will be the seed nodes. Then the model is going
+to move in iterations. At each iteration, every
+infected node will pass through the disease to
+its susceptible neighbors. These would be the nodes
+that it points to. That's the neighbors
+with some probability p. This perimeter p is fixed in the beginning of the
+process once and for all, so this parameter p is
+fixed, does not change, you get to set it in the
+beginning of the simulation. Now once a node becomes infected, it will stay infected forever. Again, very, very simple model. Let's simulate a run of this model on this
+very simple network. We'll set the parameter p to be 0.3 and we'll say node
+D as the seed node. Here in the network, I'm coloring the nodes that
+have been infected red. We'll start with D as red
+because D is the seed node, the one that becomes
+infected without anyone infecting them they
+reduced originally infected when the
+simulation begins. At t equals 1 or at
+the first iteration, infected nodes, in this case
+just the set of node D, infect their
+neighbors or tried to infect their neighbors
+with probability p. In this case, nodes C, G, and E would potentially
+become infected by D. Let's say that only
+note C was infected, so because there's a probability 0.3 of becoming infected, C became infected by the
+node E, and G did not. Then at t equals 2, the infected nodes C and D
+will infect their neighbors. In this case, the nodes B, H, G, and E will potentially
+become infected, and so we'll roll the dye, and in this case actually no new nodes became
+infected, and that's okay? No one new became infected, we'll go on to the
+next iteration. At t equals 3, infected nodes will infect their neighbors, that's the same set of neighbors as in the past iteration. In this time, nodes E
+and H become infected. Now we have four
+uninfected nodes who will try to infect their neighbors
+and the next iteration. Nodes A, B, and G will
+potentially become infected now. In this case, only
+node B was infected. At t equals 5 we have these five notes trying to
+infect their neighbors, and in this case, G became infected
+and no one else did, and that's our final iteration. Note that in this
+very simple model, all of the nodes that
+are reachable from at least one of the seed nodes will eventually become infected, if we let it run for long enough. That's because once a
+node becomes infected, it will stay infected
+forever and will forever continue to try to
+effect their neighbors. Eventually, every
+infected node will get all of their neighbors
+if we wait long enough. This is of course
+a very simplistic, very elementary model, just to get us started
+thinking about how we want to model this, what assumptions we want
+to make, and so on. In the next video, we're going to start making
+the model a bit more realistic by changing the
+different types of assumptions. For example, the fact that
+people stay infected forever, perhaps it's not so
+realistic and so we'll address that and
+we'll continue to, again, expand the complexity of our models in order to make
+him a bit more realistic. But this is a starting point. We'll see you in those videos.

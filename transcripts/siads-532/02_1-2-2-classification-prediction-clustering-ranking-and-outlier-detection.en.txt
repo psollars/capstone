@@ -1,0 +1,139 @@
+Let's also take a
+look at a few more in depth data mining
+functionalities. The first one is known
+as classification. The goal of classification is to generate
+categorical class label, in this case Y, from a set of attributes of the data object. For example, in spam detection, the data mining system takes the input of
+the attributes of the email and tries to make a decision whether this
+email is a spam or not, if the prediction is
+that it is a spam, it should be moved
+into the spam folder. In another example, the
+data mining system takes the attributes of a PhD
+candidate including their GPA's, including their essays, including their
+researcher's statements and want to make a prediction
+of whether the student should be admitted to
+our PhD program or not. You can see that this is
+again a categorical label. Let me give you a concrete
+example of a classifier. In this example you
+have two classes, one of the classes are
+indicated with blue circles, another one with red ones. What a classification
+algorithm does is to learn the decision
+boundary between those two classes so
+that when you see the incoming item, which is not labeled as
+either blue or red, you can make the decision, which class this new item belongs to. Techniques people use to make classifiers are basically supervised machine
+learning algorithms. In the supervised machine
+learning algorithm, a classifier is trained
+using labeled training data. That means using data objects which you know the class labels. Then once the model is trained, you use the model to
+identify the label of data objects that comes
+in without the class labels. Classification, as the data
+mining functionality, has been widely adopted in applications
+such as loan approval, such as spam detection, such as making diagnosis
+in clinical settings, such as predicting the
+political leanings of users. In this particular example, if we know the connections
+between bloggers, we can guess who have the conservative
+political leaning and who has the liberal
+political leaning. Another functionality
+that is related but different from classification is known as making predictions. In this task, the input is
+still a set of attributes of a data object but the output is no longer a categorical label, and instead, the output
+is the numerical outcome. For example, you might want to predict the stock
+price of given stocks, so you take the input of the market conditions
+and you try to make decision on how much
+one stock will go up or go down which is numerical. In the other example, you take the input
+of the attributes of the soccer player and you want to predict how many goals the player will score in his
+team in their next game. Let me give you an
+illustrated example. In this example, you have
+observed a few data objects. Each of them is associated with the numerical
+outcome. What the prediction algorithm, or in this case known as
+the regression model, does is to learn a function that explains the set of items, and then based on this model you learned, you want to
+make the decision on, in the future time point, whether this model
+will go up or go down. Predictions have been
+widely accepted and the techniques people use to make predictions include
+supervised machine learning, include regression analysis, and, many times, time series analysis if you want to make
+predictions for the future. For example, in this application, predictions are used to
+support recommender systems. The way people do that is to predict whether the new user will rate a movie as the five star versus four stars or three stars. A familiar example, people
+use prediction models in stock market trying to pick stocks for their next investment. Another two examples of predictions are weather forecasting and
+election prediction. Unfortunately, we're not doing very well in either
+of these cases. Another data mining
+functionality that is similar to classification, but not
+quite, is known as clustering. It is also trying to
+classify data objects into different classes
+but this time you actually don't have
+predefined classes. In other words, you don't
+have training data available. In this example, you can see that there are a bunch
+of data objects. The goal of clustering
+is to group them into multiple clusters so that data objects
+that are similar to each other will be grouped
+into the same cluster. Data objects that
+are different from each other will be grouped
+into different clusters. We don't know which
+classes are red, which classes are blue, but we can just make the grouping based on
+their relationship. Techniques people use to
+solve a clustering problem is usually unsupervised
+machine learning. Different from supervised
+machine learning, in unsupervised machine
+learning you learn the model using unlabeled data
+instead of labeled data. Network analysis is another powerful technique
+used for clustering. In the network setting, when you want to find a
+cluster of nodes it's also known as detecting a community
+in the network structure. Like other functionalities,
+clustering also have lots of applications especially in social networks to
+detect communities, in text mining to extract topics, in business to
+segment the market, and also sometimes clusters
+can be hierarchical. In this case you can build taxonomies or tree
+structures of concepts. In this particular
+example we are clustering the programming
+languages based on how many users are using
+both languages in GitHub. Another related functionality
+is known as ranking, and the goal of
+ranking is to find a ranked order of data objects. In this example, you are provided with the set of
+heterogeneous data objects. The goal is to put them in order, is to determine the order, a list of positions
+of these items. You know that the red heart
+is more important than blue circle and more important than the green diamonds,
+so on and so forth. Machine Learning is also used as the technique to solve
+the ranking problem. The objective is no
+longer to put items into classes but to include
+orders to items. When machine learning
+is applied to ranking, this is known as
+learning to rank. Again, network analysis is a powerful weapon to
+compute ranking of items. For instance, the famous
+PageRank algorithm used by Google is based
+on network analysis, is based on analyzing large
+scale network of webpages. Ranking has been widely
+adapted in web search in which the main business is to rank web pages based on
+their relevance to a query. Ranking is applied to
+recommender systems. Ranking is applied to
+bibliometrics, for instance, people rank the importance of scientific publications
+based on the number of citations and people rank the quality of researchers
+based on so called h-index. Ranking is commonly used
+in social networks to identify opinion leaders who
+have the most followers, and it's also applied to
+sports, for instance, using a data mining algorithm
+to predict the NBA drafts, to predict who will be
+picked by which team, who will be picked first, who will be picked second, who will be picked
+in the second round. Outlier detection is
+the functionality in order to find sets of objects that are considerably different from the
+reminder of the data. Usually when you conduct outlier detection it is
+coupled with trend analysis. In this example, we
+can see there are a bunch of blue circles, they are so similar to
+each other that you can actually build a model
+to explain the trend. But you also see two
+elements, two objects, one triangle and one
+smiley face that are so different from the
+majority of the data. If you can identify them
+they are known as outliers. There are many techniques
+people use to detect outliers including
+signal processing, time series analysis,
+and also clustering. Outlier detection has been applied to domains
+like fraud detection, network security,
+and software bugs. It is not hard to interpret that. In these situations, a fraud, a security attack, or
+a software bug can all be considered as
+different from the majority. Event detection is also an interesting application of outlier because when there are new events they will usually be surprising patterns of how
+people talk about them, how people tweet about them, how people communicate
+with each other. Clinical diagnosis can also be interpreted as the example
+of outlier detection. If you look at ECG data you want to find
+out whether there are anomalies and that is usually indicating
+of a disease. So we have introduced a set of basic functionalities
+of data mining. Now you should know how they are defined and how they
+differ from each other. You should also know
+the basic techniques people have been using to solve this data mining
+functionalities and how these methods are applied in real
+world applications.

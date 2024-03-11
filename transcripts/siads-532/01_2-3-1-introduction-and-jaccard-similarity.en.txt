@@ -1,0 +1,146 @@
+Hi. This is Qiaozhu Mei. Today we'll talk about the
+similarity between itemsets. As we now know that similarity, similar to patterns is one of the basic
+data-mining outcomes that we can use to build many more complex
+data-mining functionalities. What is Similarity? Similarity basically measures how much two data objects are alike. A related concept is distance which
+measures the opposite, how much the two
+objects are dissimilar. The detailed defination
+of similarity and distance relies on which data
+representation you select. Since we're interesting
+in itemsets, let's look at how to measure the similarity
+between two itemsets. Again, let's look at this
+example of five transactions. Every transaction
+contains a set of items. So how do we measure the
+similarity between transactions? Do you think transaction
+two and transaction three are more similar than transaction two and
+transaction four? What are the duration of measuring similarity
+between itemsets? Intuitively, two itemsets are similar if they share
+a lot of items. If you look at transaction
+two and transaction three, they share three items, so we think that they
+may be very similar. But in practice,
+longer itemsets are just more likely to share
+more items with other items. That does not mean that they are more similar to these itemsets. So in practice, we want to
+credit those itemsets that share a lot of items
+but we want to penalize itemsets
+that are just longer. One way to formally think
+about the two intuitions is to look at the intersection and the union of two itemsets. The intersection of two
+itemsets written as A cup B majors the longest common subset
+of the two itemsets, and the union of two
+itemsets A and B written as AUB gives us the smallest
+common super set of A and B. To show you a particular example, when we look at two itemsets one contains beer, milk
+and watermelon. The other contains
+milk, beer and lemon. We can see that the intersection
+of the two itemsets is the itemset beer and milk because both beer and milk appear
+in both of the itemsets and there's no other items that appear in both
+of the itemsets. Similarly, the union between the two three itemsets is the longer itemsets that
+contains four items beer, milk, watermelon, and lemon. This is because any
+of the items in the original two itemsets
+appear in the four itemsets, and no item in the four itemsets does not appear in either
+of the itemsets. Based on definition of
+the intersection and the union of two itemsets
+we can now measure the similarity between two itemsets. A
+classic measurement of the similarity of two sets is known as the Jaccard Similarity. Jaccard Similarity also known as the Jaccard coefficient
+or the Jaccard index. It can be calculated
+in a very simple way. It is basically counting the number of items
+even intersection of two sets mobilized by the number of items in the
+union of the two sets. So here, the two
+vertical line reads as the number of items when
+we're talking about itemsets. Intuitively, two sets will have a high Jaccard distance if
+they share a lot of items, that means, the
+number of items in their intersections
+will be large. Two sets will have a smaller Jaccard similarity if their union is very large. That means, if either of
+the sets is too long, then the number of
+items in the union of the two sets will also be large. Once you can compute
+the Jaccard similarity, you can also compute
+the opposite major, which is the Jaccard distance. The Jaccard distance
+is essentially one minus the Jaccard similarity. Jaccard similarity has a few very nice properties
+mathematically. First, it is symmetric. That means, if you compute
+the Jaccard distance or the Jaccard similarity of
+item set A and item set B, it is equivalent to the Jaccard similarity of
+item set B to item set A. The Jaccard similarity is nicely bounded between zero to one. That says, Jaccard
+similarity is the minimal. It is zero if the two
+sets share no items. If the two sets
+share no items that means their
+intersection is empty. The largest possible value for the Jaccard
+similarity is one. That can be achieved if the two sets are
+identical to each other. When two sets are identical, their intersection is essentially the same set of their union. In that situation,
+Jaccard similarities is one and Jaccard
+distance will be zero. Now let's take a look at a simple example of how to
+calculate Jaccard similarity. Given this five
+transaction database, we can compute the
+Jaccard similarity of transaction one
+and transaction two by counting how many items are shared by
+transaction one and two. We only have two
+items beer and milk. We normalize that
+by the number of items in either transaction
+one or transaction two. In that case, we have five items. So the Jaccard similarity
+between transaction one and transaction two is 2
+over 5, that is 0.4. Similarly, we can compute
+the Jaccard similarity between transaction two
+and transaction three. The intersection of
+these two transactions contain three items beer, milk, and lemon, and the union of the two transactions
+contains four items. So the Jaccard similarity between these two transactions is 0.75. So you can see that T2 is most
+similar to T3 than to T1. Based on the knowledge of
+Jaccard similarity can you calculate the similarity
+between T2 and T4 by yourself? Now, computing the
+similarity between two itemsets looks easy. It is also very powerful. I want to tell you another
+very interesting usage of the similarity
+of items, that is, making use of a Jaccard
+similarity to compute the similarity of items
+instead of the transactions. The idea is simple, from this transactional
+database where every transaction
+contains a set of items. We can transpose it, we can do some
+transformation to get another data set where every item is represented as a set of
+transactions it appears in. So in this case, we can see that the item beer appears in
+four transactions T1, T2, T3, and T5, and item milk
+appear in four transactions T1, T2, T3, and T4. After this transformation, we have the itemsets representation
+of every product. Then we can measure
+the similarity between every pair of items based on the Jaccard
+similarity of the set of transactions
+they're appearing. So in this example, we can compute the Jaccard
+similarity between the item beer and item milk which is the
+intersection of transactions. The number of
+transactions contain both of the items is three, and the number of transactions contain either of
+the items is five. So we say that similarity between the item beer and
+item milk is 0.6. Similarly, the similarity between the item beer and item lemon, is the size of the intersection of the transactions
+containing the three unless by the size
+of the union of the transactions containing
+either of them is four. So we can see that beer
+is actually more similar to lemon rather than to
+milk in our example. Based on the calculation of Jaccard similarity between items, can you tell the
+difference between the Jaccard similarity and the support of the two itemsets? Once you can calculate
+the similarity between itemsets and between items, you can use them for many
+complex data-mining tasks. For example, when you deal
+with two data objects that can be represented as
+itemsets such as text, you just need to compute
+the pairwise similarity between any pair of
+this data objects. Through these similarities,
+you can do classification, you can do clustering, you can do ranking, and you can do recommendation. This data mining
+functionalities can be applied to many
+real world scenarios. For example, if we represent text data as
+itemsets and measures the similarity between
+these [inaudible] , we can provide real-world
+applications such as plagiarism detection or
+re-duplicating webpages. This is because a
+large proportion of webpages you know Internet
+or near duplicates. If we can measure the similarity
+between webpages easily, we can filter those that
+are near duplicates. Since we can represent
+shopping baskets as itemsets, through computing the
+similarity of shopping baskets, we can cluster our customers based on what they have bought. We can profile our customers and we can make
+market segmentation. Another interesting use
+of itemset similarity is to compute the similarity of friend lists in a social network. By doing that, we can
+make recommendations. We can recommend to one user
+to friend another user. If they share a large number of friends in their friend lists. We can also recommend a
+Twitter user to follow a particular user if
+they share a lot of followers or if they follow
+the same set of people. As a summary of
+itemsets similarity, now you should know how to
+measure similarity between itemsets through
+Jaccard similarity. You need to know how to calculate the Jaccard similarity
+and I hope you understand that Jaccard
+distance essentially just one minus the
+Jaccard similarity. I hope you can use itemsets
+similarity for computing complex data-mining
+operations and for applying these data-mining
+functionalities to real-world data to
+real-world scenarios.

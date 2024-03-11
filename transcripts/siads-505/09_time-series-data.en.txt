@@ -1,0 +1,181 @@
+In this short video,
+we're going to talk about a really common task in
+applied data science, which is the resampling
+of time data. This is often done
+when you have say, intermittent data
+which you want to make more regular
+or when you have really fine-grained
+data and you want to get more general
+trends out of it. So we're going to bring in Pandas and we're going to
+bring in numpy, and I also want to
+bring in matplotlib, which is a plotting library
+and you'll learn more about that in
+a subsequent lecture. So resampling refers
+to the process of converting a time series from
+one frequency to another. Converting from
+a higher frequency to lower frequency is
+called down-sampling, and the other way around
+is called up-sampling. There's another type of
+sampling as well which is neither up-sampling
+or down-sampling, and it's changing
+a weekly Wednesday value into a weekly Sunday value
+for instance. Resampling is useful and commonly used in manipulating
+time-related data. So let's see how
+it's done in Pandas. So first, let's create
+some date-time index using the date range function. We can either set
+the start or end and specify the frequency
+and number of periods. So I'm going to set
+it to January 21st, 2018 in the end to May 31st, 2018, and use the dates in creating series with
+random numbers. So here, we just use this nice pd.date range to get our index, and then we create a new series. I'll just put in some random data and set our index to the dates and let's
+look at the head of that. So let's try some down-sampling. Two important things need to be considered when down-sampling. First, which side of
+the interval is closed? Let's say that we want to convert daily frequency to
+weekly frequency, you need to chop up the data
+into one-week intervals. Each interval is said
+to be half open. A data point can only
+belong to one interval and the union of the intervals must make up
+the whole time frame. Secondly, we need to decide how the new aggregated bins
+should be labeled. Either from the start
+of the interval or the end of the interval. So let's look at an example using the series that
+we just created. Here we want to convert
+daily to weekly. We can use the resample function. The resample function has parameters for specifying
+the new frequency, which side is closed. After that, we have
+to decide what kind of aggregate function we want
+to do with the interval. So I'm going to specify
+the frequency as weekly, which is w, and at
+the close side is right, and use the aggregation
+function as mean. So just do ts.resample, I want w for weekly frequency. I want it to be
+closed on the right, and then on that I'm going
+to run the mean function, and then let's just look
+at the head of that. So let's just take
+a look under the hood. What is this object that's actually being
+returned by resample? So let's take a look at the type of this ts.resample object. So it's a date time
+index resampler. So this object allows us
+to resample pretty much however we want through
+the use of the agg() function, but it also holds many of the common functions
+we might want to use, such as mean as we just saw. For instance, if we just
+wanted to count all of the data values that
+were being re-sampled, we could use len and
+write our own Lambda. So let's, ts.resample, again
+weekly closed on the right, and now I'm going to run.agg(), and in that, I'm just going
+to pass in my own Lambda. So Lambda x, and we'll just
+emit the length of x.head. So we see that they're all seven, which makes sense based on how we created our time series. If we pay attention to
+the bottom of the output, where it says the
+frequency is "W.Sun", it means weekly on a Sunday. If we wanted to do
+another day, for instance, Wednesday, we could do "W.Wed." After converting the frequency, Pandas also allows us to adjust the labels with
+the loffset parameter. If we changed the daily
+frequency to monthly frequency, and set the loffset to -1d, which is a month backward. Let's see an example.
+Actually it's -1m. So ts.resample monthly, we
+want it closed on the right, but now we can
+actually tell it that we want the labels
+to change as well. So we want to take
+the label on the right, and then we want to offset
+by minus one month, and let's look at
+the mean of that. Another popular and
+useful approach to aggregate is to compute four
+values for each bucket. The first, last, maximum,
+and minimum values. By using the ohlc() function, we can get a data-frame with
+the new frequency indices and four columns containing the four values at each period. So ts.resample monthly,
+closed on the right, we're going to take
+our label and offset and then we're going to
+call .oh lc() on it, and this is going to
+run a function on the resample object and create for us four
+different aggregate values. So here we can see
+open, high, low, and close for each of the monthly cadences that we
+set. So this is pretty cool. We were able to
+resample it and create these four different values
+right off the get-go. This is actually pretty
+common financial data routine as you might guess
+from the names of the columns. But you can of course
+write your own functions and pass them to agg, or apply as you see fit. So when you're doing resampling, you don't have to do manual
+groupbys yourself, and instead you can have
+the resample routines in Pandas take care
+of it for you, but you can add your aggregation functions as you see fit. So now let's talk
+about up-sampling. Since we're converting
+lower-frequency to higher-frequency, there's no need to aggregate. We can use the asfreq method to convert to a higher frequency
+without any aggregation. So let's create a data-frame with two weekly indices
+and four columns. So first the indices, we're going to set
+our start to 1/1/2018, every two and we'll set
+the frequency to w, and now let's fill
+in the dataframe. So df= pd.DataFrame,
+and just as per normal, we're just going to
+create a bunch of fake data and let's look
+at the head of this. Now, we up-sample from weekly frequency to
+daily frequency. We would use the
+resample function with frequency to "D" and
+the asfreq method. So df=df.resample
+('D') and.asfreq, and let's look at
+the head of that. So as you notice,
+there's going to be all these NaN values
+in some cells because we're up-sampling
+and we do not have any data for the new intervals. If you want to build
+the NaN values, and this is called interpolation, you can either use ffill, which we've talked about and is forward filling, or bfill, which is backward filling, or you can use
+fillna or re-index methods of course afterwards. In our data-frame,
+it makes sense to do forward filling now. So
+let's give it a try. So df.resample ('D'), and then we can just call ffill
+on this. There we go. We've see that the
+values are propagated. We can also choose to only fill a certain number of periods by using the limit parameter
+and the ffill function. For instance, I
+might want to limit to interpolating
+just three observations. So at resample.ffill
+limit equals three. An important group of
+manipulation techniques on time series are focused on over a sliding window or with exponentially
+decaying weights. Now I'm not going to
+talk about the latter, but I'm going to talk
+about the former, and this is very
+useful for smoothing noisy or gappy data. Note that these kinds
+of functions automatically exclude
+missing data. So keep that in mind. Now, let's look examples
+using the stock market. This is a very common data
+for time series analysis, and we are going to
+look at Apple and Microsoft's daily stock prices from 2012 to 2018. So Apple is "datasets/ APPL.csv" and Microsoft is in
+"datasets/ MSFT.csv." Let's look at the head of
+what Apple's looks like. As we see here, we have
+these different pricing for different times of the opening
+and closing and so forth. For the analysis that
+we're going to do, we're going to use
+the close price. So let's combine Apple and Microsoft's daily prices
+together into one data-frame. So I'll create
+some new data-frame, Apple, I just want to be the close price and
+we'll just name that up to the ticker label, APPL, and Microsoft,
+I just wanted to be their close price and we'll
+name that after MSFT, and let's look at
+the head of that. Okay. So now we just have
+these two stock closing prices. Now, let's plot those prices
+over the years. So I'm going to use a
+df.plot and plt.show. We haven't talked about these. You'll learn more about
+plotting in subsequent course. Okay. So there we can
+see our two plots, Apple much higher throughout the period and higher
+volatility as well, and then Microsoft is below. So now we're going to learn
+the rolling operator, which behaves similarly
+to resample and groupby. So there's a lot of
+parallelism here. It can be called on a series or on a data-frame
+along with a window, which is the number
+of periods to cover. The number we specify in
+the rolling function means the sliding window that we're
+actually going to group by. So for example, if
+we're going to do 100 that is grouping
+over 100 days sliding window because
+our current data is in day periods. If they were on second periods, that would be a 100
+seconds and so forth. So here, let's say
+100 day rolling window and we're going to
+average values. So we'd say df.rolling over 100. So this is essentially groupby or resampling into new periods. We're going to take
+the mean values over those 100, and we're just going to
+plot that right away, and so let's show that plot. So you can see that this
+not only smooth the data, but then we lost the big drop at the end of the time period for Apple because of
+the size of our window. So try playing around with a few window values
+yourself to get a sense for how that might
+change the insights that you might derive
+from the data. Now, we've just touched
+on the very basics of manipulating time
+series data in Python. These techniques will be
+useful for conducting further time
+series analysis and for more advanced data visualization
+on time-related data, as well as when dealing with feature engineering from
+time series sources. If you continue to
+use time series data, maybe you've got a project
+with one of our capstones, where you want to use
+time series data, you'll be spending
+a lot of time with the Pandas libraries
+for time series, and I really encourage you to check out the documentation. It's quite significant. It's one of the biggest
+features within Pandas for data science, and really brought
+it to the forefront.

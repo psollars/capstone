@@ -1,0 +1,173 @@
+In this lecture,
+we've talked about different parts of speech and multi-word expressions that occur in a sequence of text. Let's think about some of the Natural Language
+Processing techniques that go into labeling
+these sequences. The sequence labeling tasks
+are everywhere in NLP. We've looked at one
+with part of speech and for named entity recognition. But beyond these, we can
+think about things like biomedical information
+extraction, say, identifying interactions between drugs or patient experiences, or even thinking about
+super sense tagging for trying to understand the
+different meanings of words, the speech, and for named
+entity recognition. But beyond these, we
+can think about things like biomedical
+information extraction, say identifying
+interactions between drugs or patient experiences. Or even thinking about
+supersense tagging for trying to understand the
+different meanings of words. What makes sequence
+labeling different from other Machine Learning setups
+that we've seen before? Let's look at this
+with an example. Here, I will make you a cookie. Let's think about
+how we might try to understand the
+part-of-speech we make. This could look like our typical
+multi-classification task. Where given some input, we tried to predict one
+of k different labels. In fact, we can think about using a classification method
+that we tried to predict this label in this
+particular part of speech with this instance, by looking at, say, what's the likelihood that the
+part of speech is a noun, given that the current
+word is make in some set of parameters
+that we've learned? However, an alternative way to think about sequence labeling, is to realize that
+there are correlations between the labels of the output. Say for example, we saw
+that the previous words, part-of-speech tag,
+was a modal verb. In this case, it would
+be incredibly unlikely that the part of speech
+for the following word was noun and so in here to calculate the probability
+of the part of speech, we condition on the previous
+words part-of-speech. This way we can think
+about sequence labeling as a part of speech or in
+machine learning task, where we want to
+include additional information on the labels of other nearby words or
+items in the sequence. The sequence labels
+can be word classes, looking at the part
+of speech classes for particular words here. But you can also
+think about using it even in a more general
+sense about meaning. Here, the teens ate superman
+ice cream in the quadrangle. Below is a list of different types of general
+categories of meeting, persons, artifacts, food,
+substances, animals. We might want to
+label these words, with which of the
+semantic categories are there in practice? You can see that,
+teams are a group, superman ice cream is a food
+and quadrangle is location. There may be other
+interpretations of this, say teens as a number or
+Superman is a person, or a quadrangle as a
+concept or an artifact. This can actually be
+quite useful in practice to think about trying
+to label these. Sequence samples can
+also be used to identify phrases to or sequences of words. Here typically will
+use what's known as a BIO labeling for each token. This can be used to extract
+said named entities. Here, BIO B stands for the
+beginning of the unit, the I stands for inside of unit, and O stands for
+outside of a unit. Let's look at this
+in practice on say, a common phrase you might see if the University of Michigan
+beat Ohio State this year. Here, if we want
+to label this for named entity recognition
+using BIO notation, we predicted the
+first label isn't O for being outside of a
+particular named entity. University we reflect B for
+being at the beginning of the named entity
+an I for Michigan. When we encounter beat, we would see O for being the end or outside
+of the intensity. Filling in the rest,
+we can see how Ohio State is represented
+by a B followed by I, and this year will be two Os, recognizing these are
+outside of a named entity. Here with just three classes, we can recognize a variety
+of named entities. Sequence labeling and NLP, typically we use many
+different techniques. One of the most
+common approaches is what's known as
+Hidden Markov models, which you've already seen in the applied data mining class. They're also more
+advanced techniques like Maximum Entropy Markov
+models we'll briefly touch on and even more computationally
+intensive approaches, including conditional random
+fields and deep learning. Let's think about using
+a Hidden Markov model for part of speech tagging. Here I'm going to use an
+example from your book. In this diagram, we'll see that the filled circles are things that we can observe in text. Here, Janet will back to
+the bill and we'd like to infer in the open circles,
+the parts of speech. The arrows here reflect
+dependencies between variables, suggesting that the part
+of speech depends on the particular word
+and the current part-of-speech depends on
+the previous part of speech. For example, we can think for this verb part of speech here, we can condition what's the
+likelihood of this class. But in particular, the
+verb part of speech, given that the previous words part-of-speech was a modal verb. We can similarly ask, what's the probability of
+seeing the word back, given that the
+part-of-speech tag was verb. To learn these probabilities
+for the Hidden Markov model, we can actually infer
+them directly from text. Say here's an example from the Wall Street
+Journal Corpus. We can see here that
+the probability of the verb part of speech tag following the modal
+verb part-of-speech tag is quite high, 0.79. We can also think about the
+emission probabilities. What's the probability of a particular word given
+a part-of-speech? Here we can see that
+the part of speech, or the probability of
+the word back given the part-of-speech verb is
+still quite low, but non-zero. In practice, there
+are many zeros here and we have to use
+techniques like smoothing that we've talked about
+earlier to make sure that we have non-zero
+probabilities to route. If you want to do
+sequence labeling with Hidden Markov models, we're going to learn
+these transition and emission probabilities
+directly from text. What's typically apply,
+some sort of moving so that both probability tables
+have non-zero values? Labels will be assigned using what's known as the
+Viterbi algorithm, that tries to define the
+most likely sequence given the transition and
+emission probabilities. You might notice that
+we're only using a limited amount of information, say, the previous words part
+of speech, and in fact, we can actually
+encode higher-order Hidden Markov models that, say, look it, the previous
+two parts of speech or even the previous
+three parts of speech. These can condition
+on more context to break the ambiguity
+more easily. However, there are also
+more computationally expensive and practice. Another idea for doing
+sequence tagging and NLP is using what's
+known as a Maximum Entropy Markov Model, or MEMM. Here, let's try to contrast this with our Hidden
+Markov model. In the hidden Markov model,
+we're going to try and find a particular
+tag that maximizes the probability of the
+word given the tag and the tag given
+the previous tag. You might ask, how do
+we add more features? Say that we know something about the sentence or the
+particular word. Can we use this in context? In fact, it's actually
+quite difficult. Where will we add
+that? In a MEMM, we try to rewrite this so that we tried to find
+the particular tag given the word and the previous part of
+speech tag directly. In practice, we can actually
+add new features to condition the current
+tag from these features. We can actually train this using Logistic Regression and in fact, push in features there. There are many such
+useful MEMM Features. We can potentially encode the entire context as features towards predicting
+the current tag. We can think about prefixes and suffices of the current word. Say whether the
+word ends in an ly. Leave them at the presence of a punctuation or
+whether the word is capitalized and even the topic
+of the current document, which may influence ambiguities
+of parts of speech. We can even think about encoding, say the URL or domain
+where the sentences from, as this can create some
+sort of topical structure or prior on particular
+parts of speech. Together, we can encode all of these features as a
+vector for using in logistic regression
+that tries to predict the particular part of
+speech for say, owy. For sequence labeling, there are many different takeaways, and typically one
+of the things that makes sequence labeling
+different from, say, a traditional machine
+learning classification, like sentiment analysis
+that we looked at earlier, is that we have
+correlations between the output labels
+in the sequence. Part-of-speech tags
+are not independent, nor are semantic categories. We can try to use this
+to our advantage and turning to estimate
+what's the likelihood. Sequence labeling tasks
+are everywhere in NLP. We've looked at a few
+with part of speech tagging or named
+entity recognition. But there are many
+such and as you think about words and phrases, you may also realize that
+their sequence labeling approaches that you could
+use in your own task. Hidden Markov models and maximum entropy
+mark up models are quite efficient and in
+practice MEMMs work very well in practice. However, there are
+other techniques like conditional random fields. They tried to optimize all
+the output labels at once, not just one at a
+time, we're using it. Limited context is
+a very powerful, but also very slow. In practice, many folks do
+HMMs or start with MEMMs because they're efficient
+to train and often provide robust features
+from a different tasks.

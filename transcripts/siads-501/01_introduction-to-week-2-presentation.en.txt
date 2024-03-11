@@ -1,0 +1,62 @@
+Welcome back for week 2. At the end of this week, you should be
+able to explain the danger of making inferences about a population
+from a small sample. You should be able to correctly
+use the term selection bias, self-selection bias and survivorship
+bias to describe situations where making inferences from non-representative
+data can create problems. You should be wary of reproducing
+incorrect inferences if training data are labeled incorrectly and you should
+be wary of creating unfair outcomes if those two problems together
+lead to worse outcomes for some groups of people than for others. At the end of this week, you should have
+accepted the hard truth that you will spend significant effort on the seemingly
+mundane task of data cleaning. You should have become aware of some
+of the basic activities of cleaning and you should have gained an appreciation of
+the importance of doing collection and cleaning in a reproducible way. We have three big Ideas this week. The first one is getting enough data. There's a law of large numbers that
+says the mean of a sample converges to the mean of the overall
+population as the sample gets big. The law of small numbers is sort of a
+tongue-in-cheek version that says the mean of a small sample is a good estimate of
+the mean of the population, but it isn't. Right, you'll have a lecture video for
+that idea. We're assigning you chapter ten from
+Kahneman's book Thinking, Fast and Slow and there's an optional Jupyter
+notebook to help develop your intuitions about how often you'll be wrong. If you make inferences from
+data sets that are too small. The second big idea is
+getting the right data. You might have unrepresentative data. Let's say you carefully study the
+relationship between painkiller dosage and perceive pain, but
+you only study it for men. You still might not know much about
+that same relationship for women. Again, there's a lecture video. There's a reading that provides
+a taxonomy of statistical bias types. And then there is an optional reading
+about algorithmic bias or societal and fairness such as unfairness to women and
+minorities that can result from many things but especially from
+unrepresentative training data. The third big idea is data cleaning. Did you know that in data science 80% of
+your time is spent preparing data and the other 20% of the time is spent
+complaining about the need to prepare the data? Now, seriously, data scientists do
+spend a lot of time acquiring and preparing the data. You have to link up data from various
+sources, identify outliers and missing data and investigate the reasons. So for this idea, there's going to be
+a lecture video and then readings on data cleaning and on good practices for
+making sure that whatever you do during the cleaning stage is re-runnable so
+that your results are reproducible. Let me close with a little story
+where a statistician is the hero. So a retired statistician, he purchased a brass Aladdin's
+lamp at an antique shop one day. Being very proud of the purchase, he cradled the lamp with one arm against
+his chest and began to walk home. He'd only walked a block when he was
+startled by a belch of smoke from the lamp and out comes the magic Genie. Hello kind sir said the genie. I am here to grant you three wishes,
+since you have toiled your entire life with numbers to benefit people
+in many, many different professions, the only provision is that these
+wishes have to also benefit others. And to ensure that this happens, you see those three lawyers walking
+on the other side of the street? Each of them will receive
+double what you receive. Now, the statistician recalled some
+bad experiences with lawyers, but he's still pretty excited and
+he agree to the conditions that the genie smile gleefully and
+says, what's your first wish? The statistician thought for
+a minute and responded, I would like a brand-new red Ferrari,
+poof, sparkling red Ferrari appears. He looks across the street and saw six
+of them, two for each of the lawyers. The genie smiled, said,
+what would you like for your second wish? With very little thought, the statistician
+said, I'd like a million dollars, poof, a million dollars
+appeared in a gilded suitcase. Of course,
+he glances across the street and each of the three lawyers
+has two gilded suitcases. And the statistician is starting to
+get a little angry because I mean, who likes lawyers and they're
+receiving more than their fair share, as perhaps they always do. So the genie then admonished him. He only had one last wish and he should
+think very carefully about what he wanted. So the statistician,
+he painfully puzzles over it and finally says, you know, all my life,
+I've wanted to be an organ donor. So I hereby wish the donation of one
+of my kidneys to the local hospital. Poof, a kidney was donated. I'll see you next time.

@@ -1,0 +1,107 @@
+I want to start off with a little story. And for the sake of this story, we're
+going to have to assume that we don't have something known as the cloud,
+that technology doesn't exist. And we all have friends that
+are really good at giving gifts, they get to know someone,
+they know the available products, and they're really good at that matching game. What does this person like, what don't
+they like, what are the products available within this price range
+that I'm willing to spend? And they then give a gift and
+they've got a pretty high rate of success, if not somebody just saying, hey,
+that was a really good gift, but actually truly liking the gift. Let's take this sweater for
+example, this sweater was a gift, I really liked this sweater. The person who got me this sweater knows
+that this is my favorite color, and that I liked the material and they did
+a really good job getting me this gift. But what if this person
+wanted to commercialize it? They're really good at getting gifts for
+everyone, I'm not special, they're really good at finding gifts. It's a problem matching thing and they're
+quite good at it, so let's play this out. They write an algorithm that takes some
+information about the person you're buying a gift for, and the available
+catalog of gifts that might be available. And they let you sort it by price range so that the gift giver can decide
+how expensive a gift can be. And they've built this thing and it works,
+and it is flawless, and it is amazing, and they want to bring it to market. And so they start working
+out a business plan, and their their business plan isn't really the
+algorithm not going to sell the algorithm, they're selling the gifts at a markup. And so every time that there's a match
+made with their algorithm they go through this, and they buy,
+somebody buys the gifts and shipped. And they get feedback from the person who
+got the gift whether or not they like it. And they've got a nice feedback loop going
+on to retrain their algorithm simple, easy to do. Now, let's think through this
+a little bit more detailed though, where are they going
+to put this algorithm? Keep in mind the cloud doesn't exist yet,
+there is no cloud computing yet. So they've got two options at this point, you can either go and
+rent a server by the month. You'll hear this called is like you can
+search for like dedicated server rentals. And you're going to pay a monthly fee, and that monthly fee based is based on
+the specifications of that server. And how much bandwidth you get, how many
+CPUs you have, how much RAM you have, and you pay a monthly fee and all is good. The other option you have is you can
+make an upfront capital investment and buy your own server, you can spend $2,500,
+$3,000 $4,000, and buy a physical server. And then you pay a vendor to
+put it in their facility and plug it into their power, and
+plug it in their ethernet. And that's typically referred to as
+co location, and that's how most of the internet worked up until the cloud
+came along, those were your two choices. And we'll talk about how cloud pricing
+works a little bit later on, but for now, these are our options. And so you think to yourself, well,
+I've got this algorithm, it's really good. Do I want a dedicated server that
+I'm going to pay monthly for, or should I make that capital investment? And you're not quite
+sure which to go with, but the dedicated service
+you're paying monthly for your contract on that as a month,
+you can do that month to month. So if your product doesn't work
+after a month, you're done. And if you buy that physical server, well, sure you don't have to necessarily
+put it in a data center, but you own a big piece of hardware,
+it's a heavy big piece of hardware. So you buy that dedicated server,
+you get four CPUs 32 gigs of RAM, you throw it up on the internet,
+you make your site live to the public. And you sit back, and
+you start getting orders, and you're really happy you've
+got your orders coming in. People really like the service you're
+providing, you're getting that feedback, almost everybody likes the gifts
+that they're being given. The gift givers are happy they
+fill out some basic information, it's a perfect thing. So you decide what, I want to
+make some more money off of this, I'm doing really well, I'm going to
+put an ad on the evening news. So 5:30 PM news comes on at 5:40,
+your ad plays, your server goes down,
+why does your server go down? Lots and lots of people are going
+to it simultaneously, okay? You go to your vendor and you're like,
+hey, quick, I need another server, they give you another server,
+you can figure it. You balance the traffic between the two
+servers, all is good, you're back up. You're running, it's a little bit slow
+at certain times when there's a lot of traffic, but it's working,
+and you're doing well. You got two servers running algorithms
+going well, and you keep moving on. You're slowly though,
+refining your algorithm, and as you do that,
+your algorithm is getting more and more complex, the more complex it gets,
+the longer it takes to run. You slowly start having to add servers, where you end up now is you've got
+20 rented servers a month that you are using to run this, now,
+the problem that you're running into. And this is exactly the problem that
+the cloud fundamentally solves, because you don't really need 20 servers. You need 20 servers at peak time,
+at 6:00 PM, 7:00 PM when people do their gift buying, you don't need
+servers at 3:00 in the morning. In fact, you can get away with the one
+server at 3:00 AM in the morning, no one is browsing your website
+at 3:00 AM in the morning. But well, maybe somebody can't sleep, but
+for the most part, nobody's browsing your website at 3:00 AM in the morning, so
+this is where the cloud comes into play. What the cloud lets us do is it
+lets us use resources on demand and discard them when we don't need them. In the pre cloud days, you would
+have to buy physical hardware, and you'd buy that hardware or rent that
+hardware for your peak operation. So you did not go down when there
+was a peak amount of traffic, and there's all sorts of stories of
+websites and services that you know well. Instagram is a good example of this
+that went down under peak traffic, because they couldn't scale appropriately. The cloud allows you to ask us first
+server, get 1, 5 seconds later, use it, and get rid of it 20 minutes
+later, or 10 minutes later, or 6 hours later, or 4 days later. It fundamentally solves the scalable
+nature of using resources. Imagine when COVID-19 hit, if you could
+scale the size of your house to add a home office, and after COVID-19
+was over, you just get rid of that. And during the time, you had your own
+private office built off your home, but when you no longer need it,
+you stopped paying for it. The cloud is fundamentally changing
+the way we think about resources and about computing. I go back to this example of renting
+a server in a data center to fill your needs, but companies would
+actually build their own data centers, because it was cheaper. And if we think about the cost of
+doing that now, it is astronomical, I don't think most new companies are
+building their own dedicated data centers. Some have that technical debt, and they're
+going to keep using that technical debt, because it doesn't make
+sense to switch overnight. Because they've already paid for it,
+it's a sunk cost in their organization. Well, not a sunk cost, but
+it's a capital expense, and they're not going to move off of it
+even though it should be a sunk cost, because it's probably better faster
+cheaper for them to go to the cloud. And so in our next set of videos, we're
+going to start experimenting with how the cloud works,
+getting into some specific terminology. And then we're going to actually give you
+access to your own cloud for this class, where you will be able to
+play with cloud resources. Spin up your own things, run some
+Jupiter notebook instances in the cloud, access some databases. And I look forward to exploring
+the next chapter with you.

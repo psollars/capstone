@@ -1,0 +1,31 @@
+So now, we have got all the itemsets
+that are frequent in a database. How do we use them? Remember that our ultimate goal is to
+use these patterns for decision-making. In practice, not all of the frequent
+patterns may be interesting. Only a few of them can really
+support our decisions. So we need a way to evaluate the true
+knowledge from the frequent patterns. We need a way to evaluate how interesting
+are those frequent patterns for our decision-making. One of the problem of frequent pattern
+mining is that there are just too many itemsets, too many frequent
+patterns extracted. One way to shrink the number of
+interesting patterns is to go for the max and closed patterns. A closed pattern is defined as
+the itemset if this itemset is frequent, and there's no super-pattern that
+has the same support as this item. And the max pattern is
+the itemset if it's frequent and there exists no super-pattern
+that is also frequent. So based on the two definitions, you can
+see that every max pattern is also closed. But not all the closed
+patterns is a max pattern. By looking for max patterns and
+closed patterns, we can get rid of many shorter
+patterns that are just frequent, because they're subsets of
+longer frequent patterns. Using the same five transaction
+database as the example, we're interested in extracting patterns
+with the minimal support of 40%. If we look at the three
+patterns in this database, beer and milk with the support 60%. Beer, milk, and
+lemon with the support 40%. Beer, milk, and
+lollipops with the support 20%. Based on this statistics,
+we can see that the pattern beer and milk is the closed pattern because there
+exists no superset of this pattern. There exists no longer patterns
+that have the same support. And the three itemset beer,
+milk and lemon is the max pattern. Because there exists no longer
+patterns that is also frequent. And of course, the three itemset
+is also a closed pattern. Because there exists no longer
+patterns with the same support.

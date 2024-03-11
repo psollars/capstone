@@ -1,0 +1,95 @@
+In this video, we're
+going to be talking about the independent
+cascade model. This is going to be a
+new model that is simple enough that it is mathematical
+tractable in many ways. But it's also a bit more
+general than some of the other models that we've
+been discussing this week. The previous models have
+assumed that all of the edges have the
+same probability of transmitting an infection. For example, in the SI model, when a node became infected, it had a probability p of
+infecting its neighbors, and that p would be fixed in the beginning
+and it would be the same for all the nodes and all of the edges
+in the network. In the independent cascade model, we're going to relax
+that assumption. We're going to
+allow every edge to have its own probability
+of transmission. Now our networks will
+look more like this, where we'll have notes in the edges and the edges are
+going to have a probability attached to it and
+that probability indicates the probability that if the source node
+becomes infected, that it will infect its neighbor. So for this model, we're going to start
+with a network and a set of probabilities, p,u,v that are going to be
+associated to the edge uv, and we're also going to
+start with an initial set of infected nodes
+at time t equals 0. Now the model is
+going to look like a generalized version
+of the SIR model. So nodes are going to start out as susceptible or not infected, then they're going to become
+infected and then for a short period of
+time they're going to be able to infect
+their neighbors. In fact, each node is only
+going to be able to try to infect its neighbors one time whenever it
+becomes infected. So the way it works
+is the following, we started out with
+our set of seed nodes, the set of infected nodes at time t equals 0 and then
+at each time step t, any node u that became
+infected at time t minus 1 will infect each
+uninfected neighbor with probability P, u, v. Note here that only the nodes that became
+infected at t minus 1 will have an opportunity
+to infect their neighbors at time t. This is what
+I was saying earlier. Every node has only
+one opportunity to infect her neighbors, and the process will
+continue like this and then we'll end until there are
+no new infected notes. When there are no new infected
+nodes at some time t, because all of the other
+nodes that were infected earlier have no opportunity
+to infect anyone else, then no one gets to
+infect any new nodes and the process naturally ends. Let's start with an example. So let's say we
+start at t equals 0 with node A as the
+first infected node. That's the seed node. At t equals 1 A will attempt
+to infect its neighbors. So nodes B, D, and E will be possibly infected and each of them will be infected with a
+different probability. So B would be infected
+with a 0.2 probability, D will be infected with
+a 0.3 probability, and E will be infected
+with a 0.2 probability, and let's say that only D gets infected and B and E do not. Now at t equals 2, the newly infected nodes, namely D here will try to
+infect their neighbors. So node C, E, and G will potentially
+become infected next. Let's say that both C and
+G become infected now. So at time t equals 3, then newly infected nodes C and G will try to
+infect their neighbors. Again, the probability
+of infection here is changing all the
+time it depends on the probability next to the edge and so let's say that now
+node f gets infected. Now that F is infected
+at t equals 4, F will try to infect its
+non-infected neighbors. So node E will potentially become infected and let's say
+that it actually fails. E does not become infected
+and because there weren't no new infected
+notes after this round, then the cascade
+terminates and we end with just 5 nodes who
+are infected and 3 nodes who are not
+infected As you can see, the independent
+cascade model is very simple and you can
+see how it allows for some mathematical analysis
+to understand how it plays out networks and you
+can actually do some of that. But at the same time
+it's a bit more general than the other
+models we had seen. In particular is a
+bit more general than the SIR model, because again, we have the possibility
+of attaching a probability to every
+single one of our edges. So we don't have
+just one parameter that controls infection rate, we have that each edge in the
+network can have their own. Of course, you could
+imagine that you could make the model
+even more general. For example, rather than letting every node have just
+one opportunity of infected their neighbors. You could imagine that we can do something like we did
+in the SIR model, where at every step, every node may have a
+probability of becoming removed with some probability
+and in that case, not all the nodes
+have just one shot, but the number of shots or the length of the infection
+can vary node by node. You can also imagine that you
+could generalize this model by actually allowing
+the probabilities on the edges to change over time. So if a node has been
+infected for awhile, maybe the probability
+that it infects its neighbors starts
+to decay slowly. There are many ways in which we can generalize this model. But the basic independent
+cascade model provides a simple starting point for more advanced and
+more interesting models. In the next video, we're going to discuss
+the other model that is widely used in computer science to understand diffusion on social networks, and that is the linear
+threshold model. So we'll see you in that video.

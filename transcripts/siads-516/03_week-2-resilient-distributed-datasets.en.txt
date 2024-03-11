@@ -1,0 +1,216 @@
+So far you've heard me talk about
+resilient distributed data sets a fair bit and I've sort of been teasing that
+there's something important there. We're going to now dive in to
+resilient distributed data sets or RDDs in a little bit more detail. So resilient distributed data sets or RDDs
+are really the fundamental abstraction for distributed data computation in Spark. Basically everything else we're going to
+be playing with in Spark is built on top of RDDs. So I thought it would be a good idea
+to spend a little bit of time actually working with RDDs. RDDs are what's called immutable
+collections of objects that is or can be distributed across the cluster. So the idea that it's immutable is
+important because it guarantees the fidelity of the data that we
+distribute to the nodes in our cluster. And these RDDs can be
+manipulated in parallel, there are three basic operations
+that we can perform on RDDs. We can create RDDs, we can transform them,
+and we can perform actions on them. Now I want to mention that
+RDDs are really great for unstructured data that is,
+data that might come from a text file. If you have data that's already in some
+sort of tabular format, you're welcome to use RDDs, but there are better ways of
+doing that that we'll get to next week. So there are a couple
+of ways to create RDDs, they can be created by reading a file or an external resource or
+a series of files, or by paralyzing a collection of
+objects typically a set or a list. So what would that look like and
+what does parallelize mean? Now, remember we used SC as
+our Spark context object, so the next two lines that you see
+refer to SC as our Spark context. The first example here in blue
+says lines = sc-- dot txt file notice the capitalization
+on text file that's important. And then the name of a text file, what that is instructing Spark to do,
+is to read the text file that we named in this case it's supposed
+to be in the same directory. There are other ways of inserting it
+into a distributed file system, but for now we're going to read it locally. So we're going to assign
+that text file to lines. Another way of creating an RDD is
+to use the parallelize function in our Spark context, and
+that will take typically a set or a list as I mentioned and parallelize it. So, what you should start thinking of is
+wait a minute, what does text file do, does that parallelize
+the structure as well? Well, yes, it makes each line
+in that text file available as a separate entity that can be
+distributed out to different nodes on a computing cluster in a way
+that minimizes the dependencies or it basically ignores dependencies
+on other lines in the file. So sc.txt file will
+parallelize the contents line by line of the file that you give it. sc.parallel lies in contrast will
+take each element of a set or list or other complex data structure, and make those available independently for
+further processing. Now, let's talk a little bit
+about data partitioning as well. Remember that the general
+idea of parallel computing is that things analyses
+happen at the same time. When I talk about partitioning, I'm referring to breaking
+up the data into parts. And as we talked about earlier,
+the default is to break data up into partitions that
+are multiples of 64 megs, so 64 and I talked about 128,
+256 those can go up. 512, 1024 all the way up to gigabytes,
+exabytes, petabytes, but we can tune that parameter if you want to to
+match the number of cores on our system. So in some of the readings you'll see
+an explicit assignment to the number of partitions that you want. Note that the data can only be
+partitioned if it's available to all nodes of a cluster. So we need to figure out
+a way to get those out there, if you're just reading a file from a local
+directory, it will not be partitioned. It will be parallelized so that each
+individual line is available, but it will not be distributed across different
+partitions that make use of the cluster. And you can get more information
+about this in the readings on HDFS. But for now,
+we're going to simply assume that we're getting good partitioning from
+the default structures of Spark. I'm not using very large data files
+in this particular example or in the homework. So we don't have to worry
+too much about partitioning, I just want you to be
+aware that it exists. Now remember there are three things we
+can do with RDDs, we can create them. We've already done that using
+either text file or parallelize, the next thing I want to talk about
+are actions that you can perform, you have to know about actions and
+transformations. I'm going to talk about actions first,
+but we need to know actions and transformations. Actions will take data from
+resilient distributed data sets and create none RDD data structures. So as you can imagine that's in
+contrast to transformations, which will take an RDD and
+result in an RDD. So here we're talking about taking
+something that is in this resilient distributed data set this fault
+tolerant distributed set of data, and create something that might be
+a list or a dictionary or a set. Or something that should be
+very familiar to you in Python. So these actions move data
+from Spark to non Spark, and they're commonly used to get at
+the results of transformations. So what are some RDD actions? Well the commonly used ones
+are count collect take and first, count will simply return
+the number of elements. You can think of this as the spark
+equivalent of the L-E-N len function in Python, collect will
+return a list of all the elements. Take will retrieve the first
+n elements think of it as the Spark equivalent of
+the Pandas head function. And finally we have first, so
+first is the same as take one, it will retrieve the first element. Now I want to caution you to
+be careful with collect, and I want you to think about
+why that can be a problem. So why can collect be a problem? Well, imagine that your results
+contain several billion lines, several billion elements, if we call collect we're going to ask
+spark to offer up all of those elements. Is that a good idea? Sometimes it's what you want to do, other times you want to make sure that
+you reduce that output even more, so you're always thinking about how
+can I reduce this to what I want? Now the RDD actions are typically done
+at the end of an analytic pipeline, wo we want to count the number of results. We want to get all the results, or maybe
+we just want to take a peek at things. We want to take a look at the first five,
+maybe the first ten elements of something. If I asked you for example, what are the ten most common
+words in a collection of text? You wouldn't want to use collect and return all of the words if you're
+only interested in the first ten. Similarly if I asked you what
+is the single most common word, you'd want to just use first. Why is this important? Well Spark uses something
+called dag a directed acyclic graph to figure out what
+sorts of things it needs to do to your data to get at
+the results that you want. This is covered more in the readings and
+I don't want to spend a lot of time in this course talking
+about how dags are calculated, how tags are analyzed or
+how they're performed. So just know that there is something in
+Spark that is called lazy evaluation, and we'll get to that next week. So, those are our DD actions. In contrast to RDD actions
+we have RDD transformations, RDD transformations take one RDD and
+yield another RDD. So an example of a transformation could
+be filtering, it could be mapping or it could be reducing. So in all of those cases were not going
+out to something that we just saw MR job do with giving us a nice output. We're staying within the realm
+of distributed data sets, and these can be results of
+filtering mapping or reducing. So, let's do some filtering,
+now consider the following text. I'm thinking that most of you are familiar
+with this because it's an excerpt of the blurb that talks about
+the program that you're in right now. So if we take that text and a further assume that each line
+is one complete sentence, so I have wrap these around but imagine
+that the each sentence forms a line. It just simplifies our problem space now,
+I've put blank lines in here just for our ability to visually
+understand what's going on here. But again for this example, exactly one line of a text file
+contains exactly one sentence, there are no blank lines
+in reality in this file. So let's take a look at filtering of RDDs,
+so that is applying the transformation
+of filtering to our RDD. And let's say our task is to count
+the lines in a file that contain the word data. Here's how we would do that
+using some Spark code. My first line of code here,
+is where I assigned to the variable lines the parallelized version of reading
+in a text file called data/blurb.txt. And we've given you this file
+in your Jupiter environment so you can go ahead and
+try this once you start going with Spark. The next line of code that
+starts with data_lines, I'm going to assign to that
+variable the output of line. So lines again is an RDD, we read that
+text file, we got an RDD called lines. We're going to take that RDD lines, apply the filter command
+using a lambda function. So it's an anonymous function lambda line,
+so for every line we're going to evaluate
+that as true if data is in line. So if the word data is found
+somewhere in the line, we're going to yield out that line. And then what we're going to do is
+apply an action called count and that will give us the number of
+lines that contain the word data. If you wanted to look at all of the data
+lines you could call collect on it, but remember the danger of calling collect. I've given you a very short file
+data/blurb, but let's say I gave you the entire contents of the Gutenberg
+repository millions or billions of lines. You probably wouldn't want to call collect
+on it, in terms of filtering I've done something that I just mentioned called an
+anonymous function or a lambda function. So I said data_lines = lines.filter and
+I used a lambda function, if that's kind of freaking you out of bed,
+you can implement it in two steps. You could define a function
+data_filter that takes an argument s a string or a line,
+and it will return a true or false value based on whether
+data is in that line. I can then pass that function
+name to data lines or say data lines rather is
+the output of lines.filter. And the argument that I pass to that
+instead of the lambda that you see at the top of the screen is the name of
+the function that I just defined. You'll notice that I don't
+pass in to data_filter, I don't pass in the line or the string, that's automatically passed in when
+the mapper runs through the data. Another transformation that we
+can use is mapping, and mapping will apply a function to each element
+in the file or in the data structure. So let's say I created a variable
+called numbs which consists of a Spark context parallelize call on
+a list of four elements 1, 2, 3 and 4. So we have a list that
+contains four integers 1, 2, 3 and 4 we're going to
+create an RDD numbs based on the parallelization parallelize
+of those four numbers. The next line calls map, and
+what I'm going to do with map here is assign it to a variable an output
+variable called squared. Now think carefully on
+what squared contains. Do you think it contains an RDD or
+something else? If you said it contains something
+else you're right now, why is that? Well, let's unpack this numbs.map line. So numbs.map will apply
+the function that we give it and we're saying for every line x or
+every element x, we're going to square that value
+by calling x star x or x times x. So that map function will give us an RDD,
+but you'll see that I've snack
+in .collect at the end. So we start out with an RDD numbs we
+call map which will give us another RDD, and then we call collect, and you'll
+remember the collect will give us a list. At that point we can revert to plain old
+Python and iterate through that list, so for numb in squared we're again
+iterating through a plain old list. This is just plain old
+python from here on in, and we're going to print that number that's
+a funny print format statement in Python. There are at least three or four different ways to use print to output
+a number that's one way of doing it. Now we can also do things where we're
+going to pass in something like a split. So let's say that I in that
+first line assigned to an RDD called lines the output of parallelize
+on a list that contains two strings. So we have hello world
+is the first string and hi is the second string as part of a list. The next line of code will
+create another RDD called words, that contains the application
+of map onto lines. And the function that we're calling in map
+is saying for every value of line here. We're going to call split on
+anything that has a space in it, so we're going to call line.split. Using a space for every line and
+then we're going to print out words, the collection of words that's going to
+give us a plain old Python list. So what do we have here? Well if we do that, we find out we may or may not get something that we expect,
+what we get is a list of lists. So that first list in here is
+the split of hello world on a space. The second list is the split of hi on
+a space, now if you split a string that lacks the split character,
+you just get the string back. So that's how mapping or
+that's how map works. Let's say we weren't happy with this
+idea about having nested lists. So remember in mapping we
+had our list of lists, let's say instead we wanted to have just
+a plain old list of hello world and hi. This is much more desirable and common
+when we're dealing with text processing. So this code is exactly the same as
+the previous code except instead of map, we're calling a function called flatmap. And flatmap will take
+a nested set of lists or a nested set of mappings and
+create a flat map a single list of it. So here if you contrast
+the output of this, well, all we've changed is map into flatmap, we have one signal list with
+three words hello world and hi. RDDs also allow you to do set like
+transformations for example union, intersection, subtract and distinct. Here's where you might want to use that, let's say I gave you a log
+file from a web server. And I asked you to pull out all the lines
+that had either error or warning in it. Now one thing to really think
+about when you're doing work in Spark is you don't try to get complex,
+you don't filter for error or warning,
+you actually do things in two steps. And remember I mentioned that that
+directed acyclic graph that dag, the dag, will figure out what the best
+combination of filters is for you to achieve your desired outcome. So here if you study this a little bit, you'll find out that that first line
+we'll take our input RDD whatever that's set to let's say that we
+used sc.txt file on some log file. We called filter and
+then we said for every line in there we're going to return true if
+the word error is in that line. We're going to do the same thing with
+any line that contains the word warning. And then what we're going to
+do is create a new RDD that is the union of errors and warnings. So that's going to give
+us that RDD that consists of all the lines that have either error or
+warning in them. If you wanted to extract for
+example, the lens that had air and warning in the you could use intersection. If you wanted to extract all the words
+that say had error but not warning, you could use subtract and then distinct will give you all
+the distinct values of the RDD.

@@ -1,0 +1,93 @@
+Hey there, hello again. In this segment we're wrapping up our conversations
+about accountability and governance for the week. I wanted to mark this as
+a special occasion by wearing something
+unusual which I've done before and I'll do
+again in this class. I know you have to look
+at my talking head and torso a lot in the frame, but I just think it makes
+it a little more visually interesting if I try to wear something related to the class. What I'm wearing
+today is actually an art piece and I'm not sure
+if I'm supposed to wear it. I did buy it because
+I liked it and I thought maybe it was for
+hanging on the wall, so maybe doing the wrong
+thing by wearing it but I thought I wanted you to have the experience of
+seeing it in action. So the thing I'm wearing
+is an art piece called beware of software
+that you can look up online by searching
+for beware of software. My interpretation or my
+reaction to the art piece is that the artists were using the idea of
+a reflective vest, which is a warning vest which you might see on a
+construction site, but then they added
+texts and images to the vest to make it about the dangers of new software and I thought as someone
+who is a former programmer, I really liked that idea and
+I thought it was amusing, but I also thought it
+reminded me a little bit of this class because
+I do feel like one of the things we are
+doing in the class is partly we're warning you as a budding professional about dangers
+and so I like that idea. Also you could say that the reflective vest is
+something a professional would wear like on the job site so maybe I should have been
+wearing it the whole class. Also some of the texts on the vest is also related to the material
+that we have in the class so I thought
+that'll be interesting. You can look up the
+vest as I said online, I know you can't see
+the whole thing, it's got some texts on the back too but I'm not going
+to turn around. So to wrap up the week on
+accountability and governance, I wanted to introduce the assignment and just sum up some of the points
+that we've covered. One of the things I wanted to emphasize is that
+in our discussions, we've talked about
+how we can consider accountability both before and after the fact or
+ex-ante and post hoc, and we've covered two
+specific techniques for accountability,
+auditing and transparency. There's also this
+jargon that I'm just going to highlight for you, put an asterisk by, underline and that's that in the industry you sometimes see this newfound
+enthusiasm for what we might call an
+accountability workflow, and that just means that you've taken some of the ideas
+from the readings and the lectures of this week or similar ideas and build
+them into your process at your organization
+so that there is a sense of accountability
+and governance and I mean, when I worked in software, I have to say that there was
+really nothing like this, we focused on getting the product out the
+door by the ship-date. It was not about anything like
+accountability workflows, but that's an interesting idea. Another phrase that
+you sometimes see that relates to what we
+talked about this week is end to end
+accountability which means that there is some mechanism in the work process to ensure accountability at every
+point even if a problem is discovered later at a
+different time then there's still some way to
+track back and figure out what exactly went wrong, so these are the buzzwords
+that you see right now that I hear for my interactions with the
+government and industry and former students and they come
+up in some of the readings. The assignment for this week
+is going to focus in on one kind of mechanism for accountability and that's the algorithmic
+impact assessment. There are many other
+public policy and regulatory things that
+we could have used here, I have a slide here
+that shows just the three that we
+were considering, we were thinking about maybe using the data ethics framework, which you can look up from the UK or discussing the right
+to explanation which is ambiguous and we're not really sure what it means right
+in the European Union, but we decided to go with the algorithmic impact
+assessment because it's a workflow based intervention in accountability and governance. The background for this is that the Government of Canada decided, partly as a result of its
+procurement processes, that it wanted to have a
+checklist that people producing software that would use algorithms or data science
+analyses to make decisions, they would have to complete
+this checklist in advance, and so it's interesting where they put this in the
+process and so we thought, we'll have you have a
+look at this checklist. Now I know that you're not producing a data
+science product for the Government of Canada
+so the questions may not exactly link to any scenario
+you've encountered so far, but the way I'd like you
+to think about this is as just a dry run for the kind of accountability work
+that you may be required to do in Canada. For example, this checklist is going to be required for
+all government projects, and so one of the things I'd like to do as well is to
+think critically about it because I
+think we've covered a lot of ground in
+the class so far and some of the cases that we've discussed could
+show you that maybe there are problems with some of the impact assessments
+or things that wouldn't be caught by the impact assessment
+and that's the kind of data science professional
+that we want to train here, someone that's able
+to think beyond just checking a box as to what
+the implications are, so you might think of yourself as a reviewer of the data
+science checklist, I would say like a
+movie reviewer or something like that is critically looking at the list as well. So I'll end there
+and thank you so much for your
+attention this week.

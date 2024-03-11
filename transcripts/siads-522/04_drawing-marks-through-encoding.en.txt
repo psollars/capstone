@@ -1,0 +1,173 @@
+Welcome back to our journey
+through data models. Now that we've talked about how to represent data nominal, ordinal, or
+quantitative, we want to start to think about
+drawing marks. So what it is that we're
+going to use on the screen or on paper to represent those
+different kinds of data sets. So again we have
+our puzzle layers, we have in our task, we have
+the data inside nominal, ordinal, and so on. We're going to talk
+about this mapping now, how to go from those
+different kinds of data representations to things
+that we see on the screen. So again we have the
+mark on the screen, and these are
+different kinds of marks. These are graphical
+things that we can use to generate
+our visualization, we can layer them in
+sophisticated ways. But these are the things
+that we have to play with. A mark can represent a bunch
+of different things, actually two that we care about quite deeply.
+One is entities. So things on which we're
+collecting the data, whether they're people,
+they're companies, they're genes, whatever it is. The mark then represents
+the entity, so these are things. They might also represent
+the properties of things. So what is the weight
+of the person, how many people live in
+a country and so on. These are properties
+aspects of the entity. They also might be used to
+represent relationships, so is friend, is
+a parent and so on. So if we think about
+a network diagram, something that looks like this. This is a person, this is another person, this mark between them, this line represents
+a friendship. Okay. So this is
+a specific kind of mark. This one over here
+represents person, and this one represents
+relationship, is a friend, is a parent is
+in the same club and so on. Okay. So those are
+the different things that marks can represent. So again and specific examples, the things that could
+be Alice and Bob, all males and females, or they could be
+properties of things like height of Alice and Bob. So a key part of our decision-making process is thinking about how
+we transmit and receive visual
+information because encoding is going to be that transformation from
+data into a visual signal, which then we expect someone
+to be able to look at and read and basically
+re-interpret the data from that. So Bertin who's
+a very famous philosopher, who thought about
+visualization quite deeply, wrote this book called
+Semiology of Graphics. His understanding
+or his explanation of what visualization looks like in terms of this conveyance of symbols looks
+something like this. The sender encodes the
+information in a number of signs, that is the graphical marks. The image is then perceived
+by the recipient. They visually take in the marks that they
+see on the screen, and then they decode
+that information from the signs. Of course, that's all mediated by their understanding
+and what we're actually encoding in the visual. So let's say we have a set
+of quantitative things, and we know that we would
+like for the recipient of this information to be able to make the following
+inferences that A, B, and C are different things. They're distinguishable entities. That B is something that
+sits between A and C, and the B, C that is
+the distance between B and C is twice as
+long as A and B. A visual representation of that is this particular
+visualization. So we have a mark, or we
+actually have two marks. We have the plus sign which
+represents where that A, B, and C are sitting in space, and we have the label that is
+the textual representation. Without that, we
+wouldn't be able to read which plus sign corresponds
+to which of the A, B, and C. But you can see
+from this visualization that we're preserving
+that intent that we had. So we had these criteria, the set of thing that
+we wanted to express, and we've represented
+it in the image. So this is the first thing
+that I want for you to be able to
+add to your list of vocabulary words around
+visualization encoding. We're going to talk
+about what it is that the visualization expresses. So let me give you another
+specific example around this. Let's say we have
+a really simple data set. We have names A, B, and C, and we have some scores
+associated with them. What we want to express
+is that A is 1, B is 5 and C is 2. We also want to express that B is five times
+larger than a, and C as two times larger than A. This visualization
+expresses those fact. One can look at
+the visualization without having access to the data set but basically infer from reading
+it the set of attributes. We can read how high A is, B is, and C is. We can tell that B is
+five times as large as A. We can also tell that C is
+two times larger than A. Those things can be inferred from looking at this visualization. So these are insights
+that I as the analysts had that I want to make sure
+you the viewer can see. Now there are other things
+that I might want to express, and some of these
+might have to do with questions that I
+have as an analyst. So if you're thinking
+about yourself in the role of the analyst, what you might want to know is what is the
+distribution of values, what's the largest value,
+what's the smallest. What we want to have
+is a visualization that lets us answer
+these questions. So these are things that
+we want to express on the visualizations from which
+we can infer the answer. So again the same
+visualization is going to support us being able to
+answer these questions. But again, this is
+a set of things that we would like for
+the visualization to express whether they are on
+particular insights that we've already discovered or answers to questions
+that we have. So the goal of visualization
+again is two fold one. If you're in an analyst role, you have the data and
+a set of questions, so the visualization should
+express the answers. During a communicative role, you have the data and
+a set of insights and the visualization should express the insights to the viewer. Of course, there's
+everything in between, so it's not quite true
+that you're only being in a communicative role only
+being in an analyst role. Oftentimes we're going
+to switch between these. The visualization
+should then express with answers and insights. So how do we express visually? As we've indicated,
+we can manipulate the marks or the visual
+properties of the mark. Number 10 in thinking
+about this again, this expressiveness and so on started identifying what are called retinal or
+visual variables. Retinal variables are basically things that we can change. This is from his
+original book in French. These are things that
+we can change about the data or the mark in order to convey
+specific pieces of data. So we can manipulate
+these attributes, we can manipulate where
+a mark sits in space, we can manipulate its size, we can manipulate its value
+which is its shading, its texture, its color, orientation, shape and so on. There are other things that
+we can also manipulate, things like transparency
+and blur and so on. These tend to actually not be great as representations of data. So we try to avoid using
+those where possible. But when we're doing things like uncertainty
+visualization, sometimes transparency and blur is useful for those kinds
+of data sets. So we will encode a level of uncertainty using
+the level of transparency, but these are things
+that we can manipulate. To determine which encoding
+is the best one, we're again going to
+look at this mapping between the task of an data
+to the mark in the image, and thankfully there
+have been a lot of psychology or perceptual
+experiments that have told us where things sit in the spectrum for more
+accurate to less accurate. So we have this
+hierarchy of things, and we'll talk about
+this more where position and length are
+really, really accurate. So it's possible to
+tell the difference between the size of this bar
+and the size of this bar. If I ask you how much bigger one is relative to the other, you're going to be
+quite good at that. But things like area
+and volume and color and density tend to
+be less accurate. So we'll see why that
+is in future lectures. But people have done this across all the different
+kinds of data. So quantitative data sets, we know that position
+is better than length, length is better than angle, angle is better than
+slope and so on. Ordinal we put position
+above density, above color saturation and so on. Nominal, we have position, color hue and so on again. So looking at this diagram, what you're going to be
+able to notice is that length while it's
+great for quantitative is not so great for ordinal and is also not so
+great for nominal. So that's what these lines
+in between are telling us. These gray boxes down here, tells us that this is not an appropriate way of encoding
+particular data sets. So we don't want to
+use containment or shape to quantitative things. It's really hard for someone
+to tell us the difference between a circle and
+a square, right? So if this was
+a quantitative variable, this meant 5 and this meant 2. It's not really possible
+to imagine a set of shapes that are going to be great for this particular task, like how much bigger this
+is relative to this. So this is a diagram that reproduce from
+a paper by Jock Mackinlay, and we're going to talk
+about this in a second. He built this as a way of
+identifying for a computer, for a program, a way of automatically generating the right kinds of
+visualizations. So we're going to see
+how to use this in practice and what's called the
+APT algorithm in a second. But before that, just
+a quick takeaways, the marks and the properties of marks or the things
+that we can manipulate as
+these process of encoding. We are going to have to
+make this decision about whether the data is nominal,
+ordinal, or quantitative. But then we can rely on things like this diagram in order to figure out the best way
+to represent those. So we're going to determine
+what needs to be expressed, and from that, we're
+then going to decide which marks to put on
+the screen and how to put them. The psychology and
+perceptual experiments will then tell us
+which to pick and why. With that, thanks for listening.

@@ -1,0 +1,40 @@
+The last topic we'll touch this week
+is using experiments as a measurement, and we use an example,
+which is the trust game. So we'll go through a classic study,
+which measures trust in the lab, and this has been replicated
+in many different labs. And then we're going into
+an example where the researcher measures trust in the field. So this is an example of lab-in-the-field,
+and then use the measurement to predict
+people's real economic behavior. So this is potentially
+a very important and promising aspect of experimental methods. We all agree that trust plays an important
+role in economic and social transactions. For instance,
+Professor Resnick has studied the effect of trust on online
+transactions, such as eBay. When you make a loan,
+when a financial institution makes a loan, it has to have reasonable trust that
+the client will repay the loan. Trust is a lubricant that is underlying
+many of the economic activities. Despite its importance, people for a long time could not agree on
+how to define or measure trust. So the other interesting aspect
+about trust is it is not clear what is the causal relationship
+between economic outcomes and trust. Do people trust each other more,
+therefore they have more transactions with each other, therefore you
+observe more economic growth? Or do we have better institutions that
+encourages both economic growth and trust in society? So for a long time people could
+not decide what is the causal relationship involving trust. So we're going to look at one classic
+example, which measures trust in the lab, and look at how it might be used
+to predict economic behavior. So how do we measure trust? Lots of times the survey methodologies
+usually say, you can just ask people. So for example, a very well known
+example is the World Value Survey, which asked this question, generally
+speaking, would you say that most people can be trusted or that you cannot be
+too careful in dealing with people? So the question is how
+reliable are survey answers. It would be nice to have experimental
+tools that allows measurements of trusting and trustworthy behavior,
+which are incentivized. And that leads to the Berg, Dickhaut and McCabe paper on trust,
+reciprocity and social history. I'm going to go through
+the main results of this paper, it's primarily on the design. So the question really is whether
+trust is a primitive behavior that can emerge in the absence
+of repeated interactions, reputations, contracts and
+potential punishment threats. To measure those, to answer this question, they came up with an experiment
+design where subjects are anonymous, and they engage in a trust game, which
+happens only once, it's a one-shot game. At this point you should go to MoLab,
+login, you play the trust game. After you finish, you can come back and
+listen to the rest of the lecture.

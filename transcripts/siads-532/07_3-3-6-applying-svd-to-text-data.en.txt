@@ -1,0 +1,115 @@
+2
+00:00:06,033 --> 00:00:09,366
+To better understand
+how SVD works, let's take a look at a real
+example in text mining. So in this particular example, we have a matrix of seven
+rows and five columns. Every row corresponds
+to the document, and every column corresponds
+to the unique word. The first four documents
+are data science articles, and you can see that
+they contain words such as data, information,
+and retrieval. The other three documents
+are medical reports. So you can see that
+they content words such as brain and lung. From the numbers in this matrix, you can visually identify
+that there are like two positive blocks in
+this matrix, right? The first block are related to the data science articles
+and the words like data, information, retrieval, they
+related to data science. The second block are related to the medical reports
+and are medical words. So intuitively, this two
+blocks are corresponding to two concepts or two
+topics in the data. Of course the problem is that, if you're no longer able
+to realize the matrix, how can you find out that
+there are two concepts? Well, here's how
+SVD can be applied. Given the original X
+matrix, the data matrix, we can rewrite that as a
+product of three matrices U, Sigma, and V transpose. So in this particular example, the oriental data is
+summoned by five matrix. You have seven documents, you have five independent words, you have five individual words. You can rewrite this data matrix into the product of
+three smaller matrices. The U matrix is the
+seven by two matrix. The two columns of this
+U matrix, remember, there are two left
+singular vectors of the original data matrix. The first column indicate
+the lung a word but the concept that is known as
+the data science concept. The same column, again no
+longer indicate a unique word, but it indicates the
+medical science concept. So U is no longer the
+five-dimensional matrix, it's the seven by two matrix. Correspondingly, Sigma is
+the two-by-two matrix, and it's a diagonal matrix. That means there are only positive values on the diagonal. The first number gives
+us the estimate of the strengths of the data science concept
+in our database. The second number tells
+us about the strengths of the medical concept in
+our database. All right. Intuitively, because we have more data science articles
+than medical reports, then the strength
+of the data science concept is actually larger. Now, we also obtained a matrix that is known
+as the transpose of the V matrix and this matrix has only a two
+rows, but five columns. What does this V matrix indicate? In fact, every row of this V matrix give us the
+representation of the concept. So the first row of this
+V transpose matrix gives us the word representation
+of the data science concept. So by looking at the numbers, we know that the data
+science concept is more related to the first
+three-dimensions or the first three words data, information, and
+retrieval and it's not so much related to the words
+like brain and lung. In the second row, you can see that the medical concept is more related to the words brain and lung but not the
+first three words. So in reality, we can
+usually use the V matrix to interpret what the
+discovered concepts are or what the new dimension, what the new coordinate after this
+transformation indicate. In reality, the new
+dimensions may not be as simple as epics
+movies or Brad Pitt, you may take some effort to indicate to actually
+interpret what they are. So now we can see that
+in this real example, you can use SVD to decompose
+this seven by five matrix, the original data matrix into the product of the
+seven by two matrix, that is the document by concept matrix times a
+two-by-two matrix that gave us the strengths
+of different concepts and times a two by five matrix, that is the concept
+by word matrix. So how can we make use of
+these results in practice? Once we append the document
+by concept matrix, we can now transform
+the original data, the original documents in our dataset into a no
+dimensional representation. In this case, we
+takes a U matrix, that is the seven
+by two document by concept matrix multiply that by the Sigma matrix
+that is two-by-two, that gives us the
+strength of each concept. By doing that, we can actually obtain the new
+matrix that is again seven by two and this new matrix is the transformed representation
+of our seven documents. Now we can say that, for
+each of the document, instead of the
+five-dimensional vector corresponding to the five words, we have a two-dimensional vector corresponding to
+the two concepts. Based on this
+two-dimensional vector, we can still identified
+that the first four are close to each other and they're data
+science articles. They have positive values and are data science concept and they have zero values dimension corresponding to the
+medical concept, and next three are
+medical science articles. They have zero values on the data science dimension and positive values on the
+medical dimension. Isn't that great? You can see that
+again through SVD, we can have a low dimensional
+orthogonal representation of the original data. But in practice, we usually don't just deal
+with original data objects. We need a way to also handle
+new coming data objects. The previous transformation only applies to the
+original data matrix. What if we have a new data point, a new document coming in that contains different combination
+of words and in fact, we can also transform
+any new document into the same low-dimensional
+representation by just compute the product of the
+representation of the new document in the original vector
+space and the V matrix. So in this particular example, suppose we're dealing with the new document that
+comes in two words, information and retrieval, which may be in the
+new document added into our database or the
+query that the user issued. We can compute low-dimensional
+representation of this new document. In other words, we can represent
+this new document from the word vector space
+into the concept space. All we need to do is to take the original representation of this new document
+in the workspace, that is the
+five-dimensional vector. Because it contains two words,
+information and retrieval, we have a vector 0, 1, 1, 0, 0. We multiply that with the V matrix and that is the five by two matrix, remember? It has two-dimensions that corresponds to the two concepts, data science concept and
+the medical concept, and each column vector gives us the word
+representation of the concept. After doing that, we obtained a two-dimensional representation
+of this new document, 174
+00:09:23,200 --> 00:09:25,033
+Now based on the two numbers, can you tell me
+whether this document is about data science
+or medical science? Of course, it is related
+to data science, right? This number actually gives us the similarity of this document to the data science concept. In this particular case, the science similarity is
+measured as the product. So you can either use this similarity to retrieve
+documents that are related to the new
+document or to assign this new document to
+one of the classes. They can either use this for classification and
+for retrieval tasks.

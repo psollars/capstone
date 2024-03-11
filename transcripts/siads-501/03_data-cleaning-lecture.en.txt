@@ -1,0 +1,91 @@
+Welcome back everybody, today's topic Collecting
+and Cleaning Data. At the end of this lesson, you should be accepting
+the hard truth that you will spend significant effort on
+this seemingly mundane task. You will become aware of some of the basic activities of understanding your
+data and cleaning it, and you will appreciate
+the importance of doing collection and cleaning
+in a reproducible way. So data cleaning 101. When you get any data set, there is always
+an initial process of understanding that data, trying to figure out whether there are any problems with it. So what should you do
+to diagnose problems? Ask a bunch of questions
+and look at the data or conduct exploratory data
+analysis to find answers. What do the column labels mean? Does the data match
+the column labels? For example, you might find that there is column labeled
+called last name, but sometimes it's got a last name and
+first name together. Does the data follow the
+datatype rules for the field? For example, in a date column do you sometimes have
+numbers that aren't dates? Do you have too many
+missing data values? Does it make sense that all
+of those values are missing? Are there duplicates? Are there outlier values
+that don't make sense? For example, a person
+who is nine feet tall or who has completed 357 credits at
+your community college. Don't just throw
+out the outliers, maybe that student did
+complete 357 credits. That maybe they didn't, and maybe it's showing the total number of credits
+that they ever registered for even if they change
+their minds and switch to a different course before
+the semester started. That same error that produced
+the outlier 357 is probably also causing lots of other incorrect data that isn't
+showing up as an outlier. So don't just throw it out, figure out what's going on. Now, if you do find a problem, in order to correct it, you're often going
+to have to make contact with other people
+with whatever the data sources to get
+more information about what there is or to correct it. Your SQL skills and your Python scripting skills are probably
+going to help a lot here, so that you're not just
+depending on somebody else to do all the technical work and they don't have time for it. Now, sometimes you'll be able to compute the thing that
+you need from data that is present in and not
+so nice form and again your Python skills
+will help there. Now by the way, you should cultivate a practice
+of telling stories about how much heartache
+you've saved your organization with
+your diagnosis of data problems. Point out how misleading your results would
+have been had you not diagnosed the problems, and how much time and money you save through your sleuthing. Don't point fingers and make
+everybody look bad or feel bad because those are probably the same people
+you need to fix things. Make it look like a completely
+natural series of events. As it's completely
+natural that you got the data that you got, but say how important
+it is to fix it. So let me summarize
+this with a few maxims. Unclean data is the
+canary in the coal mine. Don't treat the symptom, figure out what
+the root cause is. Celebrate your cleaning efforts. There is one more important idea
+that I wanted to leave you with, reproducibility. Anything you do during the data collection
+and cleaning stage, should be done with a computer
+program that can be rerun. Don't go into
+an Excel spreadsheet and just change the value of a cell. So there are
+a few reasons for this. First, it's a form
+of mental hygiene. Trust me, you'll do
+something today and not be able to remember it
+a few days what you did, and you won't be so sure it
+was such a good idea anymore. Second, it's a form
+of accountability. If an auditor or your boss can trace
+the provenance of all your data, then they can have
+more confidence in the results of whatever analysis
+you end up doing. Third, even if you
+think that you're just doing a one-off
+data analysis, there is a good chance that you or someone else will
+want to do it again. Indeed your organization
+may even want to do it on an ongoing basis as part
+of a production task. If you've done all your
+data cleaning with code, it will be clear
+where the decisions have been hard-coded and where additional development is needed to make something
+that will work on an ongoing basis with a data source that
+may have different errors in the future. So let me summarize this idea of reproducibility and
+a couple of other maxims. First, the primary beneficiary of your documentation efforts
+is your future self. This is an image of you
+looking in the mirror, that's your future self. Second, data diagnosis
+can be a manual task, but data cleaning
+should always be automated in
+a rerunnable program. So to summarize, you're going
+to do some data cleaning. So you might as well do it right. If you try to cut corners, you're the one who's going to experience pain down the road. Finding data problems
+is heroic work, it might not always
+be appreciated. So make sure you tell
+the stories about how many problems you've avoided by doing this important work. Then we have these maxims. Unclean data is the
+canary in the coal mine. Don't treat the symptom, treat the root cause. Celebrate your cleaning efforts. The primary beneficiary of your documentation efforts
+is your future self, and data diagnosis can be a manual task but data cleaning should
+always be automated. I went looking for a joke about data cleaning, not so many. But here's one about
+cleaning in general. If you heard about
+this Marie Kondo, Japanese decluttering trend, you're supposed to pick up every object in
+your home, you hold it, you decide if it gives you
+joy and if it doesn't, you get rid of it. People say it's great. In fact, I tried it with
+my son last weekend. He threw out all the vegetables and I drew out
+the electricity bill. Please don't try this technique
+with your next data set though. I'll
+see you next time.

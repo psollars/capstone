@@ -1,0 +1,82 @@
+So then you may have the question, how do
+we know the solution of the subproblems? How do we know the area distance of the shorter sequences? In other words, if you know the area
+distance of the three special cases, of the three subproblems. We can easily find the solution
+of the complex problem. But how do we know it takes
+three areas to transform from county to compute and
+four areas from counter to compute? Well, you can keep reducing this
+problem into even simpler subproblems. Right, you do this recursively. You back off to shorter subsequences. You don't know the area distance
+from county to compute. Maybe you could actually find the solution
+from count to compute right and you keep backing off this I'll tell you
+you know the answer of the subproblems. So this is the intuitive
+procedure of dynamic programming. You keep reducing the harder
+problems into simpler problems until you know the answer for
+sure. So what do we know for sure? Well, there are interesting
+special cases of this transformation that we do know for
+sure. The area distance of any
+sequence to the empty sequence is the length of that sequence. Does that make sense? If you want to transform the sequence
+into the empty string all you need to do is to drop all the characters
+in that sequence one by one, right? So the distance from x to the empty
+string is always the length of x. Similarly if you want to transform
+the empty sequence into a longer sequence. All you need to do is to insert
+the characters one by one. That's the area distance
+of the empty string and another string y is
+always the length of y. Right for example, we know that
+the distance from counter to the empty string is seven because there
+are seven letters in counter. We just need to drop them one by one. We know that the distance from
+the empty string to computer is eight. All we need to do is to add
+a relator into computer one by one. And this applies to all the sub
+sequences too all right? For example, the distance from one to the
+subsequent c to the empty string is one. You do not need to calculate this. These are actually given you for
+free right? So all you need to do is to start
+with this what we know for sure and then grow them into the area
+distance of full sequences. So this is the intuition behind
+the dynamic programming and the formal procedure of calculating area
+distance can be defined as the following. Suppose we have two sequences X and Y. Sequence X has n items,
+sequence Y has m items. Then we can define d(ij) as essentially
+the area distance of the subsequence of X. That contains the first i items of X. And the subsequence of Y then contains
+the first j items of Y, right? In this case both i and j are in this data between 0 to n or
+m right? So d(ij) gave us the solution
+of a sub problem. That is the area distance
+from a subsequence of X and the subsequence of Y. So others definition we can also
+define the target of the algorithm. So all what we need to do is to find the
+distance between the full sequence X and the full sequence Y,
+that can be denoted as d(n, m), right? So this is the area distance between
+the sequence of the first n items of X and the first m items of Y,
+which are essentially the full sequences. So given this definition we can talk
+about the algorithm that we use to calculate area distance as known
+as the Wagner-Fischer algorithm. Right, why it does is essentially to
+evaluate straight dependencies three conditions whenever you are calculating
+the area distance of a subsequence. So what are they? First we know that the distance
+of the subsequence of x and empty sequence is always the length
+of the sub sequence itself right? So d(i0) = i for all the i's. We also note d(0, j) = j. Right because the area distance
+from the empty string to the substring of Y is always
+the length of the substring, right? So these numbers are given you for free. And then when both i and
+j are greater than 0 when we were trying to find
+out the distance of i and j. So d(i, j) is essentially the minimal
+number of the following three conditions. Which three conditions? Remember the example we have given? The first condition is
+that all you need to do is to delete the last item from x,
+right? So by doing that d(i, j) = d(i-1, j) which is the shorter
+subsequence of X and Y plus 1. And the 1 area is the operation to delete xi from your subsequence of x. Similarly if the last area
+you decide to do is to insert yj into the subsequence of y then
+pij equals to pij minus 1 plus 1 and here one indicates the cost to insert yj. The masked element of
+the subsequence of y. Right finally if the next operation you
+decided is to substitute xi with yj, right then all you need to do is to
+calculate the i minus 1 and j minus 1 and then add a cost that indicates whether
+you need this substitution or not. And this cost is denoted as t(i, j). So apparently, t(i, j) could be one
+if you do need that substitution. In other words if the mass
+element of the first subsequence is not identical to mass element
+of the second subsequence or if xi is not the same as xj then
+you do need that substitution. So t(i, j) x to 1. Otherwise if the mass element of xi and
+the mass element of yj are already the same item,
+then you got that for free. You do not need to pay
+the cost of this substitution. In that situation t(i, j) = 0. Right, so to summarize, when either i or j is 0 then you got the values for free. d(i, 0) = i, d(0, j) = j. When both i and j are greater than
+0 you start from simpler cases and then you gradually grow them
+into more complex cases, right? You always get the distance i and
+j, d(i, j). From the following three
+situations you evaluate whether it is it takes fewer areas
+to delete one element from x. And then right transform
+the make the transformation or it takes fewer areas to first
+do the transformation and the insert one element to y or to do the
+transformation first and then substitute. Right the mass element from x to y right. Sometimes you got substitution for free if the two letters
+xin a yj are identical. And you find the minimal number of edits
+from evaluating all the three situations.

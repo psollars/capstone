@@ -1,0 +1,261 @@
+So now that we've got some text in our
+database, we're going to talk about the kinds of things we can do manipulating
+functions, WHERE clauses, etc. So there's a couple of things
+that are standards in here, and I'll try to call out the things that
+Postgres does a little bit differently. So we've already looked at WHERE clauses
+that have equal signs, equality, those are actually really important because they are the most performant, especially if you have
+an index on a string column. LIKE is like a simple wildcard that
+you can put a few characters in. SIMILAR TO is kind of like
+a regular expression. Most people don't like using SIMILAR TO,
+because I know regular expressions are a little bit hard to learn,
+we're going to cover them. But once you know regular expressions,
+they actually translate not just in Postgres, but actually in Unix, and
+other things like Linux, you can use them. And so I don't think SIMILAR TO
+is much of a good idea, and it's not even particularly standard. LIKE is actually more standard across
+databases like MySQL and others. And then you have your basic equal sign,
+greater than, less than, greater than or equal to, all that stuff in between. And IN. IN gives you a set of things,
+so you put them in square brackets. So like if WHERE this column IN
+this, comma, this, comma, this, comma, this,
+in square brackets. Then you can manipulate
+the SELECT results, like lowercase, uppercase,
+taking out a substring. And you can put these
+in WHERE clauses too. And so we'll talk a little bit about
+part of the performance, I've always been talking about the p
+erformance, where sort of it either goes into the database engine and
+the database engine optimizes. Or ultimately, you've got to pull back all
+the results, loop through all the results, and then apply the WHERE clause there. So we'll hit some really good
+examples of this coming up. So Postgres has an outstanding
+documentation on these things, I really like how they did it. There are just two pages, and they've
+got little simple examples and like, yep, I got it. So I'm not going to sort
+of read all these things. You can go into the Postgres
+documentation, which is, of course, free and online because Postgres
+is an open source project. And so you can just
+look at this stuff, and I'll cover some of
+the ones I want to cover. One thing you'll notice, and I don't quite
+know the history of this, is that there is a bit of commonality between Python string
+method names and the Postgres calls. So that they're a little easier, kind of like that generate_series kind
+of feels a little bit like range. So we're going to start out and
+do a couple of things. And so I'm going to make this table called
+textfun that's got a unlimited length TEXT field. We'll talk in a bit about
+the length of these things. And then I'm going to do an index,
+just make an index on it. And that basically allows me to go
+quickly to various things with equality. This, by default, is a B-tree index,
+that's why I named it underscore b. It's a B-tree index, and
+B-tree indexes are good for sorting, they're good for exact lookups, and
+they're good for prefix lookups, and ranges. And so they're kind of the go
+to index in most databases. We'll talk a little bit about hashing. They sometimes take a little less space,
+but they have their own compromises. And so when you just say CREATE INDEX,
+Postgres will generally make you a B-tree index, and you basically
+say it's in this column of this table. So here is a couple of cool things
+that we're going to start playing with a little bit. And this is all about trade-offs, space
+versus speed trade-offs. pg_relation_size basically says how much data is what's
+in this currently in this relation taking? And then how much size is the index? So what you'll notice is I've
+just created this table, and I put no data in, but
+the index is already taking up some space. And the whole idea of an index is
+you're trading off space for speed. And so
+don't get too grumpy about the space. And especially in modern computers and
+disk drives, space is generally not your problem,
+but speed is your problem. And so I will call attention to these,
+but don't think to yourself that your goal in life is to
+make these as small as possible. Actually, when you're using indexes
+your goal is to make it fast, whether it's fast for inserts, deletes,
+updates, or reads. But this is really cool. And if you're working on something way
+more complex than this, you can say hey, how much is this taking up? And how much is the index taking up? But like I said, don't get too concerned, because the reason you're
+doing an index is to go fast. Okay, so we start here, and so now what I'm showing you is this from the
+previous section, this random generation. And so this is one SQL statement. You'll notice there's no semicolon here. So I'm going to INSERT INTO textfun, and
+then this is the columns that I'm going to insert, and
+then I actually have a SELECT statement. This is a continuation. Normally
+you'd say values, blah, blah, blah. Here what I'm doing is I'm
+actually doing a SELECT statement, which is generating a set of rows. And then those rows are going to
+inserted into textfun. So this is an expression that generates
+a row, and then it inserts into content. So here's another syntax,
+the CASE statement. So you can't do if-then-else in SQL
+because it's not a procedural language. If-then-else is like loop, if, loop, if. What you have to do is write this in
+a statement that's sort of for all rows, true or false. So they don't give you an if statement. They could give you an if statement, and you'd just say there's
+a loop implied around it. But they didn't, they call it WHEN. And this is universal across all SQL,
+they don't call it if. So WHEN random is less than 0.5,
+THEN this, ELSE that. So this whole CASE bit from here to here
+with the END, this part in parentheses right here, from CASE to END,
+that generates one of two strings. It either generates this neon string or
+this LEMONS string. You see my racing car sort of sneaking
+in here in some of my thematic stuff. So all it's saying is of half these records
+that I'm generating are https, blah, blah, blah. The other half are http, blah, blah, blah. And then I can concatenate that with
+generate_series from 100,000 to 200,000. So this is going to basically generate
+100,000 records in one statement, so that's how you do it. So using those things from the previous
+section, we generate the statements. And now you can see that
+we got 6 meg here, and the index is even larger, 8.5 meg. And one of the problems here is
+we're using a big long text field. And the problem is that if you're using
+a B-tree, it wants to be able to know for an exact match, it goes down the tree and
+it finds the record, and then it checks to see if it's true. So the thing that's being indexed,
+the column that's being indexed, content, ends up being completely
+replicated in the index. So there's two copies of these strings, and I didn't make these
+particularly long, right? There's just a lot of these now. These are a lot. And I could have made these much longer by
+concatenating more repeat, like on a repeat or something on here, where I take blah, blah,
+blah, blah, blah over and over and over again. But you just see that the index
+grows faster than the data. Now, in a normal world,
+you would have a lot more columns here. And the actual content of the database
+would hopefully be much larger. I'm just doing this with one column, so you kind of see how
+the database grows a bit. I mean, the index grows a bit. And in this case, it's larger than the
+actual data that's stored in the database. Again, don't be concerned. We're trying to be fast, but actually just
+indexing a big long text field is not necessarily, well, the best idea. So if we look at the first
+five of these records, we kind of see our randomly generated
+stuff, some are http, some are https, and they have kind of a different string. And this we're going to be
+doing some text functions and that's why I came up with this stuff and
+so we can see the sizes of these indexes. And so that's how we did that. So this is just once
+those things are set up, we can use a LIKE clause. So the LIKE clause uses percent as a
+wildcard character kind of like we think of as asterisk in some wildcards. This matches any number of characters,
+that matches any number of characters. So what this is really saying is one
+five zero zero zero zero anywhere in the string. You can take the like uppercase of
+this, you can take the lowercase of this. This is the same LIKE clause, there's
+a whole bunch of chopping functions like giving you the four right characters,
+the right four characters, which gives you the end,
+the four right characters. And give me the four left characters and
+so you can get that. So these upper, lower, right, and left, they can actually be used
+in WHERE clauses as well. So, here's another one. Yeah, that's that one. So
+you can like ask WHERE strpos. It's actually more like, see, this is
+actually not Python because it actually looks a lot like PHP too, strpos. Within this string, tell me where the ttps
+starts and that's in position 2. This is pull out a substring from it. Give me starting at character 2,
+go 4 characters. So you get https.
+There is a way to split it. Now, it's not a thing
+when you split it and then loop through it
+because there's no looping, right? So you have to tell it, I want the fourth
+part after splitting it into slashes. So there's a slash, slash, slash, slash. So this is the zero part,
+the one part, the two part, the one part, two, three,
+four, and so out we get is neon. Now this translate is just another, you
+may or may not ever find a thing for it. But this translate is actually from
+the Unix tr command and it gives you two translation strings and it allows
+you to do a one-to-one translation. So t lowercase t goes to uppercase T,
+lowercase h goes to uppercase H, dot goes to exclamation point, p goes to
+uppercase P, and slash goes to underscore. Again, this is completely silly but
+the Hs, Hs, Ts, and Ps are all uppercased, the slashes are underscores, and
+the dots are exclamation points. Why do you want to do this? I don't know. I'm just showing you how to tr. And
+so there can be one or any number of characters, but this second
+string has got to have the same number of characters as the first string because
+it's like a character translation map. That is, that each character
+goes from the one to the other. So let's talk a little bit about
+how this performance works. And this is the first time that
+we're seeing this explain idea. So SELECT content, this is a
+SQL statement. And in this case, we're going to
+use a LIKE clause in the prefix. So that says it's got to
+start with racing and this is actually something that
+works really well in B-trees. But instead of running it,
+we're going to do explain analyze. I'm not sure they're SQL commands, but
+they are commands to Postgres to say, you know, run this but
+tell me a bunch about it. So, here's a couple things
+to look at the output and I've taken a little bit
+of this output out. This is an index-only scan and
+that's the kind of thing you want to see. You don't want to see a sequential
+scan on the whole thing. And so it's using that index textfun_b
+that we defined. That's our B-tree index. Underscore b is just my way
+of remembering it's a B-tree. And then you look, so I talk about
+what happens when you like look at all the records versus what you
+send into the database engine. And so what it's really doing is
+it's turned this LIKE into an index condition that says, look for
+records that are greater than or equal to racing and less than or
+equal to racinh, racinh. So that's going to get so
+the greater than or equals and less than,
+this was constructed by Postgres, right? And so it's like to racing to racinh and
+that is actually the racing ones because it's less than racinh and
+they know they're ordered. And again, that's the whole idea of
+the B-tree that they're ordered and you go from here to here and
+then you get the records that you want. And this has got whatever,
+a hundred thousand records in it. And this explain analyze,
+there's a way to say without analyze, ad it just tells you its strategy. But
+explain analyze actually runs it and tells you how long it took to run it. So that took one hundredth
+of a millisecond and a millisecond is a thousandth of a second. So that's one one hundred
+thousandth of a second. So that's pretty fast, okay? to get a row from our database. And that's
+the kind of speed that we like to see. Now, if I only change one thing and
+I make it so that it's racing anywhere in the string,
+not racing at the beginning, then you see this in the explain.
+As soon as you see sequential scan, you go, I failed, I've written
+a bad, bad query. Right? And so what it basically says is the is the filter is we're going to check for
+this in the text and we're going to read all these things and
+it read all those rows. It actually couldn't do it in
+the database using the index. It just had to pull all the rows back and
+look through all the rows and it was throwing them away and it's like,
+okay, I'm going to throw away a hundred it had to throw a hundred thousand one
+rows away because it didn't find any rows because none of these rows in
+this database look like racing at all. They're not in there. It's got neon and lemons and
+other stuff like that and it took that 10.271 milliseconds. Now, that's actually, let's see,
+that's a hundredth of a second. And you might say, well
+who cares, right? Well, the problem is this is
+only a hundred thousand records. There's lots of things that have
+more than a hundred thousand and the other problem is
+these are short records. So, I have one column in them, that's it. I might have like 40 columns,
+way more, and so this problem is that this kind of
+stays the same as your data length and width grows and this gets bigger as
+your data length and width grows. And so this if you go over here, I think
+this is a thousand times slower. Right? A sequential scan in this tiny database is a thousand times slower
+than an index look up, right? So, yeah, here's the CREATE INDEX. And so here we go. Now ILIKE says ignore case, and
+I don't quite know why it's so bad, but it's three times worse if
+you're going to ignore case. So, it's really beautiful
+to write these things. So as you're writing as a database
+developer or a software developer, you write these and you think, oh,
+they kind of do the same thing. And the answer is no,
+one of these is scorchingly fast and one is slow and
+the ILIKE, which is ignore case, it has to sort of get the data,
+change its case, change the case of your WHERE clause for
+string, and then do the searching. And even though this is a prefix,
+it doesn't do much good. So it's not good. And it's so easy to run these, right?
+You just make your SELECT statement and they say explain analyze, and you don't
+have to always look at these numbers. But what you're trying to do
+is avoid sequential scan. Although for me, I'd be like, okay,
+I put a percent at the beginning. I'm going to get a sequential scan and then after a while you kind
+of know this stuff, right? And I said, B-trees are good for sorting,
+they're good for exact match lookup, and they're good for prefix lookup,
+which means they don't help you. I mean, they don't hurt you,
+but they don't help you. They take up space, but
+they don't speed you up if you're doing like sort of
+not prefix matching, which is the example that
+I'm using right here. So this is fun. I guess, I call it fun. Okay, so the thing I want to show you
+here is how these sequential scans work. And so this is an example where
+we have two sequential scans. This is the one we did before where it's
+a sequential scan because it's a LIKE that is in the middle. And so this one's actually
+going to match, right? And so, this one's going to match but
+watch this, oops. It has to read all the rows, because
+it doesn't know if the first row or the last row is going to match. Now, we know, given that these
+have between 100,000 and 200,000, it's only one, right? So in this case,
+we've added LIMIT 1, right? So what happens is as it's
+going through the data, if it encounters it, then it can stop. So this is where, if you know in your
+mind, there's no way the database can know that there's only one in the case that
+you're looking for 150,000 anywhere in it. It doesn't know when it can stop because it might find 0,
+it might find 1, it might find 1,000. And it has to read the whole thing. So it takes 14 milliseconds
+to read the whole thing. But if we can tell it LIMIT 1, because we kind of out-of-band knew
+that we generated these things. Well, that's actually halfway through. And so you can see that it drops
+it to 8.732 milliseconds from 14. And literally depending on the number
+that I picked, if I made this 100,000, it'd be really fast. And if I made it 199,999, well,
+then it'd be 14 milliseconds, because it really is a sequential scan. And the sequence is not
+necessarily sorted, it's just the sequence that we inserted
+them, which happens to be in order. So the sequential scans can be improved by adding a LIMIT 1 to them. So here's the IN clause,
+remember I told the IN clause. I just want to show you an example of IN. So explain analyze SELECT FROM
+textfun WHERE content IN. This is a set, you can almost think of
+this as where it's equal to this or this or this or this or that. And so this is just two things, right? And so this is either we don't
+know if it's an http or an https. Remember, 50% of them have it one way or
+the other. And so this IN clause. And so if you look
+and you say, how is this going to work? Well, the good news, you see right away,
+it's an index-only scan, right? And then when it's saying the index
+condition, it's sort of translated how you expressed it into how the database
+engine's going to think about it. But the database engine
+has access to that index. So it's like,
+I'm going to do two probes to the index. And so you see that this is a little
+slower than one probe to the index, which was a WHERE clause that's equal,
+right, or a prefix LIKE clause. But it knows it's going to have to
+do one for the first one and one for the second one, but that's it. So this took a little bit more time,
+but it's still some scalable. Now, oops, I hit the up arrow there. Now, this one here is yet
+another advertisement for why it is that you're not supposed
+to use sub-selects, right? So you might decide that you're
+going to sort of do something like, oh, the IN clause is great. So I'm going to do SELECT content
+FROM textfun WHERE content IN, and then I'll have a sub-select to
+get those two records, right? Well, so here's the sub-select. And remember, I talked about sub-selects.
+The sub-select runs. It produces a nice little two-record
+record set in this particular case. And then the outer part runs really fast,
+the IN clause runs really fast, but the other thing ran really slow. And that's kind of what
+it's telling you here, that inside here it's
+doing a sequential scan. And then the second, the outer part. And so this was a sub-select, right? And then this is the SELECT. And that was fast, but this was horribly slow, and
+it's still 14 milliseconds, right? So it's 14, a little higher, because it does two little index lookups
+at the very end, but it took you so much to figure out what those two strings were,
+it's like no, you lose, you can't do it. So again, this is just an advertisement
+for not using sub-selects. I'll have plenty of advertisements for
+not using sub-selects in this class. So we talked a bit about text and
+text functions and up next, we're going to talk about
+character sets.

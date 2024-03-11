@@ -1,0 +1,73 @@
+So pattern and similarities are two most interesting basic
+data mining functionalities. Now, what is the pattern anyways? We can say that a pattern can be generally described
+as the structure of attributes that represents the intrinsic
+and important property of your data objects. Although the particular
+mathematic formulation of a pattern really depends on what data
+representation you choose. Whether you're representing
+your data using itemsets or either you are representing
+your data using vectors. Patterns about those two
+different data representations could be defined differently. In fact, there are some
+concepts that you may find similar to the
+concept of pattern. For example, people
+may care about the property or particular characteristic of data objects. In that context, property and characteristic are
+synonyms of patterns. In a different setting, people may be
+interested in looking for regularities for example, looking for regularities
+in heartbeats of a patient and in that case, regularity is
+indicating the pattern. In the context of
+machine learning, people usually use
+the word feature to represent the useful
+pattern of your data. So here's the particular example of what the pattern looks like and how it can be used for in-depth data
+mining functionalities. This is the time service data of a one stock Alibaba,
+in the stock market. You can see it rise
+up and comes down. So if we draw the trend
+of this time series, you can actually see the blue curve which
+indicates a pattern. What's interesting is that, this pattern actually
+has the name. This pattern is known as
+the cup and handle pattern, which indicates the bullish
+continuation pattern. So the interesting thing
+is that many people are relying on this pattern
+to make decisions on whether to buy a stock
+or a sell stock. They believe that once
+the handle is complete, the stock may actually break out to new highs and resume
+its chain higher. That means if you
+see this pattern, it's more likely
+that you can make profit in buying this stock. Patterns can also be
+used for classification, and remember that in a
+classification task, given labeled training examples, the goal is to assign a new object to one or
+more of the classes. In the following example, we can see two classes, the data objects or user
+labeled in blue or in red, and those are what we
+call training data. So there are two classes, class A and class B. When we have a new coming object, which has no labels, which class do we believe
+this new object belong to? One simple way to
+make use of patterns, is to look at what patterns are shared by different classes. For example, if we see
+that 90 percent of the objects in class A have
+one particular pattern, let's say P. In class B, only 10 percent of the objects
+have the same pattern. Our new object X, also has this pattern. So we can fairly decide that X is more likely to be
+labeled in class A. So X should be labeled in red. Let's take a look
+at another example that uses patterns for more
+complex classification. I don't know whether you
+have watched the TV show, Lie to Me a few years ago. In that show, the main
+actor has the specialty of telling people's emotions from their facial features
+or facial patterns. So in this case, from
+particular facial patterns, the person can tell whether the subject is angry or whether
+the subject is surprised. Sometimes there are
+multiple patterns that can be useful to
+classify such emotions. In these cases, these
+different patterns can be blended by the
+machinery algorithm as features to make the
+further detection. For example, you can
+summarize all these patterns, all these facial patterns
+to make the decision, whether this person
+is lying or not. We could also use patterns
+for clustering purposes. Remember that the difference from the clustering task to a
+classification task is that, now we want to group data
+objects into classes with no predefined classes
+or training examples. So in the following example, we're seeing different
+data objects, with no structures among them, and the goal is to group them
+into meaningful structures. One simple way to do that is to look at what
+patterns they share. For example, we see that these patterns have
+the same pattern because all of them
+are triangles, so we group them together. Similarly, these objects
+have a different shape, they share another pattern, so we group them into
+another cluster, and so on and so forth. We can now group all the data objects into
+multiple clusters, even though that we don't
+have predefined classes.

@@ -1,0 +1,81 @@
+2
+00:00:05,400 --> 00:00:08,900
+So lift is one of the
+interesting metrics that has been used in
+many applications. Another important
+measure is chi-square. The basic idea behind
+chi-square is that we're conducting this
+hypothesis test to test whether two variables
+are independent or not. In our scenario, each of the
+variables are the pattern. So we want to show whether
+the two patterns, x and y, are independent or whether
+they are dependent. (pause) So in this chi-square test,
+we need to compute the test statistic that is known as the chi-square. If you write down the equation
+of chi-square, we can say that it
+is the summation over all possible values of the variable i and all
+positive values of variable j. In our case, i and j basically
+indicates whether one of the variables appear or do not
+appear in our transaction. So if you look at this
+contingency table, you can see that the
+contingency table is essentially divided into two by two conditions, i equals to one or i equals to zero and j equals one
+and j equals to zero. If i equals to one
+and j equals one, that gives us the number where both of the items
+appear in the transaction, and if i equals to one
+and j equals to zero, that gives us a number where either i appear in
+the transaction, but j does not. Similarly, this number gives us the total number transactions
+with i equals to one, this number gives us
+the total number of transactions with
+j equals to one, and this number gives us the total number
+of transactions. So chi square can
+be calculated by summarizing all the
+four conditions, one, two, three, and four. In each of the conditions, we have a number right
+from the table minus another number that is known as an expected value
+in the corresponding cell. We'll expand that in a minute. Once we sum up, once we compute of that number in each of the cell minus the expected number in each cell, we take the square and we normalize that by the
+expected number in each cell. Then, we sum up this
+statistic over the one, two, three, four conditions
+to get the chi square value. n_ij is the observed count
+of one of the four cells and n_ij is the expected
+count of the same cell. How to compute the
+expected count of cell? It is actually simple. The expected count of a cell in this two way contingency table is essentially the
+corresponding number, total number of the row times the corresponding
+sum of the column and normalized by
+the sample size. So when we want to compute the expected number of this cell, all we need to do is to get
+the row total of this row, that is this number, times the column total of this corresponding column that is this number and
+then normalize that by the total sample size which is this number and once we can calculate the chi square value of any given two variables, x and y, you can either compare this chi square value which is the critical value of a
+given confidence level by looking up the chi square
+test table or you can essentially just rank
+association rules based on the chi square. The higher the chi square value, the more significant
+the association rule. So now, we know how to calculate the chi square value
+of association rule. Are you confident of doing
+some calculations by yourself? In this particular example, we are given the real
+example of two variables, game and video again. This table will not only
+give you the observed value of transactions with or without games and with or without videos. We have also given you the expected value of
+number of transactions, with or without game, with or without video
+in the brackets. Once again, this
+expected values are calculated by the product of the row total and product of the column total normalized by the total number
+of transactions. So now, can we compute the chi square of the two
+variables game and video? Remember that the
+chi square value is the summation over the
+four conditions one, two, three, and four. In each condition, we have
+the observed value of a cell minus the expected
+value of the cell, takes a square and
+then normalized by the expected value of
+the corresponding cell. To put the numbers back in, we can see that in a first cell, we have 4,000 here minus 45,000 and it's over here and take the square
+normalized by 45,000. In the second condition, we have 3,500 minus 3,000, take the square and
+normalize it by 3,000, so and so forth. We do this for all the one, two, three, and four conditions. Then, we add them together
+that gave us number 555.6 which I can tell you
+is the very high score. So by doing this, we have calculate the chi square of the two variables
+games and video. But notice that the chi square sum up all the four conditions. That means it does
+not distinguish direction from game to video
+or from game to no videos. They just give you the
+overall correlation between the two variables. So we have introduced
+the lift and the chi square as two
+interesting measures. You may wonder how many
+interesting measures are there. According to the 2012 paper, people have listed more than 20 such
+interesting measures. They more or less
+measure similar effects, that is how strong
+the correlation between two frequent
+patterns x and y is and the more or less takes advantage of the two
+way contingency table. Which one works the
+best? It is hard to say. But in reality, some of them are used more often than others. If you're interested, you can take a look at the original paper and see how they evaluate the different
+interestingness measures.

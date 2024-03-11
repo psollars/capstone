@@ -1,0 +1,140 @@
+We've all used services
+like Dropbox or Box where we have files and we want to upload
+them to the Internet, maybe for backup, maybe for sharing purposes, Google Drive somewhat
+falls into this space. These work, they all
+serve their purpose. But oftentimes, when we're thinking
+about the Cloud, it's not that simple. I've mentioned in
+earlier videos that every Cloud provider has some type of storage
+infrastructure around it. Part of that comes
+from necessity. Different services
+within the Cloud need to be able to talk to each
+other and exchange data. If you think about two
+different services that want to talk to each other, spinning up a
+virtual machine and exporting those disks
+is time-consuming. What we have is what
+is called object store or file object store. In Amazon this is called S3
+and the concept is buckets, and inside the bucket you
+have folders and objects. I'm going to go through a quick demo of
+how this works and then I'm going to talk
+a little bit about the pricing behind it, and pull up the
+pricing calculator for it because the way you're able to get very
+specific about this, is really where some of
+the value comes from. Because if we think
+about our personal file, storage needs, there's a lifecycle
+at all files. I'll give you an example. I'm recording a video
+for this class. For the next few weeks, I'm going to be recording
+a lot of videos, and editing videos,
+and posting them. They're going to be in
+heavy use at that point. Then I'm not going to do that, I'm going to go sit over
+here for a little bit. Maybe, if there's a bug in a video or I need to
+edit one of the videos, I might pull one back a little bit and
+make some changes, but after six months, I want to keep the videos, but I'm probably not going
+to use them that much. One of the things that the concept gets to
+is when we think about our lifecycle, the files are important because not every file needs to be
+accessible immediately. Let's take a look at what this looks like in a live demo, and then let's take a look
+at the pricing for this. I'll switch over here.
+Here I am in Amazon S3. I got to this by going to S3. What this does is, this will pull up for me
+the primary interface, it also shows me this
+concept of snapshots and that's not working at the moment because there's nothing in here. But let's go ahead and
+create a new bucket. A bucket is a folder in the Cloud where I can
+specify where this lives, so I'm just going to call
+this mlhess-demo-recording. I specify the region, this lives in primarily, and I'm going to ignore the
+object owner ship first, but I am going to pause
+here for a second. We've all seen the
+news where someone left files on the
+Internet exposed. This is typically
+where that comes from. You put files in S3 and you don't turn
+off public access, so Amazon started blocking
+all public access by default. If you don't want to
+block all public access, then it's going to
+come up here and say, these objects may become public, are you sure you
+want to do that? For now, we're going to
+block all public access. When you upload files
+to the Dropbox, or Box, or Google, it keeps
+versions of it, with Amazon, you can
+turn that on or off. Keeping in mind that
+if you turn that on, then you are paying to store those files
+because this is Amazon, you pay for everything you use. I'll turn that on for now, and we'll go ahead and
+create our bucket. Once this bucket is
+created, it's really quick. I can come in here and I've got a lot of options
+available to me. Let's just upload a
+file to start with. I'm going to upload
+my public key, and so we'll come here
+and we're going to say, we'll take that
+private key file. When you upload a
+file, you've got a lot more options on here. You can specify the
+permissions on it, you can specify the storage
+class for the file itself, and these storage classes get
+really important later on. The big ones that
+we think about here are our Standards Storage class, our Standard-Infrequent
+Access class, and our One Zone-Infrequent
+Access class. What does this mean? Standard is typically what you're used to. Standard that file is
+actually copied to three separate
+availability zones and it lives in three separate
+places at all times. Standard-Infrequent Access,
+is you want to store it, you're probably not going
+to access that file often, but you need to keep it there. After a month or two, my videos are actually probably a really good space to put
+that Infrequent Access. Do notice that there is a requirement that you keep
+that file there for 30 days. One Zone-Infrequent Access is a little bit risky
+because you're keeping that file on only one
+availability zone, so if something goes wrong
+with that availability zone, you will lose the file, but if you're using it as a
+backup, it's probably fine. Then we start talking
+about Glacier. Glacier is a deep archive where you're probably
+not going to need to get to these files often. You do have the minimum
+requirements here, so the deep archive
+is 180 days minimum. You'll notice that it says retrieval within a
+couple of hours. That means if you
+need your file back, you can't just press a button
+and downloaded instantly, it may take a couple of
+hours to get your file back. Behind the scenes, that to me, tells me that we're using
+a tape drive at someplace. I'll go ahead and
+keep it in standard, and we'll upload our file. We'll come back here, and we can now see that our file exists in this S3 bucket. Now, one of the things
+that S3 is amazing with, is its integration
+with other services, and so you can write
+policies that allow other Amazon services to
+interact with S3 in real time. We'll get into that in a
+little bit of a future video. It's pretty simple to
+do this. Here it is. I can actually click on this and I can make this a webpage, if I made it public, I didn't make the bucket
+public, so I can't do that, but you can host static
+websites out of this, it's really good for react front ends to web applications, because it handles
+that pricing thing. Let's take a look at
+the pricing for S3. This is where S3 shines. This class has about 20
+terabytes of videos for it. Our average math's class has about 20 terabytes on average. I'm going to ignore the data transfer
+question at the moment, but if I just want to store
+20 terabytes in the Cloud, it's going to be
+pretty expensive, 471 bucks a month to do that. Let's say I compress
+these videos, which I'm going to do when I
+get them down to a terabyte. Terabyte is $23 for that
+instant access requirement. Now, what if I'm just
+using this as a backup? What if I don't actually
+need 24/7 access to them? What if I just want to
+just put this in a backup. It's a backup, I'm probably going to
+need it a little bit, but maybe not that often. This is Infrequent
+Access, it's in one zone, we'll do that one
+terabyte there, and our price basically
+just dropped in half. Now, why did it drop in half? Well, we're not copying it across three availability zones. That's the first reason. Two, we've basically
+agreed that it can be stored in a medium that
+isn't necessarily fast. It's infrequent access. Now, this class is done, it's recorded, I'm
+happy with everything. What are we going to do? Well, we're going to put this
+in a deep archive. We don't think we're
+going to need it again, but we're not quite
+ready to give up on it. We're not quite ready
+to be done with it, but we still want a copy of it. We'll drop one terabyte in here. One terabyte in deep archive
+is a dollar a month. You can see the pricing
+differences here. Now, in fairness,
+if I come and say, I need to get back
+that one terabyte, it goes to $21. That deep archive is awesome. If I just want that
+insurance policy of yes, I have those files. If I actually need to get those files back
+at a future date, I am going to pay for it, but that's what an
+insurance policy is, and that's how S3 works in a
+nutshell for using things. It's a nice utility, I keep a lot of files in S3 that are just personal files, I do keep a bunch
+of photos in here, I do keep a lot of old papers and work in here just
+as a storage location, it's a nice tooling. The other place
+where this is super useful is when you're
+integrating with your other Amazon services because you can give access
+to S3 buckets dynamically. In fact, if you look at the
+way your homework works, your homework writes
+your answers to an S3 bucket that we then
+use with the Autograder. S3 is a fun service. You should be aware
+of it. Thank you.

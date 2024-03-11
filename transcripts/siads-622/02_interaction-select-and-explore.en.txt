@@ -1,0 +1,167 @@
+Hi, welcome back. We're going to start going through
+the seven categories of use cases that I mentioned earlier. So again, we have select, explore,
+reconfigure and encode, abstract, elaborate, connect, and filter. And we're going to break them apart and focus on different subsets in
+each of the mini lectures. So we're going to start with select and
+explore. Select is a really interesting one. It often is like a thing that we do before
+we can do anything else with information visualization. We have the scatter plot, right? Like the simple example we showed earlier
+that has just these data points that are laid out on the screen. If we want more information, we want to
+focus our attention on specific points. We need to be able to tell the system
+what it is that we're interested in. So we need some ability to select. The selection is going to be the
+indication of our, the end user's, interest in different elements on the screen, after which we will do
+something with that, right? So we want additional details to pop up. We want to be able to filter things in or
+out. But to do that we need selection, okay? So there are different
+ways of doing selection. So this is a really simple example
+I mocked up using illustrator. You're going to see different ways
+of selecting the points using direct manipulation that is using the mouse or
+a touch pad in order to select things. So first, we're going to select individual
+things, and by hitting the Shift select, like Shift clicking on points we're
+able to select multiple points. So that's the first way. Second way is using the kind
+of the dragging rectangle. And the last way is using this lasso, which is a free form drawing
+that allows us to select points. And this is just repeating
+the same selections. Again, selecting individual points by
+targeting them, clicking on them, or Shift clicking on them,
+using the drag approach, or using this kind of lasso approach in order
+to select things using a free form way. So these are standard approaches that
+you will see very often when it comes to selection. Often this will be done through the mouse,
+sometimes through touch. But usually you're picking specific
+things, you're clicking on them or hovering over them. So you're implying a selection by
+basically mousing over the display and getting at the information that you want, sometimes single points,
+sometimes multiple points. So selection is just to define
+it at a very high level, means marking items that we
+want to keep track of, okay? So my marking things that are of interest
+to us that we would like the system to know about and often use in some subsequent kind of
+transformation or analysis, okay? So that is, selection is often
+a proceeding other kinds of operations. The simplest example that you probably use
+every day and maybe don't even think about it is something like Google Maps or
+any of the mapping platforms. When you click on a placemark,
+that is like a specific point on the map, like a store, and you get additional
+details, that is a form of selection. The image on the right corresponds to
+the Tableau example where here it's a mouse over kind of interaction. So as you mouse over the display, you're getting additional
+details that are popping up. So you don't actually need
+to click on anything. Again, it's this implied selection
+by the hovering, by the mouse over. So here's a really simple example. It's a histogram. We're going to mouse over and be able to show you some additional
+information by giving you these tool tips. So here we go. The mouse will move over
+the different bars, and as it hovers, it basically gets this little pop up
+tool tip that gives you information. Again, this implied selection
+by hovering over and the details on demand that emerge
+once that selection happen. So once you've moused over,
+you get additional details popping up. This is a really common technique that is
+used often in information visualization. Because we don't want to show all the
+labels or all the details on the screen. And this brings us to this next topic. Which is, how do we know
+what thing to select, right? We have a bunch of dots and
+we can pick the outliers, maybe because we're curious about them or
+pick points at random. But we don't know anything about
+what's being displayed here. So it's really difficult for
+us from this kind of display to be able to pick specific points that
+might be of interest. So this kind of high level problem,
+which is, a visualization like this is not effective if we don't know
+the identity of particular points, okay? So we need to be able to get the identity
+in order to select the points that we care about. So how do we do that? How do we find points that we care about? So the simplest way of doing this
+is to just label everything, right? So if you have a scatter plot,
+you can put labels next to everything, and now you know what every point is. And that's nice and great and fine if you
+have a sort of limited set of points and you can draw the labels in
+this non-overlapping fashion. But that's not always possible. Because the requirements for good labels
+are that labels should be readable. They should be non-ambiguous. That is, you should be able to figure
+out what mark on the screen the label is connected to. And they should not include
+pertinent information. Okay, and this is difficult to do when
+we have really complicated points on a scatter plot that are maybe
+sitting right next to each other. Or distributed in such a way that
+the labels are really now hard to read. Not only are the labels hard to read, they're actually occluding
+points of interest, right? Like in that small cluster in
+the middle or in the lower left, we can't really read anything from that. Because the text, the material is
+actually sitting on top of the points and other labels. So we certainly don't want labelling
+schemes that look like this. This is not only not helpful,
+it's actually harmful to us. So if we want to label points,
+we can't go this route. There are strategies that
+have evolved from static kind of information visualization domain, specifically cartography, that
+are algorithmic in nature. That allow us to basically figure
+out good placement of labels, so that they don't overlap, okay? So some of these are done by kind of
+human rules, like people who design maps have learned sort of how to place labels
+well within kind of a static image. But oftentimes in today's world, they
+are algorithmic, and so there's different kinds of optimization algorithms
+that have evolved to support this. Basically, they'll move the labels
+around until the bounding boxes for those labels don't hit each other and
+it runs for a little while and sort of tries to find the optimal
+placement of those labels. Again, this is fine for
+specific kinds of datasets, where you have a certain
+kind of distribution and you're willing to tolerate labeling
+it in a certain kind of way, okay? This is not always
+practical when it comes to information visualization outside of maps. There are other techniques that
+I'll bring up really quickly. The first is what called
+excentric labeling. Excentric labeling is an approach
+that only shows us labels for a subset of the data that we
+are likely to be interested in. So we are going to watch basically
+the cursor of the end user moving around, and whatever is within a small radius of
+that cursor will have the labels pop up. So, the area of focus will be
+some radius or some rectangle, as you'll see in a second
+around where the cursor is. You're going to get the labels
+that will pop up, and they're going to be color
+coded relative to the points. And then there will be lines that
+will connect those labels to the data points, okay? So only some of the labels will be
+shown only some of the times and labels will be made explicitly
+connected to the data points by using these connecting marks,
+these lines on top. So in the context of scatter plots,
+this is a kind of reasonable approach when you have small, dense areas with lots and
+lots of points, and you want to understand sort of which
+points are within that dense area. So how does this look like
+when we actually run it? So here's an animated version of this. You can see that as the person
+is moving the cursor around, only things within that
+small area get displayed. They can select other kinds of selection
+criteria, so not just a circle. It can be kind of a square shape, and you'll see in a second they
+can resize it as well. So picking a different size radiuses
+depending on the kind of task that they have or in the kind of data distribution. So if the data is really tight, lots of points maybe you want kind
+of a tighter selection boundary. But again, you see the labels popping
+up and dynamically appearing and following the cursor as it moves, right? So this is a really kind of interesting, cute technique in order to get labeling
+for a subset of data that we're interested in rather than showing
+all the labels simultaneous. All right, so we're going to wrap up
+our discussion on selection here. Selection again, is this really nice way of getting at
+the elements on the screen that we want. So it is a technique that basically
+we're going to use over, and over, and over again. It'll often proceed other things
+that we want to be able to do. There are many implementation
+details to selection. It can be clicking with the mouse, Shift
+clicking, and drawing rectangles, lassos, there are different ways of
+labeling to help us with selection. But selection is kind of this high level
+idea, this interactive idea that will be prevalent throughout many of the systems
+that we're going to be seeing. The next one that I want to
+talk about is exploration. Exploration is a little bit different
+that the assumption is that there is data that is of interest to us,
+but is not currently on the screen. So if we look at a map example like this, we have elements that are of interest
+to the north, south, east, and west. But we can't see them because
+we focused on a specific region. We don't want to zoom in and out. What we would like to be able to do is
+just bring in the objects of interest into the screen. And so this is where this kind of
+exploration approach might be handy. And in this particular case,
+we're going to just use a click and drag kind of interaction in order to bring,
+pan, basically the display, the camera, so that different things fit on the screen. So here's an example in action. So you can see here that I'm
+panning around moving in the space, basically bringing in
+the data that I care about. And again, we're not zooming in and out, we're just is moving things of interest
+from the north, south, east, or west, into the main viewfinder display so
+I can see them. So here's another example of exploration. In this case,
+what we have is a network of synonyms. So this is a Thesaurus,
+where nodes represent words, the edges represent synonyms. So this word is related
+to this other word. And clearly we can't have all the words
+to the English language being displayed simultaneously. And so the way exploration is implemented
+here is by clicking on a node. It will reveal additional words
+that are synonyms of that word, and it will bring those kind of the center. So the word that you click on will
+move to the center of the display. Additional words will appear
+kind of dynamically near it. So that's an exploration technique here. So notice as they click, basically
+things pop up and move to the center. And things that are no longer quite
+as of interest are hidden away. So similar idea where we're
+basically panning through the space of the English
+language based on synonyms. Okay, so takeaways. This is kind of a wrap
+up of these two ideas. Exploration, we didn't have
+quite as many examples. It's a really simple kind of interaction. But you'll see it will be powerful when
+used in conjunction with other things. Again, we have selection, which is
+necessary when there's a lot of data, direct manipulation techniques that
+implemented include mouse over, a mouse click, drawing circles,
+and then all these issues around labeling are things that you should
+consider when implementing selection. Exploration is that when there's
+data that is of interest, but it is not within the view. So think about this,
+if you have a hierarchy of data, we're not zooming in and out. We're just basically moving
+across the same level. That's another way of thinking about it. But panning and walking is kind of
+a simple way of of considering this technique from a different
+way of talking about it. So these are two, these are the first two. And again, we will see many
+combinations of these in practice. But keep these in mind as
+you see other examples. So I'll show you many more sophisticated
+systems that have lots of bells and whistles. But often select and exploration are going
+to be crucial for making those work. All right, and with that,
+thank you for listening.

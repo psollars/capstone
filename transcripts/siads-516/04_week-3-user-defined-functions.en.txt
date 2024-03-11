@@ -1,0 +1,104 @@
+The last thing I want to talk about
+this week are user defined functions. User-defined functions or UDFs as
+they're called is a way of wrapping plain old Python functions that we
+want to apply to rows similar to what we've done with mapping or
+that you've done with applying in Pandas. And the only real difference and the reason that we need to wrap them again
+goes back to that strongly typed language thing that we talked about when we first
+created a data frame out of a list. And remember we have to use float type or
+integer type or something like that. So we need to do exactly the same thing
+when we're going to use a plain old Python function with Spark, so
+we need to specify the output type. As I mentioned it's similar to map and
+apply in Pandas and it's just a matter of wrapping plain old Python functions and
+specifying the output type. Now, what does that mean in reality? So let's take a look at this
+in the Jupyter notebook. Let's look at the check-in data frame and
+let's remind ourselves what the schema looks like again, relatively
+simple two columns business ID and date, let's take a look
+at what that looks like. So for the first entry we have business
+ID, which is this encoded business ID. So we don't give away who
+the business actually is, and then we also have a string
+that contains the dates. The dates appear to be a plain old string
+we know this from the value up here where it says string, and the dates consists of
+a series of dates separated by commas. Each of the dates itself
+has a date component and a time component separated by space. The elements of the the date
+are separated by a dash and the elements of the time are separated
+by colons, so we know that now. Now to use user defined functions,
+the first thing we have to do is import the function called UDF,
+that's just the generic wrapper for user-defined functions from
+Pie Spark SQL functions. Now, let's define a very simple, this is a bit of an aside a very
+simple function called square. Square will take a value and return
+the square of that value that is the value multiplied by itself, so
+we're just going to define that function. Now to convert that into a UDF,
+what we're going to do is, here's where I've got square now. And I'm going to create a lambda
+function around that, so same for every value we encounter we're
+going to call square on it. We're going to make that into a UDF and
+it's going to return an integer. Now you can say that
+this should be a float, I'm going to show you how
+to do this with integers. Because we're using integers
+I'm going to have to import integer type from
+pie Sparks SQL types, and I'm going to assign that output of UDF to
+another variable called square_udf_int. So, it's the square function turned
+into UDF that returns an integer. I'm just using that name to
+keep it straight in my mind, now I'm going to return to an earlier
+data frame called df_from_list, and I'm going to show you that again. Again, this is an aside to keep
+things simple, what I'm going to do, what I want to do is square
+each of these scores. Now, how do I do that? Well, let's start on the inside of this, remember I defined up here
+this square_udf_int as this output of UDF called on a lambda
+specifying an integer type. So I'm going to use that here
+as square_udf_int of score, and I'm going to embed that in
+a select statement where I'm going to select out of my
+original data frame DF from list. I'm going to select act the name,
+the output of this column, And I'm going to alias
+that column sqscore. In fact, I can take that out to show you
+what will happen if I don't use that, and then I'm going to show you the data frame. So here's what the resulting data frame
+looks like, it has the name column, which is what I asked for here. And then I have the results of
+this square_udf_int on score, and I don't like the title that I
+have here for this column name. That's kind of hard to get my head around,
+so that's why I use .alias something
+like well, I used sqscore. Let's use something even
+better squared_score. So you see how that worked, it's worth
+studying, it's a relatively example. Now what happens if we don't have a simple
+number where we can use an integer, but rather something a little bit more
+complex like we have with the dates. So remember with the dates if I want to
+extract all the dates in which someone checked into a business, I'm going to
+take that value and split it on a comma. This is a plain old string operator,
+right the split function, apply to the date column,
+or any column on a comma. Now the result is going to be an array
+a list an array of elements and each of those elements I have
+to specify the type of those. So I'm going to have a list of strings
+as a result of calling split, so I'm going to wrap this function this
+time I've used a Lambda function. It's Anonymous, in UDF specifying that
+it's going to return a list of strings, and I'm going to call that
+resulting function datesplit. And if I apply that to my if I select
+the business_id because I want that out, and then another column that's
+the date split of the date column. And I'm going to alias that to dates
+because I don't think that weird lambda function that I'm going to get as a title. And I'm going to look at
+the first element of of that oops, I forgot to run this, that'll happen. Sometimes when you define something and
+you forget to run the cell, you'll get an error. So here we go,
+I've now set up my datesplit UDF, and if I apply that I get the following so
+look closely at this. I have a business_id with a value
+of that encoded business_id for anonymity purposes. And then I have dates that is now
+not a string but a list of strings, so the first element here
+is this string here, and then the next string is here,
+the next string is here. You'll notice that we have some spaces in
+there, we might want to take care of that. But right now we have a row in
+this particular case of one two, three, four,
+five six values in this array. Now here's where explode
+comes in handy again. Again I'm going to import explode, and then what I'm going to do is
+call exactly what I did up here. So I'm going to use this exact
+same formula here, down here. Oops, down here, Right up to here is exactly the same, and now I'm going to
+create a new column using with column, I'm just going to scroll this over. I'm going to create a new
+column called checkin_date that's going to be an explosion of dates, which is now a list of strings and I'm going to show you
+the first ten rows from that. So here I have the first
+row as the business_id, I've retained dates,
+I haven't dropped that column yet. So I have here my six dates as a list,
+and now I have a value of checkin_date,
+which is the first element of that list, so you'll see this corresponds to this. I'm going to scroll this up
+a little bit so you can see it. The second row has the same business_id,
+but if you look closely at that check-in date, it's actually
+the second value from my list. Over here so
+that corresponds to that check in date. If we repeat this again,
+our third row has 2016-10-15 to 02, 45, 18, which is exactly the value
+over here the third value of my list. So that's where I wanted to get to in this
+week's introduction to Spark data frames. I hope a lot of this makes a little
+bit more sense than it did from just the readings, and you'll have a chance to
+practice this in this week's homework.

@@ -1,0 +1,103 @@
+We will begin this week by
+talking about random graphs. And the basic goal is going to be. Can we come up with models. Generate random graphs that are synthetic. But that have properties that
+match real world networks. But before we get there, let's review
+some of the things we've already, discovered about network. So what do we know about networks so far? Well, the first thing we know is that they
+tend to have high clustering coefficient. And this is due to triadic closure so
+we tend to see lots of triangles. The other thing we know is that
+they have small average distance. So you remember we saw Milgram experiment. And other studies that have
+shown that many networks. Even very large ones tend to have
+a small average distance between notes. We also know that they tend to
+have power low like distributions. So we have these hubs or nodes that
+tend to have very large in degree. Or a very large degree. While most of the nodes in
+the network have very low degree. We haven't seen this yet. And we will talk about it in week four. But we also know that networks tend
+to have a community structure. And that means that they tend
+to form groups of nodes. That are very well connected within group. But not so
+well connected across the groups. And these groups are communities. So the question is,
+can we come up with simple models. That generate synthetic networks
+with realistic properties? Now, you may ask,
+why do we want to do that? And there are at least two
+reasons why this could be useful. The first reason is that if we
+actually can construct these models. We can argue that we can understand why
+real world networks have the properties. They have a little better. And this is because if we're actually
+successful in constructing these models. We're going to have to specify
+the dynamics that control how these networks are generated. How they evolve. And if we can do that. Then maybe those dynamics that
+control our synthetic networks. Are the same dynamics that
+control the real networks. And this would give us insight about
+why networks look the way they look. The second reason is that if
+we can construct this models. We can use them as tools to generate
+a large number of networks with different properties. And this is useful if we want to study
+other processes that happen on top of networks. Like for example, information diffusion. This is something we're going
+to be studying in week three. If we have a tool like this,
+we can ask questions like. Well, what is the impact of a particular
+feature on the information diffusion process? And if we want to know that. Then we can generate networks
+that have that feature. And networks that don't have that feature. And compare how our
+information diffusion models. Behave under the different
+types of networks. So these models can be used as tools for generating synthetic networks
+with different properties. We're going to begin
+with a very simple model. That at the end is not
+going to work very well. In the sense that it's not going to match
+our real world that works very well. But it's a very good starting point. And it's a model that
+has been studied a lot. It's very simple and very elegant. And this is the Erdos Renyi model. So let me tell you how it works. You start with n nodes in
+a parameter p between zero and one. And then for each pair of nodes, u and v. You're going to create an edge
+between them with probability p. You flip a coin and with probability p. You connect them. And with probability 1- P
+you don't connect them. So let's first think about
+the degree distribution of a network that is
+generated in this way. What is the probability of
+a node having degree k? Well, it's going to be this thing here. And let's dissect it a little bit. This terms here represent the probability
+of connecting 2k specific nodes. Alright, so
+if we have case specific notes. The probability that another node connects
+to them is going to be P raised to the K. That is the probability of
+connecting to each of those nodes. But now you must not connect to
+any other node outside of those K. And that happens with probability one
+minus p raised to the power n minus case is there. Minus k other notes. Depending on whether or not. You allow for self loop. So notes connecting to themselves. Maybe there's a minus one
+here in the exponent. But that's not so important. Okay, so that's the probability of
+connecting to K specific nodes. But to have degree K. We don't need the node to be
+connected to case specific notes. We just need the node to be
+connected to any k nodes. So we multiply this by n choose k,
+since any k will do. Okay, so this is the degree
+distribution for large networks. Which are the networks we care most about. These can be approximated by
+a Poisson distribution which is. This right here and
+see is P times N minus 1. Which is also the expected mean degree,
+right? We have the probability of
+connecting to a notice P. And we have N minus 1. Notes to connect to if
+we assume no self loops. So Z here is the expected mean degree. And so again, for large n. We can approximate our degree distribution
+by these POS on distribution. And the main thing that you should know
+about these plus on distribution is that. It does not allow for
+some nodes to have a very large degree. And so here's the first place where we
+can see that these networks aren't going to be very realistic. Since we know that real world networks. Tend to have these hubs or
+nodes that accumulate a very high degree. Well, this is not happening in this model. And it makes sense that
+it's not happening. There's nothing in the assumptions. That the model is making. That would force a node to
+have a very large degree. The nice thing about this model. Is that we can actually prove lots
+of things about it mathematically. And let me give you an example of
+the kinds of things you can prove. One of the things you can prove is that
+the structure of a random graph generated under this model. Changes in very sudden ways as changes. So let me give you an example. When we have that Z is less than on. So when on average, each node is
+connected to less than one other note. What happens is that there is
+almost surely no giant component. Or a connected component
+that is larger than log n. Or at least proportionally yes. N gross. Which means that when z is less than one. Would you have is lots. And lots of disconnected groups of nodes. Now, if you let c pass
+the stressful of one. So if we assume that z
+is now greater than one. So on average each node is
+connected to more than one. Other node even slightly more. Then things change dramatically. Now there is almost
+surely a giant component. Or a connected component of size. Order n and gross. Which means that when we slide
+that Z value right above one. All of those little groups of notes
+that were previously disconnected. All of a sudden connect. And now we have lots of the notes
+in one giant component. So this is kind of cool. This is kind of interesting. And it's something that you can
+actually prove mathematically. That happens to a network desk
+generated under this model. I'm not going to talk a lot more about
+that type of analysis in the class. But I will refer you to
+this reading in chapter 11. In Newman's networks book. You can take a look at
+some of the analytics. And other details about random graphs
+that could be interesting to you, okay. So these Erdos renyi model
+is mathematically tractable. Which is very nice. And so again, for large n. We can approximate our degree distribution
+by these POS on distribution. And the main thing that you should
+know about these plus on distribution. Is that it does not allow for
+some nodes to have a very large degree. And so here's the first place where we
+can see that these networks aren't going to be very realistic. Since we know that real world networks. Has a very low clustering coefficient. It actually goes to zero as
+n gets larger if you fix P. And again,
+this kind of makes intuitive sense. There's nothing in our assumptions
+of how the network has been created. That would favor triangle creation. So clustering coefficient
+is not very large. It has no community structure. There is one exception. And that is for reasonable values of P. It has short mean distance between nodes. And that's something we
+know real networks have. But other than the short distance. It doesn't seem to match any of
+the properties that we would like. So overall is not very useful
+to model real networks. And so the question is. Well, if this model doesn't work. Then are there other
+models that do better? And the answer is yes. And that's what we're going to be
+looking at in the next two videos. So I'll see you there.

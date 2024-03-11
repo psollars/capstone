@@ -1,0 +1,317 @@
+Hi, welcome back. We're going
+to continue our adventures through the seven different
+categories of interaction. So far we've select and explore, and we're going to talk
+about reconfiguring code, abstract and elaborate in
+this little mini-lecture, and then, we'll continue on
+to connect and filter later. Reconfiguring, is a really
+interesting technique. It is one where we're
+actually going to change the spatial arrangement of the marks that we
+have on the screen. This is marks that already
+exist and they already have a shape like a bunch of
+rectangles in a bar chart, a bunch of circles, maybe in a scatter plot, and we're going to
+move them around. There are going to be a number of different ways that
+we're going to do this. But we're not going to
+re-encode the data, that will come later on. We're actually just showing
+a different arrangement, and it's usually
+going to be spatial. Let's see an example of
+what this might look like. This is a stacked bar chart. We're going to do is, we're going to
+reconfigure it so that it is going to smoothly transform from the
+stacked version to a side-by-side version. This is our first interesting
+example of reconfiguration. We have a stacked bar chart, and we're just going to
+resort it to dynamically. It's fairly simple approach. We just click on the button and everything sorts
+automatically. This is a nice technique when you have to reorder the data, in order to do some other tasks. There might be a task that
+requires having the data, and the original order which
+was not sorted by height, maybe it's something
+that happens over time. You want to know at time 2, it was this much
+bigger than at time 1. But there are other situations
+that comparisons might be best handled by sorting them so that the tallest
+bars on the left, or alternatively
+on the far right, but basically you get
+that distribution. Then that allows you to
+very quickly identify the largest value or
+the smallest value, and also to look at the histogram
+of values a little bit, and to identify what is an
+anomalous value, perhaps. Maybe the tall bar is way too
+tall than you would expect, or there are way too
+many of the short bars. That's easy to see once you've reorganized the data in this way. Again, a really simple
+reconfiguration. We saw another example of
+this earlier on when we were looking at the stacked histogram, when you were able to click on the different bars to adjust the bars to the same baseline, but, picking on other kinds
+of fruit in this case. Originally we were using apples, but we could also click, and get the bananas to
+be on the zero baseline, the clementines and so on. Again, we're not
+re-encoding the data, we're just reorganizing it
+so that the bars sit in a way that makes certain kinds of comparisons more convenient. Here's another example. This is stacking reconfiguration. In this case, we have
+a stacked bar chart, and we're going to go to an unstacked version
+interactively. Here you can see this animating
+back and forth basically. Different kinds of
+comparisons are best handled through one of the
+configurations or the other. We're just moving these
+smoothly between. Most of these examples
+that you'll see when there is
+reorganization of the sort, really depend on good animation. The mental model requires being able to track
+what is going on, and so having animation
+to basically allow the end user to track where things are moving around
+or how things are moving, is going to be critical. This is again, the
+stack reconfiguration. We saw the sorting
+one a second ago, and moving to just
+to the baseline. These are all different
+kinds of reconfigurations. In this next example, we're going to talk about
+a really interesting case. This is called the Dust & Magnet. You'll see this is a very unconventional way
+of doing reconfiguration. You have this metaphor of magnets being the
+features of the data, and the dust particles
+being the actual data. It looks like a scatter plot, but as you'll see in a second, it doesn't quite work that way. Help analysis and
+decision making. We have developed an information
+visualization system called Dust & Magnet, that uses a magnet
+metaphor to help people more easily interpret
+multivariate data sets. In Dust & Magnet, the small circles, called dust, represent the data
+cases, and the squares, called magnets,
+represent the variables. As a magnet is dragged
+around on the screen, the dust particles move toward
+it at different speeds. The data items with
+higher values for that variable or
+magnet, move faster. In other words, they have a higher attraction
+with the magnet, which is the basis
+of our metaphor. If there are multiple magnets, dust particles are attracted to all of them simultaneously, and their movement is
+a cumulative effect. Dust & Magnet, which was
+created using Java and Piccolo, contains three different windows. The main one on the
+left side is where the Dust & Magnet
+interaction takes place. On the top right, is the control window where various features of Dust &
+Magnet can be manipulated. Like the color or size encoding, filtering, or changing the magnitudes of
+magnets attraction. Finally, on the bottom right, is the detail window, where the details of selected
+data cases are shown. In the following scenario, a data set of
+different cereals with a number of different
+variables is loaded. Suppose that we are seeking a cereal that is low
+in sugar and fat, but high in protein and vitamins. We can bring magnets for each of these variables into the view to help explore the data set. Some of the data
+items are still on top of each other in the
+center of the screen. We use the Shake Dust
+command to reduce occlusion. Shake Dust merely moves the dust particles that
+are touching a tiny bit. At this point, a number of the best candidates are
+near the top of the screen. Let's find out
+their manufacturer. We can encode the manufacturer by the color of each dust particle. We quickly notice that many of the best choices are
+Kellogg's cereals, here indicated in green. Dust and magnets is a really interesting
+implementation of reconfiguration. It's a very powerful way of addressing data
+that is multivariate, multidimensional, and where
+there are some trade-offs. You can see that it works well in the situations where it's easy to draw a spectrum from the most of something to
+the least of something. Really good results
+that I want are desirable and maybe we put the magnets for
+those at the top. Results that are
+maybe less desirable, we put the magnets, we put at the bottom. But as you might imagine, there's like a significant
+learning curve to this. If I give you a static
+version of this, for example, it's really hard to understand all the steps that have gone in, in order to generate
+this visualization. Without significant annotation, you're not going to be
+able to make much sense of it because you don't
+know in what state the interface is currently at when I've taken that snapshot. As I move the magnets,
+things change, as I shake the dust,
+things change. The encoding like
+the distances are not cleanly transformable
+in most people's heads. They're in a sense indicating
+where the data should be, but the actual math, like the actual distances
+don't necessarily mean anything to an end user. This is a great technique for certain kinds of exploration, but learning curve is high, and again, this
+interactivity is really vital to make this
+analysis useful. Whether this is
+appropriate or not is up to you in your application, but this is a really
+interesting idea behind moving data around, especially based on
+properties, again, that you find desirable
+or undesirable, or there are some other kinds of trade-offs that you want to make. This is of course
+not the only way to address this problem. I'll show another
+example in a second. This one is called LineUp. LineUp is an interactive
+technique to create, visualize, and explore
+multi-attribute rankings. This is the main
+LineUp interface. Let's assume we're
+prospective students looking for a university. We've loaded the QS World
+University Rankings dataset from 2012. Initially, LineUp
+is configured as a table-based bar-chart with
+columns for each attribute. LineUp supports
+different column types: rank columns that show
+the rank of items, label and categorical columns
+for contextual information, and score attribute columns. The header of the
+score attributes show their distribution. Columns can be moved, resized, removed, and restored. The row layout can
+be switched between a uniform layout and
+the fisheye layout. Items can be searched
+and filtered. We now limit the ranking to universities from
+the United States. With one click, we have created a simple ranking based
+on a single attribute. Next, we want to combine
+multiple attributes to reproduce the ranking methodology used in the QS World University Rankings. We first create an
+empty combined column and use drag and drop
+to add attributes. We can sort the column by
+double-clicking its header. To reproduce the exact weights used for republished ranking, we enter them directly. The width of the column
+reflects the weight. Weights can be adjusted
+interactively. As a future student, we might want to put more emphasis on the
+faculty student ratio. The weight changes
+are immediately applied and the
+ranking is updated. LineUp uses animation and colors to indicate rank changes. Animations are useful
+to track small changes, but bigger changes are
+difficult to follow. To better keep track
+of big changes, we use the snapshot feature. The slope graph separator
+acts as a barrier and splits the table into
+two independent rankings. If we now remove the citations attribute
+from the combine score, the changing slope
+angles indicate that New York University rises from the 18th
+position to the 11th. To see detailed information
+about the rank changes, we can show rank deltas. In Lineup, users can not only change the
+weight of attributes, but also the values. For example, we can change the international
+student ratio of NYU and immediately
+see the effects. This causes NYU to rise
+to the 10th place. Let's say we are interested in studying a science subject. We additionally include
+faculty-specific attributes. As we don't know
+whether we want to focus on natural
+sciences or engineering, we want to look for
+universities that are strong in at least one
+of these two areas, but not necessarily in both. Such questions can be realized using the parallel
+combination method. We just drag the engineering attribute onto the natural
+sciences attributes. We are also not interested in
+arts and humanities at all. We use the mapping editor
+built into Lineup to change how the attribute values
+are converted to scores. We set the filter to remove all universities with
+a strong art faculty. We could even invert
+the mapping so that lower attribute values
+give us better scores. We can see that New York
+University drops back to the 14th place and that
+MIT is the overall winner. This was a short
+introduction of Lineup, an interactive technique
+designed to create, visualize, and explore
+multi-attribute rankings. Thank you for watching our video. That was a very different approach and maybe
+a little bit more conventional than the Dust& Magnets to use reorganization, rearrangement in order
+to understand something about an underlying multivariate, multidimensional dataset. Using this metaphor of a spreadsheet where
+you have basically a more conventional bar
+chart representations gives you the same
+underlying expressiveness, the same power,
+perhaps as Lineup, maybe even more so depending on how you count the
+number of features. But it inherently lets
+you solve some of the same underlying tasks
+or underlying questions. Its appropriateness
+depends on, again, this tolerance towards
+how much learning your end-users are
+going to want to have, the questions that they're
+going to have repeatedly. Do they want the more simple interface where
+they doesn't drag and drop a few of these magnets and shake
+things up and things happen, or do they need those fine
+level controls where they see the actual values and are able to say add this value to
+this other value and so on. There's complexity
+that comes with Lineup and it's a trade-off again, but you have to
+make this decision of what you find
+most appropriate for your underlying dataset and
+the learning and user tasks that your user-based might have. This is just a high-level point about how you decide between a more radical novel
+implementation and something that looks a little bit more standard that's
+maybe more powerful. Just to summarize this though, it's important to recognize
+the two main reconfigurations since that's the
+interaction pattern that we're talking about in
+the context of Lineup. Lineup has two that I
+want to briefly mention, one is the move interactions. That is moving columns left to right or moving them together and
+adding them together. That was the move
+reconfiguration, the other one is based
+on sort, so here we go. You click basically to re-sort
+either from largest to smallest or smallest
+to largest and all the columns move
+dynamically based on this. Again, a couple of simple
+approaches to using reconfiguration basically
+to great effect within this particular interface. That was reconfiguration,
+let's talk about re-encoding, which is going to be a slightly more significant
+change to the display. Re-encoding is changing
+the encoding variables. It's not just rearranging them, moving them around,
+it is actually changing them in some
+more significant way. Tableau's Show Me is a really
+great example in the space. It is basically like you have different variables if you're thinking about the
+grammar of graphics. You have different variables
+that you're trying to encode and there are different visualizations
+that are appropriate for that combination of variables. If you have two
+quantitative variables and one nominal variable, there isn't appropriate
+visualization, there's probably the most
+perceptually appropriate, but there are alternatives
+that are also reasonable. Tableau's Show Me little toolbar looks at what
+you've selected. You've selected a couple of
+quantitative variables in an ordinal variable or one ordinal and a couple of
+quantitative, whatever. Some combination that
+you have and then it will highlight all the other options
+that you can pick from. It makes a reasonable
+default choice based on perceptual
+properties but it again highlights all the
+other things that you might select as alternative
+visualization techniques. This is the notion of re-encoding because
+that transformation is often from things like a
+bar chart to a scatter plot, to a pie chart, to an area chart, whatever it is that's possible. But we're changing
+the style of mark. That's what re-encoding
+basically means. That's a very high level summary. You'll see more
+examples of re-encoding in a minute when we talk about connecting
+and filtering and so on. But this is the high level idea, so I'm not going to
+belabor it too much. Abstract and elaborate
+is going to be the next technique that
+I want to mention. This is different than the exploration
+that we saw before, and now what we're doing is moving up or down in the
+level of abstraction. So if we have hierarchies
+or some other conception of where we are in the display, we can abstract upwards to get fewer detailed but
+maybe more data points and elaborate is zooming inwards
+to see more details. In the case of a map, right back to our example, instead of panning
+just to move around, we're going to zoom in and out
+to get additional details, when we zoom in or
+when we zoom out, we get to see more of the map. So here we go. Now
+notice here what's interesting is that the
+labels are changing. This is something called
+semantic zooming, which I'll talk
+about in a second. But basically again, we're
+able to move in and out dynamically through
+the mouse action. This is a different
+example of abstract and elaborate on top of a
+hierarchical visualization, which we'll talk more
+about in the next lecture, next week, when we talk about
+hierarchies and networks. But again, we're able to click, to zoom in to different subsets of this
+hierarchical structure, and getting more details as we expand and can read the labels. Then we can go back outwards and see more of the
+high level picture. Again, this is the notion
+of abstract and elaborate. As I mentioned, there
+are different kinds of zooming that we might implement. The two that I want to talk
+about and which are very common are semantic
+versus geometric. Geometric is a zooming technique where we just zoom in and all the points just
+get bigger depending on where we are,
+where the camera is. Imagine this is a real-world
+camera as you zoom in, the objects in the camera get bigger as you zoom
+in towards them. Semantic zooming is
+going to be different. The objects are actually going to stay relatively the same size. But because we've zoomed in
+the white space will expand. This will allow us to put more
+labels on top potentially, because we're not hugging. Basically all the entire screen will stead, as you'll
+see in a second, as we would with the geometric when we do the semantic.
+So here we go. So this is semantic zooming and in contrast,
+this is geometric. This is an example of semantic zooming
+implemented to good effect. This is a network visualization drawn out to look like a map. But you'll notice as we move in, the nodes themselves
+don't get any bigger, but we can add more labels because there's more white
+space available to us. As we zoom out, we have many more things that we need to
+show on the screen, and so most of the labels
+go away as we do that. Again, this is semantic
+zooming implemented on top of this weird combination of
+map plus network structure. Just to wrap up,
+we've talked about a few different techniques in this mini-lecture,
+reconfiguration, things like resorting the data or transforming stacked
+to unstacked, the Dustin magnets
+approach, the line-up. Those are ways of
+basically moving the data around on the screen without necessarily changing
+the mark type. Re-encoding allows us to
+change the mark type. So we can go from a bar
+chart to a scatter plot, but we can also do things like change the meaning of
+a particular encoding, so color used mean height, but now color means weight. We can do that manipulation when we use re-encoding
+interactions. Abstraction and elaboration,
+zooming in and out. Consider again this idea of semantic zooming
+to basically give you the ability to use that white space that
+emerges as you zoom in, because you're not blowing up the marks to fill the display. You can use that for things like labeling and giving
+additional details as needed. Then finally, all these
+should be considered as a part of the
+evolving user needs. We haven't really talked about how user needs might evolve, but these are interesting
+examples because they're often used as you
+learn more about the data. In some of the examples
+that we had before, like the selection
+and the exploration, the user need was fixed. We were trying to
+get a certain sense of what was going
+on with the data, or we had a concrete idea
+of what we wanted and we would click and select
+and everything was happy. But there are other situations where as we are doing
+our interaction, as we're learning
+things about the data, we need to do new things. We find that the
+way we've encoded the data is not suitable for the comparison that
+we want to support, or the way we've configured it, those sort order is not really
+great for the comparisons, or we haven't zoomed in enough
+to give us the details. As our user needs evolve, as we are learning from
+the interaction itself, we often rely on these additional interactions to get different views of the data. Just consider user needs in this context as
+not being fixed. These are some examples, they're really concrete
+and you'll see when we talk about
+filtering and so on, other examples that lead you
+to change your behaviors. But again, as you learn, you're changing your
+interaction patterns because your user needs have evolved in your
+exploration of the data. With that, thank
+you for listening.

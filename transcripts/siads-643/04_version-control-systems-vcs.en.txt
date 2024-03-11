@@ -1,0 +1,147 @@
+This is a lecture covering version
+control, sometimes abbreviated to VCS. Version control systems are another set of
+knowledge that should be in your tool set. We've talked about IDEs
+this is just something that every person writing software
+should be familiar with. This is really a crash course
+into version control systems and into GIT, pretty much every job you
+have where you're building software, you're going to be required to know this. We're going to be doing not really
+a high level overview, but we're kind of barely scratching the surface
+on what you're able to do with GIT. If this is your first intro to this, you
+may have to do some research on your own to complete the homework or come to
+office hours on this, but once again, this is a really important
+skill set to have. So I want to start off with what
+problems version control systems solve. Version control systems are universal
+within the software development space, and so let's take a look at
+the problems that they solve overall. Code revisions are probably the number
+one thing that version control systems help with,
+knowing what code changed. They also assist with collaboration. Most people don't write software alone. Version control systems allow you
+to work with other people and help with that integration of code. Change history, when were things changed
+last known good refactoring a code base while still working
+in the current code base. This is probably one of the biggest
+features of version control, and probably in some ways
+the most misunderstood. Accountability and auditing. To go into these in
+a little bit more detail. Code revisions, basically,
+if I make changes to a code, the version control system, by definition
+keeps track of what the changes were, making it easy to go back to another
+version of the code from another time. Working with co-workers, it's challenging
+if you don't have a way to look at the same code, make changes with
+the same code, and share that code, you can share your screen, but
+that's not always sufficient. So what GIT allows you to
+do is to work on your code, someone else works on code and get's
+pretty good at merging those together. Even if you've changed the same file,
+it doesn't really work well if you're changing like the exact
+same line in a file, but actually two people can edit the same file
+at the top and the bottom, so to speak. Or even in the middle and get us smart enough most of the time to
+figure out how to merge them together. Last known good. This is a concept in IT you
+basically get something working, you know it's working and so you say,
+hey, this is good, we know this is good. So if in a future state something breaks
+you typically revert to your last known good configuration. Along with branches, branches are good for
+collaborating with other people, but they are also good for saying what, I want to take my code
+I want to make massive changes to it. But I don't want to break what's running
+in production, maybe we're going to keep working on what's running we need
+to make incremental small changes? But I also want to start rebuilding
+everything somewhere else and not lose track of it,
+branches really help with that. Accountability and auditing. Most organizations have some type of
+legal requirement or institutional requirement around accountability and
+auditing who changed what, when and why. GIT allows you to keep track of this. It solves a lot of these problems for you
+and so when you're auditor knocks on your door and says we need to know when things
+were changed and why they were changed, what authorize them. If you use GIT in a manner that it's
+recommended you have that information. I'm going to go through the commands one
+would use to set up a GIT repository. I'm going to also do a later video showing
+what this looks like inside of Theia. I'm going to go through these commands,
+what they do, how you might use them in your environment in the slides, and then
+I'll do a live video going through them. First thing you've got to
+create your repository. There's a link on the course
+homepage to create your repository. Once you've done that,
+you'll want to keep that page up. There's a lot of different things
+that you were going to do and get once per repository, and so
+will go through those first. Open up your terminal in theia you can
+also do this locally if you have GIT installed locally and the first thing
+you're going to want to do is figure out what directory you're currently in. An pwd is the command that does that, if
+you're working on our theia environment, you're going to want to
+be in the work directory. Git init will create a repository. You only have to do this once for
+project, once per repository, so once you get the URL from this,
+you do it once per repository. If you do it more than once, it will
+actually override all your changes. It will warn you before it does it. But it's going to override all
+of your changes on the page. When you get that repository created,
+they'll be a git remote URL. They're actually go through some of
+these commands there as well, but you're want to make sure to keep
+track of your git remote URL, and you're going to basically paste it in,
+git remote, add origin. And then whatever that URL is,
+you also have to tell git who you are. And so what is your email address and
+what is your name? Git helps identify who you
+are through this information. You'll see where this shows
+up a little bit later. So the next thing you're going
+to do is you're going to work. You're going to create some files. You're going to put some
+content in those files. You're going to go through and
+do do typical work. If you're just doing a live demo, you can actually use the touch
+command to create a file. So if you do touch and
+then the filename you want to create, it'll create an empty
+file with that filename. But since you're inside, you can actually
+go in and create some Python code. Doesn't have to do anything for
+the purposes of this demo. Multiple times when you're working
+you will run the git status command. This is going to tell you
+the status of your current repo, so what files have been checked in? What files have been changed? What files need to be checked in? And it's going to tell you at this point,
+but you've got nothing in your repo because
+even though you've created files, you haven't told git
+to keep track of that. So your next step is going
+to be to run git add. git add will tell git to
+keep track of a file. You really only need to add a file once. Once you tell git to keep track of it, it will keep track of all
+the changes to that file. You also need to run git commit. This is the one you probably run
+most often, and so this looks, git commit the filename or
+filenames you want to commit. -m and then the message you want
+to add into the repository. And so you might create five or six files,
+git add all of them and then git commit. And then you might make changes to them. When you're ready, you'll run git push. git push origin will take
+the files you have locally and send them to the server in the cloud. You remember earlier, you ran that,
+git remote, add origin. This is saying take the files, my repository that I have locally on
+this computer, push it up to the cloud. After you run this,
+you could actually go look into GitHub and you'll be able to see that
+the files have changed. So what does your typical
+flow look like within git? For the most part, you do your work, you
+commit your work, you do some more work, you commit your work. If you add files, you may add
+git add in there a couple times. And then when you're done,
+you have to push it to the server. There are people who say you push it
+all the time, so every time you commit, you should push. It's really what you
+feel comfortable with. Maybe your coworkers have
+an expectation as well. git log is an important command as well. If I remember earlier, I said git solved
+some of the accountability issues. git log shows us all the changes we
+have made to our repository, and it looks something like this. And so you can see in here, here's
+the commit, the author of the commit, the date and time the commit was made. One of the things that's important
+here is to know this commit hash. This is unique, anybody who checks out your repository
+will have the same commit hash. But let's say hypothetically, that you know we changed the data
+to reflect the file and prod. But what if that were a mistake? Now, one thing we could do would be
+to go edit the file that we changed. Undo those changes and make a new commit,
+and that actually works. But if you highlight that commit hash and
+put it on your clipboard and you run the command git revert hash --no-edit,
+it will actually undo the change for you. This is great if you've done something,
+you realized, no, I made a mistake, I need to start over. You can use git revert,
+not start over, but undo the mistake. You can use git revert and
+it will undo the change you made. So branching is one of the areas that
+gets really confusing within git. I could probably teach you an entire Mads
+monthlong style class on git itself. Branching starts to get into where
+things are complicated, but effectively, what a branch lets you do is take
+a copy of code and move it over here. So you got a copy of it,
+now you can change the code over here and it doesn't affect what happens over here. And you can change the code over here and
+it doesn't affect what happens over here. And so typically where this
+is used is when you want to add something drastically new. You want to start on something
+that's drastically different. Sometimes every change
+is done in a branch. It really depends on your
+organization's workflow. But the idea with the branch is you
+take a copy, you make changes to it. At some point in the future you can
+actually merge them back together. We're not going to cover that
+in this class necessarily. The syntax for
+this is git branch new branch. That creates the branch, but it doesn't really do anything other than
+create the branch, iot makes the copy. git branch without any
+other arguments on there will tell you information
+on your branches. And then finally git checkout
+branch_name moves you to that branch. So you've got your code,
+you say git branch. You now have a copy of the code over here. But if you edit files you're still
+in this branch until you run git checkout whatever
+you called your branch. Then you're over here and
+if you want to go back over here, you just run git checkout. And you can actually flip back and
+forth between them. I'll do a demonstration of that
+when I show the live demo of git. So as far as your homework assignment
+goes, the Ops Team has a request on Making sure your git repos are working correctly,
+you should go through that request. If you've never used git before,
+you might need to do some Googling or show up in office hours. But, we'll go over 85-90% of what's expected in the video
+showing this off in fail.

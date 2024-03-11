@@ -1,0 +1,93 @@
+You're also going to want to pull this
+Basic Demographic Summary Report chart. And the reason you want to do
+that is because it will do some rapidly generated visualizations for you. Now, what you gain in instant insight,
+you sometimes lose in beauty. So these these are not
+the prettiest visualizations and they may not be in the format you think
+they need to be in for your report. So you may find again that you want to
+download the report or that you use one of the methods we're going to talk about
+in the third week to trace what's here, using PowerPoint or Inkscape so
+that you can manually rearrange things. So what I notice here is that what this
+does comparing households by income group. Now, this is all estimated or
+predicted data. And so you need to know that up front
+that if you want the older data, you're going to have to
+visualize that yourself. But what I think stands out here is
+that high income group is growing and everybody else is sort of
+predicted to stay the same. This one is rarely useful for me, and you'll see it does some
+other visualizations. Now you're going to
+learn in Week 3, and you've already been learning
+in your other course work, that we can do better than this in our design,
+and we will show you some strategies. Again, there's some others that you
+might look at. You know how to translate these. But again, not great colors,
+not necessarily in the format you want, and not maybe able to meet
+the learning objectives. So you took the beginning data
+visualization course. Eytan believes that every visualization should have a learning
+objective and you should be able to answer, what do I want people to
+get out of this visualization? But these are a really great start
+for some instant data. Al right. Now let's take a look
+at some consumer data. This is a real strength of
+DemographicsNow is that it can tell us a whole lot about how people
+behave in various environments. So I'm going to close a couple tabs
+out and I'll meet you over there. Now let's take a look
+at some Simmons data. This is going to give us just a brief
+overview about some demographics and some information that they've gleaned
+around the country about lifestyle. And we're going to go,
+still in the summary section, we're going to go to
+Simmons Lifestyle Demography. And we've already run the report below. And here you want to be really
+careful to look at what is the data that we're talking about. Here we only get access to 2019,
+so this is estimated. We get some of that same
+census data we got before. And then we start to get
+into these indices, and DemographicsNow loves indices. And in general you want to think that
+that a score of a hundred is sort of the typical American, and
+any score that is lower than that, the lower the number, the less pronounced
+that feature is in that community. And any number over a hundred
+is more pronounced and shows up more in this
+study community. And remember, our community has
+been set to Kendall County. So I'm not going to go
+through everything, but let's just take a look
+at what is in here. So they're above average
+to be expecting a baby. So then again, that speaks to
+the birth rate or growth rate. They're a little bit low
+overall in children, but they recycle more than other people. It's just amazing the kind
+of weird stuff you can find. So here's some information from 2018 and
+they're all abbreviated. So how do they dress? They dress
+a little bit more conservatively. We know Chicken Kitchen does
+better in conservative communities. And here's a similar question
+that asks in another way. I like to experiment with new styles,
+a little bit less than normal. And we may be able to draw
+some inferences from that. And this just goes on and on and on. There's a little streak of
+Texas independence in there. Definitely a sense, you know, they're
+just like the rest of Americans when it comes to do you do duty or enjoy life. And you can just keep going. Here's a question that pops up in
+the middle about eating healthy meals. They're less likely
+to say they don't have time. They are more likely to say that
+their diet is very healthy. Now what's interesting about Kendall
+County as you will learn in doing a Yelp search is that there's a lot of fast
+food in their biggest city, but it's not upscale fast food. So look at all this
+information about health. We know they like to find ingredients. So the fact that that Chicken Kitchen
+sells itself as sort of clean eating, it looks like it would bode well for
+this community. And things like cars, I'll let you
+figure out the rest on your own. But you can see that there's just tons
+of information that helps you start to calibrate who is this community, how do they behave,
+and what do they think about food? So that's an index. Let's take a look at another index. This is the consumer expenditure
+food beverage and groceries. Again, it's got some basic
+demographic data up here. And we start to see some
+interesting things. So first of all, they actually spend
+more money eating out than eating in. And again, that's a sign that is good for
+restaurants, right? And you can see some things
+about how much do they per household on average
+spend on various things. So Chicken Kitchen doesn't serve alcohol, so we can skip that section. But we would like to know how much
+do they spend out on dinner? Oh, about $1,600 a year, that's not bad. Spread out over 50 weeks that's
+a decent amount of money. And it looks like breakfast and
+brunch are not nearly so popular. So the fact that Chicken Kitchen
+doesn't open until 11 a.m, that's perfect, because that's not
+going to be a big profit center there. And then they're going to talk about
+how much money they spend on all kinds of other things. Like they can actually tell
+you that they buy $31 worth of crackers a year on average. I think I personally
+spend $31 on crackers. And it just goes on and on. So I'll
+let you explore the rest on your own. Another index that you want to look at is
+one that's specifically about restaurants. This one's actually not an index,
+this is just dollars. Again, we see some of that
+same information resorted. Here's just an abbreviated
+version of that. So in the next segment,
+we're going to take a look at personas. And those are really exciting
+consumer profiles that will really make your community
+come to life for you. See you in the next segment.

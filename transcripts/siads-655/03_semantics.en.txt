@@ -1,0 +1,128 @@
+Let's take a look at semantics. We can start from a simple
+example that we looked at before, asking what the words mean? Here, we can think about the word coyote. We could potentially try to ask what
+coyote means by trying to count all of its co occurrences in a vector. And create a V dimensional vector where
+V is the length of our vocabulary. Here we could say that these co
+occurrences reflect what coyote means in practice. We might even try to dimensionally reduce
+this down to say the two dimensional vector like we did with where at tech or
+with L LSA. But we might also look
+at a different approach, which is to go to the dictionary. And here we can see that coyote
+has two different meanings, one, the small canine, or
+to the person that smuggles immigrants. These might both be reflected
+in the count vectors. And we'd like to understand how
+do we actually capture this and model it effectively in practice. What this is really describing at
+the semantic level is what's known as polysemy. Where a single lemma here coyote could
+have multiple distinct meanings. And we'll call these senses, implicitly
+complicates NLP to a great degree. In fact, ambiguity is one of
+the fundamental challenges for NLP. Let's look at this in practice. As the baddest snowboarder around, she combined a wicked quad cork
+with a sick misty flip to win. This probably sounds
+pretty positive actually. If you think about some of the words
+describing different aspects, so bad, sick, wicked. You might go to the dictionary to say,
+well, what did these mean here? Imagine that you're an NLP system and
+you could read these definitions. And say well, bad means failing
+to reach an acceptable standard, sick means spiritually morally unsound or
+wicked means morally very bad. However, we probably make
+the interpretation of the second sense. Also in Merriam Webster,
+that bad means good or great or sick means outstandingly or
+amazingly good. And wicked means going beyond
+reasonable predictive limits. These are essentially antonymic
+readings of the same words. And completely reverse our
+interpretation of the sentence. Do get a correct interpretation of the
+semantics of the sentence requires us to figure out what exactly is intended by
+these words which are heavily ambiguous. Humans actually have no problem figuring
+out which meanings are present. So for example,
+thinking about one particular word. If we say they really serve red meat. This would be a something about the meat
+you would offer of the menu verses he served as a U.S. ambassador to Norway. This is not someone not being
+served on the menu, but serving in a particular role. Or he might have served his time. Here something that has
+been incarcerated.. These different meanings of
+serve are antagonistic and can't be read in the same way. With just a minimal context, we have no
+problem making the correct interpretation. Word senses can be related
+to each other as well. So for example, I'm going to the bank. You might think that there's
+only a few meanings of bank. It could be that you're going to
+the sloping land besides the water, like the river bank. You could be going to a financial
+institution that accepts deposits. And these are probably two of
+the more common definitions of bank. But it could just be a loan Richard pile,
+like an earth bank, or it could be a bank of GPU's something
+like a similar objects in a row. Could be supply reserve
+items a blood bank, which is an extension
+of that second sense. Thinking about a financial institution for
+things other than financing. There's even the ninth sense which is the
+building where bank too does its business. You could be going to the bank yet not
+actually going to do business at the bank. Or it could be a flight maneuver, which is
+reminiscent of what a maneuver would have to be, should you be running next to
+a bank to make a long sloping turn. These sensors are related to
+each other to some degree, yet often distinct in other ways. And words may have many
+different such senses. In fact, if you think about one serve,
+it has 15 different meanings. Here these are the meanings
+shown in wordnet, which is one of the common
+sense repositories used in NLP. Some words are even more polysemous. Famously line has over 30 meanings and
+even more verb meetings as well. Trying to disambiguate between
+these two can be very challenging. You might ask, do we need all 30? How would we even tell if
+the two are synonymous actually? So how would we tell if two senses
+are distinct or actually the same? What are the ways to do this is to create
+a context that evokes both meetings. This is known as zeugma. And to see if a single sense
+can be applied in both, it's going to encompass both
+interpretations of the sentence. So for example, you might ask
+which flights serve breakfast? Here, the flight is delivering food. It says definition of serve, or
+does Midwest Express serve Philadelphia? Here serve as offering service to
+that particular airport, okay? Combine these two in zeugmatic expression. Does the Midwest Express serve
+breakfast and Philadelphia? This probably sounds funny to most of you. And in case in these cases, in linguistics
+we often prefix this with a question mark to indicate this is an unusual reading. The most readers will
+not find grammatical. There may be some of you who do
+find it grammatical, but for most people it seems odd. As a result, we'd say that serve actually
+has two different meanings expressed in the first two sentences
+that are different. Because they cannot be combined
+in the third sentence. However zeugma isn't always a problem and
+you can actually get some pretty interesting yoking of
+multiple meanings together. So for example, Mark Twain, has the famous phrase they covered
+themselves in dust and glory. They cover yourself in dust
+as well to become dirty. But to cover yourself in glory, this is more of a poetic license
+describing attaining glory. Star Trek The Next Generation
+has the phrase, you're free to execute your laws and
+your citizens as you see fit. Here execute adopts two different
+meanings in terms of to carry out the laws versus to execute
+as in kill citizens. Yet the sentence seems quite grammatical. You might even see these in some of funny
+phrases like I like my X like I like my Y, Z. Typically, Z has adopted
+a zeugmatic meaning that differentially modifies both
+the X and the Y's in different ways. Yet, you can combine these two to
+make a funny kind of expression. The kinds of semantic relationships we
+have between senses actually hold between different senses of a word. So synonymy isn't between a word,
+but really between its senses. And there are many such
+semantic relationships. Two of the more common ones
+are hypernymy or hyponymy. You could think of these as more general
+or more specific kinds of things. There's metonymy, which is to use
+one aspect to refer to another and we'll show an example of this one. And meronymy, which is X is a part of Y,
+many such essential knowledge bases or NLP databases will have these types of
+relationships between senses themselves. Let's look at synonymy briefly. We'll say that two senses are synonymous
+if their meanings are nearly identical. Typically we won't require them to be
+exactly identical because words may vary in slightly different ways
+depending on context. The idea is that we can
+swap the different words. And if the senses are synonymous, it really doesn't change the meaning
+of that particular sentence. So how big is a plane or
+am I flying on a large or small plane? You might say that there are two senses,
+for big and for large that are synonymous in this case. Yet, there may be other ways
+that these are not synonymous. So for example,
+she became a big sister to them, or she became a large sister to them. Here we would say that there
+are two senses of big and large that are not synonymous. And in fact, you can't say that
+the words themselves are synonymous, only two senses are. This is a good reinforcing example
+that it is senses that are synonymous, not necessarily words. Hyponymy is another common
+sense relationship. And here we would say that sense
+A is a hyponym of sense B, if A is a subclass of B or
+A is a kind of B. For example, a dog is a kind of canine. Hyponymy is the complimentary
+relationship, where B would be a kind of A. Just to give you a few examples,
+we would say that a car is a kind of vehicle mango is the hyponymy
+of fruit as a kind of fruit. A chair is a kind of furniture or
+dog is the kind of mammal. Let's look at one last example metonymy. This is a sense relationship that you
+may not even realize is happening, but it's actually quite common. Here we'll have two senses that describe
+different aspects of an entity. And we'll use one to refer to another. This is perhaps best shown
+through some examples. So for example,
+the White House announced that. We see that White House has many
+different potential meanings. Some would say the presidential
+branch of the US government. Here we are actually
+using a spokesperson for that branch as the intentional meaning. Or the upper peninsula
+grows amazing apples. We could think that the apple tree,
+is what could be described here or it could be the fruit of an apple tree? Depending on which thing
+you're trying to describe. Third, we might say, I love Jane Austin. In practice, most people are not
+referring to Jane Austin the person, but to the works of Jane Austin,
+to an aspect of Jane Austin's identity. These substitutions are quite common and
+we do them all the time thinking about how we want to highlight
+particular aspects of an entity.

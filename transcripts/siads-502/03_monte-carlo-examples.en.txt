@@ -1,0 +1,117 @@
+In this video, we'll go
+through code examples of how to implement the different Monte Carlo
+methods that we talked about. In the first example,
+we're estimating pi. To do this, we wanted to
+choose a random point in the square and see if it was
+contained in the circle. We saw that the fraction of points in the square contained in the circle would be pi over 4. How are we going to do this? First, we import numpy as np. We said n is a number of how many samples
+we're going to draw. Each sample we draw as follows, we choose two numbers
+between 0 and 1. We square both of those numbers, and then we check if
+that is less than 1. This technically draws
+a random point in the upper right
+quadrant of the square, but nonetheless,
+all the quadrants are symmetric, so this is enough. What is the code doing here? First, np.random.rand gives us a uniformly distributed
+number between 0 and 1. We choose n rows and two
+columns of such numbers. We then use np.square
+to square each number, and we sum them
+along axis equals 1, which just sums the
+values in each row. It's going to take the
+two values in each row, each uniformly distributed
+between 0 and 1, square them and
+add them together. Note that each of those two numbers represents a random point in the square, and whether or not the sum
+of the squares is less than 1 represents whether
+it's in the circle. What we're doing here
+is for each row, we're testing whether or not that point is in
+the circle or not. That is what we're
+recording as results. Then we simply print out
+the average number of points that are actually in
+the square multiplied by 4. To get our confidence interval, we take the sample variance, but we multiply it by 16. Because when you multiply the number by 4 you need to
+multiply the variance by 16, however, it's taking
+a square root. Let's try this here. Here
+we have a 100,000 samples, you see that finishes
+almost instantaneously. Then we get a
+reasonable estimate for pi at least to the first
+two decimal places. We change this to
+a million samples. Will take a little longer. Estimate is not much better happens that and we
+can see that we're expecting it to be good to the first two decimal places a third one is going
+to be a little fuzzy. Let's add another 0. We'll take 10 million samples. This may take a while. We'll continue on to
+our next problem. While this works its way out. Up, there we go.
+That's quite accurate. Assume when a baseball
+player is at bat, their chances of hitting are identically and
+independently distributed, assume 300 at-bats per season. What is the chance
+that a player with a 25 percent chance of hitting the ball hits
+strictly more balls, and a player with a 30 percent chance
+of hitting the ball? Again, we start off with
+a million samples here. First, we create a bunch
+of random variables. These are binomial
+random variables. Binomial random variable
+with parameters n and p, flips, n coins, each landing heads
+with probability p and reports how many heads. What this code is doing
+here is it's flipping 300 coins that each land heads with 25
+percent probability. That's how many hits this player had and the season
+and reports that. This last parameter here
+says that we're going to do that n different times. This is going to give us a
+vector of length n where each entry is a binomial random variable
+with parameters 325. This represents how
+many hits in a season, each element, our 25
+percent batter got. Here is a vector
+also raked them , but here each entry is a binomial with parameters 300 and 0.3. This represents the
+number of hits in a season by a player who hits the ball 30
+percent of the time. Okay? What we're doing is
+we're just comparing to see if the 0.25 percent of player hits the ball at least as often
+as the 30 percent player. Okay? Then it just gives
+the results by taking the this is going to give us a tour of an array
+of boolean values. It just takes the probability and again computes the
+variance as above. Okay, so even with a million examples we finished
+almost instantaneously, and it's saying look, the probability is
+about 9 percent that the worst player hits it more than the better player. Notice these are pretty
+large differences. A 300 is a rather good hitter, a 25 percent is a, somewhat, mediocre hitter,
+and it's saying that, in a season, each baseball season we'd have
+about 300 bats per player, you can distinguish these, but not with great probability. Assume a league has
+100 players in it, only one of these
+players is a 300 player, the others are 250 players, so 300 players wanted to
+hit the ball 30 percent of the time and 250 players who would hit the
+ball 25% of the time. These are very intrinsic value, it's not what actually happens. If a player hits above a 300, what is the chance that
+they are a 300 player? And we're supposed to
+use Bayes Theorem. We first compute the
+probability that a bad player, one of the 250 players, has a batting average above 300. That we can do, using
+Monte Carlo again. It's just a chance that, this binomial yields above
+90 hits of the season, that would be above a 300. Next, we compute the same thing, but for a good player. Then the probability,
+that a player is good, given that he looks good. You rewrite this
+with Bayes theorem, into the following form: It's
+just the probability that a good player looks good times the probability
+that a player is good, which is points 0.01 divided by the probability that
+a good player looks good times probability
+that a player is good, which is 0.01 plus the probability of a
+bad player who looks good times the probability that a player is bad, which is 0.99. You can get this
+using Bayes theorem, which we saw in a
+previous lecture. Let's compute this here, so the probability
+that a player with a 300 batting average is good, is only about 15%. Most of the players, with such a good batting average, are actually not good players, and that's from Bayes rule, because the number
+of bad players, outnumbers the good players. But even having a
+strong signal that, being a good player does not guarantee they
+are a good player. In our last example, we want to figure out, how many people we need in order, that three of them share
+the same birthday? What we do here is, we have n equals 10,000, this is a little slower, so I'm using a smaller
+n. I'm going to put my results and I'm
+going to initialize it, having zeros everywhere. Then what I'm going to do is, for each of these samples
+that we're going to take, we initialize days to be a 0
+vector with 365 zeros in it, that's how many people
+have birthday on each day, there's 365 days. We're going to
+count the number of players we need before we
+have three in each day, so our counter is
+going to start at one. We're going to keep
+on looping around and type in here zero. We're going to add
+one to our counter, then we are going to add
+one to one of the days. We're going to choose a random
+birthday for this fellow, and we're going to record, that one more person has
+a birth down that day. Then we're going to check, to see if there's any day that has at
+least three birthdays. If there is, we're done, and we record our result. We've now looked at j people, and they have three birthdays, and we'll put that
+into the entry of results and move
+on to the next i. When we do this, we'll have created this array
+of results that has, for each trial the
+number of people required to find three people
+with the same birthday, and then will simply
+report our results. Like I said, this takes
+a little longer to run. Note again, that this one
+is not a Boolean variable, so we can compute its variance, it will be different, and here we take the
+sample variance. The average number of people we need is approximately 88.85, and the error of our estimation is slightly less than one, so we really should believe, that it's somewhere close to
+89 people that we need to find three people with
+the same birthday.

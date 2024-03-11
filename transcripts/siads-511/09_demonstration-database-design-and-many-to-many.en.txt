@@ -1,0 +1,184 @@
+Hello and welcome to another
+Postgres walkthrough. In this walkthrough, we're
+going to walk through the stuff we're doing
+in the second lecture. This is a lecture about
+database design, and foreign keys, and
+various relations. So the one thing we're doing in this lecture is something
+we're going to automate much later and that is building database tables that are linked together and database
+rows that are linked to other rows by hand
+just so you can see them. Just once we automate them, I don't want you to
+forget how they work. So we're going to have
+a bunch of tables. And the data model here is there's a track table that has a foreign key to an album table. The album table has a foreign
+key to the artist table, and then the track also has
+a link to the genre table. I call these lookup tables, they have an id which is
+automatically assigned. We put a name in,
+we call it UNIQUE, just because if we're going
+to call a Led Zeppelin, we only want one Led
+Zeppelin row because ultimately we're going make
+Led Zeppelin be a number. So you see this one here, the album table
+has a foreign key. And so the thing is these foreign key columns
+are just integer numbers. The id SERIAL is a
+little special but it's just an integer number that's
+automatically generated. And so after we've come
+up with a data model, designed the picture, then we
+can create all these tables. Now, this is all
+set up so that you can mostly just cut and paste
+things really fast into, I've logged into my
+Postgres and off I go. We can go as fast as I
+want with these things. I can just grab a whole bunch and because they
+end in semicolons, and it's somehow
+the Postgres client keeps up with the
+pasting and it all works pretty well and so there you go. I've created an artist, album, genre, and track table. And so now I'm going to
+do some inserting. So the key thing is if I look like INSERT INTO artist
+Led Zeppelin here, and then I SELECT
+star FROM artist, I hit the tab button there, select star from artist,
+then you see and the id is the key thing. and I'll put another artist, AC/DC. So these are the lookup tables, these are the tables
+that we are filling in with the string value
+so that we can create numbers that we can use
+everywhere else in the system. Now the foreign keys like
+artist_id, we have to explicitly. We'll come up with other
+ways later where the sub-selects, etc., can look these
+up, but in the short term, we're just going to do
+this manually and so that means that we need to
+remember that Who Made Who, which is AC/DC, is number 2. So forever in this system now, AC/DC is going to
+be the number 2. So now we can make an
+album and indicate that it's artist number 2
+with this INSERT statement, Who Made Who and number 2, okay? And so we can do the same thing with Led Zeppelin's album 4. There you go. And we'll
+do the same thing, genre is another lookup table. So we'll just insert
+these two things. Make sure you do
+these things in order otherwise my numbers
+don't work anymore, SELECT star FROM genre. So we can see what the
+genre numbers are. Now if I was doing this, I
+might have to write this down on a piece of paper
+but I already did it. So I've got these
+numbers just right. So this next INSERT INTO track, this looks very complex
+but it's just got title, length, rating, count,
+album_id, genre_id, and this 2 and this 1
+at the very back end here, those are the numbers that
+are the foreign keys. So you can't really sort of
+tell the difference between count, which is just an integer,
+and album_id and genre_id. They're just integers in this particular INSERT statement. And so the database knows because of the fact
+that we use this, it's a reference and it's
+a foreign key and we've communicated on the
+CREATE statement what these really mean, and so SQL can optimize them. But in the INSERT statement, they're just numbers
+and so we can put all those things in and we now, Oh, I forgot to copy and paste. See? Oh, this is really cool, INSERT INTO genre name, VALUES rock, duplicate key
+violates unique constraint. This keeps you from inserting it. I didn't cut and paste quite right and so I'd tried
+to do that twice. But if you look in track, I'd tried to reinsert
+the genre but because I have this VARCHAR 128 UNIQUE, the fact that I
+already had Rock in there, my database complained. Now this is not a bug. This is me in my database
+CREATE statement protecting me as typing in SQL commands from doing something stupid
+and making a mistake, right? And so it saved me from myself. So let me copy and paste
+this correctly and get that record inserted into
+track, INSERT INTO track, and we go SELECT star FROM track and see those numbers and even in the SELECT the
+album_id and the genre_id, just look like normal integers but inside the database, trust me, Postgres is thinking this
+through very carefully. So let's insert the rest of these things and get them all in. So now we have four
+records, SELECT COUNT star FROM track, semicolon. So we have four rows
+in there, four rows. So this is our first join, we are going to read
+the album title and the artist's name from the
+album joined with the artist, on the condition that the album's artist_id is
+equal to the artist.id. So let's take a look at that. There we go, right? We've made who and so that's going
+across two tables. It might be easier to see
+this if we show album id, artist id and album id
+in the query. So this next query does that. So now we can see
+how the artist id, the rows, are the rows that match between artist
+id and album id, and those are the
+rows we're seeing. But what the SELECT does, this album.artist_id
+and artist.id don't really need to be shown
+for us as the developer. I'm just showing it so
+that we can kind of understand the database mechanisms
+that are going on. Now, you can kind of see
+something about how joins work if we run a CROSS
+JOIN between those. Between two things. A CROSS JOIN doesn't filter out the
+things that don't match. The CROSS JOIN shows
+all the combinations of all the tracks with all the combinations
+of all the genres. And then, you'll notice that
+sometimes these numbers match between genre_id
+and genre.id. Sometimes they don't match. And so really, a regular JOIN is a CROSS JOIN with a filter
+that requires the match. And so that's where the
+ON clause comes in. The ON clause says,
+do a CROSS JOIN, but throw away the things that
+don't match the ON clause. So we can see that. So we'll turn this into
+a normal INNER JOIN or non-CROSS JOIN
+with an ON clause, and we see that it filters out only the things that we want
+where the rows really match. There's one there, there's one there. About to Rock matches, Who Made Who matches. And then, Stairway is not Metal
+and Black Dog is not Metal. And the CROSS JOIN shows
+all those combinations, but the ON clause of the regular JOIN filters out so that we only
+see the matches. And after a while, we
+just stop thinking about this to realize that this is a CROSS
+JOIN with a filter. Regular old JOIN is a CROSS
+JOIN without a filter. And if you want to do the
+whole big SELECT where we join across all four tables, it's not all that hard. You got a JOIN and
+you got a ON clause. You got another JOIN,
+you got a ON clause, and the ON clause looks the same. We named these artist_id, and the primary keys are id, and the foreign keys
+have the name of the table. This convention greatly helps when you're typing JOIN commands. Okay? And so that's the many-to-one
+relationship. That's four tables and three
+many-to-one relationships. Just to show you how the
+ON DELETE CASCADE works, let me do a SELECT
+star FROM tracks. And you see that I have
+four records there. That's not what I wanted to do. SELECT star FROM track. And then, if I delete genre, and what we're demonstrating
+here is the fact that the track table says
+ON DELETE of a genre row, delete the corresponding track. And so you'll see that
+even though I'm just deleting
+something from genre, so SELECT star FROM genre, you see there's only one left, but the real effect is that
+we can do a SELECT star FROM track and those two went away. So the genre_id that
+had 2's are gone now. So that's because the DELETE from the genre table cascaded
+into the track table. So that's pretty cool.
+Okay. So now let's switch to many-to-many. But the key to many-to-many
+is not all that crazy. The many-to-many is a two
+one-to-many relationships. So if we take a look at this many-to-many relationship
+between students, courses, and members, the student
+is just a lookup table, right? You see that it's
+got an id, a name, an email as VARCHAR UNIQUE, and course table that's got a
+title, it's VARCHAR UNIQUE. Again, that VARCHAR unique
+keeps us from making mistakes and putting
+duplicate things in. So let's create those two tables. Those two tables are
+the basic tables. But then we have here. Some people want to put an
+id SERIAL in the table, but I'm going to make it
+so that the primary key in this table is a combination of a student_id and a course_id. So this is the join table or the junction table or whatever. student_id is a foreign
+key into student, course_id is a foreign
+key into course. And these look exactly
+like foreign keys because literally many-to-many is this middle table
+with two left and right outbound foreign keys. And then primary key, you can
+actually put a combination. So it's the combination. So 1, 2 is okay. student_id of 1, course_id of 2 is okay. student_id of 2, 2 is okay, but you can't have
+two rows that have identical combination of
+student_id and course_id. So that's the primary key. You want that because you
+really just want to say, well, this student is only allowed to be in this course one time, we don't need extra rows. There might be times when
+you don't care about that, when you can have more than one perhaps in particular
+because we're modeling this role value at the connection between
+a student and a course. Maybe we've decided
+that we can have a student and course
+with a different role. Then, I would make my primary key be student_id, course_id, role. Then, there are
+those three things that have to be unique. So you could be in as a
+student and an instructor. So that's just the data model. So we have lookup tables, the student and the
+course lookup tables, and I'll just grab
+those INSERT statements and send them in. That's what's fun about this. So now I've just got SELECT. I've got three records in each of the student
+and course tables. SELECT star FROM student, SELECT star FROM course. You see three records, but really what
+we've also done is created the id fields
+for these things. And now we're going to start adding the connections between them. And so we have to know these numbers. Again, now I've got
+INSERT INTO member, a whole series of
+INSERT INTO members. Now, this was hard. And I had to go back and get
+all the numbers right. But, again, you see student_id, course_id are just integers. Like the first one is 1, 1. That means Jane is going into the Python course and she is
+going in as the instructor. Now 2, 1 means that Ed is going
+into the Python course, and Ed is going in with
+a 0 as the student. And so I'm just going to blast
+all these things in there. I'm going to send these, looks like seven
+INSERT statements with all the foreign keys. And in they go. And now I can say SELECT
+star FROM member. I do that. I make that
+typo all the time. From, not form.
+And they're just numbers, right? But these are links. Now, the role is
+not a foreign key, but course_id and
+student_id are foreign keys. When you construct a JOIN, I think of it as joining
+through the member table. Now, it turns out you can write this SELECT statement
+here with student.name, member.role, course.title. The from and the member, you can put them in
+different orders, but I like to draw them
+in a particular order, and particularly I like the
+join table in the middle, right? So I'm going from
+the student table, joining through the member
+table into the course table. But they're really just joined up and Postgres figures
+out all that stuff. Of course, I got to ORDER BY, I've got the course title, member role descending, and the student name just because
+I want it to look pretty, because I want to see
+everybody next to each other in the course. So we can see all these folks. We can see Ed is the teacher of PHP and Sue is the student. Jane is the teacher of Python and Ed and Sue
+are students, etc. So that gets you through
+some many-to-many stuff. Now, this is the manual way of inserting these foreign keys with these hard-coded numbers. You need to write these numbers down on a little piece of paper. And I'm not going to make
+you do too much of this by hand because
+the next thing we're going to teach you is how to automate all this stuff. Cheers.

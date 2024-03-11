@@ -1,0 +1,281 @@
+Welcome to week 4,
+complexity and profiling. So we're going to continue on our journey about efficiency, and we're going to be
+talking about ways to instrument efficiency this time. So the overview for this week, as I said, are complexity
+and profiling. For complexity, we're
+going to introduce something called Big-O notation, and we're also going
+to try our hand at determining
+algorithm complexity. So we're going to take a
+look at some algorithms and figure out how long
+they should take to run. The next part that
+we're going to talk about this week is profiling. So we're going to introduce
+you to line profiling and introduce you to
+something called lprun, which is a magic
+command in Jupyter. Our learning objectives
+for this week are to explain why we should be concerned with
+algorithmic efficiency. We want to be able to describe at least six types
+of Big-O notation. We want to be able to report
+execution times in Jupyter, and we also want to
+be able to explain profiling and line profiling
+output in Jupyter. So let's talk about
+algorithmic efficiency. Now, algorithmic
+efficiency is often evaluated in terms
+of time and space. For space, we
+actually mean memory. We're going to just touch on memory efficiency in this course. We're going to spend
+most of our time talking about time efficiency. When you think about it, the rise of big data, which we'll get into
+in the next course, 516, really intensifies that need for efficiently
+scaling algorithms. So things that work really well for small amounts of data, typically the sorts
+of things that we encounter when we're teaching, doesn't scale well to big data. So we really need to
+think about efficiency, and we'll go over some examples that should demonstrate
+quite dramatically to you how efficiency can really improve the performance
+of your scripts. In terms of why we're concerned with efficient algorithms, well, we want to save users time, and that's you, that's you as a practicing data scientists. So if I'm an employer and I'm paying you a certain amount
+of dollars per hour, I don't want you to
+sit there and just watch the screen do
+nothing while you're waiting for an analysis or a
+data manipulation to finish. In other words, I
+want to be happy as an employer because
+you are productive. Also, questions about
+algorithmic efficiency often arise in
+technical interviews. So as you're moving
+forward with your careers, you might be faced with
+a technical interview in which you're asked about
+algorithmic efficiency, and to explain something
+about Big-O notation, or at least now you can
+talk about Big-O notation. So I'll talk a lot about
+Big-O notation in this week. Big-O notation means
+order of growth. That's where the O comes from. It's a way to categorize
+how algorithms behave with increase
+in data size. It's a very common concept
+used in computer science. We're not going to delve too deeply into computer science, but I'd say that this is probably the most computer
+science-y lecture that I'm going to
+do in this course. Here's what Big-O notation looks like, or Big-O classification. So we have order one. The big O is read as order. So order one, order n, order n squared, order two
+to the n, order log n, and n log n. So those
+are the six types of Big-O notation that I'd like
+you to be comfortable with by the time we finish
+this week's lecture. Order one is also
+called constant time, and these are algorithms
+that do not require more time as a result of
+increasing input size. So the whole idea behind Big-O notation is
+trying to answer the question of how
+much more time will an algorithm take if you
+increase the input size. So we're always looking
+at adding one more item, or adding a series
+of items to, say, a list that we're passing as
+a parameter to a function. So we want to know
+what the impact of increasing that
+input size might be. In order one, or constant time, there is no more time required as we increase
+the input size. This can be considered ideal. So in an ideal world, all of our algorithms
+are constant time. Now, clearly, that's
+not possible. As an example, and
+we'll go through some examples in the
+notebook as I finish this series of
+descriptions of what Big-O notation looks like
+for these six orders. An example of that might
+be indexing arrays. The next type of Big-O
+notation that I'd like to talk about is order n or linear time. These are algorithms
+where the runtime, that is the time taken to run, I've used a hyphen there to
+make it clear that this is not just an executable runtime, it scales proportionally
+to the input size. So there's a linear
+relationship between the input size and the amount of time that the
+algorithm takes to complete. This is an ideal runtime
+for situations where the algorithm must read in the
+entire input, for example. So a good example of
+that would be finding a specific item in
+an unordered list. So we have to walk through that entire list to find an item. Now, as you know from the readings that were
+assigned for this week, Big-O notation measures
+the worst-case scenario. You can imagine an unordered list where
+we're searching for an item and we find that item in the first
+element of the list. Now, clearly, we're not concerned then with the size of the list. But Big-O notation for
+our purposes measures the worst-case scenario where
+you would have to walk to, say, the end of the list, or you would have to examine all the elements in the list
+up to the last element. There are other
+measures that measure best-case scenarios and the
+average case scenarios. But we're going to focus
+on worst-case scenarios. What I've tried to do here at the bottom of this set of slides is to indicate the order of preference for what you would, as the designer of
+algorithms, prefer. So you would prefer order
+one over order n. That is, you would prefer constant
+time over linear time. The next type of Big-O notation that I want to talk
+about is n squared, and I want to introduce you to this notation of n up arrow two, which is n squared. So you'll see both
+a superscript two, as well as n caret two. So there's exactly the same. This is quadratic time. That's based on the notion that quadratic equations have
+a squared term in there. So these are algorithms
+where the runtime is proportional to the
+square of the input size. You'll often see a
+quadratic time algorithm when you have nested
+iterations through a dataset, or through a list, and I'll show you that in a few minutes with
+the Jupyter notebook. Another example that you
+might be familiar with, for those of you who do have a stronger computer
+science background, is a bubble sort algorithm. So a bubble sort algorithm
+executes in quadratic time. When we talk about
+order of preference, order n-squared is
+worse than order n, which is worse than
+constant time. So you can see our order
+of preference there, things are getting to take
+longer and longer and longer as we add more
+elements to the list, or as we add more
+elements to the inputs. So remember, we're
+always looking at the worst-case scenario and we're considering what happens when we extend the size of the input. Walking along our Big-O
+notation sequence, we have order two to the n and this is called
+exponential time. This is getting pretty
+bad in terms of time taken to run when
+we add another element. So these are algorithms
+where the runtime doubles for each included
+object in the dataset. So as we add one element, we double the amount
+of time taken to run that particular algorithm. An example of that is recursively finding Fibonacci
+sequence values. We'll go over exactly what
+a Fibonacci sequence is. But you can, if you want, pause this and take a look at say the Wikipedia page for Fibonacci sequence or
+Fibonacci numbers. Again, we'll go over that
+in detail in the notebook. In terms of order of preference, now we're getting
+worse and worse. So you see order two to the
+n off to the right there, which is much less
+preferable than n squared, which is less preferable
+than linear time order n, which, again, is worse than
+constant time order one. So I talked about
+Fibonacci numbers, and I think I want to introduce
+that to you right now. So a Fibonacci sequence is this interesting
+property about numbers, where every number,
+except for the first two, the first two are
+always zero and one. But after that, if you look at the sequence
+across the bottom here, you see that we
+have zero and one, then what we do is we add
+the two previous numbers. So 0 plus 1 equals 1, 1 plus 1 equals 2, 1 plus 2 equals 3, 2 plus 3 equals 5, 3 plus 5 equals 8, and so on. I'm not going to walk through
+the entire sequence there, and you can see that this
+can go on to infinity. This is very important for a number of properties
+that we see. If you, again, do some
+research on your own, you'll see that this
+forms things like the mathematical equation of
+a Nautilus shell and also informs a number of layouts
+for those of you who have a strong background in user
+experience or user design, or user experience design. So this is a very important
+sequence of numbers. What's interesting about it, if you look at that
+second equation there of F_n equals F_ n minus
+1 plus F_n minus 2. Any given Fibonacci number is based on the two
+previous numbers, which themselves are
+Fibonacci numbers. So we're going to
+talk a little bit about recursion as well. The next order that I want to introduce you to is
+logarithmic time. So this is order log_n. These are algorithms,
+and this is a little weird where the time taken to run scales proportionately to a logarithm of the input-size. So the run-time scales linearly despite the input-size
+scaling exponentially, and this is preferable
+over order n linear time. An example of that
+is a binary search. Another way to think about logarithmic time is if you
+go through each iteration of your input list
+and you can then subdivide your problem
+space into two. In other words, a binary
+search where we're dividing our problem space into less than a
+certain critical value and greater than
+the critical value, that is taking our space of our problem and
+dividing it into two. So actually order log n falls between constant time
+and linear time. It's actually better
+than linear time. So if you can start
+thinking about ways to design algorithms where you're not scaling
+constantly with the input-size, but rather dividing your
+problem space into two, you're in pretty good shape. As you move on through this program, you'll
+encounter courses, say on machine learning, where you are going to be in a position to divide
+your space into two. For example, when we do
+clustering or classification. So order log n is
+actually quite desirable. The last type of Big-O
+notation that I want to introduce you to is
+n log n. So here, it's a multiplier of log n, which we just covered. Examples of these are
+algorithms where each member of n is subjected to
+an O log n process. So an example of
+that for those of you from Computer Science
+might be merge sort. We're not going to
+spend a lot of time talking about n log n processes. But I'll give you
+some examples in the readings of where you
+might encounter this. In terms of order of preference, you can see that order n log
+n falls between linear time, order n, and quadratic
+time, order n squared. So it is more desirable
+than an n squared, say a double nested loop. If we can combine each element with having
+the problem space, then we're in pretty good shape. So here we are in
+a Jupyter notebook and I want to go
+over some examples of the different orders that we covered just
+a few minutes ago. So constant time, order 1. An example of that is, if we say have a function called IsFirstElementNull and it takes
+an argument of some list, if we're going to examine the
+first element of that list. So we're going to take
+a look at aList 0, and we're going to test
+to see if that's none, which is Python's
+way of saying null. So null and none are pretty
+well equivalent in Python, we're always going to use none. So here, we're just going to examine the first
+element of the list. Clearly, it doesn't
+matter if our list contains one element
+or a million elements. Examining the first
+element of that list will always take the
+same amount of time. So the time taken for this, even in a worst-case scenario
+will always be constant, and always be the same
+as a one-element list. Now, we're not going
+to talk about what happens here if we
+pass in a null list. But you know what's going to
+happen with that null list based on previous
+weeks in this course. The next type of Big-O notation that I want
+to cover is linear time, order n. So here, let's think about a function, I've called mine ContainsValue, that takes two parameters, a list and a value. What we're going do here is, we're going to iterate over
+the elements of that list, and we're going to take
+a look at every element. We're going to compare
+it to that value. If that element is equivalent
+to that value, that is, if e equals aValue, then we're going to return true. Otherwise, we're going
+to return false. Now you'll notice here that we're walking
+through that list. In a best-case scenario, that value is in the first
+position of that list. It's the first element. You'll see what I've done
+here is I've returned true, so I bail out of that for loop as soon as
+I find that value. So I have a small
+optimization in there. Once I find that value, I'm not looking for
+contains all values or trying to count the number
+of times that value exists, I just want to know if that
+list contains that value. So I have a small
+optimization in there to terminate that for loop
+if I find that value. Otherwise, thinking
+worst-case scenario, I'm going to have to walk through that list to find that value. That's going to be different
+in our likelihood if I have a one element list or 1000 element list or a
+million element list. So things are going
+to get worse and worse as my list gets longer. But it's still going to scale linearly with that list length. The next type of
+order that I want to talk about is order n squared. Here, let's think about a function that looks for
+duplicates in a list. I'm going to call my
+function ContainsDuplicates, and it's going to take
+an argument of a list. You'll often see structures
+similar to the following when you're dealing with an
+order_n squared algorithm. So we're going to see two for loops nested
+within each other. So for i in the
+range of the list, we're going to do the
+same thing all over again because we're going to look for duplicates within that list. So we're going to
+compare every element of that list to every other
+element of that list. So we have those two
+for loops that are iterating over that same list. We're going to
+consider the situation where we're looking
+at the same element. Clearly, that's not a duplicate. So we're just going
+to make sure that if we're dealing with the
+same element, that is, if i equals j, then we're just
+going to skip over our real comparison and
+go on to the next one. That's just a tiny optimization. Then we're going to compare
+those two elements of that list that are offset
+by those iterators, i and j, and we're
+going to return true if we found the duplicate. So again, a small optimization. We don't have to go through that entire pair of for loops, so we can bail on
+that first duplicate. Otherwise, we're going
+to return false. So you can see here that we're iterating not just on order n, that is, we're not walking
+through the list twice, but we're walking through
+the list in the outer loop. Then for every element
+in the outer loop, we're walking through
+every element in the list in the inner loop. So that's an order
+n squared example. We talked a little
+bit about Fibonacci sequence's and we
+talked about this in terms of decorators as well
+and caching, remember that? So our Fibonacci sequence
+here is going to take a parameter of n or
+an argument of n, and that's going to find
+the nth Fibonacci number. So we might, for example, want to find the 16th
+Fibonacci number. According to our formulas that we saw earlier in the slides, if n is less than or
+equal to 1, that is, if n is zero or one, then we're going to return
+exactly that value. Otherwise, we're going to return the Fibonacci number
+that is two numbers ago, plus the Fibonacci
+number that immediately precedes that particular
+Fibonacci number that we're looking for, and you see that that's
+recursion because we're calling the same function from
+within our function. So our Fibonacci function
+calls Fibonacci twice. The twice isn't as important as the fact that we are
+having to recurse. So if you see yourself
+doing recursion, you might suspect that you have something that is in
+exponential time. The last piece, and you'll
+see this in the notebook, is an order log n. In this case, in each iteration, we're halfway closer to
+finishing the problem. I'm not going to walk you
+through all of this example. I think it's well written out, and you can study this, and this is from Stack Overflow. I want to remind you that Stack Overflow is
+a great place to go for answers to questions that aren't
+just coding questions, but can also be
+conceptual questions. So this link will
+take you to a page where order log n is
+explained to you.

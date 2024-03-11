@@ -1,0 +1,88 @@
+As we said that zero probably more
+data data science applications or real world tenses than you can imagine but
+there aren't so many basic data types or
+basic data representations. We will discuss a few of
+them in this lecture for example items sets, vectors or
+matrix, sequence data, time series data, spatial data,
+spatial temporal data. Graph data or network data and
+data streams. Starting from next slide we've
+introduced each data type one by one, let's first look at item sets. Suppose you are dealing
+with the data object. That is the shopping basket. You can see that a shopping
+basket contains a list of items, a list of products. In this particular example,
+the attribute of this data object of a shopping basket is essentially
+the appearance of a categorical item, the other examples you can also describe
+a piece of text as the item set. And in that case
+the attribute will be a word. Now we can use mathematic equations
+to describe the same thing, in item set representation we can
+write down the data object as the big X the uppercase X and now it
+can be represented as the set of items. In this set every item lowercase x belongs
+to the data object belongs to the set. If and only if the corresponding
+categorical item appears in the set and in this representation, you can see that the order of individual
+items don't really matter and that says if you spec the positions of
+X1 and X2 it is still the same set. Item sets although very
+simple it can be used to describe many different real world data
+shopping baskets, we have discussed. Text is another example when you use
+item sets to represent text data, it is known as bag-of-words. In other words, we can represent a piece
+of text as the set of keywords and if we don't care about the order
+of the keywords or how many times they appear in a text we can easily
+use the word cloud to represent it. And the word cloud is actually
+a simple example of item set but sometimes we do care about the numbers. Vector data is the another data
+representation that can be used to model data with counts. Data objects you can use vector
+data to represent include users ratings of products or course grades of
+a student, in this particular example, you can see that this customer
+has purchased a list of products. And she actually gave different
+scores to review each of the product. The attribute in this example is
+the numerical property of the object and in this particular example is
+the numerical rating of the product. So in a vector representation,
+you can see that different from item set. Every data object is now represented
+as the n-dimensional vector, every dimension of the vector corresponds
+to one attribute of the data. We add a small arrow on
+top of the uppercase X to indicate this is the vector. Every lowercase x is
+the numerical value of x and i's dimension,
+which is the corresponding attribute and now you can see that every attribute
+is unique to that dimension and you cannot easily change
+the order of the two attributes. So every data object can be represented
+as the vector then what about multiple objects? It is simple. You can represent multiple data objects
+as a matrix, which is essentially a collection of vectors with
+the same number of dimensions. There are many examples of how people use
+matrices to represent real world data for example in recommend assistance people use
+matrices to represent product ratings. Every row of the matrix
+corresponds to the user and every column of a matrix corresponds
+to the product of a movie. And the numerical values of every element corresponds to the rating
+the user assigns to the item. In biological data mining people
+represent microarray as matrices in a microarray every row is the gene and every column corresponds to the sample or
+the experiment condition. And every numerical value, each dimension
+is the expression level of a gene. Let's talk about another type of data
+representation that is also related to item sets. We call this sequence data. Sequence representation can usually
+be used to represent eigdata objects such as curriculum paths,
+such as the DNA sequence, such as a session of search queries, a sentence
+of words or the trace of user actions. And the attributes in a data object
+in a sequence representation of pairs of positions and
+categorical items in a sequential order. In this example, you can see that our
+degree program can be represented as the sequence where every
+categorical item is the course and there's the particular
+order of the courses. You have to take introduction to Python
+before you take Python path data science before you can take degree
+courses such as data mining one. And then after this course,
+you can take another course, we can formally represent a sequence data
+using the following mathematic equation. So again, we use uppercase X
+to indicate the data object. Now, you can see that X is
+actually the set of pairs. Every pair has the lowercase x i
+which is the categorical item and a number 1, 2, 3, 4, that indicates
+the ith position of the sequence. So this representation tells us at
+each position what item is observed. There are many examples of sequence data,
+for example in biological data mining
+people deal with DNA sequences. There are only four category items A,
+C, G, and T but because they can appear
+in different orders. We have different DNAs
+of different species. What's interesting here is that in
+biological data mining people usually add spaces in between the items so that
+they can align different DNA sequences. And this is telling us that in sequence
+data the order of the items is much more important than
+the actual position. In the example on the right hand
+side you can see that this is the sequence of search actions. The user of the Yahoo search engine typed
+in a query then they click on the URL. Then another URL, then they click
+on the query suggestion button, then they modify their query into
+a new query so-and-so forth. Based on the sequence of actions
+a search engine can much better estimate what the user actually wants and
+provide personalized search results.

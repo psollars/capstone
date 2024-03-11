@@ -1,0 +1,235 @@
+Today we're going to talk about the linear threshold model. So far we've been saying that
+our models of diffusion of networks could apply to
+things like viruses, diseases, but also ideas, behaviors, and other things. In this model, we're
+going to focus mainly on the idea of the spread
+of behaviors or ideas. In other words, this model
+aligns much better with those types of contagions rather than say viruses or diseases. In order to motivate this, let me talk about the
+complex contagion. The idea is that unlike
+diseases, some innovations, ideas, or behaviors require multiple exposures
+before they're adopted. If you're going to
+think about the way that ideas or behavior
+is spread is not like with viruses
+where you come in contact with someone who
+has adopted the idea, then you may
+accidentally adopt it. You actually look around, you look at the people who have adopted that behavior
+or that idea, or have bought that product
+and make an assessment on whether you want
+to adopt that based on maybe how many
+others have done it, or maybe based on
+what you see about their outcomes or maybe who they are or how
+much you trust them. Really these two
+are very different. The idea of the complex
+contagion captures exactly this, that some ideas, some
+behaviors require multiple exposures before
+they're actually adopted. For example, people
+may not purchase a very expensive
+product until many of their friends have adopted the product and had good
+experiences with them, or for example, you
+may not believe a rumor you hear
+for the first time, you may believe it and
+start spreading it once you hear the
+rumor many times, and if you hear it
+from the right people. This process is called
+complex contagion. Now let's look at a way
+that we can model it. This is what the linear
+threshold model aims to do. The way it works is
+that nodes will have a threshold between zero and one and this threshold
+will represent how susceptible they are to
+adopting the behavior. Someone with that threshold
+is very close to one, will need to see a
+lot of other people adopting the behavior
+before they adopt it. People who have a very low
+threshold only need to see a small fraction of people adopting the behavior before
+they decide to adopt it. In this model networks, will look like this, will have the nodes. The nodes will have a
+number attached to them, and this will be the threshold. Here we're starting to build how our network
+is going to look. Now the next thing
+is that of course, we're going to have edges. The edges will have a weight that represents how much
+influence one node has over the other one on whether they will adopt the
+particular behavior or idea. Now one technicality here
+is that the weights of all the incoming edges of a node must add up
+to at most one. Here are edges for this network, and then every one
+of those edges will have a weight associated with it. what I was saying is that if
+you look at, for example, node B here, it has two edges
+that are pointing to it. This one has a weight of 0.2
+and this one has a weight of 0.8 and that adds up to
+one, so that's fine. You have others like node G here who has two edges
+pointing to it as well. This one has weight 0.7 and
+this one has weight 0.2, which adds up to
+0.9, which is fine. We just have to make sure we can normalize or do
+whatever we need to do, but we need to make sure
+that every node has incoming edges the add
+up to at most one. Then what will happen is that a node will adopt that behavior, if it has a set of neighbors who have adopted the behavior, and then the weights of
+those edges coming from the neighbors that have
+adopted the behavior add up to at least
+the node's threshold. Let's look at some examples. Let's say we have this
+network and let's say that node C has
+adopted the behavior. Now we're going to see what happens to the
+neighbor associate, will they adopt the
+behavior or not. Well, let's first
+look at node B here. Node B has a threshold
+of 0.3 and then C who points to B has edge that
+has a weight of 0.8. This 0.8 is larger than 0.3, so B will adopt the behavior. Whereas for example, edge
+here has a threshold of 0.5, but the influence that C has
+over edge it's only 0.1, that's the weight of this
+edge that goes from C to H. That's lower than 0.5, and therefore H will
+not adopt the behavior. Now that B has adopted
+that behavior, maybe other nodes will continue
+to adopt the behavior. But let's stop with
+this example here. Let's go to another example. Let's say that A and F have adopted the behavior
+and now let's look at all the nodes that are connected to A or F and see if they
+will adopt the behavior. B here again has a threshold of 0.3 and A who's the
+only node that points to B who has adopted
+the behavior has a weight of 0.2 pointing to B. So B does not adopt the behavior. Now, D here has a
+threshold of 0.2, and has a neighbor
+A that points to it and has influenced 0.5. So D will adopt the behavior. Then E here has a
+threshold of 0.6, and it has two neighbors, who point to it, who have adopted the behavior, namely nodes A and F. This edge from A to
+E has a weight of 0.2, and the edge from F to
+E has a weight of 0.4, which adds up to 0.6. The threshold of E is 0.6, so that is met, and E does adopt that behavior. This
+is what happens here. Again after this, other nodes may adopt the behavior
+or become infected, but we'll stop with
+this example here. Let's write down a more formal
+description of this model. None of what I'm
+going to tell you in this slide is actually new. It's just trying to write
+down more formally, what the assumptions and the
+parameters of the model are. The parameters are the following: each node u will have
+a threshold Theta_u, and this represents how susceptible node u is,
+to the new behavior. Each node u is influenced
+by a neighbor v, based on the weight, b_u,_v. Such that when we add up all of the weights of the edges
+that are pointing to you, this number adds up to
+less than or equal to one. Then as usual, we'll have
+a set of initial adopters, and we'll call this set
+of initial adopters A_0. This is the same thing
+as the seed nodes that we had looked at in other models. So what about the model dynamics? They will work in
+the following way: let A_t be the set of
+infected nodes at time t. Whoever has been infected
+so far up to time t. Then what will happen
+is that any node u, such that when you add up all of the neighbors of u here who are infected at time A_t minus 1 or who belong to
+the set A_t minus 1. So we're doing the intersection
+between those two, they're neighbors of u and
+those who are infected, so any of the infected
+neighbors of u. If we add up all of the
+weights of those edges, the edges of those infected neighbors
+of u who point to u, if that number is greater than or equal to the threshold of u, the Theta_u, then you
+will become infected. Again, nothing new here, just what I had described earlier now written in fancy letters. What this means is that nodes, with enough adopting neighbor will adopt the new behavior. Enough here is in
+quotes because it's not just how many or
+what fraction of them. It's whether or not the sum of their weights meets the
+threshold for that node. Let's describe now
+a special case of the model that is much simpler. What we want to
+achieve now is that we want a model such that a node u becomes infected if
+at least a fraction Theta of u of its
+neighbors are infected. What we want here is
+that a node looks around and if a fraction Theta_u of
+its neighbors are infected, then the node becomes infected. What we're doing here is
+that basically the nodes look at the neighbors and they don't differentiate
+between them, right? All of them have more or
+less equal influence. All the node cares about is what fraction of them
+are currently infected, and then they'll decide if
+they become infected or not. If we translate what we want
+in this special case model, in the language of
+the other model, what we're saying is the
+following: we are saying that the weights b_u,_ v, are going to be just
+1 divided by d_u, where d_u is the
+degree of the node u. So if we have a node u
+that has five neighbors, then each of those
+neighbors are going to have influence 1 over
+5 on that node u. Of course we can implement this on an undirected graph here. We don't have now direction on the edges. But that's okay. We will encode the weights
+of the edges in this way. Again, each node looks at how many neighbors
+it has and each of the neighbors will have influence of 1 over the degree of
+the node on that node. Then the node has a
+threshold Theta_u. What we're doing here is
+we're translating how we get the simpler model from the more complex model that
+I had described before. Now let's try running this model on this network and what
+we'll do is we'll say that a node u becomes infected if at least 30 percent of its
+neighbors are infected. So each node is going to have a fixed threshold of 30 percent. We're really simplifying
+things just for this example. What we'll say is that at t
+equals 0 in the beginning, node G will become infected, so G is the seed node, the one that becomes infected without anyone infecting them. Now we'll see what happens
+to the rest of the nodes. When G becomes infected, let's see what happens
+to the neighbors of G. That would be H, D, and F. What happens is
+that if we look at H here, H has two neighbors and only
+one of them is infected. So 50 percent of the neighbors
+of age are infected and because the threshold
+is 30 percent then H will become infected. Same thing with F, two
+neighbors and one infected, so F will also become infected. Whereas D has one infected
+neighbor out of five, that's not more than 30 percent and so D doesn't become infected. Only these two nodes, H and F become infected
+at t equals one. Then the next step, let's see what happens
+to the neighbors of the three nodes who
+are currently infected. Let's look at C. C has one out of three
+neighbors infected, that's more than 30 percent. C becomes infected. D still has only one out of five neighbors
+who are infected. D does not become infected. E has one out of three, it becomes infected, because more than 30 percent of its
+neighbors are infected. C and E become infected. Now let's look at
+what happens next. All of the neighbors of any node that's currently
+infected we'll have to look at. Let's start with D. D now has 1,2,3 out of five neighbors
+who are infected, so it becomes infected. B has one out of three neighbors, who are infected it
+also becomes infected, and A, same thing. It has one out of three
+neighbors who are infected, A also becomes infected. Everyone becomes infected
+in this round of a model. Let's now increase our threshold. If we increase our threshold now it's going to be a little bit harder for nodes
+to become infected. They require a higher threshold of neighbors to be infected
+for them to become infected. This may be a more risky
+type of behavior idea where people have less
+susceptibility to it. They want to see more
+evidence or more people around them adopting this
+behavior for them to adopt it. We'll set the threshold
+at 40 percent. Now nodes need to see 40 percent of their neighbors infected
+before they become infected. Let's look at the neighbors
+of G. Let's start with H. H has one neighbor
+who's infected out of two, that's 50 percent. Because of the ratio
+is 40 percent, then H becomes infected. F, same story, It has 50 percent of its
+neighbors infected, and so it will become infected. D has only one out of five that's not more than 40 percent it does not become infected. H and F become infected
+just like before. Now let's see what
+happens to the nodes who are adjacent to any of
+the infected nodes. Let's start with C. C has one out of three neighbors
+infected, that's 33 percent. That's less than 40 percent. C does not become infected. D still doesn't become infected it has only
+one out of five, and then E also has
+one out of three, so 33 percent of
+the nodes infected, and it requires 40
+to become infected. None of these nodes
+become infected, and then the cascade ends here. No one else can become
+infected after that. By increasing the threshold, we can see how fewer of the nodes at the end of
+the process are infected. Just like the independent
+cascade model, the linear threshold
+model is simple enough in order to allow for some
+mathematical tractability, and you can actually
+do some of that. But one difference between
+the linear threshold model, and the independent
+cascade model is that the linear threshold model
+is completely deterministic after you have fixed
+the weights of the edges and the thresholds of the nodes and the
+initial adopters. After you have fixed
+all of those things, who becomes infected and not at the end is completely
+deterministic. It does not change from
+simulation to simulation. Because there is nothing
+probabilistic happening. We're not saying
+that nodes become infected with a
+certain probability. We're saying that if they
+observe a certain set of their neighbors who are
+infected then they will become infected based on
+their threshold as well. But there's no
+probabilities involved. Whereas in the independent
+cascade model even after you fix the parameters of the model. The weights of the edges and
+the set of initial adopters, you can get a different set of infected nodes after
+each iteration of the model, after
+each simulation. That's one big difference
+between the two. The linear threshold
+model is deterministic, whereas the independent cascade
+model is probabilistic. Of course, the other
+difference is that this linear threshold model
+is more aimed at modeling the spread of ideas or behaviors
+where nodes are making a more conscious
+decision to either become infected or not based
+on the evidence they see. It's a good model to think about the complex contagion
+that we were talking about. The idea that in some cases, you require multiple
+exposures before you willingly choose to adopt a
+particular behavior idea. Whereas in the independent
+cascade model case, since this happens more
+probabilistically, then maybe that's
+more aligned with the idea that if I get close
+to someone who has a virus, then there's some chance
+that I will get the virus, but it's not through conscience decision I'm
+making at that point. In the next video, we're
+going to talk about the influence maximization
+problem using both the linear threshold model and independent cascade model. That is a problem where, what you're trying to do
+is figure out who you want the initial adopters to be, in order to get the
+largest possible cascade at the end or expected
+cascade at the end, and it turns out that this problem has some
+interesting properties. We'll discuss that
+in the next video.

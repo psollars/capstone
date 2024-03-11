@@ -1,0 +1,78 @@
+Do you recall this
+is what the pipeline looked like in its simplest form. It's doing two major things. The first thing it's doing
+is it's reading data in and cleaning the data. In this case the cleaning
+it's doing is very simple, but that's just fine for the demonstration that
+we're doing here. In a real life machine
+learning pipeline, the cleaning step is likely to be much more
+complicated than this. The next thing it's
+doing is it's training a model and writing that
+model out to a file. So let's start to make
+some improvements. There's a couple of things we can do right off the that: we can take those two
+major pieces of code; we can take those
+two major pieces of functionality and put
+them in functions; then we'll also need
+some code to run the pipeline that's now
+contained in those functions. So this is what that improved
+pipeline might look like. We'll zoom into each of the
+pieces to take a closer look. Let's start by looking
+at the clean function. This function is really simple. It's just taking one parameter, the input file, and then doing exactly what
+we had done before, which is reading that file into a data frame and then dropping a couple columns in
+that data frame, and then at the end is just
+returning that data frame. Let's look at the
+train function now. The train function is almost exactly what
+we were doing before. We have a data frame
+at the beginning, and this time the
+function is taking a data frame as an argument
+or as a parameter, we're then splitting the data
+just like we were before, and we're training a
+linear regression model just like we were before. Something that's a little
+bit different here is the metrics that we're getting
+from the trained model, we're now storing those
+in a dictionary and returning that back when we return the model at the
+end of the function here. You may not have
+seen this kind of return line before where we have a return and then two variables
+separated with a comma. What's happening here is that
+Python is returning both of those variables as a tuple
+back to the calling code, and we'll see what
+that looks like when we see where
+this code is being called in the rest of
+the pipeline.py module. The last piece of code in
+pipeline.py is actually taking the functions
+that we've written up above and putting
+them into a pipeline, running them one after the other, taking the output from
+the clean function and passing it as input to
+the train function. Let's dive into this and
+look at this in detail. Before we dive into the
+code of the pipeline, let's look at this odd
+conditional at the top. The _ _name_ _
+variable is defined by the Python run-time
+environment and its value differs depending on how the module is actually being run. If we're running
+it like a script, like if we had done it
+from a command line with Python pipeline.py, the value that would be in
+that variable is _ _main_ _. Now, that's a special
+value that we can look for and check to see if our module
+is being run as a script. Now why would we want to do this? The reason is that we
+might want to import our module into another module, at the top of the other module with a statement like
+import pipeline. In that case, inside
+the pipeline module, the name variable has
+the value of pipeline, which is the name of the
+module of that, it is. So this is a really
+handy way that we can add some code at the
+bottom of our module, in this case, where we're going to be running our pipeline, that lets us execute
+that code only if we are running our module as a script and you may have seen it before in other scripts. That's what that code is doing. Let's look at the
+rest of the code at the bottom of the
+pipeline.py module. We're printing out some
+statements to let us know where we are in the
+pipeline, we're cleaning data. Then we're calling
+the clean function with the filename sales_export, and passing the return value of that function into
+the data variable. We're then printing
+to the terminal that we're now
+training the model, and we pass the data variable
+into the train function, and then we get a tuple back. With Python, we can unpack that tuple when we
+do an assignment like this, saying metrics come up model, and now we have a metrics variable which we can print out, and we have a model
+variable which we can write to the model.pkl file
+at the very end of the file. These improvements are
+really going to help us with the maintainability
+of the code, but there are still a
+few things we can do to make this pipeline
+much more modular

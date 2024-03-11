@@ -1,0 +1,89 @@
+Hi, everyone, this week we're
+going to start a new topic, which is social identity for social good. We're going to spend some time
+talking about the theory, and then talk about the applications. So this is the outline
+of this week's talk, so I will start by discussing how
+social identity theory came about, especially in social psychology. So the paper that we're going to
+study is social identity theory of intergroup behavior, by Tajfel and Turner. How do we define social identity? It is a person's sense of self
+derived from group membership, and inherently,
+it is multidimensional and dynamic. So your identity could include your race,
+your gender, your occupation, and
+many, many dimensions. So here I'd like everybody to
+do a very simple exercise, which is to answer the question, who am I? You can take out a sheet of paper, and write down the first five
+sentences that come to your mind. So we're going to pause here for
+a minute, and wait for everyone to finish this exercise. I'm going to briefly introduce social
+identity research in psychology, Harry Tajfel, who is a pioneer in
+this research, grew up in Paris and was trained as a chemist,
+in his undergraduate studies. Then Germany invaded France,
+and he was recruited to the French army, and
+became a prisoner of war. He survived the war by claiming to be
+a Catholic, he came from a Jewish family. After the war when he went back home, he found that his extended family
+members have been murdered by the Nazis. So, he decided to go to graduate
+school but study social psychology. In his earlier experiments, he asked a very simple question,
+which is, what does it take for members of one group to discriminate
+against a member of another group? And he came up with this
+minimum group paradigm, which is meant to be a control condition. So, what does the minimum
+group paradigm involved? So, subjects come into the lab, they're randomly assigned to
+groups based on trivial tasks. There's no social interaction
+during the experiment, and group membership is anonymous. And lastly, there's no link between
+someone's self interest and their choices, and notice the last one is actually fairly
+difficult in most real world scenarios. To his surprise, that what he
+envisioned to be the control group already generate ingroup favoritism and
+outgroup discrimination. In lots of experiments or settings, the
+fourth criteria is almost always violated, so if it satisfies the first three,
+we call it the near minimum group. So, here's an example of the type
+of allocations that Tajfel and co authors implemented, which is called
+the other-other allocation task. So everyone is supposed to allocate tokens
+to two other anonymous participants, no one is allowed to allocate
+tokens to themselves. The number of tokens changes
+from round to round, and that it is incentive compatible, in the sense that the amount
+of tokens you receive is going to be converted to cash at
+a pre announced fixed rate. So this is one scenario for
+one round of allocations, and this is what we meant by in-group
+favoritism and out-group discrimination. So the data is taken from
+a lab experiment that Chen and Li conducted,
+at the University of Michigan. So you see three panels,
+on the left panel you see the participants allocate tokens between
+two in-group members, and there's no difference, right? The blue diamonds represent
+tokens to in-group other, and the pink ones are the tokens
+to out-group other. The middle panel is allocations
+to two out-group members, again, there's no difference. And the difference really shows up
+in the third, in the right panel, which looks at how people allocate tokens
+between in-group and in out-group member. And the blue diamonds are tokens
+allocated to the in-group other, although this is someone who is anonymous,
+and who you probably have never met. So people consistently allocate
+more tokens to the in-group member. So this is just one example of
+the type of intergroup preferences that people exhibit. Across hundreds,
+if not thousands of experiments, people have found that the trivial and
+ad hoc intergroup categorization, leads to in-group favoritism and
+out-group discrimination. And there are various factors
+that either enhance or mitigate group effects,
+such as category salience, group status, and the relevance
+of the comparison dimensions. So social psychologists have looked at
+the social psychological processes, which are involved in the development
+of positive group identity. Within the pattern of in-group favoritism,
+they find that subjects behave as if they try to maximize
+the difference between your own group and the other groups, they act as if they
+are competing with the out-group. The second point is that social
+categorization, is a cognitive tool that segment, classify, and
+order the social environment. And that social groups provide a
+systematic orientation for self reference, in the sense that it creates and
+defines an individual's place in society. So we just went through
+a unit on information nudges, and we realized that social
+comparison can be effective. And here social identity and social
+comparison actually are closely related. So, in studying the social
+identification process, psychologists find the individual
+strive to achieve or to maintain positive social identity. And positive identity is based on
+favorable comparisons between in-group and some relevant out groups. And that when social
+identity is unsatisfactory, individuals will strive either
+to leave their existing groups. So there we should expect
+to see dynamics or make their existing groups
+more positively distinct. So now I'm going to summarize the decades
+of research in social psychology, sociology, and to some extent, economics. So identity is an integration of three
+processes, one is categorization, the second process is self-evaluation
+through social identity, and the third one is
+intergroup social comparison. More recent research,
+have found that intergroup competition, although that was framed in a very
+negative way at the start of the stream of research, for Tajfel and his
+co authors to understand discrimination. We could also use intergroup
+competition for social good, and in what follows, I'm going to discuss
+several applications of that.

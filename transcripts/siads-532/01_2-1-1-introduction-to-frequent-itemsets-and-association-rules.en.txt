@@ -1,0 +1,112 @@
+Hello, this is Qiaozhu Mei. Today, we will talk about
+mining frequent itemsets. So now, we know that patterns are one
+particular date mining outputs that are so
+basic and you can make use of them to build other
+data mining functionalities. A pattern is the structure
+of attributes that represents the intrinsic
+important property of data objects. We also talked about the particular definition of a pattern depends on what
+data representation you use. So what is the pattern
+in itemset data? If you represent your data as the set of items,
+what is the pattern? In itemset data, a pattern could be a frequent subset of items, it could also be the association rule or a
+correlation between two items, so on and so forth. Before giving formal definitions of a pattern in itemsets, let's talk about two
+related concepts. Subset and superset. Suppose we have two itemsets, one is X_1 and the other is X_2. We see that X_1 is
+the subset of X_2. If every item content itemset
+X_1 is also content in X_2. This is equivalent to say
+that X_1 appears in X_2. So if X_1 either subset of X_2, that means X_1 is shorter, X_2 is longer and X_2 have to contain
+all the items in X_1. In this situation, we
+can also see that X_2 is a superset of X_1 or
+X_2 contains X_1. To give a particular example, we can see that the
+following itemset, watermelon and rabbit
+is the subset of the following longer itemset
+that contains five items. So both rabbit and watermelon, appear in other itemset. It is equivalent to say that the five itemset is the superset of the
+first shorter itemset. With these two concepts, we can now define the
+frequent itemset. So we call the itemset a k-itemset if it contains
+exactly k items. In this case, X contains
+k-items from x_1-x_k, we call it a k-itemset. If it contains only one item, its the one itemset. If it contais three items, is the three itemset. We can check the frequency
+of this itemset in a database to compute the
+support of this itemset. There are two versions of
+support about an itemset. One, the absolute support
+that measures the number of transactions in a database
+that contain itemset X. In more cases, we care about the relative
+support of the itemset. Now, these fraction of fractions in a database that
+contain the itemset X. Why? Because different databases, have different number
+of transactions. Talking about the fractions of transactions, is
+more meaningful. So based on the support
+of the itemset, we call the itemset X a frequent itemset if its support is low less
+than a given threshold. So if the support of x, is beyond the given illustration
+of minimal support. The X is called frequent itemset. In reality, itemset data are usually used to represent
+shopping baskets. In this particular example, we have a database of
+five transactions. Every transaction
+contains a set of items that the
+costumer have bought. So we can see that the first
+one, contains three items. The second transaction,
+contains four items, so on and so forth. Then based on the database, we can compute the support
+of every possible itemset. For example, this is type one item set that
+contains only one item the beer because it appears in four out of five
+transactions database. We say that the support of the
+one itemset is 80 percent. Similarly, this two itemset, beer and milk, up here seen three out of five
+transactions seen in the database. So the support of this two
+itemsets is 60 percent. I know that data
+miners like to talk about patterns of
+beer and diaper. I can not find an emoji of diaper so I'm using milk instead. You can also compute the
+support of longer patterns. For example, if we compute the support
+for these three item, beer, milk and lemon, we can find the
+support as 40 percent. Suppose your manager only
+can support patterns that have the minimal
+support of 50 percent, then among the three
+patterns we have calculated, only the beer and
+the two itemsets, beer and milk are frequent. The three itemset, beer, milk and lemon, is
+no longer frequent. So this is the definition
+of a frequent itemset. A related pattern, is
+called association rule. Association rule
+majors association between one itemset
+to another itemset. So we may write X-Y. That means both X
+and Y are itemsets. Similar to itemsets, we can also measure the support of
+their association rule. The support of the
+association rule from X-Y, is essentially the
+probability that the transaction in your
+database contains both X and Y. Different from the itemset, we have another
+important metric for association rule that is
+known as the confidence. The confidence of the
+association rule from X-Y, majors the conditional
+probability that a transaction that already
+contains X also contains Y. So you can say that the support measures the marginal
+probability of X and Y, and the confidence majors the conditional
+probability of Y given X. Let me give you a few examples. In the same database
+of five transactions, we have computed the support
+of the two itemsets, beer and milk, the support
+of which is 60 percent. Now, we can compute the
+support and confidence for this association
+rule from beer to milk. The support of this
+association rule, is essentially the support
+of the two itemset pattern, beer and milk which
+is 60 percent. The confidence of this
+association rule, can be calculated as how
+many transactions that have the item beer also
+have the item milk, and we can see that there are three out of four transactions. So the confidence from beer
+to milk is 75 percent. In practice, we usually
+write the two numbers, the support and confidence in the same bracket to indicate the probability
+of this association rule. So based on this definition, can you compute the
+support and confidence of the new association rule
+from beer and milk to lemon? You can take a while to compute
+and the answer is that, the support of this pattern is 40 percent and the confidence
+of this association rule is 66.7 percent because
+two transactions out of three that have beer
+and milk, also have lemon. Frequent itemsets and
+association rules, are very simple data
+mining concepts but they are already
+very powerful and they are widely used in real-world applications such
+as recommender systems. Here, we are giving
+the example of the Amazon's recommender system that you're looking
+at everything. In the top section of
+this recommender system, you can see that Amazon is recommending books that are
+frequently bought together. If you represent every
+shopping basket as a set of items instead of three books is essentially a
+frequent itemset. Even though our section of
+this recommender system, you can see that
+Amazon is recommending books to customers who have already bought
+the given book. In this case, you
+can see that Amazon is essentially computing
+the association rules. Given that the customers
+have bought one book, how confident that they will purchase the
+following books. This is the perfect example of the association rule.

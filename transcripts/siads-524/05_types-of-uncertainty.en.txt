@@ -1,0 +1,245 @@
+Welcome back. In the
+introduction of the course we tackled the basic motivation
+for studying uncertainty. Uncertainty is
+fundamental to the use of statistics and it's
+application in data science. I think it was John
+Cook who said that statistics is all about
+reasoning under uncertainty. For totally certain
+above our conclusions, then we likely do
+not need statistics. We can extend this
+idea to data science. Being an applied discipline, data science is all about decision-making
+under uncertainty. If we're to inform decision-making and uncertainty
+is always involved, it stands to reason that
+we should learn how to quantify and communicate
+that uncertainty. In this lecture, I'm
+going to discuss two different types
+of uncertainty, what we call small-world and
+large world uncertainty. Large world uncertainty is all the uncertainty that
+lies outside the model. By this we mean it's all the
+choices we make before we actually run a model that constitutes large
+world uncertainty, so includes a lot of things
+like variable inclusion, maybe the underlying
+assumptions of the model, the data themselves are part
+of large world uncertainty. Basically, anything
+pre-modeling, that's in the large world. Because of this, it's
+difficult always to quantify large world uncertainty,
+though not impossible. If we think about the process of analysis that starts with the question and ends with
+results and insights, we can see that
+most of the process falls into a large
+world uncertainty. What measures we
+use our analysis, the collection of them, the transformation of data, the cleaning of data, how you handle outliers and missing data,
+feature engineering, what model you use, how you fit the model, all of that again falls into the large
+world of uncertainty. Large world uncertainty is my favorite form of uncertainty, and we'll do a lot more with large world uncertainty
+later on in the course. The other major class of uncertainty is
+small-world uncertainty. This one should be a
+lot more familiar. This is the uncertainty within the model, it's quantifiable, we have numbers to express it, we can measure it,
+we can visualize it. When most statistics textbooks
+discuss uncertainty, this is what they focus on. When we say the small
+world uncertainty is uncertainty inside the
+model, what do we mean? Basically once we've made all our decisions on
+how to build a model, data inclusion,
+feature engineering, data cleaning, all of that work, what
+model we're running, we actually run the model, we can examine the results, that's small world uncertainty. A lot of this course is really based on small
+world uncertainty. These are things we can
+calculate statistically, and so when we talk about
+things like standard error, and confidence intervals,
+and things like that, that all falls into small world. Again it's quantifiable
+and it's inside the model and I'll explain more of these terms in a
+different lecture. These two types of uncertainty
+are not independent. Small world uncertainty
+is a little bit like the moon orbiting the Earth, which is more like large
+world uncertainty. The choices we make in the large world influence
+the results and really, the orbit of the small-world. We're going to dive a
+little bit deeper into small world uncertainly
+because again, it's a big part of the course because it can be quantified. We can divide small
+world uncertainty into two categories; parametric/epistemic or
+predictive/aleatoric. Parametric uncertainty
+focuses on uncertainty over parameters. We'll work a lot with parametric uncertainty
+in this course, but a common example would be
+uncertainty around a mean. Predictive or aleatoric
+uncertainty is the fundamental
+uncertainty we have in data in new outcomes. It's uncertainty that can't be reduced with new information. It's fundamental to the
+data process that we have. Diving in a little bit deeper, the primary difference between these two types
+of uncertainty is whether the uncertainty can be diminished through
+increase in information. For parametric uncertainty, as I mentioned,
+this is the case; more information means
+less uncertainty, while aleatoric uncertainty
+is irreducible. As Tim O'Hagan observes, there are many things that
+I am uncertain about. Some are merely unknown to
+me, others are unknowable. Those things that are
+unknown to me, we can learn. More information
+makes them clear. We're more certain about them, so that's parametric, epistemic. But if something is unknowable,
+if it's irreducible, then that's going to be
+predictive, aleatoric. Let's take a deeper look at both these categories
+by using an example. I'm going to do a
+conceptual example first of parametric epistemic. Suppose I've been tasked
+with answering the question, how tall is the average giant
+sequoia tree in California? Now we probably vary as a group right now in
+how much uncertainty we have in estimating the mean
+height of the giant sequoia. With no data or any context, you have a very high
+degree of uncertainty. You may have no idea how
+tall these trees might be. Might they be 30 feet tall, 50 feet tall, even
+100 feet tall? With no information, we have the widest degree
+of uncertainty. Now, if I told you that one giant sequoia
+tree I saw on vacation, was 246 feet or 75 meters tall. That would change the amount
+of uncertainty quite a bit. Now, you have some
+frame of reference. These are really tall trees. We don't know if 75 meters
+is an average giant sequoia, but at least we understand the general location
+for the mean. Now, if I told you that
+a sample of 10 trees had a mean height of 80
+meters or 262 feet, now we're even more
+certain in our estimate. We have a sample size of 10, our uncertainty
+continues to decrease. In all these scenarios, I hope you notice that more information reduce
+the amount of uncertainty, that is parametric or
+epistemic uncertainty. Let's contrast that with predictive or
+aleatoric uncertainty. Let's take a look at
+a conceptual example of predictive or
+aleatoric uncertainty. Suppose, I have a fair die
+and the die has six sides. Can I reduce the
+uncertainty of knowing what the next roll will be
+by gaining more information? This example is going
+to show you the answer is no. Let me show you why. Let's say I have the die, I roll it once, I get a 4. Does knowing that I
+got a 4 once change how certain I'm
+going to know what the next roll is? Not really. Each side of the die
+has a one out of six chance of coming up. The fact that I got
+a 4 on a fair die doesn't change the certainty I have on what the next
+number is going to be. If I collected a
+lot more numbers, 4, 5, 3, 3, 1, 6, 2, I have a lot more rolls; I collect those data, do those help me predict
+the next outcome? Well, no, they don't
+because there's a fundamental
+random variation to this fair die that I cannot
+reduce the uncertainty around and that's the predictive
+aleatoric uncertainty. It's fundamental to the data. No matter how much more
+information I collect, I'm still going to have the
+same amount of uncertainty as to what the next
+role is going to be. There's some people
+who might submit to the gambler's
+fallacy, which is, if I know the prior
+rolls of a fair die, that should help me know
+what the next roll is. For example, if I rolled
+three 4s in a row, you might think, well, maybe the likelihood
+is I roll a 4th, 4. If it's a fair die,
+there's no reason to think that the die has no memory. That is again, a testament
+to the fact that there's this irreducible predictive
+aleatoric uncertainty. Using a quote to sum this up, I'm going to read it to you, and then we can talk about it. The prototypical example of aleatoric uncertainty
+is coin flipping. The data-generating process in this type of experiment
+has a stochastic, that's just a fancy
+word for random. A random component
+that cannot be reduced by an additional
+source of information. Consequently, even the best
+model of this process will only be able to provide probabilities for
+the two outcomes, heads and tails, but
+no definite answer. That to me is such a key point in all
+of this conversation, is the fact that even the
+best model still producing probabilities shows
+us that we have an irreducible level
+of uncertainty. Because the probability
+is not certainties, there's a fundamental aspect
+to our data that includes an uncertainty that
+we cannot reduce by collecting more data and that's
+predictive in aleatoric. We just looked at a couple
+of conceptual examples, let's look at a few
+analytical examples. This example from Matthew Kay, who's an uncertainty researcher. Suppose we have a scenario where we're trying out two
+software interfaces and we're randomly asking people to
+complete tasks like let's say adding a item to a shopping cart on a website
+and an e-commerce example. We measure how long that
+takes on the two interfaces, and we're finding the difference
+in the two interfaces; the mean difference
+to complete the task. There is a population that we would like to
+estimate from this. Of course, we don't have access to all consumers everywhere. We're sampling
+random consumers of our websites and trying this experiment out
+and collecting data. Let's take a look at how
+the uncertainty in the mean is parametric and epistemic
+and not predictive. That's what this example
+is going to show. We're starting out to
+what we really want to estimate is what's
+the true difference in task completion time between these two
+software interfaces? This is what I want to estimate, is the mean difference
+in completing this task. Of course, I can't directly
+access the population, so we're going to
+have to sample. Let's say the first sample I
+draw has five people in it; five people who
+completed the task. I take those five
+people and I calculate the difference between
+their task completion, and we find the average of those and we plot that sample mean. We've got a sample
+mean of five people. We can calculate the
+uncertainty around that mean. You will learn how to do displays like this
+in this course, but we have the
+uncertainty presentation here and you can see that there's fairly wide
+uncertainty around that. That doesn't surprise me because we only have a
+sample size of five. I go back through
+and I must say, I'm going to sample this time 20 people and I'm going to
+recalculate the uncertainty. As I recalculate, you can see
+the uncertainty has in fact shrink because we have more information we
+are more certain, we've reduced that uncertainty. In fact, this process continues. Again, if we have 80, it shrinks more and 100 more than that, and the 1,000 more than that. The point here is that the
+uncertainty reduces with increased information
+because I'm calculating the uncertainty
+of a parameter, and parametric
+uncertainty shrinks as we get more information, and we see that
+here on the data. Let's go through an example for predictive
+aleatoric uncertainty. Let's say I have a bunch of
+pictures of fruit that I run through a neural network to
+create an image classifier. The purpose of
+this classifier is to classify pictures of fruit. This is the thing
+that I'm working on. We take a novel picture of a banana and we run it
+through an image classifier, from the image
+classifier it says, it's likely this picture is
+one of three kinds of fruits. It might be a banana with
+the probability 0.5 might be a strawberry with
+probability 0.3 might be a chair with
+probability 0.2. The question is, where is the aleatoric or predictive
+uncertainty in this? It lies with the data. We have a fundamental
+uncertainty located within the data. We have also parametric
+uncertainty in this example, and this is where it gets
+confusing sometimes is that these two uncertainties can be located in
+the same example. We have parametric uncertainty
+located here as well. In that we have a
+model with parameters, and those parameters can be improved with
+more and more data. But again, there's still something fundamental
+about my data, about these images that I
+can't reduce that uncertainty, and if I add the
+aleatoric uncertainty and the parametric uncertainty, I get the total uncertainty. Another way we can look
+at this is an example from a certainty
+researcher Matthew Kay. In this example
+instead of calculate the mean difference between two people using the interface, I'm trying to predict those
+differences essentially. What the sequence
+of pictures shows is that with more and more data, my model can fit better
+and better and better. You can see that
+by time I get down to 1,000 samples, my model, which is the dash line, pretty much overlaps
+the population, the distribution that
+I'm trying to predict. But underneath the bit, underneath all that data, that data is still
+has just as wide and variance as it does
+with fewer samples. There's still fundamental
+aleatoric uncertainty with the data that I don't
+reduce with more information, and that's how the two
+can work together. A few quotes to help
+us round out here. This first one from AWS. Aleatoric uncertainty refers to the data's inherent randomness that cannot be explained away. Aleatory refers to someone
+who roll a dice in Latin. Examples of data with
+aleatoric uncertainty include noisy telemetry data and low resolution images
+or social media texts. Here's a picture of what we mean by lower resolution images. If I have these images
+and I lay them out, I've got ones that are
+higher resolution on the right and they fade down to lower
+resolution on the left. As I go from right to left, I'm increasing my
+aleatoric uncertainty, the uncertainty it's
+fundamental to the data. One more final quote, aleatoric uncertainty
+cannot be reduced, only identified and quantified, while epistemic
+uncertainty can be reduced through more
+comprehensive study, and that's very true. That's a great way to
+conclude our comparison. I want to sum up here in a
+little bit different way, rather than including
+key points that I tried to make in the
+course of the lecture, I just want to provide a
+summary graphic that you can use to organize the
+things we talked about. We talked about two major
+kinds of uncertainty, large and small world. You can see them laid
+out here on the screen. Large world is all about those pre-model
+decisions that I make, assumptions representative
+of the data, it's outside the model, it's unquantifiable,
+it's in the real-world. Small-world is everything
+inside my model. It's all the things
+I can quantify. We typically divide
+small role than the two major categories,
+parametric or epistemic, which is uncertainty we can reduce with more information, and predictive
+aleatory, which is fundamental irreducible
+random variation in my data. That concludes this overview of different kinds of
+uncertainty. Thank you.

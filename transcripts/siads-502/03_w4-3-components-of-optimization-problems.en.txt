@@ -1,0 +1,83 @@
+Math methods for data science. Optimization: Components
+of Optimization Problems. We've mentioned three components of optimization problems. First, the objective
+function or our set of goals the algorithm uses to
+pursue a solution. Variables or inputs, these are the free parameters which
+an algorithm can tune, and Constraints,
+boundaries within which the parameters must fall. Let's walk through each
+of these components and carry through an example. Let's say we have a soccer coach, who is strategizing how she
+will run her soccer team. We're trying to build a function Phi to accomplish some goal. The objective function. The objective function
+is essentially the function that you
+are trying to minimize. F_x this is not the Phi function
+we started with, but a function of
+some property of Phi, like mean squared error, which we'll talk about
+in the future lecture. We have global properties like the global maximum
+and global minimum that belong to
+the entire function, and the local properties
+that apply only within a smaller portion
+of that function. For instance, the local maximum, this is the maximum value of the function within
+certain range. Let's look at a potential
+objective function for our classification problem. Say we want to draw
+an ellipse around each set of data points which belong
+to a certain category. We may want to minimize
+the distances between some point i and
+all the other points in the dataset that would fall
+within that category to find the center of that ellipse such that those distances
+are minimized. Once we have that information, we can draw the ellipse
+around our data points. The objective function is
+the function belonging to the distances or errors between point i and
+the index point, while iterating between all of the points
+representing point i. The classification function be represented by this red line. Going back to our soccer coach, who is strategizing how she
+will run her soccer team, we're trying to
+build some function Phi to accomplish this goal. What should our goal be? Perhaps to maximize the number
+of wins in a season, maximize the number of
+goals scored on a match, minimize the number of penalties, maximize the keeper
+saved percentage, maximize the amount of running, minimize the number
+of goals against, minimize the number of injuries. Any of these could be
+potential goals for which we are trying to create
+an objective function. Each of these goals would have certain inputs we
+could evaluate and tune to see what combination of those variables gets
+us to our goal. Those inputs are variables. Typically, there are
+multiple variables and we represent them as X_1, X_2, X_3 etc., that
+you can control. These are often abbreviated
+to x_n to refer to each variable or x to refer
+to the set of variables. For our soccer coach, she might consider
+certain variables such as the amount of time during practice dedicated to each of these
+different activities, such as practicing
+passing, shooting, defense, conditioning, weight training,
+nutrition, agility. The amount of time spent on
+each of these activities is a variable that can be
+tuned in our function. Constraints are
+the equations that put limits on how big or
+small variables can be. You will see two different
+types of constraints. Equality constraints can be
+represented by H_n of x, and they represent
+constraints such that X_2 may equal four. There are equality constraints
+because we have an equal sign as to what
+that variable must be. Inequality constraints
+represented by g_n are constraints such that, for instance, X_4 must
+be greater than one. These are inequality
+constraints because they have inequalities as
+their parameters. In our soccer example,
+for instance, there are limits to
+the total amount of time she has for practices. If she completely
+ignores defense, her players may be
+excellent at scoring goals but the number of
+goals against may go up. So there may be some upper limit to how many goals
+against are acceptable. These are constraints. For instance, we may have a constraint h_n of x
+applied to agility training. Agility training is exhausting, and so we might constrain
+our agility training to be exactly equal to
+20 minutes per day. Whereas, we might have
+another variable such as conditioning which we are going to apply in
+inequality constraint, where we must do
+conditioning more than or equal to 60 minutes per week. These are just some examples
+of how we can apply constraints to certain variables that go into our functions. Constraints affect
+the variables which in turn affect the
+objective functions. Some problems have constraints
+and others do not. There can be anywhere from
+one to many variables, we can have discrete
+or continuous outcomes for our functions, and discrete or continuous
+values for our variables, we could have static or dynamic
+optimization problems. They could be deterministic or stochastic, meaning random. Equations could be
+linear or nonlinear. Keep all of these parts
+of optimization in mind as we go forward to
+the next set of lectures.

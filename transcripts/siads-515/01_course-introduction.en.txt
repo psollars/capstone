@@ -1,0 +1,61 @@
+[MUSIC] Hi, I'm Chris Teplovs. I'm a lecturer and research scientist here at the University
+of Michigan School of Information. Welcome to the course. You know, data's all around us. And I thought, for this course,
+we'd go ahead and collect some data. What I've got here is some
+equipment set up on my bike, and we'll talk a little bit more
+about it as we get going. I'm going to cycle around,
+we're going to collect some data. We're going to talk along the way,
+and then we'll get back to the lab, unpack it and go from there. So let's get started. [MUSIC] So this course is all about
+efficient data processing, and a lot of times efficiency
+doesn't really matter. So for example, if we have just a little
+bit of data, doesn't really matter if it takes us two, three, four, five
+minutes to record it or to process it. But as we get up there in the bigger data,
+it gets a little bit more important. Other thing to think about is
+how much your time's worth. So if it takes you four minutes to do
+an analysis, or five minutes to do an analysis, that means you can
+crank out about 12 analyses an hour. How to figure out what your time is worth? So if you can take that time and
+make it so that you're doing 60 analyses in an hour,
+that's especially important when you're doing experimental analyses,
+experimental data analysis. So we're going to look in this course
+at a bunch of different ways to improve efficiency of code. Now, we're going to be talking
+about this in the class, but I want you to think of what tools
+you currently use to analyze data. Now, a lot of this
+program is about Python. We're actually going to step outside the
+boundaries of Python for the first week. And we're going to introduce you, well,
+I think it's going to be an introduction, at least in some cases, To the Linux
+command line interface, the CLI. We're going to use a bunch
+of tools that you may or may not have heard of to
+quickly process data. In week two, we're going to
+change our focus a little bit. We're going to go back to Python. But we're going to delve a little bit
+deeper into things you might have used in Python, but you probably didn't spend
+a whole lot of time thinking about. Some of the things we're going to
+look at are iterators, generators, things like yield statements,
+all these things that allow us to deal with large amounts of data
+in a highly efficient manner. In week three, we're going to
+change things up once again, talk a little bit more about those
+things we talked about in week two. But we're also going to
+talk about debugging. Now, we work in the Jupiter environment,
+so debugging largely consists
+of using print statements. We're going to give you some alternatives
+to that, some kind of high-tech stuff. So that's going to be fun. Then we're going to talk, for the last
+part of the course, about parallelization. Now, we get a lot of advantages
+to taking a problem that we'd have to deal with in sequence and
+dealing with it in parallel. That is, allowing ourselves
+to use all of the cores and processors that we have access
+to to analyze our data. So that's what we're up to in the course. It's all about efficiency. Now, we've tended to focus more
+in terms of data processing, when we talk about efficiency. How efficient is my coat? We're also going to
+take a bunch of segues, And look at the efficiency
+of writing your code. So we're going to go over some tips and
+tricks that are going to allow you to take a problem
+that might take you four or five hours to solve and
+take that down into five or ten minutes. So that's a quick overview of the course. We're just taking a little pause here, and I want to talk a little bit
+about the format of the data. The format of the data that were
+collecting is something called a fit file, f i t, and that's by one of the vendors
+out there for sports wearable equipment. And it's kind of an awkward format,
+to be honest about it. What I'm going to do is I'm going to
+convert that out to a form of CSV for which they provide the utilities. And we're going to work from those files,
+which are CSVs, but they're not like any
+other CSVs that you've seen. And we're going to spend the first week
+actually massaging or manipulating that data over into format that we can
+use for the remainder of the course. So that's going to be our big task, and
+I'm going to get you to think about how you might tackle that once
+we take a look at the data. Okay, let's get going again. [MUSIC]

@@ -1,0 +1,118 @@
+Welcome back to Math
+Methods for Data Science. In this video, we'll
+talk about estimation, concentration, and
+confidence intervals. An unbiased estimator
+of a parameter is a variable whose expectation is equal to that parameter. This is easiest to
+see by some examples, the fraction of flips out
+of 100 that are heads is an unbiased estimator for the probability that a
+particular coin lands heads. We would like to estimate how often this coin lands heads, our plan is to flip
+it 100 times and take the fraction and that is
+an unbiased estimator for the probability of the
+coin flips heads and that the expected value of
+this fraction over flips that are heads is equal to this parameter that
+we're trying to predict, namely how often the
+coin flips heads. Another example is that half the time it takes
+to get two six's, rolling a die is an
+unbiased estimator of the expected number of times
+it takes to get one six. Here are some non-examples, it seems like this
+should work all the time but for example, if you take the sample variance of the fraction of heads
+out of 100 tosses. This is not an
+unbiased estimator for the variance of the fraction
+of heads in 100 tosses. What's the sample variance, let's say you get tosses x1, x2 up to x100 then
+the sample mean, which we can call mu hat, is going to be equal to one over n times the sum over all
+these random variables and the sample variance is going to equal sum 100, one over n times x_i
+minus mu hat squared, this gives us the
+sample variance. Notice that the true variance of flipping over the fraction
+of heads is one over 400 because each individual one if the probability of flipping a head is a half then the variance
+is one over four, we did 100 times
+into the fraction, it's one over 400. This would be for a fair coin, our actual variants but the sample variance
+here that we can estimate is actually bounded above by one over 400. It actually can't be
+more than one over 400 if the coins happened to land a few more heads than tails then our sample variance is going to be less than one over 400. Because the true variance
+is the max sample variance, it's not going to be an unbiased estimator for the variance. The problem is that we underestimate the
+variance and the reason we underestimate the variance is because the mean that
+we estimate is not the true mean and because we're using the mean of the
+values in our sample, it tends to be a little closer to those values than the
+true mean would be. The sample variance is not an unbiased estimator for the variance as you
+have a lot of points, it does a pretty good
+job but nonetheless, it is not an unbiased estimator. Another non-example is the square of the average time
+it takes to get a six is not an unbiased
+estimator for the average time it takes
+to get a six squared. Here we're not trying to
+estimate the average time but the square of the average
+time and you can't just take the average of the
+squares of the time that will overestimate the square of the amount of time
+it takes to get a six. Because when you have
+bad cases you're squaring them and that's
+making it artificially large. The point here is that not everything is an
+unbiased estimator. Concentration of a random
+variable refers to the idea that the state where the mass of the random variable is very close to its mean. It's an informal definition
+but if the outcome of the random variable is always or nearly
+always near its mean, we say it's concentrated the opposite would be
+that it is diffuse. Ideally, our parameter estimates would be unbiased
+and concentrated, if they're concentrated,
+that means they're often near the true value. A confidence interval
+can help us to measure how concentrated a
+random variable is. Confidence interval
+usually, one would use a 95 percent confidence
+interval though there are cases where it would
+like something else, tells you are 95 percent sure that the true parameter lies
+in some particular range. For example, after observing a particular
+baseball player all season, you might be 95 percent
+sure that he will hit the ball, his
+intrinsic quality. He will hit the ball
+somewhere between 20 percent and 28 percent
+of each at bat. Another example, we're trying to estimate the
+number of walleye, which is a type of
+fish in Minnesota. Say, we're 95 percent
+confident that is between 50 million and 500
+million walleye in Minnesota. These are examples of
+confidence intervals. If our variable is distributed according to
+a normal distribution, then the 95 percent
+confidence interval is simply the expectation plus or minus
+two standard deviations. So this allows us to get a
+nice confidence interval, assuming that our data
+is normally distributed. The Law of Large
+Numbers, says that, as we take more and more
+samples from sum distribution, so all these XI are identically and independently distributed
+random variables. If we take the sample
+average of them, that that will converge to the expectation of the
+underlying random variable. This does require that
+the expectation exists. The idea is that, if we're performing
+that same experiment, a large number of times, the average result concentrates around the expected value. In particular, it says, overtime, the confidence interval will
+grow smaller and smaller. However, it doesn't
+say anything about how fast this confidence
+interval shrinks. It just says, eventually it does. An example would be, if we roll a six-sided die, the average roll
+will limit to 3.5. If we take enough rolls, we will eventually get
+very close to 3.5. If in each at bat, a baseball player has
+a 29 percent chance, of getting a hit, his batting
+average will limit to 290. In the limit, he will hit the ball about 29
+percent of the time. The central limit,
+applies only to random variables that have both a finite expectation
+and variance. But it gives us a
+stronger statement. It says, that if we take the sample average of a bunch
+of these random variables, it will limit to a
+normal distribution. But a normal distribution
+with standard deviation, square root n times the standard deviation of the
+underlying random variable. Intuition then is that given a sufficiently large
+random sample, the sample mean, is
+approximately normally distributed regardless of
+its population distribution. Thus, an estimator for the
+variance Sigma squared, allows us to compute a 95 percent confidence
+interval, the sample mean, just by taking the sample
+mean plus or minus two, times the standard deviation. Which should be the square
+root of the variance, divided by square root n. It's
+not always possible to get a great estimate for the underlying variants,
+but it often is. As an example, in each at bat, a player has a Theta
+chance of getting a hit. His batting average is 0.291, after 289 at bats. We'd like to construct
+a confidence interval. Well, the mean is clearly 0.291. What should the
+confidence interval be? Well, we need to compute
+the sample variance. The sample variance
+is simply 1 over P, which is 0.291, times 1 minus P, which would be 0.709. That is the variance
+of a particular hit, divided by our 280 I and at bats. If we take the
+square root of this, so this is our sample variance, the square root of
+this is going to be our sample standard deviation. We want to take plus or minus, two times as our
+confidence interval. So our confidence interval is
+going to be 0.291 minus 2, hence our sample,
+standard deviation, and then 0.291 plus 2, times this quantity that
+we computed up here. That will be our
+confidence interval.

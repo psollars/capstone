@@ -1,0 +1,63 @@
+Welcome to this lecture on
+the confidence interval. The majority of you have
+likely already encountered the confidence interval in either your
+prior study or work in statistics. It is likely the most common
+expression of uncertainty, but it's also one of the most misinterpreted. In this series of lectures, we're going
+to discuss the confidence interval. What is it? How do I create one? How do I interpret it? Let's begin. We're going to start this
+lecture with a question. Do social media posts with content
+that expresses disagreement or negative emotion generate more social
+media response than posts that do not? To answer this question, we'll look at some survey data
+collected by the Pew Research Center. The Pew Research Center
+conducts numerous and often extensive polls in the United States
+on a broad range of issues. The particular example we're going to
+look at is the average number of likes, comments, and shares of social media
+posts by members of the US Congress. The social media posts of these
+politicians were categorized by the level of disagreement offered in the post. And what the Pew Center found
+was that the more disagreement, the more likes, comments, and
+shares they found in the data. At the very top level, those posts that
+were categorized as having indignant disagreement defined here as the statement
+of opposition that conveys annoyance or even resentment or anger garnered
+the most likes, comments, and shares. While these data provide a revealing
+portrait on the human condition, it's not the content of these
+graphs I want to draw your eye to. It's the thin bars that
+surround each value. These bars are conference intervals
+that give a visual depiction of the amount of uncertainty that
+the Pew Center is estimating. Let's start by defining
+the confidence interval. A confidence interval is an expression
+of uncertainty around an estimate of a population parameter. As I've said many times in many
+different ways in this course, the population parameter is the thing
+that we're really interested in. But typically, we can't measure
+the population parameter directly, if we could, we wouldn't need
+a conference interval around it. So instead of measuring
+the population parameter directly, we have to estimate it
+using a sample statistic. The question is how confident are we in
+the sample statistic as an estimate of that population parameter? Put differently how much uncertainty
+we have around our sample statistic? That is what the confidence interval
+helps us answer and visualize. So let's unpack this
+with a simple example. On screen, let's say we want to measure
+the mean height of undergraduate males at the University of Michigan. This is our population of interest. We don't have data on every male student. It's too hard and
+too expensive to collect. So instead we sample randomly from
+the student body to create a sample. The random sample gives us
+a representative sample of the population boxed in yellow here on the screen. The sample is our estimate of population. Therefore, the sample statistic the mean
+is our estimate of the population mean. So we calculate the sample mean. Now do we think this sample mean will be
+exactly the same as the population mean? Probably not. We know the sample is likely not a perfect
+representation of the population. They're sampling error. This creates uncertainty in our estimate. And we're not sure how close the sample
+mean might be to the population parameter. The population mean. Now it's okay to have this
+level of uncertainty after all, uncertainty is fundamental
+to data science. But how can we express this uncertainty,
+again, this is where we can use
+the confidence interval. So we can calculate an upper and
+lower bound around our sample statistic. This is the confidence interval and
+it helps us quantify the level of uncertainty that we have
+in this sample statistic. Now you may be wondering,
+how do we actually define those values? We're going to walk through a couple
+methods in a future lecture. Before we get into the mechanics of
+actually calculating confidence intervals, I want to point out that the way we
+calculate a confidence interval varies on two fundamental factors. The first is what statistic are we using. What is the statistic that we're studying? Is it a mean? Is it a proportion? Is it correlation? Is it a set of differences? Depending on what statistic we're
+using can influence how we calculate the confidence interval. The second is the number
+of samples we have. And the major division here is,
+are we talking about a single sample or multiple samples? If we have just a single sample,
+we might use different techniques versus using multiple samples either derived
+organically from our population or generated synthetically
+through bootstrapping. In the next lecture we're going to focus on our first use case
+which is how do we do the calculation for a single sample. I look forward to seeing you there.

@@ -1,0 +1,153 @@
+So those are our basic
+data structures. I want to spend some
+time talking now about some advanced data
+structures that is going to make your
+life a lot easier. So basic data structures like the ones we talked about,
+lists, tuples, sets, and dictionaries provide most of the functionality you need
+to write efficient code. But you'll notice you're doing some things over and
+over and over again. So you'll see patterns of
+coding that you're thinking, why do I have to do this
+over and over again? That's where the
+collections package comes in really handy. The collections package
+that we'll be talking about consists of a lot of
+different functionality. We'll be focusing on
+four different things from the collections library. That is Counters, defaultdicts,
+deques, and namedtuples. They're all container data
+types and to a certain extent, they represent
+alternatives to lists, tuples, sets, and dicts. Again the ones that
+we're going to be covering are Counters, defaultdicts, deques,
+and namedtuples. I want to call your attention to the fact that Counters has an uppercase c. The other
+ones are all lowercase. Let's start with counters. Let's say that you wanted to
+count the number of times each element in a list occurs
+and if you have a minute, you can pause this, and go ahead, and implement that using
+Python and do your best. But let's think about
+other ways of doing that using some advanced functionality
+you called Counter. So Counter turns out to
+be a subclass of dict or dictionaries that allows
+you to easily do this. Let's take a look at some Counter examples in the notebook. So the first thing we have to do when we're dealing
+with collections is import whatever object
+we want from collections. So here I'm going to say from
+collections import Counter and let's try a bunch of different initializations
+to start with. The first one is
+an empty counter, just to say that we can do that. So empty counter looks like this. If we initialize
+it with a string, we can take a look at
+our functionality here. So let's take a look
+at what that gives us, c longest word. So the counter will
+return a dictionary. Here we had the letters in our longest word along
+with their counts. We can then use the functionality that counter gives
+us to ask questions, like, what's the most common
+element that we found? That is what has
+the highest count and we can ask for
+any number of them. So we can ask for
+the top two words, top two letters, we could ask
+for the top three letters. So the most common method, the method called most common gives us some really great functionality
+that we use a lot. We might want to take an
+item off of that list. So pop an item off there that's popping it off the
+bottom, the least one. Then take a look at the result. So we can start popping things off the bottom of our list. In another example here, we can initialize counts to be a dictionary of u, i, and u. So we have here two
+dictionary items and here our most common
+value will be eight. Another thing that we
+could do is provide to a Counter a list
+of things to count. So here we have a list
+of different elements. Here we have a collection of
+a's and a collection of b's. We can initialize a counter with that list and then ask for the most common
+thing and it is b. There are five b's and
+four a's in this example. So most common is probably
+the best functionality that we get from the
+counter objects. Up here, we also see that
+we have other ways of initializing counters
+which I'll leave with you. You can also look at the
+documentation for Counters. The next type of functionality that I want to introduce to you are defaultdicts or
+default dictionaries. So often you'll
+find yourself doing something like initializing
+a dictionary, like, what you see on the screen
+and then determining well, if an element already
+exists in that dictionary, then append or add
+to that element, otherwise initialize
+that element. So it's a very common
+pattern when we have a dictionary that
+we're trying to initialize. One of the things that
+defaultdicts allows us to do is to specify the default initial
+value of a dictionary. The next type of object
+that we're going to talk about are deques. It's pronounced "deck" and it stands for double-ended queue. One of the things that
+you might know about lists is that the
+list pop method is very efficient for popping
+the first element from a list and we'll talk
+about orders next week. The pop method is efficient for popping the first
+element from a list, but it's pretty inefficient for popping the last
+element from a list. A deque allows you to pop
+an element from either end of a list using either
+pop or pop left. For those of you who
+are a little bit more advanced in terms of
+your algorithmic experiences, you will be able
+to use things like rotate given a number is equivalent to
+appenleft and a pump. So this is getting a
+little bit more complex. Let's take a look
+at what we're doing here in the notebook. So we're going to
+import a deque from collections and
+we're also going to use something called itertools. We're going to not dwell
+too much on itertools. It's beyond the
+scope of the course, but we're going to have to use a particular functionality from itertools to slice
+through an iterator. So let's say that we wanted to implement a moving average. So moving average, you can
+look that up in Wikipedia. I've left a link here for
+you but you can see that the average for the
+first three elements here of 30, 40, and 50. The average of that is 40. If we take our next window here, that is 30, 50, and 46 and move our
+average over there. The average of 30, 46, and 50 is 42. The average of these
+three numbers is 45 and the average of
+these three numbers is 43. So how would we do that? Well, we could implement that by taking an iterator
+of that iterable. Remember we talked about iterators and
+iterables last week. We could initialize a deque
+by creating a slice of that particular iterator
+and here we're going to slice it according to the
+size of our moving average. We'll append left and we're
+going to take some of that. Then we're going to
+pop left and yield the sum divided by the
+total number of elements. So that's a bit complex. You can study that if you want. Deques are sometimes useful for efficiency but I would say that they're not very
+commonly encountered. I wanted to introduce
+them to you though. So if we go ahead and run
+this particular block, we find out that our moving
+average calculator is correct and it maps on to
+our expected values up here. The last piece of functionality that I want to introduce to you from the collections
+library are namedtuples. Namedtuples are really powerful
+because they allow for much more readable code
+because you can access fields in the tuple by name in addition to their position. It's best to try to explain that by using examples
+in the notebook. So as usual we're going to import the thing that we're interested in, namedtuple
+from collections. Here I'm going to create a new type of object
+called a coord. So this is an object and that is created
+when I call namedtuple, given a name and given
+a list of field values. So then if I want to use that coord object and I want
+to create a variable c, I'm going to initialize
+that coord object and give it arguments, where each argument
+consists of a name here that'll correspond to
+this particular value here. So I'm going to say
+latitude equals 42.31401081 and longitude
+equals this value here. So if I go ahead and run those, I'll be able to access the longitude either in the
+traditional way of a tuple, the element number one, which is the second
+element as 83.07. I can unpack those as usual, but I can also access
+these as attributes. So you can see that
+instead of just c.0, for example, would give
+me the latitude 42. I can also call c.latitude which makes for much
+more readable code. So this is pretty
+easy for latitude and longitude which often come
+in a predictable order, latitude and then longitude. But as we get into more
+complex data structures, say you're drawing in eight or nine different
+fields from a CSV file, this might be an easier
+way to keep track of what each particular one of
+those field values is. So here c.latitude will give us a way to access
+that coordinate. The coordinate itself has
+a nice representation. We know that the variable c is of type coord and it consists
+of these values for its two. We can also introduce the dictionary that consists
+of names and values. These must map on to what you initialized your coord as when you called namedtuple and you initialize that using
+a keyword args format. That's the double star. So we can introduce, we can initialize the variable c with a coordinate and that
+looks exactly the same. Here you'll notice a
+small error that I've introduced where I've used single quotation
+marks around here, just to help you
+differentiate that. Clearly, this is a
+floating point and should not contain quotation marks. So I'm going to reinitialize
+that and you'll see that that coordinate is now
+latitude and longitude. So today we covered debugging,
+very quick history, talked about some
+debugging tasks, looked at print and
+interactive debugging. Then we turned our attention to a review of basic
+data structures. Then I introduced you to four of the advanced data
+structures; Counter, defaultdict, deque and namedtuple from the collections
+module in Python.

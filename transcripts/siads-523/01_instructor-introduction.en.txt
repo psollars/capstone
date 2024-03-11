@@ -1,0 +1,58 @@
+Hello, welcome to 523, Communicating Data
+Science Results. My name's Nick Sheltrown, and I'm your instructor. I wanted to create this video as an opportunity to introduce myself to you in the course. The reason why I'm doing
+this is because I'm not the person who's delivering
+the course lectures, that was another very
+talented member of the UMSI faculty who designed and really
+created the course. My job is to help
+implement the course. I do that in a couple of ways. One is, I hold office hours
+regularly, twice a week, where I'll go over
+course content, maybe provide my own
+amplification of ideas. Also, I'm very active on Slack in terms of answering any questions you have about the course, its concepts, or the assignments. This course perhaps
+may be different from other courses you've taken
+in your MADS experience. It's not coding base. It's not about developing
+your technical skills. This course is about something very big and I think
+very important. It's about, how do you
+share effectively, clearly in an impactful manner, the insights that you've developed on a data
+science project? Now I happen to think this is critical because
+of my background. I've been working in data
+science for a long time, and I've been in data
+science leadership now for many years, for more than ten years. I've hired, trained, developed, many analysts and
+data scientists. I got to say that how you communicate your
+results is one of the key skills I think that makes for an
+effective data scientist. I actually believe
+that you'll get hired on your technical
+knowledge likely, your ability to code, your engineering capabilities, your understanding of
+statistical models. Those are all really important in any kind of job interview, but you'll get promoted based
+on how well you communicate your work to key stakeholders in the business or
+organization you work for. The other thing I think
+about communication is that unlike perhaps
+learning about supervised learning or
+unsupervised learning, or machine learning, or artificial intelligence, those are all obviously
+very important, but you don't use them on every single project you work on, but you use communication in
+every project you work on. I think it's something that if you learn how to do it well, it's going to serve
+you so well on any of the data science projects that you work on throughout
+the course of your career. Now, in the course, we'll be going through some data, and you'll be putting together some analyses and frame
+them in the context of executive summaries and other types of business
+briefing documents. What you'll notice
+is that you're not going to draw down data, clean it, feature engineer, build data models, and
+then share the insights. The course is only four weeks, and we really want your
+focus in this course, not on doing the analysis, although your analytical
+thinking is important in terms of how we score and
+grade the assignments, but more so on how you're communicating your
+data science insights. The course is going to
+provide you principles, and templates, and a lot of
+structures, and tools, and support for how you effectively communicate
+data science results. We're doing that so as to
+help you focus on really the communication aspect of
+the data science project and not the data science
+aspect as much. It's a little different
+in that regard. If it doesn't feel like a data
+science project, I get it. It's a little bit more of
+an analytical project. But I think that's a really smart choice
+given that it gives you the freedom and the space to really go deep into
+issues of communication. Again, my name's Nick Sheltrown. I really look forward to working
+with you in this course. I hope to see you
+in an office hour. I hold those twice a
+week or online at Slack. I appreciate you being a part
+of this learning community, and I hope you have a
+great day. Thank you.

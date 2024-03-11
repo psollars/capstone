@@ -1,0 +1,245 @@
+In the last video, we looked at a model
+that generates synthetic networks that have a degree distribution that's similar
+to the ones we see in real world networks. They have a power law like degree
+distribution with hops in this networks. In this video, we're going to be
+looking at two other properties, that is distance and
+clustering coefficient. And we're going to be looking at
+a model that generates networks that are synthetic, but match real world
+networks in those two properties. Before I tell you about the model, let me
+first remind you what those properties are and what real world networks look
+like in terms of those two properties. The first one is the average distance. And what we saw in many different ways
+like in the Milgram experiment and other ways is that real neural networks
+tend to have a very small average distance between notes. That is even a bit
+surprising one might say. So as an example, remember these
+Facebook network has an average distance of 5.28 and that's in 2008. And then in 2011,
+it had a average distance of 4.74, that's despite having millions and
+millions of nodes in the network. The other property that we want to look
+at today is clustering coefficient. And as the reminder, a clustering
+coefficient of a node is the fraction of pairs of the nodes friends that
+are friends with each other. And the way you can think about this
+is are there lots of triangles in the network, basically. And what we see in real networks is that
+they tend to have a pretty high clustering coefficient. So let's look at these
+Facebook network from 2011, here's a plot that shows the degree of
+a note on the x-axis, and on the y-axis, the average clustering coefficient. And what you see is that for
+notes that have a very large degree, meaning those that have lots and lots of
+friends, like more than 1,000, 5,000. They do have a pretty small
+average clustering coefficient. But for most nodes that have a degree
+between 2 and 1,000, their average clustering coefficient tends to be pretty
+high, right, about average 0.2 or so. When we look at other networks that
+we have seen in this course before, like the Microsoft Instant Message
+network, that one has an average
+clustering coefficient of 0.13. And the IMDB actor network actually has
+an average clustering coefficient of 0.78, so these are pretty high values. And when I say they're pretty high values,
+what I mean is the following. If you were to take these networks and
+keep the same number of nodes, keep the same number of edges,
+but shuffle the edges. So start connecting nodes completely at
+random, then what you would see is that these networks would have a clustering
+coefficient that's pretty close to 0. Because when you do this at random, there is nothing that forces
+the edges to form triangles. And so in that sense, we think that there
+is some type of mechanism that's forcing these networks to have lots of triangles. And in fact, we've talked about the issue of triadic
+closure that explains why that happens. And this just kind of shows that yeah,
+it's reflected in the numbers. So yes, social networks tend to have
+high clustering coefficient and small average distance. And the question for us in this video is
+can we think of a network generative model that has these two properties? In other words, a model that
+generates synthetic networks that have high clustering coefficient and
+small average distance? And before we think of new models, maybe let's think about other
+models that we already know about. For example, what about the preferential attachment
+model that we saw in the last video? Well, let's create one of these using
+our NetworkX function with 1,000 nodes. And where every node when
+it comes to the network, it connects to four other nodes using
+the preferential attachment model. And what we see is that this network
+has an average constrain of 0.02. So pretty small compared to the other
+networks we were looking at, even though it only has 1,000 nodes and
+an average distance of 4.17. So the distance is actually pretty low,
+it's actually single digit, which is good, but
+the clustering coefficient is too small. Let's see if this is just a function of
+having these two parameters of a (1,000, 4), let's try this for other values. So what if we vary the number of nodes and
+the number of edges per node, do we see something different? Well, here is a plot that shows
+the number of nodes on the x-axis and the average clustering on the y-axis. And these other graph shows, again,
+the number of nodes on the x-axis and the average distance on the y-axis. So what happens? Well, for average distance here, what we
+see is that as we increase the number of nodes, the distance does increase. But it always stays pretty small,
+it always stays below 5, even when we're at 2,000. So it seems the average distance being
+slow is not just something that we see in the one network we looked
+at in the previous slide. It seems to generalize for
+lots of different values of of n and m. And this makes sense because what we
+know about this model is that it has these hops that have very high degree. And what happens is that these hops can
+act as bridges to connect many pairs of nodes. So if you have two nodes in the network,
+you pick them at random, you can probably hop from one to
+the other in a small number of steps. Because you can actually pass through that
+hub that can take you from one side of network to the other pretty quickly. Now let's look at
+the clustering coefficient. So the clustering coefficient starts
+to decrease pretty quickly, and by the time you're out 2,000 nodes
+regardless of what value of m you choose, it's pretty small, it's below 0.05. So it seems having low clustering
+coefficient is something that's pretty general. And it makes sense as well
+because there's nothing in the preferential attachment model
+that makes the edges form triangles. There's nothing in the assumptions of
+the model that would make this happen. So it's not a surprise that
+we don't see triangles here. Okay, so if the preferential
+attachment model doesn't work, and we already know that the random
+graph models also doesn't work. Because that one has pretty low
+clustering coefficient, then what works? And the answer is the model that
+works is called a small world model. And let me tell you how this model works. What happens is we start with a ring of n
+nodes where each node is connected to its k nearest neighbors. So you imagine a circle and you put
+all of the nodes in a circle, a ring. And now what you're going to do is every
+node is going to be connected to its k nearest neighbors. So those that are around that node,
+you're going to connect to them and you're going to pick k of those. Then we're going to fix a parameter p, which is going to be a very
+important parameter for this model. And this parameter is
+going to do the following. We're going to consider every edge (u,
+v) and with probability p,
+we're going to select a node w at random. And we're going to rewire this edge (u,
+v) so that it becomes (u, w). So we consider every edge and,
+then with probability p, we're going to disattach it
+from one of the end points and pick another end points at random,
+and connect it to it. Let's go through an example,
+very small example. So, here is this network with a few nodes, and we're going to try parameters k = 2,
+and p = 0.4. So we put our nodes in a circle and
+because k = 2, that means we're going to connect each
+node to its two nearest neighbors. And that means one from
+the left one from the right. And the p parameter is 0.4, which means we're going to rewire each
+of these edges with probability 0.4. Now, I will say that these parameters
+that I'm choosing here k = 2 and p = 0.4 are not realistic. They're not the types of parameters
+that we would choose and we'll talk more about which parameters we would like
+to choose for this type of network. But I'm choosing them now because we're
+dealing with a very small network and just for
+the illustration of the example here. But we'll talk about which
+parameters make more sense. Okay, so what we have to do is we're
+going to consider every single edge and we're going to flip a coin. And with probability 0.4, we rewired,
+with probability 0.6, we don't rewire it. So let's start with these edge L-A,
+and again we flip our coin and this one we decided not to rewire, okay? We go to the next one, so K-L,
+we decided not to rewire, okay? Go to the next one,
+this one we decide to rewire. So we have to choose some other random
+node and disattach it from one side and connect it to that random number. So in this case, we chose node G and so we disattach it from J and
+connect K to G, all right? The next one we don't rewire,
+the next one, we rewire, so again, we choose some random node and rewire it. The next one we don't rewire,
+next one, we don't rewire. The next one we rewire, so
+here it is, it's rewired. The next one we don't rewire. Next one, we rewired, there we go. The next one, we rewire as well, and the
+last one we don't rewire, and we're done. So this is a potential outcome for the
+small world model with these parameters. Now let's think a little bit about
+what happens as we change these parameter p from 0 to 1. Like I said, this is going to be a very
+important parameter of the model. So let's go through
+the following thought process. Let's think about fixing our value of n,
+the number of nodes, and fixing the value of k. And the way we typically think about n and
+k is that we think of n as representing the number of nodes, and that means
+that n should be very large, right? We're thinking about very large networks. And then for k, we're thinking that k
+is actually pretty small relative to n. And that's because if you
+think about social networks, you have one person who knows maybe
+a handful of people around them. But most people know a very small
+number of people relative to all the people in the world. So you have to think n very large,
+and k very small relative to n. And now let's think about what
+happens when you slide p from 0 to 1, and let's start at the extremes. If p is 0, that means we're not
+going to rewire any of these edges. And so what you have is we put all
+of our nodes in the ring, right, and we connect each node to
+its k nearest neighbors. And when we do that, we actually
+create a lot of triangles, locally. And that means that when p is 0, we're going to have a pretty
+high clustering coefficient. Because we're creating all these triangles
+by connecting every node to its k near its neighbors. However, when we think about distance,
+distance is going to be pretty large, in this case when p is 0. And that's because again,
+we have a very large ring, right? And if you think about how many hops it
+takes to go from one side of the ring to the other side of the ring, the answer is going to be a large number
+of them because there are no bridges. You have to just keep hopping around
+until you make your way all the way to the other side of the ring,
+you cannot take shortcuts. And on this other end, when we
+actually rewire all of the edges, what we're doing is we're actually creating
+a lot of shortcuts and a lot of bridges. So the distance is probably
+not going to be a problem, this is probably going to have
+a pretty small distance on average. But because we're destroying
+all of the local structure, we're destroying all of the triangles, then the clustering coefficient is
+probably going to be pretty small. So both of the extremes are not good for
+what we want, right? However, for
+some values of p in the middle, there's a sweet spot where you actually
+can achieve both of the things you want. You rewire enough edges that you
+create some of these shortcuts that reduce the distance. But you don't do too much rewiring to the
+point that you destroyed your clustering. So you only affect it a little bit, and you still maintain pretty high
+clustering while reducing your distance. And so
+let's see how this works in a simulation. So what is the average
+clustering coefficient and average distance of a small world network? Well, these depends on
+the parameters p and k. And here is simulation where we have
+p on the x-axis and on the y-axis on the bottom, we have the average distance,
+n the top we have the average clustering. And note here that p is
+going from 0 to 0.01. So we're not getting
+anywhere close to very large values of p that get anywhere close to 1. Is this pretty small p, so we're always going to be rewiring
+small fraction of the edges. Well, one thing to note is that
+as p increases from 0 to 0.01, the average distance decreases
+really rapidly, right? So if we go from 0 to 0.01, you can see
+that all of these jump very, very fast. And the different curves
+are different values of k. And for all values of k,
+they jump very, very quickly, and if you go one more step to 0.02,
+then they keep on jumping. And by the time you get to point 0.09,
+they're pretty small. So you've achieved these small
+distance measure that you wanted, to match real world networks. Now, when you look at what happens to
+average clustering, well, it's also decreasing, which is not good in the sense
+that we want high average clustering. But it does not decrease so fast, right. As we go from 0 to 0.01, 0.02, all of these average clustering
+are staying pretty high. You're going from 0.65 maybe to 0.62,
+or something like that, right? So, these are going down much,
+much lower than these are, and that's what makes the model great. When you sprinkle just a few of these
+rewired edges that act as bridges, you dramatically decrease the distance while
+only mildly affecting the average cluster. So for example,
+if you take a network with 1,000 nodes, k = 6, and p = 0.04, so
+you're just rewiring 4% of the edges. Average distance of 0.9, so,
+pretty small, while keeping a average clustering coefficient of 0.53, just
+like we saw in the real world networks. In NetworkX, you can use this
+function watts_strogatz_graph, which is named after the researchers
+that came up with this model. And it returns a small world network with
+n nodes, starting with a ring lattice with each node connected to its k
+nearest neighbors, the way we described. And rewires the edges with probability p. Now let's look at the degree
+distribution for a small world network. We're looking at the network that has
+1,000 nodes, k = 6, and p = 0.04. What we see is that most of
+the nodes have degree 6, and a few nodes lose an edge or gain an edge,
+so they have degree 5 or 7. And very, very few of them lose 2 or
+gain 2, but the bulk of the network is staying with the same degree that they
+had before that rewiring happened. That makes sense, right, we're only
+rewiring a small fraction of the edges. And so for most of the nodes, they're
+not going to experience many changes, they're probably going to stay the way
+they are, or maybe they'll just gain 1 or maybe 2 edges. And the thing to point out here is that
+this is nothing like a power law degree of distribution. We don't have the hubs that we
+know exist in real networks, and that r actually achieved by
+the preferential attachment model. And this makes sense because the edges
+are rewired at random, all right? And so there is nothing that makes
+a particular node accumulate a lot of connections, like there is in
+the preferential attachment model. So it's not a surprise that there is
+no power law degree of distribution for this model. But it is important to remember it
+because what we're seeing is that, well, this model captures the distance and
+the clustering, it doesn't capture
+the degree of distribution. And while the preferential attachment
+model captures distribution and distance, it doesn't capture the clustering. And so there are trade-offs
+in all of these models. And that's important to keep in mind
+depending on why you're using these models, right? So if you're using them to, for
+example, test all their processes that occur on top of them like,
+say information diffusion or epidemics. Then you have to keep in mind that if
+you're trying it on the network that does not have a power law degree
+of distribution, and that means you don't have hubs. Then the dynamics might be
+a little bit different, and that may impact the way you
+think about your results. And same thing for
+the preferential attachment model, it does not have a high clustering
+coefficient, like real networks do. And so how does that impact the thing
+you're testing on top of this network? Okay, in NetworkX, there are variants
+of the small world model that try to achieve different things. So for example, one of them is that
+when you look at small world networks, they can be disconnected, right? There is nothing that says when you rewind
+the edges, try to do it in a such a way that you don't create multiple connected
+components, that could happen. And sometimes,
+that's not something we want, sometimes we want to generate
+a network that has just one component. And so for this, there's this function
+connected watts_strogatz_graph, which is very simple as basically a for loop that runs the watts_strogatz_graph
+up to t times. So it has this additional parameter t
+until it returns a connected small world network. And if you run out of tries,
+then it's not going to work, but it attempts to do it up to t time. The other one is this
+newman_watts_strogatz_graph which runs a model that's similar to
+the small world model. But rather than rewiring edges, it's going
+to be adding edges with probability p. So, it does not leave the number of edges
+constant, it actually adds edges on top of the ring lattice where each node
+is connected to its k nearest neighbors. There's also a variant of
+the preferential attachment model that I wanted to mention here. Because it actually tries to get the three
+things that we've been talking about in one model. So what it does is that it implements
+a preferential attachment model with an additional step. And that is every time you add an edge,
+meaning whenever a node join the network and it connects to
+someone who is already in the network. With probability p, it will actually create an additional
+edge that closes a triangle. And so with this p parameter, you can control how many triangles
+you're going to be closing. And because it's still
+a preferential attachment model, it tries to get both the power
+law like degree of distribution, as well as maintaining
+some of the triangles. And so it gets high clustering and
+short distance. So it tries to get all of the things
+that we've been talking about. So this one could be
+a good one to try as well. All right, this is the last video
+on network generative models. In the next video, we're going to be
+looking at the problem of link prediction. So I'll see you there.

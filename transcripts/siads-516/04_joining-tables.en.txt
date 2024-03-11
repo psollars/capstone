@@ -1,0 +1,53 @@
+So far we've been looking at
+really simple examples where I'm extracting some data
+from just one table. Now sometimes data are spread
+out over multiple tables, that is to say,
+multiple dataframes. Join these tables together using keys which are often
+some unique ID. So here we go with
+the keys concept. Keys for the purposes
+of mapping and reducing need not and often are not
+and should not be unique. Keys when we're joining tables probably
+ought to be unique, at least from one of the tables. So this should be a review
+of what you covered in the SQL course that you took as a prerequisite
+for this course. So for example, this next
+select line should make sense. So select Review.txt and
+user.name from Review. Left join user on review.user_ID
+equals user.user_ID. So what we've done there is we've taken one table,
+the review table, and treated that as
+the canonical list of entries and joined
+any entries from another table called user
+on the condition that the user ID from both of
+those tables have to match. So conceptually, it's creating a larger table from one
+or more smaller tables, and the directionality
+that is left, right, inner, outer cross. All of those things
+determines what to do with missing or
+repeated values, and here we have an image of
+the different join types. So an inner join will only return the records that have matching
+values in both tables. So in that previous example, if a user ID was not
+present in both, then it wouldn't be
+included in the output. A left, these are all
+outer joins for the rest. A left join will return
+all records from the left table and any mashed records
+from the right table, whether or not they exist, the right is the
+compliment of that. So it'll return all the
+records from the right table, the right table is the second
+one that you mentioned. So the left one is the
+originating table, the right one is the one
+that you're joining to. A full join, a full outer
+join returns all the records, whereas there's a match in either the left table
+or the right table. So in that example where
+we had the user IDs, you can imagine that
+a user ID exists only in one table and
+not in the other. The left, right or full
+or for that matter, inner join tells us what to
+do with the missing values, whether to include
+them or exclude them. I don't want to get
+into too much detail, I assume that this material has been covered in
+your SQL course. Here's what a sample joined
+might look like in Spark SQL. So here we're going to
+select the business name and the texts from the
+tip table from tip, and we're going to left
+join the business table on the condition that
+the business IDs in the two tables match, and we're going to show those. So here what I'm
+trying to do is say, for every tip that we have, I want to find out
+the business name.

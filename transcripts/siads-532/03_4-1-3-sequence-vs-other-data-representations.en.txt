@@ -1,0 +1,143 @@
+Okay. So I hope that you have understand the definition of
+sequence and sub-sequences. Let's take a look at how sequence representation
+is different from itemset or vector notations which we have talked
+about before. You have this example, where twining to
+represent the same set of items or the same shopping
+basket transaction. In your transaction,
+we have four items. We have beer, milk, watermelon and beer again. If we choose to represent
+this shopping basket as itemset, you can see that, it is not different from another itemset with three items; beer, milk and watermelon, and it is also not different from another shopping basket
+that has three items; milk, beer and watermelon. Why is that? Because in
+itemset representation, the order among items
+does not matter. If one item has the
+repeated occurrence, it also does not matter. So itemset representation, because we don't
+care about quantity. We would just drop the repeated occurrences of the item beer. Now, another way to represent this shopping transaction is to use the vector to represent this. So in this case, we know that the
+vector representation does handle the
+quantity of the items. So the repeated occurrence of
+the item beer will matter. In this case, you can
+imagine that the number, the quantity under
+the dimension beer would be two instead of one. But vector representation,
+the order among these items still
+does not matter. So if we choose to represent this transaction as the vector, you will be of course
+different from the second transaction
+beer, milk and watermelon. However, using the
+vector representation, the second transaction beer, milk and watermelon will be identical to the third
+shopping transaction; milk, beer and watermelon. Why? Because the order among
+these items does not matter, only the quality matters. Finally, if you
+choose to represent the shopping basket as
+the sequence of items, we can see that both order and repeat the occurrences
+of items do matter. When the item beer appear
+as the fourth item, it is different from when it appears as the first
+item in a sequence, and that's why we have to
+consider it in a sequence. So using the sequence
+representation, the first transaction beer, milk, watermelon and then beer, is different from the
+second transaction beer, milk and watermelon, and it's also different
+from the third transaction that contains the same set of items but in different order. So we can see that
+sequence when it is used to model an ordered
+set of categorical items, it has the significant difference from itemset or vectors. Sometimes, we can use
+sequence representation to deal with not only
+a sequence of items, but a sequence of vectors. So you can view this as the generalization from
+a sequence of items. In a sequence of vectors, instead of a set of items, we are dealing with
+a set of vectors. So here we're using
+the letter arrow on the head of x_1 to x_k to indicate that these are vectors. Again, there are orders in
+between every two items. So in this case, x_k, x_1, x_2 to x_k are all vectors of the same
+number of dimensions, let's say p dimensions. You can imagine the
+p dimensions as the p numerically
+attributes that people use to describe their item or other p measurements
+of a scenario, and what have to be made sure is that a
+sequence of vectors, the p dimensions of
+every vector x_1, x_2 to x_k have to be aligned. So they have to share the
+same p dimensions in order. You can find many
+real-world examples that are represented as
+a sequence of vectors. One example will be
+the trajectory data, and the trajectory can be represented as the sequence
+of locations where every location is not
+the category item but it is the 2D vector that
+contains two-dimensions, the longitude, and
+latitude of the location. In the right-hand
+side of this slide, you can see the trajectory data of 2002 Winter Olympic
+Torch Relay Route. So you can see that it
+is the ordered sequence of locations where every location is projected here as the
+two-dimensional vector. So the trajectory data is the perfect example of a sequence of vectors instead of
+a sequence of items. So you may ask, how is the sequence of vectors
+different from a matrix? As we know that a matrix is also the collection
+of vectors? Answer is still the order. So indeed, the
+sequence of vectors is closely related to
+the k by p matrix, because we have k vectors and each vector has p dimensions. Or if you transpose the matrix, you have a p by k matrix. We have talked about
+that in next week. So this is the typical
+example of the k by p matrix, you are familiar
+with this already. There are k rows each
+corresponds to the vector, and there are p columns
+each correspond to the attribute to the
+dimension of your vector. But the difference between the
+sequence of vectors versus this metrics is at now every row has the
+particular order. So the k rows have
+ordered sequence, and you cannot easily
+swap these rows. Similarly, if you
+transpose this matrix, you end up with
+the p by k matrix, and every row becomes
+the dimension, and every column
+becomes the vector, and the difference between a
+sequence of vector is that, now you have an order
+among the columns. So you cannot easily swap the
+order of different columns. So what does this indicate? This indicates that
+either the rows or the columns have the order and
+they cannot be rearranged. That means, you must
+be careful when you're applying similar
+techniques as PCA. If you remember what
+PCA or SVD does, they does dimension reduction, and they are trying to extract the first k eigenvalues and the corresponding
+eigenvectors and they are rearrange the matrix
+using the k eigenvectors. So if you want to apply
+methods like PCA or SVD, now you have to be
+careful because, you may or may not be able to rearrange the authors
+of this eigenvectors. Some of you who are familiar
+with time-series data, may also wonder
+what's the difference between the sequence of vectors versus time
+series, and in fact, the time series can
+also be considered as the set of vectors
+or numerical items, and you can arguably, they also have orders among them. So here's some similarities and differences between sequence of vectors and time series data. The sequence of vectors
+is the list of vectors as a fixed order and a time
+series data as we discussed, is a sequence of
+numerical values, and those values are
+usually in the measurements of the same attribute
+of your data over time. So in the sequence of vectors, the order of the vectors matter. In time-series data, you can see the order of the
+values also matter. But the difference is that, in sequence of
+vectors, the actual, the absolute positions
+of this vectors, or the actual timestamps
+where you receive this vectors do
+not really matter. But in time-series
+data apparently, the absolute position or
+timestamp of these values in observed does matter and is very important in
+time-series data. If you look at this
+particular example, this is one example we have shown in week two and talking
+about dependence. This is the typical time series
+data of the stock market. So you can see that this
+data can be represented, can be considered as the
+sequence of p attributes. In this case, we have
+three attributes. We have the stock price, we have the smooth stock price, and we have the
+Wallen of this luck. So we have three attributes. You take the measure of the three attributes
+overtime then, now you can get this
+time-series data. But the difference
+between this and a sequence of vectors is that, you'll not only have k samples, have k measurements of
+this straight attributes. These measurements
+are not only ordered, but they're also timestamped.
+What does that mean? That means you cannot add gaps in-between two observations. Remember that in
+sequence alignment, you can add as many gaps as
+you can, as you'll want. As long as you are not violating
+the order, you're good. But in time series data, the actual time stamps matter. You cannot add two days in
+between Tuesday and Wednesday. Here are some examples of the difference between the
+sequence and time series. Using the example that
+you are familiar with. So for a curriculum pass, if you choose to represent
+your courses as sequence, then that means you can
+take these courses. You have to take these
+courses in order, but you can actually choose to take them in
+different semesters. As long as you follow
+the order you are good. It does not matter if you take one-year or two-year to
+finish the whole curriculum. However, if you
+choose to represent the list of courses you
+take as a time series, then that indicates that, you'll not only have to take
+these courses in order, but you also have to take
+them at an exact time. That means you have to take
+this course this miles, the next course, next miles. You cannot add gaps
+into your schedule. So hope this intuitively
+explained the difference between a sequence data
+and time-series data.

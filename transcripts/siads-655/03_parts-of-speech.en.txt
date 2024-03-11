@@ -1,0 +1,115 @@
+In thinking about
+the structure of language. Let's take a look at one common aspect
+that people look at parts of speech. I'd like to start about thinking
+what exactly is a part of speech and maybe something you've already learned? But let's think if we could
+get some intuition for what parts of speech are here,
+let's look at an example. I made you a blank, but I ate it. What might fill this? You might think of
+the language model itself and think about what words come in, say,
+cookie or sandwich or smoothie. But if you think about other types of
+words, we would probably say that jump or bright or even easily do not work here
+in this context, why is that here? We could say that one criteria for words is that they have some
+valid use in the same context. Here, a context forms a constraint,
+and we'd like to look for regularity in which types of words
+can fill a particular context. In practice, morphology can
+also help to find categories. Here let's look at examples of
+different morphology is for five words Cookie Kim wah, sneeze, jog and the we can see whether these words might
+take the Suffolk's s here often to indicate plural so
+we can have cookies or key Moi's. We know that sneezes or
+jogs we can think about the suffix for ED to indicate the past tense of a verb. In this way, we can see that cookies or
+keen wad probably does not make sense, except in some very unusual circumstances. Unlike that, those sneezed or
+jogged sounds perfectly fine. For though we can see that it could
+no longer take the plural ending nor the past tense ending. Finally, we can think about the I N G for
+participle forms. Sneezing and jogging sound fine, whereas
+the other three words don't work well. These morphological surfaces could help
+us think about which kinds of words might form a similar category. You might also note that
+there are exceptions, so you might say that eat eats eight and
+eating. We might think that
+the morphology differs. This is an exception to the rule. So unlike this very sad cat,
+you cannot eat a cookie. You have to eat a cookie. But these exceptions to the rule, these irregular verbs do not
+break our morphology rules. We can also think that there
+may be some ambiguity here. We have waffle waffles, the plural where
+you have multiple waffles and we also have the verb form of waffle, so waffled and
+waffling may works in these cases, however we can think about now is adverbs in this
+ambiguity is still not violating these. So what exactly is a part of speech? Here we can think about A part of speech
+is really a category where all the words in that category appear in very
+similar syntactic context, much like we saw before with
+our morphological rules. They perform similar types of
+functions and sentences, and they have similar
+morphological transformations. A part of speech really is
+a distribution over these properties. There may be some exceptions to the rule,
+but by and large the category holds for
+all the words in it. English actually has
+eight parts of speech. They're commonly recognized. Let's take a look at them here
+example of now towns, and these typically will describe people,
+places or things or ver black mounds. We also have verbs, which describe actions
+and processes that we might perform adjectives that describe properties or
+qualities of nouns. Adverbs that mostly modify verbs
+in terms of their quality but also can modify adjectives or
+even verbal phrases. We have determined like a and that marked the beginnings of noun
+phrases pronounce such as you, me and it. Propositions that indicates spatial or
+temporal relationships between entities. And conjunctions that join clauses and
+sentences like and if or, as. I will say,
+that new words appear all the time so that words may be slotted into the one
+of these parts of speech categories. So, for example, to look at a few
+recent words from the past year. They can think about Deep Fake or
+Inspo orm you'd even Zoomer. All of these words end
+up in the noun category. Similarly, we have verbs like a magnetized
+self, isolate, micro target or even spilled the tea. We can deal with new adjectives like all
+dressed offi or see us and adverbs like High Key, which is the opposite of
+low key for these parts of speech. The fact that new words
+appear in them all the time. What makes them called what's known as
+open class categories here we expect that these categories will grow over
+time we can contrast this with, say, the other four parts of speech like
+pronouns or determine er's English Rarely, if ever,
+adds these new words to these categories. We would call these closed
+classes of parts of speech. I will say, if you have a new word and
+you don't know the part of speech, it is out of vocabulary guessing,
+and now is often a useful indicator. As we typically invent. New now is frequently for
+things that we say invent directly or for concepts that need a new name. The parts of speech that we've just
+seen for English aren't universal, and languages, in fact, can differ quite
+a bit in their parts of speech. So, for example, some languages like Kesha
+don't differentiate between now owns and adjectives for the most part, or languages like Tongan don't differentiate
+between now owns and verbs. Some languages actually have
+very few adjectives overall and choose to describe words using other types
+of parts of speech and constructions. Other languages have different properties
+for opening closed classes, for example, and Japanese verbs and
+adjectives are largely closed, and new ways of describing processes come from
+other parts of speech I will say that these claims depend on how you
+actually define a part of speech and this actually open area of
+linguistics as a field. So if you're interested in this, there are
+some interesting works from NLP trying to create a universal part of speech tag set. They would let us look at
+languages across the field and try to understand how they're
+different parts of speech. Very one of the main challenges within NLP
+is trying to resolve what is the part of speech for a particular word in a context. We'll call this task part
+of speech tagging and typically is going to try to result break
+this ambiguity through some sort of natural language processing technique. So here's an example of I will
+make you a cookie as a sentence. It seems fairly straightforward
+with one interpretation, but if you look at the types
+of parts of speech, we could see that I may be a proper
+noun or it could be a personal pronoun. Will, it could be a modal verb or another. Now you could think the document you
+make for after you pass away make itself could have three different
+parts of speech you on Leah pronoun. Thankfully, a could have many different
+possible interpretations, and Cookie itself is just announced with
+just a simple sentence of six words and just these parts of speech. We have 72 different possible
+part of speech labeling for this one sentence alone, and there may
+be more that are possible in practice. This creates considerable ambiguity that
+natural language processing techniques will have to resolve. Knowing the parts of speech of a sentence
+can actually help us resolve some of the ambiguity and syntax as well. Let's look at one example
+from an earlier lecture. British Left Waffles on
+Falklands There's some ambiguity on how to interpret this sentence. If we have, say, one part of speech
+labeling here, the interpretation is that the British is the subject, and they're
+doing leaving of waffles on the Falklands. However, another part of speech
+interpretation is that British left is itself a noun phrase and
+that the verb here is waffles, indicating that while the left is doing
+the waffling by resolving the ambiguity, the parts of speech we conform
+downstream tasks like syntax and parsing toe understand how these
+words relate to each other. Voice assistants and speech technologies
+often rely on parts of speech as well for pronunciation. So, for example,
+thinking about now owns adverbs. Often, announcer verbs differ
+in how they pronounced. She addresses the crowd versus
+I forgot the addresses. He patrolled the confines. She confines the cat. My speaker has a defect. The spies will defect soon. Object oriented programming. The lawyers object to this. I got an upgrade. She should upgrade her seat. When you hear a verb or renown
+mispronounced by your voice assistant, perhaps you can think next time. How might this have been
+interpreted differently? With a different part of speech, you may find that these mistakes often
+lead to downstream pronunciation errors. As a result, part of speech tagging
+is quite useful in practice, even though it seems
+like a very simple task.

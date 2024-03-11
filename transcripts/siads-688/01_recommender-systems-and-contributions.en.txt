@@ -1,0 +1,251 @@
+Hi, everyone. We're going to discuss how to use technology, in this particular case
+recommender systems, to facilitate contributions
+for public goods. This is an outline of our
+topics for this week. I'm going to start
+with the effects of recommender systems in
+public goods provision, and again, continuing
+the Wiki projects theme we're going to use
+Wikipedia as the context. This is a paper by a
+number of authors from behavioral economics and
+human-computer interactions. The key feature of this
+experiment is that everyone's task to contribute to Wikipedia is personalized. User-generated content can be thought of as digital
+public goods. That includes online reviews or Internet encyclopedia such as Wikipedia and Baidu Baike. Recall that pure public
+goods has two properties, one is non-rivalry and the other one is
+non-excludability. In terms of digital public goods they're non-rival by nature, but they're non-excludable by
+choice in the sense that it should be fairly easy to exclude just by setting
+up authentication, but the designer of the website made a conscious
+choice not to exclude. The last feature we'll work
+on to look at which is the quality of the
+digital public good is expertise specific, which is, experts can
+make a difference in terms of how good
+the public good is. We're going to take
+a look at Wikipedia, which everybody's familiar with. Wikipedia is among the top 13 most visited
+sites in the world, this is as of January 2021. But if you take away the exclusively Chinese
+language websites, Wikipedia is number six. In the English Wikipedia we have about 2.6 million
+articles at this point, but less than 1 percent of
+that is of high quality, which means that using the quality standard from
+Wikipedia featured article, A class, or GA, is for good articles, so these are considered the top quality and a very
+good qualities. Wikipedia is very influential. Each month there are more than 500 million
+unique visitors. But most of the active
+contributors are not experts, and experts make contributions. Because of that, lots of
+the science entries or science articles are imprecise,
+erroneous, or incomplete. Wikipedia named the year 2016
+as the year of science in an effort to bring awareness and improve the quality of
+science articles in Wikipedia. In this Wikipedia article, instrumental
+variables estimation, you can see that it says
+that the method of IV is used to estimate
+causal relationships when controlled experiments
+are not feasible. This is a good
+characterization in the 1980s when IV estimations are primarily used for
+naturally occurring data. It is actually not accurate for the state of art
+of IV estimation today because lots of times we build in the instrument in our
+experiment design for both field and
+lab experiments. For someone who
+works in this field, it is relatively
+easy to revise this. The question that we
+ask in this project is, what motivates experts to contribute to digital
+public goods? Which is given that it's
+voluntary contribution and we all know from the semi- [inaudible]
+condition that is subject to free riding. We're going to look at
+two specific factors. One is the social
+impact of Wikipedia, the other one is
+private benefits. We're going to explain
+this a little more, but this is largely motivated by a 2011 AR paper by Zhang and Zhu which looks at a natural experiment on
+the Chinese Wikipedia. The Chinese government blocked the Chinese language
+Wikipedia from time to time, but what's interesting
+is every time the Chinese Wikipedia is blocked, the editors inside mainland
+China were blocked, but editors in Hong Kong, or Taiwan, or Singapore, in the overseas community,
+we're not blocked. The authors use the blocking
+as an exogenous shock, so there's an exogenous
+reduction in readership. How does that affect editors
+who are not blocked? It turns out that their
+productivity also went down by 40 percent during the blocking, even though they
+were not blocked. We're going to use that as one of the variations in the study. If we exogenously very, the social impact, how does
+that affect motivation? In this experiment, we designed a two-by-three factorial design. On the social impact dimension, we varied the number of
+views in the past 30 days. In half of the conditions, we tell the experts that the average number of views of a typical Wikipedia
+article was 426. We didn't make it up. We actually downloaded
+a Wikipedia data dump and process this
+information ourselves. We also have another condition
+which is called High View. We will only recommend
+articles which are viewed at least 1,000 times. The reason for introducing
+this variation is that if we more than double
+the number of views. In other words, the
+social impact is higher, would that change
+your contribution, decision, and behavior? On the other dimension, we vary the private impact
+or private benefit. Sometimes no citation
+benefits were mentioned. Sometimes we say that we will recommend articles that
+might cite your work. In a third condition, we say that we recommend
+articles that might cite your work and will acknowledge your
+contributions publicly. One can think of these
+three conditions as increasing amount
+of private benefit. Here is a table view of the
+two-by-three factorial design was the number in the parentheses are the number of observations
+in that condition. We implemented a
+two-stage design. In the first stage, we send personalized email invitations to the experts and implement
+the treatments. In the second stage, if the expert says yes, I'm interested in
+the first stage, in the second stage, should we recommend
+relevant articles to interested experts? The articles are selected to match the expert's recent work. This is the part where we use recommender systems to
+do the matching of, they ask to each individual
+potential volunteer. After they finish
+the contribution, we send them a thank you
+email with the links to the posted comments and links to the tutorial on how to
+edit Wikipedia articles. This is what the first-stage
+email look like. The first paragraph is generic
+except that your field, for instance, behavior and experimental economics
+is personalized. Everyone's always
+receiving the average view in the first paragraph. This is someone who's in the high view and
+citation condition. The second paragraph
+says that will select only articles
+with over 1,000 views in the past month so that your feedback will benefit
+many Wikipedia readers. This is how we framed
+the High view condition. The third paragraph
+says these articles might include some of your publications in
+their references. This is the citation benefit. If you are in this condition, we actually randomize
+the order of these two paragraphs and then the expert can say yes or
+no, I'm not interested. The researchers signed
+their personnel, their names and titles. This is what public
+acknowledgment works. Before we launch the experiment, we started a pilot
+where we emailed experts and see how they responded to these
+various conditions. All of these were
+collected actually by a Wikipedian who worked in WikiProject Economics
+and organized it in a nice page in under
+WikiProject Economics. This is what the experts
+would see if they go there. If you say yes, in the second stage, we immediately send you
+another email which reiterate some of the experimental
+conditions that you are under and recommend 5-6 articles. Each of these articles matches the abstract of one
+of your recent articles. If you click on the URL, it will take you
+not to Wikipedia, but to our own server. The consideration, the
+design consideration, is that we don't want to have the entry cost of learning
+how to edit Wikipedia. As long as they know how to edit, use Word, they'll be able
+to enter their comments. On the right-hand side, we have the Wikipedia
+article that they can scroll up or
+down as they read. This is a design that's meant
+to lower the entry cost. Where are the
+experts coming from, they're academic economists who registered at the research
+papers in economics, so It's also called repack. The reason we chose
+RePEc is because their data use policy
+does not prohibit us from collecting
+the email addresses. The experts have self-identified
+areas of specialization, and there's also a RePEc
+ranking based on citation. More importantly, they have an open working paper
+archive that we can use for matching the expertise of each expert with
+Wikipedia articles. As experimentalist,
+the first thing that you want to do is to do
+a balanceness check. This basically says, based
+on all of the observables, the experts who are
+randomized into each of the six
+conditions are similar. In the sense that if you look at the p-values of the joint
+orthogonality test, none of them is significant. How about the articles? So we select the articles based on the keywords
+of an expert's work, and we look at the most relevant
+Wikipedia articles according to the
+Google Search API. We also impose the
+threshold that the article has to have at least
+a thousand views in the past 30 days. The pool of articles
+in our database have very similar features, and we also exclude
+stub-level articles, which means that there's not much content for the
+experts to comment on. The next question
+is whether articles are balanced across
+experimental conditions. We look at, for instance,
+article length, the number of edits, the views on these articles
+in the past month. It turns out that it's actually expos not perfectly balanced. Article length, for
+instance, are not balanced, in the sense that some
+conditions such as high view, no citation, have higher views than
+some other conditions, for instance, the
+average view citation. This tells us that when we
+do regression analysis, we need to control
+for these covariates, especially because
+the article length is actually not balanced. The paper itself has a
+theoretical model in the appendix which
+generated our hypothesis. Our first hypothesis is about
+the participation stage. We hypothesize the experts' interests
+in participation follows the order of other
+things being equal, average view should be
+less than high view. In other words, experts under the high view
+condition, 1000 views, or at least 1000 views should be more interested in participating. In terms of private benefits, we anticipate citation benefits to increase the interest
+for participation. The second hypothesis
+is about covariates. An expert is more likely
+to participate if she has a higher number of
+views for her abstract. If she's affiliated with
+an English affiliation, or she has overlapping expertise
+with the research team. Our first stage estimation follows this
+regression framework, which has treatment dummies
+and interaction terms, as well as expert level controls. We use two different
+types of regressions. One is multinomial logit because the outcome variables
+is positive response, or no response, or
+negative response. It's more than what we anticipated that some people
+just never responded. You can alternatively
+use a binomial model, which is the simple logic model, positive or none positive. For the expert level controls, we control for the
+author abstract views, or whether they're
+affiliated with an institution in an
+English-speaking country. These are ways to capture
+their reputation. The overlap captures
+social distance. Here's the main result. What you see here on the horizontal axis are the
+six experimental conditions. On the vertical axis is the fraction of
+positive response. The base rate, if you look at experts under the average view
+and no citation condition, it's 45 percent,
+which is very high. If you mentioned citation, that increases the
+positive response rate by at least six
+percentage points. We see that with
+each pair of bars, the right bar is the high
+view participation rate. It turns out that the high view increases participation rate, but none of these increases
+is statistically significant. This is a way to look at
+the regression result, and that presents
+the marginal effects in the multinomial logit model. What we see is that citation, as well as citation at high view, increases positive response
+rate by 6.3 percentage points and it decreases negative responsory by
+about the same level. The first result is that there is a treatment effect
+on participation. The citation benefit reduces negative response rate and increases positive response rate. In the second stage, we're going to look
+at contribution. About 45-50 percent of the people who
+responded positively, 94 percent of them opened
+the second stage email. Of these, a third of them, 512 experts commented on
+at least one article. On average, they commented
+on two articles. We received about 1200 comments
+on Wikipedia articles. One can think of these as
+public goods provided. But there is a fairly
+large variation in terms of both the length and
+the quantity of comments. Let's take a look
+at the measures. We measure quantity by the number of words,
+which is straightforward. How about quality? We recruited trained raters to rate the quality along
+various dimensions. For instance, how
+helpful is the comment? How many pieces of sub-comments
+has the experts made? What is the overall quality of the comment on a Likert scale? Then we use the median rating
+for the overall quality from altogether 68 human raters. These raters have all completed
+the core E-com courses. We assigned at least three
+raters for each comment. One thing that has been present across several studies is that in these user generated content site usually the quality and
+quantity are highly correlated. Now we're going to take a closer look at
+the second stage, which is to look at the
+actual contributions. The third hypothesis is on the treatment effect on both the length and the
+quality of comments. It turns out that there's no treatment effect
+on the length. This is if it's unconditional on participation in
+the second stage. You can see that in the
+regression results as well. We then look at,
+here's the summary. That there's no significant
+treatment effect on quantity. How about quality? It turns out that citation and acknowledgment has a significant effect on
+contribution quality. We then look at predictions
+between the quality of matching or the
+precision of matching between the Wikipedia article and the expert's research area. We anticipate that both
+the length and quality of contribution will be higher
+if the match is better. The way we compute the match is using the cosine similarity
+between these two articles. We measure how similar the two documents are in terms
+of overlapping vocabulary. The first document is
+the expert's abstract. Each expert posted a number
+of articles on repack. We take the most recent
+articles and for each article, we extract the abstract and do a matching with the
+Wikipedia article. Then we compute the
+cosine similarity between these two documents. This is a regression result by controlling the co-variance. One of the very
+robust outcomes is the effect of cosine similarity
+on contribution quantity. Again, here's the regression
+on contribution quality. You have the same large and significant results on the match. The next result is between cosine similarity
+and contributions. We find that an
+expert contributes longer and better comments to the Wikipedia articles with
+a high cosine similarity. What is the effect size? When cosine similarity
+increases from zero to one, the word count is almost
+five times longer. That's the effect size. What have we learned
+from this study? From the first stage, we're trying to get experts interested
+in Wikipedia edits. We find that the
+private benefit of likely citation has a significant effect in
+eliciting interests. In the second stage, we find that to elicit both longer and
+higher quality comments, the matching between
+a Wikipedia article, which is the task, and the experts research, is a really important feature. The better the match, the higher quality
+the comment would be. This demonstrates
+that one can use recommender systems in eliciting high quality contributions
+to digital public goods.

@@ -1,0 +1,184 @@
+Welcome back everyone. Today we're going to talk about problems with
+multiple comparisons. The problem is that if you look at enough noise you're going to see some things that look
+like surprising signals. At the end of this lecture
+you should be able to intuitively recognize when multiple inferences are being made from
+the same data set, and in those cases you
+should be less confident, that the surprising results
+you're seeing for one of those comparisons are due to real differences rather
+than from noise. You should be able to
+explain the term P-hacking. So let's start with
+the term P-hacking. It's a pejorative. If someone accuses you of P-hacking you should
+either be offended, or ashamed, or maybe both. It comes from the conventional Frequentist approach
+to statistics called Null Hypothesis
+Statistical Testing, NHST. This is the conventional
+approach you, would have learned about
+an intro statistics where you did things
+like t-tests. So the way it works is you see some apparent pattern
+in your data set. You define a null hypothesis. A null hypothesis is that the pattern you're
+seeing is just noise, that the pattern arose by chance from the
+random process that selected your particular data
+set from the population, or another way of thinking
+about it is that, the null hypothesis is that the patterns you're
+seeing in the data set, doesn't exist in
+the overall population. Then you calculate
+the probability, the P-value. That if the null
+hypothesis was true, you would see a pattern in your sample that say
+this is extreme, as what you actually
+observed in your data set. So then you compare
+that P-value to some threshold say
+Alpha equals 0.05. If P is less than 0.05, you reject the null hypothesis, and you conclude
+that the pattern, that you noticed is
+statistically significant. Some other useful vocabulary
+that's going to help with this lecture and with the
+readings that we've assigned, a type one error or
+a false positive, that's when you conclude that some pattern is
+statistically significant, but in fact the null
+hypothesis is true. Note that if you choose Alpha equals 0.05, you're saying that, when the null hypothesis is true, five percent of the time you will get a false positive,
+or type one error. A type two error or
+a false negative, that's when you should reject the null hypothesis,
+but you don't. Finally, that gives us a vocabulary to talk
+about P-hacking. P-hacking is when you test, with the same data set for
+lots of statistical patterns. If you try a lot of them, and you find just one where
+there's a P-value less than 0.05 you should be
+very suspicious, that maybe the null hypothesis
+is true for that one too. So here's where
+the pejorative part comes in. An accusation of
+P-hacking is that you deliberately
+tried lots of tests, until you found some that had P-values less than
+your Alpha threshold, and then you report that as if it was the only tests you ran. Here's a humorous example, another one from XKCD. Now it starts,
+jelly beans cause acne. That's a hypothesis, it says, "Scientists please
+investigate," and they complained that
+they don't want to work, and then they
+actually do the work, and they say, "We found no link between
+jelly beans and acne." Jelly bean consumption was
+not correlated with acne at least not with
+a P-value less than 0.05. One other friend says, "That settles that," but
+the other one says, "No. I hear it's actually only a certain color
+that causes it." They send the scientists
+back to work. Now you can see, they go to work and they try
+it for purple jelly beans, and they try it for brown jelly beans,
+still no correlation. They try it for pink
+no correlation. You have to look very closely at all these panels, but
+there's one of them, where they found a link between green jelly
+beans and acne, at P less than 0.05, and that's the new story green jelly beans
+are linked to acne. So that would be P-hacking, unless you had
+some strong suspicion in advance that it was
+green jelly beans, and not any other color
+that cause acne. I provided another
+Jupyter Notebook simulation to accompany this, so you can play around with it. In this simulation
+I've assumed that, half of the people get acne, 70 percent of them
+did jelly beans. I've got 1,500
+people in my sample. We've got a bunch of
+colors of jelly beans, everybody has a favorite color. So the first person gets assigned beige and then the next person lilac, their
+favorite color. They each have a favorite color, only some of them
+actually eat jelly beans. Person 1498 doesn't
+eat jelly beans, and then we've assigned, half the people have acne, half the people are- or 70
+percent are jelly bean eaters, but there's no correlation
+between the two. So I've set that up
+as our simulation. Now you can see,
+our sample of 1,500 people here's the cross tabs of 1,067 of them were
+jelly bean eaters, so about 70 percent, and about half of them have acne, and there's not really
+any obvious correlation. It looks like we have a few more people with acne among the
+non-jelly bean eaters, a few more among
+the jelly bean eaters. Is that different enough to conclude that there's
+a negative correlation here, and the answer is no. The P-value for that negative
+correlation is 0.38. If there's no correlation at all, which actually there wasn't, we would have
+a 38 percent chance of getting results at
+least this extreme. So we can't reject
+the null hypothesis, about the overall length
+between acne and jelly beans. But if we try it for
+every single color, restricting our attention just to the people who have
+that color preference, is there a significant
+difference, between the number of
+people who have acne, who do consume that color of
+jelly beans versus people who don't consume jelly beans
+who like that color? We're actually looping
+through all the colors here, I'm only printing
+it out if there's a significant difference
+in this case we had exactly one color, it was beige that was correlated, with a P-value of less than 0.05, in this case it's 0.026. We tried a whole lot
+of comparisons, we found one color that had
+a P-value less than 0.05. We should not report that. That would be P-hacking. So here's another
+thought experiment. It's pretty unlikely
+that if you flip a coin, 10 times is going to come
+up tails all 10 times, unless perhaps it's a counterfeit and has tails on both sides. In fact, it's only going to
+happen one time in 1,024, a little less than 0.1 percent. So here's a test for whether
+a coin is two-tailed, with the null hypothesis being that it's
+a conventional coin, with heads on one side
+and tails on the other. I'm going to toss
+the coin 10 times, and if it comes up
+tails all 10 times, I'll reject the null hypothesis conclude it's double tail. If it comes up heads
+even one time, I'm going to accept
+the null hypothesis. So let's try that. I'm going to flip the coin, tails, tails, and tails. All right well,
+this tests will have a very low rate of
+type one errors, one time in 1,024 to be exact. Suppose we apply
+this tests at the US Mint, where they make
+millions of quarters, at a rate of one time in 1,024 of false positives they'll actually conclude that thousands
+of quarters everyday, are in fact two-tailed, even if none of them really are. Of course, this is
+all a little foolish because we could just
+look at both sides of the coin to decide
+whether it's really two-tailed; tails and tails. Yes. This one really
+is two-tails. But you get the idea. If you do millions
+of statistical tests and you allow five
+percent type one errors, you're going to get a lot
+of type one errors. Situations where
+you can conclude, a statistically
+significant difference, even though there isn't
+a real underlying difference. Now even if you aren't
+deliberately P-hacking, it's pretty common to do more than one statistical test
+as part of your analysis. Maybe not millions of them as in the US Mint example
+but more than one. You might try multiple models. You might do multiple
+pairwise comparisons, even for example in
+a linear regression model where there are
+several independent variables, if you look at the P-value associated with each coefficient, you're doing multiple
+statistical tests. So what do you do about this problem of
+multiple comparisons? There are a few approaches. One of them is
+basically do adjust the threshold Alpha that you've set for rejecting
+the null hypothesis, or equivalently
+inflate your P-values. So depending on the
+particular models that you're using their specific corrections
+that have been proposed, such as the Bonferroni
+Correction. There's nothing really magical
+about the threshold of Alpha equals 0.05
+in the first place, it's an arbitrary convention. So there isn't really
+a correct amount of correcting to do, for
+multiple comparisons. In principle, the more
+comparisons you do, the lower threshold you
+should set for Alpha, or the more you should
+inflate your P-values, that you should require
+a lower P-value in order to accept a result as being
+statistically significant. A second approach, is to just report the actual P-value
+and the confidence interval, in form the reader about the multiple comparisons
+you've done, and leave it to them to do some reduction of
+their certainty. A third approach is
+cross validation. That is, think about your multiple comparisons as an exploratory data
+analysis activity, it culminates in
+a final small set of hypotheses about
+relationships. Now you tests
+just those hypotheses, on an additional set of held-out data;
+your validation data. A fourth idea if you use
+a Bayesian approach, the problem of spurious results from multiple comparisons gets folded into the problem of
+choosing good prior beliefs. Then any further discussion
+that's going to have to wait for a course on
+uncertainty where you'll, get a hint of
+the Bayesian approach. To summarize, the null
+hypothesis is that the patterns you're seeing in the data sample
+occurred just by chance, that there's no such pattern
+in the overall population. A P-value is the
+probability of seeing a result as extreme as
+the pattern in your data sample, if the null hypothesis
+is actually true. A type one error or a
+false positive occurs when the null hypothesis
+is true but you reject it, because you've got a low P-value. If you perform multiple
+comparisons you increase the chances of
+making a type one error, and if you deliberately go fishing for some
+relationship that is statistically significant,
+it's called P-hacking. To reduce the risks for multiple comparisons you
+can apply a correction, either in plating P-values
+or reducing Alpha levels, or you can do cross-validation
+with held-out data, or additional data
+that you collect. Here are some maxims
+from today's lecture. Multiple comparisons means more opportunities
+for false positives. If you look at enough variables, you'll find something
+statistically significant. I'll believe that result
+when I see it replicated on a new data set. All right, time to go. Let me flip this coin, to decide whether to tell a joke. Tails. Sorry, not this time. Well, watch after the green jelly beans, and
+I'll see you next time.

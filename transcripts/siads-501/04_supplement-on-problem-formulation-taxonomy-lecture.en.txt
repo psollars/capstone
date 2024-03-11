@@ -1,0 +1,100 @@
+Welcome back. After having students use this taxonomy
+for a few semesters, I've decided that there are some important omissions in it. Here's the supplement with three additional
+types of problems. The first is just
+descriptive indicators. One or more indicator is that summarized data
+streams that may have thresholds to convert those indicators to
+discrete values. You may want to provide historical tracking
+through graphs or some comparative tables, and you may want alerts
+based on thresholds. In terms of the four
+stages of a project, the analysis and modeling phase is the least important
+in this kind of project. A lot of effort will
+go into thinking about what data is available
+and how to validate it. A lot of effort will go into thinking about
+how to present it and use it as a trigger
+for actions or for alerts, but the analysis itself will mostly consist of
+summary statistics. Group the items and count
+them or take the average. Sometimes there'll be a
+slightly more complex model that summarizes
+some kind of trend. For example, in the
+COVID dashboard, we make use of the CDC algorithm that processes the
+history of case counts and produces discrete
+outcomes that try to characterize the recent
+trend: low incidence growth, or elevated incidence growth, or elevated incidence plateau, or declining for
+some number of days. How will you recognize
+when you've got one of these descriptive
+indicators problems? When decision-makers
+say they want a set of key performance indicators or an easy way to decide whether more
+attention is needed, the request may even be
+to create a dashboard. The second new problem
+type is optimization. Optimization is a
+technique that's used as part of solving a lot of
+data science problems. In this image, the
+challenge is to find the x, y coordinates that minimize
+the value of the function. But there are certain kinds
+of problems that it makes sense to think of the problem as being about optimization. Allocate people to cashiers at the grocery store in a way that minimizes the average wait time. Dynamically set airfares in a
+way that maximizes expected revenue or run auctions for ad placements on web pages in a way that maximizes revenue. Optimization has
+been the domain of operations research for decades. The Professional Society
+for Operations Research, INFORMS has a great slogan, "The science of better." There's been a lot of
+research about techniques for specific kinds of
+optimization problems, such as queuing problems. You're not going to
+learn much about those in this masters program. But data scientists will often work with
+operations researchers, and there are many problems
+where the goal is to choose the best combination of parameters to achieve
+some objective. Operations researchers
+are likely to take a mathematical modeling
+approach to such problems. Data scientists
+are likely to take an empirical,
+data-driven approach. When faced with an
+optimization problem, it's good to be aware
+that sometimes, mathematical models
+are a good alternative to the data-driven approach. How to recognize an
+optimization problem? Decision-makers have some
+leverage that they can control, they want to make
+the best choices. Moreover, the notion
+of best can be expressed formally as some
+kind of objective function. When you have both
+of those conditions, you have an optimization problem. Ranking; you'll sort a set of items based on which is most preferred or
+most recommended. You'll present just the
+highest-ranked items in sorted order. Think of search results from Google or Netflix movie
+recommendations or the sorted feeds of
+tweets or Facebook posts. To solve ranking problems, you may use techniques like similarity matching or
+co-occurrence grouping, but they aren't
+fundamentally problems where the goal is similarity
+matching or grouping. The goal is to rank well. How do you recognize
+a ranking problem? There will be a
+large set of items only a few of them are to
+be presented at a time. You may hear terms like
+recommendation systems or recommender systems
+ranking or best matches. That's a few more problem
+types to add to the taxonomy. Descriptive indicators,
+which may be used as part of alerting
+systems are dashboards, optimization problems, ranking problems.
+Here's a little joke. This time, the joke is on
+us, the data scientists. Six data scientists and six operations researchers were going to a conference by train. One by one, the data scientist go up to the ticket
+counter and buy a ticket, but only one of the
+operations researchers does. The data scientists are
+puzzled and they look at the operations
+researchers and one of them says, "Optimization." They all get on the car and
+the data scientists sit down. The operations
+researchers, they post one person at either
+end of the car. After a while, one of
+them shouts, "Conductor." On that queue, all of the
+operations researchers pile into a restroom and
+lock themselves inside. The conductor comes
+through, he gets people's tickets,
+he's clicking them. He gets to the bathroom
+and he knocks on the door. They slide a ticket
+under the door. The conductor takes it, clicks it, slides at back. The data scientists
+looked at each other, they're quite impressed, and they all go to
+the conference, and they have a good time, then it's time to go back home. They go to the train station and one data scientist buys a ticket. The rest don't, and they all look at each other and giggle. The operations researchers,
+none of them buys a ticket. The data scientists
+are puzzled again and the same operations
+researcher looks at them and says, "Optimization." They get on the train, all the operations researcher
+sit down this time. The data scientists
+place a person at either end of the car
+and at some point, one of them yells, "Conductor." All the data scientists pile into the bathroom,
+and they lock it. The operations researchers
+just sit there. A minute later, the
+operations researcher, one of them knocks on the door of the bathroom and
+says, "Tickets, please." A ticket slides under the door. He picks it up and all of the operations
+researchers go into the other bathroom and lock the door. I'll see you next time.

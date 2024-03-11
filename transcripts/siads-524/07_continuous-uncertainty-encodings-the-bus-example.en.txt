@@ -1,0 +1,144 @@
+Welcome back. This lecture is called continuous
+uncertainty encodings. The bus example. In this lecture, we're going to look at
+two types of continuous uncertainty in encodings, PDFs and CDFs. Let's get started. Continuous uncertainty
+encoding is a type of data visualization that allows you
+to represent uncertainty or variability through continuous
+representation of the data. In each of these encodings, the visual
+representation of the data provides information about the range of values
+that measures or estimates might take and the degree of confidence in that range. Continuous uncertainty encodings
+are often used in scientific and engineering contexts
+where the measurement and estimates can be influenced by a variety
+of sources of error or uncertainty. By encoding this uncertainty
+in the data visualization, analysts can better understand
+the limitations of the data and make more informed decisions
+based on that information. Now, we've discussed cumulative
+distribution functions, CDFs and probability distribution
+functions PDFs in prior lectures. CDFs and PDFs are both specific examples of what
+we call continuous uncertainty encodings. These representations of uncertainty are
+called continuous uncertainty encodings because they involve encoding uncertainty
+through a continuous distribution rather than a discrete distribution. In this lecture, we're going to explore
+an example from the uncertainty research group at Northwestern University. The lead author of this particular
+example is Matthew Kay. So we're going to use a paper Kay and
+others wrote entitled is my boss. This paper explores methods for presenting
+uncertainty for a transportation example. So suppose you're living in Seattle,
+Washington in the United States. The bus company displays
+on a digital board, the approximate time the bus
+will arrive at each stop. So for example, it notes that bus 120 should be at
+the Downtown Center in about 11 minutes. Having read this,
+we might set our watches to 11 minutes and go grab a coffee from
+the nearby coffee stand. But before we go, we notice something in
+the fine print at the bottom of the sign. A note reads, bus arrival
+estimates are based on the best available information, but
+actual times will vary. Traffic and other conditions can affect
+the accuracy of this information. In other words, there's uncertainty. There's uncertainty as to the exact
+location of the bus at any given point. There's also uncertainty into
+what traffic looks like. So given that there is uncertainty, perhaps we should explore
+how we can model it. We'll focus on using two statistical
+distributions, the PDF and CDF. So again, the question we're asking
+ourselves is do we have enough time to go and get a coffee? Now, there's not enough information for
+me to make an informed decision. I know that the best estimate the app can
+provide is that the bus will arrive in about 11 minutes. But with no quantification of uncertainty, I don't know how much earlier
+than 11 minutes the bus might be. So what the system is telling us is that
+the bus will come sometime between 0 and 30 minutes from now, or
+maybe even further in the future. The system prediction is that the bus will
+show up 11 minutes from now, exactly. But there's obviously uncertainty
+around that point estimate. A more realistic and
+a better representation would be one that uses some kind of probability
+distribution around the point estimate. I would acknowledge that the bus might
+not come exactly 11 minutes from now. The display suggests that it
+might come sometime between 5 and 20 minutes with the most likely
+value being about 11 minutes. But there's a long tail to
+the right where perhaps traffic and other events might delay the bus. This is helpful. But suppose I wanted to know if
+I had time to go get a coffee. Let's say there's
+a nearby coffee stand and it takes eight minutes to get a coffee. Do I have time to get the coffee? This display doesn't quite
+answer that question. I need a little bit more information. So we add to our display
+a mark at 8 minutes and find that 90% of the time the bus
+comes later than 8 minutes. That's a lot more useful information. It helps me quantify the risk
+of getting a coffee. Am I fine with missing the bus 10% of
+the time if it means I can enjoy a coffee 100% of the time? Now you may recognize this
+kind of uncertainty display. It's called a probability density plot. It's a helpful way to think
+about the problem, but this kind of view also has limitations. It encodes one estimate of risk,
+in this case, a 90% likelihood of catching the bus. Now that may be great for
+some people but not others. Also the amount of risk we're willing
+to accept could flex depending on the situation. If I were going for a job interview, for example, I might want to be as close
+to 100% sure I would make the bus. If I were going to the library, I might
+be less concerned with missing the bus. It would depend on the situation. And this view doesn't really support
+multiple situations as well. The probability density plot has another
+limitation in that it relies on area to convey the probability. It can be difficult to
+accurately read area, which we can illustrate
+through an example. On screen, we have a couple of circles. And the question I'd like to ask you
+is this, what proportion of the outer circles area is covered by the inner
+circle as a value of 0 to 100%. In other words, how much of the big
+circle does a small spur circle cover? Take a moment and think about that. Now, if you're like, most people,
+you might estimate that the inner circle covers about 85,
+maybe even 90% of the outer circle. In fact, the true proportion is 75%. The smaller circle is three quarters
+the size of the larger circle, but it looks a little bit bigger than that. The reason is that area
+perception in humans is biased. As things get larger, we don't perceive
+them as being proportionally as large as what they actually are. As a result, you don't see the larger
+circles being quite as big as it really is compared to the smaller circle. So you just think the smaller circle is
+a larger proportion of the bigger circle. So returning to our density plot,
+we may want a different way to display the probabilistic prediction
+of the bus's arrival time. We want an option that's less reliant
+on people accurately reading area. Now, one option is to use a display
+that doesn't rely on area at all to read probability and it can offer
+probability for any bus arrival time. If this sounds familiar, it should. What I'm describing is a cumulative
+distribution function. Here's a cumulative distribution
+function for our bus problem. Like our density plot, the x-axis is
+the time the bus arrives, the y-axis is the cumulative probability of the bus
+arriving at that time or earlier. So if for example, we wanted to know if
+our coffee took a little longer to get one day, and it took 10 minutes to
+purchase and get back to the stop. What's the probability
+that we will miss the bus? We see that at 10 minutes,
+the CDF returns a probability of 25%. So what does this mean? It means that there's a 25%
+chance the bus has already come. This example also reveals something
+else that's important for us to note around how we might have to
+layer uncertainty upon uncertainty. We started this scenario saying it takes
+8 minutes to get a coffee and then said, well, sometimes it actually takes 10
+minutes, just depends on the line, there's uncertainty in the coffee time. So we took a look at the CDF at 8 minutes
+which yielded a 10% probability of missing the bus, and we already know there's a 25%
+probability that we missed the bus if our coffee takes 10 minutes. So if we go to get a coffee, there's approximately a 10 to 25%
+probability that I missed the bus. Let's connect what we were doing
+here back with a few other lectures. First, let's reinforce the connection
+between a probability density function and a cumulative distribution function. You may also remember that we said the CDF
+is equal to the integral of the PDF. If we integrate from negative infinity
+through a value, in this case 10, we get the cumulative probability for
+10 or less. Let's also review how the of
+graphics can aid in the creation and evaluation of these
+graphical distributions. Starting with the density plot, we see
+that time is mapped to the x channel. The density function f bus,
+takes time as its input and outputs density values which
+are mapped to the exposition. These values are marked through a line. Now, these are explicit encodings. That is the specification we use to
+create the probability density plot. These are required elements to visually create the PDF rendering
+of the bus problem. One thing you might notice probability
+isn't in our list of explicit mappings. That's because probability is
+implicitly encoded onto area. The area is created from the explicit
+encoding of density onto the y channel. This is one of the limitations of the PDF,
+that probability is mapped implicitly to area which we have noted
+is not very easy to read accurately. So while it does a great job of giving
+the overall shape of the distribution, it can be difficult to
+read probability from it. If we contrast this
+implementation of the of graphics with the cumulative distribution function,
+we see similarities and differences. Once again, we map time to the x
+channel and a statistical distribution, in this case, the CDF to the y channel,
+and we mark it as a line. These are similar to the PDF we just saw. The difference of course is
+that while probability was implicitly mapped on a PDF,
+it's explicitly mapped in the CDF. The CDF does not rely on
+implicit encoding of probability, probability can be read
+directly from the y-axis. This is one of the great
+advantages of the CDF. The disadvantage of the CDF is that
+its overall shape lacks some of the intuition we get from the pure
+distribution approach of the PDF. Density plots generated from a PDF and
+cumulative distribution function plots are two examples of
+continuous uncertainty encodings. We should also note that
+the visualizations built on a probability density function
+can take several forms. We've covered density plots and CDFs,
+but there are other alternatives. The violin plot uses densities to
+vary the thickness of the display. Gradient plots, another type of continuous uncertainty
+encoding maps density onto opacity. CCDFs are again similar to CDFs
+in that they map probability and not probability density to height. So let's sum up. In this lecture, we explored
+continuous uncertainty encodings, specifically focusing on density plots and
+CDF plots. CD F plots and
+density plots provide trade-offs for how they visualize uncertainty. Density plots are intuitive but
+difficult to read directly. CDF plots are easy to read directly but
+they're less intuitive. We also have other continuous
+encoding options like violin plots, gradient plots and CCDF plots.

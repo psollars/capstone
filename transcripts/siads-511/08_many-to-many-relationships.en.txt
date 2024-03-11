@@ -1,0 +1,218 @@
+So many-to-many relationships are really important in databases, and I think they're less
+intuitive in some ways. I find that students
+find it difficult to say, like, As soon as I show
+you the one-to-many relationship, which is what I just got done telling you about, students are like, "I get it. I get it. Strings." It's hard to know when to use a
+many-to-many relationship. So I'll just sort of show you some examples and maybe
+allude to when to use them. It'll come to you when
+it's time to use them. So here is a one-to-many relationship that
+we've been using, right? And so there are many tracks
+that point to one album. Now, one of the ways
+that you can kind of realize in the back of your mind, let
+me get a different color, that you should have done a
+many-to-many relationship instead of a one-to-many
+relationship, is if you think to yourself, you know,  what if there's
+more than one album for a track? So here's a track and it's
+on the original album and then it's on a compilation album and then it ends up
+on a soundtrack. You say, well how about if I
+call them album_id1, album_id2, and album_id3,
+wouldn't that work? So now I can have a
+track on three albums. Wouldn't that be pretty awesome? But the problem is that how does that stop,
+when does it stop? Because a track could be
+on a hundreds of albums, you don't know if one
+is the right number, three is the right
+number, or 100. And I can assure you that
+in your application, if you think 100 is enough, then it won't be enough, right? It'll be like 101, you'll encounter something
+where you need a 101, no matter what
+number you pick. So the idea of sort of making
+this almost like an array of album IDs
+is not going to work. So you think, "Oh I'll do that." And I know I've built spreadsheets
+where I'm like, Oh boy, here's a thing, and
+here's like x and x2 and x3 and x4 and I'll do
+that and that's the way to. That's not how we do it. First off, it's way expensive because you've
+got all those columns, you've got all rows
+that you may have zero albums or you may
+have 100 albums and if you have a 100 columns
+in the off chance that you need it?
+Okay, I think you get it. But the moment you think I
+need to add another one, that's probably and that's what's been going off
+in your head all along. It's like tracks could belong to more than one album and the album could have
+like 20 artists. So if you go back to the artist_id in
+album, artist_id1, artist_id2, oh, there's like five people in most
+bands. No, there's not. And then there's the
+writer and there's, okay. So you get many-to-many
+turns out to be the right way to do all the
+data models except genre, I think genre is fine. But album and artist, those relationships should have probably been many-to-many. And so this is just sort of how it
+looks in the one-to-many, we end up with two tables. One is like the from table and the to table or
+you could think of this one. I sort of think of this is the main table and so the track is the main table and the
+genre is a lookup table. You could say genre is the parent table and this is
+the child table. There's lots of ways
+to describe it. You could call this
+the many-to-one, the arrows go in different
+directions, but whatever. So this is what they look like,
+right? You've got two tables, you're going to reduce the
+vertical duplication in this one table by making
+a little table that has the strings in it and then using numbers to replace that
+vertical duplication. So that's the basic
+technique that we use for one-to-many.
+So many-to-many. We can't do it with one
+table. Now in a sense, if you draw a logical
+diagram you can still say there are many books and many authors and every
+author has many books and every book could have many
+authors and so you can't do in either direction
+a one-to-many. So in a logical diagram, you just like say this is
+a crow's feet many, crow;s feet many, crow's feet many. That's a logical diagram but
+it's not a physical diagram. So what we have to do
+in all these cases, is we can draw the
+arrows however we want in a logical diagram, but then we have to turn it
+into a physical diagram. So we do what's called a junction table or a join table or an immediate table or a
+through table or whatever. And what you basically
+do is you break this many-to-many into a
+series of one-to-manys, right? So this ends up being
+a one-to-many and then this ends up being
+a one-to-many and now we've turned it
+into two one-to-manys. It's probably just as
+easy for me to show it to you in a CREATE statement here. So I'm going to solve
+the problem of who is students in courses and teachers in courses
+at the same time. So students in courses
+and teachers in courses, one student could
+be in many courses, one course has many students. There's no way to say student, course one, course two, course three. You're not
+going to do that. And then course student one, student two, student three, it would just never work, right? So what we do is we make this
+table that's in the middle. We'll call it the
+membership table or the member table and it
+has two foreign keys. Now sometimes you
+put a primary key in to make it easy,
+sometimes you don't. In effect you make the
+student_id and course_id combination unique in this. Although there are
+times you don't do this but in this case we
+would make it unique. Now the interesting
+thing is you can also model data at
+the connection. So this connection
+is distinct for every student/course combination. And so this is the way in learning systems my account is different
+than your account and that I am marked as
+a teacher and you're marked as a student and that goes into this middle table. So you are not a
+teacher or a student. You're are a teacher and a student in a particular course.
+Okay? So the role you are in
+depends on the student, the user/course
+combination basically, right? And so we can actually model data at this connection and it's
+nice because there's a record in the member table that is distinct for each
+student/course combination. Okay? So foreign keys pointing to
+primary keys going outwards. So it's probably easier just
+to show this to you in SQL. So the first thing that
+we're going to do here is like we always do when
+we're making tables, is we're going to start
+from the edges and move in. We in a sense have to create the primary keys before we create
+the foreign keys. Because then the
+CREATE statements that include foreign
+keys will blow up. So they need the tables. So we have to create the student table and the course table. And at this point I hope is
+pretty normal to say id SERIAL, which is our primary
+key, name VARCHAR (128), which is just an attribute, email VARCHAR (128) UNIQUE that means it's kind of our way of saying it's our logical key, and the primary key
+for this is id. That's no different than anything
+else we've done before, right? And the same is true for course, id, is like kind of genre almost, id, and title, which is a VARCHAR and it's UNIQUE, and then
+PRIMARY KEY id. So we made two
+little leaf tables, basically, on our little tree. So the interesting
+thing happens when we start creating this middle table,
+right? And it's pretty straightforward. It's just two foreign
+keys pointing outward to two tables
+with primary keys. And then there's the data that's
+modeled at the middle, right? So we have student_id, which references the id field in the student table,
+ON DELETE CASCADE. Remember about ON DELETE CASCADE? That means that if
+we delete a student, the membership record is
+going to also be deleted. This is pretty obvious that
+DELETE CASCADE's great. Sometimes you might have
+other uses of ON DELETE. And then the same happens, we point outward to
+course through course_id, REFERENCES course_id
+ON DELETE CASCADE. Beautiful, beautiful, beautiful.
+role INTEGER. Now role is the data that's modeled at the point
+of connection, right? One student connects to one
+class and you're a teacher. One student points connect to one class and you're a student. That's data. And there might be
+more than one field there, right? So you might on
+one side have like a discussion thread and the other side might be
+a comment that says this user made this comment, and this might be the
+text of the comment, right? And so there are other
+ways to do that. Now the other thing that's
+cool and interesting about this is the
+PRIMARY KEY statement. The primary key for this
+table is not a single column. The primary key for this table is a combination of columns. And that basically says
+that you can only have one combination
+of a student_id and a course_id. That's important. Now, some of these you don't
+want that to be so strict. But the primary key is
+student_id and course_id. And that's why we don't
+need our own id SERIAL. If we were doing something
+like forums and comments, we might have an id, and then even like a date and time so we could
+order them so you could make as many comments on a
+forum as you wanted to make. But in this case, we're not
+going to have an id SERIAL, and we're going to make
+the primary key be the combination of
+student_id and course_id. It's beautiful. I mean honestly, I just think the prettiest thing is to not listen to my lecture at all and just gaze at the
+absolute beauty of SQL, because it is beautiful. It is so beautiful. So let's put some data
+in, not too surprising. Again, we're going to start from the leaves, just like we did before, insert some students,
+insert some courses, then we're going to figure
+out what their keys are, again there's
+vertical replication that we don't want to
+see happen, right? We don't want the student name or email to be replicated vertically anywhere or the course name
+be vertically replicated, so we need to make primary keys. So we got Jane is 1, Ed is 2, and Sue is 3, and Python is 1, SQL, and PHP. And now we just make
+the connections. And so these are even more abstract. Now, we're just going
+to use 1 as the role. So if you look at the role here, the role is the third parameter. Oh, yeah, the role is the
+third parameter here. So we're just going
+to use 1 for teacher and 0 for student. And so we're going to insert Jane
+into Python as the teacher. We're going to insert Ed
+into Python as a student. We're going to insert Sue
+into Python as a student, right? And then we're going to insert
+Jane into SQL as a student, and Ed into SQL as a
+teacher, and on and on. So these just become
+numbers, and again, we're using these numbers
+as like links right now. And so away we go. Right? And so then that plugs all
+these things together, and that's the data that we end up with in the join table, or the middle table,
+or the through table, the member table in this case, is really just a
+bunch of numbers. Although if this were
+comments and forums, there might be the comment
+text might also be modeled in this middle table, right? In the middle table here, the comments in the
+text might be modeled. And you might have a date and
+time and other stuff. In this case, it's super simple. We're unique on the
+student_id/course_id combination, and we're modeling just a
+number, which is the role, which is kind of how you
+do it with students. And then we have to reconstruct
+all this stuff. And so this is a JOIN to
+reconstruct it all, and again we're going to go
+across a couple of tables, select the student name, the role from the membership
+table, and the course title, from the student table joined to the member table
+according to the rules of member.student_id
+equals student.id. Again, pattern, pattern, pattern. JOIN course ON member.course.id. So remember the join is going outward here
+equals course.id, and ORDER BY course.title, member.role descending,
+and then the student name. So then we just see, and member,role descending, the reason I did that is so that the teacher
+shows up first. So now we see Ed and Sue in PHP, and the teacher, student, and then we see Jane,
+Ed, and Sue in Python, and we see Jane is the
+teacher in that case, and then we see Ed
+and Jane are in SQL, and we see Ed is the
+teacher in that case. So away we go. We get all of our data back. We can use joins to
+connect all these things. We can use WHERE clauses to
+figure out if somebody is even in a course.
+Away you go. And so this is sort of like if you take a look at this in
+a data model workbench, you can see these two things kind of pointing out from
+the middle table. And again, this was an example from a MySQL database that I've got in a project called Tsugi that is the thing that I use
+for autograders. So this has been quite a week. You certainly have used integer numbers for
+lots of things. We've used integer
+numbers to compress data, to reduce the size of the
+overall size of data and database, and then we use them for linking and we use
+them for primary keys, and so numbers turn
+out to be important. Normalizing data is turning
+them into integer keys. Why did we do all this? Why didn't we just
+make a spreadsheet with all these things in there? The answer is, it might seem like a trade-off that we had
+to do all this stuff, and we had to make up these numbers, but if you're going to build
+something that's important, that's worth storing
+in a database, it's likely going to get big, right? If it's small, you
+could just write a little Python program
+and do something. Read the file completely every time and make a
+dictionary in memory. But if you can't fit a
+dictionary in memory, you've got to use a database. There's no way you can say, well, I just bought a
+fast, bigger computer. And the answer is if your data's
+getting big like that, buying a 16-Gig computer
+does not solve your problem. So it might seem
+like a trade-off, but you need to spend this
+time to design the database. So when your
+application gets large, exceeds the size of the memory, so you can't just do
+a Python program, it continues to be fast. So this is an exciting thing, and we got so much more
+to talk about in SQL. This is just table stakes. It just gets us into the game so that I can talk about all
+these things, primary keys, foreign keys, logical keys, joins, so that you
+will understand it. And we're going to get into a lot more complex intricate
+ways to use SQL, but this covers all the basics that we need to get started.

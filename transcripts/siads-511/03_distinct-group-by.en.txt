@@ -1,0 +1,180 @@
+So now we're going to talk
+about DISTINCT and GROUP BY. In a way, this is another sort of lens in which to look at sort of
+vertical replication. So we talked about
+vertical replication. We talked in the second
+lecture about modeling and removing the vertical
+replication but not necessarily removing all, remove the
+string vertical replication and then putting that
+in a separate table. And that's what we're
+doing with joins and data modeling,
+and all that stuff. But like when you join
+all this stuff back up, the vertical replication
+reappears sometimes. Or it might even just be
+that there are numbers that have vertical replication. So sometimes it's the
+result of a join. Although I'm not going to use
+joins in this example so you get a better sense of what this DISTINCT ON
+and GROUP BY are. But the idea is to remove vertical replications as the
+result of a SELECT statement. So you do the SELECT statement
+and then you're like, okay, I've looked
+here and I've got vertical replication,
+maybe two rows or three rows that are the same. I only want one, so that's what DISTINCT is. DISTINCT is the
+simplest to understand. DISTINCT ON is if you have more than one
+column but you really only want to duplicate replication on a subset of the columns
+so that you don't care, you allow duplicates
+in some columns and want to remove
+duplicates in other columns. GROUP BY is really
+cool in that when it sees this vertical replication
+and it's throwing and it's sort of reducing
+from three to one, it's doing something with one
+of the other columns like it's counting the
+number of rows or it's finding the maximum of some value in those
+three rows with identical values
+in certain columns or taking the sum or
+average or whatever. So the GROUP BY tends to be combined
+with what we call an aggregate function which is sort of taking a set of rows, squeezing it down
+to one row, but then adding or multiplying
+or adding or summing or averaging or counting across all of
+these vertical rows. So I got some data here. This data is sort of real data. It is from my race car. So I own a race car. My team's name is Sakai
+Racing Team, which is the open source learning management
+system that I work on. And so I don't really own
+all of these race cars. I actually only own the
+first four of these race cars. I own a Nissan Stanza and three Dodge Neons
+of various ages. But I needed more data,
+so I put some cars that, who knows how many more
+race cars I'll have to buy? I'm not the one that
+buys all the race cars. I have a chief mechanic
+and he's just like, "Oh, I want that too." I'm like, "How about we just make a really simple
+reliable car so we can have fun racing it and not
+have to keep working on it?" And he's like, "No, I want to
+put in roller cams," and I'm like "That'll cause
+the engine to blow up and then we'll
+have to work on it." So I have to buy
+several racing cars, one that makes me happy
+and the one that keeps my chief mechanic his hobby
+of fixing broken racing cars. So that's how I have
+so many Dodge Neons. I have two of the
+Dodge Neons I sold. I gave the Nissan
+Stanza to a guy, so I don't have that anymore and I have two Dodge Neons
+that are actually race-ready and one Dodge Neon that just sits in parts
+in a garage waiting for my chief mechanic and his
+buddies to go finish it up. But this lecture is
+not about racing. This lecture is about
+vertical replication of data and DISTINCT and GROUP BY. So you see this is
+not normalized. Remember I said that sort
+of the whole idea of modeling is to normalize it
+and we kind of got car models and you could normalize this and that'd be a good exercise
+is to normalize it. But now think of this as not necessarily a
+table, because it's a really bad table because
+there's replication strings. But instead think of this
+as a result of a join, a couple of tables, and
+now we've reintroduced the vertical replication.
+But the DISTINCT and the GROUP BY happens
+after the join. But I'm just going to make this
+really simple table, hope that makes sense. So let's start with
+the simplest, right? Well, talk about the concept of the reducing the results set. So it's like a SELECT
+happens, does its stuff, including possibly joins, to produce this stuff with the
+vertical replication in it. Then we're going to
+do the DISTINCT, take the vertical
+replication out and create the reduced result set, right? And so that's the idea
+is you've got right now in this little
+SELECT you've got four rows but three of
+the rows are duplicates. When you do the DISTINCT option, it reduces it down
+to just two rows. So don't give me
+the same row twice. And so if we were to look at
+a real query here and we were to say okay, select
+the DISTINCT model, what that really says, now the key and this is a good time to talk about
+the SELECT statement. So the SELECT statement often for me doesn't get enough love. The SELECT statement is an important conceptual part of the relational database model. And if you just say SELECT star
+over and over and over again and then read
+through all the records and throw away the
+data you don't need, you're actually kind of
+throwing away a lot of the power of relational databases. So it's important
+that you only ask for the records, the
+columns that you actually need because then that lets the database give you
+the information you actually need in the
+most efficient manner. So that's where this DISTINCT. If you have two columns, the DISTINCT does
+something different than if you have one
+column because in a sense you're sort of blinding yourself to all the other
+columns and I want to SELECT DISTINCT and model,
+and that's different than SELECT DISTINCT
+make,model, right? So by reducing sort of the
+horizontal width of your query, that's a critical element of why SELECT works and how SELECT contributes to the efficiency of the SQL statements that
+we're going to produce. So all we're basically
+saying is SELECT model, which in effect, by not
+mentioning these other columns, they're not part of consideration. Because if you did a
+SELECT DISTINCT ON, well I didn't make this
+very good over here, I should have changed this data. But if you did a SELECT
+statement on model,year, then these would all be distinct because the year makes them distinct. Although here's a
+couple of Mazda Miata 2001s and they would get classed. But I'm only selecting model and price because the
+SELECT is creating a narrowing of the width of our view that we're
+taking on this. And there are indeed duplicates
+as you look down, right? Neon, Neon, Neon. So
+throws that away, it throws that away,
+it throws Mustang away. Second, third, and fourth
+Miata, throws those away. Second Opel GT. Part of these are cars I
+someday do want to buy, I really would like an Opel GT. But the problem with Opel GTs is if you turn
+them into race cars, they're kind of classic cars. So what do you do, ruin classic cars. But
+you've got the idea. So SELECT model, change the
+width, but then you have duplicates and then DISTINCT
+simply throws them away. It's a pretty efficient process. This is the DISTINCT ON. And I'll be honest, I'm not
+sure I've ever used this in my whole career in databases but basically
+what it's basically saying is that this
+DISTINCT ON make,model. So if we think about the
+width of this query, make,model is the
+width of this query. That's the columns
+we're interested in which means the
+others are ignored. And then we're going to do DISTINCT but we're only going to
+be distinct on the model. We want the model to be unique which means Opel
+can appear twice. So if you said
+DISTINCT make,model, then, well actually
+it's the combination. So it's whatever. It tolerates duplicates in
+the make, is what that does. Now, I want to move into GROUP BY and instead of giving
+you some race car data, I'm going to play with
+actually the time zone data. I just play with time zone
+data because it's already there and it's important
+to know about time zones. And so just think of the time
+zone data as some data that happens to be in a table that I just didn't
+have to fill up. Okay, so the simplest of GROUP BY is you basically say
+GROUP BY abbrev. And this is kind of like
+DISTINCT ON abbrev or DISTINCT when only
+you're selecting abbrev. And so in this abbrev column, you're going to see no
+vertical replication right? So that's the idea. And then that means that if
+there are two rows that have this as their
+value for abbrev, then we're going to count them. So we want to count the abbrevs when there are duplicate
+values for abbrev. How many did you get? I got, there's two
+that look like this. There's one that looks like that. There's four that are IST, etc. And there's 15 that are plus 05. And so it's a way, like a Python dictionary as it were,
+where you're finding a thing, you're group bying it, and then you're doing a count
+of those things. So it's kind of like
+a Python dictionary. So the GROUP BY is where the vertical duplicates are
+going to be squeezed out of. But in the process
+of squeezing out, we're going to count the things that are
+being squeezed out. And I think you could probably make this COUNT star because star means the whole row and it really is counting
+the number of rows that you're throwing away. But in my my brain, I'm like, keep the width narrow, don't ask for stuff
+you don't want. I don't think star
+really does that, but I just like the idea of expressing the minimum
+amount of information, asking the database to give
+you the minimum amount of information that it can
+give you to make you happy. So the WHERE clause works a little weirdly in the GROUP BY, and so here's a WHERE clause. If you go back and you look, there is this column called is or is not Daylight Savings Time.
+False, false, false, false. And some of the lines are true. And so I can say I would like
+to do the thing I just did, that's this part here to here,
+but put a WHERE clause. So what happens here
+is this WHERE clause is before the GROUP BY. It has to be before the GROUP BY. If you put the GROUP
+BY before the WHERE clause, it will yell at you. It'll say you've got to put the WHERE clause
+before the GROUP BY. So what's happening is the WHERE is filtering the records
+before the GROUP BY. So that it's just storing all the Daylight Savings
+Time false values out and then that's a set and then it's doing the
+counting on that reduced set. So the WHERE reduces the result set before
+the GROUP BY happens. But that might not be
+what you want to do. You might want to only
+see the ones where the count turns out
+to be more than 10. And so HAVING is like a WHERE clause that happens
+after the calculation. You could almost call this
+WHERE_before GROUP BY and WHERE_after GROUP BY. But that's what it is. HAVING is having is just kind of like another way to say WHERE, okay? It really looks the same. The difference is in
+the HAVING clause, you can put this COUNT abbrev
+in that HAVING clause, but you can't put it
+in this WHERE clause and you can't move the WHERE
+clause after the GROUP BY. So it's just kind of like this. It does this thing,
+it does the GROUP BY, and then in effect it applies the HAVING to the
+result of the GROUP BY. Quite nice, quite pretty. Up next, I want to talk about
+sub-queries or sub-selects. This is another thing that makes your database
+administrator really upset if you use this
+feature too much.

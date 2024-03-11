@@ -1,0 +1,604 @@
+This is Ellie. We're going to go and talk today. We're going to do a little interview and
+then we're going to talk about her preferred tooling. Tell me about yourself. How did you get to
+where you are now? Where are you now?
+Let's start with that, and then how
+did you get there? Yes. I'm in Seattle and so I've been working at this
+open-source project DVC. Technically, our company
+name is Iterative, but most people know us by DVC, which is our flagship tool,
+data version control. Anyway, I got into this
+through academic research. Since I was an undergrad, I've basically always been
+working in research labs. I was always on the mathematical modeling side and
+I really loved it. I did a lot with complex
+dynamical systems, which is the coolest,
+most beautiful thing. Machine learning is
+all about brute force, huge data that you'll
+never understand, but complex dynamical
+systems is truly beautiful. I started there and
+then I gradually, as I was going through
+my bachelor's, my master's, my PhD, I started working on larger
+and larger computers. So there was some
+high-performance computing, but this was before GPU computing really took
+off with deep learning, so a little bit before that. I could really tell
+that there was a lot of action going on in
+Machine Learning. There were two parts that were
+really interesting to me. One is that in some ways
+it's not totally new, but it really has changed the way that we can think
+about statistics going from inferential statistics
+about hypothesis testing to predictive modeling and
+it's a neat paradigm to learn, and I really wanted to get
+on top of those techniques. Because I feel those
+we're going to be important in
+science in the future. Also, I didn't know the
+word for it at the time, but I really like this
+thing, DevOps and MLOps. I was always in science
+much more interested in how do we do things more
+than what the answer is. I don't really care
+what the answer is. I just like the good problem. How can we solve this? So that's all about, how can we create great
+computing systems, reproducible methods. But also things that are going to work for people
+which is sometimes much harder to define than
+the technical specifications. After finishing my PhD, which was wrapped up in November of 2019 and the topic of it was
+Speech Perception, I mean, it was still
+mathematical modeling, but it's like you
+can do that with any topic and that's
+what data scientists do. You learn the methods and you show up wherever
+you're needed, you learn a little
+bit and you go. I decided I really wanted to get some more exposure to the
+software side of things. It looked like working
+on methods was really blossoming in open-source
+data science. That's where I wanted to be, so I joined up with DVC
+and I've worked a bit, doing a lot of our developer
+advocacy type thing. I do a lot of outreach, a lot of trying to
+create videos right now. All about how this version
+control work for data science. I also worked on one of my
+favorite things which was a new product that we launched about doing something called
+continuous integration, which is a hardcore
+DevOps principle and making it work
+with machine learning. That's what I've been up to
+lately and how I got there. Can you tell me a
+little bit more about this DevOps thing,
+you're referring to? Okay. I feel very
+fortunate that I came into software in a time that DevOps was already
+well established. But from reading, Laura
+tells me that there was a time when software was a very difficult
+thing to deploy. One of the things that I
+encountered off in working in a research lab was that we'd spend months and months
+working on something, but the code was never
+really released. That's partially
+because of there's not a culture of releasing
+a lot of code and data, but also because of releasing code is
+actually quite hard. Getting things into a place where it's really ready to be used, where it's well-tested,
+that's difficult and it's a separate art from
+building cool features. DevOps is a movement
+that came about, I think mid-2000s
+is when it really started to like
+accrete and solidify. It's the marriage of
+development and operations, and it's based on in a lot
+of software companies, there was an imbalance between these two opposing forces that developers want to
+make cool things, they want to make them fast. Operations is guys or girls that want to keep
+things going stable, no interruptions in service, nothing's going to go down, and everything that gets
+deployed is well checked, well validated, and predictable. So these two things they're
+opposing one another. Before some practices
+got worked out, it might take months
+to sufficiently test some code before we could deploy it and
+share it with the world, and then bug fixes could
+take a quite long time. So DevOps is moving towards, we're going to release
+code several times a day and we're going to
+test it every time. Basically, every time we
+check coding with Git to our repository we're
+going to test it, and we're going to see if this is a candidate to be deployed. We do this at DVC and it's
+amazing to watch, I love it. We can push code, we can release bug
+fixes or whatever, several times a day or a
+week and it's just awesome. It's been one of
+the coolest things for me to learn about. It's an automatic
+proofreader in some ways, you're going to catch
+mistakes I make so that in fixing
+something over here, I don't break
+something over here. It's automatic in a way but you still have to be very
+smart about defining well, what tests are important
+so you have to decide. But now there's a lot of tools
+for traditional software anyway that have kind of standardized what tests
+you might want to run, and a lot of them
+are integrated with things like GitHub and GitLab. So yeah, basically, it's kind of a proofreader
+plus a little extra, make sure you didn't
+go backwards, get worse, miss something big. So where's the overlap
+between this DevOps, I'm going to use the
+word culture here because I love DevOps, and there is a culture around
+it and Machine Learning? Machine Learning you get your dataset and
+you're going to make predictions so
+that's an afternoon, maybe two afternoons
+of work, right? There's a bunch of statistics out there and they're all
+small sample sizes, and it's hard to
+access the raw data because I think they're
+done behind closed doors. But apparently tons of people report that it's very hard to get your models deployed. A lot of data scientists
+say they have very little sense of having
+any impact on their business, because if you make
+a model and testing that and deciding
+is this ready to go into production
+and monitoring it, is just such an
+overwhelmingly complex thing. A lot of the traditional
+software testing tools that we have don't work well
+with Machine Learning, and part of that I
+think is cultural, is that data scientists
+and software developers have very different skill sets
+in a lot of organizations, and so there's not
+enough cultural overlap to facilitate that. But some of it is also just, Machine Learning is
+complex in a way that I don't think we've really had to
+contend with before, in terms of the
+dependencies for hardware. Anybody who's played with TensorFlow and CUDA
+and their GPU, that's not a fun time. So these things are really quite difficult
+to automate using the exact same tools and so the project that I've been working on, Continuous Machine Learning, is basically a toolkit to adapt things like GitHub Actions, or GitLab CI, which are really, really established frameworks for doing continuous integration, the idea of checking in your code and testing it automatically. But make it easier to
+do that with, "okay, but my data lives on
+an S3 Bucket," or, "I've got this pipeline
+I've got to run." What's S3? S3, It's just storage. So yeah, kind of fly with it. But it's just a storage bucket and you can just think of it as just a little file server
+for you somewhere in the cloud that somebody else
+is going to manage for you. You've got this
+mathematical background, and this DevOps interest, and this has come together to obviously
+give you a career. Tell me what a typical
+day is like for you? What are the typical
+projects you're working on? Where are you spending your time? What do you enjoy about your day? What don't you enjoy about
+your day or your tasks? It kind of varies a lot, we're a 14 person startup so at this point we all kind
+of wear a lot of hats. Some days I'm actually looking over poll requests
+and going like "Okay, do we want this feature or not? Which is the priority here?" Sometimes I do a lot
+of defining use cases, which is when we say "Okay, we're interested in getting into DevOps and discontinuous
+integration tool." What are the Use cases? Do I have to go and
+make up a bunch of data science problems
+and figure out how I would possibly use this? What are the things that are
+going to be most important? So a lot of that, and
+a lot of writing, a lot of communicating,
+a lot of talks. I love giving talks, I'm so happy about that. The thing that I didn't expect to be so hard is that there's much more teamwork and collaboration than I was
+used to as a researcher. As a researcher, I would just
+go off into the woods by myself for three months and then I'd come back
+and show people stuff, and then I go away for
+another three months and I never really
+had to see anybody, and I realized that
+I was actually quite happy with
+the solitude of it. So I actually have to
+be more intentional about having times where it's like I'm not going to review anybody's poll
+requests right now. I'm not going to interact
+with people on social media, I'm just going to be
+alone for a little bit. Let's switch topics a
+little bit here and go into the Machine Learning
+aspect of what you're doing. Can you talk about a model you've built and a dataset
+you've played with, that you were really happy with? Then inverse, what just wasn't working no matter what you
+tried and what did you try? My favorite ML model project
+I've ever worked on was, it was a piece of data journalism for this magazine
+called The Pudding. They're an online data viz, journalism site, free content. I completely recommend
+looking at it for inspiration for every kind
+of data science project. I wanted to know if
+the size of hair, how it had changed over the last 100 years in high
+school yearbook photos. I just thought so, I was looking on the Internet
+archive and there's all these high school
+yearbook photos and I'm like, "My gosh, I want to do something with these," or we can quantify them somehow and it felt
+like let's go into the hair. So I ended up building a
+neural network to segment out the hair from the pictures and then I could do
+some metrics on that. I was really happy
+with the result, but it was an interesting lesson. This was where I first learned, I really, badly need pipelines, is because I kept losing track of what things were
+dependent on what, and because I was doing a little bit of hand labeling
+of the data, Train a Model. Then use that to estimate some hair maps
+on some new photos, and then use the
+good ones of those, to put them back in the
+model, and keep retraining. I was augmenting my training set of labeled data, very gradually. The dependencies were going wild, and I could not keep track of it. That was eventually,
+when I realized, "Okay. There has to be something
+better out there." That made me really
+appreciate why pipelines, and version control are an important thing
+for your own sanity. Not just for these lofty
+goals of reproducibility. Just to get through
+your own work. Even when you're working solo. But it was a really fun project. A project that I think
+has been much harder is, I scraped a dataset off Reddit. There's a forum called, Am I the Asshole? I don't know if I could say
+that in a corporate language. You totally, can say it. It's like, "Dear Abby," but where the Internet votes about if you were a jerk or
+not, basically. I scraped a bunch of those. I was trying to
+train a classifier, and I think I was expecting to be able to do it with reason, not perfect accuracy, because it's actually a
+very subjective question. I wouldn't expect
+a human to be able to predict with a 100 percent, or maybe even 95
+percent accuracy. How a bunch of
+Redditors are going to vote on a moral dilemma. But I did think we would get
+slightly better performance, and I was really topping
+out around like, 60 something percent accuracy, with a balanced dataset. Even when I was using BIRT. These are really hardcore models, I was actually doing
+better with linear model. I don't know if I was just
+doing something wrong, which is always possible
+when your model is that big. But yeah. I was like, "I'm not going to get anywhere
+good with it yet." I released the dataset online, to maybe other people, and people have worked with it. See if we can push the
+boundary a little bit. You've talked about a time
+when you were writing code, and you made an assumption
+about your data in a function, or in a method, and that your assumption
+was just not accurate, and it came back later
+to cause a problem. Yes. I inherited a bunch of
+code in my master's thesis. I inherited this codebase. It was like 10,000 lines of code, and I really didn't
+want to read it, and so I didn't read all of it. I definitely assumed,
+that everybody who came before me was
+considerably smarter, and would not have
+left any errors. It turned out that it
+was full of errors, that I really didn't detect until about a year, and a half later. Somebody told me a trick. They're like, "Makeup
+garbage data, and put it through the model." If your result is
+still coming back, if you're getting
+significant detection of something, it's garbage. Then I tried it, and
+I realized, "My gosh. This beautiful answer,
+you would get it no matter what was in your data." Ever since, I've been religious about putting garbage
+data through one. Can you tell me about machine-learning
+pipeline stuff you've run into at some point, where something happened that was unexpected that maybe the students here can learn from. I've actually been
+warned about this, but I think it happens anyway. When I was working on this,
+Am I the Asshole dataset, there was one point
+where I was like, "Wow. My model's really working. I'm getting amazing results." It was like 85 percent, and it had never been higher
+than 68 percent accuracy. Then I realized that I had a leakage that I didn't intend, and it was that I had done
+PCA, and then splits. In PCA, before you split your data into
+training and test, then we'll incorporate
+lots of information about the tests set
+into its features. What is PCA? Principal Components Analysis. It's a way of futurizing
+your dataset. It's also a way to reduce
+the dimensions of it. If you have tons and tons
+of dimensions in your data, and you don't think all of
+them are that interesting. You think a lot of them are quite correlated with one another. There's really no reason to
+keep 20 correlated features. You really only need one. You just can project it
+into a lower dimension, and you sacrifice a
+little interpretability. But it's a great go-to, when you think you have a lot of correlations in your data. But if you do it before
+you split your dataset, it's going to incorporate information about your test set, and that is bad. That will inflate what you
+think your model can do. Awesome. I'm going to
+ask you next time. I think you've already,
+somewhat, covered the answer. But one of the things we're talking about here is tooling, and we talk about it. All you know is a hammer, then all you see are nails. We've talked about
+the introduction of not using Jupyter
+Notebooks for machine learning
+pipelines because your servers aren't
+running a notebook, so we've introduced them
+to an IDE in that tooling, we've talked about Git and introduce the advantages
+of using Git. What's a tool you like to use
+and can you give us a demo? Definitely. So a tool
+that I am very proud of and I'm not completely subjective because when
+you work on open-source, it becomes your baby. You have a question? Yeah. I do have a
+question. We've covered this a little bit in this class, but I think we should
+get a good definition of what open-source is. Yeah. I do know that there is a rigorous definition and I am not hardcore enough to know what that is off
+the top of my head. I know it's different
+from free software, but generally, to put it in the
+terms that I would use like a dinner party, I would say it's free software, the code is available
+and it's open for contributions
+from the community. If you go over to DVC, we don't charge you to use any of it and if you want a feature, you can leave an
+issue or you could even take some of the code, bring it over to your
+computer with Git and play with it and then submit what
+you made and we will say, "Oh, maybe that's a
+good feature that we could add or new optimization." It sounds like anyone
+in this class who wanted to could contribute
+feature changes, either code or documentation, or examples to this
+open-source project. That sounds like a great
+opportunity for extra credit. Reach out to me if you're
+interested in doing this. Can you give us a
+demonstration of this tool and how it works? Yeah. Let me screen share. I've made a little demo problem
+with some garbage data. Let me clone it. Let's see. You'll notice,
+students, that this is Visual Studio Code but we are
+using Theia in this class, which looks almost
+identical to this. Cool. This is the version of
+it that runs locally on your Mac as opposed to running in the Cloud on Coursera's
+infrastructure. That's quite nice, you
+have something like that. I made a GitHub repo here that anybody can make a Fork of. So you'll press, Fork, assuming you have
+a GitHub account. If you don't, it's definitely
+worth getting into it. It's a little bit of a social network for
+people that want to work on open-source and any collaborative
+software projects. It's also good for
+your portfolio. You can go here and
+then we'll clown it. This is basically my own
+little copy of this project. I'm going to do git clone, enter my password and boom. Here we are. I've made a
+couple of scripts here. I made a get_data script which
+is just going to generate a bunch of completely
+fake random data. It is a regression
+problem, but it's fake. I have to enter the
+working directory. It's going to generate
+some data for us and it's going to just put
+it in this file here and we've got just some CSVs of largely random
+numbers but there is a real signal in here I
+promise, it's just subtle. We've got some features
+and it's already split. I did an 80-20 split into
+training and test sets. This is just setting
+up a workspace, setting up a problem. I've got two scripts. I've got a script
+called train.py. This is going to open
+up my training data. It's going to fit the
+simplest model that I can here, a linear regression. We're just going to print
+out what was our r squared, the proportion of variance in my outcome variable that
+is predicted by the model, and we'll save the model. Then I've got an
+evaluation script. What this is going to do
+is open up the model, test it, or evaluate
+it on our test set. Then I'm going to print
+out a couple metrics. I'm going to get
+the r-squared here, and I'm also going to get
+the mean squared error. I'll also make a picture. It's just going to be a plot of the residuals. Pretty basic plot. Cool. What you can do is
+just run these scripts. You can run python train.py
+and then you can run eval.py. If we do that, we're going to see
+the outputs up here. Here's our residuals plot
+and here's our metrics. But when we have these
+as separate functions, generally every time
+anything happens that if our dataset changes or if our
+training script changes. We don't want to have the
+metrics and our plot hanging around in my repository unconnected to the code
+in a meaningful way. Because that means you could
+update your training code. But if you forget to run
+the evaluation script, then this will no longer reflect the model that you
+actually have code for. We want to be a little
+bit more rigorous. We're going to define a pipeline. A pipeline is a
+directed acyclic graph. If you're into the math terms
+for it, and if you're not, we're just going to link together a bunch of processes
+and we're going to make note of what files in this
+repository depend on what? There's two ways
+you can do that in DVC and I will show
+you both of them. If we already have Git
+initialized in this repository, which we do, this
+isn't Git repository. I have got this plug in
+here, so you can see. But we'll do DVC in it. If you have never put
+DVC on your system, you would have to get. How do I put DVC on my system? Because this sounds amazing, and how do I get it installed? Yeah, so it will depend
+on your operating system, but it goes by a standard
+package managers. If you're on Mac,
+you'll use Brew. If you're on Windows,
+we have an EXE, so you can just download it. We also have a Windows
+Package Manager. You can also do it through Pip. I don't personally love
+using it through Pip. I have some opinions about how Pip should and shouldn't be used, but lots of people do use it through Pip and
+that is also fine. Yes. Quick point line. On the Courser Infrastructure
+we've taken care of installing this for you.
+It's all ready to go. If you launched this
+week's lab in Coursera, it's built in there. Awesome. I did it through Pip, I'm sorry. That's totally fine. I don't usually sounds like
+for this application you're not managing a whole system,
+that mean this is fine. The function to
+define a pipeline, you're going to do it in stages. The first stage
+will write DVC run, and we're going to put
+this end flag to say, what's the name of the stage? We're going to call it train. What does it depend on? Well, it depends on data
+and datas are repository, so I'm just going
+to write data and I will say the whole repository. You could go more
+granular and specify that it's the whole path to like
+just the training set. The training y.csv,
+trainfeatures.csv, but I'm not going to do that. We've got dot D data and the other dependency is
+the training script. If either the dataset or our training Python
+script changes, that means this stage
+will have to be rerun. Then we're going to
+say what's the output? The output is the model file, which is written to
+this directory models. I'll put the directory, and then we just write, what is the commands? What's the process? It's going to be
+python of train.py. Do this and it will execute. You can specify
+with the flag that you don't want it to execute
+when you declare it. But I just did. When this happens, these
+two files are going to appear in your directory. This one is called your DVC YAML, and this is going to give you your pipeline in a YAML format. YAML is, if you're not familiar, it is yet another markup language and it's growing in popularity. I've really started using it in the last year and it's pretty. Once you get into it, it's nice. We've also got this
+DVC lock file, which is full of
+mystical numbers. Basically, what these are, to put it very shortly is
+that these are addresses for where previous versions of what your dependencies look like. We're saying, "Okay,
+if I have data, what's the current
+version of it?" It's doing something
+called a hash, and it's going to determine what precisely is the data and so if it recomputes a hash and
+it doesn't match this here, it'll know the pipeline
+has to be run again. This is very similar to
+a makefile, by the way. If you're familiar with
+all with makefiles, we've taken the idea of
+make files and adopted them more for Data Science and an interface that is more comfortable for data scientists. But if you're using makefiles, hey, you're cool with me too. Let's create the next stage, and we can also do this manually. You can edit the
+YAML file manually, and that is fine too. The command for this is
+going to be eval.py and our dependencies are going to be now models, that directory. We're going to also depend on eval.py and also data because
+of our training dataset, our test dataset is in there. Now, we're going to
+have our outputs. One of the outputs is this file residuals.png that I created, and the other is
+special, it's a metric. DVC actually has a special custom way
+of handling metrics. The metric here, they have to be formatted
+as a JSON, a CSV. I think there's one other,
+but I don't remember what. It's all in the docks, and metrics let's you
+do special things. In Git, there's
+something called the git diff where you can compare code like a single file across
+different branches or commits, and metrics is a convention that really specializes that for the metric like accuracy or R-squared that you might
+have for machine learning. Could we reword dependencies to be like inputs to some extent? Because if you think
+of this as the phase, these are the inputs
+to the phase and the outputs are both
+outs and metrics. Is that a fair way
+to think about this? I think so. I think
+the only place that would break down is things like the Python script itself is not like an
+input to the process, but I definitely think that that's a fair kind of
+high-level way to think of it. When we're ready to
+run the whole thing, we'll do DVC repro. That's DVC reproduce and that is going to run everything
+in your pipeline. Now when I run DVC metric show, it's going to show us
+the metrics and these correspond to what's now in
+our test_metrics.json file. If you don't want to save these, then you don't have to commit. But if you like it,
+you can do git add. Then you've got a commit saved, and then you could push this
+to your repository or not, up to you. Let's
+do something else. I wrote my get data scripts
+so that if you run it again, it'll just add more data to
+what you have. Let's do that. That's going to simulate like, what if you've got a
+whole bunch of new data and many kinds of
+data collection. The data is going to be more or less continuously coming in. I'll use hyphen get_data.py. Now my dataset is
+going to be different. Now what DVC is going
+to do is it's going to check based on this
+DVC lock file and it's going to look if the data is still the same exact
+thing content-wise. If it's not, it's going to re-run our pipeline and it's going
+to rerun the train stage. That's going to
+regenerate lots of things that the test
+stage depends on, so it will rerun all of them. Now if I run DVC repro, see, it's running the
+whole thing again. We can look at our metrics again and we can do something
+called a DVC metrics def. That is going to tell us how
+our metrics have changed between where we are currently
+and our last commit. We can see that, okay, we've got a little bit better
+on our mean squared error. Marginally better,
+probably not significant, but I'm not doing any stats here. Let me just commit this. Give a moderately
+informative commit message. Now let's switch
+to another branch. Let's call it cool model. I want to pause for
+one second here. Git checkout hyphen b branch name will actually create the
+branch and then check it out. We've been doing git
+branch to create the name and then git checkout
+to check it out by just moves that
+into one command. Yeah, thanks for clarifying. There's a lot of little
+flags and work-arounds from git that I learned
+very quickly on the job. I was surprised at
+how much you know, a lot of git ninjas out there. So now if we are on this directory and something
+cool about VS Code is that when you change branches it changes the code for
+you, which I love. There's something
+I do, I don't know if anybody else in
+the world does this, but I think this is good. In software generally
+we often think of the main branch of
+your project as being what is in production and things that are on
+your other branches, you'll be essentially
+experimenting. It could be a new feature. An idea that we're
+really interested in and which we're
+kind of constantly developing and evolving
+with the community is what if we kind of treat experiments in machine learning as branches? If you've got a model
+that maybe is like, "This is the model
+that's good to deploy, but let's consider other
+models or other improvements." Maybe it's in a change
+in the way that we process the data or that we build features or something
+about the model architecture. We'll try those on another branch and if they're good enough, then we can merge them
+into the main branch and that can go be a
+candidate for production. What I like to do is start
+on the main branch when I'm doing a machine learning project
+with the simplest model, I just hypothesize like, "Well, this is a model that I feel like is kind
+of the baseline of what kind of
+performance I can get without going to like
+a totally null model. Just always estimate the mean
+of the data or something. I'm going to put
+the linear model on the main branch and then
+I'm going to explore some other more complex models and the other on another branch. So I created a branch here, and I'm going to still stick in that family of linear models, but I'll do lasso,
+which is cooler. It's going to add some
+more regularization. I really don't have a hypothesis here about what model
+will work the best. Usually you just kind
+of have to iterate over a couple of them
+until your intuition builds about what's
+going to work. Maybe do some Data
+Viz and all that. Let's do that. Now I'd only have
+to change it here. You should work and
+now I'll do DVC repro. Training changed,
+it's going to rerun everything and now I can
+do DVC metric stiff, and I can specify with master. Or if you're branch was
+main and then you would say main here and it will tell you how does my current metric compare with what's on
+the master main branch. It's not clearly better. You could go in and do
+some more stats and stuff, but this to me is not
+super convincing, so I probably would
+not merge this. Something cool that
+you can do with pipelines so you can
+reproduce them and you can reproduce them on any computer and so something nice about defining a pipeline is
+that they're perfect for automation on other
+people's computers. Which is something big and
+continuous integration. I'm not going to show all of it, but I'm going to show a
+high level view of what that means and what is
+continuous integration. I coded up a very similar project a few weeks ago
+for a video that I made on YouTube about using GitHub actions
+with DVC pipelines. If you don't have
+a GitHub actions is that's cool, I'll show you. Basically we've got a
+very similar workflow. We have a dataset, we've got a train
+script which is going to do something
+incredibly similar, and it's going to produce metrics and a data visualization. Now, in GitHub, you could
+do something special. You can create, always
+in the same place, you go into
+this.Github/workflows and you create another YAML file. Doesn't matter what the name is, it just has to be a YAML. It's a recipe and so don't worry if you don't know what a lot of these things are. A lot of it is actually
+very formulaic. But we're basically
+saying anytime that we get a push
+to the repository, we want to run a
+certain workflow and we're picking out a container and a container is going to be a set. It's how I have that
+installed requirements, I just have requirements file, it's like saying, what's the
+software environmentally? What versions of Python? What are all the
+packages that I have? Things like that are all going
+to be in this container. This is really cool because you develop maybe locally
+but you want to test, okay, but what about the system that this is eventually
+going to work on? What are the constraints
+of that environment. You want to be able to test
+it automatically there. You can write up
+that environment in a container and this will
+help you test it there. This is some kind of GitHub Formula stuff
+not that important. Basically, you can run
+your workflow here. By run a workflow, you can think of this as being
+like at the terminal of your computer except
+it's a computer that GitHub owns and manages. It's nice, because it
+means that you don't have to do the work of
+maintaining that computer. You don't have to be the
+administrator of that computer, keep it clean,
+update the packages. It belongs to them, It's
+their problem, it's great. What we're doing is we're
+going to install requirements, DVC comes with the
+container already, so we can just run DVC
+repro because if we have a pipeline file inside
+the GitHub repository, it will run that. Then this is just a
+little bit of GIT, so we're saying make
+sure that we have the GIT history accessible
+to this computer, and then we're going
+to do the metrics DIF. Just like we did on
+my local machine with an extra flag that says but
+format it for mark down. It's going to just
+be a little bit of special formatting for the Markdown syntax compared with what's on the
+master or main branch. Then this is just a little
+bit of bash scripting saying, and put it into this new
+file called report.markdown. Then we're going to just put a couple more things
+into the report and so CML, or continuous Machine Learning, the project that I was
+mentioning earlier, gives a toolkit and it has
+some functions in it to help us publish things like images
+into the markdown report. Let's make this commit and
+you just do Start commit. Yeah, let's say six YAML and
+let's create a new branch. Ideally you'd make a more
+interesting change than I did but you can do this
+with any poll request. We'll do proposed
+change so we'll say, do I want to create
+a Pull Request? Yes, of course I do and now we're going to see
+that something's running, and this is basically a progress report on what
+GitHubs computer is doing. So if we click on details, then will be taken to
+this little portal, which is basically a window into a computer that they manage. It's like we're looking at the printout in the
+terminal of that computer. This computer has been
+automatically assigned to us. You can do cool things by putting in like other computers. You can say, "I have
+my own computer, I have a computer with
+a GPU, let's use that." But this is by default, it will work for their computer. Right now it's pulling
+a Docker container kind of slow because its big. Basically, you can
+just watch it go. Another way to see
+this is that if you go on this line up here, you can see actions. You can see basically every action before and
+you'll get it checked. Did it run successfully? If it didn't, you would
+be able to look at the log files and
+tell, what's going on. While that runs, I can show you maybe a previous
+poll request. But basically this is the
+output that you'll get. After GitHub runs
+your action workflow, then it's going to print the
+table that we requested. It's going to put
+it in this table here and it's going to take the image that we created
+and put it here also. Interestingly, the image itself doesn't actually live in
+your GitHub repository. It was generated once by the
+runner in that workflow, but then as soon as
+that runner is dead, the image isn't there anymore. It's ephemeral and as
+actually by design, is that when you're doing
+this automatic testing, you often don't
+want to save all of the models or the artifacts
+like images that result. You'd only want them
+after maybe you've made the decision that
+you're going to merge this. They're not here, but what you
+can do now is you can say, "Okay well, when I made this, I can go to okay, we'll
+work with my commit." You can actually
+browse your repository at that point in time and see, what was my data set? What was my code? It's like you have a
+complete experimental log, but you also have
+this automatic check. It's like everything is
+being executed without you having to remember
+to run dvc repro. It's all in one place for everybody else who
+works on your team, which might be like the rest
+of your full stack teen, and might be the people that are interested in deploying this or anybody else is around and
+we can all decide together. We can have a conversation, are we ready to merge this? The motivation here of
+doing a combination of images and tables is
+that in machine learning, it's often not clear. Is this an improvement? With more traditional software, something like a pass-fail
+signal can be pretty good. But here it's really not
+clear because if you have overall global accuracy
+improvement you don't necessarily want to automatically merge
+because of it, it could have gone way down in a subgroup of your data that you really care about and can't afford to sacrifice
+accuracy there. You can basically put whatever you want and whatever is specific to your project
+into this request. You still have to be smart
+about what test you run. Oh, and here we go, it ran, should be done. There we go. Yes, it didn't print a table because none of the
+metrics changed, because of neither the
+data nor the com changed, but printed out a picture. That's the gist of it. That's great. Are there any
+last motivational words or phrases or thoughts you
+have for the students in this class on dealing with
+machine learning pipelines? Well, I mean, there's certainly
+lots of approaches and even though I really like
+this one and it works for me, it's very Git centric. I also feel like the
+best tool for you is the tool that you'll stick
+to and that works for you. We have really, really
+strong support. One of the coolest things
+about DVC is that we have a really active community and there are a lot of
+students there. We welcome a lot
+of people who are interested in making
+their first ever pull request to our repository
+and want to contribute to the project or who want
+to make a blogger docs. If you're interested in this, if any of this appeals to you, you should definitely reach out, be in touch because the community is like the coolest part of
+open-source and I think you can't get
+that from a lot of more closed or
+enterprise projects. But that said you
+should definitely use the tool that is easy
+for you to stick to. I think the advantages
+of Git really shine like the closer
+you are to engineers. But there are definitely
+still data science teams, I think sometimes maybe
+at a large company where everybody is working
+on a Jupyter Notebook. I think when you work
+on like a smaller, more specialized team,
+you get into more of everybody has to deal a
+little bit with everything. We've all got to be
+in command line. The last thing I'd say about
+that is for me getting to do things in the command line and learning about that it's so cool, you feel really powerful. You get superpowers that
+you can be really proud of. I do think it has a lot of value for your understanding of
+the systems you work on. If you find any of this
+interesting there is like a bottomless rabbit hole of cool things to learn that
+all can help your career. Awesome. That was
+great. Thank you.

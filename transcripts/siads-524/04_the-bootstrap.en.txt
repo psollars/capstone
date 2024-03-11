@@ -1,0 +1,422 @@
+Welcome back. In this lecture, we're going to enter into
+a discussion of an extremely flexible and useful procedure called the bootstrap. The bootstrap technique can be used a lot
+of different ways in statistics and data science. But certainly one of its principal uses
+is in estimating uncertainty around statistics of interest, like means,
+coefficients, other metrics, etc. This really is one of my
+favorite things in uncertainty. Before I get into the mechanics
+of a bootstrap technique, I want to talk about
+why we run a bootstrap. And I want to go back to a concept
+called the standard error. Now the standard error under
+the frequentist world view is a measure of variance for a sampling distribution. A sampling distribution is a collection
+of values, in this case sample statistics like the mean,
+from multiple samples of a population. The standard error is this core
+concept in expressing uncertainty. Now if we have an actual
+sampling distribution, the standard error is the same
+as the standard deviation. I take the standard deviation of the means
+from the sampling distribution and I would have its standard error. We can use the standard deviation formula
+to find the standard error in this case. The standard error is this principal
+component we're going to use to create confidence intervals and other common
+representations of uncertainty that we'll cover in future lectures,
+so it really is important. There are three ways we can
+estimate the standard error. The first is if we have multiple samples
+of a population, we can calculate the same statistic from each sample and
+produce a sampling distribution. From the sampling distribution, we just need the standard deviation which
+is equivalent to the standard error. Now that's pretty easy. It's direct, I like this approach. But the challenge with this first option
+is that we often don't have multiple samples from which to draw, which brings us to a second method
+of estimating the standard error. The second approach is to calculate
+the standard error analytically. By this, we just mean use a formula. Depending on the statistic, we may actually be able to use a simple
+formula to estimate the standard error. Some statistics like a mean or median
+have an explicit formula from which we can estimate the standard error
+from just a single sample. The third approach in the final
+strategy is to take a single sample and resample it thousands of times to
+create thousands of synthetic samples. From each, we can calculate
+the statistic of interest and form a sampling distribution. And then we can calculate the standard
+deviation of the sampling distribution of synthetic samples to
+find the standard error. It is this third approach,
+which is the subject of this lecture, it's called the bootstrap. The term bootstrapping originated
+with an 18th century phrase, meaning to pull oneself up
+from by one's bootstraps. At the time, the phrase was used to describe something
+that was thought to be impossible. Now some people also reference back
+to a story about Baron Munchausen, this fictitious German nobleman
+who pulled himself and his horse out of a swamp by his own hair. Now boots weren't mentioned in that story,
+but the same idea of bootstrapping applied. Today, bootstrapping refers to
+a creative inventive solution that lacks adequate resourcing or to make something
+larger out of smaller components, which is what we'll do. Bootstrapping statistics was developed by
+a statistician named Brad Efron in 1979. This development coincided with
+the rise of computing power. Bootstrapping was built on
+the idea of using random variation within sample to better understand
+an estimator like a mean. Bootstrapping gained traction
+because it's very flexible and can be applied to a lot of different
+kinds of statistical learning problems. To illustrate how bootstrapping works,
+let's start with an example. A year or two ago, my family and
+I went to Southern California for spring break and
+we went to this large flower farm. So when you visit the farm, you can go
+around and look at all the flowers and they have acres and acres. I think they said they have 50 acres of
+flowers that they grow commercially and then sell all over the United States. Suppose we're talking with
+the manager of the farm and they want to know the mean
+number of pedals of the flowers. And perhaps this is important
+because what they end up charging their retailers is on the number
+of petals that are on flowers. So we've got all these flowers,
+probably millions of flowers, many acres. We can't realistically go through and
+count all the petals and find the mean of the entire population,
+that's just not feasible. So we're going to have to draw a sample. So we go and we randomly pick 10 flowers. We count the number of
+petals on each flower and we find the mean of that, and
+that mean let's say is 4.2 petals. So we got 4.2 petals as our mean for
+our sample and this is our estimate for the number
+of petals in the larger population. Now the manager comes back to us and
+says, that's great. How sure are you that that's
+an accurate representation of the number of petals in the population,
+in my flower farm? Because they recognize just intuitively
+that we only looked at 10 flowers and there were millions to choose from. So we said, okay, good point. We'd like to draw 100 more samples or
+1,000 more samples of 10 flowers each and we'll pick them all and
+we'll count the number of petals and we'll find the average number
+of petals for each sample. And then we can share with you
+a sampling distribution of means and we can know how certain we
+are that the mean is 4.2. But the manager points out
+that would be very expensive. We would wreck a lot of flowers in
+the process and says that's not an option. So another approach we could
+take here is bootstrapping. So when we don't have the option to
+go back out to the population and get more samples,
+we can use the current sample and essentially resample it,
+draw samples from it. So how this works is we take
+the original sample and we randomly pick a flower from the original sample and
+we put it in our new sample. We count the number of petals on it and we put that flower back
+in the original sample. Then we originally draw again and
+draw a flower out and put it in our new sample and
+count the number of petals. And we continue this in this case 10
+times because there's 10 flowers in the original sample, we're going to put 10
+flowers in our new bootstrapped sample. And one thing you might notice is that
+in the original sample, we've got more colors, different kinds of flowers
+than we do in our bootstrap sample. So the bootstrap sample is
+different from our original sample. It should be because we're
+sampling with replacement. And sometimes you may pick in this
+case more of the color red than is in the original sample or
+perhaps we're missing yellow or other color of flowers
+in our bootstrap sample. So we bootstrapped and we got one
+new sample from our original sample. But when you bootstrap, you never
+just do it once, so we do it again. We take our sample,
+we sample with replacement, we begin to draw out these new flowers. Every time I pull a flower,
+I count the number of petals and I put it back in and
+I randomly select again, and I keep on creating these new samples
+based on my original sample. So on the picture here, we've got
+an example of three, but realistically, we would do this thousands and
+thousands of times. And each time we're creating these
+bootstrap samples, we are calculating the mean of each sample because that's the
+statistic that we're really interested in. And once we've done this
+thousands of times, we've created thousands
+of bootstrap samples, we store those bootstrap samples into
+a sampling distribution of means. Yes, because that's the thing we're
+really interested in a picture that shows us how much the means vary when
+we bootstrap off our original sample. This is the process of bootstrapping. Let's generalize from
+the previous example. What do we need in order to bootstrap? What's the recipe we need in order to cook
+up this form of statistical abstraction? There are four components that we need
+in order to bootstrap that go into this recipe. The first component as you already have
+seen is we need a sample, preferably a representative sample or importantly,
+a representative sample, I should say. The second component is
+a sampling strategy. So as you saw in the example,
+we were sampling with replacement. When you're sampling, you have a choice
+of sampling with or without replacement. When you sample without replacement,
+you're drawing from the larger group, a population, or
+in our case, another sample. And every time you draw something
+you don't put it back into the sample that's sampling
+without replacement. Sampling with replacement
+is when we put it back in. So let's illustrate why we need
+to sample with replacement. Let's look at the process of how it works
+if we were to sample without replacement. So here I have a group of numbers
+1,3,4,79,9, 11, 13, 17, that's a group of numbers that I want to sample from, and
+I want to bootstrap off of this sample. I'm going to create 10,000
+bootstrap samples to see how much the sample can vary if it
+looks a little bit different. So I'm going to sample from it, but
+instead of sampling with replacement, I'm going to sample without replacement. So the first number I draw is a 9. So I draw a 9 and
+I put it in my new sample and because I pulled it from my original
+sample, I'm going to set it to the side, I'm not going to replace it
+back into the original sample. I sample again, and this time I get a 1. So I get a 1 value, and again, I'm not
+going to put it back in the original sample, so
+I'm just going to leave it to the side. I sample again and I get 11 and again, I'm not going to replace
+it back in the original. And I keep this process up to 13 and so forth until I get to my
+sample size of n=10, and I realize there's no numbers left that
+I can draw from my original sample. So what have I effectively done,
+I've just replicated my original sample. So in bootstrapping,
+if you sample without replacement, all you're going to do is recreate
+your original sample 1000 times. And that's going to show us no variation. We're going to have a standard error of
+zero because all the samples are going to be identical. That's not very helpful. That's why we sample with replacement. So the third ingredient is we need
+to find a couple of parameters. There's two of them specifically. One is the number of replications or another way to say that is the number of
+bootstrap samples we're going to create. Because we're using computers and
+because these are all synthetic, we can do a lot more than just what we
+would normally do in regularly sampling. So, I would suggest picking
+a relatively big number at least 5000. You may want to go a lot more than that. What will dictate how many you need is
+whether or not your sampling distribution has a regular form or not at the end of
+it, you want to make sure that it does. Another thing that may dictate how
+many replications you create that is is how complex the data set is and
+how long that query takes to run, that can sometimes be limiting reagent
+to the number of replications you run. But I suggest at a baseline at least
+5000 and probably more than that. The second parameter is the resample size. This is the number of data points
+in each of my bootstrap samples. So if I have 5000 of them, what's the end count of
+each one of those samples? We recommend strongly that you use
+the size of your original sample or your unit of analysis for
+your resample size. So what do we mean by that? Let's take a look. So sometimes the question I get when
+we're talking about bootstrapping is, let's say my original sample is 80 and
+I want to bootstrap off that. Why wouldn't I pick a number less than
+80 to just increase the variation? So let's say I pick 30 or 10 or something
+like that from my original sample of 80, and I'll create all
+the bootstraps from that. In the example on the screen, I did just
+that, I have two sampling distributions. One was built on the original sample
+size of n=80 and that's on the right. And you can see that the numbers
+span from roughly 0.9 to almost 1. So kind of have this
+0.1 range on the data. On the left-hand side of the screen,
+I have a different sampling distribution this time instead of
+matching my original sample size, I chose one that was much smaller n=5. And what you see is that the variation
+is a lot wider, the long tail gets down to below 0.8 and almost as
+high as 1.1, so a lot more variation. So we replicate our original sample size
+when we set the bootstrap sample size because we want to estimate
+the uncertainty for the mean of that sample size. Why is this? Because we know that the uncertainty
+will be different for means of other sample sizes. So put differently,
+the sampling distribution for mean is specific to a sample. So any time I'm going to
+bootstrap off of that, I want to replicate those conditions. The last ingredient to a bootstrap
+sample is a statistic of interest. A lot of these examples, I've been using
+the mean, that's a very common example, but really you can use anything. And often when we're bootstrapping, we may be using a different kind
+of statistic, maybe a median, maybe R squared value, maybe
+a coefficient from our regression model. There's a lot of ways I
+can use bootstrapping. And one of the real advantages to
+bootstrapping is that I can apply it to problems that don't have other ways
+of estimating the uncertainty. That's why it's so flexible. So if I have a specific statistic that
+there's not an easy way to calculate analytically, I can use bootstrapping
+to create an uncertainty estimate around that point estimate. To ensure we have a full understanding, let's take a look at the bootstrap
+process, again, using actual numbers. On the screen, we have an original
+sample with n=9 data points. Suppose we want to create
+a sampling distribution for the mean using bootstrapping. How would this work? Well, remember the ingredients. First, we need a representative sample. Let's just assume the sample
+is representative. Second, we need a sampling strategy
+that's sampling with replacement. Every time we make a bootstrap sample,
+we sample with a replacement. We use our sampling strategy to create
+our first bootstrap sample or replicant. Notice here the similarities and differences between our bootstrap
+sample and our original sample. So in some ways, it looks the same in
+some ways, it's certainly different. Once I have a bootstrap sample, I'm going to calculate
+the statistic of interest. For ease, I'm just going to say let's
+calculate and collect the means. So the mean of this
+bootstrap sample is 7.3. We calculate the mean of the sample and
+we store it in a data frame. This is the very beginning of
+our sampling distribution. Of course, the sampling distribution
+is a collection of values right now, I just have one, so
+we need to continue the process. So again, I run the same process over
+again, I start with the original sample. This time again,
+I sample with replacement. I create a bootstrap sample again, notice the differences
+between my bootstrap sample. In my original sample, I calculate the mean of that sample this
+time it's a little bit bigger, it's 8. And I store that value in the sampling
+distribution in the data frame that's collecting all these things for me. So I have two values and
+I continue on doing it again. Again, another bootstrap sample
+through sampling with replacement and I store that value down. So I've got 7.3, 8 and 8.3. This is the beginning of the sampling
+distribution of means for my sample. I can run this a process process again and
+again and continue to add the sampling distribution
+to means, I'll do this thousands of times. And then I can use that sampling
+distribution to understand the uncertainty around the mean in two ways. So let's say at the top
+of the screen there, I have the sampling distribution laid out. So let's say there's 10,000 numbers there,
+that's the n = 10,000 there that we have. And I've got numbers
+that vary around from, let's say 6.9 to somewhere
+in the mid eights, okay? What are the two ways that I can
+represent the uncertainty of these means? Well, the first one is again,
+I could visualize it, I could visualize the sampling
+distribution as a histogram. And then visually inspect
+the distribution of sampling means. This picture will give me a sense of how
+much uncertainty there is in my sample mean by the width of the histogram. And you may for example,
+take a look at the the lines on the screen represent a 95% confidence
+interval around that mean value. So it gives me a sense of like how
+much variation there is in the mean. The second way I could talk about
+the uncertainty around the mean is by calculating the standard deviation
+of the sampling distribution. That is called again the standard
+error of the mean which I can use in a variety of ways to
+describe the uncertainty, including use that to create
+a confidence or directly. One last time,
+one more way to summarize this. I just want to make sure
+you get the idea here. Here is the summary of
+bootstrapping words, I start with an original sample and
+I only have one. I resample that sample with replacement
+to create a bootstrap sample. I calculate the sample
+statistic I'm interested in and I store it to form a sampling distribution
+and I run this process thousands of times. This is a simple version, probably the
+simplest version of bootstrap sampling. And one you very well
+will use in your career. There are other more complex versions. On screen we have a table from
+a text called an introduction to Statistical Learning. It's a very good text free on
+the internet if you're interested. It's a small data frame with a pair of X,
+Y values. And let's say I want to look at
+the relationship between these X, Y values in a regression context. So I want to calculate a regression
+coefficient from this. And I want to be able to estimate the
+uncertainty in the regression coefficient. So I could just run the aggression
+on this very small data frame. But that wouldn't necessarily give me
+an estimate of uncertainty around this key relationship between X and Y. So in order to estimate the uncertainty,
+I'm going to bootstrap not a single value, not an X, not a Y, but
+I'm going to bootstrap rows of data and create alternate versions of this data set
+and create multiple regression models. And look at how this key coefficient,
+let's just call it alpha, how this key coefficient varies. So I bootstrap off of my original
+data frame, not bootstrapping values. I'm now bootstrapping data frames. I'm going to create three versions for
+simplicity. So version one, I pull in three random rows with
+replacement because it's bootstrap. And in my first example here,
+you can see the rows are 3, 1 and 3. So it's not identical to my
+original data set, that's fine. In fact, that's good. And I could run a regression model
+on this new bootstrap data set and collect the coefficient
+that relates X to Y. I do it again,
+I create another bootstrap sample. This time it is identical
+to my original data frame. That's because I have so few rows,
+this is bound to happen. They're just in a little bit different
+order that's not going to matter for regression. And so I run the regression model and I capture that alpha
+coefficient that I want. The third data frame also bootstrapped
+randomly sampled is 2, 2, 1. It's a little bit different. And so what I've essentially, if I've stored these every time I've
+created a sampling distribution, not of a mean this time and
+not of a single unit statistic. In this case, I've actually captured a,
+well, what I was talking about here, a regression coefficient
+that I'm storing every time. So to me, this is a very useful process because
+we start with an original data set, we create alternate versions of that data
+set, exploiting the natural variation. We run a model against that every time and
+we store some key statistic of interest. And you may do this, a case where I'll
+do this is like in classification models where I don't always have natural
+expressions of uncertainty and I want to see how the classification metrics vary,
+how much uncertainty there is around them. I will bootstrap in this very same way. So our last way to kind of illustrate the
+process, it is a much more dynamic method. There's a really great website
+that you can check out and we will have it in the course resources. It's called scene theory done by
+some students at Brown University. And I'm actually going to
+switch to this website and show you how we can demo the bootstrap
+process in a much more dynamic way. Let's take a look. So this is the scene theory website. It's a great website. It allows you to do exactly what it says,
+see theory visually. And this is a section for frequentist
+inferences specifically on the bootstrap. And that's what we're going to
+work with here today. And you can see that we've got to make
+a few choices here before we're actually able to create a bootstrap process. The first is we have to pick a
+distribution for our original population. I'm going to pick the F distribution for
+right now. You can see the F
+distribution pops up there. This is my population. I don't actually have access
+to all this data normally, but we can see what it looks like here. You can see the mu value which
+represents the mean of the population. The next is we're going to create
+a sample from this population just like we would in real life. And again, I need to pick a sample size in
+scene theory that can range from 1 to 20. I'm going to pick 20 and
+click the sample button and you can see a sample is created. And if I don't like that sample,
+I can click sample again and it's just randomly drawing
+values from my F distribution. Now I've got enough to actually
+start the bootstrap process. So I go down here and I'm going to say
+I'm going to resample from my sample and average it because I want to again, calculate a sampling distribution
+of sample means here. So I hit the resample button and you can
+see that it gives me one average that from my original sample and
+I can hit resample again and it's going to randomly draw some values,
+give me another average. Now see these two means
+are very different, right? I'm getting a sense of the uncertainty. Right now I only have
+two bootstrap samples. So I don't have a very good sense. I can float over here and actually start
+resampling in a lot higher volumes, increase the number of
+replicants dramatically. So I'm going to hit resample 100 times. So it's adding in 100 values here. And you can see now it's starting to take
+that form we would expect from the central limit theorem. It's starting to look a little bit
+more normal, I resample again. This time 100 times,
+I'm adding 100 to it, and it's continuing to fill
+out the distribution. And I can keep on doing this, and
+adding 100 resamples to my bootstrap dis distribution every time, keep on doing
+it, and it's going to build this out. And this is what we mean,
+this yellow area. This is a sampling distribution of,
+in this case, each of these bars represent the relative
+frequency of a collection of means. So it gives me a sense of uncertainty
+around my overall mean from my sample. And what's really interesting about
+the visualization is I can see if the uncertainty band from the sampling
+distribution of means for my sample crosses over my population mean. Because ,again, the only reason why we're
+interested in the sample mean is because we want to know what the population mean. In this case, the distribution is pretty well centered
+on the overall population parameter, mu. So that's a good sign. So this is just ,hopefully,
+another way for you to see and understand what a Bootstrap
+process looks like. So we've discussed so far how Bootstrap
+process is incredibly robust. It's computationally theoretically
+simple and it's very flexible. But that doesn't mean the Bootstrap
+process is not without its limitations. It's not magic,
+it can't solve every problem. One of the major limitations of
+Bootstrapping ,like all statistics, is that it's reliant on
+the data we provide it. There's no cure for
+a non representative sample. If the samples we have are not
+representative of the whole population, then the Bootstrap is not
+going to be very accurate. So let me just show you a quick
+example again using images from the scene theory website. Let's assume our underlying
+population is normally distributed. And we collect one sample from that
+population and that sample is listed, it's those orange dots on the screen right
+there, that we've identified right here. And as I look at those dots, they're not
+quite centered on my overall population. So what you'll notice about the sample
+that we drew from our population is that it doesn't quite sit on
+the center of the population's mean, it's skewed a little bit left. And that skewness is reflected in our
+sampling distribution that we create. So when we Bootstrap off this sample, the
+Bootstrapping is not going to be able to overcome the skewness that
+exists in the original sample. So here you can see that
+with the suspect sample, our underlying sampling
+distribution is also left skewed. Notice that the sampling distribution
+barely encompasses the population parameter. What's scary about this is that because
+we don't normally have access to the population, how would you know that the original
+sample is left skewed like this? Which just really underscores the
+importance of collecting a large amount of information under a wide
+variety of circumstances. So far we've been talking about
+Bootstrapping through a frequentist world view. Now we're going to talk
+about a Bayesian approach. And rather than get into
+the theory of that, I just would like to
+start with an example. And a common way people explore this
+is through the example of fishing. On screen is a picture of Lake Michigan,
+this is a picture that's taken really not far from where I live, and
+suppose that we go out into a boat and we begin to wonder about the mean
+weight of fish in Lake Michigan. And because there's a lot of different
+kinds of fish in Lake Michigan, we're going to focus our scientific
+study on what's the mean weight of the most common fish in Lake Michigan,
+the yellow perch. And so I think, well, if I catch
+some yellow perch in the boat here, I'll be able to calculate
+the mean of them. And then from that, estimate from that sample the mean of
+the population of all these yellow perch, probably thousands and thousands of
+perch who live in Lake Michigan. After a morning of fishing, I catch these
+two fish and I look and I weigh them, and one weighs two ounces or about 56 g,
+the other weighs eight ounces and 226 g. So using what I learned so far,
+I could Bootstrap this, right? I can't just keep fishing and
+collecting samples, it's time to go in. So when we have the one sample to go on,
+we want to create a sampling distribution around the mean between these two, so
+I understand how much variation there is. So I'm going to use my
+Classic Bootstrap tools. If we consider estimating the uncertainty
+around the mean of the sample space ( 2,8) using a Classic Bootstrap,
+there are only three possible options for the mean, two, five and eight. So, notice that under
+the Classic Bootstrap here, the sample membership varies but
+the probabilities remain constant. So you see on the screen here
+the probabilities that are associated for everything being selected are the same, but what differs is
+the membership in each sample. So let's try a Bayesian approach. In a Bayesian approach,
+we do the opposite of the Classic version. We hold the membership constant,
+every Bootstrap sample has a two and eight in it, but the thing we let vary are
+the probabilities associated with this. What do I mean by that? In my original sample,
+I have over two fish. So two fish, it assumes that ,essentially, half the perch in Lake Michigan
+are going to be two ounces, and half the perch in Lake Michigan
+are going to be eight ounces. That's the assumption under
+the Classical kind of approach. Under the Bayesian approach,
+I can flex this assumption. I can ask myself a question like, well,
+what would it look like if I just happened to catch equal proportion of two
+and eight ounce perches in my sample? But in reality, there's only,
+let's say, 10% of the perch in Lake Michigan are two ounces,
+and 90% of them are eight ounces. What would the estimated mean be, or what would it be if I
+varied it a different way? What if 60% of the population of the perch
+in Lake Michigan are two ounces, and 40% of them are eight ounces? That's really the Bayesian approach. And so on screen you can see that
+these are my Bayesian Bootstraps. What's the same is that I have a two and
+eight inch sample. But what varies is the probability
+of representation for each of those. That's the thing I'm really focusing on. And by doing that, I create a lot of
+different kinds of expected means. Instead of just having three,
+you can see I have many. If we look at the sampling
+distribution for both the Classic and Bayesian Bootstrap, what we'll notice is
+significant differences when the Bootstrap samples are small. So if my original sample is small,
+there's a big difference between what the Classical approach will do and
+what the Bayesian approach. So let's take a look at on
+left side of the screen. When my sample size is just two, you can
+see that there's only three options for the means under the Classical assumptions. So, I have those three means that
+are spelled out, the most common in this case is a little bit above zero and
+whatever these dataset are. Under the Bayesian approach, because I have more of a continuous
+approach to group membership, I'm flexing on the probabilities,
+I have more of a uniform distribution. As my original sample increases,
+let's say let's top up to eight for the size of membership,
+we can see that the Classic version and the Bayesian approach begin
+to look very similar. Which one's right to use? You may wonder. Well, if sample sizes are small, the Bayesian can give you
+a more nuanced distribution. As sample sizes increase, the two techniques are more
+similar than they are different. They use a different vocabulary, and
+frankly, underlying philosophies, but it can be fair to say that
+one approximates the other. To summarize the difference
+between a Classic approach and a Bayesian approach, in a Classic version,
+what is fixed are the weights and what varies are the observations. In a Bayesian version,
+what is fixed is the observation and what varies are the weights. I want to conclude this presentation
+by talking about why we Bootstrap. So let's just review some of
+the reasons why we like Bootstrapping. First, it can give us a way to calculate
+uncertainty for complex statistics. So there's a lot of statistics
+that we don't have an analytical method to estimate the uncertainty around,
+and bootstrapping allows us to do that. So it's very useful. For that reason alone, I really like it. Number two, it also provides us
+an easy way to visualize the sampling distribution of the statistic. That could be a hard thing to see and
+know, and it's nice to be able to see, when we're talking about uncertainty, to actually create a histogram around
+whatever my statistic of interest is. And then the third area is that it
+helps us sometimes create sophisticated visualizations for uncertainty. As you can see in this course, a classic
+example of that being spaghetti plots. So, that's our introduction
+to Bootstrapping. I hope you enjoyed it,
+keep sampling my friends.

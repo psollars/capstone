@@ -1,0 +1,13 @@
+So our case study for this particular segment
+is some wearables data. Now, you remember that I
+was wearing a couple of different wearable devices on that biking segment that
+we covered earlier. In that particular case, I was collecting a
+couple of data files. We'll call them write.csv
+or write2018.csv, or we might use write
+2019.csv in some of our work. But that wearables data in
+a format called FIT or FIT, and it can be a little
+bit unwieldy when it comes to taking a
+look at the data compared to what we're
+used to in CSV files. So it's a great case
+study for us to explore some of the Linux command line interface
+functionality.

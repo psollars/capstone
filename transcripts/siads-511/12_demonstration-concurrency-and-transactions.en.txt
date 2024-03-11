@@ -1,0 +1,250 @@
+Hello and welcome to our SQL
+walkthrough on concurrency. Now concurrency is not
+necessarily something that we end up worrying about too much in data
+mining applications, it's really critical for
+online applications, but the key idea is that we have things that are
+happening as a flow of transactions to the
+database server. So we have many
+clients, for example, for us we could have
+one client here, we could have
+another client here. These are two independent
+terminals that are connected to the same SQL server and
+somehow SELECT star FROM fav, and now I'll do that from that one, and I'll say SELECT star
+FROM fav from this one, somehow the server has
+to resolve things that might end up with these
+two different connections, and literally there
+could be hundreds of simultaneous connections
+that are doing things. Now, reading is not that big of a deal from a
+concurrency perspective, it's a matter of
+fact if two things are reading the same thing, often the database is very
+clever about that. But if we're starting to add data or delete data or update data, then sometimes the fact that more than one thing is simultaneously trying
+to do the same thing, that can be a problem. Okay, so let's take a look. So in this fav, just to
+refresh your memory, the fav is a many-to-many table. So we would be taking a
+person who is favoriting particular posts and we're going to make it so that they can indicate that they
+really like something by favoriting it many times. So this is me and this is my post that I like and I'm going to this howmuch
+is going to be 0, 1, 2, 3 4, 5, and we have updated_at
+and created_at stuff, right? So the motion that the user's
+going to go through at some point is hitting
+a plus one on this, like this is even
+more of a favorite. And so let's go ahead
+and run an insert. So the first time if User 1
+was going to favorite Post 1, we would set it to be 1, right? And so now if I did a
+SELECT star FROM fav, there we go. User 1
+liked Post 1 this much, right? Now, we only can do that if
+we know that wasn't done before because if I say INSERT INTO fav again, it complains, duplicate key, which is
+exactly what we want. We put a duplicate key on
+the combination of post_id and account_id here
+on these favs, we take a look, let's
+go back up to the top here, here's the favs. We basically made a
+unique constraint on the combination of post_id
+and account_id on purpose. And then we're going to take advantage of
+that. But you can't necessarily do the same thing, you can't do the same thing twice because we want to do that. By the way, this
+RETURNING is basically combining like a select in, so RETURNING star, this is like do the insert,
+and then do a select. This is like RETURNING
+is after that insert is done, SELECT star from the
+table I just inserted into. Now, if there's already
+a record in here, we know that the thing we want to do is we want to do an update. And we stick a RETURNING
+star in there, and so we see the post update. And so look, howmuch has become 2. So we UPDATE fav, SET howmuch equals howmuch
+plus one WHERE post_id equals 1 AND
+account_id equals 1. RETURNING star, that just as a quick way to tell
+us what's going on. And so there we go,
+howmuch is now 2. Now, what's cool about this is this is run in a
+single transaction. So we know what the value was after we added one to it,
+which is really quite cool. And so if two things are
+going on right now, like if I was doing this, two screens were hitting
+this update at the same time, this is now 3,
+it went up to 3, so this is my other terminal, and it's updated to 3. So going back to the first table, I say SELECT star FROM favs.
+Oops, FROM fav. Remember, they're singular,
+Chuck, remember they're always singular, right?
+So the howmuch is 3. So we've got these simultaneous
+things happening, going on both at the same time
+in two different clients. Might be two different web servers, two different threads in the same web server, or it might just be two things connected
+from two terminals. So it turns out that we don't know which of
+these two things to do. We don't know whether to
+do an insert or an update. And conveniently, there's this
+ON CONFLICT capability. So we can say, INSERT INTO fav, ON CONFLICT means if that insert failed because of a
+conflict of post_id, account_id, you've got to tell which columns are
+causing the conflict. These are our two unique
+constraint columns. So ON CONFLICT, DO UPDATE, SET fav equals howmuch plus
+one, right? So we add one to it. So what we"re doing
+was really combining this with an automatic
+if statement. What's really
+important is then this is wrapped into a
+single transaction. So you can have many clients
+sending this a message like this, an SQL like this, at the same time and the database
+is going to resolve them. One is going to go first and the other is
+going to go second, okay? So in this case it is going to, let's do our SELECT
+again, it's now 4. but let's just do
+DELETE FROM fav, get rid of everything. So we just got rid of everything. So SELECT star FROM fav, there's nothing in there.
+And now I'm going to run this INSERT statement again. So this time there's
+nothing in fav, so there is no conflict. So this first half
+of the statement is actually going to run. So if I SELECT star FROM
+fav, then it's there. And if I run that
+same statement again, this time it's going to have a conflict because it's already there because of the
+uniqueness constraint between post_id and account_id, and so now if you take a look at the SELECT, you'll see it's 2. So this is in effect insert or update, depending on whether
+or not the record is there. The only time it does an update
+is when we have a conflict, and that's why we put
+those UNIQUE constraints in our CREATE statements so that we can then
+trigger this on purpose. If I didn't put a UNIQUE
+statement, the insert would keep on working
+and you would just get more and more rows
+with duplicate stuff. So we're using the
+UNIQUE constraint and then we are taking advantage of the UNIQUE constraint here, but even more importantly, this is all done as one transaction. So if this code is run
+simultaneously somewhere else, they're
+going to be ordered. One is going to win, they don't hit simultaneously. If they hit simultaneously, then the database will stop, pause one briefly, do the other one, and then the
+second one will get run. And so that's sort of real simple. So we love to do these
+kinds of things. We love to do these
+kinds of things where we use ON CONFLICT. I do it all the time,
+insert or update. You could add a RETURNING
+star at this and then you can tell what the value of
+howmuch was after, so you're like hit the plus button and
+it should say 4, And then if you did this
+in a different window, it would say, you
+just added it to 5. But even then, that's all done
+in a single transaction. So even if two things
+happen at the same time, one would get 4 and
+one would get 5, and so they would know
+where they are at, okay? So it's concurrency in that we want this to work and
+the database server, Postgres puts a
+transaction around this automatically because
+it's a single statement, right? It's a single statement
+in a transaction. Now, sometimes you want to put more than one statement
+in the transaction, okay? And so there is this SQL
+statement called BEGIN and then an SQL statement called
+ROLLBACK, which means give up, and a then statement that says COMMIT, which says actually do it. And so the idea is
+sometimes we can't do such a cool thing where we can wrap in a single
+SQL statement, a whole bunch of cool
+stuff to do two things. Now, if you didn't have this, and of course
+you do have this, this is a silly example. But I want to basically
+make it so I can do a SELECT and then an UPDATE
+later. Who knows why? I mean, I made this really
+simple so it stays simple. So this SELECT has
+this special bit and this is effectively
+grabbing a lock on a row. The lock's scope depends
+on whether, I mean, I'm telling it I'm going to lock a row, but it might
+lock more than a row, we don't know how it does it. You're at least locking the row. You don't want to
+lock this too long because other things
+can't happen. So it says, I'm going
+to select this and hold onto it until I
+tell you to let it go. So let's go
+ahead and do this. I'll say BEGIN, that's
+an SQL statement. We're now in the middle
+of the transaction. SELECT howmuch FROM fav. At this point that row
+is locked, okay? Now I can then say, UPDATE, set it to 99.
+Oops, what did I do wrong? SET howmuch. UPDATE.
+Oh, sorry. I have to change
+this, I got a typo. This is why I like, oops. UPDATE fav. This is
+going to be wrong too. So I got a typo there. So I'm going to do
+this one now. This is why edit these things inside of a text editor
+and then paste them over. I wonder if I took too
+long on this transaction. Let me do it faster. Let's say ROLLBACK, which probably
+is not going to do anything. Yeah. Okay, let's do it faster. Oops, undo. Do these two really fast. And then I'm going to do
+this part faster. Yep. It's happy now. Then I'm going to do
+what's called a ROLLBACK. So what this ROLLBACK does is this ROLLBACK
+brackets the BEGIN. And rolling back is giving
+up on the transaction. So what happens here
+is this UPDATE, I'll have to show
+you this again in slow motion, slower motion. So I'm going to do this SELECT again, but
+without the FOR UPDATE. And you'll notice that this
+number never changed. It changed in the middle
+of the transaction. So transactions are a group of commands that are either all going to execute or none of them. So it sort of queues them in a way, and locks all this
+chunks of data. So let me do that again fast enough so I don't
+time my transaction out because it doesn't
+like these things. Let me add this
+SELECT right in here. So I'm going to do this. Let's clear this
+all out. I'm going to start a transaction. I'm going to update
+in the transaction, and then I'm going to
+select in the transaction, then I'm going to roll back. Let me do all these really quick because that's what would happen if it
+was an online thing, it would start the
+transaction, do the update, it selects it, right?
+And everything between the BEGIN
+and the ROLLBACK needs to be done quickly. And that's why I pasted them
+all at the same time. But look what happens now. Because of the rollback, we
+gave up on the transaction, the transaction was discarded. So during this BEGIN
+and the ROLLBACK, it was like working on its own little Isolated siloed
+version of the database. It wasn't the official database. It wasn't the whole database. And so you can go really far down. And this has to do with the
+fact that sometimes you've got to say you're going to do
+some banking transaction, that you've got to look up some data, look up another thing, look at another thing, and lock all those things so that other people aren't
+looking them up. Then you give out the money, and then you've got to update, and then you've got to commit
+the transaction. Or you try to give
+the money out and the money giver outer fails, and you've got to roll
+back the transaction. So sometimes you're
+doing a bunch of work in the middle of a transaction
+and you want to give up. Now, if you don't want to
+give up, you'd say COMMIT. So now, we're going to set this. And we're going to do a BEGIN,
+we're going to SELECT. Then hopefully, I'll be able to do it fast enough
+to do a COMMIT. So there we are. We're at 99, but now I'm going to
+commit the transaction, which means that
+everything that was in my own version of this database, that's now committed
+to the real database, so they all went
+at the same time. So either none of them happened
+or all of them happened. I could have a whole series of statements that are in effect temporary
+until I say COMMIT. Now I'm not in a hurry, but now I can say SELECT
+howmuch FROM fav where it's 99. Okay? Now, I'm going to
+show you something. We'll get two windows up. I'm not in a transaction
+in either window. So I'm going to start a
+transaction in one window, in this first window, and then I'm going to try to
+start another transaction in the second window to show
+you how the one transaction. So I'm just going to do this. I'm in this transaction,
+and I would try. I'm not going to do the
+ROLLBACK or the COMMIT, I'm going to start
+a transaction. I'm going to grab it and lock it
+with this UPDATE. Then I'm going try to
+update the locked row. Then I'm going to see
+how the update went. Right? And then I'm going
+to commit a rollback. So I'm going to do
+this in two windows. I'm going to do it
+in one window and it's going to work just fine. Right? So it's just fine. Now I'm going to go to the other window and
+I'm going to run this. And notice how this
+SELECT FOR UPDATE, I can't get my hands on that row. I just can't get my
+hands on that row. So let me roll this one back. It's still being nice to me. ROLLBACK. Back. It can't roll back fast enough. Okay, I rolled back. And look what
+happened. This finished. Right? So this was waiting, this statement right here was waiting until I rolled it back. And that's because this
+statement over here on this terminal locked it
+until I said ROLLBACK. Right? So what what
+was going on is the database was insisting
+that this statement happened. I'm attempting to run
+this simultaneously, but the database picked an order, and it was whoever
+got there first, and because I'm doing it slow,
+this one got there first. But even if they arrived
+at the same time, it's like a doorway. One goes through the doorway and the other one is
+paused at the doorway. Now, there is a timeout on this, I don't know if
+I'll be able to get you to see the timeout. So let's run this again. Run this again. Let's run this one in this window and now I'm
+not going to. What happened? You got to roll this one
+back because I was in a ROLLBACK. I was in a
+transaction in this one. Okay. Roll this one back. I got myself all messed up.
+Too many transactions, all at the same time.
+ROLLBACK, roolback. Okay, so there we go. So I don't know how long
+this will time out. I'm going to just let
+this sit for a bit. Let me clear this all out. I do not know how long
+this is going to wait. Sometimes they have timeouts. Okay. So this terminal
+has a transaction. It's got a BEGIN,
+SELECT FOR UPDATE, and then it's got to update. It sees its result. Then I am going to go into the other window and
+I'm going to do this, and you'll notice
+that it stopped at the SELECT statement
+because that lock is held. Now we're going to sit and
+see how long it takes. We're not going to do a
+ROLLBACK or a COMMIT. We could do a ROLLBACK or a
+COMMIT in this first one, and then that would
+unlock the second one. So I don't know how long
+that's going to take. Okay? So that's the basic
+idea of transactions. We can use this like
+INSERT ON CONFLICT. It's a much more common way, if you want to send the database SQL in and have it do everything it wants without having
+to talk to it twice. So if we're talking, this pgsql application that
+we're running is a client, and it's sending commands
+to the database server. And this is great because this
+is just one command and it allows us to do two
+things at the same time, right? Do these two things.
+Here's this data. If it's not there, insert it, if it is there, update it. Okay? And then at the same
+moment, do a select. So that is really insert, update, and select
+all in one statement. One round trip between our client and the
+database server, and we like to minimize those. These, the BEGIN, the SELECT, the UPDATE, the SELECT, the ROLLBACK, the SELECT, these are all separate
+communications. So explicit transactions
+are slightly more costly. And I don't know, this doesn't look like it's going to time out. This is what's called a deadlock, and if this sits long enough, it will detect a deadlock.
+And so I'll just finish this. If you let it sit
+long enough on yours, you might find it's
+something about a deadlock. I'll roll back this
+transaction. Excuse me. I'll roll back that transaction, which will unlock this side, and then I will do another
+ROLLBACK on this side, to make sure my database
+is not messed up. So I hope that was interesting. You have to run this with two. You've got to run two terminals, and you've got to run the the
+pgsql on two terminals. But I hope that you found this a little bit
+interesting look at concurrency and transactions.

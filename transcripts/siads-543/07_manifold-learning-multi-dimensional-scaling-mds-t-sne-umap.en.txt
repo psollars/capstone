@@ -1,0 +1,400 @@
+One of the key applications of
+dimensionality reduction techniques is information visualization. And there's a very important category
+of dimensionality reduction methods called manifold learning
+methods that do a very good job of taking high dimensional data
+with complex structure and projecting it down onto a two dimensional
+sheet of paper or on a screen. In order to summarize something
+that's impossible to visualize onto a surface where we can
+see patterns much more easily. And so, in this video, we're going to cover several different
+manifold learning techniques. And the key thing to realize about
+manifold learning techniques is that is the idea of invariants. And invariants are properties
+that exist in the high dimensional original
+data set that are somehow preserved when the data is
+projected onto the two or three dimensional output surface or
+volume. And you'll see that different manifold
+learning methods preserve different things about the data. In particular, one class of
+medical learning methods related to multidimensional scaling preserves
+distances global distances, while another class of manifold
+learning methods called as example Tsne preserves local neighborhood structure
+of the data and not global distance. Is not important implications for how these various manifold
+learning methods are used. PCA gives a good initial tool for
+exploring a data set, but may not find more subtle groupings that produce better
+visualizations for more complex datasets. Here's an example of a complex data set
+on the left with different pre specified clusters that have been colored to
+clearly show the cluster membership. And then we're going to see how those
+clusters get transformed by these different methods. In particular, we included two-half
+moon shaped clusters here that were warped by a polynomial function. So we can see at top right, PCA did not
+do as well in finding the shapes of these half moon structures compared
+to a manifold learning method called multidimensional scaling which
+was able to recover them perfectly. It's more accurate than the PCA version. These are the kinds of scenarios that
+motivated researchers to develop extensions like kernel PCA, which
+could use higher dimensional nonlinear mappings of the data to find
+more complex curves like this. In addition, researchers have developed
+other families of unsupervised algorithms called manifold learning
+algorithms that are very good at finding low dimensional structure in
+high dimensional data like this one. And that makes some very useful for
+visualization in particular. So, viewed as optimization problems, what they have in common is that they
+search for a two dimensional manifold or a set of points that preserve
+some important quantities, like the distances between points that
+are evident in the high dimensional, the original high dimensional version. And different manifold learning methods
+make different assumptions about what should be optimized. What invariants should be
+preserved in the original data or at least well approximated. And they make also assumptions about the
+properties that the data is distribution is likely to have. And this effects how effective they
+are at certain kinds of clustering, detection and so forth. So one widely used manifold
+learning method is called multidimensional scaling or MDS. MD's is a nonlinear dimensionality
+reduction technique. And there are many flavors of MDS, but
+they all have the same general goal, which is to visualize a high
+dimensional data set and project it onto a two dimensional page. And to do it in a way that preserves
+information about the level of similarity of points in
+the original data space. This type of projection is
+sometimes called an embedding. In this very simple example, I'm going to
+take some points in three dimensions and project them down to two
+dimensions using MDS. And the property that MDS is
+going to try to preserve is that, if two points are close in three
+dimensional space on the left, for example, these points over here. Are clearly, clearly form a cluster in
+that area of three-dimensional space. MDS will try to find an embedding to the
+flat two-dimensional space on the right that keeps them close together even
+when projected down to two dimensions. In real world datasets, documents,
+images, social networks, they all live in much
+higher-dimensional feature spaces. And so the definition of distance or
+similarity between two things in that high-dimensional space can
+be a lot more complex. So this more local distance-based
+optimization criterion for dimensionality reduction is
+very different from the global variance-maximizing objective that we
+saw with principle components analysis, which did not explicitly consider at all
+the pairwise distances between points. Because it can be effective
+in preserving distances and shapes without too much distortion,
+MDS can be a useful preprocessing step for finding clustering behavior in
+your high-dimensional data. If clusters are far apart
+in the original data, then they will tend to be far apart
+in the flat 2D version of MDS. And we can see that behavior
+somewhat here in this toy example. We can see the sort of
+elongated set of points here. If a clustering,
+I'm going to to try to find the shape. This shape is preserved under MDS As our
+groups of other sort of clustered points. Their essential relative positions and
+somewhat their density is preserved by MDS, things that
+are based on pairwise distance. Likewise, if a cluster is very dense or
+very spread out, its density will be approximately
+preserved in the MDS version. Now this preservation of cluster
+properties does not happen for some other nonlinear dimensionality
+methods we'll look at, such as t-SNE. We're going to do a brief review of
+distance versus similarity measures in order to understand a little bit
+more about how MDS works internally. And so let's take a look at the difference
+between a distance measure and a dissimilarity measure, because these two
+can be a little confusing terminology. A distance measure, d(x,y) is
+a special case of a dissimilarity measure which measures how
+dissimilar two objects are. There are three basic properties
+any distance measure must have. A distance measure must be symmetric. In other words,
+the distance between x and y, d(x,y), is always equal to
+the distance between y and x. So this is the symmetric
+property right here. And the other property is that
+d(x,y) has to be greater than or equal to 0, and d(x.y) is equal
+to 0 if and only if x equals y. So the only time you can get a distance
+of 0 is if the points are actually the same point. And finally,
+the triangle inequality has to hold. If you have three points,
+then the distance from a to b, between a and b I should say,
+is always less than or equal to the distance between a and
+c plus the distance between c and b. So essentially, this says that if
+you have three points in the space, they have to, that form a triangle,
+then they have to satisfy some reasonable triangle relations,
+triangle-like relations. And distance measures that satisfy
+all these axioms are called metrics. So that's a pretty strict set of
+requirements that a measure needs to satisfy in order to be
+considered a distance measure. A dissimilarity measure
+s(x,y) is more general and doesn't have to satisfy all of
+the metric properties here. They've got fewer restrictions than
+distance measures do that they have to satisfy. So typically a dissimilarity measure,
+which I'll call s(x,y), is always greater than or equal to 0. And s(x,y) is lower for
+a pair of objects that are more similar, and higher if the objects
+are more dissimilar. However, the similarity measure
+doesn't have to be symmetric. So for example, s(x,y) doesn't
+have to be equal to s (y,x). We can see a concrete example
+of this on the right where we define a dissimilarity measured
+of two passages of text might be defined as the percentage of
+x that is not contained in y. s(x,y) would be 0 if x is
+completely contained with Within Y? But s of yx. Would be nonzero if Y is a longer text
+with the rest of Y is a lot different from X. So right away you can see that this
+is a dissimilarity measure, but it is not a symmetric one. And we can also see that this
+particular dissimilarity measure doesn't satisfy
+the triangle inequality either. For example,
+if we have three text documents, ABC, and their dissimilarity is defined by
+the percent of X that is not in, Y? Then if text passages
+A&B here don't overlap. But are both completely quoted,
+let's say by this longer article, C. Then, if we suppose that the dissimilarity between of C&B is 80% and
+we have S of AC equals 0. And S of AB equals 100%. And so S of AB is not less than or equal to S of a C plus S of CB. because that would be 80% and so this particular dissimilarly
+measure seems quite reasonable. It seems like something you could use
+in certain text comparison situations, but it's not a distance measure
+because it doesn't satisfy symmetry or the triangle inequality? So looking at MDS in more detail. MDS takes as input a series
+of Pairwise dissimilarities between all pairs of
+points in the data set. So we don't need to provide the data
+points in the data set themselves, we just need to provide their
+pairwise dissimilarities or distances in a matrix D capital D. The classical MD's algorithm
+takes this dissimilarity matrix for endpoints of dimensionality P. So this is our original conventionality P. And it gives back end corresponding
+points with much lower dimensionality Q. And Q is very typically equal to two
+because we're trying to visualize the results in two dimensions. So we'll skip the mathematical derivation. But it can be shown that classical
+multidimensional scaling with Euclidean distance is equivalent to extracting two
+principle components from PCA analysis. That's called classical metric MD's, and what it's optimizing its
+optimizing a distortion measure. Based on Euclidean norm and you can
+see right away why this equivalency with PCA exists it's because
+this classical multidimensional scaling distortion measure is
+a least squares criterion. And so is PCA. So this classical least squares version
+of multidimensional scaling has been extended in multiple ways. And all of these variants have the same
+form of overall optimization objective, which is still to minimize
+some sort of stress function. Measures the distortion in
+distance between the original high dimensional data set and the very low dimensional multidimensional
+scaling points that are that it finds. There are lots of different ways you
+could imagine modifying the classical squares multidimensional scaling. You could give it differently
+weighted dimensions. For example, you could give it
+a different distance function, something other than euclidean. Perhaps the most significant change,
+though we can make, is that we can introduce
+a function F that's a linear or nonlinear mapping of the input dis
+similarities that you had in that Matrix Capital D and so we can
+modify those input dis similarities. And then proceed with some sort
+of optimal embedding step. Some variants of metric multidimensional
+scaling use alternative non euclidean distance measures in
+the output space as well. So after they project their points
+onto this 2 dimensional surface, they might use a non Euclidean
+measure in that output space to judge how satisfactory
+the embedding is for example. So here is a specific example of some
+common multidimensional scaling variance. Now that transform the input
+dissimilarity's DIJ using a function F. It's important to note that F may
+have some tuneable parameters itself. So I'm going to denote
+these here by theta. These tunable parameters can be
+added to the set of parameters that are searched when the MDS
+optimization program is run. So that the metric MDS algorithm
+not only tries to find the optimal embedding,
+but it jointly optimizes. In other words, it tries to also simultaneously optimize
+theta as part of the optimization. So its optimizing both the parameters
+of the function f as well as the output embedding,
+trying to minimize distortion. So one of the most popular variance and
+one I believe is used by default in sklearn's metric
+MDS is called ratio MDS. And that's where the input dissimilarities
+are multiplied by some scaling factor. Here I've called it theta sub 0. Another common variant is called
+exponential MDS, where the input dissimilarity dij is mapped through
+this two parameter functions. So this our theta 0 and theta 1, it's
+about through an exponential function. But no matter what choice there is for
+f, the optimization objective, the stress function has the same
+general form that it did before. So you can see that instead of
+optimizing with dij itself, we've mapped dij through this
+non-linear function that were still taking this
+least squares criterion. It just has this non-linear
+function composed into it now. And if you're wondering how this
+optimization problem is solved, it can be obtained typically using
+some form of gradient descent. So again,
+this is trying to find the optimal set of points x in the output space and as well, it might be trying to find
+the parameters theta for f simultaneously as part
+of the optimization. Okay, so since it's common for
+datasets to have missing data you might be wondering how you can apply MDS to
+your dataset if certain elements, certain records,
+certain features are missing. Well, you can cope with this by
+introducing a weight Wij for each pair of data points
+in the objective function. And the weight is set to 1
+if we have complete data for computing the dissimilarity dij
+between those points xi and xj, and 0 otherwise which
+is the missing data case. So essentially what the algorithm
+will do is it will ignore any missing data points when making its
+objective function calculation. This might look a little familiar because
+in fact we use exactly the same method with PCA for missing data. And actually we can do the same weighting
+trick, I guess you can call it, for any technique that optimizes
+explicitly over data points. Just set the weight of any pair to 0
+if either one of the data points is in a condition where you can't
+compute the dissimilarity. So that's how you deal with missing data. So with non-metric MDS we're
+doing away with this assumption that metric MDS assumed there
+was this input matrix D of real-valued pairwise dissimilarities or
+distances. But there are a lot of real world
+cases where we don't have or where it's difficult to compute
+a specific dissimilarity score. Instead we might just have
+relative preferences or rankings of objects expressed as an ordinal
+number like rank 1, 2, 3, 4, and so on. In this case,
+the matrix D doesn't have real-valued dissimilarities in it anymore,
+it has ordinal values which sometimes these are called
+disparities in the literature. So the goal of non-metric MDS is
+still to find a set of points x1, x2 and so forth in
+the low-dimensional output space that are a good representative of
+the high-dimensional data. But we replace this absolute stress
+function criterion with a relative ranking criterion that says, basically,
+if we have three points i, j and k. Then if the disparity dij
+between points i and j is. Less than the disparity
+between points j and k, in the original high
+dimensional data space. Then in the output space, we need to
+preserve something like that property. By specifying that the distance
+between the corresponding X1and Xj. And the output space, must also be
+less than the distance between j and k in the output space. So this is a different optimization
+problem than metric MDS, so then it requires a different
+method to solve. Usually technique called
+isotonic regression is applied, to find the best Xij that
+respect this ranking criterion. So non-metric MDS is often
+used with survey data. It's a lot easier to ask people to give
+their relative preferences between items. Than to have them estimate
+a continuous score for something. Non-metric MD's is also handy in scenarios
+where ranking objects is easier, than computing an absolute
+dissimilarity measure. So here's a fun authentic
+example of non-metric MDS, applied to data from
+the International Space Station. This study was interested in the
+similarity of the microbial communities, that exist in two very
+different environments. A home on Earth, and
+living quarters in the space station. Multiple samples were taken from different
+areas, and objects in these environments. The samples were carefully analyzed to see
+which families of microbes were present. And then the authors of the paper
+created a disparity function. That captured the relative
+differences between the set of microbes found on Earth and
+in the space station. And then they applied non-metric MDS using
+these relative, these rankings I guess. And you can see that the results in
+the figure from their paper show clear clustering behavior with very
+different microbe environments. Found on Earth and in space. And I've included the link
+to the paper here, if you are interested in more details. Here's an example of applying MDS
+on the simple fruit data set. You can see it does a pretty good
+job of visualizing the fact that the different fruit types do
+tend to cluster into groups. So as I showed you earlier in that
+example, MDS is preserving the cluster. Densities and relative positions, and relative distances, that they had in the higher dimensional space. Its preserving those in
+two dimensions as well. One thing to note here is that,
+as with many of these methods, that who is nonlinear methods. It's very important to standardize
+the input, to MDS before you run it. Another very powerful manifold learning
+algorithm for visualizing data, is called t-Distributed
+Stochastic Neighbor Embedding. I'm just going to pronounce t-SNE for
+short, I don't know if that's standard or not. But that's how I've always pronounced it,
+it's t-SNE. It was developed by Va der Maaten and
+Hinton in 2008. An like multidimensional
+scaling it's a manifold, learning method that finds a two
+dimensional embedding of your data. Such that the distances between
+points in the 2D embedding. Match as closely as possible with
+the original relative distances between nearby points,
+in the high dimensional data set. But there are some critical differences
+from multidimensional scaling as well. In particular, TC is quite different. And that it gives much more
+weight to preserving information about distances between
+points that are neighbors. So it also adapts to
+the underlying data to perform, different transformations locally
+in different parts of the data set. And I guess the bottom line is
+because it focuses more on these local neighborhood properties. And less on preserving
+global distant structure. Typically t-SNE is something
+that's great for visualization, but should not typically be used for
+clustering, for example. So here's a plot from the original
+t-SNE paper that shows a data set of this famous
+handwritten digit data set. And they've used t-SNE here to visualize The clustering behavior. You can see that numbers that
+appear like a number one and a number seven for
+example that are written in some cases in a similar way appear close together
+in this kind of embedding. And same here you can see this
+example with digits five and three. You can see that their digits in this
+part of the space that are clearly A5. There are digits in this part of
+the space that are clearly A3. And then there are some sort of in
+the middle which there placed correctly between these sort of clusters of five and
+three. Because they may have some ambiguous shape that makes it harder to
+distinguish between them so. So t-SNE is very good at finding
+this sort of when there's a sort of evolving local change
+behavior between classes of objects. It's very nice to visualize
+the structure of those kinds of things. It preserves the neighbors,
+the neighbor relationships quite well. Most of the digit 8 samples
+also are closer to 3 and 5 then they are to the digit one. So here are the digits 8,
+5 and 3 are similar, and so they appear similar close
+by in the t-SNE embedding. Much closer than two
+very different digital, like one and just for
+comparison on a toy problem. You could apply this to
+the same fruit data set. And here is also an example of
+how to use it in Scikit learn. It's very just like the other methods you
+simply import it from SK learn manifold. You instantiate it and just call
+fit transform like you do with so many other estimators. And I guess the interesting thing
+here is that t-SNE does a pretty poor job of finding structure in
+this rather small simple data set. Which I guess reminds us we should at
+least try a few different approaches when visualizing data using manifold
+learning to see what works best. t-SNE tends to work better on datasets
+that are very high dimensional and that have more well defined local
+structure like like that data set of digits is ideal. And things that have clearly
+defined patterns of neighbors and they have enough data in high dimensions. Especially to exhibit
+that kind of interesting rich neighbor-neighbor structure. So if there's one thing you
+should remember about t-SNE in comparison to PCA or MDS. It's that t-SNE does not care about
+preserving global distance structure. And so
+t-SNE does not preserve cluster density or cluster separation when it
+projects to lower dimensions. In fact, it tries to make the density of the
+clusters that it finds roughly the same. And that's a perfectly
+valid consequence of how it tries to preserve local structure
+unfortunately destroys a lot of the clustering structure
+that you might care about. And so, as I said before, t-SNE is a very
+good exploration and visualization method. But typically you would not apply
+t-SNE as a preprocessing step to find clusters in the data. So if we look at our extreme
+mixture of different clusters, this synthetic data set. You can see that t-SNE does
+an excellent job in preserving these sort of nonlinear unusual
+manifold structures because it's very good at preserving
+local neighborhood structure. But you can also see that when it comes to
+small dense clusters like the one here. It's completely lossed
+information about the density, so it's essentially taken all these clusters. And just one of these and
+you can see that it's actually, there are roughly the same density now. And again, that's to be expected. That's what t-SNE is supposed to be doing,
+so it it loses completely critical
+information about the original clusters. So how to use t-SNE effectively well? One key parameter of the t-SNE
+algorithm is called perplexity. Whichever high level can be thought of as
+an estimate of how many neighbors are near each data point. Basically, when using t-SNE
+to visualize the data set. You should experiment with multiple
+values perplexity to get a more complete picture of the structure. And it also has some other hyper
+parameters that can be adjusted. But perplexity is probably
+the one that has the greatest. Effect on the final result, another
+challenging aspect of t-SNE is that it can give different
+output every time it runs. And that's just the consequences
+of the sort of highly complex solution landscape
+that it has to optimize in. I have included a very nice interactive
+guide demonstration, the link here. And I encourage you to go explore it
+if you're interested more in t-SNE. Then you can see using this
+very nice site visualization how different choices of perplexity
+can lead to very different result. It's also very useful to read some
+of the sections on an article about how to interpret t-SNE output. So for example, this is again taken from this article
+on how to use t-SNE effectively, you can see how sensitive the results
+are to the choice of perplexity parameter. You can also see that cluster density and
+position, don't really mean anything
+in the t-SNE results. Because it is trying to equalize
+cluster sizes by design, so that can be a strength or
+weakness of t-SNE depending on your goals. Finally, I wanted to mention an algorithm
+called UMAP which is short for Uniform Manifold Approximation and
+Projection, was developed in 2018. So, like t-SNE, UMAP is
+a dimensionality reduction method, and it also tries to preserve
+local neighborhood structure. But it's also a bit better at preserving
+some global structure than t-SNE is, and it also scales somewhat better
+to larger datasets than t-SNE does. It also isn't restricted on
+the number of output dimensions that the lower dimensional embedding can have. So it's not just restricted, for
+example to two dimensions, so all these advantages mean that you can
+use UMAP for visualization like t-SNE. But unlike t-SNE you can also use UMAP as
+a general dimensionality reduction method that you might put in the pipeline. For example, in conjunction with
+other machine learning methods for supervised learning or clustering. So UMAP is not yet
+integrated into scikit-learn, but it's designed to be compatible with it,
+and it follows the same usage conventions
+as the scikit-learn estimators. And I provided a link to the UMAP
+home page which has installation instructions if you want to install
+it locally on your computer. I also put some links to the original
+paper and online documentation, any assignments that require UMAP
+will of course install it as part of the environment in Corsaro. So in this example from the original
+UMAP paper, you can see embeddings for various high dimensional datasets that
+have been found using PCA, t-SNE and UMAP. So this gives a really nice way to compare
+what these three methods are doing. And you can see that UMAP does a good job
+at preserving interesting local structure, just like t-SNE does. But it also gives some more faithful
+projections that preserve some global distance structure, like cluster
+density and cluster separation. And you can also see that PCA captures
+the general patterns of global variation quite well. But it doesn't pick up at all on the more
+fine grained local neighborhood structure, and we would expect that because of
+its global least squares objective. So to sum up, having seen now
+several different methods for dimensionality reduction, we can say
+they fall roughly into two categories. So as a general rule, multidimensional
+scaling tends to optimize for preserving global distance
+structure in the data set. Because it assigns higher importance
+to preserving larger pairwise distances across the data set. And so this might help capture the correct
+general shape of larger clusters, for example. Well, t-SNE on the other hand, focuses on
+preserving local neighbor structure, so it might be great at finding long low
+dimensional chains within the data set. Or a ribbon of related points, but
+it would lose information about clusters, the relative sizes and
+locations of clusters. And that's because t-SNE deliberately
+changed its definition of distance at different places in the data set,
+to account for local density variations. So it's doing exactly what it's supposed
+to be doing, it just has a different goal. So t-SNE is primarily visualization tool, used to reduce the data set to two or
+three dimensions. Its performance as a general
+dimensionality reduction tool, say to five or 10 that is unclear, so
+if your data set has high Intrinsic dimensionality and high variability,
+t-SNE is likely not to be effective. So which method you use essentially
+comes down to which one gives the best explanatory power. So it often makes sense to try
+an algorithm of each type. Of course, there are also
+computational costs to consider. PCA is extremely fast, and it can be
+applied easily to large datasets. But methods like t-SNE tend to be
+very computationally intensive. And depending on your
+computing environment, may require special handling if you have
+more than, say, 100,000 data points. Now, you can actually
+combine these methods. You could apply PCA, for example,
+on a very, very large dataset. And then you could take to do
+an initial dimensionality reduction. And then you could take
+the output of PCA and do further visualization using t-SNE or
+you UMAP. So that completes our brief tour
+of manifold learning algorithms.

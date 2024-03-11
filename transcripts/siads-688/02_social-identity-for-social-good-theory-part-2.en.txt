@@ -1,0 +1,169 @@
+Hi, everyone. We're going to continue
+with the theory part. But this time we're going to discuss
+analytical frameworks from economics. So identity economics started with
+Akerlof and Kranton in their paper that was published in the year 2000 in
+the Quarterly Journal of Economics. So we'll start with this one,
+which is economics and identity. So we defined group identity
+as a person's sense of self derived from group membership. You can correspondingly define
+a person's personal identity. The reason for
+incorporating an identity into economic analysis is that it expands
+the scope of the analysis. For instance, it can explain
+behavior that appears detrimental, and it can underlie a new
+type of externality. Identity reveals a new way that
+preferences can be changed, and the choice of identity
+can be thought of as some of the most important economic
+decisions that people make. So the basic research question is, how does identity,
+influence economic outcomes? So there's several different
+ways of modeling is. So what we're going to be introduced
+to is the preference based approach. And there's also a complimentary
+approach which model how identity affect people's beliefs. It's algebraically more complicated. So we're just going to restrict ourselves
+to this preference based approach. And essentially,
+what you will see is that we're going to add new components to
+an individual's utility function. And so their actions would be affected by, their identity and
+the norms associated with the identity. So this part, the theory part is,
+not required for this course. But it is useful to think
+about how one might go through the logic of how identity affects
+economic actions and outcomes. So a person's identity or
+self image is represented by a function I. So this is person J's identity. So it's Ij. And it's a function of several components. So the a's are actions. So a j is your own action and
+a- j is a vector of others' actions. C is social categories. So Cj is person J's social categories and her assignment for
+everybody else in the population. And what's importantly is this argument p. Where Akerlof and
+Kranton call prescription. So this is the ideal or
+the prescription of behavior for a particular social category,
+or for each social category. So it indicates the appropriate
+behaviors for people. So one can think of that as norms or
+stereotypes. So what does a utility function
+with identity look like? In general, the utility function that used
+to be only a function of my actions and other people's actions now
+has this new component, I j. And so the maximization problem is
+that an individual chooses actions to maximize their utility,
+given the categorization right, the group that he or she belongs to cj.. And p is the prescription of behavior, as well as the externality that one
+imposes on others and vice versa. So beyond choosing actions to some extent, people can also choose
+their social categories. For instance, they can naturalize and
+become citizens of a new country. They can also join clubs or
+join social groups. And by doing that, that they affect
+their identity and identity utility. So I'm not going to go through
+the technical details, but rather we're going to look at
+how identity can affect contracts. So what we have talked about is to
+set up the utility function and show that identity affect economic
+behavior through four venues. One is identity changes the payoffs
+from one's own actions, and it can change payoffs
+from others action. So that's the externality part. And, the choice of different
+identities can affect an individual's economic behavior. The social categories and behavioral
+prescriptions can also be changed and affect identity based preferences. So we're going to look at a concrete
+example, which is from the 2005 paper called Identity and
+the Economics of Organizations. So organizations managers, for instance, often have to confront the issue
+of how to motivate and incentivize the workforce. One blunt instrument is monetary payoffs,
+salaries. You can adjust people's salaries and
+bonuses, but that typically can only
+based on observables and is often an imperfect indicator
+of individual effort. And it also creates opportunities for
+workers to game the system. So most jobs involve multiple tasks. Workers might outperform
+on well rewarded tasks, and under perform on poorly rewarded tasks. You can set up strong,
+incentive schemes such as tournaments, but that creates incentives
+to sabotage each other. Sometimes monitoring incentives
+can crowd out other incentives. So what we're going to do is to apply
+identity to contract theory and ask ourselves whether identity
+can be a complement or substitute for monetary rewards. And what identity can do to reward
+schedules and how far identity can go. What we're going to do is to set up what's
+called a principal agent framework. This is a canonical model that looks
+at contracts between a firm and a worker under asymmetric information. So the idea is that the principal or the firm doesn't know
+everything about the worker. So the firm doesn't know the manager. So I use all these terms the principle,
+the firm, the manager interchangeably. They might not know the worker's
+skill level, and it's very difficult to monitor the workers' efforts,
+or very costly to monitor that. So whether the question is,
+can you set up a contract so that it is in the worker's
+own interests to do the best they can to exert high effort? So we're going to set up the optimization
+problem from the firm's perspective. So let's say a firm maximizes
+its expected profit, which is the expected revenue
+net of expected wage payments. And a worker maximizes
+her expected utility. Here we assume diminishing
+marginal utility from income and losses of utility from effort. So effort, in a way is a dis-utility
+workers can take two actions. A high effort action, which we denote
+by A, and a low effort action B. So the assumption is that
+the high effort action increases the likelihood that the firm's
+revenue will take on a high value. Importantly, the firm cannot observe
+the effort of the agent, but it can observe whether
+the revenues are high or low. And, the firm will pay a high wage
+when it observes high revenue and a low wage when it observes low revenues. So that's the setup. And now we're going to introduce some
+notations and incorporating identity. So a worker can take on
+one of two identities. So we call c, as the workers category
+is N for insider and O for outsider. So an insider identifies with the firm, and an outsider doesn't
+identify with the firm. So this all seems to be
+simplifying assumptions. But I think the beauty of it,
+it can illustrate the logic fairly well. So there are two prescriptions. So an insider should take
+the high effort action. So these are the ideals or
+the norms of behavior. So the high effort action is denoted A,
+which leads to high revenue with probability a half and
+low revenue would probably to half. So this just tries to capture some
+uncertainty about the realization. Sometimes you do your best,
+but things don't work out. But if you never try,
+it would never work out. So, an outsider, on the other hand,
+should do the low effort action, which is denoted B. And so,
+that the B always leads to lower revenue. The effort level is denoted by e,
+for effort. And so e of A is greater than e of B. So the workers utility
+depends on her income, y? So it's log of y. So it's a very simple, functional form, capturing diminishing
+returns minus the effort. So that its constant cost of effort. Ic, is the worker's identity. So the last two terms capture
+both the identity and the norms. So minus t of c. So tc is how strongly the identity
+affects your pay off. So there is a norm
+associated with category C. So we call it e star for
+the ideal minus e. So what's in the absolute
+value term e star minus e is the deviation from the ideal effort. And that for someone who cares about their identity reduces the utility for
+this worker. So now we're going to set
+up the optimal contract. So P is the principal or the firm, so p chooses a high wage wH
+when observing hi revenue or high profit, high H and
+a low wage wl when observing pi l. And p maximizes expected profit
+subject to two constraints. The first constraint is called individual
+rationality, or IR constraints. Which basically says that I would
+rather sign the contract than rejecting the contract. So this ensures that the worker
+voluntarily participate in the contract. The second one is called the incentive
+compatibility, or IC constraints. Which is in this particular context,
+the worker is better off taking on the high effort
+action than low effort action. So what you see in the next three
+lines of equation is the firm or the principal maximizes expected profit. Which is the first term is when
+the worker takes on high effort, the firm will get high revenue or low
+revenue, each with probability, a half. And also, you have to subtract
+the expected payout to the worker. So what the principle is
+trying to do here is, the principal is trying to
+induce high effort, right? So how would he or she induce high effort? There has to be two constraints. So the first constraint is when
+the worker exerts high effort, it should be better for
+the worker than the outside option. So we denote the outside option as UR. So if if we break down
+this first constraint so such that is short for,
+s.t., is such that. So that starts the constraints. So if you exert high effort, it only work out half of the times
+that the firm achieves higher revenue. And so when that happens,
+you get paid high wages, but that only happens with probably to half. So it's half times log of wH. And the other times you you actually, the
+outcome is not good, despite your efforts. So it's plus half times log of wL. And then the last constraint, the last line of the equation
+basically says that as a principal, I want the worker to behave such
+that high effort gives on average a higher expected utility for
+the worker than low effort. So once we set this up,
+we can actually solve it. So we can solve for equilibrium wages. So you here, you can try it out
+yourself if you're interested. And the paper also has the proofs. But we can solve for
+the optimal wages for, the old workers, which is the outsider,
+people who don't identify with the firm. We can also solve it for the insider. Once we solve for the optimal wages,
+we can compare them. So the implications is what we call
+,you can do all sorts of comparison. So first you can look at how much
+variation there is, a more insiders. It turns out that, the wage variation for the insiders is lower. So when you observe a good
+outcome versus a bad outcome, you don't have to pay the person
+generating the good outcome. Very high wage premium for the person to
+induce the person to exert higher effort. The other effect,
+that comes out of this identity incorporation into the model
+is that the principal doesn't have to pay as much at the top. So in other words, within the firm,
+there will be less inequality in income. And the last point is that,
+through a Taylor series expansion, one can derive that in general, the principal doesn't have to
+pay as much in expected wage. So this basically says
+that in the long run, or overall, it actually
+is to the principal or the firm, or
+the managers benefit to induce, workers to identify with the firm. So to convert newcomers
+from outsiders to insiders, there are all sorts of good outcomes. So that's the basic idea of the model. So one thing that you might say is,
+gee, I could have guessed all that. [LAUGH] And I'm just going, if you're
+thinking about that, I'm just going to go back and say, can you tell me what
+the sufficient conditions are for you to get all these outcomes. These are the set of outcomes
+that only hold under a very specific set of sufficient conditions. And even though it has not required,
+I'm hoping that you will find it useful to
+look at why it makes sense for organizations to expand resources to
+create identity or work identity. So what we have done in this unit is to incorporate identity into
+the utility function. And that gives us a new
+set of perspectives and tools about how we might model
+various things like contracts. We can think of identity as playing an
+important role in people's preferences and decision making processes that have
+been ignored in at least neoclassical economics. And nowadays,
+there has been a fairly large literature on the what's called identity economics.

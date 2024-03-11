@@ -1,0 +1,183 @@
+In data science, the
+term data leakage, sometimes just referred
+to as leakage, describes a situation
+where the data using to train a machine
+learning algorithm happens to include
+unexpected extra information about the very thing
+you're trying to predict. Basically, leakage occurs anytime that information is introduced
+about the target label or value during training that would not legitimately be
+available during actual use. Maybe the simplest example of
+data leakage would be if we included the true label of a data instance as a
+feature in the model, the model would learn
+the equivalent of if this object is labeled as an
+apple predict it's an apple. Another clear example of
+data leakage that we've seen before is having test data accidentally included
+in the training data, which leads to overfeeding. However, it data leakage can happen for many other reasons too often in ways that are quite subtle and hard to detect. When data leakage does occur, it typically causes
+results during your model development phase
+that are too optimistic, followed by the nasty surprise
+of disappointing results after the prediction
+model is actually deployed and evaluated
+on new data. In other words, leakage can cause your system to learn a
+sub-optimal model that does much worse in
+actual deployment than a model developed
+in a leak free setting. Leakage can have dramatic
+implications in the real world, ranging from the
+financial cost of making a bad monetary and engineering investment in
+something that doesn't actually work to system
+failures that hurt customers perception of
+your systems quality or impact the company's brand. For these reasons,
+data leakage is one of the most serious and
+widespread problems in data mining and
+machine learning. In something that has a
+machine learning practitioner, you must always be
+on guard against. Now, we'll cover what data
+leakage is, why it matters, how it can be detected, and how you might avoid
+it in your applications. As an aside, this
+term data leakage is also used in the field
+of data security to mean the unauthorized
+transfer of information outside of a secure facility
+like a data-center. However, in some ways, this
+security-based meaning is actually somewhat appropriate for a machine learning setting, given the importance of keeping information about the prediction securely separated from the training and model
+development phase. Let's look at some
+more subtle examples of data leakage problems. One classic case happens when information
+about the future that would not legitimately
+be available in actual use is included
+in the training data. Suppose you're developing
+a retail website and building a classifier to predict whether the
+user is likely to stay and view another
+page or leave the site. If the classifier predicts
+they're about to leave, the website might pop
+up something that offers incentives to
+continue shopping. An example of a
+feature that contains leaked information would be the user's total
+session length or the total number of pages they view during their
+visit to the site. This total is often added
+as a new column during a post-processing phase of the visit logged
+data, for example. This feature has information
+about the future, namely, how many more visits
+the user's going to make. That's impossible to know
+in an actual deployment. A solution is to replace the total session length
+feature with a page visit in session feature that only knows the total pages visited so far in this session and not
+how many are remaining. A second example of
+leakage might involve trying to predict
+if a customer on a bank's website was
+likely to open an account. If the user's record contains
+an account number field, it might normally
+be empty for users sill on the process of
+exploring the site, but eventually it's
+filled in once the user does open an account. Clearly, the user
+account field is not a legitimate feature that it
+should be used in this case, because it may not
+be available at the time the user is
+still exploring the site. Another example of
+future information leaking in the past might be if you were developing
+a diagnostic test to predict a particular
+medical condition. The existing patient
+data set might contain a binary variable that happens to
+mark whether or not the patient had surgery
+for that condition. Obviously, such a
+variable would be highly predictive of
+the medical condition. There are many other ways predictive information could
+leak into this feature set. There might be a
+certain combination of missing diagnosis codes that was very indicative of
+the medical condition, but again, these would not
+be legitimate to use since that information
+isn't available while a patient's condition
+is still being studied. Well, finally, another example in the same patient data set might involve the form
+of the patient ID. The ID might be
+assigned depending on a particular diagnosis path. In other words, the ID could be different if it's the
+result of a visit to a specialist where
+the initial doctor determined that the medical
+condition was likely. This last example is a great illustration of
+the fact that there are many different ways data leakage can occur
+at a training set, and in fact, it's
+often the case that more than one leakage
+problem is present once. Sometimes, fixing
+one leaking feature can reveal the existence of
+a second one, for example. As a guide, here are some additional examples
+of data leakage. We can divide leakage into two main types: Leakage
+in the training data, typically where test data or feature data gets mixed
+into the training data, and leakage in features, where something highly
+informative about the true label somehow gets
+included as a feature. One very important cause of data leakage is performing
+some kind of preprocessing on the entire dataset whose results influence what
+is seen during training. This can include sub scenarios as computing parameters
+for normalizing and re-scaling or finding minimum
+and maximum feature values to detect and remove outliers, and using the distribution of a variable across
+the entire dataset to estimate missing values in the training set or
+perform feature selection. Another critical need for caution occurs when working
+with time series data, where records for future
+events are accidentally used to compute features for
+a particular prediction. The session length
+example that we saw was one instance of this. But more subtle effects
+can occur if there are errors in data gathering or
+missing value indicators. If a feature relates
+to collecting at least one record
+in a timespan, the presence of an error may give away information
+about the feature. In other words, that no further observations are to be expected. Leakage in features includes the case where we have a variable like diagnosis ID in a patient
+record that we remove, but neglect to also
+remove other variables, known as proxy variables that contain the same or
+similar information. The patient ID in the case where the ID number
+had clues about the nature of the
+patient's diagnosis due to the admission process, was an example of this. In some cases,
+dataset records are intentionally randomized
+or certain fields anonymized that contain specific information
+about a user, such as their name,
+location, and so on. Depending on the prediction task, undoing this anonymization can reveal user or other
+sensitive information, that is not legitimately
+available in actual use. Finally, any of the
+above examples we've discussed here could be present
+in a third party dataset, that gets joined to
+the training set as an additional
+source of features. So, always be aware
+of the features in such external data and their
+interpretation and origin. How can you detect and avoid data leakage in
+your applications? Before building the model, exploratory data analysis can reveal surprises in the data. For example, look
+for features very highly correlated with the
+target label or value. An example of this from the
+medical diagnostic example, might be the binary
+feature that indicated a patient had a particular surgical procedure
+for the condition. That might be extremely highly correlated with a
+particular diagnosis. After building the model, look for surprising feature
+behavior in the fitted model, such as extremely
+high feature weights, or very high information gain associated with the variable. Next, look for overall
+surprising model performance. If your model evaluation
+results are substantially higher than the same
+or similar problems and similar datasets, then look closely
+at the instances or features that have most
+influence on the model. One more reliable
+check for leakage, but also potentially expensive, is to do a limited
+real-world deployment of the trained model to see if there's a big
+difference between the estimated
+performance suggested by the model training and developing results and the actual results. This check that the
+model is generalizing well to new data is useful, but may not give much
+immediate insight into if or where the
+leakage is happening, or if any drop in
+performance is due to other reasons like
+classical overfitting. There are practices you
+can follow to help reduce the chance of data leakage
+in your application. One important rule, is to
+make sure that you perform any data preparation within each cross validation
+fold separately. In other words, if you're scaling or normalizing features, any statistics or
+parameters that you estimate for this should only be based on the data available in the cross validation split
+and not the entire dataset. You should also make
+sure that you use the same parameters on the corresponding
+held-out test fold. If you're working with
+time series data, keep track of the timestamp
+that's associated with processing a
+particular data instance, such as the user's
+click on a webpage. Make sure any data used to compute features
+for this instance, does not include records with a later time than
+the cutoff value. This will help ensure you're not including information from the future in your current feature
+calculations for training data. If you have enough data, consider splitting off a
+completely separate test set before you even start
+working with a new dataset, and then evaluating
+your final model on this test data only
+as a very last step. The goal here is similar to doing a real-world deployment, to check that your
+train model does generalize reasonably
+well to new data. If there's no significant
+drop in performance, great. But if there is, leakage may be one contributing
+factor along with the usual suspects like
+classical overfitting. For more real-world examples, analysis and guidance about
+preventing data leakage, you can take a look at
+the optional readings provided in the lesson plan.

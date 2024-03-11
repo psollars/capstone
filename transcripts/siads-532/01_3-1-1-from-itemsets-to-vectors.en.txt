@@ -1,0 +1,65 @@
+Hello. This is Qiaozhu Mei
+from School of Information. Today, we're going to give you more details about vector
+representation of your data. So we have talked about how to represent your dataset
+with itemsets. Itemsets representation,
+is very powerful for a number of applications
+dealing with categorical data, but it does have,
+a few limitations. First, itemset
+representation ignores the order and quantity of
+your categorical items, and on the other hand, it does not handle
+numerical data. For example, let's take a look
+at a few shopping baskets. So you can see that, we have two shopping baskets, one contains four items; beer, milk, watermelon, and beer again, and the other one,
+has three items; milk, beer, and watermelon. If we use itemset to represent
+the two shopping baskets, there we have the same
+itemset representation. You may think set
+the beer appeared twice in the first itemset
+and is important even it. So we should have considered
+the quantity of the items. You may think that, the following representation
+would be better. So this is very related to the dictionary data
+structure in Python, you basically represent the
+itemset as the dictionary, that you record the number of times each item appear
+in each itemset. But, problem is that, this representation does
+not facilitate computation. For example, what if we
+have another itemset, now has one beer, one milk, and one lemon and the item name has never appeared in the
+first two itemsets. What you have to
+do is to increase, the volume in your
+dictionary structure. This is not ideal. Alternatively, the
+more principled way is to transform
+itemsets into vectors. Given the three item sets. We first look at how many unique items are
+there in this collection, and we have four; we have beer, we have milk, we have watermelon, and we have lemon. These, are known as the vocabulary of your
+categorical data, and these have defined the four dimensions
+of your vector. Once you identify
+these dimensions, you can now put values
+under each dimension. So the first itemset can
+be recorded as 2 1 1 0. Number two means that, the corresponding dimension,
+the corresponding item beer, has appeared twice
+in this itemset, and milk appears once, watermelon appears once and lemon does not appear
+in this itemset. So we put a zero there. You can see that now, the value on each
+dimension is a real value. It does not have
+to be zero or one, it could be anything, anything that's the real number. So that's how vectors could actually handle
+numerical data. Similarly, the second itemset, can be represented as
+the vector 1 1 1 0, and each number corresponds
+to each particular dimension. Similarly, the third itemset corresponds to the
+following vector, 1 1 0 1. Now, usually we put a bracket and commas onto each row
+of these numbers, and that defines the vector. So we say that, the vector 2 1 1 0 gives us
+the vector representation, of the first itemset
+and so on and so forth. Now you can do this, for
+every row of these numbers, and all together they
+give you a matrix and the matrix is essentially just a collection of
+your data vectors. We can also look at
+another example, where you're not dealing
+with categorical items. You are dealing with numerical customer information
+that you collect. So you can see that
+you already recorded a table of attributes to
+each of your customers. Looking at the name
+of the customers, we see that you are
+serving the superheroes. You record their age, you record their credit scores,
+their annual income, and many other attributes, and let's make it more fun, you also record whether they
+are data scientists or not. So each side of this table, you have a numerical value. Sometimes we have whole numbers, sometimes you have just
+different real value, and sometimes you have a
+categorical value, one or zero. Every attribute of your customer, now defines the dimension
+of this vector notation, and every row in this
+table, defines the vector. This vector gives you a representation of
+one of your customers. You have many vectors, each vector corresponds to
+one particular customer, and the whole table is
+represented as the matrix.

@@ -1,0 +1,274 @@
+Hello again. In this segment I'm going to
+talk about another method or technique that we might use to solve a
+problem of governance and accountability. This technique is an interesting technique
+because it's sort of really hot and exciting like transparency in the
+literature about data science right now and in industrial practice. The technique is called auditing or
+external auditing, but there's a little bit of a trick to it. So you are I in conversation before you
+took this class if I set auditing to you, you might just think of maybe
+something that had to do with the IRS, which is the tax agency
+in the United States. Or something to do with accountants or
+finance. Now that is a true use
+of the word auditing but here we're using the word a little
+differently in social science research, and I admit I totally admit this is
+probably not the best word choice. So I'm sorry that they chose this word but
+in social science research, they use the word auditing to refer
+to the fact that there's some sort of experimental test in which something
+is varied experimentally to test a system to see if it's
+doing something unwanted. So you could think of auditing
+as a kind of A/B test, these kinds of tests started in the 1940s. They were invented by
+the Department of Housing and Urban Development by some economists. And they were trying to figure out racial
+segregation in the United States and they particularly were interested in
+racial discrimination in housing. So they thought well, one way that we
+could experimentally gather evidence about racial discrimination in housing,
+is that we could for example. Send a black person and send a white
+person to ask a landlord if there was an apartment available at
+close to the same time, or as close to the same time as possible. They called these people testers, but if the landlord gave the two
+people different answers. It's not conclusive proof that
+something weird is going on. But if we repeat the test over and
+over again, and we see that the two testers get different answers, that does
+sort of start to raise our hackles and we think maybe something is going on
+related to racial discrimination. So, auditing is used in the United States
+to diagnose employment and racial discrimination. So there are some famous audit
+studies where for example, auditors send a resume to an employer and they send perhaps the same
+resume to many employers, but they vary the person's name
+at the top of the resume. So they use a made-up person's name and they use the US Census to determine if the
+name is, they choose a name that's likely to be associated with a particular for
+example gender, or racial category. And then they see that, even with
+exactly the same resume, people get different callbacks, different rates
+of callbacks depending on their name. They find them that maybe this is a good
+way to diagnose harmful discrimination. So when social scientists refer to
+auditing, they don't necessarily mean numbers about money, so
+they don't necessarily mean taxes. They mean this system where
+you use an experimental approach to gauge something
+in the real world. It's related to the common dictionary
+definition use of auditing. I just want to emphasize that it's
+not just about finance or money. Now lately in data science. There is a lot of excitement because
+data science has moved away from just being producing reports for
+the manager, which is very helpful. But it's also been linked into
+the production process and the workflow of a variety of products. So that the data science analysis is
+a part of producing information for the customer that may or
+may not see a review by a human being. And so
+one thing that's come out of this is that, if you're say a company that uses
+data science analysis in this way, and so we could take for example Google,
+Google produces search results. When you type in a search term
+using a data science analysis, if we take that as an example. Google doesn't want to share the mechanism
+by which they decide on what search terms to show you. I mean, there's a couple bunch of reasons,
+they don't want to share it. They don't want to share it because
+it's a trade secret for them. They feel like it's something
+they've invested a lot of money and they don't want their
+competitors stealing it. They're also concerned that if they
+reveal it maybe bad actors who want to game the system are going to try and figure out how to boost their
+rankings in Google search results. So I think the reason we chose auditing to
+talk about is it's a nice counterpart as a strategy for accountability and
+governance to transparency. Because transparency might say, well,
+you just show everything to everyone. Of course we learn is a little
+more complicated than that, but you just show everything to
+everyone whereas auditing says, what if you don't have access to a system? And although we're talking
+mostly about external audits. Like how do you see inside a system
+that you don't control, companies also use internal audits, and you might think
+about this in the way that security practitioners think about designating
+a team of people as a red team or a blue team to try and think through security
+vulnerabilities of their own organization. So CEOs will hire external auditors, even
+though they have access to internal staff. So they want someone who's outside
+the organization to come in and tell them how their
+organization is working. Sometimes they give access to all of their
+internal information to those people, sometimes they don't. So, there's an emerging
+market in data science for people that kind of test systems to
+see if they're doing any harms, and that's very relevant to
+the topics of this class. So I'll review five ideas that
+have been proposed in terms of external auditing for
+data science systems. And I think you'll find that these
+are potentially useful to you in a variety of situations where you might need
+to consider accountability and governance of a system. I should say though that, a sort of meta
+part that I'm going to talk about now. Meta part of auditing is also sort
+of similar to our discussion of transparency who does it and
+who were they reporting to. And so if you had an auditing
+process that found problems and you did nothing, that would be
+harmful like that's not useful. So for example, you would want
+an auditing system that was tied into some mechanism of accountability
+at your your company or organization. This is also a way to think about
+the media as a source of accountability. So for example,
+there's some high-profile instances. Some of the cases that we've talked about
+in this class where the media serve the auditing function I'm talking about, and they're the ones testing
+a system to see how it's working. So you could also think about this unit as
+imagining that once you deploy a system. Someone is going to be auditing
+it whether you like it or not. So you should be ready for that. It's been argued that,
+the ethical way to deploy systems that have interactions with real
+users is to build in auditing. So you might do what people
+have called a Bug Bounty for reasons of security, but
+you might do that for auditing as well. So for example, indemnify external investigators who are trying to
+figure out if your system causes harm, Because you're saying I want to
+know if my system causes harm. I'm not going to block them
+from looking at the system. I'm going to help them. And companies do this via mechanisms. Like having an API or application
+programming interface that allows external people to go in and
+look at how the system operates. At least to some degree. So let's go through the five examples
+of how you might do auditing. The first one that people started with,
+with external audits. Is that when people started to see systems
+deployed with complicated analyses behind them. That were fairly opaque and
+they didn't know how to understand them. They would say well all you
+have to do is to get the code. And if everyone releases the code,
+you can audit that. Because you can read the code for
+the system and then understand it. This is also a parallel
+strategy to getting the data. The reason I raise it is that in the in
+the in the data science community. I mean, we recognize that this
+sounds like it's the way that the world works to a lay person. But not to a data science professional. So for example, when Google was
+facing antitrust scrutiny in Germany, the German Minister of
+Justice said in the media. If only Google would
+reveal its secret sauce. It's a secret recipe for search results. We would then read it and we wouldn't
+have to do this government regulation to see if Google was acting fairly. Because we could read it
+secret recipe here in the US. We talked about Coca-Cola and Kentucky Fried Chicken is
+having these secret recipes. But that's not really a great metaphor for how data science analysis
+works on the one hand. We have to recognize that it's really
+hard to read the code, this is not hard. But imagine a statistical code or analysis
+in r or something like that to try and figure out what it's doing. It's very challenging and time-consuming. But the real problem is that
+our data science analyses don't typically have a secret sauce. In the way that Coca-Cola or
+Kentucky Fried Chicken does. The reason for that is that there
+are a variety of ethical harms that can come when you have an algorithm or
+an analysis. That is fine, but the data are flawed. And we've seen that in other
+examples in this class where the training data are flawed for
+a machine Learning System. For example, so
+if I just had the model or the code or something like that, but
+I didn't have the data. There are a variety of ethical problems or
+harms that I would be unable to diagnose. Similarly, there are ethical
+problems that come from the from the data that may not be
+from that the algorithm. Or the analysis that may
+not be present in the data. So if I only have the data so there's
+a movement about data ownership and control over your own data. That doesn't actually help with some harms
+that come from a misguided analysis. And so we've seen some examples of
+that in our case studies as well. So the problem with just saying show
+me your secret sauce is it turned auditing into transparency. And it doesn't usually I mean, I'm very not optimistic about it as
+you can see from this presentation. Because if I wanted Google
+to reveal its secret recipe. What would it reveal it would probably
+have to reveal a lot of its real data and its algorithm. It would be very hard for
+me to understand it. Not because I'm dumb but because it would
+be very complicated and time consuming. And so auditing would create
+this huge task if it had all the things necessary to
+actually diagnose harm. And so I think some of the some of the
+ideas of auditing code or earning data. That make it more like transparency
+are not really very realistic sometimes. External auditors diagnose
+harms a different way. They ask the users about things
+that the system has done and then they kind of assume that
+whatever the users are telling them. This does reflect the actual
+behavior of the system. It's kind of the way that people used
+to do everything with social research and people. Before we got sort of widespread data
+collection with computers like you used to have to ask the users. Their experience for most things and
+now you can measure a lot of things. But I think asking the users about some
+difficulty with a system is a valid auditing strategy. And so for example, you know,
+you have to be a little careful. Because asking the users might
+conflate user perception that could be false with what the system
+is actually doing. But a nice thing about
+it is that you know, you probably should be asking
+the users something anyway. Like at your organization, whatever it is,
+you can build an auditing. Strategy into a questionnaire
+that you ask your users. So so for example after Facebook
+came under a lot of criticism for some of the ways that it was prioritizing
+some content and not others. It instituted a random process by which
+some panel of users were selected and ask questions about the quality
+of its news feed algorithm. So the idea was that if
+something changed and how the algorithm was performing
+perhaps the users would notice it. And this would create a kind of
+red flag signal within Facebook so that they could diagnose the problem. So they could build a kind of internal
+audit by having a what you could think of as a an algorithm quality panel. That would automatically pull a certain
+number of people about how they felt about what was being shown. And perhaps what was not being shown to
+the extent that they could diagnose that. You'll notice that in the external
+audit unlike transparency. You might have very little insight
+into how the system actually works. The users might really have no idea what
+the data are or what the analysis is. But it can still be useful and that's a key distinction that separates
+auditing from transparency in auditing. We often saying we're only
+going to look at the outcomes. And that can be useful
+because it can be faster and sort of have low overhead compared to
+really trying to dig into the mechanism. So so the auditing and this case if users identified a problem
+it might not tell you how to fix. The problem or even what the problem is,
+but it's kind of a warning sign. So the audit is more like
+an early warning system that helps you realize that something
+has gone wrong with your system. One thing that that other people have
+suggested as an auditing mechanism. Is that that I'm going to call
+scrape everything on this slide. And this is a famous painting
+called the floor scrapers. So it's metaphorical is that they've said
+well whenever there is public information. We should expect that some third party
+might gather up that information. And try to analyze it. So if you are revealing information
+to your users in the user interface. Even if it's not on the web, some
+enterprising users might grab everything in that interface, and try to reverse
+engineer analyze your system. And commentators have said this could be a
+powerful mechanism for an external audit. This can be a positive thing
+journalists have used this mechanism. To try and understand how systems work by
+revealing all like Gathering all public. All public information
+from government documents. I'm just using scrape because that's the
+word we use if information is on the web. But this strategy for auditing would apply
+even if we're talking about government records in a Dusty basement. And so the strategy of scrape everything
+has some advantages in that, you know, you might be able to
+automatically gather data. And systematically have a very
+large set of data to analyze. You can use this against some system
+that you don't have access to. So you could even erratically
+uses it against a competitor. Or they could use it against you. Because if you've made this information
+public then they can get access to that information. So it might have less of some kinds of
+error than asking the users because you're running analysis on what is public but
+of course, it presents It presents its own problems because you're only able
+to scrape information that is public. There may be private
+information that you don't see. Another audit strategy that
+firms have used internally, but also externally, is the idea of
+fake users that test the system, we're going to call this Sock Puppet. In web-based research, we usually
+use the phrase Sock Puppet to mean a user account that isn't real, that
+we're using for some automated purpose. And companies use this kind of
+strategy to test their analytics, it's a useful strategy. There are some challenges
+in some areas and the nice thing though about
+sock puppets is that, when you compare these strategies with
+other strategies that I've listed. They each have different trade-offs and so it might be useful to
+combine some with other. So sock puppets would give you a view
+through the eyes of a user of your system, although that user isn't real. You can, usually when people talk about
+sock puppets, they talk about varying some aspect of the sock puppet, to see
+if that has an influence on the result. So a sock puppet is really close to
+the social science definition of the audit that I mentioned earlier. Where we might send in the 1940s
+a black person and a white person to ask if there's a vacancy at a particular
+apartment building or a landlord. Today, the benefit of the sock
+puppet is we can scale that up and we can test the system using a lot of
+example user accounts or example data. You could also say I'm using a different
+phrase sock puppets to refer to what good data scientists should do
+anyway, like run simulations to test the potential outcomes of a system that
+makes a decision that's important. That's true, but I wanted to use
+the word sock puppets because I want to emphasize that this can
+be done externally. So, even if you're not doing it as an
+internal test, some external person like a journalist can create fake accounts and
+manipulate features of those accounts. The last idea that we'll cover in auditing
+is the idea of collaborative auditing and that's a interesting idea. I'm using an example website here called
+BiddingForTravel.com, which is less important today, but when travel
+bidding websites first became popular, where you could name your own price for
+travel. One of the challenges is that the users
+of those sites really didn't have as much information as the operators
+as to what they ought to bid. And so, they sometimes formed a community
+like this is one of those communities, where they would trade information
+about what would be a good bid for a particular airfare or
+a hotel or something like that. And so, what we're calling a collaborative
+audit you could also think of as a user community. So, if your system has
+as users you need to be in those user communities trying to
+understand their reactions to your system. And that can disclose problems
+with your system that they're talking about before you are. A famous business school professor
+named Eric von Hippel once said that, most research and development is
+actually just rediscovering or stealing the ideas that
+your users already know. And so,
+since the users use the system everyday, they sometimes have information
+about it that you don't, because you're at a different
+relationship to the system as a designer. So, scouting what's going on in
+whatever the right.com forum is for your system, can be extremely useful
+in diagnosing ethical problems. Because you might say like,
+it looks like the systems are, it looks like the users are a little
+irritated because this thing is happening. So, I named this collaborative audit and not just something like
+check the user community. Because the users can organize audits
+on their own and they sometimes do. So the users sometimes develop
+systematic inquiries to try and figure out how the systems that they use
+work and that's what I'm highlighting. In BiddingForTravel.com they gather data
+about successful bids and organized it. So, that's what I'm highlighting here is
+that users can conduct independent audits by just sharing information
+with each other. And they don't need then sock puppets,
+since they have real data don't have to rely on user questionnaires,
+if they aggregate everything. And they don't necessarily need to use
+public information since they are users. They could use information that's
+private to them and disclose it for the purposes of an audit. So this is a, covers the idea of
+the audit, remember, the key features of the audit that I started with,
+it could be done externally or internally. It's got some advantages that most of
+the audit strategies involve looking at the outputs. Except for getting the code or
+the data but most of them involve looking at
+the outputs and not the inputs. I think there are four
+useful strategies here, that you might find have some bearing
+on questions of accountability and governance, when you're in your job
+working with real data science problems.

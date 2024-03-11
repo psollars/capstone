@@ -1,0 +1,192 @@
+In this segment, I'm going to go
+beyond the introductory remarks. And share with you a table that I use
+when I talk about accountability and governance to people in industry and
+in government. I find this table to be very useful as
+a kind of setting the stage exercise. But it can also be used to diagnose
+particular problems with accountability that you might find in a situation that
+you encounter in your working life. So I'm going to go ahead and
+show you the table here. The table's title is who
+discovers unwanted consequences. And I think the key thing about this
+table is it's going to help us understand whose job it is to figure out
+that something has gone wrong. And that's a key part of any
+accountability processes, whose job is it to figure out
+when something has gone wrong. And this helps us answer
+the framing question for this week. About when is the problem kind of your
+job to figure out and when isn't it. I'm going to have two axis on this table,
+well, I'm going to start by drawing the y-axis,
+the y-axis of the table. You could say that if you've got
+some sort of problem with a system, some problems are more predictable
+by data scientists, that's the plus. And some problems are less
+predictable by data scientists. And it might be an example that if no one
+in data science has ever done an analysis, like yours on a dataset like yours. And the problem that we're talking about is really not something that
+anyone has foreseen ever before. You could say it's unlikely data
+scientists would be able to predict it, so that would be the negative sign, it's
+not that predictable by data scientists. On the other hand, we've also in other parts of the course,
+seen data scientists do things. That are totally against best practices
+in statistics or in data science. Whereas we know that what
+they're doing is a bad idea, that would be something there's
+an unwanted consequence. But it was predictable by data scientists
+and they weren't able to predict it. So you could use this distinction as
+also a way to assign responsibilities. Like if it was predictable,
+that's the plus and they didn't predict it,
+that looks bad for the data scientists. The second axis is
+discoverable by users and what I mean by that is, I mean,
+is the problem discoverable by users? So the x-axis, the plus and the minus
+mean that in some cases the user, or we could substitute,
+the customer or something like that. In some cases, the user can tell there's
+a problem like the system doesn't work and they can see it. So that is a plus,
+the problem is discoverable by users. However, in some instances you could
+imagine that the system has a subtle problem that maybe is harming people. But it's harming each of them a little bit
+or it's harming people who aren't users. It's harming people in a way
+that's very difficult to notice, even if it's harming them a lot. In that case, we wouldn't expect users
+to be able to discover the problem self. So that would be a minus on
+the x-axis of discoverable by users. So I use this table to kind of diagnose
+how I should be thinking about accountability in different systems. And what I should do, so, let's just
+go through how I might use this table. It's a conceptual device and I realized
+that it's not an ironclad set of steps or foolproof exhaustive categorization. It's rather more like a heuristic,
+but I still find it useful. So one of the things I want to highlight
+is that this class is about ethics. And you could see that whole row, at the
+top, as being a key concern of this class. Because I've been talking to you
+about things that might go wrong. And I'm trying to train you to look out
+for them and then they become predictable. So everything in that green
+highlighted space along the top is kind of the purview of ethics. It's the kind of thing that
+ethics is supposed to solve, things that we can predict. So in our class we tell you things
+about data, in other classes, they tell you things about data cleaning. Or they tell you things about whether
+analysis is appropriate to run given a certain distribution of the data. They tell you about
+the limits of some analyses, they tell you about common
+misinterpretations or problems. They warn you about
+things like over-fitting, now, these are the things that are
+predictable by data scientist as problems. And we're training you, and
+that's that top green bar. But we could add another bar that would
+be vertical instead of horizontal, and that's the stuff that's
+discoverable by users. And so
+this helps us understand who's involved in discovering unwanted consequences? Like here, if it's discoverable by users,
+maybe it's the users of the system. The customers for the system,
+the victims who are experiencing the harm. I mean not victims in general,
+but the victims experiencing some harm of an unwanted consequence
+who are harmed, and they know it. The non-governmental organizations
+that are designed to be watchdogs in the topical domain,
+that governs the system. Regulators, if there's appropriate
+regulators, something like that. Like the Federal Trade Commission
+in the US regulates some aspects of privacy
+in a very limited way. You could add other other things in there. If we were to then fill in the cells,
+I'm going to talk about specific examples. You could fill in more than one example,
+so I'm not suggesting the things I put in the cell are the only
+things you could put in there. I'm just saying this is the way you might
+use the table to understand how your system is or is not accountable. So in the cell at the upper right,
+I put the word audit. An audit is an interesting idea that we'll
+talk more about but it's an old idea. Not necessarily a financial audit, but a process by which we systematically go
+through some system in an expert way. Possibly as outsiders to try and
+figure out what has gone wrong. And so an audit might be
+a strategy that you could use to identify harms that aren't
+discoverable by users. Because audits are usually
+conducted by experts. So an audit might be able to find some
+harms that aren't discoverable by users so you could put it in that category. However, because it does deal with
+things that experts have to do with. It's unlikely an audit is going to find
+a harm that isn't predictable by experts, because an audit is
+usually done by experts. I'm not necessarily talking
+about a financial audit, just that the word audit
+means an independent review. And then I'll talk later in this class
+about more specific things that I mean by audit, but for now,
+let's just say an independent review. In this cell in the upper left you
+could put something like the media. The media could be important in any
+cell once a problem has been revealed. But it seems like the media is
+particularly important in this cell. Because the media is
+itself able to discover problems that are discoverable by
+users and it writes about them. So because the media are users, so you could put the media in this cell,
+you could also put audit in the cell. So again, I'm just trying to think
+through how you might brainstorm about who is accountable and who is responsible. But I think the media do have a big role in the current situation
+we have in data science. We have a lot of exciting things going
+on with data science, technologies. And there's not a lot of
+consensus about how we should think about some of these things. And the media have an outsized role
+because we don't have a lot of agreement about ethical standards. Or best practices in some of these areas,
+they're so new. We don't know how to think about them,
+and so the media, by publicizing harms, has a big role in accountability. But it's much better at publicizing harms
+that are predictable by experts and discoverable by users. And the reason for that is that the media
+is itself a user in some cases. There was a famous example,
+again on Facebook. Where the media discovered that Facebook
+would advertise that dead people had liked things using the like button on Facebook. And that was discovered by someone in
+the media by playing around on Facebook. So you would imagine that the media would
+probably be more likely to write about something they could detect themselves. Maybe that's obvious, you already knew it, you could put
+something else in that category though. I switch the category now,
+what about an institutional review board? That's a body in the United States, they
+also have them in other countries, but I'm focusing on the US context. It's mandated by law for certain
+situations involving the government. Although many other
+situations that don't involve the government also use
+the same structure. Now the Institutional Review Board or
+IRB is a board that has some experts, and usually one. Sometimes, I think it's always one,
+actually, usually one non-expert, they require a review before the fact. So you can see that an IRB would be
+good at identifying problems that were predictable by experts. But it might not be good
+at identifying problems that are not predictable by experts. Because it is an expert review board for
+the most part, and it happens before the fact. You could move media down here and
+that would also be valuable. So you could say that the media are biased towards reporting stories that
+have an element of novelty. So if something was difficult to
+predict or therefore unexpected, maybe the media would be even
+better at predicting it. Than say an IRB or an audit or a user
+group, or an NGO or something like that. So media really like stories,
+is more likely they're going to get into the newspaper, or the publication,
+if they have an element of novelty. So maybe things that are unpredictable
+by data scientists, but predictable by users are a really
+good case for media reportage. Because people will say,
+I'm using the system and it's doing all these horrible things. And then the media will say, well, that's a great story because
+no one's seen that before. And that that's one of the things
+that makes it hard to predict by data scientists. A couple other things about this matrix,
+earlier I said that I was going to talk about things that were ex-ante and
+post-hoc. Or things that were about accountability
+before the fact and after the fact. And you'll see that the axis on this
+chart roughly are about that as well. So things that
+are predictable by data tests are usually accountability
+before the fact. Or ex-ante accountability, and
+that is the vertical dimension here. Things that are discoverable by users,
+usually the system has to be deployed, so there's someone's using it
+before you can discover it. And so that's usually post-hoc or after-the-fact accountability or
+remedial accountability. One of the reasons I like
+this particular chart, even though it's very much subject
+to interpretation and discussion. Is that it provokes discussion about
+what should be in what box and the discussion is often useful. I also like it because it does contain
+this one category that I think we all are struggling with in data science. And that's that these systems are so new,
+it does seem like there are likely harms. Or unwanted consequences that are not
+predictable by data scientists. Because we're often surprised by
+things that we tried our best but something happened and
+we didn't know it was going to happen. And they're also not
+discoverable by users. And so the reason I put
+question marks in here is it may be that no one discovers
+these onsequences. So it might be that we're
+currently displaying systems that because they are harming
+people a little bit. Or they're harming people in ways
+that are very difficult to detect. And they're harming people
+in a way that's not really there's not really a great precedent for,
+no one is going to detect those harms. And I so I think that's important
+because it provides an element of hubris that makes the conversation
+among data scientists better. And so I like to think about
+the four cell table in this way. And then to argue with,
+for example, clients or people at conferences about
+what should go in which box. And that emphasizes the fact that
+something should probably go in every box. I'm not sure what goes
+in the question marks, maybe some sort of academic
+research observatory. But these are very real and
+concrete boxes, so. For example, a computer scientist named Christo Wilson performed a an audit
+study of personalization. And found that when you
+use certain websites, the prices that you're
+charged are different. And he was trying to investigate what's
+sometimes called the filter bubble hypothesis. That search results might be
+pushing you toward one or another viewpoint by trying to
+personalize results for you specifically. And he did some studies about
+websites offering different prices. And about search results having
+different personalizations or elements personalization. And he actually got a call from Google which was the company
+that he was studying. He was a private researcher
+working at a university, Northeastern University and it was from
+someone in the Google engineering team. And they said they were really
+interested in the study because no one at Google really had any
+idea the extent of personalization. Even though they had that built
+the personalization system. So they really didn't know how
+much personalization there was or what the consequences were. And It's not because they didn't
+care it's that they had a series of deadlines to meet. As a part of their job and assessment
+of the system after it was deployed was not something that
+the company was prioritizing. I mean, I don't know that's the case but
+I suspect that's the case. So they built it, it seemed to work all
+right, but what it did in the wild, nobody really knew because
+they didn't have time to look. So an interesting question is,
+is there some mechanism we should have for these two question marks to handle cases. Where we're not sure exactly what's
+going on, I don't know what that is, exploratory accountability. Or harmed discovery or
+something like that, so I'll stop there.

@@ -1,0 +1,29 @@
+Hi, everyone, this is Paramveer Dhillon. In this video, we will study some
+of the recent efforts in developing easily deployable neural networks,
+by taking the magic out of them. Particular, we will study how we can train
+neural networks without expert knowledge. Just to recap, until know, we have studied
+several neural network architectures. In particular, feedforward neural
+networks, CNNs, RNNs and GANs. We also studied the limitations of
+neural networks in the last video, in particular as it pertains
+to adversarial perturbations. One of the main drawbacks
+of neural networks, is that owing to their complexity,
+they require lots of expert knowledge, in order to fine tune their
+architectural design. So, a natural question arises, what if we
+can automatically build neural networks, without expert knowledge for a given task? It turns out that the answer
+is a partial yes. This has been a very active
+area of research of late, and is broadly called AutoML or
+automated machine learning. One of the common approaches for AutoML
+is proposed by Zoph and Lee in 2017, uses a recurrent neural network to generate
+model descriptions in a sequential manner. And then trains the model
+with Reinforcement Learning to search over the different
+neural architectures. To be more precise, at step one, the RNN controller
+samples a brand new child's network. Then it computes its predictive accuracy,
+and then updates the RNN controller based
+on the accuracy of the child network. So that it can adapt the model description
+that it generates in the next step. It turns out that autoML is fast
+becoming an enterprise tool. For instance, Google Cloud allows enterprises to
+automate the Model Generation component of neural network training as
+part of a service they offer. This definitely lowers the barrier, for
+instance, for startup companies, to be easily able to deploy state of the art
+deep learning methods for their purpose. Neural architecture search in general, seems like a research area that will see
+much progress in the next few years.

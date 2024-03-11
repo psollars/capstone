@@ -1,0 +1,97 @@
+Welcome to Information
+Visualization. I wanted to briefly
+just talk about what the course goals
+are for this class. We're going to do
+a lot of things over the next four weeks and many
+many small video lectures. So you're going to learn
+quite a few things. But I just wanted to cover the main high-level goals that we have in terms of what our objectives are for you to be able to do when you're done. So one of the things that
+we want to to be able to do is learn how to create
+information visualization. So we're going to
+teach you how to use different pieces of
+software to do this, but also to understand the underlying
+psychological, cognitive, perceptual rules that
+basically allow you to create good information
+visualizations. We'll teach you how to critique information visualization. So looking at other
+people's visualizations, whether they be for
+communicative purposes or a tool that somebody
+is providing you, you'll learn how to critique it based on some of
+these underlying principles. So you'll learn
+design principles, you'll learn specific aspects of what makes for good
+visualizations and bad ones, and be able to provide good critique for
+visualizations that you see. The last thing is I
+want you to be able to evaluate
+visualization systems, and a lot of cases
+what you're going to have is somebody dumps a piece of software on your lap where
+you're going to have multiple pieces of software that you need to decide between. So the question for you
+will be how to know which particular piece
+of software would be better or worse for
+the tests that you have. So some of the things
+that we will teach you in this course will
+allow you to do that, by basically understanding
+the underlying again, perceptual and cognitive
+and design rules. So you'll be able to better pick and choose
+from those things. Having seen other
+people's visualizations, you'll also be able to take some of the ideas that
+you've learned about and be able to integrate them into new visualizations
+that you build. So we'll be doing some
+of this but this is not a course about building
+very simple visualizations, like bar charts and
+things like that. You'll learn why they work. You'll learn how to
+integrate them into other kinds of visualizations
+broader things. You'll build some dashboards. You'll build some more
+sophisticated visualizations, either intended for
+communication or for analysis. We'll explain why things
+like a bar chart works. But we won't focus
+on this as much. So we will start to develop a better sense of why
+visualizations like this work, where things like color and shape will make the visualization
+better or worse. We'll also think about tools and where they're
+appropriate or not. So this is a tool called
+Tableau which is very popular and used in business analytics and
+in other settings. It's a very powerful tool which will do a lot of things for you, not everything but a lot
+of things for you. But we still need to
+have some sense of the underlying rules that Tableau uses as well as the things
+that are within our control. So there are choices
+that we have to make when using tools
+like this that are again somewhat automated but you'll still have to
+make some choices and that will be important to understand your options
+and why they matter. We won't do as much in
+this particular set of lectures but you will
+get to the point where you're able to look at very sophisticated
+visualizations that do all kinds of weird things like visualization
+on top of text. So this is a
+visualization intended to convey something about poetry. So there's different kinds
+of lines and things that are tracking the flow, the rhyming and so on within
+this piece of poetry. We'll start to think about the different techniques
+that they use to encode this data which will
+become handy as you build more and more
+sophisticated visualizations. While we won't build
+things like this, you will start to be able
+to think about how to integrate different pieces
+of visualizations. So different kinds of smaller
+charts into a bigger whole that will allow you to do much more sophisticated analysis
+than just one of these. So a simple bar chart
+or a simple tree or whatever it is will only be useful for a limited
+set of tasks. We're going to start
+to think about how to integrate all these things together to support
+visualization. Later on, as you go through additional classes
+on visualization, you'll learn more about
+interaction and so on. But we'll cover
+a little bit of that. The things that basically
+will allow you to bind these different visualizations together to make them useful. We'll also offer you some tools to compare
+visualizations. These are five different systems that all essentially support the same kind of
+data analysis and this case it's around genetic data. So this is something
+called microarray data. So you take cells and you basically wash them
+across this microarray, it's called a gene
+chip and then you analyze what's happening
+within that gene. There are different kinds
+of tools that will support different tasks
+within that dataset. How would you pick between these? Like which ones are
+better or worse? What makes them better or worse? These are the kinds of tools
+that we will give you in this semester or
+this set of lectures. What we will teach you all to do is to avoid really bad designs. So things like this. We will
+teach you how not to do and why these are
+generally a bad idea. So you may have heard
+of this. You may have a sense of this already but there are actually perceptual reasons
+why they're bad. So we will cover some
+of that as well. With that thank
+you for listening.

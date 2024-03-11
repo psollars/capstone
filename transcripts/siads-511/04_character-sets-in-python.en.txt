@@ -1,0 +1,93 @@
+So now continuing talking
+about character sets, we're just going to
+do a quick review of how character sets
+work in Python, having to do with sort of
+when data is at rest versus when
+data is in motion. So Python 2 to Python 3, a big part of that
+transition was going to Unicode as the internal
+format inside of Python. So in Python 2, the internal formats of strings
+were ASCII 8-bit bytes. But again, that's because it's 20-some years old and
+was Northern European. And so the whole ASCII thing was Northern Europe and America. And honestly, by now, Python 3
+is, everyone accepts it, but there was a lot of debate for well over ten years as to whether Python 2 was so
+good and Python 3 was like, don't worry, we don't
+even need this. Well, the answer is
+Python 3 had to happen and Unicode
+is the right answer. So with that as sort of background, Python 3 made the decision, and I think it's brilliant, that all the strings in
+memory are simple Unicode. It's not that big of a deal. They have another type
+called the bytes type, which is for 8-bit characters. As we'll see in a little bit, there is a purpose
+for bytes type, especially when
+you're starting doing compression and hashing
+and stuff like that. But Unicode is big, because it's 32
+bits per character, but it's super fast for like going down looping
+through characters, like going down a 1,000
+characters you can bounce really fast because
+they're four bytes, you don't have to look at every
+character to figure out, you go to the 40th character
+by going to the 160th byte. So Unicode is awesome
+for in memory. But when you're
+storing it on disk or sending it across the network
+or storing in a file, then you want to
+convert to UTF-8. And so it's both for
+interoperability, because other languages like PHP, or R, they're going to
+want to look at UTF-8. They're not going to
+want to look at Unicode. So even though Python
+has a Unicode inside, it has to read UTF-8 materials, work on it in Unicode, and then write it back out. And so database tables are in UTF-8, network connections are
+UTF-8, and files are UTF-8. So because the strings
+in Python are Unicode, every time that Python is talking to something that
+it knows to be external. It has to go through
+a decode process, and that is decode this encoded data that, you can almost think of UTF-8 as a compressed format and
+we're kind of uncompressing it. That's why I can
+think of decoding. So from a file or a UTF-8
+network or a database, you're going to decode it before you work with it inside Python. And then if you have it
+inside Python, then you've got to encode it. So it's almost like a
+compression and decompression. Decompression when you read and compression when you write. And I talked about UTF-8. So if you open a file, you'll see that there is a
+parameter called encoding, and the default is none. But then the default is general, you can ask what the default is, and you'll find in most cases, 80-90 percent of the cases, maybe a 100 percent of the
+cases, that you're just going to have the
+encoding be UTF-8. And the reason UTF-8 works so well is that it's an old ASCII
+file, and it just works, right? The only time you'd
+use this as if it was like a Windows 1252 or a Latin-1 or something that had
+characters above 127 that were not UTF-8. And so most of the time
+the default works. So we just sort of kind of pretend, because ASCII just kind of
+grandfathered into UTF-8. So it happens automatically. And if you're reading it,
+now you can tell it I want to read it
+binary versus read it text, and then it
+gives you the bytes if you tell it, I
+want this to be binary. So when you read network data, so the decoding is
+happening implicitly once you open the file then it'll decode for you when
+you read the data. But in network data, if you're talking on sockets, some of the network like urllib does the decoding
+for you automatically. In this case, I'm talking to a socket directly and I
+have to do a decoding. So just look for this
+and if you see a decode, I just want you to
+understand what that means. It means I got some raw bytes
+from the outside world, and I'm expecting
+them to be UTF-8, but the string that I'm
+going to have inside Python, I want to be Unicode. So decode, decompress, take that data and
+get it internally. Now, it turns out that if
+you talk to a database in Python you use a thing
+called a database connector. And the cool thing about the
+database connector is that the database is marked as
+what the character set is, and like I said, you just
+want it to be UTF-8, but even if you had like a
+weird old character set, a weird old database that
+had ASCII character set, you'd be like, oh, okay, the connector actually as it's reading and giving you
+the rows back it's like, oh, I'm going to take this
+ASCII and convert it to UTF-8, or if you even had
+like one that had a legacy Japanese character
+set in a database, the database connector
+would convert from the legacy Japanese
+character set in the database on the way in into Unicode and it will convert Unicode to the legacy
+Japanese character set. So it turns out, in databases, it's worked really well
+for a long time. It worked pretty well because the connector knows the format the database has been created in. And so all the database
+stuff is stored in that format and then it does the conversion
+automatically. So you just say, get
+me that row in Python, and then you have a nice
+Python Unicode string and it's done automatically. So the file's pretty much
+done automatically, network stuff is done
+mostly automatically, and the database
+stuff is done on, and I just want you to be aware of the fact that
+you might have to move this data back and forth and you might have
+to convert that data. So if you're seeing something
+and it's really weird, and certain characters aren't
+showing up the way you do, look for the encoding and the decoding as
+potentially the problem that's causing sort of your confusion in terms
+of character sets.

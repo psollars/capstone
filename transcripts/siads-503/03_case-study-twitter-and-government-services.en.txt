@@ -1,0 +1,108 @@
+Hi there, welcome back. This is another case study in our week when we're talking about provenance and asking
+questions about who's left out of data
+science analysis. This week, I have another
+interesting case study for you. This is a brief one, but it's a very important one we wanted to be sure to mention. It has to do with
+the relationship between where the
+technologies of data science are going versus the populations that are able to be measured
+and studied by data science. So I'll say a little bit more clearly what I mean by
+talking through an example. This is a little older example. I don't know if you
+would have seen it. But in 2010, Mayor Cory
+Booker got a lot of attention because
+during a big blizzard in the East Coast of
+the United States, he started using Twitter
+to direct the resources of his city to people that
+were trapped by snow. So he directed the snowplows using conversations on Twitter. At the time, that
+was an amazing thing and people were quite
+excited about it. So in this news clip
+I'm showing you, the headline is The Mayor of Twitter and
+Blizzard Superhero. So pretty straightforward story, is simple case study. I think you may have already experienced some of
+the aftermath of this story. So here in Ann Arbor, I have an app on my
+phone that allows me to do the same thing that
+this story is describing, but with an app,
+not with Twitter. Although I think I
+can also tweet at a variety of municipal
+and governmental people, if I wanted to use Twitter. I think the app is called
+SeeClickFix and it helps you request government
+service by taking a picture with your phone and
+submitting it to the city, so I can report a pothole or some garbage or
+something like that, a block lane of traffic even, and the city will try to fix it. Now the reason this is an interesting case study for us this week is that the problem of, does data science always
+leave something out? It's actually a different
+problem when you think about the provision
+of government services. Because government services, unlike services in
+the private sector, usually there's a
+bedrock assumption that you must serve everyone. You really need to provide
+services to everyone, perhaps everyone who's
+a citizen in some case, but usually just everyone. It's really important that we recognize the
+incompatibilities between everyone and what we're getting in a
+data science analysis. So one of the
+reasons data science is exciting and that
+you may have gotten into this degree program or
+decided to change your career to call yourself a data scientist is that there are now more data. So we have data about
+all kinds of things. Some of the key drivers
+of the explosion of data are the proliferation of computers throughout
+society measuring things. But specifically, one
+big driver of interest in data science has been the
+cell phone and social media. Because social media
+has proven to be a gigantic collector for data that's used in
+a variety of ways. Some obviously have turned out to be negative and
+we're unhappy about them. But also the cell phone with
+its built-in sensors and accelerometer and camera
+and Internet connection. So the cell phone is also an amazing data collection tool. So if you think about
+being a data scientist, if such a term existed in the 1980s or something
+when I was a child, where would you get the
+data for a lot of things that we do now routinely? The thing I'm pointing out with this case study is that when we use data science in the
+provision of government service, it's absolutely crucial
+that we think about the sampling bias in the
+technologies of data collection. So in this case, the time story celebrates Cory Booker for using Twitter to help people trapped in snow get rescued by snowplows. But there's a huge
+mismatch in this story between the people that need help and the technologies
+that he's using. So at that time, Twitter is still not
+a majority platform, the majority of the population
+does not use Twitter. But in 2010, it was really
+a tool of elite and generally technophilics
+or people who like technology and like new
+things and younger people. So it's interesting that
+this particular problem of public service provision where digging people out of the
+snow who are trapped, the people who are
+most likely to need this service might
+be the elderly, the people who can't dig
+snow for themselves, for example, the disabled
+and at least the elderly is the exact opposite to the population on Twitter. So it's interesting that
+this was so celebrated, even though it's, I think the exact opposite
+of what we should be doing in government
+service provision. So here's a quote that I
+like from Eszter Hargittai. It's just a very simple
+quote from a recent study. "Big data derived from social media tend to oversample
+more privileged people." It's a good maxim to keep
+in mind because a lot of the excitement in Data Science is the availability of
+data from social media, but also from the phone. So let's just try to put
+this in perspective. Remember that if you
+were to do, for example, a web survey requiring people
+to use a desktop computer. In the United States, in 2019, only three-quarters of
+the population have a desktop computer
+connected to the Internet, according to the Pew. You can look up the
+right statistics for your own country or for more recent date
+in the United States. But think of that through, that 75 percent is not a random
+sample of the population, it's not a random 75 percent. There are reasons in there as to why those people
+have a computer, it has to do with
+cost, for example. It might have also to
+do with education, that would be another example. So the idea that class is
+built into this means that if you're doing a study that requires people to fill out
+a survey on a computer, you're already going to
+miss maybe some trend that is only visible in
+a subpopulation. Same thing is true of the phone, although phones are very, very common in the United States, 2019, 96 percent
+of the population. Even there, four percent of the US population is a
+significant number of people. They might be the people most in need of a
+government service. So it might be
+challenging to roll out services for example, the elderly or the disabled who might be those
+less likely to have a phone, even in those four percent. But I think people like, maybe people like
+me tend to assume phone these days is a smartphone. But the smartphone is again
+only 75 percent in 2019. So that's three-quarters
+of the population, leaving out a quarter
+of the population is a lot, especially because again, we don't think that that's a
+random sample of 75 percent, there are reasons why people
+might pay for a smartphone. These reasons often have
+to do with privilege. So this was just watch out example to emphasize
+how sampling and bias are related to privilege
+and that can lead you to make some errors in your
+data science analysis. So that's the second
+segment that's about case studies for this week, and I'll see you again next time.

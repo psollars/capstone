@@ -1,0 +1,120 @@
+I want go over some basic
+command line editing tools, and you might want to
+refer back to this as we get going with some of
+the interactive materials. Whenever you see a caret in
+this particular segment, that's this character here, that means to hold down the Control key and type
+the following character. For example, caret L means to hold down the Control
+key and type the L key. So that's consistent
+across Mac and Windows. So by Control, I really mean the Control key and
+not the Command key. There are a series of command
+line editing shortcuts that I'd like you to
+become familiar with. That first one I just
+mentioned, Control L, will clear the screen, and that's useful for
+cleaning things up. We'll go over things like
+UpArrow and DownArrow which makes it easier to recall
+recently used commands. We'll talk about
+erasing the lines. Sometimes you mess up
+and you want to erase. We want to quickly
+be able to scoot or move to the beginning
+or end of the line. We might want to do something
+a little bit more powerful, and that is to go
+through our history and search for a
+recently used command. Finally, and I like
+to always say this, data scientists tend to be on the lazy side of things and
+we don't like to type a lot. So the Tab key will do things
+called autocompleting, and autocompleting will take a best guess at what
+you're trying to indicate. So for example, if you're
+typing a command and hit Tab, it'll try to autocomplete
+that command. If you're typing a
+filename and hit Tab, it will also try to
+complete that filename. The last command line
+editing shortcut that I want to tell you
+about is Control C, which will stop running
+the current command. So let's start out with
+clearing the screen. As I mentioned, it's Control L. It's useful to
+declutter your display. So as you get going, you see a lot of
+stuff on your screen, you might want to just say, "Hey, I need to just
+clear this out. I need to take a
+break from the stuff. I need to start over." Clear will clear
+that screen for you. It won't erase
+anything of your data, it'll just clear the screen. If you prefer, you can
+use the clear command. You can type clear
+and hit Return. Again, little bit
+on the lazy side, we're going to use Control L because that takes
+fewer keystrokes. I'm going to go
+through a couple of more commands before we turn our attention to that interactive prompt
+that we just brought up. The UpArrow and
+DownArrow commands allow you to scroll
+through previous commands. They're useful if you
+want to go back to your command history and
+re-run a previous command. It's also useful if
+you want to recall a previous command and then edit it before re-running them. Sometimes when you're
+editing the command line, you'll want to get rid
+of the rest of the line. You can use Control U to
+eliminate the rest of the line. So typically you'll backup, do some editing and then erase
+it to the end of the line. Going to the beginning of a
+long command line, of course, you can do with using your left arrow key
+and holding it down, and that can get cumbersome
+if you're going back for 50, 60, 80 different characters. So Control A will jump right to the
+beginning of that line. Control E will similarly
+jump to the end of the line. So you can remember that because Control A is the beginning
+of the alphabet, Control E is the end of the line. You can't use Control Z
+because that means something else in the Linux command
+line environment. One of the more
+powerful things you can do is a reverse search. This is similar to the UpArrow key where you're
+going through your history, but you can selectively retrieve a previous
+command line by entering some sequence of characters that you used before, and then pressing Control R to search for those characters. We'll go over how that works as we get going on
+the command line. One of the things I
+mentioned that's really useful is the Tab key. Tab provides a smart completion of whatever you're typing. You can complete commands, filenames, names of
+directories, and so on. The robustness of this smartness depends on the choice of show. Dash does a pretty good job
+of trying to figure out if you're trying to enter
+a command or a filename, and generally does
+the right thing. So let's go ahead and get started with some of
+our show commands, and we're going to start out with a very simple one called echo. Echo will print
+something to the screen. For example, in the
+next two lines there you see echo "Hello, MADS world," and echo
+"It's a MADS, MADS world." So let's try those out
+and see what happens. Here we are at our Linux
+command line prompt, and let's try that echo command. So let's type echo
+"Hello, MADS world." So this is a little
+under impressive, but you get the idea
+that it will echo to your screen whatever
+you type there. We could, for example,
+from the slides, do echo "Hello MADS, MADS world again! " So we have two echo
+commands there. I want to also show you some of the shortcuts that we talked
+about just a minute ago. So what we can do is hit the UpArrow key and that will retrieve
+the previous command. So I could go back
+and edit this to say, "Hi MADS, MADS world." Let's say I want to jump
+to the end of the line and change that exclamation
+mark to a period. I did Control E to
+jump to the end. Let's do that again. I was here, I hit Control E, jump to the end, use my left arrow key, delete key, and
+change that to a dot. So that's some of the examples of how we can use
+those shortcuts. Again, that echo command
+simply prints to the screen that which
+we put in the quotes. I mentioned that the
+Control R command will selectively
+match the history. So instead of just going
+up through my commands, I'm going up and down right now. Up, up, up, down, down, down. If I knew that somewhere in my history I used the word "Hi", I could hit Control R and you'll notice that my prompt
+has now changed from my usual
+jovyan@jupyter-uniquename;~$ to, in parenthesis, reverse-i-search, so that means reverse
+incremental search. So if I look for "Hi", you'll see what I
+typed is indicated in the quotes sequence right beside reverse-i-search right over here, and that's pulled up that HI in my most recent
+echo command. So that's a quick
+way of retrieving some previous command that matches a sequence of characters in which
+you're interested. Now in this case, I simply
+could have used this cursor UpArrow because that was
+my most recent command, but you can imagine how you've entered a bunch of
+these commands and you want to return to
+something that you remember some of
+the sequences from. So again, going to Control
+E to go to the end of the line and I can hit Return
+just to run that again. I'm going to show
+you one more thing and that is to go here. I want to truncate that line. I can hit Control U, which will delete
+the beginning part, and then hit echo,
+"MADS world again." So Control U deletes from where I am to the
+beginning of the line. So that's a very quick
+introduction to some of the keystrokes that can help us with using the
+Linux command line, and we introduced a very
+simple command called echo. In the next segment, we'll take a look at
+the Linux file system and get moving with some of the data manipulation
+commands as well.

@@ -1,0 +1,162 @@
+Hello. We will continue our discussion of
+centrality measures, where we're trying to
+find the importance of a node given the
+structure of the network. In this video, we're going
+to discuss PageRank. PageRank is a
+centrality measure that was developed by
+Google co-founders to measure the importance of web pages from the hyperlink
+network structure. PageRank, like the other
+centrality measures, that we've looked at, assigns a score of importance
+to each node. The assumption that it makes
+is that important nodes are those with many in-links
+from other important nodes. Now if you think about that
+assumption for a minute, you realize that
+it's a bit circular. It says that a nodes PageRank or importance depends on the
+PageRank of other nodes. If you think about how
+you would measure this, imagine you take one of
+the nodes in the network, the first one you look at, and you're trying to
+find its PageRank, what this definition
+says is that you have to look at the PageRank of the
+nodes that point to it. The PageRank of this node will depend on the PageRank
+of the other nodes, but if this is the first
+node that you look at, then how do you get
+started with this? What we're going to
+show you in this video is how we can do this. The setup is the following, imagine you start out with
+a network with n nodes. What we're going to
+do is we're going to run a procedure on a
+step-by-step basis. We're going to have a
+parameter k that tells us how many times we're
+going to run this procedure. Let me tell you how it works at a high level and then I'll
+get into the details. What's going to
+happen is that we'll start out with one
+unit of PageRank, which we will distribute evenly among all nodes in
+the network at first. Then what's going
+to happen is that each node is going to take all of its PageRank and it's going to give it to all the nodes
+that it points to, is going to distribute it equally among all the nodes it points to. At every step, every
+node is also going to receive some PageRank if it has nodes that point to it and they give the
+PageRank they have. We're going to do this over
+and over again and then at the end we're going
+to check how much PageRank each node ended up with. Nodes that are very important
+are those that were able to actually get a
+lot of that PageRank. You can think about PageRank
+flowing through the network, following the edges and nodes that are important
+are those that end up getting a lot of that PageRank that's flowing
+through the network. At first we're going to
+assign all the nodes a PageRank value of
+one over n. Again, one unit of PageRank spread evenly among all of the
+nodes in the network. Then what we're going to do
+is we're going to perform the basic PageRank
+update rule k times. What is this rule? Each node is going to
+give an equal share of its current PageRank to all
+the nodes that it links to. That means that the new value of PageRank of each node
+is going to be the sum of all the PageRank that node receives from all the
+nodes that point to it. Let's go through an example. Let's actually
+measure the PageRank of the nodes in this network. But before we do that, try and see if you can
+figure out which one is the one that should be
+the most important one. If you imagine the PageRank flowing through the
+edges for this network, which node is going to be receiving a lot of that PageRank? Then we can see if your guess
+matches with the answer. We're going to compute
+this just for k equals 2. We're going to only do this twice because it gets a
+little bit repetitive. Then we'll discuss what
+happens as you let k become larger as you repeat this step
+more and more times. We're going to keep track of our PageRank scores
+in this table. At first, each node is going to have a PageRank
+of one or five, because there are five
+nodes in the network. Now, we have to compute how much PageRank each node
+is going to get after the nodes start to give away all their PageRank to the
+nodes that they point to. We'll write down what the new
+values of PageRank will be. Let's start with node
+A and think about how much PageRank node A is getting. Well, first A is
+getting patriarch from node D because they points to A, but what you'll notice is that D also points to other nodes, D points to three nodes. A is only one of
+those three nodes that's going to get
+PageRank from D, that means that A is going to get one-third of whatever
+PageRank node D has. Note D currently
+has one over five and so A is going to get
+one-third of that one over five. Node A is also
+getting PageRank from node E and because
+E only points to A, then E is going to give all
+of its PageRank to node A. That means that A is going to get another fifth of PageRank. The new value of PageRank for node A is going to
+be four over 15. Now let's look at node B. How much PageRank
+is node B getting? Well, one of the nodes
+that point to B is node A. Node A will give
+all of its PageRank to B, because that's the only
+node that A points to and so B is going to
+get one-fifth of PageRank. One thing to make sure you
+do correctly here is that, A is still assumed to have
+one over five PageRank, not the new value
+of four over 15. That's because we're assuming
+that all the nodes will simultaneously giveaway
+all their PageRank. While we computed
+the new value of PageRank for A we're
+still redistributing the PageRank from the previous
+step so we're still using the old values when we think about how much
+PageRank the nodes are getting. B is getting one or five, not four over 15 from A. B also gets PageRank from C, and C also gives all
+of its PageRank to B. That means that B gets
+the entire one over fifth for a total
+of two over five. Now C, well, C is
+getting PageRank from D and D points
+to three nodes. So C will get one-third
+of whatever D has, which is one over five, and C is also getting
+PageRank from node B, which points to two nodes, C and D. So C is going to get one-half of
+whatever PageRank B has, which is one-fifth and
+that's all for node C. Node C ends up
+with one over six. Then D is getting
+PageRank from node B, which again points to two notes, so D gets one-half of that, so one-half of one-fifth, and that's one over 10. Then finally, node E is
+getting PageRank from node D, which points to three
+nodes in total, so E gets one-third
+of whatever D has, which is one over five, so E ends up with one over 15. Now our new values become the old values and we'll do
+this again for k equals two. This will be a bit repetitive, but we'll compute it just
+to make sure you follow it, and then we'll stop there
+and talk about what happens as k gets larger. Let's start with node
+A a little bit faster. Node A gets PageRank from D, and D gives three nodes, so A is going to get
+one-third of whatever D has, which is one over 10. A also gets PageRank from E and it gets all
+of E's PageRank, so that's one over 15 for
+a total of one over 10. B gets PageRank from C and
+it gets all of C's PageRank, so that's one over six, and it also gets all
+of A's PageRank, which is four over 15, for a total of 13 over 30. C gets PageRank from D, which gives the three nodes, so C will get one-third of that, and D has one over 10. C also gets PageRank from B, which again points to two nodes, so C will get half
+of whatever B has, which is two over five, for a total of seven over 30. Then D will get
+PageRank from node B, again, half of it for a
+total of two over 10. Finally, E gets PageRank from D and D points to three nodes, so E will get one-third
+of what d has, which is one over 10, for a total of one over 30. This is k equals 2 and this
+is what we have so far. B has PageRank value of 0.43 and it's looking like
+B has the most right now. Then C has 0.23, then D has 0.2, then A has 0.1, and finally, E here
+has only 0.03. Of course, this is
+only for two steps. What will happen if we continue redistributing and
+redistributing the PageRank, will the scores change
+by a lot or not? Well, let's look at what
+happens for k equals 3. If you do k equals 3, the
+scores changed a little bit, but it's still looking like
+the order stays constant, so B still the most
+important node, followed by C, followed
+by D, followed by A, and then finally E. Then what happens if I let
+k go to infinity, do this many, many times? Well, this is what will happen. We'll get that the
+values actually end up converging to
+some unique number, which is this, and yes, B ends up being the
+most important node. The nice thing about
+PageRank is that you can actually show that
+in most networks, the PageRank values
+actually converge. You don't have to worry
+about this question of, how many times should I do it? The answer is you
+should do it enough times until the values
+are changing by small margin that you can figure out what the
+importance of the nodes is. You don't have to worry about the ranking of the
+nodes or the values of the nodes jumping
+around by too much if you do this enough times. That's why it works, if you do it enough times you
+actually get convergence. Let's summarize the
+steps of basic PageRank. We'll start with all
+of the nodes having an equal share of this one unit of PageRank
+we distributed evenly. Then we'll perform this
+basic PageRank update rule k times that says that each node gives an equal share of its current PageRank to all the other nodes
+that it links to. The new PageRank value of
+each node is going to be the sum of all the PageRank it receives from all
+the other nodes. The nice thing is that
+for most networks, this PageRank value
+converges as k gets larger, as k goes to infinity. While this sounds very
+nice and it seems to work, in the next video we'll
+actually see that there is a big problem with the
+way we've defined it. It's a problem that is
+going to be easy to fix, but it also means that
+this is not actually the PageRank version
+that we want to use. It is going to be similar, but we have to fix this
+little issue that it has. In the next video, I'll
+tell you about that one.

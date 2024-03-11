@@ -1,0 +1,291 @@
+Hello. We have seen that networks show up in many types
+of applications, and in the last video we saw that depending on
+the application, we may want to represent our
+network in different ways. In this video, we're
+going to begin looking at different measures that we would want to apply to networks, and we're going to begin with the idea of network connectivity. To think about connectivity, what you should think about is, moving from a node to a node following the
+edges of a network. This idea of following
+the edges of a network, it's useful for
+different applications, so let's look at a
+couple of examples. Let's go back to thinking about the Ann Arbor bus
+transportation system. This is a network where the
+nodes are the bus stops, and the edges are
+direct bus connections. Questions that may come up are, how can I get from
+Stop A to stop B? Or are there areas of Ann Arbor that are
+disconnected from other areas? For example, if we
+start out in point A here and we're interested
+in going to point B here, what we would do is exactly move through the edges
+of this network, or hop from node
+to node following the edges of this
+network, like this. We would go through this
+stop, to this stop, to this stop it and so on, and follow the network and try and see if
+we can get there. If we're trying to
+see if we can reach a certain area of Ann
+Arbor around here, and we're on this side of
+Ann Arbor, then again, what we're doing is following the edges within a network
+to see if we can get there. Another example is the email communication
+network among HP employees, here the nodes are HP
+employees and the edges represent direct
+E-mail communication between a pair of employees. For a network like this, one might wonder how can a rumor originated from person
+A arrive at Person B? Again, this would
+be a question of can the rumor hop
+from node to node following the edges
+until it gets to the node B or person B, and is it possible for everyone to hear the
+rumor through email, or are there sets of
+people that could never hear this rumor simply by following the
+edges of this network. These are two examples, I can show you the flavor of questions that we can
+answer through connectivity. What we're going to
+do next is we're going to start building our vocabulary so
+that we can refer to the same terms when
+we look at networks. Let's begin with
+the idea of a path. A path is going to be a sequence of nodes connected by an edge, and here's a toy
+example of a network, and let's find two
+paths from node G to node C. Here's node G
+and here is node C, and let's find two paths that takes us from one
+node to the other. One path is to go G, F, C, that would be
+one possibility, another possibility would
+be to go G, F, E, C, and there may be other
+ways of going from node G to node C. These
+are all examples of paths. We're going to say that
+a graph is connected if for every pair of nodes there
+is a path between them. In this example, is
+this graph connected? The answer is no because there are some
+paths that are missing. For example, you can
+never find a path to go from node J to node D, and so this graph, we would
+say it's not connected. Now let's think about the
+idea of connected components. The idea of connected
+components is that when we have graphs that are not
+connected like this one, has some missing paths from
+some nodes to those nodes, it is useful
+sometimes to break up the network into subsets of nodes such that all
+the nodes within a subset can reach each
+other through paths, and there are no paths from
+one component to another. How do we take that
+idea and come up with a definition using the idea of paths of a connected component? Well, we're going to say that a connected component
+is a subset of nodes such that there
+are two properties that these subset of
+nodes has to meet. The first one is
+that every node in the subset has a path to every
+other node in the subset. But that's not enough, we
+need a second property, and the second property is
+that no other node from another component has a path
+to any node in the subset. Let's look at examples and see why we need both of
+these conditions. First, let's do the easy one. Let's look at these
+subset of nodes E, A, G, and F and ask, is this a connected component? Let me circle the nodes here. Is this set of nodes a
+connected component? The answer is no. It clearly breaks property 1, it is not the case
+that every node in this subset has a path to every other node
+in this subset, so E can reach A
+but E cannot reach, for example, G. This is a
+clear violation of property 1. Let's look at another example. Is the set N, O, K a connected component? These three nodes actually do satisfy the first condition. You can go from N
+to O and from N to K and from K to O and to N. You can reach every node coming
+from every node into subsets. But it breaks the
+second condition. It is actually possible
+for other nodes to reach nodes
+within this subset. For example, there is a path from node N to every node into subset. You can go N to K, you can go N to O, and you can go N to N as well. This three nodes fail
+the second property. You can see why both of
+these properties are necessary if what we
+want to get at the end is this three subsets of nodes that are
+disconnected from each other. The first one guarantees
+that you always get nodes that are all connected to each
+other through a path, and the second property
+guarantees that you're not just picking a
+subset of the nodes, you are picking the
+largest possible subset. If we apply the definition, we'll see that there are only three connected components in this graph and these are the three sets of
+notes that you see. This is all working very well for undirected graphs but as
+we saw in the last video, we also have directed graphs where the edges have a direction. How does this idea of
+connected graphs and connected components play out when you look at directed graphs? Let's look at that next. Connectivity in directed graphs. Now our graphs are going
+to have edges that have directions and we're
+going to be thinking about connectivity and
+connected components. What's going to happen is that basically we're going to have two versions of things
+for a directed graph. We're going to have a version for things when we actually
+pay attention to the direction of
+the edges and we're going to have a version
+where we ignore the direction of
+the edges and look the same things that
+we were looking at for undirected graphs. We'll give different
+names to those; one is going to be the strong version and the
+other one is going to be the weak version. Let
+me show you how it works. First for connectivity,
+we are going to say that a directed graph is strongly connected if for
+every pair of nodes u and v, there is a directed
+path from u to v and a directed
+path from v to u. If we look at this
+network here and ask, is this network
+strongly connected, the answer is no. Because if you look
+at it for a while, you can see that there
+is no direct path from node A to node H. I only need to find one
+example of this to make the entire graph be not
+be strongly connected. You can see here that
+if you try to go from A to H you basically can't. You can try and you'll
+get close but you don't quite get there. You can go A, N, O, J, F, G, very close, but you can not
+really quite reach node H, so this graph is not
+strongly connected. Like I said, there are a weak
+version of connectivity. A graph is weakly
+connected if when we replace all the directed
+edges with undirected edges, we produce a connected
+undirected graph. If I just ignored the
+directions, if I do this, now I just have to ask, is this now undirected
+graph connected? The answer is yes, we can reach every
+node from every node and so this graph is
+weakly connected. The graph that has the
+directions is weakly connected. For connected components
+is the same thing. We have two versions, the strongly connected components which are defined in this way. We'll say that a strongly
+connected component is a subset of nodes such that
+every node in the subset has a directed path to
+every other node and no node has a directed path to and from every
+node into subset. Again, it's not trivial or not super easy to just
+look at this network and try and figure out where all the strongly connected
+components, I can try. If you look at it
+for long enough, you'll find that
+there are actually five strongly
+connected components. There's this big one here
+where all those nodes can reach each other if you follow the directions
+of the edges. Then there are the smaller
+ones here, M, L, K, all by themselves and H and I are all by themselves in another set. Of course, you wouldn't
+be expected to visually figure this
+out, although you could. All of these things
+you're going to be doing using NetworkX, which we'll talk about
+in the tutorial. We'll teach you how to define directed graphs and
+undirected graphs and how to measure connectivity and the connected components
+and all of those things. All of those things are
+going to be in the tutorial. Then there's the weak version
+of connected component, which again means we ignore the direction of the edges
+and then we simply say that weakly connected component is going to be the
+connected components of the graph after replacing all the directed edges
+with undirected edges. Because this network
+is weakly connected, then it just has one big
+weakly connected component. We've talked about whether
+nodes can reach each other, now let's think about how far away they are
+from each other, that's the topic of distance. In this toy network, how far away is node A from
+node H? That's one question. Another question is, are
+the nodes in this network generally far away or
+close to each other? Which nodes are closest and furthest away from
+all the other nodes? To answer this
+questions, we need to define a set of
+distance between nodes. We're going to do this using
+the idea of paths as well. Here is a good place
+to remember that when we visualize a network, it doesn't really matter
+where I placed the nodes, all that matters is which node is connected
+to which node. Again, I could take this
+node A, for example, and drag it really far
+away here and as long as I only keep the connections
+between A and K and A and B, that shouldn't change anything about the structure
+of the network. For example, even though physically that
+node A would be now further away from node
+J in network distance, that should not make
+any difference. That's just something
+to remember, that all we care about is who's connected to whom not where we put the circles that
+represent the nodes physically. Let's go back to this
+question of how far away is node A from node H? Well, again, we are going
+to be thinking about how many times do
+we have to hop from node to node by following
+the edges if we want to start in A and then at the end reach node H. The answer is, well, there are multiple
+ways that I could do this. I could just take four hops
+and that would take me there. I could go A, B, C, E, H, or maybe I take
+a different path, and now I take five hops. I could go A, B, C, F, E, H. Which one should
+be the distance, the further one, the shorter one? We're going to give
+a name to this, the number of hops, and we're going to call
+that the path length. The path length is going
+to be the number of steps the path contains from
+beginning to end. Path one has length four and
+path two has length five. What we're going to do is we're actually going to
+define the distance between two nodes to be the length of the shortest
+path between them. In this case, we'll say that the distance between
+A and H is actually four even though we could take a different path that takes
+us five hops instead of four. Because we're going to use the shortest
+possible distance, then the distance
+is four, not five. One of the things that we
+sometimes we like to do is to find the distance from a node to all the other
+nodes in the network to see how far away this
+node is from everyone else. For example, let's
+imagine we want to find the distance from node A to
+every node in the network. Well, this is easy to do in
+a small network like this, just because we can
+visualize it really easily. But when we look at real
+networks that are very large, we have to come up with
+clever ways to do this, even if we want to use
+a computer to do that. Let's talk about this
+algorithm that enables us to find distances between
+nodes in an efficient way. It is the breadth-first
+search algorithm, and it's a systematic way of finding the distances from a node to all the other nodes by discovering the
+nodes in layers. Let me show you how this works. Imagine that we have this
+very large network and, of course, the example will run with these really small network. Imagine that we
+want to start with A and find the distance from
+A to all the other nodes. What we'll do is we'll start with A and we'll draw this diagram here that will show us all the nodes that we
+have already discovered, all the nodes that
+we've already found the distance to A from. We'll start with the
+direct neighbors of A which obviously have a
+distance one from A. Those would be nodes B and
+K. We'll write them down, that would be our first layer. This layer will have distance one and then we'll keep
+doing the same thing by processing the nodes that
+we have just found and looking at their neighbors and then we'll add one
+to the distance. For example, we'll now process node B and we'll look
+at the neighbors of B. B is connected to
+K to A and to C. But we've already discovered
+A and K previously so the only new node
+to discover is Node C. We'll put C in the next layer, which will have
+distance 2 from A. We've processed B, now
+we'll have to process K. But when we look at K, we see that it's only
+connected to A and B, which have been
+discovered already. We're done processing all
+the nodes at distance 1, and now we'll process all
+the nodes at distance 2, that's just C. We look
+at the neighbors of C, that's B, F and E. B has been discovered already
+so the only new nodes for the next layer are E and F. We're done processing layer 2. Now let's process layer 3. Let's start with E.
+E has neighbors C, F, H and D, and C and F are
+already discovered, so the only new ones are D and H and we'll put them
+in the next layer, which will have distance 4. Then F has neighbors C, E, and G and both C and E have
+been discovered already, the only new one is
+G and that one will also join layer 4. We can see that we're
+done in the sense that while we have not
+discovered nodes I and J, we will never discover them. If we process all of these nodes, we'll see that none of them have new nodes to be discovered. We can stop there and we'll just write down at the end that the distance from A to both I and J is going
+to be infinity, since there is no path
+that connects A-J or A-I. This is breadth-first
+search and again, it's a useful way to find the distances from a node to all the other nodes in the
+network in an efficient way. Let me just write down the generalized steps for
+breadth-first search. We want to find all distances to a seed node and
+what we'll do is, we'll find all connections
+to the seed node and declare them to
+be at a distance 1. Then for each node
+found in step 1, we're going to find all of the
+connections which were not previously found already and declare them to be a distance 2. Then we're going to
+continue discovering nodes on a layer by layer basis, with each new layer adding
+one to the distance. A layer will consist of all of the undiscovered nodes connected to some node in the
+previous layer. We will stop the procedure when there are no new
+nodes to discover. Any nodes that have
+not been discovered, even though there are no
+new nodes to this covered, those are at a distance infinity from the original node,
+from the seed node, and that means that there is no path from the seed node to any of those nodes and that's why we say the
+distance infinity. Now that we know how to define distance
+between pairs of nodes and we have an idea for how to actually compute those
+in an efficient way, how do we take a network
+and characterize the distances between all
+pairs of nodes in the graph. Well, we do this
+in two main ways. The first one is by simply
+taking the average. Take all pairs of nodes,
+compute the distance, take the mean of all
+of those distances, and then spit out a number that's the average
+distance of a network. In this network the
+distance is 2.53. The other way to do it is
+by looking at the diameter. Maybe you were interested in
+not the average distance, but the furthest
+possible distance between any two nodes
+in the network. That we will call the diameter, that will be the maximum distance between any pair of nodes in the network and in this case
+the diameter will be five. That's the distance from J-K. Notice that I changed the
+network a little bit, now we don't have
+those nodes I and J disconnected from the
+rest of the network. If they were still disconnected, then our distance measures
+will blow up to infinity, because if we take the
+mean of all the distances and we have at least
+one that's infinity, then that will make
+the average infinity as well as the diameter. That's not super informative. What we do in practice is that when we have a network that has one large connected component and maybe a few things
+that are disconnected, we are often interested
+in the average distance in the large connected component. In this case, in this example, there is no need to do that, but whenever that happens, we sometimes restrict ourselves to the largest connected
+component in the graph. In the next video, we're
+going to be looking at this idea of distance. When we look at
+real-world networks, what is the average
+distance between pairs of nodes in the network of the world where we're looking at all friendships
+between people? How can we think about
+that and how have people gone about actually
+trying to measure that? That's the thing we're
+going to talk about it in the next video.
+I'll see you there.

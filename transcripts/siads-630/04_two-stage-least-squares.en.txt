@@ -1,0 +1,256 @@
+In the previous videos, we talked about how we can use instrumental variables to
+learn about causal effects. What we have ignored so
+far is how we can obtain the measure of the precision
+of our IV estimates, that is, the standard errors. In this video, we're going to talk about two-stage
+least squares, a method to estimate
+treatment effects and standard errors
+in IV settings. two-stage least squares
+or in short 2SLS, is a flexible framework
+for doing IV estimation. For example, you can use 2SLS to estimate causal effects with more than just one instrument, which increases
+statistical precision. The instruments also don't
+have to be binary variables, and you can easily add controls
+to the regression model. Two-stage least squares,
+as its name suggests, involves estimating
+two regressions. So now we think of
+the first stage and reduced form parameters as regression coefficients instead
+of differences in means. The first step is to get the first-stage effect of the instrument on the treatment. We use the first-stage
+regression to construct the fitted
+values of the treatment. Remember that the treatment
+variable is explained by lots of variables and one
+of them is the instrument. We take the treatment and
+split it into two parts; the part explained
+by the instrument, which is the exogenous part, and the part that is explained by everything else.The part explained by the instrument are called the first-stage fits. Because the instruments satisfies the independence
+assumption, that is, the instrument is random or
+at least as good as random, the first stage fits
+are also exogenous. Then in the second step, we regress the
+outcome variable on the first-stage fits and
+possibly also control variables. The coefficient of the fitted
+values of the treatment then gives us the local average
+treatment effect or LATE. More formally, here's what we do when we apply two-stage
+least squares. In the first stage, we regress the endogenous
+treatment, so D, on the instrument Z and any exogenous control
+variables such as age, gender, income, and so on. The predicted value of the treatment from
+this regression, so D hat, is the clean
+or exogenous part, since its variation is driven by exogenous
+variables only, we will use only these
+exogenous part of the treatment to examine its causal effect on the outcome. To estimate this causal effect, we then run the second
+stage regression. In the second stage, we regress the outcome on the exogenous part of the treatment and the
+other control variables. The coefficient on the
+predicted value of the treatment is
+to 2SLS estimates of the treatment effect. The value of this
+point estimate is identical to the
+ratio of reduced form to first-stage
+regression coefficient and thus corresponds to the LATE. In practice however, this
+isn't how we actually estimate 2SLS because the
+standard errors are all wrong. This is because the computer will calculate the standard error space
+on the wrong error term. So in practice, you should use a software package that generates the appropriate
+standard errors. Now to familiarize
+ourselves with 2SLS, let's look at another example from the mastering metrics book. A key question for many
+couples is whether to have children and
+if so, how many? This is especially true in the developing world where
+people don't have access to social insurance
+and instead have to rely on their children to
+provide financial support. But having many children may mean that parents have less time and money to invest in each of their
+children's education. This might prevent children
+from escaping poverty. The policy argument is that smaller families are essential for increasing living standards. As a result, many
+governments promote and sometimes even
+require smaller families. For example, in the late '70s, China introduced the
+one-child policy and impose large fines for families who gave birth to more
+than one child. This policy stayed in place
+for almost three decades. The causal question
+is whether there is indeed a quantity-quality
+tradeoff. That is, "Does an increase in family size reduce parental
+investment in children?" Ideally, we would run a
+randomized experiment, but this is obviously
+not possible here. We simply cannot force family to have more or fewer children. Moreover, we would have to wait, say like 30 years or more to find out what
+happened to those children. Comparing families with
+many and few children is also not really an option
+because of selection bias. For the most part, the number of
+children in a family is determined by the
+choices of the parents. Not surprisingly, larger families differ in many ways
+from smaller families. For example, parents with many children tend
+to be less educated. How can we generate variation in family size that is
+as good as random? Luckily for us, nature
+sometimes decides whether a pregnancy results
+in more than just one child. What we can do is to focus on a group of first-born adults in a random sample of men and women born to mothers with
+at least two children. These firstborns have at
+least one younger sibling, but many have two or more. Sometimes, whether
+a firstborn has one or more siblings
+is decided by chance, whether or not their moms
+had twins after them. Maybe we can use second twin
+births as an instrument for family size with the
+outcome variable being the educational
+attainment of the firstborns. Let's quickly review the core IV assumptions
+for this study. The independence assumption
+is satisfied if we accept the notion that twin
+births are as good as random. The first stage
+assumption implies that twin births need to have a
+marked effect on family size. The exclusion restriction holds, if second twin birth affect firstborn's education
+only through a change in family size. Joshua Angrist and his colleagues applied IV to a
+dataset containing information on the
+random sample of Israelis born to mothers
+with at least two children. The first-stage regression
+shows a significant effect. Families with a second twin
+birth have 3.9 children on average versus those with a singleton second birth have
+an average of 3.6 children. Now, why do twin births increase
+family size only by 0.3, and not by one? Many Israeli parents want
+three or four children. For them, family size is largely unaffected by the
+occurrence of a twin birth. But some families will be
+happy with just two children. For them, family size increases if the second
+birth is a twin birth. While the first stage
+is quite strong, the reduced form regression
+shows a 0 effect. Firstborn adults with
+siblings who are twins are no less educated than those
+with just one sibling. Given that IV estimates
+are constructed from the ratio of the reduced form
+to first-stage estimates, we can basically stop here. We know that if the reduced
+form estimate is 0, then the IV estimate
+will be 0 too. Now, the twins
+experiment is imperfect. This is because
+multiple births are not as random as we
+would like them to be. In particular, twin
+births are more frequent among older women and for
+certain ethnic groups. For example, older
+women are more likely to have undergone in
+vitro fertilization, and this raises the
+probability of twin births. Maybe we can find another
+instrument for family size. In many countries, parents want to have
+a mixed sex family. So if the first two children
+are both girls or both boys, parents are more likely to have a third child because the sex of a newborn
+is randomly assigned, the gender mix of the first
+two children generates a good instrument for whether
+parents have a third child. Let's again quickly check
+the key IV assumptions. The independence assumption is satisfied because sex
+is essentially random. The first stage says
+that families with same-sex siblings should
+have more children. Now, what about the
+exclusion restriction? Here we assume that sibling
+sex composition matters for adult outcomes only in so far
+as it changes family size. Can we test this assumption? Well, not really. We have to carefully
+think it through. Might the sex mix of the
+first two children affect children's educational
+outcomes for other reasons? For example, two girls or
+two boys are more likely to share a bedroom for longer
+time than mixed-sex siblings. As a result, families with same-sex children may
+feel a little richer, which may ultimately increase
+parental investment. The exclusion restriction may, or may not hold here. Let's look now at the results
+with the new instrument. The same-sex first-stage
+turns out to be significant. Families with same-sex children have 3.68 children on average. But those with mixed-sex siblings have an average of 3.6 children. The sex mix first-stage is smaller than for the
+twins experiment. However, one advantage of this instrument is that the researchers can
+use much more data. Sibling sex composition affects many more families
+than having twins. Only about one percent
+of families have twins. By contrast, half of families
+with at least two children, have either two
+boys or two girls. Another advantage of the
+siblings sex composition, is that the instrument
+is unrelated to the characteristics
+of the mothers. Now, as it turns out, the reduced form
+estimate is again zero. The educational attainment of first-born Israeli adults is unaffected by their
+sibling sex match. So if the same-sex
+reduce from is zero, then we know that the IV
+estimate will be zero too. There seems to be
+no causal evidence of a quantity-quality trade-off. However, these results depend on whether the IV
+assumptions are satisfied. In particular, we
+might be worried about the validity of the
+exclusion restriction. While the exclusion restriction cannot be directly tested, it can be falsified. We need to find
+situations where we know that the instrument is not
+going to affect the treatment. For example, there may
+be families for whom sibling sex composition has
+no impact on family size. For these families,
+we should also find that the instrument has
+no effect on the outcome. If that's not the case, that is, if sibling sex
+composition affects firstborn educational
+achievement in those family, then this is a signal that the exclusion
+restriction is violated. We can express this idea more formally using the LATE formula. Remember that LATE is the ratio of the reduced form
+to the first stage. This implies that
+the reduced form is the product of the
+first stage and LATE. So if the first stage is
+zero in a specific sample, so should the reduced
+form be zero. For which families is the sex composition unlikely
+to effect family size? In the Israeli sample, there are two groups of
+women for whom sibling sex composition is unlikely
+to effect family size. The first group are
+religious women. They often plan to have
+three or more children, and that therefore always-takers for the sex mix instrument. The second group are
+highly educated women. These women often
+plan small families, so they are never-taker for
+the sex mix instrument. This type of families have a zero first-stage
+effect and so they should also have zero
+reduced form effect. Fortunately, this is true. The fact that the
+reduced-form effect is zero, thus gives us some
+confidence that the exclusion restriction
+is satisfied. If it weren't the case, we would have to be
+seriously concerned about violating the
+exclusion restriction. But remember, we cannot prove that the exclusion
+restriction holds. We can only try to falsify it. Having check the assumptions. Let's now have a look at the results using
+both instruments, the twins instrument and
+the same-sex instrument. We start with the
+first-stage effects. This table here reports
+coefficients from a regression of the number of children on instruments
+and covariant. It's common to report
+the results for each instrument separately
+and then also combined. The 2SLS approach
+also allows us to include as many control
+variables as we like, provided that they appear in both the first and second stages. This table presents
+the results both with and without
+control variables. For example, column 2 shows that first-born Israeli adults whose second-born
+siblings were twins were raised in families with about
+0.44 more children than those raised in families where the second birth was a singleton. The first stage estimate is larger with controls
+than without controls. The OVB formula does tells
+us that twin births are associated with factors
+that reduce family size, such as the mother's age. Then once we've
+control for mothers age and other possible
+con-founders, the first-stage effect
+becomes stronger. Now we can focus on the
+second stage results, which is what we
+really care about. This table here presents OLS and 2SLS results side-by-side. The OLS results
+serve as a benchmark to help us getting a better
+sense of the selection bias. It's a very compact table as it presents the causal effects for four education outcomes with standard errors
+in parentheses. For example, column 1 shows
+the OLS results and they suggest a strong
+negative correlation between family size
+and education. Columns 2 and 3 show the corresponding 2SLS estimates for the twins and the
+same-sex instruments. The 2SLS estimates paint a
+different picture than OLS, as most of them are positive, though they're rarely
+significantly different from zero. This illustrates a common
+problem of the IV strategy. Causal effects tend to be imprecisely estimated
+because they only use the variation in the treatment that is
+caused by the instrument. We can increase
+precision, however, by using both instruments
+as shown in column 4. Now, although the
+standard errors are small if you use
+both instruments, the pool second-stage estimates
+are not very different from those generated using the
+instruments one at a time. So overall, the results suggest that the strong negative
+association between family size and schooling from the OLS regression is driven in large part
+by selection bias. As a final point, I would like to offer
+some guidance on how to present IV results. Your table should include
+the following information. First, there is the
+OLS regression. As OLS suffers from
+selection bias, you want the reader to
+see it so that they know what to compare
+the IV model with. The second piece of
+information that you should report is the
+first stage itself. You should also report the corresponding F
+or T statistic at the bottom to show
+that your instrument is strong enough for
+the identification. Lastly, you should show the 2SLS estimates of
+the treatment effect. Don't forget the
+standard errors in parentheses below the
+coefficient estimates. To round up,
+instrumental variables is a powerful approach
+for identifying causal effects when your data suffer from selection
+on unobservables. But IV also has
+important limitations. First, if we assume that the causal effect is not
+the same for everyone, then IV only identifies the local average
+treatment effect, the effect among compliers. This may or may not
+be of interest to us, depending on whether compliers are an interesting group and also how closely they resemble other groups
+that we care about. Second, IV relies on
+four key assumptions. This makes it clear why it can be more difficult to convince readers that your estimates
+provide credible evidence. Finally, because IV isolates the variation in the
+treatment that is exogenous, standard errors tend to be large, meaning that estimates
+are often imprecise. But all that being said, IV is still an important
+and clever strategy to address the issue of
+selection on unobservables. So it's valuable to have
+a good understanding of it and know how to
+implement it in practice.

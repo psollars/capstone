@@ -1,0 +1,147 @@
+Hello. In the last video, we looked at the SI model. This was the model
+where the nodes always went from
+being susceptible to being infected as long as there were reachable from at least
+one of the seed nodes. In this video, we're
+going to look at a different model
+called the SIS model. In the SI model, the one we looked at last time, when a node become infected, it stayed infected forever, and in this new SIS model, we're going to try to relax this assumption
+because in reality, people recover from disease or if we're talking about the spread of information or an idea, sometimes they loose
+interest in passing information along
+to their friends. So at some point, they stop trying
+to infect others. In this new model, the SIS model, nodes are going to be only
+temporarily infected. At some point, they're going
+to become susceptible again, and that's why this
+called the SIS model is because the nodes go
+from being susceptible, to being infected, and then
+back to being susceptible. This is how the model
+dynamics play out. We start again with a set
+of infected seed nodes, these are the nodes that are infected in the beginning
+of the process, they don't need to be
+infected by anyone else. Then we're going to again move in iterations and in
+every iteration, every infected node will pass the disease to its
+susceptible neighbors, again, the nodes that it points
+to in a directed network. If we're talking about
+an undirected network, then is just a node that it's
+connected to by an edge, and it will do this with
+probability p as before, so we have a parameter p
+as well in this model. Then the next thing it's
+going to do is it's going to become susceptible with some probability s. So this model has two
+parameters, the parameter p, which tells us the probability of a node infecting each
+of its neighbors, and the parameter s, which tells us the
+probability that an infected node will go
+back to being susceptible. Let's simulate the SIS model, just like we did for the SI
+model for five iterations, and we'll do this for
+parameters p equals 0.5 and S equals 0.6. We'll choose again
+D as the seed node, and we'll do the five
+iterations after that. In the first iteration, D will try to infect it's
+neighbors with probability 0.5. Again, this would be the nodes E, G, and C are the ones
+that D points to. In this case, let's say
+that C and E were infected, then the infected nodes will become susceptible
+with probability s, which in this case is 0.6. One thing to note here
+is that we're not counting E and C as infected yet. The nodes that will become susceptible with
+probability s are going to be the nodes that were infected in the
+previous iteration. So in this case, only D will maybe become susceptible
+and in this case, they do not switch to
+the susceptible state. So currently, it's
+still infected. Okay, the next iteration,
+the infected nodes, currently infected node, C, D, and E will infect their
+neighbors with probability 0.5. So they will try
+to infect nodes A, B, H, and G, and let's say that in
+this case nodes A, B, H, and G all become infected,
+which could happen. Now the nodes that were
+infected previously, node C, D, and E will become susceptible
+with probability 0.6. In this case, let's
+say the notes D and E switched from being infected
+to being susceptible. Now they turn back to
+white in the network. The next iteration, the currently infected nodes will try to infect
+their neighbors. So we have currently five infected nodes and they'll all try to
+infect their neighbors, and let's say that
+in this iteration notes D and E become infected. So now we have all but
+one infected node. But of course, the ones
+that were infected in the previous stage will
+potentially become susceptible. The nodes A, B, C, H, and G will potentially
+switch to susceptible state, and let's say that in this case, nodes B, C, H, and G switch to susceptible, so we have three infected
+nodes and the four iteration, they try to infect
+their neighbors. In this case, B, C, and G potentially
+become infected. and let's say that they all
+actually become infected, and the three nodes
+that were infected in the previous state will potentially switch
+to susceptible. Let's say that D and A
+switch to susceptible state, at t equals five, the nodes B, C, E, and G will try to infect their neighbors with
+probability 0.5, and so this would be the nodes A, D, H, and f, all the ones that are
+currently not infected, and let's say that in this case, no new nodes become infected. Then the nodes that were infected will become susceptible
+with probability 0.6, and let's say that in this case, node C and G switch to
+the susceptible state, and we're done with
+our five iterations. Of course, this
+could continue for many more iterations,
+and in fact, it would continue until at
+some point maybe there are no infected nodes that no one else can possibly
+become infected again. But until then,
+the iterations can continue for a very
+long time potentially. Let's look at how
+the model parameters impact the cascade size. The cascade size is the
+number of infected nodes. Again, we're going to take
+node D as a seed node, and we're going to
+do 50 iterations. But I'm not going to walk you through all the 50
+iterations this time, I'm only going to show you the results from
+those 50 iterations. Let's look at parameters p
+equals 0.5 and s equals 0.1. In this case, nodes infect their neighbors
+with probability 0.5 and then they will become susceptible
+with probability 0.1, and here I'm plotting on the
+x-axis the iteration number, and on the y-axis, I'm plotting the number
+of infected nodes. What you can see is
+that the number of infected nodes
+increases initially, at some point it gets to eight, which is the size of the network, the number of nodes
+in this network. So all the notes are
+infected for some time. Then after a while, some nodes go back to its susceptible
+stage and again they get infected again
+and then they go back to not being infected, so the number of infected
+nodes jumps up and down, it goes all the way to
+eight, it comes down, it does this thing
+where it just cycles from anywhere from
+two to eight, right? Now let's see what
+happens when we increase the probability that nodes will switch to the
+susceptible state. Now what we should expect
+to happen is that, it's going to be much
+harder for that cascade to linger around eight
+or stay very high for very long because the
+probability that the nodes are going to switch to the
+susceptible state is much larger, and so they don't last
+very long up here, and so this is what happened in this one of this iteration. It increases sometimes
+it got to six, but immediately, it goes back down and it
+gets there again, but then again immediately
+goes back down, and again it goes up and down, and then at some point something interesting
+happens here, which is that, we get to Zero. At some point, everyone
+who was infected became susceptible and there
+were no infected nodes. As I was saying
+earlier, after that, further iterations are
+just going to stay at zero because since
+no one is infected, no one can infect anyone else and so the cascade
+terminates now. Now let's see what happens
+if we increase that s parameter to something
+even larger like 0.7, and what we should expect
+is that, in this case, we should get to a state of zero much sooner
+than we did here. Right. Here, it took about 35 iterations to get
+to zero infected nodes, now we should see that it takes fewer iterations
+to get there. Indeed that's what happens, we started with
+one infected node, we get to three, then two, then one, and then goes to zero, and then of course it stays at zero for the rest
+of the iterations. Now of course, these are just instances of particular
+iterations that I ran. If you run this on your own, you're going to find
+that this can vary, of course, because it's
+all probabilistic. But in general, we can
+see that there are certain patterns where if you
+increase the s parameter, then it's much harder for
+a large cascade to occur, and if you increase
+the p parameter, then it's much easier for
+the cascade to occur. So these parameters control the size of the cascade
+and how long they last. In the tutorial and
+in your assignment, you're going to get to play
+with this different models. You're going to get to see how the different parameters
+affect the dynamics of diffusion and things like the cascade size and how
+long they last and so on. But what we can see in
+this example is that as the probability of switching from infected to
+susceptible increases, the cascade terminates
+more rapidly. In the next video, we're going
+to look at another model, which is called the SIR model, which is going to
+assume that no nodes go from the infected state
+to a removed states. So after that they can no
+longer be infected again.

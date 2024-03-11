@@ -1,0 +1,176 @@
+Good day. Here we are at another week of Data
+Science Ethics. Thank you for joining me in
+this introductory segment. What we're going to do is lay
+out some of the key terms, and just like in the other weeks, I'm going to introduce
+two framing questions that I hope are
+provocative for you. These are going to be reflected in case studies and readings
+that we have this week. So this week's topic could be summarized by
+the word provenance. I guess that would
+be a useful word. I'll talk more about
+provenance later, but it just generally means
+the dictionary definition. So the word provenance means the origination of something. Sometimes origination is
+a synonym for provenance. So another way to put it, when I say provenance, you could think, where
+did this come from? So I have to framing questions for you that I hope
+are provocative. One of them is, does data science always
+leave something out? We could rephrase that as does data science always
+leave someone out? It might be this
+question suggests that the processes
+of data science are never perfectly reflective
+of whatever we're trying to understand or
+analyze in the real-world. So the topic for
+this week is that if we accept that no
+analysis is perfect, is there some pattern
+in what we leave out that has ethical
+consequences? So that first framing question, does data science, always leave
+something or someone out? The second, I hope, provocative framing question is, are our data ever truly portable? As someone who does work
+with data as a professional. I mean, I quite often get
+my data from some vendors. So I've paid a variety
+of data vendors, and one of the
+challenges of that is that you then don't have as good an understanding
+of that first term I started with provenance
+as you might, and that leads to a variety of tricky problems with
+data science analyses. So those two questions
+are framing questions, and that's our agenda. Before we get to case studies, I thought I would start by
+sensitizing you to some of the terms that you see in the debates around these
+issues and in our reading. One of the terms as data, when we spoke about
+classification in this class, we also talked about this idea, but just the idea that
+data should not be taken for granted
+as something that exists independently of people, and it's just lying
+around for us to pick up. So this is something
+that I know we've also talked about elsewhere, but it's really key when
+thinking about this class. When we talked about
+classification, we thought about data more in terms of the decisions that you make as an analyst as to
+how to organize your data, so how you define variables
+and things like that. But this week, that stuff
+is just as relevant. But we're also thinking about
+where you get the data. In other words, where do you get it and where did you not get it? Like you you probably get it
+from one particular place, and limitations of
+time or expense preclude you from getting it from everywhere or from
+some other place. So that's again, part of the idea that we maybe don't
+take data for granted, that they just exists
+independent of human action. That they're really
+important decisions that we make as data scientists
+about the data. Some more sensitizing terms. I already introduced this one, but origination is
+sometimes used as a synonym for provenance. What we mean by origination
+is the importance of really understanding the
+source of your data. I think this is a really
+frustrating one for me because as a
+practitioner myself, I've often been in situations
+where I really have no control over the
+data I am given, it's sort of like,
+depending on where in the data science production
+process you fit, you might just be okay, here's some data and your
+job is to do the analysis. Earlier we talked about
+how there was maybe some trust required that
+the other person on the team who produced the data or whatever company produced
+the data did a good job. I think, in this class we
+are going to question that a little more and think about how that might be a problem. Another set of phrases that you sometimes see in data science around the topics
+for this week are the ideas of values,
+rights, and respect. It's a little bit
+counter-intuitive maybe especially if you're experience comes from
+the natural sciences or from certain kinds
+of engineering. But in data science, there's an interesting
+discussion about whether we should think about people as having rights over any of
+the data that they produce, and we sometimes talk about
+how that data is handled as having an implication for whether these people
+feel respected or not, or whether we respect them, and this has a variety of ethical and also public
+relations consequences. We did talk about
+this a little when we spoke about privacy because we talked about the idea of genetic material and what
+rights people might have in the future from bodily material or information
+extracted from them. But I'm just raising that
+again because this is, again in this week where we're focusing on provenance
+and origination. We're also going to think again about how the data are handled, and how that might
+implicate certain kind of respect or disrespect for the people who
+produce these data. You'll definitely
+see that in some of the case studies and
+I predict you've got at least one shocking case study this week that is shocking. So anyway, we also
+want to try to bring an ethical lens on some
+topics that you see in other courses in the degree or in other conversations
+in data science. So we sometimes talk
+about data quality. What is the data quality? We've spoken about this
+earlier in the class, but I think for our
+purposes in this week, we want to take an ethical
+lens to data quality. So in some ways, rather than just like you might think of quality
+as being about, do the data represent
+what they're supposed to in the world or
+something like that, you could also maybe
+say, are there enough? But that's usually quantity. But do they represent
+what they're supposed to? How much error is there? Sometimes we talk about
+this in terms of bias. There are a variety
+of named biases that you learned
+in other classes. What we want do is ask, is there some systematic pattern in some of the
+equality issues that arise in data science that lead to an ethical challenge for us. So I'll give you an example. I think you'll like it. So I tried to wear one interesting item of
+clothing periodically. So this week I brought
+in this lovely scarf. This scarf is not actually
+by the artist Adam Harvey, but it's based on his work. He was exhibiting work in an exhibition called
+NeuroSpeculative Afrofuturism, and I was so taken by
+this that I managed to find someone online who
+had reproduced his work. So it's kind of a rip off of him. The ethical issue there maybe, but I'll just hold it up here. So an interesting
+thing about this scarf is it's supposed to
+look bad on camera. So this scarf has a
+pattern of dots in it, and the artist computed
+the pattern of dots so that facial recognition
+algorithms that depend on contrasts to
+determine what is a face. That would be actually
+face detection and not recognition if we were being correct or maybe pedantic. So he reverse engineered the common algorithms
+for face detection, and produced a series of
+dots that look like a face. It's hard to see, but if you get them in
+just the right order, you do see that it looks
+like two eyes and a nose, repeated over and over
+again at different scales. So the reason I brought this in for data quality and bias, which is the slide that's up, is that some people
+have argued that if you don't like
+the data that are collected about you
+and you are not being respected by the apparatus
+that's collecting data, what you should do is where
+something like this scarf. The reason that they suggest that is that they feel that it's a right of the data subject or the person who
+data is gathered about. There's a right that they
+have to introduce bad data, and that is a protest. So what this is designed to do, as he had the idea
+that it would be a pattern that you could
+make clothing out of. Then if you were wearing it, even if you were
+using sort of like your phone camera to take
+a picture of something, when this was released, if I used my phone camera
+to take a picture of it, the phone camera would
+identify faces in the contrast patterns in addition to possibly my own
+face, but maybe not. Depending on how the recognition
+algorithm is calibrated, it's likely that in some circumstances it
+would only identify faces on the scarf
+and not my own face. What the artist said was that
+he was going to introduce these non faces into face detection datasets by having people wear these outfits. So these non faces would
+be detected as faces, and they would
+degrade the quality of the algorithm and the
+ability to detect actual faces. So he saw it as a right
+that people have to mess up data or to protest against data by introducing
+their own bad data. Now obviously, it's kind of
+a speculative art piece. I think if you imagine how many of these scarfs would
+have to be produced, and how popular they'd
+have to become too really significantly pollute the surveillance data
+that exists now, it's quite a large number. So I think it's more of
+a thought experiment, and to try and get us to think about whether there
+might be a right that you have to introduce
+bad data as a data subject. I mean, less dramatically, I think we do it
+all the time when, maybe we're trying to read
+something online and we get a little advertisers survey and we put in all the wrong answers because we just
+want to get through the survey in order to get to
+the content we want to see, and maybe we resent the
+fact that we're being asked these questions and feel like we shouldn't
+have to answer them, so we just don't tell the truth. So if you're interested in
+learning more about this idea, there's a neat book about
+it called Obfuscation. But it's an interesting
+question for us because as data scientists, if you're using data, you might want to
+think about that data in somewhat of an
+adversarial sense, like you might think
+maybe there are people out to put the wrong
+information in these data, and the ethical issue
+there isn't that, maybe I have bad data because that's not really data science ethics,
+that's just data science. You want to have good data, you want to have right answers. But the ethical issue is really
+that maybe in some cases, the people have a right
+to give you bad data. Because of how
+they've been treated in the data collection process, they feel like what
+they want do is hide the truth under lies, or I guess we would think
+of them more as errors. So the next time you are doing some work with a face
+detection dataset, you might think about whether
+or not everyone was wearing the NeuroSpeculative
+Afrofuturism scarf that I brought in today to give you a more
+colorful example. So this concludes
+the introduction, and we'll now move on
+to some case studies.

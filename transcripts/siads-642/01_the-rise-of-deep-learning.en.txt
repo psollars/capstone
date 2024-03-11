@@ -1,0 +1,63 @@
+Hi, this is Paramveer Dhillon. I'm an Assistant Professor
+in the School of Information at the University of Michigan. I would like to welcome you all
+to this course on deep learning. Today's lecture,
+we'll introduce you to this new and exciting field of deep learning. I am sure that all of you have
+heard of the term deep learning. We are currently living in the midst of a
+deep learning revolution, sparked by deep learnings unprecedented success in
+several real world applications. For example, deep learning models have shown mastery
+of board games such as Go and chess. In 2016, a computer Go program
+called AlphaGo beat Lee Se-dol, a top ranking professional Go player. Of late, there has also been development
+of certain deep learning models that allow us to generate realistic but
+fake images of people and pieces of art. This has important implications for the
+functioning of our society and democracy. Deep Learning has also enjoy immense
+success in numerous other applications. For example in healthcare,
+deep learning models have aided clinicians in reading radiology reports and
+in screening of breast cancer. As far as economic and
+financial applications are concerned, deep learning algorithms have predicted
+the stock market with high accuracy. As well as have aided in creating
+an automated index for cryptocurrency. That said, perhaps the greatest
+success of deep learning and one that has touched most of our
+lives is in machine translation. Deep learning models have
+significantly improved the quality of machine
+translation over the last decade. We will study the models
+behind some of these commercial successes later in this course. All of these advances have helped
+us move towards the broader goal of building artificially
+intelligent systems. Next, let's look at the field of
+deep learning from 30,000 feet. The broader societal and
+scientific aim has always been to build intelligent systems that mimic
+human behavior or intelligence. This is what we call
+artificial intelligence. The field of AI contains within it
+a sub-field known as machine learning. Whose focus is to build statistical
+techniques that enable computers to improve at tasks with experience. Deep learning is a further sub-field of
+machine learning, which mostly deals with pattern extraction from large amounts
+of data via artificial neural networks. Now a question arises
+as to how specifically is deep learning different than
+traditional machine learning? In order to answer that, let's consider
+the standard machine learning pipeline for the task of predicting whether
+an image contains a cat or not. The standard ML pipeline in this case
+consists of first of all, collecting labeled images containing positive,
+as well as negative examples of cats. Next, we manually extract features
+from the images that we think based on our domain knowledge are predictive
+of an image containing a cat or not. Finally, we train some classifier such as
+a logistic regression, or a support vector machine, and SVM to predict whether
+that image contains cat or not. And we get some corresponding accuracy for
+our classifier. Next, let's look at how deep
+learning solve this problems. Deep learning models automatically
+extract relevant discriminative features from the images that will be helpful for
+the classification task at hand. Further, since we do not know what's
+the correct level of abstraction for the predictive features,
+the neural networks extract these features hierarchically
+at different levels of abstraction. For example, for
+the face recognition task, these hierarchical features might
+contain information ranging from the individual pixel values,
+to corners, to edges, and whole parts. All of which combine to give us improved
+accuracy on the face recognition tasks. The ideas at the heart of neural networks
+have been around since at least the 1950s. But they have seen a big resurgence in
+the last decade due to three main reasons. First, we now have access to large
+amounts of data on which we can train deep learning models,
+which typically have a lot of parameters. Second, advances in hardware such
+as graphical processing units, GPUs, allow us to train these
+models at a really fast speed. Finally, the development of improved
+optimization techniques, and the ease of availability via high quality
+free software frameworks, such as PyTorch, TensorFlow, or MxNet, has significantly
+accelerated the progress in deep learning.

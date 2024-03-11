@@ -1,0 +1,174 @@
+Alright, welcome natural
+language processing. So, we have a very exciting class today. And I'm glad that you've joined us. Some of you might not actually realize
+what Natural Language Processing is. So I thought it might be
+useful to actually try to say, what's this class is going to
+be the about at a high level? For one thing, I want you to think of
+natural Language Processing is trying to build computer programs that
+understand human language. This will be a challenging task. Another
+thing to think about is going to try to create representations of language
+that we can use for applications. Things like downstream tasks,
+like understanding what people want, their intense or even solving
+a problem that they might want to ask. You might still be thinking, why do
+we need Natural Language Processing? Well, one of the big benefits of having
+Natural language Processing in data science is it helps bring structure to
+a lot of unstructured text data that we have. As a part of this, you'll learn about
+techniques to reason about language. From this unstructured mess, you'll be
+able to get information back out to reason about it and to understand human intense. And there's a huge
+downstream applicability for many of the tasks that you
+want to do in data science. The other thing is text is everywhere. And I want to emphasize that
+text really is everywhere. We have all sorts of things that
+we may not even think about. Our potential sources of data for
+using data science techniques and Natural Language Processing. We have all of literature. Books are text.
+We have things like newspapers. These daily updates that we receive. All sorts of news could be
+really useful for doing NLP. We have things like legal documents and
+notes. These two are text that can be analyzed
+in mind. We have things like social media in its endless capabilities.
+We even have things like office, an organizational documents that could
+be mind to do interesting things. See, I want you to think of Natural
+Language Processing as a gateway for data science. Natural Language Processing
+takes this unstructured text. And let's you do things like information
+extraction to pull out information and useful bits that you can use to
+analyze that unstructured mess. You can do things like
+time series analysis. Say to see whether certain words or
+certain phrases or certain types of information
+is increasing overtime. You can do things like digital humanities, like study our culture by looking
+at the evolution or change or facets of particular types of
+cultural products like books. You can do things like graph learning. And we'll talk in this class a little
+bit about how to turn language structure into graphs. And finally, you can even do
+things like causal inference. For example,
+which headline might get more clicks? These are the kinds of things that natural
+language processing can help you do. So, what's the applied part of the class? Natural Language Processing
+is a really big field. I'd like to think of it like at Iceberg.
+I'm going to show you the tip of the iceberg in this class. In this case,
+will talk about common libraries that will help you understand natural language and
+how to make sense of it. And used to effective
+Natural Language Processing techniques. As a problem that will talk about the very
+common techniques that use a practitioner will want to use to get something up and
+running very quickly and to solve your task. We'll think about text as data science. And thinking about how to
+turn the unstructured mess into something structured
+that you can reason about. And use the rest of the materials
+that you've learned in this course. And broadly in this program
+to apply to text directly. But that said there's a lot of
+stuff that's below the sea level. So one of the things that
+we're not going to cover, that you hear a lot about with Natural
+Language processing is deep learning. Many of the advanced techniques today do
+use deep learning or advanced machine learning or neural networks to do
+some of the most fancy techniques. This is beyond the scope of the current,
+class. But you know that it does happen a lot? Also not talk exactly but
+how algorithms work. You may have seen some of this
+in your machine learning class. But for the most part, we'll try
+to treat things as black boxes so that we can actually talk about
+the language and about the representation. And there are many, many other cool
+techniques that we just won't get a chance to talk about in this class,
+unfortunately. So, what all is involved in
+Natural Language Processing? I'd like to think about NLP as
+perhaps a pyramid of language. Starting say from words,
+from words we'll go to morphology. Thinking about how words
+differ from each other? How the word form itself may changes
+representation of the meaning? We think about syntax,
+about the structure of language. We think about semantics about how things
+actually, how sentence is in words. What do they actually
+mean when put together? Of course,
+there are more than just sentences. We have discourse. Thinking about what is a longer
+piece of text, say a paragraph or a dialogue between two people mean? Thinking about pragmatics. What is intended by
+the statement that is said? And even there's a social layer. There's all sorts of common sense
+knowledge that we put together. So, Natural Language Processing is a huge
+spending all of these things together. Just to give you a hint of some of the
+techniques and approaches in applications that we might see each level,
+let's look at a few of them together. At the word level, it may seem obvious. What are words? Well, they are the things that are there.
+You're in class right now. That's 6 words. And that's pretty obvious to us. But to a computer,
+we might ask what should a word be? For example, applied data
+science is an amazing skill set. Data science itself is a concept. Should we treat data
+Science is a unique word? Practitioner or an NLP user, you'll have to think about what should
+constitute a word or concept for me. If you're dealing with social media,
+you might see this NLP is fire, which is slang,
+should emojis count as words? This is a real case when you have
+to think about what constitutes a meaningful unit of entry
+into my application. You might even run into cases where
+you're working in different languages. So here we have Chinese, there are no
+spaces to separate word boundaries. As a practitioner, you would need to say
+how do I analyze this piece of text, if there aren't necessarily
+obvious words for me to use? So this is some of the things
+that you have to think about, at the morphology side, we can think
+a little bit about say, parts of speech. So here if we have a sequence of words,
+we could actually try to label things and say adverbs or adjectives, nouns,
+verbs, proper nouns and so on. And we'd like to be able to pull these
+things out to say, do some analysis. Similarly, we could try to look for
+it named entities, so finding people, places and things. If you read this this sentence right here,
+students enrolled in the University of Michigan School of Information's Master
+of Applied Data Science Program, will take courses in all the essential
+subjects in applied data science. Well there's a few things that stand
+out as people, places, and things. For one, we had the University of
+Michigan as an organization, two, we have the School of
+Information as an organization. And then we have your degree,
+the Master of Applied Data Science, and these are actual entities that
+we would like to pull out and maybe reason about when
+doing data science. At the syntax level,
+we can try to connect words together, maybe to do information
+extraction as well. So the scientists found
+at her lab Ann Arbor, we could say what's the subject of the
+sentence and what is the subject doing? We could pull it out
+a subject relationship, or a direct object of relationship. What is being done? Even some sort of modifier to
+describe where that's done, and we'll talk about how to both apply and
+extract this type of information. At the semantics level, we could try to reason about
+what's the meaning of a sentence. So, one example that will talk
+about in this lecture today is, sentiment analysis, trying to understand
+whether something is positive or negative. This sentence I love cats
+seems very positive, but we can also think about more complex
+cases, about what is being intended here? So here's a review,
+when I turn state witness, they didn't have enough money to put
+me into witness protection program, so they bought me this mask, and gave it
+a list of suggested places to move. Is this a positive review? If you know the mask, it probably seems like a positive
+review because there's a lot of humor. So there's a lot that goes into
+thinking about the semantics and what's the intended meaning. At the discourse level, as we move higher
+up to thinking about larger units of text, one of the things that NLP is done
+recently is focused a lot on question answering. So if you say have
+a Wikipedia bio page here for Dorothy Johnson Vaughan,
+we could read this page and ask a machine learning natural language processing
+system, where did Dorothy Vaughan work? We could even say let's
+try to do summarization so to do something like
+an automated cliffs notes. Here we can take a larger paragraph,
+and we could try to smash it down into something smaller by
+retaining what's important. This also let's us do
+things like translation, which is incredibly challenging here. This also let's us do translation
+on many different languages, so there's lots of opportunity. Finally, just to show a few
+more at the top level, thinking about pragmatics, we have
+things like language generation, so there's autosuggests that you get on your
+phone or say on common search engines. These types of suggestions let us think
+about how do we create longer units of meaning, especially if we're
+thinking about dialog. One of the hottest applications in
+natural language processing these days, is thinking about chat bots or
+conversational agents. These are often, say useful in customer
+service when you want to try to triage an early dialogue with the customer to
+figure out where to best route them. Of course, this seems like a lot to talk
+about, so what are we going to talk about? For one we'll talk about
+text classification, this often a very common application to
+do it with natural language processing, especially at the data science level. Well, think about sequence labeling, that
+was like the part of speech tagging or the named entity recognition
+tasks that I showed you earlier. We'll think about word meaning,
+it's going to be useful for trying to track word connotations. We'll talk a little bit about syntax
+in the structure of language. This is often can be very useful for
+information extraction, and in fact we will talk about information
+extraction and how those to relate. And finally we'll think about discourse, so trying to pull out larger
+meaning from larger units of text. I want to also emphasize that NLP
+itself is very interdisciplinary. So within the space of NLP, we still
+have connections to say, robotics. So thinking about how humans, or even conversational agents
+can interact with us. We have lots of work from machine
+learning, thinking about the core that black box, part of NLP that
+we won't talk too much about. But there's often co-commitment
+advancements made in both. Well, think about artificial intelligence,
+how do we reason about the world and make assumptions? And there's some work in cognitive science
+thinks about how humans, how do we actually understand language and how can
+that inform how we could process this? Finally, there's some work in linguistic, Thinking about the structure of language
+and the formal study of language. Of course, there's many applications
+beyond in social science. Language is a very social phenomena. I just want to emphasize that
+language is not just English. And when we say NLP,
+NLP itself is not just English. So many of the techniques
+that will talk about today. I will show you examples in English, because that's the language
+that we are all fluent in. However, if you're working in other
+languages, NLP should work in them. And there are many new and exciting techniques that can be
+tuned to different languages. So this class will teach you a required
+skillset to do common NLP tasks will be incredibly helpful for
+you in your applied data science degree. Well familiarized with the concepts that
+able to go beyond what you've learned in the class and do more advanced NLP. And will help you turn this
+text into structured data for use in applied data science, thanks.

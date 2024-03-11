@@ -1,0 +1,138 @@
+Hello. This is going to be
+experimentation with Theia. We're going to go ahead
+and click around in this. As I said earlier,
+I think it's an IDE that we're using in this class. It's not a requirement to
+use this for this class. It works a little bit like
+a Jupyter Notebook does, and then it allows
+you to run Python, but the mechanisms that
+it uses are different. I'm going to give a quick
+demo of how this works. When I record demos, I typically have an idea
+of what I'm going to do, but I intentionally don't go through and get all
+of the code working first as part of the debugging experience
+is what we learn. I don't expect there to
+be a lot of debugging in this exercise because it's an ID. But just as a general rule, I don't typically have everything very well rehearsed
+because I want you to follow me with the mistakes that
+I make in real time. This is what Theia looks
+like when you open it up. If you open up your
+Theia through Coursera and it doesn't say explor work or you see a lot
+of files in here, please stop and contact
+us and let us know, something isn't quite right. You may have a terminal
+window open down here. It may also look more like this. Since we're writing
+code mostly in our IDE, let's start off by
+creating a file. Under our File menu, we can create folders or files. I'm going to start
+by creating a file, and I'm going to
+call this test.py. Once again, you want
+to make sure you have the work directory in here. If it just says home/jovyan, stop and let us know, something isn't quite
+right with your setup. Once you've created your file, you'll see that we've got
+some things over here. You may also see some things that start
+to pop up over here, you can accept the
+defaults on them. We can go ahead and just
+start writing things. Pretty simple. You may also see that you get
+some things over here, you can go ahead and say try it. You'll pretty much accept
+whatever the defaults are here. I went my head and made a change, so I will reload this. Those may pop up every time
+you launch it, they may not, depending on how Coursera
+takes the application. We'll give this a second
+to finish loading. Couple things to note here. When you're using this, it's really important to indicate that you're
+saving your file. You'll see that there's
+a big circle in the filename here
+that indicates you have not saved your file. We can go to File Save or we can use the keyboard
+shortcut to do that, and you'll notice that it's gone. This is pretty much any other
+code writing environment, you don't have cells that you execute unlike in a
+Jupiter notebook. But you can just write
+code like anywhere else. One of the things you'll
+notice in here is as you start using built-in functions
+that are available to you, the IDE will help
+you complete them. This is called code completion. If we wanted to access an API, we can do Import requests. You'll notice actually
+that I misspelled it. It's actually prompting me to finish it and I can
+just press Enter. Then I can do something
+like data = request.get, and I can go ahead
+and put my URL in here and actually
+make a call outbound. It's a fairly straightforward environment to do
+these things with. One of the things that's
+different is when you run code in Theia, you actually have to
+run the entire file unlike a single cell. You can do that by pressing
+the Play button over here. What that'll do is it'll come over here and it'll go
+ahead and run your code. You'll notice that I have
+a syntax error here. I need to fix my syntax error, so let's go ahead and fix that. It's missing because this is
+not a double equals sign, so we've gone and rerun this. You'll see that I
+get Hi and Hello. If I go ahead and make
+this a two for example, and press Run, it'll
+go ahead and say "Hi". Now when you run a file in Theia, it's doing a couple of
+things behind the scenes. You'll see that it's actually
+running the code down here. You'll also notice that
+if I make a change here, this circle comes back
+indicating the files not saved. Part of running the file
+actually will save the file. You'll see that this
+is just calling the Python executable and
+the file that I want to run. I could come over here, create another file,
+call this main.py. I can say, def test a, b print a, spell it correctly, and then I can come
+down here and say test. You'll notice that when
+I actually run this, it's coming up and
+it's telling me what I have to pass in here. This is one of the functions
+of an IDE that'll do this, and obviously when I run this, I would expect it to print
+out one because one is a. We are going to run that and
+we can see that this works. Running it just tells the
+executable to go ahead and run. Now, a couple of other things that you have within an IDE. You have the ability
+to search for everything that's going on here. You can search for
+tests and it'll show you all the places
+where a test is found. When you're dealing
+with complex pipelines, you might have multiple
+files that make up your pipeline and
+so you may need to find out where you're doing
+something within there. The search function is nice. This is actually the built-in git control mechanism and you can actually do git related
+functions through the IDE, we'll cover that in
+another lecture. Here's the debugger.
+I'll go ahead and give a quick demonstration
+of how this works. I think that proper debugging is really important for
+any programmer to know. I'll give a quick demonstration
+of that in a second, and then you can actually install extensions into there directly. There's a ton of extensions available that you can extend
+your environment with here. But let's go back to the
+debugger for a second. Let's assume for a second
+that you have some code, and your code calls a function. We've got data equals five. Rather than just hard
+coding that to five, data is actually set by
+the result of a function. Then later on you do something
+like, if data equals, equals 10, print,
+the data is correct. Now, if you run this and it didn't print out 10 because when you expect
+it to print out 10, your typical process of
+debugging would probably be to come up here
+and do a print data. Maybe if you were concerned
+about it's taking awhile, you might even do
+an exit to make it stop running so it
+doesn't continue going. This actually works. You can do this, but it's
+not really best-practice. What a debugger lets us do is it lets us
+set a breakpoint. We can come in here
+and set a breakpoint. When we run our debugger
+here, first time we do this, it's going to come
+up and it's going to ask us some questions. We're going to say, python file, and then we can close this. We just do it the first time. What this is going to do is, it's going to run and when it hits this break
+point, it's going to stop. There's a couple
+of things that we can do, under variables, we can see the locally
+defined variables and we can actually see that
+data is equal to five. We can actually see
+every single call that this code has made. Obviously, it's done, it's called no functions at the
+moment so this is empty. We can tell it to continue, and if we tell it to continue, it won't print
+anything out because data is five and this is
+asking if data is 10. Where this gets really
+cool though is, what if you've got a web
+service that's supposed to return data and you want
+to test your conditions? You could make your
+call to a web service. This could be comment this out, do data equals web service call. It could return five,
+it could return 10, and if you want to
+test, you could come in hard code data to five or data
+to 10 and see if it works. But using a debugger, you can actually do all of that without having to
+hard code anything. I'll show what that looks like. I can come in here, and we
+know if we continue this, it's going to print
+nothing because data is five and this only
+runs if data is 10. But what's cool
+about a debugger is, for every variable
+you have defined, you can actually come down
+here and say data five, no, let's set that at 10, write
+to the debugger, press "OK". I've now set data equal to 10 and when I continue this code, we will actually
+see that it prints out what we'd expect
+it to print out because we changed
+this at runtime. This is a much better way
+to troubleshoot what's working than using
+print statements. I'm going to go ahead
+and end this demo here, but I do encourage you to spend some time and take some of the codes you've written
+for other classes and put it in here and run
+through the debugger, play with how this tool works. It is a really powerful tool that's available for your use. Not just in this class, but as a general tool to keep
+in your toolkit. Thank you.

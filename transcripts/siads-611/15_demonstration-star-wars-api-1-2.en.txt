@@ -1,0 +1,176 @@
+Hello, and welcome to another
+demonstration walkthrough for Postgres. So the one we're working on right now is
+talking about loading JSON from an API. We're going to do a bit of spidering. We're going to create a little table. And we're going to have a series of URLs
+and this is going to be done spider style. The data we're going to pull is
+a thing called the Star Wars API. And its a REST-based API that returns JSON. And one of the things we're going to do
+is we're going to spider in a way like a Google web search does, in that we are
+going to actually read the documents, and then in documents there are more
+URLs that we're going to parse out, films, species, the vehicles. But then if you go to like species,
+well, let's go to films. If you go to film 6, so
+we're going to parse this, then we're going to spider it and
+we'll go to film 6. And then you look at film 6, and
+there's a bunch of people in it. So what we're going to do is we're
+going to keep reading these until we have in effect read all the data. We're going to use the stuff inside
+the data to guide our future searching. Okay? So we'll talk about
+all of that stuff. This is free and open. It's really cool. It has a rate limit. I hope we don't hit the rate limit. So, let's take a look. You need to get the code for
+pg4e.com/code/swapi. SWAPI, Star Wars API,
+we're going to load that down. And I hope by now you have
+myutils.py from a previous example, and hidden.py is already set up, okay? And let's go ahead and
+drop the swapi table in our psql. It didn't exist so it didn't matter. And swapi is going to create this. So let's go ahead and
+start another browser here. And I'm going to start running python3 swapi.py. And so now what's happened is
+it's actually got it started by, so if we go look in here,
+let's take a look at Let's find a SELECT url WHERE status not equal to 200,
+that will get us what we want. You can always run the SELECT,
+because, so SELECT url FROM swapi. So these are URLs to do,
+let's do url comma status. I probably should say where
+status is not equal to 200. I should say, status IS NULL,
+it might be a better. Yeah, that gives us sort
+of WHERE status IS NULL and let me that back into my SQL code. And the ones that are 200
+are the ones that I've retrieved. Let's make that be equal 200
+and it IS NULL. So 200 is a HTTP code. So if you look here we've
+got a SERIAL id, we've got the url to
+retrieve that's UNIQUE. We have the status, which is
+the HTTP status, 200 is good. We're going to leave status empty,
+then we've got a JSONB body, and then we got a
+couple of TIMESTAMPTZs. And so what the program does to
+get itself started is it inserts some known URLs, films 1,
+species 1, and people 1. And then, let's take a look at it. swapi.py. So by now I hope you know how
+secrets work and how cursors work. Some print statements,
+how to use the SQL, myutils doQuery just to kind of
+make it a little less whatever. So what we're going to do is we're
+going to check to see if there are URLs in the table and if we got no URLs,
+then we are going to insert films sub 1, species sub 1. It's just
+a little insert using. All right, that's the string
+substitution using f-strings. Where it basically takes this,
+it reads the variable obj and replaces that, looks a little bit like
+a Django template, which is kind of cool. And so that's what inserted all of
+these records that we already see, that code is in there because it
+created it and it didn't find it, so it just inserted these things. And there's this cool little
+status function that I've got and I call a couple times. It checks to see how many we've got,
+how many where the status is null, how many where the status is 200,
+which is successful, and then how many that have added error. Now if all goes well,
+we shouldn't have an error. But if you hit a rate limit or the network messes up, you will
+start seeing errors in here. You'll see this status having like 404s,
+or 500s, or something, right? 200 is good, right? And so it's going to ask us how many.
+We got a total of three. We've got three left to do. That's because these have
+not been retrieved yet. How many good ones did we get and
+how many error ones did we get? That's just all SELECT
+statements reading from it. So now what we're going to do is we're
+going to ask how many documents, right? We got some, actually accumulation
+variables, how many documents do you want? So we're going to look for a URL from
+it where the status is NULL, and only grab one. queryValue is like pull read a row,
+run the SELECT statement, read the row, pull the zeroth element out of
+the row, or none. And if url is none, we're done,
+There are no unretrieved documents. Now we're going to start reading it. Actually, let me go ahead and start
+this thing. Let me do five documents. Is that going to work? Yeah, now see, it takes a while actually
+because one of the things going on right here is it's adding, it's finding and
+adding more links to the database. So just we retreived five documents but if I do a SELECT COUNT star FROM swapi, we've got 45 rows, and
+most of them are unretrieved. So it retrieved three documents,
+one document, got two new ones, three documents, got 34 new ones,
+they're adding these up, right? And so this is a queue,
+you can think of this. Now this is a restartable process,
+it's a spider. And so if I like get out of this,
+and say, well, we loaded five documents,
+we have 40 to do. Five are good and we're starting over. So now I can start over. And it says, oh, I know, based on reading
+the database, what I've got to do. So let's do 25 documents. Now this is a slower process and
+so this is why it's important for this to be restartable. So far the API's going well and it's not
+causing problems so we'll just kind of let that crank along while I talk
+a little bit more about the code. All right, so we can SELECT COUNT. So we got 50 in there, 51, right? So there's a lot we're gaining
+URLs as we're doing this. Oh, and then it committed so we're
+going to have probably a bunch more. So we got 25 documents loaded. Let's just load 100 more and go talk. Go load, go little Python program, go, go. Okay, so let's take a look. Some of this you've seen
+in the gmane example. We're using the request library. This time we're going to grab
+the text and the status code. And then we're going to do an update,
+we're going to, the key is to set the status also so
+that we don't double retrieve. Now hopefully this is a 200. But if it's an error, we're going to
+actually have that in there. Put the body in and set the updated_at
+equals NOW where url equals percent s. What we're seeing here is one,
+two, three percent s's, which means we need a three-tuple
+when we run the query. So we're going to run the query with
+the SQL and send in our variables, status, text, and the URL, and
+that does the insert and I just update my aggregation variables. And like before I make it so
+I can hit Control-C at various places. Any other kind of exception I just
+dump a whole bunch of debug stuff out. And away we go. And so then each time through
+oh, that's what we're seeing, the count where the status is null;
+This is a pretty chatty API, a pretty chatty thing. And so I'm going to select count
+where it's null and then I'm going to print what the status was, what URL I got,
+and how many I have left to do. So this is the to-do list. It sort of grows. You'll see that
+the to-do list kind of grows and then it sort of shrinks. Shrink, shrink, shrink, shrink, shrink,
+it's shrinking, and it might grow again. We're starting to run out of
+things to do, so let's go do another 100 documents and
+see what, we're done. Look, there's only so many documents. So it doesn't run forever, which is good because we don't
+want to rate limit the poor API. Okay. So, the next thing we do,
+here's is the to-do list, is I'm going to take the returned body and I'm
+going to do a JSON operation in Python. I'm going to load JSON from a string,
+which parses it. This is going to blow up. I probably
+should have put a try/except around here. When I write these things,
+I tend not to put the try/except in until it starts blowing up,
+because then I'm ready to debug it. Like this API would be blowing up. But it's giving me back good JSON. So I haven't written the code to deal with
+if the API gives me bad JSON because it's kind of hard to test. So, yeah, whatever. Okay, so then what I'm going to do is I'm
+going to look through all the linked data. Now, this is what I was
+showing you before, when you look at one of these things. I'm going to look through films,
+species, vehicles. This is a nested loop. So I'm going to look through all of
+the vehicles, all of the starships. You'll notice that this is
+all in the form of URLs. So I'm going to look at films, species,
+vehicles, starships, and characters. Maybe they're not there. So I'm going to pull out
+of the parsed JavaScript, because the parsed JavaScript in this
+case is really just a Python dictionary. This becomes a Python dictionary name Luke
+Skywalker, films is a Python dictionary, films, keys in that dictionary
+that points to a list. So I'm going to grab this
+list at the end of films, and that's what I'm getting here and
+that's what I'm calling stuff. Now I'm checking to make sure
+that stuff is a list object because if it's not a list object,
+I'm just going to skip it. I don't know what. I'm only
+capable of handling This is like a guardian pattern where I'm
+only really capable of handling lists. So I don't want this next line
+to blow up, so I'm just like aargh! This next line would blow up unless
+it's a list, so just guardian it so that at least I don't blow up. Somebody might put an error message
+in here or something, but I'm just like, I think the data's pretty clean. If the data is starting getting yucky,
+I'd start putting error messages in there. Then what we're going to do is we're
+just going to loop through that list. It's pretty simple, right? Got a list, go through all these things. And I'm going to insert into it
+with just nothing but the URL. But ON CONFLICT url DO NOTHING. So what I'm just saying here
+is if it's already there and there is a UNIQUE clause, right? There's a UNIQUE clause. Somewhere up, there is a UNIQUE clause.
+url is VARCHAR 2048 UNIQUE. So that basically is going to trigger
+this ON CONFLICT of the url field, don't insert. So that just saves me. You can also do ON CONFLICT UPDATE,
+but we don't care about that. All we're doing is adding to
+our to-do list in this case and if it's already been done,
+I don't care. So do nothing. Again, we have one percent s in this SQL,
+and so we have a one-tuple of (item, ). And then I'm going to commit and
+that's probably why this runs so slowly is because I got that commit
+inside this for loop. So I'm, every insert that I'm
+doing here is committing. So I probably would be well served, I would be well served
+to bring this commit. So when you download this, well,
+I didn't erase any spaces at the end. So when you do this, it'll run faster,
+because this query is going to insert, but basically I'm only going to
+commit once per retrieval, okay? I was committing
+everything I was inserting. So that meant that every time this number
+went up, it was running a commit, so I didn't have to commit
+quite so often. Oh, it's finished. So it loaded 207 documents, loaded 202
+in that particular run, total was 207. They're all good. There was no errors. So we're done. So we've got everything here. And you should see it the same as well. And because I just fixed
+this little thing, it's a choice whether you commit
+every time, if it's going to blow up. So maybe you do want to commit every
+time, but I think committing right here, after you've gone through the. If the JSON is working, and
+you're going through it, these inserts aren't going to blow up, so you might
+as well kind of queue them up and sort of blast them in
+a batch to the server. And then basically every 25th record,
+I'm going to run a commit. Actually, I could just take this
+commit out because I'm kind of already doing that. Every 25th record,
+I'm going to run a commit. I'm going to wait for a second and then
+sleep, mostly so I could hit the Control-C if it's blowing up. And at the end, I do a summary and
+I close the database connection. Summary, again, is the thing that puts
+out this little cute line right there. Just helps me know what
+the heck's going on. And so the darn thing is done. And so I have now crawled it, right? So this is a crawling thing where
+it starts with a couple of URLs but retrieves the stuff,
+looks at what's in those URLs. And then adds to the to-do list
+unless I've already seen it. So I'm only going to hit
+every one once. I'm careful about that, right? I only hit it once. So, for example, now if I
+look at some of these things, url comma status. Well, there is none of those. Let's just do LIMIT 1. LIMIT 5. So url comma status so
+you can kind of see that over time, the successful, you got a status 200,
+which for us inside this database means that I got a successful retrieval
+of this particular URL and I can now say url, status then I'll say JSONB
+and it'll just be ugly at that point. because JSON B is really big.
+Actually, it's body. It's gigantic. So url, status, there's a URL,
+there's the status, and here is like a whole bunch of JSONB. And you'll also note that the JSON, yeah, the JSONB is not the exact same
+format as the JSON that came back, which has a bunch of pretty spaces in it. And that's because the JSONB in the
+database is parsed and compressed, right? So this is a reconstitution of
+the internal data structure that Postgres has stored. Okay. So we now have all this stuff done. And so let's come back in a second part
+and play with it now that it's all loaded.

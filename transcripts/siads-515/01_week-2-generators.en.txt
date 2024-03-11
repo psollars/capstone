@@ -1,0 +1,140 @@
+The next thing
+we're going to take a look at are generators. Generators are very similar to functions and it makes
+sense to start there. If we take a look at a
+very simple function here. We've defined Hello to take a parameter of n that
+defaults to zero, set up a list for a return, and then look at the
+range from zero to n and append the string Hello to our return ret
+list and then return that. Let's take a look at that
+in our notebook itself. Here we are in our notebook. Here's our definition
+of our function, Hello. If we then call that function and assign
+the value to Hellos. We can iterate through
+Hellos and get 1, 2, 3, 4, 5 Hellos which is
+exactly what we would expect. Hellos is a list, like that. So that's
+our typical function, we've seen those before. Let's look at the generator
+equivalent of that. So here we have something
+a little bit different. We're defining a function. Again, it's a function, a generators is a type of
+function called HelloGenerator, just to distinguish
+that from Hello. We're going to set
+our maximum value to have a default of zero. When we start going
+through this generator, we're going to set
+x equal to zero. This is a standard way of
+doing things in generators. We typically set up
+an infinite loop, and then while that's True
+while the loop is going on, if x is less than the max
+value that we send in, we're going to yield
+a value of Hello. Then we're going to add one to x will return to that
+yield in a minute. Otherwise, we're going to break out of that infinite loop. So yield is interesting
+and it differs a little bit from return. Okay, let's take a look
+at that in our notebook. So here's our first
+generator where we're going to define Hello
+Generator networks. We're going to do the
+same sort of thing that we did a minute
+ago with our hellos. Then we're going to walk through that generator and it looks to behave just the way
+that the function did, except we're doing things
+a little bit differently. Let's take a deeper look
+as to how that works. The most important difference
+between functions and generators is that generators
+use the yield statement, whereas, functions use return. It's a subtle difference, but it's an important one. Yield returns a value but
+doesn't terminate the function. It stops executing
+code at that point and maintains its state until
+that's called again. So when invoked, it
+returns an object but doesn't necessarily
+start executing code. Generators implement iter
+and next automatically, so that's pretty useful. An important thing
+that we like to talk about is the difference between list comprehensions
+and generator functions. List comprehensions are a very pythonic or Python-like way of
+thinking about things. You've probably seen
+things like this before where you have a list of
+years, say for example. Then we can use a
+list comprehension to find the decade corresponding
+to each of those years. So that decade list could equal the list comprehension for
+every x in the year list, take the four divide by
+ten and multiply by ten. We saw how that works in
+a function a minute ago, so to shift over the
+decimal point and multiply by ten to get the
+decade for every year. To do the same thing
+with the generator, all we do is substitute parenthesis for the
+square brackets. Let's take a look at
+that in our notebook. We're going to
+initialize a couple of things or a few things. We're going to
+initialize a year list, we're going to find the decade using a
+list comprehension, and we're going to do the same
+thing with the generator. What we can do is send that
+list to a function like max, and we can do exactly the same
+thing with the generator. So far, it looks like the two of them are pretty similar
+to one another. You can also use filtering
+within a generator expression. Conditions can be injected into a generator expression to
+filter the input values. In this particular example, when we have a year list, it's the same one
+that we just used. We can use a filter
+generator by adding a condition at the
+end of the generator. Here we have that
+same foor divide, multiply by ten for every
+element in year list. But we now have a condition, if x is greater than 1900. Let's take a look at
+that in the notebook. Here we have a generator setup that's going to be
+filtered so it's the same floor divide
+and multiply it by ten for every year
+in the year list; but now we're going
+to put the condition on the difference
+greater than 1900, we're going to
+include it, otherwise you're going to exclude it. In this case, if we
+call the minimum of that filtered generator, we find out that it's
+1970 and not the earlier one of 1776 which is our minimum. In the previous two examples, you saw that we could
+take generators and lists and use them as
+arguments to functions. In other words, you can apply
+functions to generators. Both generators and lists can be passed to functions
+that take iterables. Note however, that generators
+tend to be more efficient. What do I mean by efficiency? The first thing that we
+want to be concerned about is memory efficiency. In general, generators
+use considerably less memory than lists. Why? Because when created, lists must be fully populated. In contrast, generators
+typically only need to offer up a
+small value at once, that is 1, 2 or just
+a handful of values. The exception to this is when a generator happens to
+hold onto a large list internally but that's generally considered poor form
+and is to be avoided. Let's take a look at
+the memory usage for a small list versus a generator. This is right back to the year list that we
+just took a look at. If we take a look at a list that contains seven
+years, as you see here, and then create a decade list by using a list comprehension, we can take a look at the
+size of that decade list. In this case, to get an estimate of the size that something takes, we import the module sys and we use sys get size of some object. In this case, the
+size of that object, that decade list, which
+is the decade that corresponds to each of those
+seven years is 128 bytes. The size of a corresponding
+generator that we just instantiated previously in
+the notebook is 120 bytes. Let's contrast that to the memory usage for a large
+list versus a generator. Let's generate a list
+of a lot of years from 1770 to 2020, about 250 years. If we create a list
+of decades for that using our
+standard method now to use the floor divide and the
+multiplier to convert to decades and ask for the size
+of that big decade list, we find out that it's 2216 bytes. So it's grown by roughly
+a factor of ten. If we look at the big
+decade generator, that is a generator set up
+against that same list, we find out that the generator
+is still only 120 bytes. We're getting considerable
+more efficiency in terms of memory usage by using a generator instead of a list. Let's look at a more
+complex example. Let's say you wanted to create
+a generator that returned three different pieces of
+information about some text; the number of lines, the number of words, and
+the number of characters. We could create a function that looks something like this. Given some piece of text, we could define a function
+called lines underscore words, underscore chars that yields
+three different tuples. The first tuple consists of
+an identifying string called lines followed by the number of lines based on split lines. The next yield statement will return a tuple consisting of the string identifier
+words followed by the length of that
+text split into words. Finally, we can yield
+out a tuple that consists of the
+identifier characters and just the length of the text. Let's take a look at that
+in the notebook itself. Here we're going to define that generator that yields
+three different things. We're going to initialize
+that generator with a simple piece of text that reads,''
+This is a text''. When we call next a, we will get that first
+tuple back which consists of the identifier lines followed by one.
+There's one line there. The next time we
+call that generator, we will get the next
+yields statements results which is the identifier
+words followed by four. There are four words in there. As we call it the next time, we find out that there are
+14 characters and as usual, going off the end will give
+us a stop iteration error. Okay, that ends our brief tour of generators and how they differ from things like
+list comprehensions. We ended with a cryptic example of yielding three
+different values. We're going to come
+back to that in some of the homework
+that we do as well. So that's setting us up for
+some further exploration.

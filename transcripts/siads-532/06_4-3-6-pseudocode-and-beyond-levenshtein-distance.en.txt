@@ -1,0 +1,88 @@
+You can find many
+different pseudocode are like to calculate edit distance and eventually edit distance, most of them are
+correct of course. So in this pseudocode you can
+see that the input will be two streams indices which are
+indexed from 1 to m and 1 to n. So all you need to do is to create
+this empty table, then you will fill
+little by little, is m by n empty table? You initialize the numbers
+that you've got for free. So these two elements
+basically tells you that it takes i edits to transform the
+sub-sequence of lens i into the empty
+sequence and takes j edits to transform the empty sequence into
+a lens j sub-sequence. This is the main part
+of the algorithm that essentially corresponds
+to how we fill in the table. So start from every row
+and then every column. So essentially what
+you do is to check, suppose I want it to go from the diagonal do I need the additional
+cost of substitution? So this is from the diagonal. Then you evaluate the
+edit distance of d[i, j] by looking at the
+minimum of the situations. If you go from the row, if you go from the left, if you go from the
+top or if you go from the diagonal that is how you calculate the edit distance
+and finally you will return the number
+you got for d[m, n].That is the edit distance of the full sequences of x and y. So levenshtein edit
+distance gives us the intuitive way to measure the similarity
+between two strings or between two
+sequences of items. There are many variations of
+levenshtein edit distance. The variations are making different decisions on what
+the unit operations are, whether there are
+other basic edits, the insertion, deletion
+and substitution. For example, some would say that you can actually
+transposition two adjacent items
+and that's also considered as the unit operation. There are also some
+arguments on how to actually measure the cost of
+substitution for example. Some would say that the substitution
+operation should really be counted as two edits instead of one because they
+have to delete it as in typing another item. In this case, the cost of substitution should be
+two instead of one. Some of you are
+arguing that it takes a different cost to insert the letter versus
+deleting a letter. So all of these
+decisions have to be made based on your
+real application. One way to take care
+of this difference in the cost used to calculate the so-called weighted
+edit distance. The basic idea is to emphasize the relative cost of
+different edit operations. For example, you
+can actually assign arbitrary cost to insertions, to deletions and
+to substitutions. This is particularly
+useful in bioinformatics, example, when you are doing sequence alignments
+of the sequences, sometimes you want to
+assign penalty to gaps. Remember that in sequence
+alignment tasks you add in gaps to make the two
+sequences more aligned so that they share a
+larger number of items sequentially but adding in gaps may result in
+different costs. This is considered in most sequence alignment
+algorithms such as blast or blosum. If you're interested
+you can read materials about the two sequence
+alignment algorithms, both of them are very famous. Another variation of the levenshtein edit
+distance is to cut the Damerau -Levenshtein
+edit distance. What they does is
+essentially to add another basic edit operation
+known as transposition. The transposition of two
+adjacent items is also considered as just one
+single edit operation. As this variation of levenshtein edit distance
+is also quite suitable for DNA sequences because naturally our DNA sequence are
+frequently undergo insertions, deletions, substitutions
+and transpositions. So in this application
+scenario then it is different from
+spinning correction. Transpositions of
+two adjacent items can be interpreted as basic edit. So these are what we know
+about edit distance. I do want to draw
+your attention on some limitations of this
+edit distance metric. Although it gives that the accurate estimate of the
+closeness of two strips. The biggest problem of edit
+distance is that it is slow. For those who are used to
+as a Big O operations, you can see that the
+computation complexity of calculating edit distance is proportional to the product of the lens
+of the two sequences. Intuitively, what it means is that you need to
+fill in the table, the m by n table to find edit
+distance of two sequences, as this does not work well when you have very
+long sequences. For example, suppose
+the typical lens of a document is 500 words. Then to calculate
+the edit distance of two documents you need to
+fill in the 500 by 500 table, that will be a nightmare for
+your manual calculation. If you talk about human genome, human DNA sequence has
+around 3 billion base pairs. That means if you want to
+calculate the edit distance of the entire DNA sequences you need to fill in a huge table, and that is even hard for
+the computer to move fast. In reality, we need other type of sequence
+similarity matrix that are faster and that
+hopefully can give us an approximation
+of the similarity.

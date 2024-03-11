@@ -1,0 +1,157 @@
+The DataFrame data structure is the heart of the Panda's library. It's a primary object that
+you'll be working with in data analysis
+and cleaning tasks. The DataFrame is conceptually a two-dimensional series object, where there's an index and
+multiple columns of content, with each column having a label. In fact, the distinction
+between a column and a row is only a
+conceptual distinction, and you can think of
+the DataFrame itself as simply a two-axis labeled array. Let's start by importing
+our panda's library. So import pandas as pd. I'm going to jump
+in with an example. Let's create three school records for students and
+their class grades. I'll create each as a series
+which has a student name, the class name, and the score. So record1 is pd.Series, and
+we'll use a dictionary here and we'll say the student's
+name is Alice, the class is physics, and the score she got was 85. Record2 the name is Jack, the class is chemistry, and the score is 82. And for record3 we'll set the name
+of the student to Helen, the class is Biology, and the score is 90. So like a series the
+DataFrame object is indexed. I'll use a group of series, where each series
+represents a row of data. Just like the series function, we can pass in our individual
+items in an array and we can pass in our index
+values as second arguments. So df is a common name for a DataFrame equals pd.DataFrame, and we'll pass in record1, record2, record3 as our arrays, and we'll just say our index is school1, school2 and school1. And, just like the series, we
+can use the head function to see the first several
+rows of the DataFrame, including indices from both axis, and we can use this to verify the columns and
+the rows, so df.head. You'll notice here the Jupyter
+creates a nice bit of HTML to render the results
+of the DataFrame. So we have the index, which is the leftmost column
+and is the school name, and then we have
+the rows of data, where each row has a
+column header which was given in our initial
+record directories. An alternative method is that you could use a list
+of dictionaries, where each dictionary
+represents a row of data. So students equals
+and then we'll make a dictionary in this list, and we'll say Alice, Physics, and the Score. Then the next dictionary
+is Jack, Chemistry, and the Score, and then Helen, Biology and her Score of 90. Then we pass this list of dictionaries into
+the DataFrame function. So df equals pd.DataFrame and would just pass
+the list of students, and we say we want
+to index them as school1, school2, and school1. Let's print this
+again with df.head. So similar to the series, we can extract data using
+the .iloc and .loc attributes. Because the DataFrame
+is two-dimensional, passing a single value to
+loc indexing operator will return the series if there's
+only one row to return. For instance, if we
+wanted to select data associated with school2, we would just query the .loc
+attribute with one parameter. So df.loc, it's our index so the value we're
+looking for is school2. You'll note that the name of the series is returned
+as the index value, while the column name is
+included in the output. We can check the data type of the return using
+the python type function. So just type df.loc [school2], and we can see here it's
+pandas.core.series.Series. It's important to remember that the indices and
+column names along either axis horizontal or
+vertical, could be non-unique. In this example, we see two records for school1
+as different rows. If we use a single value with the DataFrame lock attribute, multiple rows of the
+DataFrame will be return, not as a new series, but as a new DataFrame. So let's query for
+school1 records. So df.loc [school1]. Here we can see the type of this is actually different too. So type df.loc [school1], and that's actually a
+pandas.core.frame.DataFrame. One of the powers of
+the panda's DataFrame, is that you can quickly select data based on multiple axis. For instance, if
+you wanted to just list the student names
+for school1, you can supply
+two parameters to.loc, one being the row index and the other being
+the column name. So for instance, if we're only interested in
+school1 student names, we can say df.loc [school1]
+as the first parameter, and name as the second parameter. Remember, just like the series, the Panda's developers have
+implemented this using indexing operators and
+not parameters to a function. So what would we do
+if we want it to select a single column row? Well, there's a few mechanisms. First, we could
+transpose the matrix. This pivots all of the rows into columns and all of the
+columns into rows, and it's done with
+the T attribute. So df.T. Then we can use the.lock on the transpose to get
+the student names only. So df.T.loc[name]. However, since iloc and loc
+are used for row selection, Panda reserves
+the indexing operator directly on the DataFrame
+for column selection. In a Panda's DataFrame, columns always have a name. So this selection is
+always label based, and it's not as confusing
+as it was when using the square bracket operator
+on the series objects. For those familiar with
+relational databases, this operator is analogous
+to column projection. So df[name], and that projects the name column and you'll note the index
+is still in there. In practice, this works
+really well since you're often trying to
+add or drop new columns. However, this means that you
+can get a key error when you try and use the .lock
+with a column name. So df.loc[Name] and
+that produces this big nasty looking key error here. Note too that the result of a single column projection
+is a Series object. So we look at type of df[name], we see it's a
+pandas.core.series.Series. Since the result of using the indexing operator is
+either a DataFrame or series, you can chain
+operations together. For instance, we can select
+all of the rows which related to school1 using.loc, then project the name
+column for just those rows. So df.loc [school1]. So that's our row. We only want those that involve school1 based on the index, but then we'll project using
+[Name] at the very end, just the Name column. If you get confused, you
+can use type to check the responses from
+resulting operations. So if you print the type
+of df.loc [school 1], this should be a data frame. If you print the type of
+df.loc [school1] [Name], this should be a series. Chaining, by indexing on the return type of another index, can come with
+some cost and is best avoided if you can
+use another approach. In particular, chaining tends
+to cause Pandas to return a copy of the DataFrame instead of a view
+on the DataFrame. For selecting data,
+this is not a big deal, though might be slower
+than necessary. If you are chaining data though, it's an important distinction, because this can be
+a source of error. Here's another approach. As we saw.loc does row selection, and it can take two parameters, the row index, and
+the list of column names. The .loc attribute also
+supports slicing. If we wanted to select all rows, we can use a colon to indicate a full slice
+from beginning to end. This is just like slicing
+characters in a list in Python. Then we can add the column name as the second parameter
+as a string. If we wanted to include
+multiple columns, we could do so in a list, and pandas will bring back only the columns that
+we've asked for. Here's an example, where we
+ask for all of the names and scores for all schools
+using the.loc operator. So df.loc and I want all schools. So I'm just going to put
+a colon as the first parameter, though the row index selection, and then as the second parameter, I want to project the name
+and the score as columns. Take a look at that again, that the colon means that we
+want to get all of the rows, and the list and
+the second argument position is the list of the columns
+that we want to get back. That's selecting and
+projecting data from a DataFrame based on
+row and column labels. The key concepts to
+remember are that rows and columns are really
+just for our benefit. Underneath this is
+just a two-axis labeled array, and transposing the
+columns is easy. Also consider the issue of chaining carefully
+and try to avoid it, as it can cause
+some unpredictable results, where your intent was to obtain a different view of the data, but instead Pandas
+returns to you a copy. Before we leave the discussion of accessing data in DataFrames, let's talk about dropping data. It's easy to delete data
+in series and DataFrames, and we can use
+the drop function to do so. This function takes
+a single parameter, which is the index or
+row label to draw. This another tricky
+place for new users. The drop function
+doesn't actually change the DataFrame by default, instead the drop function
+returns to you a copy of the DataFrame with
+the given rows removed. So if we do df.drop(school1), it looks like a nice
+changed DataFrame. But if we look at
+our original DataFrame, we see the data is actually
+still intact, so df. Drop has two interesting
+optional parameters. The first is called in-place, and if it's set to true, the DataFrame will be updated in place instead of
+a copy being returned. The second parameter is the axes, which
+should be dropped. By default this value is zero, indicating the row axis. But you can change it to one if you wanted
+to drop a column. For example, let's make a copy of the DataFrame using
+the .copy function. So copy_df equals df.copy. Now let's drop the name
+column in this copy. So copy df.drop, we say
+the column we want to drop name, we say in-place equals the true, and then we set the axis because, it doesn't know that
+this is a column. We set the axis equal to one to tell it that this
+is named column, and then printout copy_df. There is a second way
+to drop a column, and that's directly through the use of the indexing operator, using the del keyword. This way I'm dropping
+data, however, takes immediate effect on the DataFrame and does
+not return a view. So if we just say
+del copy_df [class], and then printout copy_df, we see the class is gone. Finally, adding a new column
+to the DataFrame is as easy as signing it to some value using
+the indexing operator. For instance, if we
+wanted to add a class ranking column with
+default value of None, we could do so by using the assignment operator
+after the square brackets. This broadcasts the default value to the new column immediately. So df[ClassRanking]
+equals None and print df. In this lecture, you've learned
+about the data structure you'll use the most in
+pandas, the DataFrame. The DataFrame is indexed
+both by row and column, and you can easily select individual rows and project the columns you're interested in, using the familiar
+indexing methods from the Series class. You'll be gaining a lot
+of experience with the DataFrame in
+the content more to come.

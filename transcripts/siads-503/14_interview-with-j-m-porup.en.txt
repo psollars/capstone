@@ -1,0 +1,215 @@
+Hello and welcome back. I am here on a teleconference
+with JM [INAUDIBLE] are extremely distinguished and
+experienced journalist guests. I'm delighted to have him with me JM. Thank you so much for coming. >> That's a very flattering intro. [LAUGH]
+>> Well if brief so so JM you're here in part because you did
+some amazing reporting about the Skynet algorithm and I was during could you just
+start off by telling us what that is? >> Sure. So everyone should be somewhat
+familiar with the Snowden docs which were released over a period of
+years from 2013 to the present by former NSA contractor Edward Snowden. And I I'm a cybersecurity reporter and arguably a cyber security expert but
+I'm not a data scientist. I'm not a machine learning expert and
+I was at a conference in 2015. I believe when a machine
+learning expert came to me and said have you seen these
+published Snowden docs? I said, yeah,
+he said do you understand what they mean? And I said no. I'm not a machine learning expert. I don't know what that means is. Well, I am a machine money expert. I have a PhD in machine learning and I have looked at this machine learning
+model and the NSA is killing innocent people because their machine learning
+model is misclassifying them as terrorists and they were there were likely As
+of innocent people assassinated by drone in Pakistan because the NSA is
+machine learning model was bogus. And that's a dramatic pitch. Yes.
+Yes. I thought so too. So I took his information this thighs and
+I went to machine learning experts and I said, well, what do you think and
+they're like, holy cow, you're right. This is terrible. Their machine learning
+model is like Amateur hour. Like I had a professor tell me
+if I had a student turn this information learning 101. I would fail them like we're
+not even talking to beer. Would fail them. This is like this is like Amateur hour and
+the NSA was misclassifying and probably continues to do so
+misclassify innocent people as terrorists. There are machine learning model was so bad according to reporting that
+the the person rated number one in all of Pakistan as a terrorist was a well-known
+journalist for the AP or routers. I forget who traveled frequently
+to Afghanistan at to do his job to talk to people because
+that's what journalists do. And the NSA considered that a win that
+their model had classified a journalist. As a terrorist that for them was a win and the model was
+based on cell phone metadata. Is that right? Yes, the idea was that if you
+have enough information about people who are known true
+terrorists people who they travel with frequently have a high likelihood
+of being terrorists in theory. That's not complete. Sense, but their training data was
+like half a dozen people and and then again not a machine learning expert,
+but I'd have to reread my own article, but it was something like they were trying
+to use the training data both to train and to validate which people told
+me like that's that doesn't fly. That is not a valid way to train a machine
+learning model like that is not legitimate and you know, so probably war crimes were
+committed by the United States government. In Pakistan and
+thousands of innocent people died because of a because of bad engineering
+bad machine learning engineering. Yeah, I mean, so I think the perspective
+that were fascinated by in the context of this class is partly the reporting
+on them on Skynet, but also, I think the your experiences
+as a journalist, you've worked for a number of Publications and here you've
+got a situation where there's something going on inside the government the slides
+released by Snowden are not detailed. I mean they're detailed is slides but they're only a couple slides
+that deal with this with Skynet. So it's not a huge amount
+of information there. So I mean how do you approach
+a situation like that? We've got this fascinating pitch, but you
+only got a couple of slides what happens? >> Well, I mean,
+there's the broader question of government transparency the fact
+that we had to wait for a government contractor to
+provide the American people with transparency into potential war
+crimes our government is committing. And then still have only inconclusive
+details is I think unacceptable in a free and open society and suggest in fact that
+we don't live in a free and open Society. These this is exactly the kind of things
+that we deserve in a democracy to have information about if our
+government is going to war like I feel like in a democracy
+the people should have a say. I'll be invading a new country like
+maybe Congress should vote on that, maybe the people should
+have a debate on that. Don't think that's crazy talk. Starting a war is a big deal, especially
+when those Wars create new generations of terrorists who didn't want
+to attack us and kill us. >> I mean, it just is a vicious
+cycle in my understanding right? You didn't go to sources and
+have some of them say, well actually this is an okay model like
+I would I would do this like there wasn't a contingency of the people
+you talked to that said, well, I think that's going to be
+a good way to stop terrorism. >> No, I mean I think you know, basically everyone I spoke to agree
+that it was not a correct model and and more importantly, you know,
+like we are assignor to the Geneva Convention which obliges
+you know America to in Wartime, you know killing a soldier in uniform on
+a battlefield is unambiguously acceptable. If you're in a war and
+you're a soldier shooting a soldier and you're both wearing uniforms,
+I mean that's bad but it's like we consider that to be
+like legal under international law. It's also unambiguously true that
+murdering civilians or medical personnel or you know, non-combatants is
+unambiguously illegal and unacceptable. So then we have the ethical question of
+what happens when you have a statistical probability of 85% that
+somebody might be a combatant. Is it okay?
+A under international law to murder. Someone who you are not
+absolutely sure as a combatant. I mean that is a new form of, you know,
+ethical concern under international law. I mean in the past it was
+relatively easy to say, you know, this person is clearly an uniform
+combatant under the Geneva Convention. This person is clearly a non-uniform
+non-combat endure a farmer there a villager whatever the their
+medical personnel their Red Cross. These people are not combatants
+like it was unambiguous. But now we have this, you know gray
+area where we're classifying people on. They're terrorists Enos, you know and then potentially murdering
+them with no other evidence. >> I don't know if you're familiar
+with the stop Killer Robots campaign. These are the the people who've gone to
+the United Nations and not in detail, but I think the fact that the NSA had
+such poor taste is to name this program Skynet suggest that suggests that
+that is their ultimate ambition. Their ultimate ambition here is to have
+Killer Robots running machine learning models that can do This sort
+of it at machine arm's length, you know,
+no human operator pulled the trigger. Well the magical machine learning
+Black Box said they were bad. So we killed the bad guy
+the machine can't be wrong which seems to me more like a way to you know,
+make an excuse to do whatever you want to do because
+the mysterious black box it was okay. That's the argument made by
+the stop Killer Robots campaign at the United Nations and elsewhere its that,
+you know removing human judgment. In this case is particularly dangerous and
+raises ethical challenges that are perhaps of a magnitude more serious
+than Automation and other domains and that there hasn't
+been enough consideration about this there hasn't been enough discussion and
+yet we seem to be moving ahead. So I think you actually summarized their
+campaign pretty well just now, I mean, my real concern is the intersection
+of cyber security issues and Killer Robots because in any kind of
+military conflict you're going to have adversaries trying to hack
+other people's Killer Robots to do things that the owners
+are not intend them to do. Maybe you hack them and turn them on
+to your own soldiers like one could imagine country ax hacking
+American Killer Robots and turning those robots around
+to kill American troops. Like that's not crazy talk and
+our record of drone security is not good. >> I remember a story about at least
+one story about how American drones had been hacked. >> I mean everything has security flaws
+anything of sufficient complexity has security flaws, even if there is a
+team of a thousand Engineers looking at it in good faith for years. So the idea that you're going to have
+a perfectly secure killer robot is a pipe dream. So if you have insecure Killer Robots
+running a flawed machine learning model, you could hack the machine learning
+model in some plausibly deniable way. You could turn it on its Masters. You know, this is not a path. I think we want to go
+down as the human race. You mentioned the name
+of the program Skynet. >> I think that might be worth elaborating
+just for the we go we have a diverse group of students and some of them may not have
+experience with American culture, but the references to Terminator
+series of movies, right and the idea is that Skynet is a computer
+program in a dystopian future that attempts to I don't remember
+if it's enslave or eradicate. Andy but one or the other. >> I don't remember either but
+basically most of humanity is gone and what those that remain
+are slaves to the machines. I mean it's like the the fantastical story
+telling of Hollywood is a little bit maybe it not a little a lot exaggerated on
+what might actually happen in reality but nevertheless this vision of
+machines that are able to gain Consciousness and
+in a in a true Turing complete artificial. Intelligence way that then
+turn on their masters and in a machine Uprising that kills and
+enslaved humanity is sort of the concept of the movie, you know, there's so
+much of that that is fantastical. And clearly not of immediate concern but
+the the dream these sort of fictional dream of having such as
+system has persisted in in America and Western culture since one of that movie
+come out 80 something I think it was. >> I mean I was a kid When that
+movie came out, yeah, but I mean, I think what it might show
+is that there was a certain. I mean, it's not the place to have humor. I know that someone at the NSA was being
+cute when they chose that name but it shows a certain kind of callousness or
+a Cavalier attitude. Even if it wasn't intended that
+way I think that's the way you read it when you find out about that. I mean I saw your story and I thought
+I can't believe they named it Skynet. Like I just can't believe that
+they named it Skynet, that's it. And I thought maybe I read it wrong or I'm
+not understanding or but they named it. They named it Skynet. They actually named it. Skynet, yeah, the other topic I was interested in
+asking you about is really the broader implications of being a journalist working
+in this area thinking about algorithms and you know black box systems that you
+have these issues like you have a false positive rate that might lead to war
+crimes or deaths or something like that. So as a journalist, you've been
+working in this area for some time. Have you seen the landscape change over
+that time do you think that there are new tools? that journalists need or new approaches to
+kind of handle these kinds of systems that are I mean weren't really something that
+we were thinking about long ago, you know, I would go so far as to say that current
+deployments of machine learning for government and Military are as good
+as phonology the the 19th century mystical idea that bone structure
+determined to criminality or take a look at Microsoft just announced they are
+because Outlook messages on outlook.com. Pop me what have you and
+Sky / unencrypted they are using a machine learning model to scan every
+communication over Skype and over Microsoft based email and
+giving every single person every single user a rating on from 0 to 10 on
+there like link by clicking on their likelihood of being a child predator
+because they're looking for seed. They're looking for
+CP like the motive the motive. Is good. Nobody wants child pornography CP. Nobody wants that right? That's that's a horrible but
+is like, you know, now we're going to rate people using
+a machine learning model from 0 to 10 and classify them as if they were spam
+on their likelihood of being a child predator think about what happens to
+the false positives, you know, you call someone guilty of child pornography, you
+know, people kill themselves people have killed themselves over false accusations
+over this sort of thing, you know. Like catch the bad guys. Yeah, but doing it in this
+way raises a whole host of questions about false positives false
+negatives on just investigations. You know, how do we solve these problems? They are unsolved problems. Is this the right way to do it? I have serious questions moving to
+an inexplicable Black Box system that that puts us over a threshold where we simply
+have no understanding and I think we start talking about Questions of faith in
+the system like to use sort of an analogy. I write about voting machine
+security quite a bit. Even if in some hypothetical world all voting machines were secure. Most people have no idea how they work. Like nobody has read the code,
+you know, I mean so I could destroy like a an adversary
+could destroy faith in the system just by Aiming to have hacked a machine
+who is to say that they are wrong and and faith in the electoral system
+requires us to understand how it works. I ticked a box on a piece of paper
+a bunch of volunteers counter them with chalk on a chalkboard, you know,
+like I understand how that works. I understand how they could be corrupts. I understand like, you know counting
+with chalk marks on a chalkboard. I mean anyone can understand that
+the most basic of voter, but I don't Understand you know how this
+magical software high-techy thing works, right and that puts us in a realm where
+we start to lose faith in the society. We live in you know, so
+a lack of true explain ability takes us into a world where
+nothing is understandable. Everything is capricious and nothing seems fair because we can't prove
+what is fair and what is not I mean, this is a this is a reminds me of
+a great quote by legal expert Frank. Squally one of his famous quotes
+is that he said it may be that if a technology cannot be
+explained then it shouldn't be allowed to exist which is sounds extreme
+to someone who works in technology. But I think your your explanation is
+aligning pretty well with that sentiment, you know,
+I depends what you're doing with it. Like if you're building an inscrutable
+machine learning model to you know, find a cure for cancer like you have
+to think about what are the real world consequences, you know,
+if you're doing a skunk. Works project and you just want to
+find a hypothesis you can test and verify independently great. You're looking for a new drug. You're a pharmaceutical company, you know, I mean you're in skunkworks mode all day
+long every day looking for new stuff. And if your machine learning
+model says try the following, you know series of molecules linked
+together and you try them and it works maybe you don't know how you found that
+particular, you know chain of molecules, but it works and you can verify it works
+in clinical trials, you know, so So I think you know there are use cases where
+inscrutable inscrutable machine learning models may be acceptable, but
+when people's lives or democracy or there are genuine questions of fairness
+involved then I think you know, that's where I draw the line and
+being like well that maybe that's not. Okay. What do you have any questions that I
+should have asked you that I haven't asked you yet. I would love to see more scrutiny of
+Black Box machine learning models and if anyone Watching this
+discover something interesting. I why I invite them to reach out and
+contact me.

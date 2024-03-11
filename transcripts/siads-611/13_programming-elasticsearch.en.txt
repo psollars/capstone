@@ -1,0 +1,60 @@
+So now I want to give
+you a short overview of the techniques used to
+program Elasticsearch, but the best way
+will be when I start showing you actual code
+and walk you through some of the different things that we use to program
+Elasticsearch. One of the harder
+things that you're going to see when you're using the Elasticsearch
+documentation, especially from the
+Elastic company, is they do everything in
+the form of REST APIs. And they are telling you
+basically the URL to hit, right? You're supposed to
+like hit a URL with a GET request and send a GET request to this
+URL and then send a JSON document that expresses
+what you want to do. If you're a real REST person, you might argue that
+this is not REST, it's more of an RPC pattern, RPC pattern, but we don't need to argue
+about that right now, a lot of philosophy in
+computer science. So you just send
+sort of your queries. So like this is a
+particular query that says match everything. This is a way to iterate
+through all of the documents. In Python, the simplest way
+to talk to any REST API is to use the requests library. And so you have a queryurl and that queryurl is constructed based
+on the documentation. In this case, my queryurl is going to talk to the table named testindex, and I append _search.
+This question mark pretty makes it so that
+the stuff returns with a nice curly brace. And then I'm going to
+convert this little bit of a dictionary into a string, so I'm going to use use
+JSON library dumps, which converts a dictionary
+to a string version of it. And we're going to send
+some headers that says this is the kind of
+content I went back, I'd like some JSON. And then
+I send a POST request, requests.post, to a queryurl with these headers and
+with this JSON body. Then I get back some text
+like the actual curly brace JSON stuff, and the status, which might be a
+200 if it's good, a 404 if it's not found, or a 500 if things blew up inside. So that's the HTTP status code. And then I might parse that from a JSON string into an actual dictionary object
+so that I can walk through it. And so that's just a simple way of talking to any
+REST web service. It's very low level, but a lot of systems build a library to do that and so there is an Elasticsearch
+library in Python, so I'll just pip install it, and then I import
+the thing and then I from elasticsearch import
+Elasticsearch and then I sort of tell it all the stuff to make the actual connection. It knows the patterns for
+the index and then they send the body in as a dictionary. And so this
+makes it a lot simpler. So I will show you
+sample code of both, sort of the REST
+way of doing it and the Elasticsearch library
+way of doing it as well. And so we'll cover those in
+some sample code. So Elasticsearch is awesome. Whenever I'm like confused about
+how Elasticsearch works, I kind of fall back
+to this notion that it's like Google, but
+for me, right? I mean, I can feed it
+a bunch of things, I can hit it with queries. How would Google handle this? And so that's kind
+of the easy thing. It's super scalable,
+both the data ingest, the size of the data, and search performance at really high scales of data size. And it is nicely accessible
+through a REST API, which hides all of
+the complex detail of the pieces and parts that actually make up Elasticsearch. You can add it as a full-text
+search engine that's better and higher scale
+than something like the Postgres full-text
+search engine. In a lot of applications, that's their first encounter
+with Elasticsearch. But because its inverse
+index is so clever, if you set your mappings
+up the right way, you can make it quite formidable simple document store
+BASE-style NoSQL database. And so Elasticsearch is just one of many that I've
+chosen to show you. [MUSIC]

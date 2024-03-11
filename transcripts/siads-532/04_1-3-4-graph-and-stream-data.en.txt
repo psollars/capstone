@@ -1,0 +1,60 @@
+Now, let me talk about another data representation that is slightly more complicated. This is known as the graph
+representation of the data. In graph representation, the data object could be
+the online social network, or the Internet, or the web. Now, what's interesting
+about the data objects here is that there are two attributes. There are nodes and
+there are links. In this particular example, we have four nodes, each of them corresponds
+to the person. Two people may or
+may not be linked. If they are friends, you can see the link between each other, if they aren't friends you don't see link
+between each other. A set of nodes and links
+form a network structure. Mathematically, we can formulate the graph data as the following. We use G to indicate a network, and G can be composed into a set of vertices
+and a set of edges. We use V to indicate
+a set of nodes. In other contexts,
+they are also referred to as vertices or entities. So V is the set of
+nodes and you can see that V itself is actually
+a data representation. What is it? It's the item set. A node can be a categorical item, but sometimes it could also
+be a complex data object. Besides the set of nodes, we also have a set of links. We use E to indicate
+a set of links. In other contexts, a
+link is also known as the edge or the relation
+between two nodes. So you can see that the list of links is also represented
+as the items, but here every item
+is the pair of nodes, instead of a categorical item. There are many many
+examples of networks. You can use graphs to
+represent mass of raw data. In this interesting example, we are seeing a high-school
+dating network, where the nodes are
+high school students. There is the edge between two students if they have dated. So you can see this nice stay
+connected network diagram and indicates the relationship of high-school students overall. In another example, which
+is even more surprising, you can also use networks to
+represent a soccer match. In this soccer match, Nas to World Cup, you can see that every
+team is represented as the network where every
+node indicates a player. There is the edge between two players if one has
+passed to another. In this case, there are weights
+on different edges. A thicker edge means that one player frequently passes
+the soccer ball to another. Another complex data
+representation is known as data streams
+or stream data. Data streams is usually used to model objects that arrive
+with continuous time stamps. Examples include e-mail
+inboxes or news feeds. In a data stream,
+every data object could be any
+complicated data types. In this case, every
+data object is the e-mail that this person
+receives in her inbox. It could well be
+network packages. Every attribute of the data
+object could be anything plus a time stamp where this data object
+appears in inbox. So more formally,
+we can write down the data stream as a
+set of data objects. Here, every data object
+is associated with a time stamp that indicates when this
+data object appears. Here, we use big X_ k
+instead of lowercase x. Because a data object could
+be either simple or complex. It could be a categorical item. It could also be a network. It could also be even the
+image or time series. There are many examples of data streams and I bet
+you have seen a lot. In this example, you can
+see that all the tweets posted by the UMSI career
+services form a data stream. In this data stream, every tweet is the object, and every tweet is
+associated with the arrival time stamp that indicates when the
+tweet was posted. Another good example
+of data streams is the security camera
+you can find on highways. In this example, every vehicle is the
+complicated data object. The time when this vehicle
+appear in the frame of this CCTV camera indicates the arrival time of the
+data object in the stream.

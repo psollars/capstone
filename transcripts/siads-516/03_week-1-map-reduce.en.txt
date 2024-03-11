@@ -1,0 +1,53 @@
+So the first thing that we need
+to talk about is MapReduce. And to talk about MapReduce meaningfully,
+I want to back up just one step and talk about a general approach to data
+analysis called split-apply-combine. This makes a lot of sense if you start
+thinking about the actual words there. So we're going to split a large
+problem into manageable pieces. We're going to apply an operation, that
+is, we're going to operate on each piece. And then,
+we're going to combine the results, that is, we're going to reassemble
+them into the final group. Now, you might have seen this already
+in something like your work with Pandas where you're doing a group-by statement. You might be using apply, and then you
+might be calling a summarize function. So you've done split-apply-combine before. It turns out, though, that for big data,
+that's going to be a foundational piece for all the work that
+we're going to be doing. When we talk about MapReduce, and you'll
+notice that capitalization with a capital M and capital R,
+that refers to something specific. MapReduce is a specialization of that
+split-apply-combine approach that we just talked about that incorporates two things,
+scalability and parallel processing. It's actually a programming model for
+dealing with big data. And it relies on this notion of
+a parallel distributed computing cluster, which can be as small as your laptop or
+as large as a super computing cluster. In MapReduce, we have two main stages, not
+surprisingly called mapping and reducing. Now, you'll know from the readings
+that there are additional stages. There could be a stage called
+splitting which precedes mapping, shuffling which is often
+combined with reducing, and combining which is often
+combined with reducing as well. We're going to simplify things a little
+bit and talk about just mapping and reducing, understanding
+that these other stages or other operations can be folded
+in to the MapReduce platform. When we do mapping, we take input and
+split it, typically line by line. So you if you think about this, it makes sense in numerical data
+that we would have individual rows. We can also split things like text data,
+so you can conceptualize a text
+file that has multiple lines in that they might refer to multiple
+lines in some sort of reading or text. They could be sentences. They could be sentence fragments. But we're going to take that data and
+operate on it typically line by line. We're going to split the data, and
+we're going to take that split data and process it using one or
+more transformations. And typically,
+what's going to happen from the mapper, we'll get into this in just a little bit,
+is that we're going to output or emit a pair of values
+called a key value pair. So the mapper is going to take that line, it's going to emit some key value pairs,
+and then we're going to take that output of
+key value pairs and pass it to a reducer. Now, hopefully, this will make more sense
+when we get our hands on to things. But for now,
+let's get this conceptual piece done. So after we map,
+we're going to reduce things. And when we reduce things,
+we're going to take related data. Now, that could be a shared key. We'll talk about what that is in a minute. And bring these pieces of data
+together based on some commonality. The data is then summarized using some
+function that takes multiple pieces of data and reduces them to one step. So you can probably think of some
+collection of summarization functions that you've already encountered. Counting is one very common
+thing we're going to do. We might sum things up. We might take averages. So anything that takes multiple values and
+yields fewer, typically one value, is something that
+we're going to do with our reducers. And you'll also notice as you walk
+through some of the readings and some of the literature on this, that in some
+cases there's actually no reducing step. We stopped at mapping.

@@ -1,0 +1,116 @@
+Hello and welcome to a walkthrough on
+building inverted indexes using SQL. So this is sort of
+an extension of the lecture. We're going to go into some more detail. Now the key is there is this file,
+the sample SQL commands for this lecture, that you can be working with, and that I'm expecting to have, and
+here's the URL for it www.pg4e.com/lectures/05-FullText.sql. And so you can go through this yourself
+because these commands just work. Every once in a while you might have
+to delete some rows or do whatever. And so I'm just going to go through and
+narrate these starting with this strings and arrays and rows. And I've got a Jupyter notebook
+that's already in the psql client. So I can do \dt and see I've got
+some tables. So I'm starting out with a pretty fresh, I've got rid of
+a lot of stuff, cleaned it all up. So let's take a look at
+some of the commands. So the first thing that we do is
+explore the string_to_array function. And that basically is
+like split in Python and it basically gives you an array of
+strings from a string and a delimiter. And then unnest, a lot of things
+happen that are cool like this. And so if we say SELECT unnest
+string_to_array Hello world, with a blank as a limiter, we end up
+with two rows, one Hello and one world. So it takes a array that's
+kind of a horizontal idea or kind of in a single column and
+it expands it vertically. generate is another there's,
+we did this in when we were building, filling things up. So, those two things
+the string_to_array and unnest, are the keys
+that we're going to do. So what we're going to do is
+we're going to make a table, we're going to create this docs table,
+and it's just going to have two columns, a SERIAL, which is a primary key,
+and then a document, which is text of unknown length, and then we're
+going to throw three documents into this. Just documents are text documents and
+where these are strings, so we just inserted the values. This is Python and SQL and I'm teaching stuff,
+those three lines have been inserted. So the idea is documents
+are a sort of big columns, text columns full of lots of stuff, We're
+going to start with smaller things, okay? So, this first breaking the column
+into one row per word and a primary key, we can run this. I'll
+run it and you will see what it does. And so, we're going to select the id,
+and the keyword, and so basically, we're going to go from docs,
+we're selecting from docs. And then we're going to take d.doc,
+which is the document, and then convert that, parse it using
+string_to_array and then unnest it vertically. And then we're going to name
+that column that we get from this unnesting as keyword, s.keyword. ORDER BY doesn't mean much, and so in
+the original SELECT I'm getting the id and this s.keyword, which is sort
+of the vertical expansion. So what this really does is this
+expands vertically each row and concatenates the id and the word. So row 1 has This, the next word is is,
+and then row 2 has more people and you can see. And so we've basically turned
+it into, from a table that had three rows into a SELECT statement that
+gave us, oops, 24 rows, which is one row for each word, but
+we haven't lost the document id, and that's the key thing that we're going
+to take advantage of when we do this. Now there might be duplicate
+rows because the same, the same keyword might be in
+one document twice. And so while we're doing is we're
+getting the mapping on id, so I'm just going to add DISTINCT. And then that just discards any
+duplicates where those words are twice. And so I still got 22 rows, but
+this SELECT DISTINCT is a cool thing. Now, I am going to make another table,
+docs_gin, which has a keyword, which is a text field, and
+then a foreign key into the doc id. So you'll notice that this text_gin
+that I'm creating is exactly matched to that little SELECT statement. Because it has a document id in that
+previous SELECT statement, and a keyword. And so, then what we're going to is the
+old basic trick of taking an INSERT and then following it with a SELECT. So we're going to insert a series
+of rows into the docs_gin. And using that SELECT DISTINCT that
+expands the document vertically, but then not losing the id. The ORDER BY doesn't really
+matter here. SELECT docs_gin and then SELECT DISTINCT really
+combining the last, the previous. And so that made our inverted index, so
+that just took that SELECT DISTINCT and it just inserted it into a table, right? So now we have this table and
+I'm calling it my generalized index, and I can just do a SELECT FROM docs_gin,
+and you see the exact same thing. Now we have a mapping between
+keywords and document id's. And so now I can ask for
+all of the documents, I'm going to add
+a SELECT DISTINCT doc FROM docs. I'm going to JOIN on docs_gin WHERE the
+id matches, and then look for a keyword. So this WHERE clause is looking down
+the keyword column in the index, and it's throwing rows away, and
+then I'm matching. So this will give me, Actually I should add an id on that.
+SELECT DISTINCT id, doc. That would make that one better. So now we see the documents that
+have the keyword UMSI in them. And so we used the JOIN through that
+little gin table, the docs_gin table, because we have a foreign
+key from docs_gin into docs. We can also use the IN
+instead of the equal sign, so we can say G.keyword IN
+fun and or people. And then that allows us to have
+more than one any of the above. That's what the IN operator is,
+it's like, here's a set, and it's kind of any,
+you could think of it as any. So part of what I'm doing here is
+I'm giving you lots of excuses to learn a little bit more SQL. And so I can even send a
+whole phrase, right? So if I say in this next one, ANY string_to_array 'I want to
+learn' broken into spaces, then what that does is that
+string_to_array is an array of words, and then ANY is any of these words. It's kind of like almost it's a little
+different version of the IN clause. And so I can actually have a whole phrase
+that string_to_array is going to break into pieces. And so we can find any
+the word I or want or to or learn, and we can find the rows
+that say that. Now, I'm going to do the same thing
+except I'm going to search for Lemons and Neons, and this is like why
+stop words are important. And you'll notice that I'm
+looking for the meaning of, when I say search for
+Lemons and Neons, the and doesn't contribute to
+the meaning of my search, right? I really was looking for
+the meaningful words or maybe search, probably Lemons and
+probably Neons, and I got two lines. I should probably have
+an id on that one too. I'll add an id to that SELECT DISTINCT on the side of this that
+can go sideways one. And so we found some documents but
+what they were matching is the word and, they didn't match anything else,
+they matched the word and because it's any of those words and
+search for Lemons and Neons. So we're going to do stop words next. And so, that's basically we've made
+an index and I keep doing this JOIN docs_gin so that the document id is
+equal to the docs_gin document id. And that connects the documents, but then I use a WHERE clause to only
+pull out the things in the docs_gin. So let me add another little
+SELECT statement here. Let's just do this one here,
+add a SELECT statement. Oops. Let me do it just without the JOIN. id, keyword FROM docs_gin AS G. So here I'm saying SELECT DISTINCT id,
+keyword FROM docs_gin AS G, WHERE G.keyword equals UMSI. This basically is telling me all of
+the documents that mention UMSI. Well, yeah, It's an id,
+it's called doc_id in that one. So one of the things I do when I'm coding
+is I edit things in a text editor and then I go paste them back and forth,
+and then I'm always getting them right. I'll flip the order of that,
+keyword, doc_id. So my ultimate query is SELECT keyword, doc_id FROM docs_gin
+AS G WHERE G.keyword equals UMSI. Okay, so you can see I got these keywords,
+but really I've got the doc_id. And so this is where I'm using a JOIN,
+and I'm doing the WHERE clause, reducing what I'm seeing from the docs_gin
+table, with the WHERE clause. And then I'm saying, oh,
+here are the documents. And then I just go use a JOIN to
+pull the actual documents out, because I have the id FROM the
+docs_gin. And so, there we go.

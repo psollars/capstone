@@ -1,0 +1,50 @@
+In lecture 3, we're going to
+think about larger units of text to analyze using
+natural language processing. In particular, we'll think
+about the structure of texts, thinking about looking at
+sequences and its syntax. As we move to the
+structure of language, we're going to try to
+capture the relationship between items and text. We'll focus on
+different aspects of the structure to think about
+how these items relate. Let's take a look at
+an example sentence. The student watched the lecture
+and then they ate dinner. One aspect that we'll look at in this lecture is parts of speech. Here, we can think about common parts of speech
+in the sentence, such as nouns, verbs, adjectives, or even pronouns. Also think about how
+these units of text here, the words, relate to each other in a grammatical or
+hierarchical faction. I've shown you here,
+a tree structure showing the parse tree. Finally, we'll also look at
+what's known as coreference. Here in the sentence, The student watched the lecture
+and then they ate dinner, we can see that they refers
+back to the student. This is a notion of
+coreference resolution. As a part of the structure,
+we'll try to find how these entities
+relate to one another. Let's look at part
+of speech tagging. Here, part of speech
+tagging is actually quite useful for understanding the higher-order
+syntactic structure. This could help us identify how words relate to each
+other functionally. Part of speech tagging
+is also useful for doing shallow
+information extraction, such as identifying
+noun sequences or common jargon terms. Finally, it's also useful
+for pronunciation, for thinking about
+voice assistance. For example, to pronounce
+the verb conduct, you pronounce the same lemma differently if you
+said it as a noun, conduct, or increase
+versus an increase. For parsing, these hierarchical
+structures actually form the basis for many
+semantic analysis of sentences. These form a semi-logical
+or representation. In fact, they can be useful for understanding who
+did what to whom. We can use these to do
+discourse analysis. For looking at the
+major themes and actors involved in a document. Finally, parsing itself
+is often a middle task and it benefits many
+downstream tasks like question answering, information extraction,
+or even thinking about how to reason
+about language. The structure from
+the parse tree itself enables many of these
+downstream applications. In coreference resolution, here referring the expression, they, back to the student, we can note that this text helps us
+identify who is doing what. In fact, many texts contain these pronominal references or these coreferent
+refract expressions. This is actually
+incredibly useful for information extraction and
+for discourse analysis. Because often, in text, we do not repeat ourselves, and instead use
+reference to refer back to the same entity over and over.

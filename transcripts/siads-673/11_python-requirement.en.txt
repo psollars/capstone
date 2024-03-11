@@ -1,0 +1,14 @@
+This class uses Python as its primary
+programming language. I am not teaching you how to write Python code in this class. At this point in
+your MADS journey, you should be familiar
+with Python enough to write the code
+required for this class. I expect you to have an understanding of
+how Pandas works, I expect you to be able to
+read API documentation, I expect you to be able to do some basic debugging
+and troubleshooting. If you get stuck, I'm always
+available to help you, but for the most part, I'm going to basically
+give directions on write the python to do X, Y, and Z and expect
+that you're going to be able to go off and
+write that python. But as I said, if you get
+stuck, please let me know, I am happy to help, so is any member of the
+teaching team. Thank you.

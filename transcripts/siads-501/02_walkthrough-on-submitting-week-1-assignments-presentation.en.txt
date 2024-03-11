@@ -1,0 +1,82 @@
+The original video explained conceptually
+what you'll be doing and why for your assignments. But a few of the requirements
+have evolved, we're using a different mechanism, an
+external tool grade scope for submissions. And I thought it'd be helpful to provide
+a few tips as well as a walkthrough of the mechanics of submitting
+your first week's work. Almost everything you submit will be
+a section of a single document that you accumulate during the course, your personal manifesto, who you're
+going to be as a data scientist. So our first step of course
+is to locate the assignment. So here I'm in Week 1 of our course and
+scrolling down to find the graded assignment, it's called
+Graded External Tool, Week 1 PDF. We have created a Google Doc,
+which is a template. You should not be able to edit this, so the first thing you're going to
+want to do is make a copy. So you can call it whatever
+you want to call it. You'll be sharing it to your Google Drive,
+and now you will have edit access, And then you can fill in your name. You can see it's organized into different
+weeks, Week 1 to Week 3, Week 4. In Week 1, you have several different
+things that you're supposed to do, reading responses, planning for
+the informational interview. So you can go down to
+any of those sections. In each of those sections
+there's instructions. You should feel free to
+delete those instructions after you've filled in
+the contents if you want to. After you've filled in the contents for
+those sections for Week 1, you will want to print,
+so File > Print. And Firefox is asking, Where do we want to, what do we want to
+do with this file, I want to save it. And I don't actually use
+Firefox very often, so I'm not quite sure where it saved it,
+but hopefully we will find it. So my next step,
+I'm going back to Coursera, and so we're now at this step. We've saved it as a PDF, and
+now I have to promise that I'm following the honor code and
+I'm going to open the tool. Now it's taken me to an external site,
+Gradescope. Here I'm going to click Submit PDF,
+not Submit Images. And Week 1 is the name of our assignment,
+so it says Submit Week 1 here. I click Submit PDF, and I have to select
+a file from somewhere on my file system. I did find that it's here in one we saved, and I click Upload. I'm not quite done yet,
+it processes that submission, breaks up the PDF into a set of pages,
+and I have one more task here. I have to tell it on which page will
+it find my answer to various questions. This is really important for
+the graders, and it's a good check for you to make sure that you've actually
+completed all of the sections. So the reading responses,
+I've got four of them, And they're all on the same page. Informational interview planning, whoops,
+that was not questions 1 through 4. I have to select question 5, that's where
+the informational interview planning is. Question 6,
+the inventory of knowledge and skills. In my case all three of
+them are on the same page. In your case they probably won't be
+because I've written something there. Then I have the applications, In my case I've got them both on
+the same page, you probably won't. Then I've got a question on page 6, and maxim starts on page 6,
+continues to page 7, and the ethical commitment is on page 7. The rest of the document, you can
+leave it there, it's perfectly fine, just it doesn't have any questions for
+this week on it. I'm going to click Submit, and Gradescope's going to be a little worried
+here because I have a bunch of pages where I didn't say that there
+was anything to be graded. That's, Actually fine because that's stuff that's just template content that you're
+going to fill in in a future week. So if you actually manage to
+have all of these questions that are associated with some page,
+you'll check over here. You'll say I'm good, and
+you submit the assignment. You'll notice that Gradescope says
+it's ungraded because it hasn't been graded yet. At some point, you'll get a notification
+saying, hey, it's been graded. You can go back to Coursera and
+click on the same link and it will take you back to your assignment. It will no longer say ungraded there,
+it will say that it's graded. And you'll be able to go through
+the different questions and see your points and, more importantly,
+feedback from the instructors about it. You definitely want to look at those
+because, for most of you, your grade's not going to be very good in the first week,
+but you're going to get lots of feedback. Don't panic about that, the first three weeks when you
+submit stuff, they're graded. But the grades don't count for
+very much towards your final course grade. In the final week,
+you edit everything you did for the first three weeks, or
+at least most of the sections are getting regraded in Week 4,
+and then it will count for a lot. The Week 4 submission,
+when it's complete and most of the things are getting regraded, that's going to
+count for 80% of your course grade. So make sure you look at the comments,
+you should look at them. Don't wait till Week 4 because the
+comments from Week 1 will help you to do better on your stuff that you submit for
+Week 2. But definitely revise when you
+resubmit everything in Week 4. Okay, good luck,
+use Slack if you're having any trouble or if you have any tips to share with other
+students or share them in office hours. Speaking of which, one semester I was
+trying to put students at ease in office hours and I said,
+any topic is fine, any question is fine. There's no such thing as a dumb question. So a student said, well,
+I know I really should've brushed up on my algebra more before
+I started this program. But in the math fundamentals
+class we got this problem, can you tell me what 5q plus 5q is? No judgement from me, I said, 10q,
+and the student said, you're welcome. I'll see you next time.

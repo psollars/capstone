@@ -1,0 +1,256 @@
+As we have introduced the basic principles
+and the basic ideas, intuitions behind
+sampling a data stream. Let's look at a particular
+working sampling strategy that is called the
+reservoir sampling. I don't really know that
+this word should be pronounced as reservoir
+or reservoir. It sounds like a French word. No matter what, forgive me about the bad
+pronunciation sometimes. This means water tanks. What we mean by
+reservoir sampling, the idea is that we always keep the first k event
+into the sample. That means when we don't have enough events in a sample
+which is fill sample. Then for the F event, suppose the new event arrives, that is actually over
+the size of the sample. Then we include this into the sample with
+the fixed poverty, that is k over n, remember that we have introduced
+this is what we wanted, this is actually the polarity
+we wanted for everyone. If this is the case, the sample would
+actually be oversized, because you have already
+included k items in a sample and you could
+actually include a new one. Then you randomly replace one event already in the sample, so that means whenever your
+sample is already filled, when you are dealing
+with the newer sample, you flip a coin to decide
+whether you want to include that into the sample
+or not, and if you do, if this event is lucky enough, then you randomly sample another event already in the sample to be replaced
+by the new event. How does this work? Let's
+use some simple simulation. Suppose we're dealing
+with this stream, with squares, and we use colored
+squares to indicate that. The squares are kept in the sample because
+we can see them. We use gray squares to
+indicate the events that we decided to discard
+because there's no way that we can actually
+look at them again. Suppose we are keeping a sample of eight items, instead of seven. Let's actually use
+another number eight, which is the cube of two. When we don't have enough events, we'll keep all
+events in a sample. Here we just have eight events, so we keep all of
+them into the sample. Now the question is, what
+if the newer event arrives? Upon arrival of the newer event, because the sample
+is already filled, we have to make a
+decision whether we should include this event
+into the sample or not. We basically throw the
+coin to actually decide whether we should include this yellow item into
+the sample or not. We say it's color because
+we're still at the unionism. This coin has the probability
+of k over n to succeed. If the yellow event
+is lucky enough, it will be included
+into the sample, if it's not lucky, it will be excluded
+and discarded. Suppose it's not lucky enough, suppose the coin says that, no, you cannot include this
+item into the sample, then it will be discarded, then the sample will
+not be updated. Once item is discarded, then there's no way
+that we can revisit it. This is the simple case but
+what if the consist yes, the yellow item is lucky enough to be
+included in the sample. Then, we want to add
+the yellow event, the yellow square
+into the sample. But you can see that if we add a yellow event
+into the sample, it makes the sample
+larger than eight, you now has my events
+in the sample. What should we do now? Well, we don't deal with the yellow event
+again because it has already passed is test to
+be added into the sample. Let's look at older items. The older items were
+included in the sample because when you make
+the decision of them, the probability was natural, which was not fair, comparing to the newer arrivals, so we need to rearrange this, we need to re-sample the
+polarity of these older events. In this case, we can
+basically sample one out of the eight older events that
+re included in the sample. To decide which one that
+we want to exclude, which one that we want
+to be replaced by the newly added yellow
+item, does it make sense? Suppose in this case we
+don't throw the coin, we threw ties again, and we randomly pick one old
+event from eight events. Suppose this time we have this orange event, it is unlucky. The orders you want will actually have the
+probability of 1/K; here K equals to eight, to be excluded from the sample, and to be replaced
+by the yellow item. In this case, after we add the yellow item
+into the sample and then we exclude one of the eight existing
+events from the sample, then we have this
+newly updated sample. In this case because we have
+kicked out the orange item, then there's no way
+that we can revisit it. This sample will be updated until the arrival of next event. This is essentially how
+reservoir sampling work. If we keep on doing
+this again and again, we will always be keeping
+a sample of eight events. Then hopefully or ideally, the distribution of these
+eight events in the sample will be quite uniformly
+across the stream. It will neither bias towards
+older items, or newer items. In other words, the probability that any particular event to be included into the sample under reservoir sampling is always K/N. No matter what K is, we know that N is
+increasing over time. But at any given time point, the probability that any existing or new or old items to be included in the
+sample is always K/ N. Why is it working this way? It sounds like a simple
+enough strategy. Whenever a new item arrives, we flip a coin to decide whether we should include
+it into the sample or not. If we do, because the
+committee is over-sized, then we flip another coin to
+decide which older event to be excluded from table to make the sample constant in size. This sounds like a
+very simple approach, but why does it guarantee that, at any given time
+point all the samples, all the items, have the same probability to
+be included in a sample. That's quite curious. Let's take a look
+at why it works. Well, we know that
+for the Nth event, for the newest event X_N, the probability
+that this new event is included in the
+sample is just K/N. This is what we want. That's also why that we
+don't want to deal with it; second here selection because when it's lucky, then it's lucky. When it's in, it's in. But what about the older item? We're very curious about how the probability of the
+older item was adjusted, to be consistent with the
+probability of the newer item. When this look had an older item, this is the Nth of event, X_M. That is out because M is
+smaller than N and of course M is greater or equal to K because otherwise it's trivial. Otherwise, every item will
+be included in the sample. Let's look at M_C when that is neither the current event
+nor the earliest K items. What do we know about X_M? Well we know that at its time and at time
+of the Nth event, or t_M, it was included in a sample with
+the probability of K/M. Does it make sense? We
+know this for sure. At its time, then
+it was a new item. Then we decide whether
+to include that item into the sample or not by
+the probability of K/M. The question is, when
+a new item arrives, how did this probability change? How did this probability
+become smaller? This is because that there is another probability
+that this item, even though it is in the sample, it could be replaced. Don't think that if you're
+are once in a committee that you have security. There is still a probability
+that you will be replaced upon arrival
+of the newer item. What is the probability,
+at the next step and arrival of next item
+at time t_M plus one? We can see that the
+probability of the N factor X_M to remain in the
+sample is the following. Suppose X_M is still
+in the sample. It has to be in
+the sample at t_M. If it was not in the sample, at it's time, then it
+will be discarded. We have to multiply
+by the probability that X_M is already
+in the sample at t_M; at its own time. Does
+that make sense? But we know that this is
+larger than what it should be. But don't forget that
+there's another process, and it could actually be replaced by the arrival of another item. We should actually
+time this probability. Where is the probability
+that it is not replaced at t_M plus one. In other words ,if at t_M, the newest item was selected into the sample
+and the next time point, it was not replaced
+by the new item, then it will still
+remain in the sample. This should be the
+probability of at the next time point
+at t_M plus one. What's the probability
+that X_M is in the sample? Lets do the calculation and
+see what this is would be. What's the probability
+that X_M is in the sample at its on time? That's very simple, it
+is K over M. But how to calculate the
+probability that X_M is not replaced at t_M plus 1? Well, we know that this is just one minus probability
+that if it is replaced. What's the probability
+that X_M is replaced? Well, first of all, the newer item, X_M plus 1 has
+to be added to the sample. If you're not adding the new one, you don't have to
+kick out the old one. There's the probability
+that the newer item, X_M plus 1 is added
+into a sample. Then X_M has to be unlucky
+enough to be picked among the existing items in the sample to be replaced
+by the new item. So there's another
+probability that X_M is actually picked
+to be excluded. Actually, we have the product
+of these two probabilities. If we write them further down, you can see that the probability that X_M plus 1 is
+added to the sample, the newer one at time t_M plus 1 is selected to be add
+into the sample is what? Is actually K over M plus 1. Remember that now the
+number of items increased from M to M plus 1 because of the arrival
+of the new item. This is the probability that the newer item you've
+accepted into the sample. In that case, you have
+to kick out the old one. What is the probability that X_M, the older item, is unlucky enough to be
+picked to be replaced? Well, simple, that is 1 over K, because there were K items
+in total in the sample. This probability that
+X_M is in the sample at time t plus 1
+can be rewritten as the following equation: K over M times 1 minus K over M plus 1 times 1 over K. You can see that some
+of the Ks can be canceled, which gives you the
+product of K over M times M over M plus 1. That is great because we
+can cancel another M, and that gives us a
+new probability that's K over M plus 1. Wow, this is very simple. That means that
+the probability of X_M in the sample at t_M plus 1 at the arrival of the
+next item is still K but over M plus 1, which is the current number
+of items in the string. This is very nice. Actually, you don't know
+how nice this is, right? We can see that for any
+item X_M at its own time, when it was the newest item, it has the probability of K over M to be included in the sample. When the newer item arrives, then the probability of this
+older item is adjusted. It becomes K over M plus 1, following the reservoir
+sampling procedure. In other words, we
+have successfully updated the probability of the older item, that
+was in the sample. The fact that it is
+K over M plus 1, that basically equals
+the probability of the newer item to be included
+in the sample. How amazing. What have we just found?
+We have found that at any step M and at time t_M, the probability of any
+event being in the sample is K over M. If this is the case, then at the next step, M plus 1, the probability that
+the same event being in the sample is K over M plus 1. In other words,
+the probability of the older event staying in the sample decreases over time. When it decreases, it will always match the probability of the newest event to be
+included in the sample. In other words, the
+process will ensure the fairness among
+older items and the newest items so that they all have the same probability
+to be included in a sample. For careful students,
+they would say that, "I don't believe in this. You're making this
+very bland claim, but you're not giving any proof." Well, let's look at the proof. If you're interested in math, this proof could actually
+be very interesting to you. If you're not, then
+forget about it. Just remember the intuition
+behind reservoir sampling. The proof states the following. What are we trying to prove? Let's assume that P_i,N, to be the probability
+that the event X_i, is in a sample at time t_N. So t_N is actually the time of arrival
+of the current item, and P_i and i, X_i could actually
+be the older item. Then we have P_i, i, that is the probability
+of the event X_i to be included at time t_i, which is its own time, is the minimal of K over i, where i is actually current
+number of items or one. This basically says that
+when you don't have enough items in your sample
+yet, they include everybody. We want to prove the
+following proposition. That is, for all the number N that is greater than
+the sample size, then we have the probability that any item X_i to be included in the sample equals K over N, for all other items that
+are either old or new. To prove that this
+causes statement AN. AN means that we're the
+only ways the case that we have N item right
+now in the stream. So here's the real scene. To prove this statement is true, we can use a special
+proof technique called mathematic induction
+to make the proof. So the statement AN is true if N equals to K.
+Does that make sense? Or AK is always true. Why? Because if you only have K items so
+far in the stream, then everyone will be
+included in the stream. So when K equals to N then for all the older
+items or newer items, we have the probability
+that they are included, it's always K over K.
+So the statement AN is true when N equals to K.
+Suppose we have some number, we have already
+found some number M, that is either K or greater than K and we know that
+statement AN is true. Then we want to ask the question, is the statement also
+true for M plus one? If the statement is also
+true for M plus one, then according to
+mathematical induction, we know that the statement A
+is true for all the numbers N that is greater
+or equal to K. For those who are not familiar
+with mathematical induction, you can actually find some
+very interesting materials. You can actually search for some really nice examples of proof. But the basic idea
+is that you want to prove a statement for the
+very general condition. Your first proof that this statement is true
+for the very special, for the starting condition in our case that is N equals to K. Then suppose you have
+proved the case that is true, for some condition M. Then if you can prove
+that if AM is true, M plus one is also true, then that basically means
+that we can actually grow this from K to K plus one, from K plus one to K plus
+two and to infinity. So the statement will be true
+for the general condition. So suppose AM is true, is AM plus one also true? Well, to prove that, let's look at what are
+the conditions for XI, when I is smaller or
+equal to M plus one? We know that if I
+equals to M plus one, then that means XI is the
+newest item at time M plus one. So in that case, the
+probability of XI to be included in the sample
+is K over M plus one, which is the current
+number of items. So for any outer items
+at time PM plus one, for I smaller than M plus one, then we know that the probability that XI is included
+in the sample, then we can actually
+write as PI N plus one equals to the
+probability that it is already in the sample and
+the previous time point PM times the probability
+that it's not kicked out. It was not replaced
+at time M plus one. Based on the calculation
+that we may have already made in the past, that one, that probability that XI was not kicked out at time M plus
+one equals one minus. The probability that the
+newest arrival item, XM plus one is selected
+times the probability that XI was unfortunately picked
+from the K existing items. So that is PM plus one M
+plus one times one over K. We have already
+shown the calculation. I'm not going to repeat that. By actually writing
+down the equation, and then cancel out some of the elements
+you basically got PI, M plus one is K over M plus one. So that means for all the old
+items at time M plus one, we also have their probabilities equals to K over M plus one, and that equals the
+probability of the newer item. In that case, we know that the statement A is also
+true for M plus one. Now we know that for
+any M that AM is true. We also have AM plus
+one is also true. That basically proves that AN is true for all the N as long as it is greater or equal to K. So this is the beauty
+of mathematical induction. So that we can
+actually prove that the reservoir symphony will guarantee that at any
+given time point, the probability that
+any existing item, old or new to be included
+in the sample is the same, and that is K over N.

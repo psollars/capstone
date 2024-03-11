@@ -1,0 +1,244 @@
+I would like to spend a little
+bit of time talking about the shell and the command line. This isn't really the
+primary focus of this class, but knowing this material
+will make you a lot more effective at this class. Your first introduction to
+the command line or the shell outside of an
+educational environment or work environment
+might have been a movie. Hackers use the command line. Any movie that
+accurately portrays hacking will often show people using the command
+line correctly. But we use the shell to
+interact with a computer. Early graphical
+interfaces just ran commands behind the scene
+using the shell itself. Shell commands follow
+a very common syntax like a spoken language. On the shell you have
+this prompt and so, when you're using the shell, your prompt typically
+ends with a dollar sign, and that dollar sign
+indicates this is where you can type your command. Most prompts will
+have the username, the hostname, and the
+current directory you're in. So it might look like this. When you're on AWS, your
+hostnames take the format of ip-172 something
+for the most part, it's an internal AWS IP address. I'll often get the question, why use the shell over a GUI? I know how to click. I don't want to have to
+learn this new things. Most of the time on servers,
+we don't run a GUI. If you are running a
+large-scale processing systems, you are not running a graphical
+user interface on those. There's a lot of
+memory overhead, a lot of security holes
+that can be opened up. The other thing the
+shell gives you is this repeatable and
+scriptable task. You can repeat things
+multiple times. Specifically with
+machine-learning algorithms, you spend a lot of time waiting. If you've got to look at something and something
+happens and you got to wait and press "Go", you have to switch the task. But most of all we use
+the shell because you can automate pretty much
+everything using it. Our previous prompt
+window had a Tilda in it. That Tilda indicates that
+this is your home directory. It's useful to know that it'll show up in a bunch
+of random places. Almost all computers use a
+hierarchical file system. You can be multiple levels deep, but the top of that file system, sometimes called the root
+folder, is always slash. So you can see that I'm in /home/mlhess I have a
+directory called class. Inside of that I've
+got a bunch of other directories within them. Cd, short for change directory, it allows us to navigate
+the file system. If we're currently sitting in /home/mlhess and we
+do a cd 564 and type ls, we would see Week1. If we do a cd week1, we would see homework. If we did cd homework, we would see correct answers and wrong answers and if we
+went into correct answers, we'd see the files that
+existed within that directory. Pwd, prints out the current directory
+that we're sitting in. Cd.. just moves us
+up a directory, Cd tilda will bring us
+back to our home directory and cd/ brings us back to
+the root of the file system. You can also put them
+all on one line, so cd
+564/week1/homework/correct_answers. We typically refer to this location of
+files as a file path. You're probably familiar
+with this already for multiple
+different scenarios, but this is the
+formal definition of what a file path looks like. In Windows you might
+see this at the top. This is my PC, Documents, Zoom and then a file
+that has a meeting ID. Ls, as I mentioned earlier, just list the current files
+in the current directory. An argument is a parameter
+that you pass to a command. When we type cd and the dirname, we want to go to
+the directory name, that is an argument
+for the cd command. Some commands have
+required arguments, some have optional ones. Cd if you just press "Enter", takes you to your home directory depending on the
+operating system. Ls without any arguments, will list the current
+file directories, but you can pass a
+path to ls and it'll show you the directories
+within there. Passing that argument,
+that path into ls is a way to change the
+behavior of ls. Couple of things to get help on, if you're stuck and you don't
+know what a command does, you can just do command
+hyphen hyphen help and almost any Linux command will give you some help there. You can also use the
+word man command, man is short for manual. There are manual pages for
+almost every Linux command. They are very long. You can actually even read the manual page for the manual, that's how complex you
+can get with the manual. Ls has a mechanism to
+change the outputs. At one of your
+homework assignments, you'll likely need to figure
+out how to do that so you can run manIs or ls-help. You may have seen
+this before and I'm hesitant to
+even bring this up, but it's part of the
+culture that goes around was coming
+systems administration. You may have seen
+the acronym RTFM. RTFM is short for read the and I'm not going
+to say the word manual. It's extremely rude. No matter how good
+you are at your job, this is never something
+anyone should ever say to anybody. However, it is upsetting when you have senior
+level people and the senior level people
+are constantly getting interrupted with questions that are answered some place else. This was somewhat
+passive aggressive, I don't know if I'd call
+this passive aggressive. This feels just aggressive, but it is part of the
+culture you'll see it written as this acronym. It's rude, don't do
+this to anybody, but if you see it, this
+is where it comes from. Literally is referring
+to the Linux manual pages when you see this. When you need help, always ask for help
+and be as specific as possible when asking for help, it'll save everybody time. That's really what
+that RTFM algorithm is about or message is about. This is an XKCD thing. The emergency override system which can be used to regain
+control of the aircraft. Complete instructions
+are available as a new man page and so
+what this is basically saying is go read the manual
+and they're crashing, manual pages are very long
+and very verbose, very long. Some more XKCD things. This is a little bit
+around the culture, around Linux as a system. If you don't read XKCD, I highly suggest you
+start reading it as a cartoon that comes
+out three times a week. Cat is another useful command,
+short for concatenate. All it does is print the file to screen. That's all it does. It's really nice,
+really powerful, just prints text
+out to a screen. You can also do multiple files or you can do a
+cat * if you want. Don't use this on non-text
+files. It won't work. Cat image.jpg will not work, it'll kick you off your
+server if you SSH into it, it's not a really
+good thing to do. You can do some
+wildcard matching on multiple files, ls *. txt for example, will
+give you a listing of text files in your
+current directory. Less is a little
+bit more like cat, except it lets you page. So if you've got a
+really long document, it's nice, it's better than cat. More is the opposite of less. I highly recommend you read
+the the man page on this. More came first. Somebody didn't like
+the way more was made, so they made less and if
+you read the man page, less is the opposite of more. File command will tell you the type of file
+you're looking at. It'll tell you if
+it's a JSON file, or a text file or image file, or a python file. If you give it an image
+file and often can pull metadata about
+the image out of it. If you wanted to see all the files in the current
+directory that started with the letter
+A this is the command. Any file that contains
+the letter B. You're going to
+really need to become an expert at doing this. I'm not going to go through
+a live demo of this here, but throughout the homework
+on the other assignments, you will need to become really good at interacting with paths. I show this again because it's the type of thing
+that you've got to get that mental model will
+sink in your head for. Cd tilde will take you
+to your home directory. It's often in
+/home/your username, but it doesn't have to be on multiple use on multiple
+multi-system computers. It may not be located there. Cd.. goes up a directory, cd../.. goes up two directories. You can keep going with that. Here, you can see that I'm
+in a directory called GIN. What two commands can take me
+back to my home directory? There's actually multiple
+ones that'll do this. I can do a cd tilde, I can do a cd/home/mlhess
+or cd../.. This is my crash course in
+introduction to path commands. It's useful to know
+this material. If you don't know it,
+you'll probably get by with a little
+bit more googling. But this is one of those things that the better you
+know about this, the faster you are navigating
+the file system and pretty much everything
+you're doing is based on a file system at
+production workflows. I want to cover a
+little bit more of the Linux concepts here. One of the things that
+gets confusing for people is with when you're
+dealing with Linux programs, standard input, standard
+output and standard error. Standard input, we'll
+discuss this later on. It's not an argument
+to a program. It comes in from typically
+what's called a stream. We'll get into that a
+little bit later on. Standard output is
+what you're used to. Standard output is the
+output of the program, and standard error is the errors that output
+from the program. Typically you want to look at these in
+different scenarios. Maybe your program
+outputs a bunch of data every time
+it processes things, but your standard
+errors would be the exceptions that your
+Python program generates. This is called redirecting
+and if you run a command, you can redirect
+it to a text file. This is referred to as the pipe. This takes the output
+of one command and makes it the standard
+input of another command. So cat 'blah.txt'
+pipe wc would give you the word count
+from blah.txt. wget is another useful thing. You'll see this through
+examples all over the place. wget allows you to download
+a file from the internet and save the file to
+your current directory. curl does the same thing, but it puts the output of
+that file in standard output. Sort lets you sort files. Yes, you can do this in Python. Yes, it's probably faster
+for you to do it in Python, but sometimes firing up all of python isn't worth
+the time to do so. Tail is useful for
+looking at log files. You're probably not going
+to use this that often, but it's one of those things
+that's useful to know about. Head lets you look at
+the top of the file. Tail is the bottom of the file. Head is the top of the file. grep is one of the
+most powerful tools you have available
+on the command line. It is worth learning this tool, it is really powerful
+and really useful. Cat ''filename'' pipe grep ''hi'' will show you every line in the file that contains
+the word ''hi''. You can also do grep
+''hi'' filename. grep will take
+regular expressions. I will never have
+you do anything that requires
+regular expressions. But if you know
+regular expressions, grep is a lot more
+powerful with them. grep-v is the other thing
+you'll find useful. grep-v is the inverse match. In other words, it's
+everything but this. So if you think about
+your typical find, when you're using
+find in an IDE, you'll say, Hey, I
+want to find this. And what grep-v does is find
+every line that's not this. -i will let you ignore case. You can also
+recursively search for all the files and
+all sub directories. It'll take a while to do this depending on how big
+your directory tree is. But this is really
+useful for finding code or finding entries
+from old log entries. I use this probably
+every day for something. grep is one of these really,
+really powerful commands. We're not going to use
+this in this class, but it's really something
+you should be aware of. Auc is another one
+that's worth learning. But just being aware
+of these commands, how they work, how to
+interact with them, it makes you a much
+better programmer and it makes you much faster
+at navigating systems. Date on the Linux command line will tell you the current date. Cal is this really
+useful utility. I put this in here because
+I really like this. If you're just on a server
+and you need to quickly figure out what
+last saturday was, cal just prints out a
+really small calendar. Xargs. Conceptually, this is really hard to
+understand what it's doing for people who
+are new to this, but effectively
+what this is doing is it passes arguments
+to the command. So it takes standard
+input and it runs the command
+for each argument. What echo/home/etc pipes to xargs ls basically
+runs ls twice, once with home, once with etc. There is an assignment
+you'll be able to use this on later in class, but you won't have to use this. One of the things that this
+gets interesting for on the command line is doing
+things really quickly. This command here
+is one line of code that echo that basically cuts out every file in
+the current directory, finds files that contain the string mlhess and
+then counts them. Now, you could write
+this in Python, but this is not one
+line of code in Python, this is multiple lines of code. The shell is designed to make things faster and this
+is one of the ways in which you can do a lot of really powerful things
+with not a lot of syntax. You could also grep
+for multiple things. So find thing one and thing two, this would find the
+lines that contain both the word thing
+one and thing two. Yes, you can do this with
+regular expressions, but this is easier to read
+than regular expressions. Then finally, one of
+the things I want to talk about with the
+shell is tab complete. If you start typing the name of a directory or a file
+and then press tab, the shell is smart enough
+to complete that for you. Same thing with
+the word history. If you type the word
+history, it shows you every command you've run. And control- r will
+let you search your history and retype
+the command instantly. When you start putting
+these skills together, you go from that, I'm a Python programmer to I'm a systems programmer or
+a systems administrator. You get a blending
+of skills that just makes you a better
+developer. Thank you.

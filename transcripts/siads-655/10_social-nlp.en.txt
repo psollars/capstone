@@ -1,0 +1,253 @@
+In this course we've talked a lot about
+different types of textual information from semantics to syntax to words. But often language has a lot of
+rich social dimension to it. So in this segment, we'll talk a little
+bit about the social side of NLP. I'll start with an example, which maybe
+comes as something familiar to you. Have you ever had the chance
+where you've written an email and you've spent quite a bit of
+time spelling something out? I'm writing to request a meeting at your
+convenience, only to get a response say, sounds good. This might seem a little bit different. There's a different type of tone,
+what's going on here? And how might a computer try to understand
+the type of social information being conveyed in each one of these messages? In fact, social information is one
+of the natural aspects of text. Most of the text that we read or write
+is written for people by other people. So if you think about social media, or
+newspapers, books, or even memos, or legal documents, these are written for
+other people to understand. And as a part of them,
+they play on the social aspects and are common knowledge
+about how society works. So there's a rich set of social
+information that we can learn from. And have to infer about
+the people social contexts and society being described
+implicitly in these documents. NLP can be used to analyze this
+types of social information. And they're often computational tools
+to try to quantify the diverse types of behavior that we see in
+these social settings. Think about it often text is used as some
+sort of qualitative piece of information. And as a result of this course, hopefully you've gotten a sense of how we
+can turn it into something quantitative. This is true as well for
+the social dimensions of language. What are the biggest challenges in
+doing social NLP is thinking about labelled data. How do you quantify
+a particular social aspect? And once you have, how do you make
+sure that it works in the domain that you'd like to apply your model too? There's no guarantee that of
+the shelf methods will work, although it's worth testing them out. And sometimes you have to get creative
+in finding or even making labelled data. So in this segment, I'm going to
+give you a few examples of how you might use NLP to
+analyze social language. And some of the applications
+that you might see there. One of the more interesting forms of
+looking at language is thinking about power or status, and how different forms of social
+status might manifest in language. And it hear from Eric Gilbert
+now at University of Michigan, it was to look at the Enron emails. Enron was a company that
+famously was sued and as a result of their investigation probe,
+all of their emails became public domain. Along with this, we have the
+organizational hierarchy of the company. And we can actually now use this to
+predict which emails were sent to higher up positions. Here we could train a bag of words
+logistic regression classifier like what we used in week one with engrams. And try to look at which kinds of
+features have higher weights signaling higher up positions. To show an example from their paper. Here on the left, we have phrases showing
+an email was sent to a higher up. On the right things tend to appear or
+lower. You can see a few examples here
+of politeness on the left or requests, talking about what you can do. On the right-hand side we can think about
+more subtle or casual phrases like man. Or extension abbreviations that
+particularly signal something is much more in maybe
+a lower status position. Another example of how power was
+manifested in language came from Christians in St.
+Nicholas museum and his colleagues. Here the idea was to look for dialogue between people with
+clear status differences. Here, they looked at
+the Supreme Court arguments, or between Wikipedia administrators and
+just sort of regular people. To use the NLP approach,
+they measured accommodation. And this is a rich theory
+from communications theory, where we accommodate to another person
+when we adopt the language that the other person is using. Theory predicts that the higher status
+person will adopt those the language. Or the lower status person will adopt
+a language with the higher status and there are many different rich theories
+about describing this effect. You may also hear a commendation referred
+to as linguistic style matching. Here they'll use the Luke categories
+that we've mentioned all the way back in week one. Which are essentially text categories or
+lexicon try and look at how people accommodate with
+respect to these different types of words. To show you one example, here, this is looking at Wikipedia people who
+would request to become administrators. In the middle you can see that when they
+accommodate once they attain power and become an administrator. They actually stop accommodating and they start becoming other
+people accommodate to them. Essentially, by attaining power, they no longer have to accommodate
+to other people of higher status. So essentially, when the people get power
+they use less linguistic coordination. Which is another name for accommodation or
+linguistic style matching. To show another example,
+here's an example from the Supreme Court. The darker Maroon bars show
+lawyers accommodating to justices. And you can see that
+they often coordinate or use the same language as the justices and
+their replies, suggesting you could use this to
+look at different power differences. Let's look at another example
+with respect to respect. Here the idea is we could
+try to quantify respect and use this to look at differential
+treatment of people by race. And this particular setting, voided all
+looked at differences in respect for police officers with respect
+to community members. Here they created a rich data set of
+Oakland Police Department traffic stops. These are everyday interactions where
+there would be no expectation of a difference in respect. They had folks annotate how different how
+respectful was an officer's response given a community members prior statement. This is an example of where you have to
+take very careful treatment to create annotated data. The idea being they could then train
+a logistic regression classifier with LIWC again, that lexicon, and a few
+other customers to cancel of or show you. I point this out again, to show you that
+many of them common machine learning techniques that you already know are still
+used in very applicable settings. Do you have an example of some of these
+common Lexicons here's example features from their Lexicon? Say looking at adverbial just, can you
+just do this for me or apologizing? Or asking for agency. Would you allow me or
+Would you do me a favor? These kinds of things are known to
+diff have differences in respect. And we can use the machine learning
+classifier to try to figure out how much these each contribute to the overall
+respect of the particular sentence, or utterance? Here's a few examples. These have been sanitized. On the left we can see,
+here's a person's name. So explicitly mentioning their name,
+asking for agency using a negative
+word like suspended. Or what's known as a disfluency,
+where you repeat yourself, these are all viewed by the public
+as having less respect. On the right-hand side you can see
+things like using a formal title or encouraging safety. And using polite language, like please,
+are all judged as being more respectful. If we use these NLP techniques,
+these lexicons and classifiers, we can actually show
+quantifiable differences here. Clear differences in respect, by race,
+by looking at both Which things are loaded on by the model is being respectful or
+disrespectful. And then looking at how those differ by
+race, which is shown in the yellow and green column in the middle. We can see things like using the informal
+title is often viewed as disrespectful. And that this feature itself is found more
+common in stops of black community members whereas in the middle we could see that
+safety is viewed as being more respectful. And this feature itself is viewed
+as more common in white stops. If we use our classifier and apply
+these to many different stops together, we can then try to generalize. And here they often show they show that
+the difference in respect, actually, it starts from the very
+beginning of the interaction. One of the benefits of these is that
+because we have interpretable features that these can be used to help
+improve our practices and to create a more adjusted environment. Let's look at another example
+of social information sarcasm. It's so easy. An idea would be to identify sarcastic
+messages Where do we get the data from this sarcasm can take many forms. coda could all have the really
+nice insight that sometimes people explicitly mark these. You may have done this yourself by
+using a forward slash s, in this case. And recognizing that other people may not
+realize that you were being sarcastic you explicitly marked this so
+that they can read it in a sarcastic way. In fact, people do this quite a bit. We can use this with say, a logistic
+regression classifier with engrams and try to identify which phrases correspond to
+sarcastic or non sarcastic messages here. You can think on the left. These are phrases predicting sarcasm,
+which are obviously and clearly easy to identify. And on the right Phrases
+that do not predict sarcasm. These are emoticons people expressing
+emotion typically are not being sarcastic. As it turns out, I bring this up to show
+you how you can use typical insights that maybe there's one weird trick. Or he ristic like the Ford slash s that
+you might discover to help recover social information. And train classifiers. Finally, to describe one more
+aspect of social information, we can think about even intimacy and
+communication. Here we could actually try to
+measure the intimacy of questions. This might be useful for
+looking at how people bond or trying to estimate their
+tie strength in the data. There was real valued label data from
+Reddit, Twitter, or books and movies. And here we trained a deep learning
+model to predict the level of intimacy. I bring this up to show you an example
+of where the bag of words model say for estimating intimacy only has a correlation
+with ground truth around point five. Whereas the deep learning model attains
+a correlation around point nine. There are some settings that deep learning
+models significantly outperform our bag of words model or
+even more advanced techniques. And NLP is increasingly shifting to deep
+learning models which are becoming more accessible as computation becomes faster. One of the fun insights from this one
+is looking at how intimacy changes with respect to degrees of
+separation in a social network. Whereas people at position zero
+are people your immediate friends, you can be most intimate with them,
+which is shown on the y axis. But we also see an interesting phenomenon
+where people who are far away in the social network
+are also equally intimate. This is known as strangers
+on the train effect. If you've ever sat down on an airplane or
+in a busy public place and had a deep conversation with a stranger. It suggests that you actually have no
+slack of no social pressure to observe common social norms about
+how intimate you can talk. So it's interesting to see that social
+NLP can be used to recover this common phenomenon. Let's switch gears for a little bit and
+look at different sides of social NLP, for what's known as the digital humanities. The idea is that NLP provides a set of
+computational tools that we can use to study society itself and to the cultural
+phenomena that are in literature. We have many different books
+that have been digitized. However, many of the fundamental
+questions about these books and literature themselves are unanswerable
+without human effort. Just to take a really easy
+example which seems intuitive. How many people are in a book is that 740? To do this for all books,
+we'd have to read them and to do quite a bit of disambiguation to
+count how many unique people show up. This might be a great example of where
+we could actually use NLP to do simple counting and to analyse society at large. Why don't you take a look at this
+Example later in the segment. There are many new opportunities for
+insights. Because we have sometimes centuries old
+theories that we actually would like to test and NLP provides tools for this. To give you a few examples of how we
+might do this, let's look at one. How stable are genres? When we think about a genre say,
+romantic comedy or action. These are a result of tropes or often
+types of stylized themes that are present. Well, some genres
+are hundreds of years old. One of the oldest genres it turns out
+is detective fiction or Gothic fiction. And we'd like to know are these stable
+over time in terms of their consistent writing style? Well, you could try to get it this is to
+use what's known as a text classifier to predict genre. Again, using the simple classifiers
+that you got from before, from Week 1. The idea being, if we look at only
+a small set of training examples and we're able to viably identify
+the genre of new instances. This high predictability suggests
+that the genre is distinct and replicable across years. Let's look at an example here,
+from Ted Underwood's 2016 paper. Here we're looking at
+detective fiction on the left, we can see on the X axis This is
+a number of examples of that fiction. That fiction genre, and
+we can look on the Y axis the accuracy. We see that with only 50 examples of books
+from this that we can actually reliably label the rest of them as
+being detective fiction. In effect, this suggests that
+the genre is both distinct and stable with only a few examples
+early on that are somewhat outliers. Or early novels that were perhaps not as
+integrated into the genre itself just yet. This is also true for
+the more general Gothic fiction. Which although attains lower
+accuracy suggests that for some genre of hundreds of years. We can reliably identify books in
+the genre that were even written several 100 years ago that the genre
+itself has remained relatively stable. Let's look at another example that we
+talked about briefly earlier of how many people showed up in a novel. We can actually use this to answer
+a larger question around society itself. If we think about a span
+of from the 1800s to now. Many different new
+technologies have happened. Say the combustion engine or lightbulbs,
+telephones, airplanes, automobiles. Each of these may change our society. And increase or
+even decrease our social circles. We're able to come in
+contact with more people Or travel farther away which may
+decrease our access to people. We can ask how many people exist
+in a Social Circle in a book so we can actually use something like
+coreference resolution to identify. How many people do appear I make
+the asterisks here to note that they're probably there are many other techniques
+that had to go on top of covert assistance resolution that it wasn't
+going to work off the shelf. For example, here's an example from Jane
+Austen's Pride and Prejudice, showing all the uses of he and him and a particular
+passage between Darcy and Mr. Bingley. This is a particularly challenging case
+for co reference resolution due to the narrative prose and the different uses
+of the pronouns, often several pronouns. And references such as he and his within
+the same sentence which can create a quite a bit of challenge for
+conference resolution. That said we can do this correctly which
+was done in this particular work by Vala et al in the EMNLP. We're actually surprised to see that new
+technologies did little to change the size of the society when we control for
+the length of the book. In fact, our societies remain relatively
+stable the size of our societies as depicted in books. To wrap up on one other fun example, let's
+thinking about computational narratology. Two famous concepts within narratology
+are issues yet and fabula, which describe the use of narrative over time and the
+chronological order of books in the story. Or event in the story. One of the questions is, how does this
+change with respect to the emotional arc? We looked a brief example of this thinking
+about, looking at sentiments as tone, of a segments of a novel. If you have time, I really encourage you to check out
+Kurt Vonnegut's Shape of Stories. Which was a lecture he
+gave several decades ago, literally predicting some of the things
+that computation narratology is doing now, far before NLP was even
+able to do these things. He's in a very engaging speaker and
+it's quite a funny story. What we can see is we can use NLP
+sentiment analysis using the techniques that you described in week one. To actually look at these narrative arcs. Here's the refinement of Matthew
+chakras work from 2015 on the left, and a later version of the 2017 on the right. We can see that in the portrait of
+James Joyce's portrait of a young man, that there's a clear narrative arc. Where it starts off high something
+goes bad right in the middle, and then there's a recovery arc Hero's journey,
+if you will, that's like to wrap up. Having shown you quite a few examples
+of how we can use social NLP to look at language in society to think about again
+how NLP gives you these tools to study. Social language really is everywhere, and especially online as we use text to
+describe and interact with each other. There's huge potential impact
+to downstream applications. Many of these actually in business. There's one famous example of a paper
+looking at how we can predict from email context whether someone is truly
+integrated into the company's culture, which can help for
+retainment and training. Or, again in our paper
+looking at police respect, thinking about having to quantify what
+might seem to be unquantifiable and use it to improve our
+police community behavior. It's much harder to predict
+social information from text. So that sure sounds hard. We can think about that using slightly
+sarcastic or is it if you think about this being said in different ways you might
+interpret it as sarcastic or not. And this is to some degree one of the joys
+and pains of social information from text often depends on the particular context
+and the particular intended reading. Not all of which is accessible. We're often tried to implicitly
+estimate the author's intent. And this can be quite difficult. We might be able to look at some
+information about the author from the past, but it's a very
+challenging task, as you'll see. There are however available libraries for
+doing particular types of social information, so politeness, respect,
+intimacy even empathy to some degree. In the different data sets we can try to
+use these in your own domain should you find an application for
+them for studying something. But I do encourage you test whether
+they actually work on your data. That's it, there's lots of unsolved or unattempted type of social
+information that could be recovered. The key challenge is to get data, but I do think that as you go out into
+the practical world and use NLP. You may identify a case where social
+information if quantified could be quite insightful for
+your own applications.

@@ -1,0 +1,144 @@
+In the previous segments, we've talked about how to create distributional
+representations of meaning by counting word co-occurrences. In this segment,
+we'll think about how do we adjust the values in those representations to get better representations
+of meanings. One thing you may have
+noticed when we created the word- word matrix
+in the last segment, is that not all co-occurrences
+are created equal. In this practice, you
+might see that the word 'the' occurs quite
+frequently with all words. This may make it an
+uninformative word to use in comparing word
+vectors for meaning. Here, each cell
+reflects the number of times a context word
+appears in the window. In practice, what we'd
+like to do is get representations where we weight more important words
+for comparing meaning or even try to reduce the
+number of dimensions, say, by dropping
+unimportant words, or by reducing the
+total number of dimensions using advanced
+mathematics techniques. One of the more common
+ways of doing weighting is known as Point-wise
+Mutual Information. This is going to
+measure how likely are two outcomes to be
+independent of each other. Here, let's try to break
+down the formula for PMI. We see on the numerator, we try to measure
+the probability of both of these words
+occurring together, say a word and a
+word in its context denoted c. We can measure this independently relative
+to the probability of seeing the word in the corpus and the probability
+of seeing this word in a context in our corpus. When the joint
+probability is high, this means that there'll
+be a high PMI score. In practice because
+some words never co-occur and some
+values are rare, we typically may also use the positive Point-wise
+Mutual Information or PPMI, that simply takes a
+maximum of the two and avoids negative
+values in our matrix. It creates a positive
+weighting that allows us to upvote many rare terms that are still
+informative for meaning. Let's take a look at how
+this might work in practice. To calculate the
+joint probabilities in the individual probabilities, we use the matrix itself. Here I've highlighted the relevant values
+that we'll need. The co-occurrence frequency of dog in the context for cat. The total of times cat
+appeared in our corpus, which is shown in the
+column on the right. The number of times dog occurs as a context word in the
+corpus, which is 32, which appears in the last
+row and the total number of word contexts pairs at the bottom right
+corner, which is 801. Let's take a look at
+how we calculate this. Again we will be taking
+the log_2 for a fraction. To calculate the
+joint probability, we simply identify
+how many times dog occurred as the context
+word for cat, which is 22, and divide by the total number
+of context word pairs 801, so we have 22 over 801. We can then get the
+probability of cat, which is 194 divided
+by 801 and similarly, the context word for dog, which is 32 over 801. Together we get a
+PMI score of 1.51, which reflected there is some co-occurrence linkage
+between the two. We do this for all the cells in the matrix to get new vectors. Another way to improve
+our representations is to do what's known as
+dimensionality reduction. Here, the idea is we may not need all the dimensions
+and a representation. In fact, our representation
+can have many dimensions depending on the size
+of the vocabulary or the number of documents. In fact, some context
+may be redundant, such as a co-occurrence
+with both ocean and sea, these are synonymous words and so the color occurrence with one is effectively the same as a
+co-occurrence with another. We'd like to basically
+merge these. Another one is some
+contexts will be uninformative such
+as the, an, and of. These words occur frequently so we can potentially
+remove them. When we try to work with
+the large vector sizes, say for a term matrix, which are the size
+of the vocabulary, or term-document matrix, which has the size of
+the number of documents. For large corpora, these
+can be prohibitively expensive and make working
+with these vectors slow, which increases the
+computational requirements for us to do comparisons. It's therefore
+advantageous to try to figure out how to
+drop dimensions. One of the most
+powerful ways to do dimensionality reduction
+using linear algebra. That's what's known as the
+singular value decomposition. This is a mathematical
+technique which guarantees that any matrix can be decomposed into a product
+of three matrices. In this case, an n by m
+matrix and m by m matrix, and an m by p matrix for a general matrix
+that is of size n by p. There's one special
+property of this middle matrix, those as a singular value matrix, which is a diagonal matrix. Here, the dimensions are
+ordered by how much variance they capture with the
+largest dimensions first. In this case, we can drop the dimensions to do
+dimensionality reduction. Let's think about how
+this works in practice. To use the singular
+value decomposition for dimensionality reduction, we can in essence approximate
+the full matrix by only using the k largest
+singular values and setting the rest to zero. Here in this example, I've shown you that
+we're only going to use two-dimensions and
+set the rest as zero. In practice, what this does is reduce the dimensions
+for the first matrix, this n by m matrix to
+only two dimensions. In this case, we would
+get an n by k matrix, a k by k matrix, and a k by p. In the term-
+contexts matrix of, say, size of vocabulary by
+the number of contexts, we essentially use the
+SVD to reduce the number of dimensions in the
+context down to just k, which can go from tens of
+thousands or even hundreds of thousands to few tens or a
+few hundreds of dimensions. This can be a huge
+computational when this approximates the
+original data well. Let's take a look at
+this in practice. Here, I'm showing you
+an example of a matrix, a term matrix, where we have words as rows and context
+words as columns. What will end up doing is
+decomposing this using the singular value decomposition
+into three matrices. I'm showing you examples
+here for two dimensions, we can see that the u
+matrix will approximate the variance along the columns, whereas the v matrix will approximate the variance
+along the rows. If we decompose
+this exact matrix, we can get a two-dimensional
+representation of words, say, from the five-dimensional representation we had before. We also can get a low-dimensional
+representation for documents that I will not
+talk about that here. Let's go back to
+the example itself. If you look at this,
+we may actually see that we only
+have a few words. In fact, in practice, we have a positive dimension
+and a negative dimension. If we take the SVD of
+the entire matrix, what we end up in practice is a U-matrix that effectively
+captures this dimension. If you look at the singular
+values themselves, we can see that the decrease in magnitude significantly
+after the first two. Looking at the sigma matrix can actually be useful in
+practice to decide how many dimensions do I need for my dimensionally reduce data. I'm not going to show
+you the V matrix, but you can imagine it
+looks the same way. We can then even project these two-dimensional
+embeddings from the U-matrix down
+onto a latent space that would let us capture
+how words compare. These lower-dimensional
+vectors are often known as what's
+called embeddings. In essence, they embed a large high-dimensional space within a much lower
+dimensional space. You may see both embeddings
+and vectors together. In practice, count-based
+vectors are quite useful for having it's capture
+important aspects or meaning. However it is not all the
+dimensions are useful. We can try to up-weight some
+using techniques like PMI. We could also try to use
+dimensionality reduction, say using the SVD, to drop matrices
+that are abundant. You create more efficient vectors for using downstream processing. Often, folks use both
+techniques in practice, and there are actually more
+advanced techniques to try to both do both of these
+techniques implicitly. Some of these will
+talk about next.

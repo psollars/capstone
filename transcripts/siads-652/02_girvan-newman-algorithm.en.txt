@@ -1,0 +1,105 @@
+In the last video,
+we talked about community detection
+and we talked about how we can assess the quality of a partition using modularity. We also said that
+while modularity can help us assess the
+quality of a partition, it cannot actually tell us
+how to find the partition. What we said is
+that we're going to have to use heuristics
+to do that, and we're going to
+be covering some of those heuristics that are
+used for this purpose. In this video, we're
+going to talk about the Girvan-Newman algorithm,
+which is one of them. The basic idea of the
+algorithm is that we can remove edges that lie
+between communities, and as we remove the edges, what's going to happen is that connected components
+are going to emerge. We can think of these
+connected components as our communities. In this network, for example, we can identify those
+edges that seem to connect different communities, like for example, this
+edge and this edge, and we can remove them and now we have two connected components. These can be our communities
+or our partition. The question is, how can we identify the edges that
+lie between communities? For that, what we can
+do is use a concept we learned in the first week
+which is edge betweenness. If you remember, edge betweenness is similar to node betweenness, and what it measures
+is the number of shortest paths that pass
+through a given edge. So if you have an edge that connects two different
+groups of nodes, or many different
+groups of nodes, then it's going to have
+high edge betweenness because it's going to show up in the shortest paths between nodes of
+different groups. If we remove them, then eventually those groups
+of nodes are going to become connected components
+separate from each other, and the communities
+will emerge that way. That's the basic idea
+of the algorithm. Now let me tell you different
+steps of the algorithm. First, we're going to compute the edge betweenness for all
+of the edges in the network, and we can do this using
+network X, for example. Then we're going
+to remove the edge with the highest
+edge betweenness. If there are ties, we can
+break those ties randomly. Then we are going to recompute the edge betweenness
+of all of the edges. This step is very important. Since we've removed edges
+in the second step, then the edge betweenness
+of the edges that remain can change and so
+they have to be updated. Then we're going to repeat step 2 until all of the edges
+have been removed. Now, as I said, as
+we remove the edges, we're going to have connected
+components emerging, and we can write down the different partitions that
+these components suggest, but we're not going to
+actually pick any of them. We're going to remove
+all of the edges until all of the nodes are
+in their own community, until all of the nodes are
+disconnected from each other because there are no longer any edges in the network. Then we'll go back
+to see which of the possible partitions
+we discover in this process we want
+to actually pick. Let's go through an example. We have this network
+and we're going to run through the
+Girvan-Newman algorithm. First we're going to identify the edge with the highest
+betweenness and remove it. In this case, the edge with the highest betweenness
+is the edge BH. So we'll remove it. Then we'll recompute
+the betweenness and remove the edge with
+the highest betweenness, which will be EK. We remove it and now we have
+two connected components. That's a impossible
+partition and we'll note it. We'll keep going. We'll keep removing edges based
+on edge betweenness. Next, this edge goes, then the IJ edge goes, and now we have three
+connected components. We'll note this as
+impossible partition and keep on removing edges. This one goes, and now we have
+four connected components. We'll note it and keep
+on removing edges. This one goes, this one goes, now we have five, write it
+down, keep removing edges. This one goes, this one goes, and now we have six
+connected components. We'll write them down, and so on. We keep on removing
+the edges each time we have a new number of connected
+components, we note that, and then we keep going until eventually we're going
+to have each node in their own community
+because there are no edges left to take out. I skipped some of these
+in-between partitions, but you get the idea
+eventually we'll have all of the nodes
+in their own community. Each of these partitions that we noted could be a possible
+partition to choose. How do we pick the right split?
+That's the next question. Well, this is where
+modularity comes handy since we have a way of assessing
+the quality of a partition. What we can do is we can pick the one that has the
+highest modularity. We can go back to each of our partitions and
+measure the modularity. Again, we're going to
+show you how to do these things in network
+X in the tutorial. The first partition has
+modularity of 0.375. The second one is 0.373. The next one is 3.40, and so on. You can see that the
+modularity actually starts to decrease until it
+becomes very low. In this case, the
+partitions that have the highest modularity are
+the first and second one, and the first one has a
+slightly larger modularity. But if for some
+reason you wanted to have three groups of
+nodes instead of two, we would be reasonable to
+pick the second one since its modularity is not much
+lower than the first one. For this network, this algorithm would suggest that this is the best possible partition or maybe this one if you
+prefer three groups. To summarize, the
+Girvan-Newman algorithm starts with the
+entire network and then it uses edge
+betweenness in order to remove the edges
+from the network. As you remove the edges, you're going to have connected
+components emerging. Each time you have
+a new component, you can write down
+a new partition, and you keep doing
+this until you have no more edges left
+in the network. Then you can go back
+and use modularity to pick the partition that
+gives you the best quality, that has the highest modularity.

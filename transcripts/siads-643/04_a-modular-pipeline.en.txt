@@ -1,0 +1,110 @@
+Let's start to make our
+pipeline more modular. When we started,
+our pipeline was monolithic, it was all defined in
+a single Python file. And the execution of the pipeline was
+defined simply by the order in which the code ran in that single Python file. Turning things into functions helped a bit
+because now we had a little bit more flexibility about where things ran and
+the inputs and outputs of those different steps. But we can do it a bit better,
+we can break those clean and train functions into their own
+Python files or Python modules. So when we're done with that
+we'll end up with three different Python files will have pipeline.py,
+clean.py, and train.py. And the goal here is to be able
+to run those each independently. Once we have that kind of modularity
+we'll be able to use the pipeline.py file to run the entire pipeline. And we'll be able to use
+the clean.py file and the train.py file to run those two
+steps independently of each other. So that as things get complicated we can
+isolate where that complexity is and focus our work on those
+pieces as our pipeline grows. So once we break things apart,
+this is what our pipeline will look like. The last part of the code here, the if_name_ is main block will actually
+look the same as it did before, but will be importing the functions
+clean and train from their own modules. Let's take a look at what that
+looks like in a code editor. Okay, so
+here we have pipeline.py in a code editor. We also have tabs for the clean.py and the train.py modules which we'll
+take a look at in a second. But first, let's see what the pipeline
+looks like when we run it in the terminal. Since we have the if_name_ is _main_, we can run that as a Python script
+by saying python pipeline.py. We get the output telling us that
+it's doing the cleaning data step. We get the output telling us
+it's training the model and then finally we get
+the metrics dictionary printed. The last thing that it's doing before it
+writes the model that pkl file and exits. So where are the clean and
+train functions coming from? Let's take a look at the clean and
+train modules. The clean module is defining
+the clean function and that function looks just like
+it did in our improved pipeline. And the train module is defining the train
+function which also looks just like it did in our improved pipeline. But there's some other
+things going on here. Let's take a closer look. Both the clean and train modules
+now also have an if_name_ as main. And what's going on in there is
+were defining some arguments that we can pass in as command line
+arguments when we call these scripts. Let's take a step back and talk a little bit about the argparse
+package from the Python standard library. The argparse packages are really
+convenient way to handle command line arguments. It let's you define arguments with the add
+argument method on the parser object that you get when you call the argument
+parser class from the argparse package. We simply define those by giving them
+a string and we can optionally add some help text which helps the user understand
+exactly what that argument is for. One really nice thing that we get with
+this technique is a -h flag that the user can use to understand more
+about how the command works. Let's take a look at that with the clean
+module that we have in our pipeline. So to run our clean module as a script, we can do that in just the same way,
+we can run python clean.py. Now since we're not giving it any
+arguments we're going to get a usage message. And since we're using
+the argparse package, we're getting a lot of this for free. Since we defined an input and output
+argument, but we haven't given them and we've called the script. Argparse is giving us
+the usage message and giving us an error saying the following
+arguments are required input and output. So by default, when you add an argument
+with argparse, those are both required. We could also add a flag saying that
+they're not required, but in this case we do need them both, so will leave those
+as is and say that they're required. We can get more information by
+running the script again, but with the -h flag that I
+described a minute ago. I'm going to use my up arrow to go back
+in history to my previous command. This time I'll run it with the -h option. Now we've got a little bit more. We've got the original, the same
+usage command that we got before, but we're getting a lot more information about
+the different positional arguments that we've defined. Argparse is listed in the positional
+arguments here both input and output. And it's showing the help text that we
+defined with the help parameter that we used in the add argument call
+that we did in our module. So this is a really convenient tool to
+use to build really easy to understand command line scripts. Let's talk about why we're
+doing an output for this step. Because in our pipeline module were just
+taking the output from the clean function, putting it in a variable an immediately
+handing it to the train function. But it would be nice to be able
+to look at the clean function in isolation without
+the rest of the pipeline. So we're defining an output, and in this case it will be a command line
+argument where we will define a file that we will store our intermediate
+cleaned data in before we train it. Let's take a look at running
+the clean module just on its own. So I'm going to use my arrow to go back
+in my history to the command that I want, clean.py. I now I'll start to add
+the arguments that I want. The first argument was the input file. And I'm going to use my tab key to auto
+complete the rest of the file name and then the second command
+I'll call cleaned.csv. And my help that I defined is telling
+me that it needs to be a csv file. So now I'm calling the script
+with python clean.py and then with the arguments that I need. Now when I run this,
+it will run the clean function, take the output the clean function,
+and use the pandas to_csv method to write that to the argument that
+I specified on the command line. So if we look at our directory, we can
+see we've got that cleaned.csv file, which is the output of
+just the clean step. Now let's take a look at the train module. We've also defined an if_name_
+is main block in this module. And we're also using argparse to ask for
+input and output arguments for the user running it on
+the command line and then using those to take our input and
+define our output. But you can see a lot of things are also
+very similar to how we're doing things in pipeline.py. We're still getting our metrics and
+model from the train function, printing the metrics. And using the argument that the user
+provided for the output file and opening the file defined by the user
+to write the model out to the file. Now the input, if we're just using this
+module in isolation, the input that we need to give it is the cleaned.csv file
+that we got from the clean module earlier. So let's take a look at that, python train.py, and if we give it the cleaned.csv as its input and model.pkl as its output. It will run the train function
+against those arguments and print to the screen the metrics that we got and
+then also save the model that pkl file. Now we've added a fair bit of complexity
+by breaking things into their own modules and adding code to those modules
+that let's us run them as scripts. But there's some benefits to doing that. We can now run and test those different
+steps independently of each other and take the output of one, the cleaned module
+and pass it as input to the train module. That could be really convenient because
+as our pipeline gets bigger and more complex and the steps take longer and
+longer to execute. It can be nice to get one step done
+an working nicely and smoothly and then just take the output of that step and
+then work on the other. So let's say are clean step
+gets really complicated and it takes three or
+four minutes to run as the data grows and as the complexity of
+the cleaning has to increase. We then can work on the training parts
+of it without having to wait for the seconds or minutes that it would take
+to run the cleaning parts to focus on the training parts. This also sets the stage for using these components with other tools
+that can manage the workflow for us.

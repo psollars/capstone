@@ -1,0 +1,50 @@
+This week, we're going to be talking
+about analyzing qualitative data. And actually this slide deck, even though it's called analyzing
+qualitative data is actually going to be just about what the underlying concept
+is behind analyzing qualitative data. So take a look at these colored shapes and imagine how you would go about
+trying to memorize these items. I'll give you a few
+seconds to think about it. And if you want, you can even start trying
+to memorize exactly what the different colors and shapes are. Okay, now if you are thinking about this
+then one of the things that you probably notice is that some of
+the shapes are repeating and some of the colors are repeating. And so
+if you can somehow put them all together, it's much easier to remember exactly how
+many of which color shapes there are. So for example, one thing you could do
+is start by clustering these shapes, for example by color. And already you can see there's a little
+bit more order to the actual shapes and colors and so
+it's a little bit easier to remember. Now if you cluster again into
+the different shapes, then again, you can see that it's
+even easier to look at. For example, you can immediately
+see that there are four red discs, one blue disk and so on. Finally, if you sort them in an order that
+seems to make sense, then you'll find that there's an even easier way to think about
+all of these different shapes of colors. So for example, we can see that there
+are three of each of the shapes of disks, triangles and squares that are in purple. If you see the other colors, what you
+find is that there are four red disks, four blue triangles and
+four green squares. And then of every other possible shape,
+color combination, there's basically just one. Now if you think about it this way, then
+all of those initial colored shapes that you needed to remember
+are much easier to remember. In fact, if you think about it, you will
+probably be able to remember them today and other than minor mistakes,
+you might be able to remember this for several weeks or even for
+much longer than that. As opposed to trying to remember each
+of these shapes in their, initially, apparently random position. So what I'm going to suggest is that in
+qualitative data analysis as well as other kinds of data analysis,
+including quantitative, something like this process is what is
+underlying the attempt to understand data. So the world of course is full of data. You can't possibly remember it all. There's just way too much. And so what do we do as a way to both
+condense that data and understand it is we cluster it, sorted it, look for patterns,
+and then relate things to each other. And by doing this, you end up condensing the immense
+amount of data into a smaller amount. This is true both in the qualitative
+analysis technique you'll learn in the next segment, and also,
+in quantitative data analysis. So for example, when you do a regression,
+you can think of it as finding a way to condense all of the information that's
+contained in a bunch of data points. And by, let's say, representing them as a
+single line finding an easier way to think about what those data
+points actually represent. I think of condensing as
+a kind of understanding and understanding is a key
+part of intelligence. So if you really understand
+this idea clustering, sorting, finding patterns and so on,
+I would suggest that it actually helps to contribute to very intelligent
+analysis of all kinds of data. Now in the next segment we'll
+learn about affinity walls, which are one kind of
+qualitative data analysis. And you'll see as we go through it
+that what's underlying get is exactly this sort of clustering, sorting,
+and finding of patterns.

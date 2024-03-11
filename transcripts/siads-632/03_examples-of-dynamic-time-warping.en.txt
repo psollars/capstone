@@ -1,0 +1,188 @@
+Let's look at a real example. We have two misaligned
+time series, X and Y. Both of them have 10 numbers, but you can see that the
+numbers are different. If we plot them, if we use red plots to indicate Y and blue points to indicate
+X we can see that, well, the two time series
+are not exactly aligned. There are only two data points that they have the same value, all the other data points
+have different values. If we calculate
+Euclidean distance, we can basically assume that the distance will
+be large enough. However, if you notice the shape, you can see that the shape of the two series are actually
+quite similar to each other. If only we could actually
+shift one of them around, then we may be able to
+find a better match, and this is what we want
+to compute using DTW. Let's see, if we use DTW, how can we find the optimal
+distance between X and Y? Well, to do that,
+all we need to do is to fill in the table,
+as we promised. In this table, we actually
+have 10 by 10 cells to fill. Basically because we
+have 10 observations in X and 10 timestamps in Y. We have two more rows
+and two more columns. That's helping us
+keeping in track of the index and also the
+values of the two series. For example, the very first row basically records the values of X at each given timestamp. The very first column
+basically records the values at every
+time index of Y. Then we have one gray row
+and one green column, and these are basically helping
+us to record the indices, as we see that there are 10 elements in X and
+10 timestamps in Y. Sometimes it could be asymmetric. You could actually
+have n elements in X and m elements in Y, which is fine as well. Beyond these two rows
+and two columns, we have 10 by 10 unfilled cells. While the cell is labeled red, and that is actually
+the termination, that is actually where
+we want to go next. So where's the indices? We can actually assign every cell to indicate
+DTW of i and j. For instance, this cell basically helps us
+record DTW 1,1. That is the best alignment up to the first timestamp of X and
+the first timestamp of Y. Similarly, this is DTW 3,2, and that is the best
+alignment up to the third element of X and the second element of
+Y, so on so forth. So you can see that the
+final one is DTW 10,10, or more generally, DTW, n and m. This is
+the best alignment up to the last element of X and the very
+last element of Y, and this is basically our target. Let's see how we can fill
+the cells one by one until we find the
+value in the red cell. As we see then, we have
+to start with DTW 1,1, because that is the
+very simple and that is the simplest scenario. In this case, we need to compute the yearly cost of
+matching X_1 to Y_1. In this case, if we
+look up the numbers and that's 1 minus
+0, takes the square, and that is one, so
+this is the unit cost of matching X_1 and Y_1. Remember that we need to add this to the best
+previous alignment. Well, we don't
+actually have previous alignments because these are the very first element
+in both time series. So we basically just write one into this cell and
+move to the next cell, and this is because X_1 and Y_1, they have to be matched. That helps us go to
+the second cell to fill which is DTW 1,2. Remember that when we're
+filling this new cell, the cell indicated
+with the red star. We now have available the
+alignment of shorter sequences. To find alignment
+of one and two of the first element of X and
+the first two elements of Y. We have DTW 1,1, that is the cell colored
+in green, ready. The new alignment, the alignment of the longer sequences will actually rely on the alignment
+of the shorter series. Let's see whether we can
+actually find the value in the red cell depending on
+the value in the green cell. Well, as we see that, we still need to
+compute the unit test to match X_1, and Y_2. Because the number on both
+pattern indices are one, the unit cost, the X_1, Y_2 is actually zero. Good, all we need to
+do is to add this to the best alignment among these three options
+where the X wait for Y, Y wait for X all those proceeds. By doing that, we
+only need to look at three neighbors of
+this target cell, and that is the one
+to the left of it, the one on top of it, and the one to the upper
+left column of it. Does that make sense? Well, interesting
+readers have already been aligned this with another algorithm set you
+have already learned. I am not going to
+actually spoil it. Let's look at it. In this case, we only have one of
+the cells ready, that is the green cell. We have to go from that cell. We have to add this
+unit cost d(X1, Y2) to the green
+cell to DTW(1,1). That gives us the DTW(1, 2) which is one. We fill in one, into this
+table and then we move to the next cell that is the
+one labeled in red star. We can also report that we
+have this value of DTW(1, 2) from the DTW(1,1). There could actually be
+an arrow pointing to which simpler case we
+have derived from. Which action we have taken among the three
+available actions. To calculate the new cell, that is the red star cell, we also have one of
+its neighbors ready, and that is the one in green, among the three options, in this case, we only have one. Now this two move from DTW(1, 2). First, we also need to
+calculate the unit cost. We look up the numbers x1 and y3, that gives us a unit cost of zero because they
+have the same value. Remember that we only
+have one option, so we have to add this to DTW(1, 2), and that gives us again one. We record the
+direction and then we move on to the next red star. To do that, we can see
+that in this time, the unit cost is no longer zero. The unit cost is actually one, and then we add that to the top cell and then that gave us two
+as we move to the next. In this case you can see
+that the unit cost of x, y, and y4 is one. We basically repeat X1 so
+that x waits for Y again and that helps us add to
+this value to DTW(1, 3). That gives us the value two, as of this direction. We could do this
+practice again and again once we fill the
+very first column. When that is done, we will
+move to the second column, first row of the second column, that is DTW(2, 1). To fill in that cell, we're also looking at whether the three options are
+ready, the one to the left, the one to the top, and the one to the
+upper-left column. In this case, there's only
+one available, unfortunately. We have to extend from this one. Don't forget that
+we need to first calculate the unit
+cost in this case, that is four and we have
+to add this to DTW(1, 1) and that gives us the number five
+that is fairly large. This indicates that
+we are repeating the observations of Y1 so that Y1 is matched to not
+only X1, but also x2. If we do that alignment, then that gave us the
+DTW value so far, five. Then we move to the next one. Well the next one is
+actually quite interesting. Why is that
+interesting? Let's see. First, we still need to
+calculate the unit cost. That is two minus one take
+the square and that's one. Now we need to add this to
+one of the three options. In this case, first
+in this table, we have all three options ready. We have the one to the left, that's the yellow cell. The one to the top, that is the green cell and the one to the upper left corner, and that is the purple cell. We have numbers filled
+in this cells already. All we need to do, is to
+compare the three cells. To choose one, that
+is the smallest, and then add this unit
+cost to that cell. In this case, if we repeat Y1, so that Y waits for x, then we got the DTW value, that is one plus one, and if we repeat X1, if X waits for Y, then because DTW(1, 2) is five, in the green cell, then the overall DTW value, we will actually get one
+plus five equals to six. That's quite large. Or if
+we take the purple cell, that means that neither x or y, waits for each
+other in that case, we have DTW(2, 2), that is one, plus
+DTW(1, 1), that is two. Taking all these three options, we now make a decision
+that we could either actually move from the left or we move from the
+upper left column. Suppose we decide to move
+from the upper left column, then that will give us
+the value two into this. We can also record the direction, so that we know that DTW(2, 2), is calculated by taking the
+action by moving from DTW(1, 1), and then we can actually
+move to the next cell. This basically indicates
+what we have done. We calculate the unit
+cost of this cell and then we compare the
+three neighbor cells, and then we decide that we're not going to repeat any of them. Any of our X1. We are directly adding the unit cost to the
+upper left column. That gives us the number two. I'm not going to
+repeat the details. You can see that DTW 2, 3 can be actually calculated by extending the number from DTW 1, 3, and then we get two. Then we can do this
+again and again. The next one, DTW 2, 4, can also be extended
+from DTW 1, 3. No one waits for the other. Interestingly, that gives
+us a small number one. We can continue to do this until we filled the whole table. In fact, if you fill
+that whole table, you can see that the DTW 10, 10 is as small as two. That tells us that the
+optimal alignment of the two series gave
+us a value of two. Because we're using
+something similar to Euclidean distance to
+calculate your unit cost, X_i minus Y_j and a square. Then when we actually
+interpret the distance, we want to take the
+square root and that gives us the
+square root of two. The distance of X and Y
+under the optimal alignment. Is this really optimum? Well, if you don't believe
+that you can actually compare this with
+Euclidean distance. What's the Euclidean
+distance of X, Y? Well, if we calculate the
+Euclidean distance, basically, you calculate the difference
+between every time stamp. As in you take the sum of the squares and
+take the square root. That gave us 2 times
+the square root of 5. If you compare that number
+to this distance under DTW, you can see that the
+difference after we find the optimal alignment is way smaller than
+Euclidean distance. That is why we like DTW. That is why we like
+to find alignment of time series before we
+calculate the distance. Remember that for every sale recorded which neighbor
+the number comes from. Then we have to trace back to find out the alignment details. You can see that to advance to the very next, the red cell, then we have taken the path of down down and then no repeat, no repeat, no repeat, no repeat, no repeat, no repeat, and then right, right and then the repeat. These arrows actually tell us, whether X have waited for Y, or whether Y have waited to X. In fact, we can actually add these extensions to the
+original time series. You can see that now update it, every aligned series
+actually have 12 observations instead
+of just 10 observations. In X, we have inserted, we have added two values,
+two observations. Both of them are repeating
+the very first observation. In these two timestamps, X is actually waiting for Y. In the Y series you can see that before the last measurement, we're adding two
+observations to it. In other words, we're
+actually repeating, the observation Y_9 by two times. Those two inserted in the sense
+Y has been waiting for X. You can see that by finding the optimal alignment between time series we're
+basically inserting, repeating certain data points
+user of the sequences. After we have recorded
+these extensions. Now if we calculate Euclidean distance of
+this two aligned series, you can see that now
+the Euclidean distance, is basically a square root of the sum of the 12th
+differences and that gives us square root of 2 and that is exactly the same with
+the result of DTW. You can see that through
+Dynamic time Warping, we are able to find
+alignment of time series. In this example, we have both series having the same
+number of observations. DTW actually works for time series with
+different lengths. We're dealing with the M by N table instead of
+an N by N table. It also works for other
+distance functions, as long as we can
+actually decompose them into the sum of unit costs. In this case, we use the unit cost corresponding
+to Euclidean distance. You could also use the
+absolute difference, that will give you corresponding Manhattan
+distance [inaudible] Note that we assume that the very first data point
+of X and Y are naturally aligned and the very last observation of X and Y are also aligned. In reality, we can relax this
+requirement so that we can actually chunk the
+start or the end of either sequence to make the
+sub-sequence more aligned. In this example, if
+we draw the align, our relation of the two series, you can see that we're
+basically shifting one series by a few timestamps and
+repeating certain values. In these two observations, X is waiting for Y, and in these two observations, Y is waiting for X and
+when X is waiting for Y, we repeat the previous
+observation, in X. While Y is waiting for X, we repeat the previous
+observation in Y. This is how Dynamic
+Time Warping works.

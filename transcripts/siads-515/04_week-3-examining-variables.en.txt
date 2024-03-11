@@ -1,0 +1,174 @@
+So one of the things
+that we've been doing a lot is examining variables. So you've seen me in the
+notebook do some manipulations, throw some errors,
+correct some errors, and I've been examining the variables and showing
+them to you along the way. One of the things that I'm
+going to ask you to do in the readings for this week
+is to understand scoping. So we need to be able to
+understand and inspect values of variables and understand
+which variables are active at once. That's a process called scoping. That's something that's
+best described in readings. So I'm going to have
+to give that to you as an assignment to do, is to go through those readings. The next thing I also
+want to set you up to do is to give
+you a little bit of code in which we're going to show you how to do things in a couple
+of different ways. So let's say I gave you this
+problem of given two lists, one of people's names and
+another of their scores, say, whatever type of score
+you're interested in, an exam score, performance
+score, some external score. I want you to create a list
+of tuples such that for each person you have a tuple of their name
+and their score. So not a dictionary,
+but a list of tuples. You might come up with a
+solution that looks like this. So let's keep things simple. We are lazy, so we're going to use one character
+names for people. So person A, person B, person C, person D, and person E. Have
+corresponding scores of 90, 76, 55, 82, and 88. So if we go ahead and
+run that just to set up those two variables
+as names and scores. We can go ahead and do that. Your solution might look
+something like this. So we might initialize another
+list, people and scores. Always try to use
+descriptive variable names. Then we might ask for
+an iterator in our for loop in the range up to
+the length of the names, from zero up to the
+length of the names, and we're going to take our
+newly initialized list, people and scores, and
+append to it a tuple, so we have these
+parentheses in here, which we'll initialize
+a tuple consisting of names using the subscript i. It's going to start with
+zero and come up to a range up to one minus length
+of the names and scores. So if we run that, we will
+get this list of tuples, as we would expect, right? So here we have a
+and 90, b and 76, c and 55, d and 82, and e and 88. It turns out that there's a
+better way of doing this. The zip command. Let's go ahead and take a look at the documentation
+for the zip command. Make this a little bit bigger. You can do this on your own
+too by clicking on that link. Now, I've lost my zip
+command. There it is. So here's zip. If you read the
+documentation from Python, it says it's going to make
+an iterator that aggregates elements from each
+of the iterables. That's not particularly
+useful, is it? I don't think that that's
+a great description. So let's delve a little bit more into that because the zip() function is actually
+something that's really handy to use. So let's go ahead and
+run some of this. So if we ask for a zip
+of names and scores, it gives us something
+that's a little overwhelming and underwhelming
+at the same time. So when we ask for zip
+of names and scores, it gives us a zip object. So it doesn't actually give
+us that list that we want, it gives us something that, as we talked about last time, is an iterator of sorts. So there's an iterator embedded. A zip object is iterable. So that means that we can set
+up a structure like this. So we can say for i in the zip of names and scores, print i. So this is an iterator
+and we're going to iterate over this
+zip object here. And let's see what that gives us. So now we have these
+tuples as a, 90, b, 76, c, 55, d, 82, and e, 88, just as we had up here. They're not in a list format
+yet, and that's okay. So what we could do is we could initialize a list to be empty, and then do exactly the
+same loop that we did in the code above, and output that. So what do we get
+when we do that? So we have exactly the same
+thing that we did up here, where we appended these
+bits onto our list, and we've just used a
+zip command instead. Is that better? Is that easier to understand? Not necessarily,
+but it is much more efficient than iterating
+over those lists. An even simpler
+way of doing that, would be to initialize a list
+here with that zip object. So as you remember from
+our week on iterators, that we can initialize a list
+object with an iterator, which will give us a
+fully populated list. So if we run that, we find that we get
+exactly the same thing. Okay. So let's say you have a structure that looks
+like people and scores, that is, a list of tuples. Each tuple consists of
+a name and a score, and you wanted to
+extract just the names. How would you do that? You might do something
+where you would initialize an empty
+list called names, and then you would
+walk through each of the elements in that
+people and scores list. Append to the name's list that
+particular iterator value, and take the zeroth elements. So it would take the
+zeroth element here, the zeroth element of this tuple, the zeroth of this, the zeroth of this, and this. So in other words, we're undoing the operation that we just did. That should work for us, right? We get a, b, c, d, and e. So if we go back to
+our documentation here, we find out that we can also do, I'm going to make this a
+little bit bigger again here. We're told that the
+zip in conjunction with the star operator can
+be used to unzip a list. Again, that's kind of
+hard to understand. So let's go ahead and go
+back to our notebook, and try this again. So what we can do is use a
+zip with the star operator. So that's what this means. It means zip parenthesis star. On this people and
+scores, now remember, people and scores is actually a list of tuples that consists of names and scores. If we unzip that and
+create a list out of that, use the zeroth
+element of each one, and then call a list on that, we get back exactly what we need. So that's a quick introduction
+to the zip command. We'll be using zip in one of the exercises in this course, so I want you to tuck that
+information away for now. It'll also be useful
+when we actually start talking about debugging
+some worked examples. Let's take a minute and work through an example of debugging. So our top-level goal here is to create a list of
+latitude and longitude, I'm going to call them
+lat and lon tuples, where latitude is between
+two given values. So let's go ahead and do some coding here
+where we're going to create a function that's going to efficiently read a
+file using a generator. I'm going to set up our filename here so we can have
+access to that later. I'm going to define a
+function here called read, lat, and lon by
+line on a filename. When we run that, it's going
+to set up that function for us where we're going to go
+ahead and open a file name, and while true, so
+we're going to set up an infinite loop where
+we're going to read a line. If that line is null, then we're going to break
+out of our infinite loop. Otherwise, we're going
+to set up variable data, which is the results of
+splitting that line on a comma. Then we're going to yield out the second and third
+elements from that line. I remember what the
+yield statement does from our previous
+session on iterators. So if we go ahead and run that, we get a generator object here, and we're going to have
+to iterate through that. So again, building on the work that we did in the
+last week of this class. We're going to initialize
+count to zero, and then we're going to start iterating over that
+generator object. So this is exactly the same generator object
+we just looked at. We're going to start
+iterating over that for i in that generator. We're going to
+increment our count. If our count is greater than
+five, we're going to break. So we just wanted to look at the first five lines of that. So we get latitude and longitude. We get these values
+coming out here. So that looks roughly right. Let's get rid of that
+first header line. What we're going to do
+is we're going to do that by modifying
+their code ever so slightly by initializing a variable first to true
+our first time through. So our first time
+through that variable first is going to be true. You'll see that we have changed the logic down
+here a little bit. If first, that is, if first is true, then we're going
+to read that line. Still we're going to
+set first defaults. Again, this is exactly
+the same as before. If we have a null
+value for the line, we're going to break out of that. Otherwise, we're going to
+split it and yield it. So let's go ahead and run that. Oh no, we have a syntax error. Now, we've dealt with
+that before, right? It means that I forgot. If we look carefully here, if first at line 6; 1, 2, 3, 4, 5, 6, we can put a colon there, and that will fix our problem. So let's go ahead. This is
+exactly the same thing fixed. Now if we run that code we get the correct values here
+without the header line. Now, the next thing
+I want to do is to create a generator
+expression here, which we again
+covered last lecture. So I'll leave that for you to examine and
+try to understand. Then here I'm going to set up something a little bit
+more complicated where we're going to use a
+csv.DictReader to open up that file and then
+yield out each row. The same idea, just a
+little bit different. We're going to use the generator expression there as well. Here we have our values. The advantage of
+using something like a csv.DictReader here is that the values are correctly converted to integer values. So I am giving you that
+code as a way to set us up for some of the work that I want you to do on your own. I also want to take this time to talk about
+some copy and paste errors. So sometimes, and I really
+encourage you to do this, you will find solutions by
+googling for an answer, perhaps by going
+to Stack Overflow. In one of the problems that I was trying to solve
+the other day, was trying to figure out, well, how many processors do I
+have on my virtual machine? Some of you will find when
+you're working on the Cloud, you're not really sure what the configuration of the machine that you're working on is. So I found this code by going
+to this particular URL. I found this code, and I thought, well,
+this looks pretty good. This important multiprocessing as multi-P. Print total number of processors on your machine is multi-p.CPU counts.
+So that sounds right. I'm trying to count the
+number of CPUs on my machine. So if I copy that, and I'm going to insert
+a new block below here, and just paste that in so I
+can go ahead and run that. So that looks good.
+That looks like code. If I run that, I get an error. I'm told that there's an invalid
+character in identifier. Now, that's a syntax error. We haven't covered that before. Syntax errors, as I mentioned, are a little bit more cryptic. So invalid character
+in identifier. It tells us that
+it's in line too. So there's something wrong
+with this print statement, but it's not immediately obvious. Can you figure out
+what the problem is? This one's a tough one. It turns out that
+for some reason, these wound up
+being smart quotes. So if we change
+those smart quotes, which really aren't
+that smart at all, to plain old quotes, being careful that Jupyter tries to help you by
+putting a double quote in, we find out that the problem
+was the smart quotes. For your information, this is also sort of interesting for you. The total number of processors on your virtual machine should
+be something like four.

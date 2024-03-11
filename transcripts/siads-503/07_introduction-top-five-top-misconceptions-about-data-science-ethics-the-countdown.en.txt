@@ -1,0 +1,296 @@
+In this segment, I'd like to
+talk to you about what I'm calling the top misconceptions
+about data science ethics. In fact, I gave it an
+even punchier name, I'm going to call
+it the countdown. So I don't know if
+you like countdowns. There's a website that you might have seen called Listverse, which is just a website of a bunch of countdowns
+and they're very silly, like 10 bizarre anomalies and conspiracies about the moon. I was trying to get
+your attention and to be funny and interesting
+by calling this a countdown, but I want to
+emphasize it's really the important substantive
+material coming for me for the rest of Week 1. So this is the stuff
+you've been waiting for. The reason I call it
+a countdown is in part a reference to
+data science ethics. I personally think that we
+are at some magical moment in data science ethics where
+we're at peak countdown, because there are so many papers, and frameworks, and reports, and books, and essays that have checklists and
+countdowns and lists. You might feel as I do, that by the end of this course, you can't believe
+how many lists of recommendations there are
+in data science ethics, everyone seems to have a top 10, a must read 5, 15 you have to do before you
+go onto the next thing. You know it can be
+confusing as hell because everything
+little bit overlaps with something else. There isn't a big
+agreement about what the top 10 list really is for
+everything across domains. So I'm giving you this countdown
+because I think these are really important
+misconceptions about data science ethics
+that we need to get through and I formatted as a countdown to try and
+make it more interesting. But at the same time, I do think that this is stuff that you'll get a lot out of. I think the challenge
+though is that there's going to be a lot of numbered
+lists in this course. I wish there were fewer, but you'll find in the
+readings for this week, for example, there'll
+be another list, and the list doesn't
+match my list. I mean, I want everything
+to match and be consistent and be beautiful
+and elegant and short, but that's not the place where data science ethics is right now. The place where it is,
+it's an exciting field, it's messy, and no one really knows what the final solution
+is for a lot of this stuff. So I apologize, although
+it's not really my fault. I'm not the one making
+all these lists, but I did make this list, so let's talk about that. So the list I made for
+you is a countdown of the top 15 misconceptions
+about data science ethics. As determined by me
+and the teaching team, I divided it into three groups; the top five, the middle five, and the last five. The thing about this is that
+I think we need to do this, but it is meaty, important material for the class. I know I keep saying that.
+Why do I keep saying it? Well, I think earlier I
+was telling you kind of framing material about the
+class and it was meta, it was about what we
+will do in the future. But this list is
+really also a list of positive things that you can do and think
+about in some cases. So I might frame something
+as a misconception, but you could just reverse the
+meaning of a lot of these, instead of thinking of
+them as misconceptions, you just reverse them and say, "Well, here's
+something I can do". It could be a checklist
+of things to think about. So I think that these
+will be useful, but it is fun to think of them as top misconceptions as well. If you ever read
+philosophy books, one of the things that
+the authors often do is that they put a section right in the beginning of the book that lists
+their assumptions. This isn't a philosophy book. You're not reading
+a philosophy book, it's not a philosophy course, but I think there's a little bit of a similarity in the motive. What I'm saying is, here are things that I'm probably not going to have time in the class to really
+justify to you, they are my
+assumptions coming in. But I also chose things that are very widely shared assumptions
+unless I say otherwise. So I'm sharing things that
+people in the community of data science ethics are most
+likely going to agree with. So let's get started. How about the top five? The top five I call the basics because they're really the things that we just got to start with. I'm assuming that you have not taken a bunch
+of ethics classes. So I'm sorry if you have, although not really,
+I'm glad If you have. But these should be
+pitched at a level where if you've never
+taken a class before, you can still understand them. I'm also assuming you haven't taken that much data
+science because this course appears
+in our curriculum in a place where you might
+be taking it without, it only has one prerequisite, so you might be taking
+this course without a lot of experience
+in data science. Nonetheless, some
+of these examples get a little hairy and hard, but not the basics. So here's number 1. So number 1 is the misconception that
+ethics is just an opinion. I just want to flag this for you because this is a misconception, if it were true, we wouldn't have anything
+to have a class about. There would be no reason for a class because you'd say, "Well, this is what I think
+the ethics are", and I'd say, "This is what
+I think the ethics are". Then we'd nod, we'd shake hands and we go
+about our business. So we don't think that ethics
+is something you get to decide on your own and yours can be different from
+everybody else's. I'll give an example of that, and I hope it's a compelling one. It's not about data
+science I think, although perhaps everything is about data science a little bit. So maybe there's a way to
+link this to data science. Now, it's a dramatic example. So as a teaching team, we are all very confident. We agree that shooting unarmed people is
+wrong, all right? We totally agree with that. But there was this event
+in the United States, this is a bullet actually
+from that event, it's a bullet that hit a
+statue on a college campus. That event was called
+the Kent State Massacre. I don't know if you've
+heard about it, it was in 1970. It basically was a
+nonviolent protests against the Vietnam War by students in something like
+the quad at Kent State. There was a group of National
+Guardsmen that were there because of the protest and
+they opened fire on the crowd, they killed four people, including one military officer
+in training at the school, and they wounded nine
+additional people. The Presidential Commission that investigated the
+Kent State massacre said that there was no
+justification for this action. There was no way to justify what these National
+Guardsmen had done. So you might think, well, this is a pretty clear case where shooting unarmed people is wrong and the National Guard
+shot a bunch of students, a position you might feel some connection to as
+students yourself. It's interesting
+though because at the time of the Kent
+State massacre, there was a public opinion
+poll that asked people in the United States what they thought of the Kent
+State killings. It wasn't called a
+massacre then or riots I guess, it could
+have been called. The majority of people
+in the United States felt like the National Guards should have shot the students. They thought, well, I'm not
+sure of their reasoning, not being around then, but I think that
+they thought, well, we should just trust
+the National Guard, they must have had some good reason for
+what they were doing. So the majority of public opinion supported shooting the students. In fact, students who
+were at the protests reported that people came
+up to them and said things. I'm going to read a
+quote because I want to be sure I get it right. But they said that strangers
+came to them to say, "More students should
+have been killed". Because if more
+students were shot, this would really
+teach the protesters a lesson and it would
+have been more effective. So what explains this? I mean, I don't know how
+you're reacting to it, but my reaction to this
+story is that this is crazy, this sounds really bizarre. I think the explanation is that people make bad
+judgments all the time. I don't think that people are particularly good at
+making ethical judgments, and that's another of
+our misconceptions, but I'll get to it in a second. So we think of ethics and
+we think about reasoning towards some conclusion
+based on evidence. So in the example of the
+Kent State massacre, there may have been
+important information that the people who said, "I'm all for it, I'm all for the killings",
+they didn't know. So for example, it wasn't clear that the
+protesters were unarmed. So the reason I start
+with this example, even though it's not really
+a data science example, is that to address the misconceptions that
+ethics is just an opinion, I want to highlight
+the fact that, yes, people have all kinds
+of different ideas about situations and whether
+they're right or wrong, but that the assumption
+of this class and all ethics really
+is that we can reason to an answer together and that reason matters and that
+evidence matters. If it didn't matter again, there's not really any
+point in having this class. So the people giving
+the opinions about the Kent State massacre changed their minds as new
+information came out. There was a Presidential
+Commission, the commission investigated, they found that the
+National Guard was in the wrong and people
+changed their mind. So that's the model a little bit about how we're
+thinking about ethics, is that it's something that we're doing that's based on reasoning together about something
+and not just an opinion. I mean, I guess I can't
+emphasize this enough. The assumption implies that
+reasoning can be taught. I mean, I'm going to teach you about ethical reasoning and that should lead you to think some people can be better at reasoning about
+ethics than other people. So I want to make you one of the better people for
+reasoning about ethics. That means that we
+are assuming that ethics is about
+evidence and reason and that it can be taught and
+you're going to learn it, and so that's one reason why ethics is not just an
+opinion that you hold. Another way of putting
+that is that ethics and public opinion are
+the same thing, some people think that. So they think that as
+long as public opinion supports what we want
+to do, that it's okay. Well, that's not true. There are many instances where public opinion is not
+particularly ethical, and that's really
+important to keep in mind. So another American example,
+I don't know if you know, but during the civil
+rights movement, the idea of civil rights
+was very unpopular. So it was not a majority opinion that civil rights
+were a good idea, that equal treatment for African-Americans in
+America was a good idea. So it's something that changed. So ethics and public opinion
+are not the same thing. The second misconception
+I want to cover is this idea that ethics
+doesn't have right answers. Because of what I said earlier, we're generally
+going to assume that ethics does have right answers. It's a little tricky because I don't want you to get the feeling that I have to tell you what's right and you just
+copy what I say. Again, it's about reasoning. So I'm not just going
+to tell you, "Okay, you want to be a data scientist, do this and don't do
+that," and you're done. No, it's not like that. But at the same
+time, we do assume that we can reason
+toward a right answer. Otherwise, why bother reasoning? We should just skip it. We shouldn't really
+be reasoning at all. So we assume that ethics
+does have right answers. I mean, professional
+philosophers sometimes get pretty constipated
+about this one. We're not going to go
+there because it's not a professional
+philosophy course. But generally, we think that you marshal arguments
+about consequences, and that this leads
+you to be convincing, and then that's the right answer. So we're not just testing
+you on a list of answers. Again, it's about reasoning. So we don't want to
+assume that you can have your ethics and I can have
+mine and it's all subjective, because that's not really consistent with taking
+a class about ethics. Another way of putting that,
+that you might hear is some people say ethics
+is culturally relative. Now, that's tricky because I totally acknowledge that they are different cultures and
+they're different. Yet we don't usually agree
+that different cultures, although they might
+have different values, they might have
+different objectives, they might have different norms, they might have
+different assumptions, we don't usually think that because someone comes
+from a different culture, there's no way to agree about the right answer
+to an ethical situation. We want to respect the
+differences in culture, but at the same time, we do believe that
+we can reason toward a right answer by in part,
+sharing information. So that's what we're
+doing in this class. This has already been
+covered to some degree. It's the misconception that people are naturally
+good at ethics. It's an interesting one because there's a phrase that you often hear these days in artificial intelligence
+and in data science, and that phrase is
+human-in-the-loop. It means that there's a
+system in which some part of the system contains a
+human that does something. There are a variety
+of versions of it. There's human-in-the-loop, system-in-the-loop,
+society-in-the-loop. We're not going to go into that at this particular moment. But I think it's interesting that some people working in data
+science ethics, a minority, but some people have
+thought that if a computer has to come up with the solution to an
+ethical problem, any computer is going to
+be worse than any human. So I'll put that in a little more formal
+language on a slide. People are always better at ethics than a computer
+program would be. I emphasize that because
+I think this is silly. This is not as widely
+held as some of my other ideas that I'm sharing. But why would it be that the average person
+is always better, or any person is always
+better than any computer? We can program a computer to make decisions and those
+decisions can be true, whereas people can be misinformed and make
+decisions that are false. So some systems these days, there's some advocates
+for the idea that if a computer's
+doing something tricky, that might have
+ethical implications, you could just show what they're doing to someone on, for example, Mechanical Turk or another
+crowd sourcing platform, and any human making a
+judgment about ethics would be better than just
+having the machine decide. Now, I think that
+that's not true. I think generally,
+I'm skeptical of the idea that people are
+naturally good at ethics. Because otherwise,
+why are we here? Why bother to take this class? The fourth misconception is that ethics is a set of
+universal rules. Now again, why should
+we take this class? If there were a set
+of universal rules, I would just assign them. I would give them to
+you in this class and I would say, there they are. If you need to do some ethics, just look up the universal
+rules and you'll be done. I think you'll find instead, that ethics is a
+case-based inquiry. I slowed down because I really wanted to emphasize
+and underline that, it's a case-based inquiry. There are some domains of human activity where we
+acknowledge from the outset, universal rules don't work. I heard a lawyer once say, there's no algorithm for justice. That's the assumption of our
+court system, for example. The assumption of the
+court system is that you might have rules called laws, but when it's time to
+apply those rules, there are so many
+factors involved and the context is so
+important that you need some case-based reasoning to disentangle the
+relative importance of all the things
+that are going on, and come to some conclusion. So we think of that as a
+trial in the court system. Ethics works that way. It's a case-based
+inquiry in part, because some of the things that we're trying to weigh
+against each other or even trade-off don't have a clear way to assign
+numeric values to them. In fact, sometimes just
+reasoning through the case exposes a variety of dimensions that could be quite a large
+number of dimensions, but also that the
+dimensions could be quite difficult to identify without working
+through the case. Each case might then have different dimensions and
+a different context. That's why applied ethics is
+different from philosophy. So you say, this is a class about applied ethics or
+professional ethics. One of the things that means is we're going to
+have a lot of cases. It's not like here's the universal rules,
+then we're done. The last misconception
+in this group of the first five misconceptions
+is that ethics is timeless. I think I've already said
+that because of my examples, but let's just throw
+in one more example. That example is the
+environmental movement. So the environmental movement
+in the United States is a great example of why
+ethics isn't timeless. Because in the US,
+there was a period before the 1970s when dumping toxic waste or littering or things like this
+weren't seen as a problem. So you could litter and it wasn't seen as
+really a big deal. I think the reason that things changed was in part, again, my message from the
+first misconception about ethics being about
+reasoning towards some answer. So in the US, there was a famous book by Rachel Carson called
+Silent Spring, and it promoted the idea that
+if you dump toxic waste, it will have harmful
+consequences, and that the lives of your
+children will be worse. Hard as it is for me to really see that that wasn't
+something that people knew, they didn't, and they read the book and were convinced
+and change their mind. So environmentalism
+was really born out of this realization of reasoning through
+with consequences. That means that not only is ethics not
+just a set of rules, it's also not timeless and that different moments can
+have different ethics. But the reason that they
+are different isn't that ethics just varies
+and it's trendy. One day it's okay and
+one day it's not okay, and it just goes up and
+down like the stock market. The reason it varies, we hope, is that there's some
+available base of information or judgment
+for decisions, and that that's what's changed. Is that there's new
+information that leads you to understand the consequences of something or the
+harms of something. That's what makes
+ethics not timeless. So this is a really key point for data science ethics
+because we're at this moment of data science when in a lot of the cases
+we'll cover in the class, we're not sure what
+the ethics will be. There is not a consensus. We're not even sure
+what the right way of reasoning about some
+of this stuff is. It's a mess, as I said, but it's still a mess
+worth diving into, and it's reasoning worth doing. So that's the top
+five. I'll stop there.

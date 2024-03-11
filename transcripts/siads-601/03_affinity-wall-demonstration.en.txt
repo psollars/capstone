@@ -1,0 +1,193 @@
+Welcome to the segment
+on affinity walls. So in this segment, what I'm going to do
+is do a demonstration of a very small affinity wall. It will give you a sense for
+what exactly you need to do, even though the
+scale is obviously going to be much smaller than
+what you would actually do. So in this particular case, the scenario is that, let's
+say, a company has asked you to do a data analysis
+of all of their HR data, their human resources data, and you have already conducted interviews with one of the vice presidents
+of the company, with an HR manager, and with an employee. Here are some affinity notes
+that you have extracted from your interviews according to the instructions that you've already seen in other segments. What we're really going to
+do at this point is start the clustering process
+for the affinity notes, and then create summaries, and then ultimately see what the overall analysis for all
+of this data is gonna be. I'll start by reading each
+of these affinity notes, because they'll be
+helpful for each of the notes to be
+understood before we start. So in this case, P1 indicates the
+Vice-President of the company. P1 believes that the company should expand its client
+base internationally. Again, P1 has a quote, "I've been at the
+company for 30 years, the last 25 as a VP." Again, P1, "We know that women middle managers are unhappy." Now I'm moving on to
+some of the things that P2 said, the HR manager. P2 suggests that
+there is a pattern of junior employees
+leaving the company after five to ten years. P2, "I can't think of
+any major problems we've had in the last year with
+employees or managers." P2, "Our pay is generally good compared with
+our competitors." Another one from P2, "In an
+exit interview last week, a Manager who took a job
+with a competitor told me that she didn't feel her
+work was valued by her boss." Then moving on to an
+employee interview, P3, "One client I had, they completely ignored
+our recommendations." P3, "The work is great, but I don't see a
+clear career ladder." Again, P3, "Last month I made a big mistake
+with a client, I felt terrible, but my manager helped me
+fix the situation." A couple more from P3,
+"At my previous company, it took three hours to
+file an expense report. It's not like that here." P3, "There are two execs
+I often go to for advice. Though they're not
+my immediate boss, they remind me of my uncles." Then I've also added a couple
+of things that you might have gotten out of
+other material, written material possibly that the company might have provided. One is that the company
+was voted best place to work by a local
+business magazine, and another, that last
+year's employee poll showed a disparity
+in morale by gender. Okay, so the question is, how do we organize all of this information so
+that it provides a little bit more structure than just a bunch of random
+quotes and facts? So the first thing you want
+to do in an affinity wall, is to start clustering
+things by theme. So for example, here's a affinity note that's
+talking about clients, so maybe we can put together all the notes that
+are about clients. Here is one, one client had, they completely ignored
+our recommendations. Here's another one about clients. Just so that we can
+still see all the notes, I'm going to reorganize them. So this looks like a cluster
+that is just about clients. Now, if you look at
+some of the rest, you might notice that there
+are positive statements that are made about the company's work environment and
+some that are negative. So maybe we can start by putting all the positive ones together and all of the negative
+ones together. So let's say company was voted best place to work, that's
+definitely positive. Pattern of junior employees
+leaving the company, that doesn't sound so
+good, so that's negative. Here's another one, in an
+exit interview last week, a manager told me she didn't feel her work
+was valued by her boss. At my previous company it
+took three hours to file an expense report but
+not here, that's good. I can't think of any major
+problems, so that's good. I've been at the company
+for 30 years the last 25 is a VP, that sounds good. We know that women middle
+managers are unhappy, that doesn't sound so good. Last year's employee poll showed a disparity in morale by
+gender, that's not good. There are two execs I
+often go to for advice, so the execs seem approachable, that's usually a good thing. The work is great, but I
+don't see a career ladder. That sounds mostly negative, although there's some positive. Our pay is generally good with our competitors, so
+again, that's good. Now, if you look at this
+you might say, okay, are there other ways
+in which we can further split these up? Now, I would say, generally you want to stick to somewhere between threeish to seven or eight different
+affinity notes, but in this case, I think we can further break down
+some of these notes. So for example, on this side
+for the negative comments, you'll notice that there's
+something that has to do with maybe women. So women middle
+managers aren't happy. Some disparity in
+morale by gender. Then here's another one, in
+an exit interview last week, a manager who took a job told me that she didn't feel
+her work was valued. So these are at least
+very clear cluster about women being
+unhappy at the company. There's also something
+about junior employees leaving the company is not
+strictly about gender. Again here, a clear
+career ladder. Now if you look back at these, most of these are on the whole, they're positive,
+but they might also contribute to some
+of these situations. So for example, P3, let's suppose we happen to
+know this employee is male, it might be that there's
+a good connection between the men at the company, but that the women are not feeling that kind of connection. So we might decide that we
+want to put this together. I've been at the
+company for 30 years, the last 25 as a VP, and this is generally I
+would say it's a good thing, the people at the top level
+of the company are happy, but it could also be that there is contributing to
+a larger problem where people don't
+feel like they have a way to get promoted. Let's take a look
+at these. All of these sound generally positive, so let's put all
+of these together. I'm going to reorganize
+this a little bit. You can see when I'm doing
+this clustering process, one of the important
+things about this is that you want to make
+sure that you're not too attached to any one
+cluster and that you're willing to let go of whatever classifications you
+made initially. Now let's go back to
+look at the client ones. If you look at these,
+you might say, okay these don't seem as relevant to this larger question of
+the company culture. In fact, I would say
+that this one about the company expanding
+its client base is actually pretty irrelevant. I'm going to move it
+over here because it might just be a
+miscellaneous one-off. Similarly, the fact that one client ignored their
+recommendations doesn't seem to be too relevant to this question
+of the corporate culture. Last month I made a
+mistake with a client, but my manager helped me fix it. This is a positive thing, it suggests that the company
+is generally, has a very positive managing culture. These are all
+positive statements. These are some
+negative statements that seem to have something to do with the career ladder
+or the absence thereof. Then these are all about
+possibly there being some disparity in the way women, specifically women
+managers, are treated. At this point we have
+three different clusters and what you want to do
+for each cluster next is to create summary notes that basically summarize the
+content of the cluster. Now the important
+thing when you do the summary is to think about, you want to make sure that the summary is broad
+enough that it captures most of the
+content of that cluster, but also precise so
+that it's saying something a little bit interesting and not just
+a very generic statement. Let's start over here. This one I think is going to
+be pretty generic, despite what I just said,
+because they're all about how the company is overall a
+pretty good place to work. Let's take a look at that. I'm going to add a note up here. This is a summary which I've
+pre-written in anticipation, so overall work environment
+seems to be good. Now let's take a
+look at this one. I've been at the
+company for 30 years, the last 25 as a VP, there's a pattern of junior employees leaving the company. The work is great but I don't
+see a clear career ladder. This suggests that
+there's a little bit of a problem with how the company thinks about its career
+trajectories for its employees. Maybe some people are leaving because they don't see opportunities
+for advancement. A summary statement might
+be junior employees leave because of limited
+opportunities for advancement. Now, I put a question mark
+here because these are really just the statements coming from three
+different people. We don't know how widespread this phenomenon is and that
+would be something that, for example, further
+a quantitative data analysis should reveal. But as a tentative hypothesis, this seems reasonably good. Now let's go on to this one. Here, men seem to have a reasonably good relationship with the leadership
+of the company, women middle managers
+are unhappy, there's some evidence
+that there might be a disparity and morale by gender, then a woman manager felt like her work was
+not valued by her boss. This suggests in this case that maybe women employees
+and managers might be relatively undervalued by their managers and
+by the executives. At this point I would
+say we are done with this set for the clustering and for the summarization, and I want to make a few
+comments at this point about how you might use
+this going forward. First of all, what
+you have now are three potential
+hypotheses that you might want to verify through further quantitative
+data analysis. So right there, all of this work that you've done
+so far through interviews, through doing the analysis gives you something that you
+can actually latch onto with respect to what
+you might want to look into when you do a data
+analysis going forward. Another thing is that,
+should the data analysis actually substantiate
+each of these points, then you actually have something that looks like
+an interesting narrative. If you look at
+these three things, it says maybe that the overall
+work environment is good, but there's a couple of problems. One is that there're not very clear opportunities
+for advancement and another that maybe women employees
+and managers are not being treated the same way that the men at the company are. Again, we don't
+know whether or not this is true or
+not at this point, but there are pretty
+strong hypotheses and if you look at the
+overall narrative, what you get is that
+overall work environment is good but there are a couple of problems along these lines. The affinity wall in this case both helps you get a sense for all of the different facts that you collected in interviews. Then clustering them into individual hypotheses that you might want to verify through
+quantitative data analysis. Then even the beginnings of a narrative that tells
+you how you want to organize the overall story if each of these
+points is born out. I will say that in this
+case, we were a little bit lucky in that this
+one came out first. When you're constructing
+the narrative you want to think about what's the right
+order to present things. For example, do you want
+to lead with the fact that junior employees have limited opportunities
+for advancement, but everything else seems good. Or you want to start
+with everything seems pretty good but there's a
+couple of residual problems. That's really up to your sense
+for the audience and what you think they might
+want to see most. That's really the end of the
+affinity wall demonstration. At this point hopefully
+you've gotten a sense. The wall that you
+work on will have many more affinity notes and so you'll have to go through
+this clustering process at a much larger scale. Also, once you get through
+this level, you might find that
+you can even further cluster the summary notes as well and so that will give you a hierarchically
+clustered situation. But the essence of what you're going to do is very similar to what I just
+demonstrated. Thank you.

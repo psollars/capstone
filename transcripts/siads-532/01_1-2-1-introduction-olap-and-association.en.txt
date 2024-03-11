@@ -1,0 +1,70 @@
+Hello, this is Qiaozhu Mei
+from School of Information. Today we will talk about
+the functionalities of data mining. As we discussed, there are four
+dimensions of a data mining task. These include the data to be mined,
+the knowledge to be discovered, techniques that connects
+the input to output, and applications where
+this process will be used. And the knowledge to be discovered is
+the output of a date mining process, it is also known as data
+mining functionalities. There are many possible knowledge you can
+discover from a data mining process or there are many different
+data mining functionalities. We will talk about a few today. We will talk about online analytical
+processing, abbreviated as OLAP. We'll talk about associations,
+classification, predictions, clustering,
+ranking, and outlier detection. For these functionalities, we will
+briefly talk about their definition, the techniques people use to implement,
+and the basic applications of them. Now let's look at them one by one. Let's first look at online
+analytical processing. The goal of this functionality
+is to provide fast answering of multidimensional analytical queries. And here note that analytical process is
+different from transactional process. Let me tell you about a particular,
+typical transactional database. This database is very common
+in business practices. Whenever there's a transaction,
+we add the entry into this database. So you can see that in every entry,
+it will tell you at what time, what product has been purchased
+by whom at what quantity. This is known as
+the transactional database. And it is easy to query particular
+instances of transactions. You can also answer aggregated queries,
+such as how many TVs were sold in total? Right, you just need to
+write simple SQL statement. However, if your manager ask you a more
+complicated question, let's see, how many TVs were sold in the second
+quarter of 2011 in North America? Your job is much harder. Because it's a lot harder to query this
+database to find out which transactions have taken place in the second
+quarter of the year and which countries are actually
+in North America. You can see that transactional databases
+are not very suitable to answer these analytical queries. And that's why we need to provide
+functionality called OLAP. Online analytical
+processing uses techniques, including data warehouses and data cubing. The data warehouse is the infrastructure
+that integrates multiple types of transactional data, processes them, and
+makes them available for future analysis. Data cubing is a technique
+on top of data warehouse. The goal of which is to
+pre-aggregate transactional data and make them ready for future queries. The objective of data cubing is to
+improve the efficiency of this analysis. So you can see that in the following
+example, transactional data are integrated based on either
+geographic locations or time ranges. Although the actual query won't be
+about the exact date or region. Once the data has been pre-aggregated,
+you just need to aggregate a few cubes to get
+the results of the query that you want. OLAP has been a major techniques
+used in business intelligence where you need to handle large
+amount of transactional data and you need to answer lots
+of aggregated queries. The second functionality we will
+talk about today is association. The goal of this functionality is
+to find inherent regularities and relations in large amount of data. Let's see the simple example. Suppose you have five
+transactions over here. In every transaction,
+you can see a set of items. You can see that there
+are lots of blue circles, but there are also golden triangles and
+purple diamonds. Based on this database, you can discover
+the relation between the items. For example, you can see that
+the amount of times when you see the golden triangle,
+you will see the following diamond. And you can also say that you're 80%
+confident about this association. Associations are usually discovered
+based on techniques of counting. People count the concurrences of items. And beyond that, people calculate
+the correlations between data objects. And even beyond that, people try to
+establish causality between the items. Associations of frequent patterns have
+been applied to many different fields, for example, basket data analysis or
+catalog design. In this example, if we know that lots of
+customers bought these books together, you may want to bundle them and
+advise them to your future customers. You may also find the best combination of
+keywords that are associated with your search engine ads that will help you a lot
+when you work with Google to optimize your queries and your advertisement. Associations have also been widely used
+in search engine log analysis, for example, to recommend next query based
+on the previous query given by the user.

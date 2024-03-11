@@ -1,0 +1,136 @@
+Math methods for Data Science,
+matrix operations one. In the next two lectures
+we're going to talk about algebraic operations that can
+be performed on matrices. In this lecture, we'll discuss adding and subtracting matrices, multiplication by a
+constant or scalar, matrix-vector multiplication, matrix-matrix multiplication. In the next lecture, we'll talk about outer and inner products, matrix inverse, and transpose, and the trace and
+determinant of a matrix. When we add and subtract
+matrices we will have two or more
+matrices as input, and we will get a
+matrix as an output. Addition and subtraction are
+performed component-wise. In this example I have
+matrix A and matrix B. Both are 3-by-2 matrices and I'm going to
+add them together. Since this is done
+component by component, let's see what happens when
+we add matrix A plus matrix B. I know that since this is
+a component-wise operation, I will end up with
+a 3-by-2 matrix. In order to add or
+subtract the matrices, I'm going to take
+the first component, the value in row one, column one, for each of the matrices
+and add them together. Then I'm going to do this for every other set of
+components in the matrix. 5 plus 4, 2 plus 3, 6 plus 2, 8 plus 1, and 3 plus 3. These calculations will
+give me a new matrix. Two by three matrix where
+my components are 6, 5, 9, 9, 8, 6, and this gives me my result
+of matrix A plus matrix B. Now let's subtract
+these two matrices. Again, this is
+a component-wise operation, and I'm going to take
+each component from matrix A and then subtract
+the component for matrix B. So 5 minus 4, 2 minus 3, 6 minus 2, 8 minus 1, 3 minus 3 which will give me again a 3-by-2 matrix with
+values negative four, negative one, seven
+in my first column, 1, 4 and 0 in my second column. What did you notice about matrix addition and subtraction? You should have noticed that
+the matrices have to have the same dimensions in order
+to be added or subtracted, because the components need to match from matrix A to matrix B. So in general, if I'm adding
+two matrices each 3-by-2, three rows, two columns, I will end up with
+a 3-by-2 matrix. Here's the general form for
+adding two matrices A and B where A and B are both
+three by two matrices. You can see each component
+lines up and we have the sum of the components
+in our final matrix. Multiplying by a constant is also known as scaling a matrix. If we have a constant Alpha
+and a matrix A, we can scale
+a by Alpha as follows. We take the constant
+alpha and apply it to every single
+component of matrix A. So we have Alpha times A1_1, Alpha times A1_2 and so on. Let's do an example and multiply
+A by the constant three. Here I'm reminding
+you of a formula for multiplying by constants, and here I'm defining matrix A. So in order to calculate
+our scaled matrix, I'm taking the constant three
+and multiplying it by A, and again this is something
+I do component wise, and so Alpha times A
+is equal to 3, 6, 24, 15, 18, 9, and I simply
+calculated this by taking our constant three and multiplying it by every component within matrix A. Matrix vector multiplication is a
+little more complicated. Let's look at a general form first to see where we're going. When we multiply a matrix A, where entries are real numbers and the dimension of m by n, and v as a vector of dimension n, our results are in
+n-dimensional vector. Inputs our a matrix and a vector and the output
+as a vector. Take a look at
+our result matrix and see that we take v1 as the first element and
+vector and multiply it by the first element in
+the first row of our matrix, plus v2 times the second element
+all the way up to however many columns there are in our matrix multiplied by
+the last element of the vector. That becomes the first row
+of our new vector. Then we can take the second row and multiply by
+each element of our vector. To get the second row of
+our resulting vector, we do this through
+all rows of our matrix. This operation is much
+easier to see in practice. Let's multiply
+this 3-by-2 matrix and 2 vector to see your resulting matrix
+vector multiplication. First, let's write
+out what we're doing, we're taking matrix
+A times vector v, and so I have
+my matrix 1, 2, 8, 5, 6,3 and I'm multiplying
+by vector negative 2, 3. In order to calculate
+my matrix times my vector, I'm going to take 1 times
+negative two plus 5 times 3. Again, this is just taking the first element from the vector multiplied by the first component of the matrix and the first row, and the second element of
+the vector multiplied by the second component and
+the first row of our matrix, and then I'm going to do
+this for the remaining rows. Two times negative
+two plus 6 times 3, 8 times negative
+two plus 3 times 3, and that will create
+our new vector which is the result of our matrix
+times our vector. You should see each of
+these negative twos are the same since they are the first element
+from the vector, and the same thing with
+these threes here, those are the second
+elements of the vector. Finally, if we complete
+this calculation, we should have
+negative two plus 15, negative four plus 18, negative 16 plus
+9 which will give us a resulting vector of 13, 14. And negative seven. One thing you may have
+noticed when we did our matrix vector multiplication, is that another way to think
+of this multiplication is to look at the dot products
+of each of the rows. So in other words, if I'm looking at the multiplication of
+matrix A by vector V, I'm essentially looking at the dot product of each of
+the rows of the matrix. Where I'm taking
+the elements from the matrix a11 and
+a12 times the vector, all the way through each
+of the rows of the matrix. Which is equivalent to
+exactly what we did to calculate our matrix
+by vector multiplication, a11 times the first element
+of the vector, plus a12 times the second element of the vector and so on. So you can see that the matrix vector multiplication is really just calculating a dot product for each row of the matrix. When we multiply
+two matrices, A and B, where A is in the realm of
+real numbers with dimensions M by L and B is in the realm of real numbers with
+dimensions L by N, we will get an M by N matrix. The inner dimensions here need to match in order to multiply
+two matrices together. Here's how we would write this
+in mathematical language. Each element of
+the resulting matrix, so our resulting matrix
+would be the C matrix. Is the sum of A's row and B's column
+component products for all Is where the rows go from value one all the way
+up to M and the values J, go from one all the
+way to N. Again, it's way easier to see this
+if we have an example. In order to translate that math formula into
+something that's useful for us, let's take a look at how we would multiply
+two matrices together. First, let's take
+the first row of element A and the first column of matrix B in order to calculate the first components of matrix C. In order to do this, I'll take a11 times b11 plus a12 times b21. Now to calculate the second
+component of our C matrix, I'm going to take
+again the first row of matrix A and the second
+column of matrix B. Multiply the first values and then add the product
+of the second values. You should be seeing a pattern
+here. We'll do one more. In order to calculate
+this next element of matrix C, I'm going to move down a row in matrix A and use
+the first column of matrix B. Then to calculate
+the second element and the second row of matrix C, I'll use the same row of matrix A times the second
+column of matrix B. One last note on
+matrix-matrix multiplication, you'll notice that
+this first matrix, matrix A is a three by two
+matrix and the second matrix, matrix B is a two by two matrix. What happens when we create a matrix from
+this multiplication is we end up with
+a three by two matrix. As you can see from
+our calculations. Let's say a practical example of matrix-matrix multiplication. Again, we're starting with
+a three by two matrix and we're multiplying this
+by a two by two matrix. So we should expect to see a three by two matrix
+as our final matrix. I will set this up over here. Let's walk through our pattern, I'm going to take
+the first row of matrix A and the first column of matrix B and that will create our first element of
+our resulting C matrix, 1 times 7 plus 4 times 9. Then let's do the second element. Again, I'm going to have 1 and 4 and I'm going to multiply
+1 by 8 and 4 by 10. We'll keep going
+through each row of matrix A and multiplying it
+by the columns in matrix B. Let's simplify these
+calculations and we will get a matrix like this. Finally, to solve for
+our A times B matrix, we'll finish our calculations
+and get a matrix with 43, 59 and 79 in the first column, 48, 66 and 84 in
+the second column. Our next lecture will cover matrix transposition, inverse, outer and inner products, the trace of a matrix and
+the determinant of a matrix.

@@ -1,0 +1,203 @@
+Hi Welcome. This week's topic is going to be text. We're going to be focusing on
+different ways of taking textual data. And finding ways to encode it visually for
+different kind of tasks. And as you might imagine, there
+are various ways to think about text, so, text exists all over the place. We might have articles, books, novels. We can also treat things like computer
+programs as text, everything from emails, Web pages, tags, comments. All these things exist
+as textual documents. And we might want to analyze
+them in different ways. We might want to look
+specifically at what's inside. We might want to look at them as a whole,
+and we might want to look at
+collections of documents. So, things like collections of messages or social exchanges on social media,
+academic collaborations. So, things over laid on top of text. And you can see from the bottom here,
+that there are many, many, many, and this is just a subset of
+ways of handling textual data. So, we're going to talk about
+only a few of them today. But you will get a sense of how to think
+about a way of breaking down text, into things that you can analyze. Text Viz is interesting in
+that there are many tasks. So, we have common themes,
+that we want from newspaper articles. We want to mine legal documents. So, we have social media analysts. We have people in biology,
+working with DNA information, visualization of search results,
+that anybody might use. So, all these things exist as tasks,
+that we might have at the domain level. In addition, we can abstract
+those in our usual kind of pie or stacked cake of these things, we might
+consider sort of more abstract tasks. So, what documents contain
+text about something, which documents are of interest to me. How are different words used in
+the collection, we'll see examples of that. What are the main theme is
+how our theme is distributed. All these things are tasks,
+that we might have on top of textual data. For which we might want to find,
+the right set of techniques and algorithms to encode that information. The text data that we will encounter
+is different than some of the other things that we have thought about, so far, in information visualization. We have to really be concerned
+about how we take text and transform it into something that is
+actually usable for visual encoding. One question that we have,
+is how does text fit into our standard, kind of framework of nominal,
+ordinal, quantitative. Text is maybe nominal. We've thought about it,
+when we thought about labels. And category names, in that category,
+in that vein as nominal. But when we think about documents,
+it doesn't necessarily make sense, to consider them as nominal data. So, text is also high dimensional. So, that is, that is a weird constraint. There are as many dimensions
+of text as there are words. And beyond that,
+we can have combinations of things. So, if you think about a space of
+documents or space of words in the universe, where every dimension,
+every access corresponds to one word. We can represent a document in that space. Because the document exists, based on
+how many times a certain word appears, in other words and so on. And so, we can position that
+in this n dimensional space, which is really complicated
+to think about. So, we usually don't do that. But that is when we algorithmically
+implement things, for text data, we will often consider them
+as n-dimensional text. And a lot of the modern and
+deep learning algorithms sort of emphasize that kind of vectorized model for text. Text is orderable. We can have lexicographic ordering,
+but text also has meaning. The meanings and relationships
+actually imply other kind of ordering, and groupings and things like that. So, we could have correlations
+between textual things, or relationships like cities might
+all belong to the same set. We have order based on meaning, so, the name of the month can be
+ordered by not alphabetically, but the order in which
+the month appears in the year. There's also other kinds of set
+memberships, like sports, so football, soccer,
+whatever all exist within that space. But then, there's all kind of weird other
+relationships that we might consider, when we think about textual data. Everything from hierarchies of text,
+antonym is things meaning opposite, synonyms, meaning similar. There are entities like,
+noun phrases that exist together. They don't make sense as individual words. But taken together, they mean something,
+names of companies and so on. With multiple words. Those things might reflect entities
+that we have to keep together. There're also weird other relationships,
+like hypernyms. And things like that, you'll learn about,
+if you take NLP classes. So, the thing that we will heavily
+consider in this first part of the lecture, is how we encode text. So, we need to be able to go from text
+data that we've collected somehow. And find some way of representing
+that numerically or in some way, that our visualization systems can
+actually represent that on the screen. So, we have to think about
+like taking textual data and transforming it into something,
+that is largely numerical. So, let's start with something easy. Let's think about taking a document,
+and we're just going to count the number of times a word
+appears in that document, as a way of measuring the kind of
+numerical value, the numerical encoding. So, if the word apple appears three times,
+will count that as three times. The problem with that, is that,
+it's not always appropriate. So, in the English language,
+there are these things called stop words. So, the word, the, for example, appears
+in a lot of places within documents, in English text. And that may be something that we
+don't actually want to encode. If we normalize, based on
+the number of times, the word, the, appeared in a document. Suddenly, all the other words look
+very unimportant relative to the, which doesn't make sense. The word the, is the unimportant one. Whereas content words,
+might be particularly relevant. There're often expectations of
+seeing certain things in documents. So, we're trying to focus on
+specific subsets of words. And we would like to emphasize
+that in our visualization. So, we need to be able to
+find good ways of encoding, that allow us to capture
+those important concepts. And throw away things
+that are less important. So, there are a number of weighting
+schemes that have been developed. And we'll go through a few of those,
+TF-IDF. If you've taken information retrieval or
+thought about, it's kind of the most common one. Its term frequency inverse,
+document frequency. I'll go through that in a second. There're also much more sophisticated
+ways based on probabilities. But if you think about sort of
+the distribution, as I mentioned of the English language, it's what's
+called a long tail distribution. The word the, appears a lot like it
+is the most common English word. Whereas, lots of other words are sort of
+at the tail end of this distribution. And so,
+this is a visualization of all the words, or a large subset of the words
+in the English language. And ordered and sized by the number
+of times that they appear. So, the proportion. This is what's called a zipfian
+distribution. So, the most popular one appears,
+with a ratio of one to one. The second most popular in the word,
+of, appears half as many times, the word and is a third
+and so on. So, this is what's called
+a zipfian distribution. As I mentioned, it's going to be
+important to consider that distribution, because we're going to need to
+take that into account in weighting. So, as I mentioned, the simplest way of
+doing, weighting or counting of the number of times the word appears in a document,
+is using keyword weighting. So, if we have a sentence like,
+the apple does, what the apple can do, which is kind of a random sentence I made up, the word apple, appears here
+twice, so, we would count that as two. We can also normalize or smooth it in
+some way, because of that exponential, that long tail distribution. We could take the log of that value,
+to reduce the weight of certain words. We could also normalize
+it to the proportion. These are options that are available to
+us, that only consider that document and the number of times the word
+appears within that document. Of course, the problem with this,
+as I mentioned, is words like, the, can still be retained
+in this computation. And have a really high value,
+which is maybe undesirable. So, the word the, knowing nothing else
+about the universe of other words, or other documents. The word the here has an equal
+weight to the word apple, Because we haven't
+considered anything else. So, that's not quite
+what we're going to want. So, what we're going to do,
+is consider another part of this equation. So, the first part that I mentioned,
+is what's called the term frequency. The second part is going to be known
+as the inverse document frequency. What that looks at,
+is not just the number of times the word appears within the particular
+document of interest. But how many times it appears,
+in all other documents. More specifically, we count the number
+of documents that mention that word. And normalize it by the number
+of total documents. So, the more documents that
+mention a specific word, the less weight that term has. Okay, so, the word apple, for example, we
+have the the two sentences at the bottom, will think of them as two documents. The apple does what the apple can do. The pears are pretty cool, too. Okay, the word apple only
+appears in the first sentence. So, it has a high weight for that. So, the word apple appears twice. So, that's great. And that weights the word apple,
+quite high. But, it also only appears
+in the one document, which also, kind of reinforces apple
+as being an important concept. The word the,
+which appears on the two sentences, is weighted downwards by that second term,
+the IDF term. So, IDF is going to push
+the value downwards, because it appears in both documents. So, it's log of 2/2,
+which is a small number. Okay, so,
+that's going to force the word to be down. That's one way of handling stop words,
+or frequently occurring words. Now, this is just one way of doing it. So, TF-IDF, is just one really simple,
+straightforward way of doing it. There are many more
+sophisticated versions. So, these are just a number of other
+algorithms that basically are weighting mechanisms that one can apply to text. So, you can see, TF-IDF is the second one. There are many others. And they all have very
+different kind of performance, when you use them to encode text. So, there's kind of this famous
+paper that we talk about, in kind of the space of text analysis. Where they took all the documents that
+were created within the government structure, specifically
+the US government structure. Things that were created by the Democrats, things that were created
+by the Republicans. And what they wanted to do, was compare
+things that were created by the Democrats. Things that were created
+by the Republicans. And learn which words were more
+likely to appear in which. So, if we look at this visualization,
+what we see, on the bottom on the y axis, sorry on the x axis. We see the frequency of the words
+within all this document collection. So, how many times do the words appear? The more times it appears overall,
+the further to the right it is. And the more Democratic leaning a word is,
+the higher up it will be. So, kind of at the zero line in
+the middle, that's equal weighting. Both Republicans and
+Democrats used the word the same. But as you go upwards, the word too oddly,
+is going to be very Democratic leaning, the word the, is going to be very
+Republican leaning in this case. So, this is just one example, using
+the difference of proportions measures. So, just looking at
+the ratio of how many times, each word appears in each collection. Now, if we take a very different
+kind of encoding strategy, a different kind of weighting,
+to the documents, those kind of stop words, that we saw
+in the previous diagram, go away. And now we start to see,
+maybe more interesting terminology. So, words like, bankruptcy,
+an infant bankruptcy being at the top, infant being at the bottom. The weird spelling is due
+to what's called stemming. So, all words that have a similar
+route are merged into one. So, running, ran, runs,
+they all become just one word, run. So, bankruptcy and bankruptcies,
+and all these things, just become bankruptcy
+with an i at the top. So, this is another way
+of representing the data. And you can see very different words
+emerging in this particular collection. Here's a third instance,
+this one uses weighted log odds ratio. It's a different way of
+calculating weighting, and suddenly you see a very
+different set of words. Also interesting. So, this one, women get pushed to the top,
+very Democratic leaning word. Babies, and abortions and kill, get pushed
+down to the more Republican leaning, side of the space. So, again we are getting a very different
+set of terms, that are being extracted and pushed in each of the directions. And this is a demonstration
+of why it's important, to think about different
+ways of encoding the text. Because different kind of weighting
+schemes, are going to bubble up very different sets of words, as being
+important in this document collection. Okay, so, this is going to be critical,
+a critical decision. And whatever you do, to represent text
+on the screen, specifically words. So, just a few takeaways and
+I'll wrap up this little mini lecture. Text encoding is really unclear, like thinking about the way of
+transforming text into numerical values, there are many,
+many different ways of doing that. So, many ways of converting
+text to numbers. We're going to see about how we have to
+be really careful about that, later on. But you have many choices that you're
+going to have to decide between. You're going to have to worry about the
+tasks, that the people are going to have, or you are going to have, when
+you're looking at this data. So, what is it that you're
+trying to figure out? And make sure that you're getting
+the right information from it, that the encoding strategy you've picked,
+supports the tasks that you have. And we also want to ensure, that we're taking the nature of
+the underlying data into account. So, sometimes we'll have document
+collections that are very long, documents sometimes very short. Sometimes they'll have sentences. Sometimes there'll be big collection,
+small collections. All these things will
+factor into your decisions. This particular class is not about all the
+different ways you might choose to encode. But I do want to raise this,
+as something to be aware of, in your decision making process. And you're going to see,
+in the examples that we have, that people take very different
+options for doing this. All right, and with that,
+thank you for listening.

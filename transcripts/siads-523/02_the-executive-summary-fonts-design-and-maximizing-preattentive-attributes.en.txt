@@ -1,0 +1,165 @@
+Welcome back. Now we're
+going to focus a little bit on the design elements of
+the executive summary. You notice from looking at the sample in the
+previous slide that it definitely is a
+visualized document, even if you're just
+filling in the template. In fact, Duarte suggests that
+slidedoc templates be made available at the organizational
+level and then they get reused over and over
+and over again in various configurations
+with various layouts. Here is where we are with current design trends with fonts. You're seeing a lot of
+design with sans serif fonts. And serifs are like those little lines that are at the bottom of an f or the top of a t. If it doesn't have
+these little lines at the ends of the letters, then it's called sans
+serif, without the serif. And what's more popular
+now is to take a single font and use
+multiple variations on it. Different line weights,
+different sizes, bold and italics,
+or in some cases, mixing almost identical fonts. So you'll see an example
+where we use Helvetica Neue, which is what this slide is
+written in, for the headers. It's big, it's bulky. I like that a lot. But when I go to do text, sometimes I like text
+that's a little slimmer, so I can fill a little
+more text in the column. You can take a look whether you like that matching or not. If you think about how we often learned to write research papers, that we would have
+headers in Arial and we would have text
+in Times New Roman. We're not quite in that era. And the reason that
+we're going to talk about fonts is because you've all gotten some kind of document, some kind of visualization,
+where it's entirely clear they made it in Microsoft. It's got that Microsoft
+blue and orange, it's got the Calibri font or the Cambria font, and so
+it looks just kind of everyday. And our goal here is for
+your work to stand out because there are visual elements involved that take it to
+up to the next level. And these are all
+things you can do without being a graphic designer. Obviously, if you're in
+a company that does need graphic design or you're
+working for a big client, you would then talk
+back and forth with the graphic designer
+about timelines and needs and style and they would help
+craft that around you. If it's just you, this why I like
+Helvetica Neue, for example, and why I've used
+it throughout this course. And that's because
+with a single font, I can get it to look all
+of these different ways. So I could do a caption
+in an ultralight or thin, but I'm going to use
+bold for the headers. But if I needed to
+squeeze a lot of stuff into a small subheader, I could use a condensed font. This is the kind of thing that you
+are going to be looking for. And some cool fonts
+you have to pay for and some fonts you
+can download for free. And we're going to look
+at a few of each. So a couple of fonts
+that you can purchase. One is classic Helvetica, the classic twentieth
+century Swiss font. The Microsoft version
+of this is Arial, and Arial does look just different enough from
+Helvetica and Helvetica Neue that it can reduce some of the specialness, but if it's
+what you got, you can use it. I also like Frutiger.
+I like Segoe, which looks a lot like Frutiger. They're both kind of tall fonts. I don't own both of these, so I can't show them to you. I had a student use
+Brandon Grotesque. And there's a wonderful
+reference guide for fonts called Typewolf, which will keep you
+introduced to what's new. Now let's take a look at what you might play with in Google Drive. And remember that every font has its own personality and every font might have
+a better purpose. So some of these
+look more formal, some of these look a
+little bit more playful. Now, what I've done is
+I've shown you what each one looks like
+in just a basic font, then I've shown it
+in all caps, and then I've shown it in a
+sample sentence. So for example, I really
+like out of this collection, I use Raleway a lot, although sometimes that
+it is a really wide font, so sometimes it takes a lot
+of space to use Raleway. And I really like Nanum Gothic
+because it looks the most like the font
+the Economist uses, which is a proprietary font. Segoe looks a little like
+that, and so does Frutiger. We're going to look
+at what happens when we use Montserrat. I think there are really great
+times to use it and there are times when it's
+maybe not the best type. You are, of course, welcome to explore other forms as well. What we are really
+encouraging you to do is just to bring a little style
+into your font choices. And here are some that I like that you could download if you like. And I think it's a lot of fun to pick out different fonts, so take the time to get something
+that looks good to you. Now, this is my
+"absolutely not" list, with the exception
+being if it's in your company's style guide
+to do it, then it's okay. Now, Arial is on my don't
+use list because I have other fonts that look a little bit more
+stylish than Arial, but a lot of folks
+still use it and in the right weight and at
+the right size, it's okay. So it's all right
+to be on your list, just not on my list. I take Calibri and Cambria off. Those are the two Microsoft
+fonts, and I can avoid those. Courier looks like a typewriter. That's not very graphically
+appealing in a report. And Times New Roman
+is the expected, and I'd rather look at something
+a little bit different, It goes without saying
+that we're not going to use cute fonts. If you remember seeing Avatar, that logo was done in Papyrus. It's like a little theme. We don't need to do that. We don't need to have like
+fancy cursive letters or curlicues. And this one's the real deal breaker,
+never Comic Sans. Now I know a lot of teachers use Comic Sans when they
+send notes home. But the reality is that when you're writing a
+letter to a grownup, Comic Sans does not command
+a lot of authority. So we're taking that off
+the list completely. Now let's go on and talk about
+preattentive attributes. And this is a kind of funky
+term that refers to the font styles and colors and other things that
+clue our lizard brain into noticing some things
+more than others. I'm going to walk you through
+the ones from the textbook, and we'll talk about each of them and what
+the impact might be. I'm going to do this
+because we're trying to minimize the cognitive
+work for the reader. We're trying to make sure that they can quickly discern what's important and what isn't and to focus their
+attention there, even in something as small
+as the executive summary. Let's take a look
+at this question of preattentive attributes
+and use of different fonts. So this is the same
+Declaration of Independence paragraph
+that you're going to see many times in many forms. And in this form, all
+I've done is use bold to separate the headline
+from the text itself. So the bold tells our
+eye to look to the top first, and nothing
+more to say here. Here's what it would look like. This is a free downloadable
+font, Webly Sleek UI. It's a much narrower headline, but the body text looks great. It's thin, there's lots
+of white space around it, it's easy to read. I don't love to use
+this font for a header. I would tend to use a Helvetica Neue because
+it looks a little too much like Calibri and that looks a little bit too
+standard for my taste. So here they are
+combined together. I kind of like that look. So here we have the same Helvetica I showed
+you before. No changes. Let's make an adjustment, and each of these will focus on a different piece of text,
+if you want to keep track. So one thing we can do is we
+can just change the color of certain text and now that
+one piece stands out. We could bold this text, it would stand out even more. We could make a font bigger, and suddenly that becomes
+the most important thing. We could put boxes around it. This is the approach that
+your textbook author uses and I used to do these
+in PowerPoint. I'd draw a shape and then
+I'd make sure there's no fill and then I'd play around with the
+line weight a little bit. I don't love this. This is not my aesthetic, but it might work for you. I would rather have
+sort of a highlight effect. And those are the same boxes
+from the previous slide, but this time I
+took the line away, I added a fill, and I made the transparency of the
+color about 50 percent so that it wouldn't
+be so intense that it would sort of blare at you
+when it came out. You can bold text
+within the paragraph. You can underline.
+Not my favorite either, but sometimes
+you need some variety. You can italicize. Now in this case I
+italicized and I bolded it because just italicizing
+didn't make it stand out. So I often do use
+those two together. You can see how drawing out one thing is actually making you look more closely at one line of the
+text than another. You can space things out with the assumption that whatever's between
+the blank lines is really important. This is technically not 100 percent
+grammatically correct, so you'd want to use
+this one sparingly. You could also, and this
+one's not in your book, you can divide things
+into multiple columns. And what this does is it
+makes it easier to scan from the beginning
+of the line to the end. And one of the things you
+want to think about, if we go back and
+look at this one, you can see that from
+the beginning of the slide to the
+end of the slide, that's a lot of words, right? And if we make it
+a little shorter, we can actually skim through the lines a little
+bit more quickly. But it's also possible
+to overdo this to the point that you
+only have two or three or four words on a line, and then it becomes very hard to get into a rhythm of
+understanding what's being said. Here too, we've changed
+the title to see if that would draw out any extra
+oomph from things. Here we've switched fonts, that's the Webly
+Sleek font we added, and we added this shaded box. Again, just drawing a shape in PowerPoint and filling
+it in with a text. This is also Webly Sleek, but it's an italicized
+version of it. Way to trivialize the
+Declaration of Independence, huh? But super-interesting. With each of these, you
+should be feeling like your response to
+them is different, and you'll want to play
+around with what when you're doing your work
+is the best way to go.

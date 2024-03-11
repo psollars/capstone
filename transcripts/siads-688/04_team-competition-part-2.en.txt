@@ -1,0 +1,222 @@
+Hi, everyone. We
+have gone through the theories of group identity, and a lab experiment
+that demonstrates that group identity or team identity can increase people's
+contribution to public goods. What we're going to do now is to look at the
+application in the field. Some field settings actually spontaneously figured
+out that team is the right way to
+go and we're going to take a look at a
+particular example, which is recommending teams for most pro-social lending evidence from online microfinance. This is a paper that we have
+touched upon before in 631, but it's from the perspectives
+of instrumental variables. This experiment sets
+up an example of how to use instrumental
+variables for causal inference. What we're going to do here is to look at it from a
+different perspective, from the perspectives of identity and pro-social behavior. The problem that Kiva tried to solve is the problem of poverty, that is, three billion
+people in the world subsists on $2.5 per day. Oftentimes in
+developing countries or low income countries, micro and small enterprises collectively are the
+largest employers, but their growth is
+often stifled by lack of access to credit or other
+financial services. Microfinance programs
+provide small loans and other financial services to these micro and
+small enterprises. We're going to take a look
+at a particular setting, which is online
+peer-to-peer microlending. The site that we're going
+to examine is kiva.org. Anybody can join
+Kiva if you haven't. You can feel free to join
+it after today's lecture. Anyone can join that site
+and make a loan to any of the entrepreneurs featured
+on the site at $25 or more. Importantly, from the
+lenders perspective, these loans are zero interest. Since its founding, Kiva has made 850 million loans in total, and 1.5 million borrowers
+from 84 countries and these loans came from 1.4 million lenders
+across 208 countries. The repayment rate is very high, it's above 98 percent. After Kiva was founded, the founders encountered
+a challenge, which is what you
+see on the graph, which is the number of lenders on horizontal axis and the number of loans on the vertical axis. It has this distribution that we see often in online communities, which is, fewer lenders made many loans and many
+lenders made fewer loans. Actually a third of
+the Kiva lenders have never made a loan. From the perspectives of
+the website designer, it would be good to know
+how one might increase lender participation
+and the solution that they came up with
+is team competition. In 2008, Kiva setup lending teams and
+its CEO at the time, Premal Shah said, "The
+idea of teams is to make Kiva as fun and as
+compelling as possible." The Atheist team captain
+said that the whole idea of teams in the Kiva contexts implies that there
+should be competition. After they set up this
+mechanism of lending teams, there have been more than
+37,000 lending teams, but you also see a lot of
+heterogeneity among teams. Here's an example of a Kiva team, and this is Team Canada. What you see here is that the team has a common
+statement which says, "We loan because, so little
+means so much," and so on. There is a statement
+for the group, and there's also intergroup competition
+through Kiva leaderboard, which we'll see you soon. The other feature we know from echoing
+[inaudible] and lots of social psychology
+experiments is that communication within a team facilitates identity building, so each team has its
+own dedicated forum. This is a snapshot of the
+Kiva team leader board. There are different ways
+of sorting the teams, but what is a leaderboard? It is essentially intergroup
+social comparison. If we zoom in, the
+top two teams tend to be and has always been the
+atheist and the Christians. Our research question in this
+stream of research is to observe that many of the Kiva lending teams
+are identity-based. It's based on their
+university identity, their location, their country identity,
+or religious identity. One question is whether joining
+a team increases lending, and this is the first
+field experiment that we will discuss. How effective is
+the team mechanism? The second question is, why, what makes some teams
+more effective than others? There's a separate paper that looks at the second question. I'm going to summarize the second part
+very, very quickly. The first one, whether joining
+a team increases lending can be seen on this graph. On the horizontal axis, you have the time where
+we have the data. This is aggregated by month, and on the vertical axis is the number of
+loans per person. You have two types of
+observations on this graph, and so the bottom ones are dark and the top ones are light. The difference is
+that the dark ones, the black dots are people
+who never joined a team, and the light triangles are
+people who joined the team. If you look at the end
+of the observation, which is 2012, you see
+a gap between the two, and it's easy to conclude, it's tempting to conclude
+upon observing the gap that people who belong to
+a team are more active, they low more than those
+who never joined a team. However, we encounter a problem. If we take a look at
+the vertical line. The vertical line is August 2008, and that's where
+teams were created. If you look towards the
+left side of the RECOLA, you will realize that
+people who joined a team actually were more active
+even before teams existed. The gap existed
+before teams existed, which says that there
+might be selection. This is a problem that we have to deal with if we
+want to look at the effect of teams on lending
+on pro-social activities. This is a set of hypotheses. The first one is that
+lenders would be more likely to join teams if we make
+good recommendations. This is essentially a combination of recommender systems
+and field experiment. How do you define a
+good recommendation? We can look at various ways of recommending
+people to teams. One is location similarity, which is based on homophily, and that's based on a Kaggle
+competition that a subset of the authors conducted looking at various algorithms for
+predicting who joins which team. The second one is long
+history similarities. It's again based on homophily. Long history similarity
+basically says that if a lender have made a lot
+of loans in the past to, let's say borrowers
+from Kenya and this team also have
+made a lot of loans, then they have similar
+lending history. That means maybe they care
+about similar things, and it makes sense to recommend
+this team to this lender. The last bullet point is
+leaderboard positions. Again, this is about status. The second conjecture based on social identity
+theory is that users were lent more after
+they join teams. It's also convenient to convince Kiva to run
+this experiment with us because 82 percent
+of the Kiva lenders actually do not belong to any team at the time
+of the experiment. The experiment design has
+a fairly restrictive set of simple selection criteria
+which was imposed from Kiva. That they haven't joined
+any team which is sensible and they have location information
+in their profile. That is what we're
+going to use in one of our recommenders and they
+allow marketing e-mail, set their pages
+public and have made at least two loans in
+the past six months. These are already
+fairly active lenders. It turns out that at the
+time of the experiment, about 70,000 lenders
+met these criteria. We conducted a 3 by
+2 factorial design. On one dimension, I mentioned that we vary their
+recommender algorithm. It could be based on
+location similarity, long history similarity,
+or leaderboard position, and on the other
+dimension we vary whether the reason for the recommendation
+was explained or not. On the control condition, we actually have two sets
+of control conditions. One is no contact. Random subset was
+never contacted. Then another subset was
+told that their teams, but there was no recommendation. This is the placebo condition
+or the team exist email. It will send out from Kiva
+and it says, "Hi Wei. Since you're such an
+awesome Kiva lender, we wanted to let you know about a fun feature of the Kiva
+experience Kiva lending teams." At that point, if you
+click on the URL, you'll be directed
+to the team's page. There's a generic
+paragraph about what teams are and the bottom part is, "Check out some of
+the thousands of lending teams to find the right one for you,
+" and "Thank you." Every email message contains
+these four paragraphs and the treatment is inserted in between the top two and
+the bottom two paragraphs. This is what it looks like. There's a treatment which says, based on your past lending, okay, these are
+recommended to you. This is how we insert
+the treatment, which is a paragraph in between the top two and the bottom two. For location similarity,
+we would say, "Other lenders who live near you enjoy being part of these teams, " and "Based on
+your past lending, people who have made similar loans enjoy being
+part of these teams, " so this is the lending
+history similarity, and "Some of the most
+popular teams are." Those were the top three teams at the time on top of
+the leaderboard. The first thing we care about is the treatment effect on the likelihood that
+someone joins a team. What you see here are the
+eight experimental conditions. The green bars are that they joined a team that's
+not recommended. The red bar indicates the fraction who joined a
+team that was recommended. The No Contact condition. Some of the people that we didn't contact from teams themselves, so some people joined the teams. For Team Exists condition, they also a fair amount
+joined the teams. On the left panel is all lenders, so these are our intent to treat. On then on the right panel, our lenders who open our email so these are
+our treated group. What you see here is if you
+focus on the right panel, the left panel is similar, but the effect is not as
+strong as the right panel, is that the location with
+explanation seems to have the largest effect on both the proportion who joined our recommended teams and
+also those who joined a team. This is a summary of the treatment effect
+on Joining Team. Every treatment
+except Team Exists did significantly better
+than the control. Location with explanation has the largest effect
+so that what you see on the right panel. Among those who opened e-mails, two treatments did
+significantly better than team exists or the placebo. The one is location
+with explanation and that effect also survives multiple hypothesis
+testing correction. Lending history similarity
+with explanation. What's significant but
+after you correct for multiple hypothesis testing,
+it becomes insignificant. The second part that we're
+most interested in is, after they joined teams, what happened to their behavior? What we use here is
+difference-in-differences regression on the average
+daily lending amount. We used a two-stage lease
+squares IV regression, so instrumental
+variable regression to nail down the effect of teams. The first stage is, what is the likelihood that someone joins a team
+after receiving an email? For that one, we know
+that whether you receive an email or not is randomized by the experimenter and we find the email has a
+significant effect. We can compute the F statistics. If you receive an email, you're more likely
+to join the team and the F statistics is large, indicating that is a
+strong instrument. In the second stage, we look at conditional
+on joining teams. What is the effect on the amount you lend in the one-day window, which is column two,
+the seven-day window, column three, and
+the 30-day window, which is column four. What we see is that the
+one-day effect is about $300, the seven-day effect
+is $56 per day, so that's about $400 per week, and then the effect
+becomes insignificant. Recall, if you run instrumental
+variable regressions, it needs to satisfy
+two conditions. One is inclusion restriction, so you want to have a strong instrument in the first stage, and the second one is the
+exclusion restriction. In the sense that the instrument, in this case, the
+email by itself, doesn't increase
+lending, and that we can verify from
+another experiment. This is the effect of team
+membership on lending amount. This just [inaudible] out the one-day effect and
+the seven-day effect. You also see a tiny
+little green bar on the right hand side. It's just for comparison reasons, so this is the median Kiva
+lenders lifetime contribution, which is $25. What this demonstrates is that team membership
+has a significant, large impact on activity
+on pro-social lending. Let me summarize the effect of team membership on
+pro-social lending. The question that we asked at the beginning of
+this research is, whether joining a team
+increases lending. The answer is yes from
+two sources of data. One is from the field experiment
+that we just presented, and the evidence is that the local average
+treatment effect is about $392 a week
+for the first week. If you look at the API data that we downloaded
+from the Kiva website, the effect is about 1.2
+loans per lender per month. This effect, we had
+six years of data, so it's a fairly
+long-lasting effect. The second question is, what feature of the team, which part about the team
+make people more active? For that, we actually looked
+at the forum messages and we find that
+successful teams tend to share or borrow URLs. They coordinate
+their effort to push one borrower or a couple of
+borrowers to the finish line. That's the coordination aspect. The other one is team
+captains can set goals for the team and encourage them to compete
+with the outgroup. In this case, the outgroup is other teams on the Kiva
+leaderboard that is close to you. We have a separate
+field experiment where we separately manipulate the coordination versus
+competition aspect to see which one has a strong
+effect on lending activity. We can see that team is an effective mechanism
+for doing good. This is in the Kiva context. Our next topic we'll be
+looking at WikiProjects, which is to look at people's
+contribution behavior when they're on or off a group structure like
+a team structure.

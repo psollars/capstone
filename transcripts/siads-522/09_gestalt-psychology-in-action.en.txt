@@ -1,0 +1,70 @@
+Welcome back to
+perception and cognition. I want to give you an example
+of how we might use gestalt psychology for
+a real-world task. So here we're going to have again our domain abstraction
+technique and algorithms. So these different layers that we're going to think about. In this case, I'm going to
+give you an actual task. So I have a social
+network analysts who's trying to find
+connected individuals. So they're given a bunch of data, like maybe it's
+their Facebook social network, maybe it's something from
+Twitter, or whatever it is, and the goal here is to
+find connected individuals. Abstractly, that
+maps to the problem of tracing connections
+between entities. So each entity might be a person, and we're going to track
+the connection between them. The natural technique to do this is using
+a node link diagrams, so something that
+looks like this. This is a very standard technique that we use in a network diagram, it will help us identify the connections between entities, in this case, it might be people. Now, we have another choice, we could use color
+for link endpoints. So we could make
+an equivalent visualization in terms of what it can do using
+this particular technique. So here we have our entities A, B, C, and D again, and we have these little
+different colored shapes that basically are
+representing the endpoints. So A and B, you can see are connected because they both have these little red circles, B and D are connected, and C and B are connected. This is a way of using gestalt psychology because
+of similarity and so on, but we're going to prefer the one on the left because
+it's easier to read. So gestalt psychology
+connectedness is actually going to be
+the thing that dominates. So both things are appropriate, but this is a situation where this particular kind of
+gestalt psychology principle, this notion of
+connectedness is going to drive our
+visualization choice. Aside to this is that there
+is this notion of precedence, and if you remember this example where we had rows and columns, and our interpretation switched. So a particular
+gestalt principle, that is connectedness,
+overwhelms the other ones. So that's an important thing
+to consider when picking between different kinds
+of gestalt principles. So we have these different
+kinds of things. Let's add a task. So we're going to
+add a specific task, which is not just finding
+connected individuals, we also want to find
+communities, that is, groups of people that
+have some kind of interesting relationship
+between each other in the visualization. So abstractly, what that maps to is visually isolating
+related entities, so being able to discern that this group is different
+from this other group. One way of doing that is to use communities and color-code them. So this is a perfectly reasonable way to
+encode this data. So we're going to use
+node link diagram, and then encode
+communities using colors. The output of this,
+unfortunately, looks like this. So if we're not
+thinking about where the placement or
+how placement should factor in, and we just use colors and links, what we're going to
+get is this kind of spaghetti diagram, where it's impossible to now
+detect these communities. Even though they're
+colored differently, we might be able to scan through, we might be able to
+trace the lines, it's actually really
+hard to work with. So this isn't quite
+exactly what we want. So this isn't a great example. Instead, what we're
+going to rely on is a different kind
+of gestalt principle, which is we're going to place
+things near each other. So we're going to use this
+notion of proximity instead of color to drive communities to basically sit
+next to each other. So this is a visualization where we've retained the color, but it'll still work
+even without it, and we're able to detect
+these communities and the connections between entities looking at
+the visualization. So gestalt psychology
+here will give us this great feature of
+being able to find both communities and
+the relationship between entities by using this
+particular kind of encoding. The way we actually do this is use of force layout algorithm, and this will be something that we'll talk about much later. But this is a technique that basically make sure the points that are highly connected sit next to each other visually. So this is called force layout. So some takeaways, gestalt
+principles are going to be great in both building and
+understanding visualizations, but it's going to be
+critical to consider what is the simplest
+explanation that people will take away when looking at the visualization on the screen the one that you've created, the new technique
+that you've designed. With that, thanks for listening.

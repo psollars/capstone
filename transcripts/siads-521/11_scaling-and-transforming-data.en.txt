@@ -1,0 +1,183 @@
+So far, we've learned how
+to make visualizations and compute some simple statistics
+to describe a data. As we continue along in the course, we want to find more ways to make
+comparisons between various datasets. Some of which might involve
+different measurement scales. We might need to scale our data or
+use some sort of transformation, which is what we'll be
+discussing in today's video. Along the way, I'll talk about how
+transformations can help us deal with data that aren't normally distributed. The effect that these transformations
+have on visualizations. And how they can both help or hinder how
+we make sense of a particular problem. So with that, let's get started. All right, so let's get started and
+just import some of our usual suspects. So we'll import numpy as np,
+import pandas as pd, import matplotlib.pyplot as plt. Let's say that we're trying to compare
+how students perform on college entrance exams at two different
+fictional high schools in the US. One in California called Sunnydale High, where a large majority
+tend to take the SAT. The other in Illinois is called Shermer
+High, where students favor the ACT. Is there a way for us to tell how these
+two schools stack up against one another? So below, we've collected some samples
+of scores from Sunnydale High and Shermer High. SAT scores range from 300 to 800 points,
+so we'll create some data
+points to map onto that. So we'll do SAT_scores = 690,
+330, 600 and so forth. And the ACT scores range from 1 to 36, so we'll create some ACT scores,
+24,18, 32, 22 and so forth. Let's go ahead and
+store these values in a pandas dataframe. So columns = ["SAT" and "ACT"], score_df = pd.DataFrame(np.array([ SAT_scores and ACT_scores]). And let's print those
+out to check them out. To make a reasonable comparison, we're going to need to
+transform the data in some way. Specifically, when I talk
+about transformation, all that means is that we're going to
+apply some function to each input. And get the new outputs. So something as simple as X- 0, or
+X + 0 counts as a trivial transformation, as does a much more complicated
+expression as this one. Of course, adding a zero isn't
+particularly useful transformation. And as for the second one,
+it's clearly useful, but not something we'll have to worry
+about [LAUGH] in this course. If you're curious,
+it's actually a Fourier transformation, which can be useful in applications
+relating to time series data. And we won't dive into that here. I'll be sure to point out
+the essential transformations that you're going to run across when
+you're reading other people's analyses. And provide you with all the tools
+necessary to get started on your own. Now, relating to transformations, back to our original question
+regarding test scores. We can see that the difficulty comes
+from having too many different measures. Scaling allows us to use
+the same measuring stick and start to draw some conclusions
+based on our data. One way of scaling data is to
+use a max and min normalization, which transforms all of our
+values between 0 and 1. So that would look something like this. However, in our particular case,
+it might be more helpful to look at a standardization, or
+in other words, compute z-scores. Recall that this just captures
+a difference between your data point and the mean, relative to the spread
+of the overall distribution. So it would look something like this. Now, let's go ahead and
+pause for a quick refresher. Try your hand at calculating z-scores. Instead of using the raw scores, we've used the z-scores to
+compute the mu you and sigma. And then looked at the national average
+and standard deviations for both exams. So that we can benchmark each school, relative to how the rest
+of the country performed. And this is where we got the data. So then we can calculate that, or input that as a new
+variable as SAT_mean = 527. SAT_standard deviation at 107, ACT_mean at 20.7 and
+the standard deviation at 5.5. With that info, we can then calculate and normalize dataframe by taking
+the SAT_norm equals score DF sat- the SAT mean divided by
+the standard deviation of sat. And the same for ACT. So we would call that
+ACT_norm = (score_df["ACT"]- the ACT_mean divided by
+its standard deviation. And then storing this into a new
+variable we'll call normalized_df. So normalized_df = pd.dataframe ({'SAT' : SAT_norm, 'ACT' and then ACT_norm. Let's go ahead and plot the normalized
+SAT scores from Sunnydale and see what happens. So plt.hist(normalize_df ('SAT') and let's use 12 bins. Even though we haven't actually
+discussed histograms yet, we can still get a vague sense
+of what's going on here. Specifically, note that it
+resembles a normal distribution. There's a hump somewhat left of
+the center that tails off on both ends. Now, we'll repeat the same thing for the
+normalize ACT scores from Shermer High. So plt.hist normalized ACT this time and
+again with 12 bins. As you can see the distribution from
+Shermer High seems to be shifted to the right ever so slightly,
+even compared to Sunnydale from before. However, just to make sure let's
+print out some centrality measures. So print Sunnydale normalized mean and the median and let's do the same for
+the ACT scores. And indeed both mean and median for
+Shermer High are greater than those for Sunnydale, which is just what we expected. Admittedly, this isn't
+a very rigorous approach. But it does show us a simple
+transformation combined with some basic visual expiration is an effective way
+of getting some quick insights about our data. At the end of this module,
+we'll talk about and take a look at some procedures to more
+confidently answer similar questions. Using grounded statistical techniques. Of course, while we can standardize data,
+this doesn't necessarily mean that the result will actually
+follow a normal bell curve, if the data aren't normal to begin with. This can pose a challenge when we
+want to apply statistical tools that assume some degree of normality,
+such as a z or t-test. Fortunately, transformations can help
+us address this issue quite well. Now, for a follow-up question, what if
+we had something that was left skewed? To illustrate, this we have obtained data from University
+of Michigan's academic reporting tools. For the EECS281 course,
+which is Data Structures and Algorithms. We've changed the final grades A plus,
+A and so forth into their corresponding
+grade points instead. Where we've assigned a plus a 4.3. So in this we'll have an n of
+students being just over 10,000. So 10,312, and we'll input our grades, percentages, counts, and let's plot this. First of all, note that this
+distribution is negatively or left-skewed because it has
+tails off to the left. For left-skewed data,
+we can use the power transformation. In this case,
+let's cube the grade labels and then renormalize to our 4.3 scale. So transformed_grades and
+we'll do the np.power(grade_labels, 3). Transformed_grades = the
+transformed_grades divided that by the max transformed_grades times the 4.3 to
+get it back on our scale that we like. And then we'll print those, and plot them. With plt.bar transformed_grades, counts, and we'll apply the width at 0.1. See how we've curved the grades? Rest assured, there won't be [LAUGH]
+any downward curving in this course. Notice that the plot looks a lot closer
+to a normal distribution, even though this does have the effect of compressing
+some of data points along the right side. And creating gaps towards the left. This is just because we chose
+to discretize the grades. Rather than using
+an individual data points, which would lead to something
+more continuous-looking. Let's look at another reason why
+we might want to transform data. Before we dive into this example,
+we'll give you a bit of background knowledge on Newton's
+second law of motion. Which states that force is equal
+to mass times acceleration. Rearranging, we see that a = F / m. In other words, the faster you
+move something to accelerate, the more force you'll need when you apply. And if you are pushing or
+pulling with a constant force, then the more mass an object has
+the more it will resist motion. Or have a smaller acceleration. Now, what I've mentioned probably aligns
+with your day-to-day intuition and isn't shocking. But let's see what insights we can gain
+from this relatively simple equation to help us. Let's turn to a popular Canadian sport,
+curling [LAUGH]. Let's say we've given some
+curlers stones with various weights ranging from
+half a kilo to 20 kilos. And then apply a roughly constant force. So mass = np.arange(0.5, 20, 0.5) and then measure the acceleration
+using some photo sensors. Let's plot and see the results below. We want to find out how much
+force the curler is applying but it's difficult to tell just by
+looking at this curve above. Can we transform one of the variables
+to look at something that's a bit easier to deal with or work with? Well, if we take the reciprocal
+of mass and call it x, we'll get a = Fx, which looks awfully
+like the equation for a line. Let's try it out. Okay, we can plot it using plt.scatter(1
+/ mass, and acceleration). Linearizing a function comes with
+benefits aside from just looking easier to work with. For instance, while we'll save
+the details of this for later, we can plot the trend line and
+get the slope and intercept of the line. So let's do plt.scatter. Let's do the slope and
+intercept of the line of best fit. And plot this line, With with force F and Newton's above it. The slope of the line corresponds
+to approximately 50 Newton's or 11 pounds of force, neat. In case you're interested,
+we posted an optional link to a discussion on other fun facts and
+calculations regarding curling. So to recap, transformations allow us
+to linearize functions, which may be easier to manipulate or allow us to
+infer other details were interested in. Now, at this point you might be thinking
+that transformations feel a bit, well, unnatural. Or that it's not quite clear what
+techniques should be used and when. But transformations do often work well
+in practice and you'll gain an intuition as we work through more
+examples throughout the course. In fact, I'll bet you were probably
+already familiar with the concept before this lecture. For instance, in many real-life
+situations skills involve transformations such as the pH scale
+used for measuring acidity levels. Or the decibel scale used for
+measuring sound waves. Note that the extreme range of values,
+like sound, pressure in this case measured in micro Pascals,
+is pretty inconvenient to talk about. Because it spans several
+orders of magnitude. That's why we discuss how loud
+a sound is in terms of decibels. With that said, it's important to
+note that going from say 40 decibels to 80 decibels does not mean that
+the source becomes twice as loud. Since the scale is log transformed,
+the difference is actually a hundredfold. That's equivalent to going from
+[SOUND] a soft whisper to having a diesel-powered freight
+train chugging away nearby. We'll end this lecture by
+going through a case study. The following data are the closing values
+for the Dow Jones Industrial Average. A stock market index of
+30 large publicly owned companies based in the US,
+from 1915 to 2018. Let's visualize this. Years equals 1915 to 2019, or the end of 2018 and
+enter our closing values. And plot this. You'll note that the most recent global
+2008 recession is clearly depicted here. Now, you might notice that the regions
+we've chosen involve a bit of subjectivity. For instance,
+The Great Depression is missing. For those of you who
+are familiar with US history, you know that there was a severe
+worldwide economic downturn in the 1930s. This was after World War 1 and before WW2. The unemployment rate
+reached a whopping 25%. Banks began to fail and there were
+tons of people lined up to withdraw whatever savings they had left
+as depicted in the images above. The Great Depression as it's called
+doesn't seem to appear in our plot though. Why is that? For starters, the Dow Jones used
+to be measured in hundreds. Whereas in modern times, we're talking
+about tens of thousands of points. Just the daily fluctuations
+might exceed a hundred points, thereby obscuring all the details in
+the left-hand region of the plot. So the ones around 1930. Since the rates of change seem to be
+proportional to index's current value, it might be worth exploring
+a logarithmic transformation. Let's see what happens. So we'll do log_closing_values
+= np.log and (closing_values). And then we'll plot that, voila! Now, The Great Depression
+is clearly visible. Even though a change of 30 points may
+seem minuscule nowadays on October 29th, 1929 or Black Tuesday,
+this was a 12% decrease. Which accounts for
+a significant portion of the giant drop off in the left-hand side of the graph. Note that there are a few other periods
+where the market seems to stagnate. And while it's still difficult to
+precisely pinpoint every major recession. We are able to make a lot more
+intricacies of the data where this was all concealed before we
+applied the transformations. So in closing,
+what transformations should I use? Well, the first is not
+a one-size-fits-all process. You should really start
+by exploring your data. Normalizing your data is a common and
+sometimes necessary transformation for applying later steps in
+a statistical pipeline. You can sometimes reduce skewness by
+applying the square root transformations. Reciprocal and logarithmic transformations are other
+useful transformations to know about. These transformations have visual effects. The right choice might
+make analyses easier or emphasize different features of your data. And the following article
+will be really useful and has a lot of the information that
+we've covered in today's session.

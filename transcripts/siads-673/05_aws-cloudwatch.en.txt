@@ -1,0 +1,65 @@
+Hello. I'd like to talk a
+little bit about CloudWatch. CloudWatch is Amazon's metric and reporting and
+log management tool. There's a couple of things that almost everyone uses
+CloudWatch for. Then there are some things that you can't use CloudWatch for. You can, for example, put logs from all of your
+systems into log watch. If you've got databases or
+you've used Amazon Studio, everything is going to
+show up in here as log. If you've got a lambda
+function, for example, you can come in here and see every one of that
+lambda function. It's useful. You've got
+to be a little careful. You are billed for the amount of data that go through these logs. You want to be careful
+that you don't run them out of space. You also probably want to be careful about this
+never expire thing, depending on if
+you're dealing with a regulated data or not, probably a month for log retention is
+probably about right. But what most people use
+CloudWatch for are alarms. You can write alarms for pretty much anything that can happen within your
+infrastructure. You can write alarms
+for CPU usage, you can write alarms
+for disk space usage. You can write alarms
+for pretty much any metric Amazon can track, anywhere across its
+infrastructure. You can do some
+pretty sophisticated syntax around these alarms. We set up an API
+gateway earlier, we can come down here and
+basically start writing, what if our data starts
+going higher or lower, whatever it may be based
+on what we're doing. This is the number of requests or the number of bytes that have gone
+through our data. You can see that
+we've run 89 bytes. That was not a lot. You can do this as min or max. You can even come
+down here and say, I want to do this based
+on an anomaly detection. Did I get a lot more
+or a lot less than I have in the past based
+on how this is configured? I can say, give me an alarm if I go 2X what I do on average
+at this time period. However, what most people should immediately set up an alert for, in whatever cloud instance
+they're doing for this. This is AWS, but Google
+and Azure both have the same thing, is
+billing alerts. You can come into
+here and you can basically specify where you want to basically
+send an alert on. At the moment, I am currently estimating a charge of
+about a penny a day. I'm probably not going to have any problem being
+able to afford that, but I probably want to
+be able to specify, if I go above 10 bucks on this account given
+that I'm currently spending a penny a day, that's probably about right, I want to know what's happening, and I can specify, I can get in here, I can
+say, "What do I want to do?" and typically use this
+to send an email. You can configure
+this to take actions. If you're running
+primarily EC2 instances, you could shut your EC2
+instances down based on this. Then when you want to send it, and so SNS is Amazon's mechanism but you could basically
+come in here and say, "I want to send a message to mlhess@umich.edu and add
+a notification here, and go through this, and figure it all out. I need to create a new topic. It works pretty well and you're able to go
+through and set up these alerts and then you
+don't get surprise bills. Probably the scariest thing that happens when you're using the Cloud is that
+surprise invoice. I've got a story of a
+student group I turned loose and they did something wrong and I got $128,000 invoice because they misconfigured something
+in the Cloud, and I gave them a Cloud account with no restrictions on it. We had a conversation
+with Amazon. Amazon was very gracious
+and refunded all of it. But it's really
+easy to spend money here and these
+alarms allow us to have a mechanism in place
+to know if you've exceeded a certain threshold and it gives you a little bit
+of peace of mind. Depending on the dollar amount, what I'll typically do is
+set up multiple alarms. I'll set up an email one and then I'll send up
+one that'll text me. If I hit 10 bucks USD, great. Given that my average
+is currently a penny, but if I hit 20, I want a text message. Something's really wrong. Setting up these alarms is a really useful tool
+to keeping track of your AWS bill in real-time. Do keep in mind that you
+do have to pay for these. They're not expensive at all and they save you tons of money. But keep in mind
+everything with Amazon, you are paying for. Thank you.

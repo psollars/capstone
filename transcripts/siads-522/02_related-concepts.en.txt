@@ -1,0 +1,267 @@
+Welcome back to Introduction to Information visualization. I want to talk a little bit about some related concepts
+that overlap with information visualization
+but are not exactly information
+visualization per se. Some of these you will
+have already seen. So scientific visualization is one example where those overlap. So this methane flame example, simulation it is again a representation of
+real-world data. You might see other kinds
+of visualizations. This one is that
+the Solar System of different planets and different
+artifacts within the sky and so the dots which
+are color-coded based on different properties are represented, and
+there's labeling. So in that sense, we do have some information
+visualization here. We're seeing this density,
+we're seeing dots. But again, it is a reflection
+of the real world. Each of the dots and
+its placement corresponds to the physical placement of
+the thing in the night sky. So these things
+exist and are again, real and so are not in
+the sense of the word abstract but this is not an abstract
+representation of the data. The other related concept
+which I want to bring up very briefly is cartography, so mapmaking and there are different kinds of cartography. Information visualization
+has some relation to them. This is a map of
+an island, Easter Island. It's a very nice visualization. You see the placement of the different statues
+on Easter Island. You see points, you see indications of where
+the peaks are. You see where the beaches are, you see the other
+islands and so on. This is all represented in this very nice map
+which has elements of information visualization
+like there is a little representation
+again of these sculptures. There's other things that are being used to
+represent towns. This is an abstract
+representation. You're not seeing the actual
+picture of the statue, you're not seeing
+an actual map or an actual satellite
+image of the town. It's a little bit abstract, but not quite to the point
+where it's separated from reality in the sense that
+information visualization is. But there will be tricks from cartography that we
+will use when we do information visualization
+and there will also be instances where we combine cartography and
+information visualization simultaneously for
+certain kinds of effect. So for example, here's
+a visualization of pressure during
+a particularly cold day I think this was 1986, I
+forget which date was. But you can see
+the different kinds of pressure and the difference. So these are called isobars. So in each region, we have different
+amounts of pressure. You can read that over
+here to the side. So we've overlaid
+this contour map on top of a geographical map that you might recognize
+as the United States. So this is a way of combining information visualization
+and cartography. Here's another example: This is a thematic map sometimes
+called a cartogram. This is a visualization
+of some census data. It is the number of people aged 20-24 in 2010 in the census and the color-coding that ranges from this light color down here, to this darker color over
+here represented the fraction of people living in that county in
+that particular age group. So you can see where there are hot spots
+essentially where there are lots and lots of people age 20-24 and places where there's
+very few people age 22-24. Depending on what it
+is that you're doing, this might be
+an interesting thing to look for in the data. So again, this is
+an abstract representation, that is the population
+as being represented and a color encoding overlaid on top of a standard
+geographical maps. This is a combination of cartographic principles with
+information visualization. So we will see that
+a little bit as we continue through our adventures through information
+visualization. The other thing that will be very familiar to
+you if you've taken exploratory data
+analysis most of you have are these statistical
+graphics and charts. So these are the tools that you use when you're analyzing
+different kinds of datasets and these will be very familiar to you depending on the tests
+that you've had, things like histograms over here to represent
+distributions of data, things like time series, understand how things change over time and the variability, things like line plots
+again also usually used for time and comparing
+different kinds of things. So multiple positions and walks whatever this data
+happens to be. Here's another set of examples. This is a scatterplots
+particularly dense one. These are called
+violin plots or some derivative of them and used
+to represent variability. So how many people are
+smoking for example, depending on the time of day, on the day of the week and this is another map which is showing, it's like an abstraction
+on top of a scatter plot. You can see the distribution on top and to the right here. So basically looking
+at all the data in this direction and generating the histogram and the way
+and looking at all the data in this direction and generating
+the histogram that way. So it gives you a summary view of the data over here
+on the right and on the top of the underlying dataset which has been summarized, so it's been aggregated in a way. So the visualization on this side might be represented in something
+that looks like this. Again, all used for statistical purposes for
+modeling the underlying data. Doing this allows you to
+see things like outliers, patterns, and the data and so on. A lot of information
+visualization will be taking some set of this statistical
+graphical techniques and combining them in
+interesting ways to build more sophisticated
+information visualization. So you can think of
+statistical graphics as perhaps a subset of a broader set of
+things that we will do in information visualization. So in statistical charts
+and graphics, often they will be static. Often they will require
+training for use. So you're modeling the data. You need to be able to understand
+how to read that model. So a histogram is not necessarily something
+that is natural for a person to understand and require some training for
+you to be able to read it. They are often highly
+focused on specific tasks, like finding outliers,
+finding trends. Whatever it is,
+they're very specific, and so often you will use multiples statistical charts and graphics at the same time to
+better understand the data. Information visualization
+and contrasts will often leverage statistical
+chart techniques. Again, we will use these
+things over and over again and combine and augment
+them in interesting ways. The last kind of related topic that I wanted to mention
+is infographics. Sometimes people
+confuse infographics with information
+visualization but they have some interesting
+distinct properties that I wanted to bring
+up very quickly. So this visualization on by
+Italian newspaper that shows different pieces of data about high speed railways in
+different countries. So on the top here, you have the different kinds of trains that are being used
+in different countries. Each of these maps corresponds
+to different continents, so this might be Europe, this might be in the US. This down here might be
+different places in Asia, some of these lines connect. So in Europe of course, there are different train
+tracks that connect. This arc on the side over here for each of the continents
+or each of the countries, basically corresponds
+to the trains that are being run and so you can see
+the speed of the train and for how long the train runs, so that is the length
+of the track. So the speed of the train, the velocity, let me
+do a different color, might be the width of
+the arc and the length of the arc might represent how long that particular train
+runs within that system. So this kind of visualization is very
+self-contained but it comes with a story about the different ways that trains
+are situated in the world. So there is a narrative that the author of this visualization
+is trying to push. They're trying to
+explain to you how different trains sit in
+the world and the fact that Europe for example has lots of high-speed
+railway that are well-connected whereas
+other countries or continents may not
+have the same thing. So this is an interesting
+narrative and again, it's intended to communicate
+something to you. It is self-contained,
+it is static, but it's still
+something that tells a story about the data but it is controlled by the person
+who wrote the story. That is they crafted
+the narrative in a particular way so that as you walk through this diagram, you're able to understand
+different things. But again, controlled by the narrative that the author of the visualization had in mind. Here's a different example
+from Paul Button. This is a nice diagram, one of many in a series showing different kinds
+of Internet of things, like when they emerged and how many people were
+using them and so on. You have this little
+timeline again, sort of a standard technique
+on the x-axis, and you have the appearance of different technologies
+when they appeared, how often they were
+used and so on. You see at this gray, at the bottom is a histogram
+showing you additional data, so all these things are being
+combined using ideas of statistical graphics and
+information visualization. But again, there's a story, and if you can zoom in closer you'll be able
+to see that there's a narrative to
+this particular story that is being pushed
+by the author and the visualization
+supports that kind of narrative understanding
+as you're reading. I'm going to show a couple of
+interactive examples next. What's become popular
+these days is to use the web to generate infographics that are both interactive and dynamic. So this is a visualization
+from the New York Times, and you can see here the different pieces of
+data as they're flowing, basically representing
+the probabilities, so if you grew up rich
+where you would end up, so rich adult, upper-middle-class
+adults and so on. Again, it's very
+dynamic, very engaging, you can watch the simulation
+happen in real time and basically get a sense of these different
+underlying probabilities. As you read down
+through the story, you'll get other pieces
+of this infographic that are embedded within
+the actual story itself, so there's a long piece
+of text that the journalist wrote and the
+information visualizations, that as a whole represented
+information graphic being embedded within the story
+to emphasize the data, explain the data, give context
+to the data and so on. So as you scroll through, you'll be able to see
+a number of these kinds of smaller visualizations
+that pop in, basically to explain
+what's happening and provide a better understanding
+of the underlying data. Again, the purpose of
+this is to teach you something about
+the underlying data or some set of insights that the author had as they were
+analyzing the dataset. Here's another
+example, this one's called the largest
+vocabulary in hip hop, it's produced by this
+organization called The Pudding, which produces a great number of really cool interactive
+visualizations, and I encourage you to go look at their website and try
+some of these out. In this particular example
+what they're looking at is the number of unique words used by different rap
+artists over time, so within their first
+35,000 lyrics for example. So as you're looking in this visualization and
+interacting with it, you're able to identify
+the rap artists that uses the most words and the ones who use the least number
+of unique words. You're also able to
+find specific artists, so you can target specific
+people to find where they sit, part of the article was about Wu-Tang Clan and
+it was a group of rap artists who use lots and lots of different
+words in their songs. So you can see when you filter
+just to the Wu-Tang Clan, you see the artist's pop-up
+that were part of the group, as a group, or as solo artists, and you can see where they
+sit and they tend to be on the more extreme end of using
+different kinds of words. As you go through
+this visualization, this infographic
+interactive again, you see other displays, so this looks like
+a little bit of a histogram and you can target a little bit and see how this has
+changed over time. So you can see that in the
+2010, the later periods, people were using
+fewer unique words, whereas in the 2000s people
+were using more, and in the 1980s you sort
+are in the middle over here. So this visualization
+is very interesting, it lets you compare
+rap artists over time, as you scroll down
+you can see how rap and hip hop are
+situated relative to things like rock and
+country in terms of the number of unique words and the diversity of the vocabulary. You can dig further through
+this visualization, it's kind of fun to play with, it's a really nice example of an interactive infographic that is built to support
+a particular story, again that the author
+has to tell. So the author has found
+some interesting insights, they want to communicate
+those to you, teach you about them
+in a specific way, and so they've built
+the visualization to support that task. So unfortunately people have started thinking
+about infographics as this great way of getting
+engagement which they are, but only when they
+are used properly, and so you see a lot of
+somewhat crappy visualizations. This is a little bit
+tongue and cheek, but you will see lots of
+infographics that show not much data actually that are interesting because
+maybe they draw your eye, they're colorful, they're
+visually interesting, but they don't actually satisfy any kinds of useful
+perceptual elements, they don't actually teach you
+anything in the end other than that's a cool thing
+on the screen. So a visualization like
+this is interesting but perhaps not for any kind of data purposes that we might have, so we will think about this as we think
+about visualizations but hopefully not build many of these kinds
+of infographics. Infographics have this property, just to summarize that
+they tend to be elaborate, they tend to be explanatory, there's a communicative intent, they tend to be self-contained often where the text is part of the infographic or
+the infographic is embedded inside of texts, they are frequently static, but as you saw there were
+some interactive elements. Most of them will be static, they're very
+traditional newspaper kind of idea that's
+been integrated to the web and added to based on the
+affordances of the web, like interactivity and
+dynamics and so on. But again, they have
+that element where they come from historically as
+newspaper articles, and so they share many of those particular
+characteristics of that layout, of that storytelling and so on. They may use information
+visualization techniques, but where we're going to think of them as being interesting as we can learn from this approach, so especially when we talk about communicative
+visualizations, we're going to steal
+some of the ideas from information graphics because
+they're going to be useful. The ideas of narrative,
+the idea of structure, the idea of guiding your eyes
+from place to place to place as you want to encourage
+a certain kind of reading, those will be useful to us as we create communicative
+visualizations. So there will be some overlap between information graphics and information
+visualizations that we will use to our advantage. So again just to summarize, information
+visualization is this, the use of computer
+supported interactive, abstract visual
+representations of data to amplify cognition, this is going to be
+an important concept but it overlaps with a lot
+of other topics, and we're going to try and leverage those as much as we can. The takeaways are
+that related concepts again are going to be useful,
+we'll be borrowing ideas. There are scientific
+visualizations and maps which are often
+like the real world++, so adding color to things that we observe
+about the real world, like the methane flame, or the map of the galaxy, or taking the maps and showing temperature or pressure
+on top of them. Then we have things like
+statistical charts and graphics and information
+graphics that are going to be useful to us when we think about analytical tasks in the context of statistical charts
+and graphics, we have an analyst task, we're trying to
+model the system and that's where statistics
+will play a role. Then information graphics, where we're trying
+to communicate, and that's where information
+visualization and communication intersect, and those ideas of narrative and storytelling will be
+useful to us as well. With that, thank
+you for listening.

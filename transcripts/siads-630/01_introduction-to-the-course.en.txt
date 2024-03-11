@@ -1,0 +1,42 @@
+Hi and welcome to the Master of Applied
+Data Science Course and Causal Inference. I'm Alain Cohn, an Assistant Professor
+at Michigan School of Information. In this course, we are going to tackle questions like does
+health insurance make people healthier? Is it worth sending your
+kids to a private school? Or should a business raise or
+lower its prices to increase revenue? You will learn how to answer questions
+like these in a convincing manner. These questions are causal in nature. That is, they ask whether something
+causes something else to change. But why is it important to understand
+the link between cause and effect? Well, anytime we make a decision
+whether it's in business or in our personal lives, we are making
+assumptions about how the world operates. That is, we make assumptions about
+how actions lead to certain outcomes. Very often these are simple actions. For example, if you hit the snooze
+button on your alarm clock, then the alarm will stop. If you hadn't hit the snooze button,
+then the alarm would have kept ringing. So, by hitting the snooze button,
+you caused the alarm to stop. In this example, it's relatively
+easy to learn about causality because when you do something
+you get immediate feedback. And through repetition, you gain
+confidence that the one thing you do, causes the other thing to change. But sometimes actions are more complex, or we have to wait longer
+to observe the outcome. For example, if you drink three
+cups of coffee every morning, does it mean that you will develop
+health issues when you're old? In those situations, it is much
+harder to identify cause and effect. Because, A, you have to wait
+longer to see the results. And, B, there may be other factors or decisions you make that
+could affect the outcome. So, how can we find out whether
+a relationship is indeed causal? The arguably best way to learn
+about causality is to run a randomized experiment. That is, you randomly assign
+people to one of two groups, and then you change what you're interested in,
+in one group, but not in the other. The problem is,
+that we cannot always run experiments. Sometimes it's too costly
+to run an experiment, and other times it's just not feasible for
+some reason. For example, it's probably not
+a good idea to force people to drink 3 cups of coffee every morning and
+then to wait 50 years to see what happens. So, we often have to work with
+observational data, that is, data where we do not have full control over whether
+people take a certain action or not. We simply observe whether
+people took that action. So, what can we do in those situations? During this course you will learn
+about five strategies to identify causal effects in observational data. This includes, matching, controlled
+regression, instrumental variables, regression discontinuity, and
+differences in differences. We will talk about the core
+ideas behind those methods, their underlying assumptions, and what
+kind of causal effect they're estimating? We will also study some examples, and
+do some number crunching ourselves. So, I hope you will enjoy this course.

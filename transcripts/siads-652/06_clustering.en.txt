@@ -1,0 +1,184 @@
+The next feature we're going to be looking at in this video, is going to be clustering or the tendency of networks to
+contain lots of triangles. First let's talk about
+triadic closure. Triadic closure is the
+tendency for people who share connections in a social
+network to become connected. There are multiple
+reasons why you may have triadic closure
+in a social network. The first reason might be
+a reason of opportunity. If you have two people who have a friend in common or maybe
+many friends in common, they're going to have a higher
+probability of connecting because they have more
+of an opportunity to meet each other
+in the first place. Another reason would be that, a person who has two friends who are not yet connected
+to each other may have an incentive to introduce those two
+people to each other, so they become friends and now the relationships are
+easier to manage, because now that three are
+friends with each other. From a sociological perspective, there are multiple
+reasons why you might expect that people
+who have friends in common, have a tendency for
+connecting with each other. What we're interested in
+from a network perspective, is how to measure this tendency. If you look at a
+network like this and you try to predict which are the edges that are going to
+arrive to this network next, triadic closure would
+tell you to look for those edges that
+close triangles. If you're making that prediction, you may think, well, maybe C and D will become friends because they're
+both connected to E, or maybe D and H also will become friends because
+they're both connected to E, or maybe F and H, or B and F, and so on. The edges that form triangles. But as I said, the question is, how can we measure the prevalence of triadic
+closure in the network? Keeping in mind that most of the time we have network data for which we don't have
+detailed time information, we don't know exactly
+when the edges came in the way that
+we simulated here, we don't know that the
+edges when they arrived, they were actually
+closing triangles. We just have a static
+version of the network, and we have to somehow
+look at that structure and assess whether there seems to be evidence that triadic
+closure is at play. The way we think about that is, basically by looking at whether there are lots of
+triangles into network. But there are a few ways that
+one can go about measuring triangles depending on the things you would like to control for. Let's look at the different ways that one can think about this. The first one is the idea of local clustering coefficient. The local clustering
+coefficient of a node, is the fraction of pairs of the node's friends that are
+friends with each other. Note that we're defining this
+for a specific node, so, before we think about
+the entire network, we're going to
+define this measure just on a node by node basis. We're going to take a node, we're going to take the
+friends of that node, and we're going to ask out of all of these
+friends of this node, what fraction of
+them are actually connected to each other? The way that this relates
+to triangles is that, if you think about it,
+if you have a node and that has to friends, and we're asking whether
+those two friends are connected to each other, or if they are connected to each other then a triangle
+would be formed. But again, we're doing this on a node by node basis first. Let's practice this
+definition by looking at the clustering coefficient
+of a few nodes here. Let's compute the local
+clustering coefficient of node C. Well, what we're going to
+need, is to compute the numerator and the
+denominator of this fraction. The numerator of the fraction
+is going to be the number of pairs of C's friends who
+are friends with each other, and the denominator
+is going to be the number of pairs
+of C's friends. Let's start with the denominator. The first thing to note, is
+that C has four friends, or in other words, the degree of C is 4. There's a useful formula that one can use to go from the degree of a node to the number of
+pairs of the node's friends. If we start with the degree of 4, we can get to the
+number of pairs of C's friends by
+using this formula, the degree of C times a degree
+of C minus 1 divided by 2, which is basically the
+degree of C choose two, and in this case, that
+would give us six. C has six pairs of friends, that is the denominator. Now, the numerator
+is the number of pairs of C's friends who are
+friends with each other, and in this case,
+what we see is that, we have two of those, A and B are connected, and E and F are connected, so, our numerator is two. That means that the local
+clustering coefficient of C is going to be
+one-third or 2 over 6. Let's go through another example. Let's look at the local
+clustering coefficient of node F. Again, let's compute the numerator and the denominator separately, starting with the denominator. F has three friends and there are three possible
+edges among three nodes, so, the number of pairs
+of F's Friends is three, and we can see that only one of those are connected
+to each other, namely node C and E, and so, the numerator
+is going to be one, and so, in total, the clustering coefficient of
+F is going to be one-third. Let's do one more that's going to look a
+little bit different. That's node J. Let's see
+what happens with this one. Again, we have the numerator
+and the denominator, but because J has
+only one friend, that means that the denominator in this case would be zero. There it's zero pairs
+of J's friends. J only has one friend. You're not allowed
+to divide by 0, so, our definition here doesn't
+work, is undefined. What we're going to
+do in this case, is we're going to define the local clustering
+coefficient of a node that has degree
+less than two to be zero. This is again the local
+clustering coefficient and is local because we're computing
+it on a node by node basis. We're not saying anything
+about the entire network yet, we're just computing this
+for each and every node. Now, how do we go from the local version of the
+clustering coefficient to a global version that measures
+in the entire network? What is the likelihood
+for triangles to appear? This would be the global
+clustering coefficient. There are basically two
+ways that we can do this. The first one is very simple, we just take the average of the local
+clustering coefficient over all of the
+nodes in the graph and that's our global
+clustering coefficient, which is a very
+common measurement. But there's another
+measure that we can apply, which is known as transitivity. What it is, is the percentage of open triads that are
+triangles in a network. Rather than measuring
+something local and then averaging over
+the local measure, we're going to directly ask, how many open triads
+are actually triangles, are actually closed triads? In this case, what we're
+going to do is we're going to say that
+triangles look like this, we have three nodes that are
+all connected to each other and an open triad is going to be a structure like
+this, what do we have? Three nodes but only two edges. One thing to note is that if we just have one single triangle, this triangle will contain
+three open triads. Would be this open triad with this two edges,
+this would be, there's another open triad with these two edges and then another open triad with these two edges. Our transitivity
+measure is going to reflect that three
+and it's going to be 3 times the number of close triads divided
+by the number of open triads or 3
+times the number of triangles divided by the
+number of open triads. These are the two
+ways that we can go about measuring clustering in a network or global version
+of clustering in a network. In general, they tend to be
+correlated with each other. If we compare transitivity, we're just taking the average local
+clustering coefficient but there could be differences. Let me try to explain to you how those
+differences come about. Both of them measure
+the tendency for edges to form triangles but what's going to happen is that
+transitivity weights nodes with larger degree higher. If we have a node that has very high degree and
+it happens to have a high clustering
+coefficient then transitivity is probably going
+to end up being very high. Let's look at an example. First of all, the node
+here in the middle has a small local clustering
+coefficient and that's because while some pairs of the friends of the node in the middle are indeed connected, most pairs are not, so you have these two
+edges here which are not connected and so on. The local clustering coefficient of this node in the
+middle is going to be low and this is the
+node with high degree. Whereas the nodes out here are going to have a very high local
+clustering coefficient. Each of them has two friends, and in every case they are
+connected to each other. So all of these have local
+clustering coefficient of one. When you think about the average clustering
+coefficient in this graph, what you get is that, because most of them
+have a value of one and only one
+has a small value, the average is going to be high. However, when we think
+about transitivity well, transitivity doesn't really do these node by node measurement, it just directly goes out and
+looks at all of the triads. In this network there are
+many open triads that are not closed and there are a few there closed but most of them
+are actually not closed. So transitivity in this
+network is going to be low. You can see how
+transitivity weights the nodes with large
+degree higher because nodes with high degree are going to create many more triads. If they happened to be closed, then the value would be high
+but if they happened to be opened and the value for
+transitivity would be low. Let's summarize what we
+see in this network, we have that most nodes have a high local clustering
+coefficient and the high degree node has a low local clustering
+coefficient. We are defining this case is that the average clustering
+coefficient is pretty high at 0.93 whereas it transitivity
+is much lower at 0.23. You can construct
+the opposite example in the following way, so look at this network. In this network we have that the low degree nodes have a very low local
+clustering coefficients, so all of these nodes here have local clustering
+coefficient of zero but they also have
+a very low degree. Whereas the nodes in
+the middle here have a very high local
+clustering coefficient as well as a high degree
+relative to the other nodes. In this network, most nodes have a low local clustering
+coefficient the once outside there are more of those and the
+high degree nodes have high local
+clustering coefficient. What happens in this
+network is that the trend is reversed. You have an average clustering coefficient
+that's low because most nodes have a low local
+clustering coefficient but the transitivity is high because the high
+degree nodes have a high local
+clustering coefficient and they generate a lot of
+triads that are closed. In summary, we saw that the clustering coefficient
+measures the degree to which nodes in a network tend to cluster or form triangles. We talked about the local version of the clustering coefficient, which is going to be
+applied on a node by node basis as well as
+a couple of ways of measuring this at a global scale for a single number for
+the entire network. For their local
+clustering coefficient, we defined it as the fraction of pairs of the node's friends
+are friends with each other. You take a node, look at all of the friends and look at all pairs of friends and ask
+what fraction of them are connected by an edge. In this case, for example, we saw that node C had a local clustering
+coefficient of one-third. Then when we think about how
+to aggregate all of this for a global version of the
+measure then we saw two ways. One was to simply average the local clustering coefficient
+over all of the notes. The other one was transitivity, which would measure the ratio of the number of triangles and
+the number of open triads. We saw that the transitivity puts larger weight on nodes
+that have high degree. Just like with the other
+measures that we've been looking at like this things
+and degree distributions. Next week we're
+going to be thinking about models that can also explain the levels of clustering that we
+see in real networks, which in general is very high. So we'll see you
+in those lectures.

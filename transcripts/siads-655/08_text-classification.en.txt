@@ -1,0 +1,178 @@
+In this segment, we're going to talk about
+one of the most common NLP techniques, text classification. For text classification, we're going to
+take some form of input, typically text, raw text, and try to predict
+a particular label for that text. These kinds of applications
+are everywhere, just to give you an intuitive sense. This might be taking an online comment and
+tried to label this toxic or non-toxic or, say, a news article and
+label it as news or fake news. Typically, will use supervised machine
+learning for text classification. And the main challenge in NLP
+is how do we represent text so that we can use supervised
+machine learning techniques. I like to say that text categorization
+problems are everywhere, just to give you a few examples. One might be language identification. So something that, say, your browser
+does to you to try the auto translate. Another example is toxicity
+classification, like we just said. There's authorship attribution,
+for example, some authors like to write
+under multiple names. And we'd like to figure out what's
+the true author of a particular document. Logical inference for trying to make
+some sort of semantic relationship or logical relationship between two pieces
+of text, both provided as input. And finally, a classic example is sentiment analysis
+that will use throughout this text. A central question is what exactly
+is the task we're trying to do? This is one of the first questions you
+want to ask when trying to build a machine learning classifier on text. You then want to ask, what is the exact type of data you
+like to use to apply the model? So particularly,
+what does the right text look like, and what kind of features might be in it? You have to think about
+what are the labels, the exact set of output space
+that you want to map the text to. And then a core question is, how do we want to represent the text as
+a set of features to predict these labels? So, let's look at one example
+task from text classification. In this case,
+we'll look at sentiment analysis. And we'll look at a particular
+formulation of sentiment analysis known as a document level sentiment analysis. Here, we're going to try it to label the
+entire text with respect to some sort of implicit target, something that is not
+necessarily said, as either positive or negative. This are everywhere, but classically,
+we'll see them in say, movie reviews or product reviews. But even some social media posts that
+are reactions to these particular events could be thought of as text that you could
+use document level sentiment analysis. I bring up this example to point
+back to our earlier question of what's the exact test. When we think about labeling
+things ad sentiment, there are other ways to think
+about sentiment as well. So, for example, we could think about
+aspect-based sentiment analysis where there's an explicit target. Say, something for a product like its
+battery life or its stream quality. We could even think
+about sentiment as tone. So here, this is something about what
+the reader feels is the sentiment having read a passage without
+an explicit or implicit target. So, for example, the child ran playfully
+through the field is a positive sentiment or I'm working on my NLP homework,
+again, is a positive sentiment. However, the hard rain kept falling as we
+searched for our car keys in the dark, that has a negative tone, and so we'd like
+to think that has a negative sentiment. All of these air very implicit, and
+it's really the implicit feeling that the reader gets from reading
+these that we think of. This is still a very useful task. Here's an example from Matthew Jockers
+analyzing the James Joyce book, A Portrait of the Artist as a Young Man, showing that sentiment as tone could
+still capture these broad narrative arcs. However, let's go back
+to our particular task, sentiment analysis at the document level. We'll look at things like move
+your views or product reviews. I do want to point to the output space, what we typically think of them
+is both positive or negative. But there may be other types of labels
+that could be needed, say neutral labels or thinking about documents that
+have both positive and negative. Even when we want to try to
+model things like sarcasm or where it's really ambiguous what
+the author was trying to convey. There are many applications for
+sentiment analysis as well. So here, taking arbitrary selection
+of tweets about a top tier program in data science. There's also things around product or
+opinion mining, public barometers and mood or forecasting where we
+try to take streams of data and try to gather some aspect
+of what the sentiment is. It's important that when you
+design your applications or trying to measure these types of things,
+you should ensure that you're train model really works on the domain and
+the type of text. So if you train it on product reviews and then say, apply it on tweets,
+that may be domains mismatch. And you may have to think about
+training your model in a different way. Thinking about training data for sentiment
+analysis, also, we want to look for text that has many features. Here's an example from Roger Ebert
+describing Apocalypse Now, it's a film that which still causes real, not
+figurative chills to ran across his spine. That's a good example
+of a positive review. We might contrast this with, say, a
+negative review, which is Robert Ebert for North, where he hated this movie. Hated, hated, hated,
+hated this movie, hated it. Some would say that's
+a strong negative review, and we'd like to have a machine learning
+classifier recognize it as such. To do this,
+we're going to build a text classifier. We'll take input pairs of x, y,
+where x is a particular form of text, and we want to map it to
+a particular output label. So, for example, x might be this
+array's loved it, exclamation mark, and y would be positive. We even might think of things like not
+too shabby as a positive label as well. I should point out that for a classifier,
+this doesn't have to be machine learning. It could be as easy as using if or else statements that sort
+of keep focus on keywords. However, most approaches will typically
+use a machine learning approach. Where we want to convert these text data, our Xs, into a representation
+of features of the text. Let's think a bit about
+the classification function itself. A classification function has two distinct
+components that we'll need to solve, the first of which is
+a representation of our text data. This is the core challenge for NLP trying to map it to some
+sort of numeric data space. The second is a learning method that
+defines the formal way to represent the relationship between the input
+features and the output label. We'll focus mostly on the first,
+so for machine classification, we're going to have to convert our text
+into some sort of numeric representation. And one simple but powerful representation
+is what's known as the bag of words. Here we're going to count how many
+times each word occurs in the document. Let me show you an example. Here I've shown you the review from
+Movie 1 in a particular column. Each row corresponds to how
+many times that word occurs. So for example, the word amazing
+appeared in the review for Movie 1 once. The column itself contains the word
+counts for all the words in the review. We can also show this as an example for Movie 2, which will have
+a different feature vector. The simple word counts often
+represent a simple but powerful approach as features for
+doing machine classifications. However, we could even go a bit further. One of the other common approaches
+is to think not just about words but combinations of words,
+these conjunctive features. We could use bigrams, which are two
+word sequences or trigrams, and ngrams will generalize this. Let me show an example of bigrams. If I have the review,
+the plot was not good. I could have the review features
+the plot and the bigram the plot. All of which are present, these
+conjunctive features are often useful in cases where say good is
+a feature by itself, which should signal a positive review. But the bigram not good should
+also signal a negative review. We could have the classifier try to look
+at both in order to make it a correct distinction. You might also notice that in this review, we have words like the which are not
+particularly informative for our particular classification
+task of sentiment analysis. We could try to do something like
+weighting words by importance. And one common technique for this is what's known as the TF-IDF
+mechanism for weighting. So the key idea is that not all
+words are going to be important and we'd like to make words with more
+importance to have higher values, essentially to do some sort of functional
+approximation on top of these values. So TF-IDF is going to
+be based on two ideas. The first is term frequency, where words that appear more
+frequently get a higher weight. The second is inverse document
+frequency where if a word doesn't appear too frequently
+that it has a higher weight because it's maybe more
+discriminative of a certain class. That said,
+there are many ways to calculate TF-IDF. To give you two common examples, we could
+simply use the count of how many times the term occurred in document for
+term frequency. And for document frequency, we could
+take the log of the number of documents divided by the number of terms, the number
+of documents containing that term. However, we could also log the count for
+the term frequency. And they're more complicated ones for calculating the inverse
+document frequency. They're even more complicated
+once return frequency. I point these out to say that you
+might see these other formulations. However, for NLP,
+most folks use the first row. The very simple definitions for TF-IDF. There are ways to add knowledge for
+representation beyond just TF-IDF or bag of words features. Ideally, we might want to add
+something that we know about. Let's say, does the review contain
+any words from a particular list, a list of words that might
+be known as the lexicon? We could think about, does the review
+start with a capital letter, or does it have proper grammar? We could even add information like
+what's the genre of the movie? So to do this, we can add knowledge from,
+say, a sentiment dictionary, and there are many of these,
+there's the MPQA subjectivity lexicon. There's several different
+lexicons from Hu and Liu. And there's one known as LIWC,
+which is the linguistic inquiry and word count, this is pronounced Luke,
+even though it's spelled like LIWC. To give one example, this is a sample of
+the MPQA lexicon for both positive and negative words. And we could add these as features to
+specifically two different categories or two different feature dimensions
+to our feature vector to count how many times words from each of
+these categories occurs in review. This could potentially allow a classifier
+to learn regular types of features and to generalize a bit better
+beyond the training data itself. So this gives us a potentially
+rich representation for doing sentiment analysis. We could think of things
+like only positive or negative words from our lexicon. We could look at bag of words. We get a conjunctions
+of words like bigrams. We could even add things like
+higher order linguistic structure, like what's the subject of the sentence. And together We can create
+a representation that works well in our setting. For the classifications function
+itself, this learning method for mapping the input to the output. There are
+many different classifiers use commonly in NLP. Starting from the easiest
+to the most complex, from Naive Bayes to deep learning,
+I will say that most early approaches will start with logistic regression or
+random forest user. Both faster train and often perform well in practice that you
+can get a sense of how hard your task is. However, if you have
+access to a lot of data or to some sort of graphics processing unit
+for doing fast math, this is a chance for to do deep learning. That said, we don't
+cover those techniques in this course. Finally, I want to close on wire text
+classification tasks like sentiment analysis, so hard for computers and really
+one of the core challenges of NLP is try to classify some sort of unobserved state.
+What I'm thinking when I write something, for example, what is my review of
+particular movie? This is some sort of hidden state that we'd like to capture.
+In some cases the hidden state is very, indicated by a particular choice of words,
+fantastic, or must see or avoid. However, at other times we need world knowledge
+that's not present in the text alone. The close to give one example from
+Roger Ebert for Valentine's Day. He might remarks that it's being
+marketed as a date movie. I think it's more a first date movie that if your date
+likes it, do not date that person again. And if you like it then there may not be a
+second date. Well, we do have some strong positive sentiment words like like
+correctly classifying the sentiment of this movie requires understanding
+what's a first date and what does it mean to not have a second
+date. These are some of the challenges that NLP tries to face as it does
+hard text classification problems.

@@ -1,0 +1,209 @@
+Welcome back. In this lecture, we're going to
+explore uncertainty in a totally different branch of statistics, Bayesian
+data analysis. Now, up until this point, the class lectures and
+assignments have been primarily focused on the
+frequentist approach to estimating uncertainty. We spent a lot of
+time, for example, working with confidence
+intervals which are the most popular form of uncertainty expression in
+the frequentist perspective. In this lecture
+and the next few, we'll begin to explore the Bayesian side of
+uncertainty. Let's begin. There are a couple of
+reasons why data scientists like to talk about
+Bayesian data analysis. We're going to start this
+lecture with one of these. Now the traditional
+or conventional way we think about how people use data is called
+the instrumental view. And that is simply saying, you receive new data and you change the way you
+think about that thing. We realign our perspectives in somewhat of a
+transactional exchange. We use expressions like data-driven to suggest
+this instrumental view. The data should drive
+and dictate our actions. The problem with this
+view is that it ignores prior beliefs that people hold prior to receiving
+the new data. It's often the case that
+people have experiences, perceptions, even biases about the phenomenon we're studying. These prior beliefs certainly inform how human beings
+think about the world. And those prior beliefs do
+inform how receptive we are to amending our beliefs
+in light of new evidence. For example, if our prior
+beliefs are very strong, that we may not adapt our view much at all in the
+light of new evidence. However, if our
+prior beliefs are weak or the new data
+is very compelling, we may shift our beliefs to more closely aligned
+with the new data. Or it may be something
+in-between these two extremes, where we blend the new data with our prior beliefs to develop an updated perspective
+as represented by the thatched region in
+the middle of the diagram. This process may sound like common sense and in
+many ways it is. Of course people are
+not blink receptacles. We have prior beliefs that shape the way we
+consider new evidence. Yet often the way we think
+about data analysis, this instrumental view does not account for how humans
+process information. Fortunately, we do
+have a framework that does integrate prior
+perspectives with new data. Bayes' theorem. So at this point in your
+data science journey, you've likely cross paths
+with Bayes' formula. Bayes' formula was named after
+the Reverend Thomas Bayes, who first created it. Now the history of
+this is interesting. The theorem wasn't
+published by Bayes himself during his lifetime, rather a friend founded in his papers and published
+it after his death. Even then the formula wasn't that significant until it was popularized and expanded by a mathematician named Laplace. Bayes' theorem is a
+fundamental concept in probability theory and has many practical applications
+in various fields, including statistics, of course, machine-learning,
+physics and engineering. Now on screen is the simplest, but not necessarily the
+most functional version of Bayes' theorem. To get that we have to
+expand the denominator. This expanded form is often more helpful when working through
+Bayes' rules problems. Now there's a lot here, but we'll work through
+each term in define it. Let's start with what
+Bayes' formula gives us. It allows us to calculate
+the probability of hypothesis given the
+available evidence, which we represent as P of A. And then we put a little
+line there and a B. And how we read this is, this is the probability
+of A given B, or sometimes we'll say the
+conditional probability of A given B. Now, there are many examples
+of potentially interesting, even useful conditional
+probabilities that we might want to calculate. For example, suppose
+the bank is trying to detect fraud credit
+to card transactions. The bank has a very large data
+set of card transactions, some of which are known
+to be fraudulent, we call those positive cases. Some of which are legitimate, we will call those
+negative cases. The bank wants to develop
+a model that can identify the fraudulent transactions
+in real time as they occur, given unusual patterns in
+the data. For example. What is the
+probability of fraud, which we would call A, given the transaction is over
+a certain amount of money? A, is the event that the
+transaction is fraudulent, and B is the event that the transaction is over
+certain value threshold. Moving on to the numerator, the prior probability
+is the probability of A before any evidence
+is taken into account. In this example that
+we're talking about, the prior probability of
+fraud is the proportion of known fraudulent
+transactions in the data set. We multiply the
+prior knowledge or this prior probability with
+what we call the likelihood. Now the likelihood
+is the probability of B given that A is true, we are flipping
+their relationship. In other words, how likely is B our new evidence if A is true? In our example, the likelihood
+is the probability that a fraudulent transaction meets the criteria for being
+flagged as suspicious. That is, if a transaction
+is fraudulent, what's the probability that it's a large value transaction? There's no really great
+name for the bottom term. It's sometimes
+called the marginal likelihood or model evidence, I'll just call it
+the evidence in this case and it's composed
+of two components. In order to calculate
+the evidence portion, we typically need the
+probability under the assumption that the
+hypothesis is true. Now this is identical
+to the numerator of the proportion as
+you may have noticed. Now we need to add to
+this the evidence under the assumption that the
+hypothesis is false, which we've
+highlighted on screen. Now, you might notice a little symbol on
+screen there that you might not recognize and that symbol represents the word not. We have P and that
+little symbol and A, we read that as P not A, which is the probability
+that a transaction is not fraudulent in this case,
+or that's legitimate. These two conditions, the probability under the
+condition that the hypothesis is true and false captures the entire
+sample space of P(A/B). In this case, the hypothesis is the probability that a
+transaction is fraudulent. Now this equation gives us the conditional probability
+that we call the posterior. The posterior ask the question to what degree do we update this probability of A given
+that we have this new data B. Again in our example, to what degree do we update
+the probability that a transaction might
+be fraudulent, given that the transaction
+is a high-value amount. To see Bayes formula in action, let's consider a case study. This case study is focused
+on college dropouts. We're going to
+calculate a posterior or conditional
+probability two ways. The first is manually
+through a confusion matrix, we're going to do
+this manual work so that we can help develop some of the intuition around
+Bayes theorem. The second approach is
+to use Bayes formula, which is a more direct method to the problem. Here's the problem. Suppose eight percent of
+the undergraduates at the school of information
+quit school each year. Now some MADS students had built a predictive model to help UMSI work with students who are high risk
+of quitting school. Below are some key
+statistics from the case. Our data has an overall
+dropout rate of eight percent. The model that was created by the MADS students has
+a false negative rate of 10 percent and a false
+positive rate of five percent. Now what we want to
+know is the probability a student will drop out, given the models
+identified them as positive or likely to drop out. We'll populate this
+confusion matrix to calculate this
+conditional probability. We'll start by filling out
+some of the marginal values. Let's say we have 1,000 students that we're
+working with in this data set are overall
+dropout rate is eight percent, so the number of students who
+drop out in a given year is just 1,000 times
+eight percent or 80. If 80 of the students
+quit in a given year, that means that 920
+students persist, we just found that by
+taking 1,000 minus 80. Now, let's move to some
+of the interior cells. Let's start by calculating the false negative value given that we already have
+the false-negative rate. Define the number
+of false negatives. We take 80, which is the number of students
+who actually quit, and multiply that by 10%, the false negative rate, to find the eight students who
+quit were false negatives, that is, they were not identified by the model
+as likely to quit. Given that we have the
+false negative value, we can easily calculate
+the true positive value, the number of students
+who quit and were identified by the model
+is likely to quit, by subtracting eight from
+80 for an answer of 72. Dropping down one row, we can calculate the
+false positive rate. If we take the total number
+of students who persist, which in this data set is 920, and we multiply it by the
+false positive rate of 5%, the product is 46. Once again, we can fill
+in another row value through simple subtraction. This is the true negative value, which can be found
+by subtracting the false positive value of 46 from the total number
+of students who persist, 920, which we get 874. Lastly, we can quickly
+calculate the last of the marginal values by
+summing the columns. Now, the quantity
+we're trying to find is the probability
+of quitting college given the model has identified a student as
+being at risk of quitting. We can populate this value
+from our table directly. We want to find the probability
+that a student quits given that they're positively
+identified by the model. We find all the positive
+values, which in this case, 118 students were identified by the model as likely
+to quit school, that's our denominator, of them, 72 actually quit. If we divide these values, we get the conditional
+probability of 0.61. That was a lot of
+work, we had to build a whole table and do a
+lot of manipulation. Let's try the same problem
+using Bayes' theorem. We'll start by
+populating the values. First, we start with
+the probability that a student will quit P(Q). P(Q) shows up twice
+in Bayes' formula, so we make those
+easy substitutions. Another simple substitution
+is the compliment to P(Q), which is P(-Q), this is simply the
+probability that somebody doesn't drop out or
+persists, which is 0.92. What we have left in the
+formula are the conditions. First, let's find the
+probability of being positive given that you quit. Looking back at our
+confusion matrix, we can see that the
+probability of being positive given you
+quit is about 0.9. Now, we don't have
+the benefit of having the confusion matrix, so we need a different strategy for calculating this value. The probability of being
+positive given you quit is called the
+true positive rate. We know that the true
+positive rate and the false negative
+rate add up to one, so the true positive
+rate must be one minus the true
+negative rate, or 1-0.1 being 0.9. Lastly, we need the
+probability for students who don't quit and
+test positive. This is called the
+false positive rate, which we're given. We substitute in 0.05
+for our last value. We now have all the
+information we need to calculate the
+conditional probability, which is the probability
+of quitting given that you're identified as likely
+to quit or positive. When we calculate this fraction, we find the posterior or this conditional probability
+to be equal to 0.61, the same value when we
+created the confusion matrix, so we know that
+Bayes' formula works. That's great news.
+Understanding Bayes' formula is just the beginning
+of our journey, there's a lot more to
+Bayesian data analysis. Yes, Bayes' rule is really helpful in calculating
+conditional probabilities, but Bayesian data analysis
+is all about uncertainty. In fact, a Bayesian named Michael Betancourt
+put it this way. "Remember that using
+Bayes' theorem doesn't make you a Bayesian. Quantifying uncertainty
+with probability makes you a Bayesian." We'll pick up on this
+theme in the next lecture. We'll begin by discussing
+the transition from Bayes' theorem to
+Bayesian inference and what it means
+for uncertainty. Will see you in
+the next lecture.

@@ -1,0 +1,57 @@
+So once you have represented
+your data as the sequence, you can again extract patterns
+from the revelation or you can compute the similarities
+between two sequences. Once you obtained the patterns and
+the similarities, you can facilitate mass of functionalities such as
+classification clustering as we said. But there are some special
+functionalities of sequence data that you didn't find in or
+matrix representation. The other words,
+these functionalities are so special they are tight to
+the sequence reputation. So what are they? While this special functionalities
+of sequence data is called sequence alignment. Right, and the go used to align
+the actual relations remember that the actual positions you can actually
+change as long as you preserve the order. So the goal is to align the actual
+positions in multiple sequences to extract common patterns from them or to help you estimate the similarity
+between different sequences. The example we have shown is that
+alignment in biological sequences in DNA sequences and
+sometimes in protein sequences, right? What do you want me to do is to take
+the DNA sequences of different species. And you want to add gaps in
+them in order to identify the longest common subsequence and to estimate the similarity
+among these sequences. So this task combines pattern
+extraction and similarity estimation. It is through rearranging
+the positions in the different sequences while preserving
+the order of the items. And this special functionality
+is known as sequence alignment. Another special functionality
+of sequence data is prediction. And the reason we have this
+special finality is similar that because that the items
+are placed in order. So in the prediction task, what we are
+concerned about is given previous items. We make a prediction about
+the next item in order. We'll guess what that will be. A simple example is again your sequence
+of courses in this program, right? Given the courses you have taken before,
+right? So given the first
+elements in the sequence. What's the next course you want to take,
+right? This is the prediction task. You have to make guesses of
+what the next item would be. What's the next user activity? Right, so and so forth, okay. So seconds repetition is
+the powerful way to model your data to handle the order among the category
+items or sometimes vectors. It has lots of applications
+in data mining, right? It is widely used in text mining because
+you can represent text data easily as a sequence of words and
+sometimes as a sequence of characters. In biological data mining, we are consistently dealing with
+DNA sequences or protein sequences. And once you can represent
+your data as sequences, you can apply lots of tasks like sequence
+alignment or somatic calculation. Behavior data mining is
+another domain that sequence reputation is widely used and this is because we can usually represent
+the actions of users as a sequence. And because we can use sequences to
+represent the ordered list of vectors, right? So sequence data mining is also
+why they applied in transportation data where you are dealing with
+the sequence of locations. And every location is represented
+either as the 2D or 3D vector as there are many other applications of sequences
+you can find in the real world. So to summarize,
+I hope you'll understand how to represent ordered items or
+vectors as sequences. And you should understand
+the difference between sequences and other data representations. When we use sequence to all represent
+the ordered set of category items, how is that different from items? And when we use sequence to
+represent the ordered set of vectors,
+how is that different from a matrix? And I hope you understand there are many
+special data mining tasks relying on sequence representation of data. We give you two examples, one in sequence
+alignment, another is prediction.

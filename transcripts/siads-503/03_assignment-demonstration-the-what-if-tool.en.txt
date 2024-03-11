@@ -1,0 +1,178 @@
+Okay, what we're looking at is the home
+page on the web of the what if tool, it's freely available. I'm just going to show you what
+we need to do for our assignment. You'll see at the top there's
+a one of the menu items is demos. We're going to use one of the demos
+you can scroll down to that demo, or you can press demos. Once you get down here,
+you'll see that there's this demo referred to as the compass
+recidivism classifier demo. That's what we're going to be doing
+before you go too far in fact, you might want to pause the video now. You're going to want to launch
+that demo with attributions. So I actually did that before class
+started you're going to launch that video with attributions and it's going to
+come up in a browser window like this. The first thing you have to do is
+go to run time and click run all. Now, we don't this is in
+a collab notebook, but we don't really care about that for
+this class. Just press run time and run all and
+that is going to take some time. So go ahead and and do that pause
+the video until everything finishes. It might take a couple minutes. You'll know when it's
+done because when it's finished if you scroll all the way down to
+the bottom, you'll see here that it has popped up a user interface
+that looks like this. Like I said,
+you may need to pause to get that done. Once you have this interface this is
+basically the tool this is the what if tool what we're looking at? I'm going to highlight a few features
+of the tool before we get into it. You see there's these tabs at the top. There's a data point editor
+the performance and fairness tab and the features tab, the performance and
+fairness tab is really what we're partly excited about, but I'll go on and
+mention some of the others. One of the things that I think is
+valuable about this tool is that it it does actually promote what you might
+think of as just good practices for data. So if I click on the features tab, it's
+showing me all of the variables that I have in my data set and
+I can scroll through and look at them. This is good data science practice anyway, so I'm not actually doing
+anything particular to fairness. I'm just talking about just sort
+of why would you have a data set that you're going to run an analysis
+on where you didn't look at it first. You should definitely look
+at your dataset first, so let's just focus on one item here. So this would be you know,
+you might call it in statistics doing your descriptives or you could talk about
+understanding the distributions, the normality or the skew of all of
+your variables before you run analysis. This would be good practice
+in any statistical analysis. So it's not specific to fairness. But like in this example, we see that we
+have a variable called age that shows that the people in this data
+set tend to be young right so we have this younger
+group in the data set. So this tool is trying to
+help you by doing these basic statistical analyses these descriptives. Really what we're excited about though
+is over here on the performance and fairness tab. As I said earlier, we're doing something
+kind of funny because we are not actually using the COMPAS model
+because we don't have it. So remember from the ProPublica
+article it said that the COMPAS model was a series of over a hundred
+questions that people were asked and then they would predict based on
+the answers to those questions a score that would determine whether they
+were in a high-risk group of reoffending. So we don't have that model. So instead what we're doing is we
+trained a machine learning classifier that is kind of modeling the model so
+that that's a little complicated. There's more about that down here. If I scroll down it will show you some
+ideas that you might want to do to look into this example, but I'll just go through a couple of things
+because even though I'm actually talking about a simulation of the ProPublica
+analysis on a model we don't have I think you still get the idea of
+whether this is useful or not. So a couple things to
+highlight here in this tab, one is that there is a series of
+choices here on the bottom that are directly taken from the literature
+on ethics and justice and so it's offering you choices in the interface
+that are related to ethics and justice, but let's go ahead and try it
+in the performance and fairness tab. One of the things that it's
+trying to help you do is to understand if your data is
+performing poorly or better for some subset or
+some minority part of your data set. What you see in this under all data points
+is a pretty standard representation that I imagine you might have seen before
+in many contexts, but don't worry so much about the ROC curve or the pr curve,
+but just this confusion matrix over here is a very common diagnostic that
+people would use for a classifier or for any analysis that's making
+like a binary decision. So you see here that this is a model
+that we trained that is going to tell us that there are some people who
+are predicted re-offenders. That would be predicted. Yes. So in other words this vertical and
+then there are some people that are predicted no so they're not predicted
+to re offend that would be this vertical. And then across the confusion matrix you
+have the people that actually reoffended are on that horizontal and you have
+the people that actually didn't reoffend. So just to be clear what we're looking at
+if you added the numbers in the two boxes that were the successful prediction, so
+that would be this box and this box or the diagonal that starts
+with the upper left box. You get the accuracy of the model overall. So this model is right 63% of the time, if I understand the argument
+in the Propublica correctly the argument in the Propublica article,
+is that when the model is wrong? So that would be these cells, when the model is wrong, it is wrong
+differently for different races. The way this software works I
+should be able to figure that out. I'm going to use this tool called
+slicing over here on the left. I'm pulling down the the slicing bar and that's going to show me
+the variables in the data set. I'm going to set a slice and
+the slice I'm going to start with is race, African-American. There it is.
+It just took a second. Sorry about that. So now I have a value of 1 and
+a value of zero for African-American and that is going to
+mean that I have the black or non black. So black would be 1 so I'm going to
+add a second slice for a Caucasian because the article alleges that the
+difference is between blacks and whites. So let's look at that as another slice. It's a little slow. So what this means it's a little confusing
+but what you're looking at here is this is saying that the first
+slice is African-American. So if it's a 1 on the first number
+that means African American and the second slice is Caucasian. So if there's a 1 on the second
+number that means Caucasian and then 0 0 would be neither
+African-American, neither Caucasian. So I hope that's clear. So let's have a look at these. So basically what this has done is
+it's just split out, it's split out the slices as separate charts and
+confusion matrices. So when I click on this down arrow and
+pop out these graphs what I'm showing is the confusion matrix and the graphs
+just for in this case the Caucasian. So these are whites. Now if I understand I could get this
+wrong and you could tell me if I did but I think what the ProPublica article
+is saying although they came at their conclusion differently, is that if I
+look at the confusion matrix here, it's a little bit weird. Because if I'm looking at a white
+defendant when the model is wrong, it looks like the model is much more
+likely to be conservative about not putting the innocent in jail,
+because when a white defendant is passed through this model, it looks like
+the most of the errors that it's making are errors where it predicts
+that there is no re-offense and the person is not incarcerated and
+then there is actually a re-offense. So it seems to be much more likely
+that's the 24.8 versus this 9.5 that if you go through the model and you're Caucasian, it'll say well
+let's not put the innocent in jail. I think that is a restatement of what
+you read in the ProPublica article. So if we pop out the other slice, which is just above it remember that
+there's a one and a zero there so that would mean that this slice is
+the African-American but not Caucasian. It's a little slow on this computer. I'm sorry about that. I believe what the ProPublica
+article is trying to tell us is that if we look at the errors on this we
+see that they're quite opposite. So if you're African-American and you're
+run through this model, which is again not actually the model but it's a simulation
+that works for our purposes. It looks like the errors are flipped. So you're much more
+likely to be put in jail, even if you aren't going
+to reoffend again. Because this is
+an after-the-fact analysis. We do have the data in there about
+whether you reoffend again, and so if you're African-American and
+you're put through the model, you see that in fact, you're much
+more likely to be re-incarcerated. So the direction of the likelihood
+of the errors has flipped. So this is the kind of visualization and diagnosis that this tool is
+supposed to help you do and this is generally I mean kind of
+good data science practice anyway, although in this case it has
+a number of really chilling and important societal overtones. So one thing that I'd like to
+point out is that we usually care a different amount about errors in
+one direction versus the other so a false positive versus a false negative. Actually those are very
+different kinds of errors, especially in you could imagine
+something like cancer treatment where you're deciding whether someone
+receives a treatment or not? Like how serious is it to miss
+a real cancer versus to give a treatment to someone who doesn't need
+it or a screening or something like that. So those are very different outcomes. And so
+we think about the errors differently. So what the tool allows you to do is to
+change this thing called the cost ratio. So if you change the cost ratio, it
+will value the different kinds of errors differently and I think the goal of the
+makers of this tool is to just help you kind of mess around with stuff in
+an interactive way that is relatively engaging so I'll let you mess around on
+your own but just to give you an example if I change the cost ratio to I don't
+know four and this is explained if you click on the more button, so
+I'm not explaining it very well right now. I realize if I change the cost
+ratio to four what this means is that I've actually made false positives
+four times more likely than false negatives going to be very hesitant
+to classify someone as a reoffender. So it's going to make the model much
+less likely to put people in jail. So I'll go ahead and run it. I'm pressing single threshold so
+that I rerun the model and you see what it's done is it's
+basically shifted all of the errors. It's somewhat made the model
+useless because it basically just plays it safe and always predicts
+that no one's going to reoffend. In fact it only it only
+identifies 20 people in these two slices that it thinks are likely
+to reoffend because it's so cautious about making a mistake
+in the wrong direction. I could change the ratio to a quarter or
+to 0.25 or something like that to reverse that and
+make the model much more aggressive. There are some things I can do here
+that I'd like you to read a little about on your own and just sort
+of play around with if you didn't know anything about ethics or data
+science, which may actually be the case. I hope not at this point, but it could be
+the goal of this software is to help you by suggesting ways that you might
+optimize so one that's really relevant to the ProPublica article
+article might be equal accuracy. So I could press equal accuracy and the
+goal of the analysis in this case is to try and figure out how to be sure
+that they're the threshold chosen for the decision will make all of
+the errors as similar as possible. And so you see if I click equal
+accuracy it doesn't actually do that. We still have the same
+problem as before but this is the attempt of the equal accuracy,
+the extra button. There are a bunch of other features and
+I'll let you explore them on your own so you can do things like look at
+particular cases and compare them. There are a set of variables in here
+that have a prefix in front of them. If you're using the data
+set that has attributions. There's variables that indicate that
+they are measuring the degree to which a particular factor contributed to
+the score of that data point and so don't get confused why there might
+be double variables in there. But I mean basically my message to you
+is play around, see what you think, act like you're taking a test drive and
+considering a purchase, see if this is the kind of thing you can
+see is useful and think about ethics. Like is this actually a good way to get
+data scientists to think about ethics and for example errors or distributions in
+a context like recidivism prediction? I hope it's fun. I'm looking forward to
+what you come up with.

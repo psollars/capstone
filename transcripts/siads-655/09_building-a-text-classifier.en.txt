@@ -1,0 +1,178 @@
+In the last segment,
+we talked about what it means to build
+a text classifier. In this segment, we'll
+actually try to go through the process of building
+one and look at some code. To build a text classifier you'll often use machine
+learning libraries, many of which had this built-in functionality for
+working with text. Today, I'll show
+you some examples you use the sklearn library, which is a popular machine
+learning library for Python. Let's start by going
+through the text to classifier pipeline itself. Will start with training text. This is the x-y pairs from
+the previous segment, here we have text that's
+been paired with labels. We need to turn this text into
+a set of feature vectors. Where that represent the text itself in a numeric way that
+the classifier can use. Similarly will have to take our testing texts
+that we'll use for evaluation and turn those
+two into feature vectors. Will get numeric representations
+of our texts back out, will use these to
+train the classifier. Similarly, we'll take the
+numeric representations of our testing text to
+do prediction with, to evaluate how well
+we did that learning. On the training side, we
+use a method called fit transform and will typically
+take the training text, and try to transform it and learn a mapping from text
+to feature labels. Typically in sklearn, we'll use what's known as
+a CountVectorizer or TfidfVectorizer that will create that bag of
+words representation. These will do it
+automatically and learn the mapping of words
+to column dimensions. On the training side where we have a classifier
+that we've chosen, we can use fit to learn the representation of
+the classifier to do the mapping or the fitting from this numeric representation
+to a set of labels. On the test side, we'll use
+the transform function to transform the text into the
+numeric representation. Here, we no longer do any
+fitting since the mapping from text to features has been defined by
+our training data. On the testing side we'll use the predict function
+to try to get at the estimated labels and to then evaluate whether a classifier was able to predict correctly. For representing text Data
+and often working with it, I often recommend using a
+Pandas DataFrame to start. This is often an efficient way of representing and
+interacting with your Data. Here I've shown you
+an example DataFrame, it has two columns. One, the text itself and
+the second sentiment label. Over I should note that sklearn supports other ways of
+representing the input Data. In this case using list
+objects or numpy arrays, you can use these depending on which one is easily for
+you in your application. For creating n-gram features, we can actually do
+this quite easily with sklearn using the vector
+risers themselves. So here to give an
+example, I've shown you, the movie was not good and we'd like to get
+n-gram features back out, sklearn will do this for us. Here again, I'm showing
+you the DataFrame of sentiment labels and the
+text associated with each. We'll use the TfidfVectorizer. We'll define our
+vectorizer that we'll learn that mapping and then call the fit transform function
+to learn how to map our text to a particular matrix. I should note that this X matrix is using the common
+machine learning notation, where X is a matrix
+of instances to features and we also
+have a separate vector, which is not shown here,
+which is typically called y. We'll try to train
+our classifier on. We can also print
+out what's the label in the X matrix and
+the vectorizer itself. Looking at the feature names, we see that it has mapped each of our words to a
+particular feature. You'll notice that these
+features do not contain the punctuation that was
+in the original Data. In fact, this is filtered
+out for us by sklearn. You see that the matrix that
+we've gotten back out has four rows and 10 columns representing our four instances and the 10 different features. You might also notice though, that the representation or the type of X is a sparse matrix. Why do we need a sparse matrix? To give an example, a
+training dataset can have millions or 1,000 of
+words and for those, most documents don't
+have all the words. As an example, let's think about this potential
+of that case, we have 1,000 documents in a
+vocabulary of 10,000 words. Each document has an
+average 10 words in it. In a dense matrix representation, we'll would need 1,000
+rows and 10,000 columns. This would take around
+80 megabytes of memory. While this seems small
+for by today's standard, increasing the dimensions of either the number of
+documents or the size of the vocabulary can
+quickly cause this to be intractable for most
+modern machines. However, if we use a sparse
+matrix representation that only keeps track of the
+non-zero rows and columns. This is only around
+240 kilobytes, which is both much
+smaller and much more efficient to work
+with. For many cases. Sklearn can also do
+something beyond punctuation and use what's
+called stop word filtering. In this case, sklearn provides support for this
+using its vectorizer. Here I've imported
+as list of stop words from the NLTK library, which is a common library use for natural language processing. Again showing our DataFrame. When doing the vectorizer itself, we can pass in which stop
+word we'd like to use. Here stop words are common
+words like a and nda, which add columns or
+features to our matrix but don't necessarily
+help in discrimination. We can see in the output
+space that we've gone from 10 features to six features. Features like I or the, are no longer present
+in our data set. That said, you might not
+need to do stop word filtering in practice
+depending on your algorithm. There are many different,
+lots of stop words. So although we think about
+them as all the same, there's a fun paper showing
+that these actually come from a family tree of
+different stop words lists. English actually probably check your stop words
+before applying them. Let's look again at how to add our knowledge-based features. So for example,
+knowledge-based may be things that we need to add to our feature space that are captured by a TF-IDF classifier. For example, we might think
+about using the MPQA lexicon. So here you can use
+what's known as a function transformer to try to add extra features to
+your feature vector, to that x matrix. There's an easy way to
+do this in the sklearn. That said, sometimes it's easy to calculate features
+separately and to generate numpy arrays and
+you can use numpy hstack to concatenate them as two
+feature matrices together, and then pass that into
+the classifier itself. Let's take a look at our text-to-classifier
+pipeline again. So we figured out how
+to take our features through fit_transform and turn
+them into feature vectors. Let's look at the right-hand side on training the classifier. Here, we're going to use one of sklearn built-in data sets. The 20 newsgroups, which is
+old news posts that were made into different
+newsgroups and I'd like to see which one they
+originally posted to. I've imported this as
+the 20 train data set, then I'll use our TF-IDF
+vectorizer to try to extract the data and
+put it into a matrix. Here you can see the shape
+of the matrix where we have 11,000 different rows. These are different instances
+that we'd like to classify. We have a feature space of
+9,000 different features. These are words that
+we'd like to use. You should also notice
+that for the ngram_range, I've added one comma two. This specifies that I'd like
+both unigrams and bigrams. I've also added
+this extra column, which is extra argument that you might notice this min_df. This allows us to
+specify how many times an ngram
+feature must occur. This is often useful in practice to reducing
+the feature space to only things that might be present in multiple documents. That helps us reduce
+the number of features for more
+efficient classification. To train the classifier, I'll import logistic regression, and I'll call the fit function on training from the matrix
+x to the set of labels, which is provided by
+the 20 train data set as the target value. Some practical considerations for how to train your classifier, we should think about what
+should count as a token. So we've typically been using
+TF-IDF vectorizer However, you can customize
+this to think about what should be the
+features in my data space? Should it be only ASCII? Should I use support unicode? What about emojis? We even filtered out punctuation, yet there might be
+other examples of punctuation or Unicode that seems semantically coherent
+that we might not be capturing in a current
+token in sequence. I still say as a
+practical consideration, you often should try
+to aggressively remove rare words or ngrams as features. When you have lots of rare words, say words that appear in
+only a handful of documents, you see often not typically
+useful for classification, yet this is a long tail
+of word frequencies, they're often very present and can account for the
+majority of the features, which can slow
+classification down, and make the data set itself
+hard to work within memory. Third, lower-casing is often typically helpful because this helps reduce variability due to uneven spelling in the users. However, if you do have
+meaningfully capitalize words, say lowercase word
+"apple" for the plant, or the uppercase word
+"apple" for the company, you might want to
+distinguish between the two, and thinking about
+what matters for your particular application is important when thinking about
+how to map these features. Finally, you should really ensure that you have enough data. Typically something
+on the order of tens to hundreds of examples, is probably too low for doing machine learning
+classification on text, because humans are quite varied in how much how we write things. There's endless surprise. So I encourage you to think about how much you
+generalize variability or how much variability is in your text before
+training a classifier. As a few other practical
+considerations, I highly recommend starting with logistic regression and bigrams. Say using the TF-IDF
+feature vector that we talked about before and
+using logistic regression. This is often a good place to
+see how hard your task is. From that, thinking
+about random forests as a way to provide
+combinatorial features. This could let us identify
+features of words or bigrams that in combination are of powerful predictors of
+a particular label. I do want to add that if you have multiple labels that you'd
+like to predict at once, you can use something like
+multilayer perception, which is essentially
+logistic regression that allows to do multiple
+labeled prediction, but you need to set the
+hidden layers to zero. Finally, it's often a question of how much data do you need
+to do the task well. I often recommend
+trying to train on different sized subsets of
+your data, say 10 percent, or 20 percent, or 50 percent, and estimate how much the performance varies on
+these smaller subsets. If you see that your
+performance plateaus is quite quickly with say, 30 percent or 40
+percent of your data, you likely have enough
+to be effective and to probably
+generalize in the future. However, if your performance
+keeps going up and starts and doesn't end up
+where you would like it to, this often suggests that you need more training data to do well.

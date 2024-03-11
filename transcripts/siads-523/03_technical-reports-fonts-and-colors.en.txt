@@ -1,0 +1,46 @@
+Welcome back. We're
+continuing to walk through elements of
+our technical report. And we're going to talk
+quickly about fonts and then move on to
+color in this segment. So we've covered content, and here we are, fonts and color are
+today's sections. So just to recap, in general, we're in a style of
+design that's really emphasizing sans serif fonts
+or even a combination of sans serif fonts and this
+is particularly true when we're designing
+documents that are more likely to be read on screen. Sans serif is a little bit
+easier to read that way. Ideally, you're sort of
+finding your go-to font that you can use in different stylings to look
+a little bit different. Whether it's bold, italic, light, different sizes,
+different colors. We're remembering
+that font stylings can serve as
+pre-attentive attributes. They really help us
+focus in on what it is that is important on a page. It's also important
+that we think about fonts in terms of hierarchy, and we display that hierarchy consistently across our document. So for example, if our page header is
+going to be all caps, then on every page the page header should
+be all caps. And if the subheader is the same
+font size but title case, that should be
+consistent as well. So sometimes, in Word we can actually set up
+different styles in advance. That's a little bit trickier to do in presentation software, so sometimes making
+a little document that talks about what the default sizes are
+and which fonts are used can be helpful to have
+next to your computer. Let's move on and
+talk about color. And what I want to do to
+introduce the idea of color is to think
+about brand standards. And this is a document
+that often is internal only, that talks about, this is the appropriate
+way to use our logo, it needs to be at least this big, this is the actual color
+that we use for our brand. Whether or not you
+can tile the logo, whether or not you can use
+certain fonts with it. And if you are doing a report
+for a broader organization, and you're the one that's
+either setting the template or working with a graphic
+designer to set that template, you need to know what
+those brand standards are. And these are usually standards that are set by a graphic design team, either internal or external, whenever there's been
+a brand refresh. And it's a document that shows people how those images get used. And I am a Metro Detroit girl, born and raised. When
+I grew up in Detroit, you would see people would put bumper stickers on the walls of their garage and overwhelmingly in Metro Detroit, they
+would be two things. They would either say WRIF, which was a rock station, or they'd be about
+Jegs Auto Parts. So when I saw these
+brand standards, I thought these are
+the perfect match. In the next segment, what we'll do is we'll look at a series of brand
+standards and what we can glean from that when we need to create
+our own templates.

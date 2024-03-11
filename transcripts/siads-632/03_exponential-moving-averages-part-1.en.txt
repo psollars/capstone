@@ -1,0 +1,171 @@
+We have talked about different
+types of moving averages. The last one we talked about is the weighted cumulative
+moving average. As we can see, is
+that you can use different weighting scheme for this weighted cumulative
+moving average. If you use exponential weighting, then the method is the very famous exponential
+moving average, also known as EMA, is basically computing a
+weighted moving average where the weight decays
+exponentially over time. In reality is
+actually computed as the interpolation of the
+actually observed value and the smoothed of
+the previous value. For this case, it is not
+so much different from computing the cumulative moving average using dynamic program. Basically, the very
+first observation is smoothed as itself
+because you don't actually have your
+smoothed appearance value. Then starting from the
+second observation, we are computing the
+smoothed version of the second observation
+as the interpolation of the observed value x_2 and the previous state
+smoothed value x_1 prime. We're computing the interpolation by using the factor alpha, so you have alpha times x_2 plus one minus alpha
+times x_1 prime. Here, alpha is actually a
+real number between 0-1. Sounds, of course, to
+compute the third value, x_3 prime, you basically
+have the same interpolation, but this time using
+the observed x_3 and the smoothed x_2 prime
+and so and so forth. Finally, you have
+any observation x_2 prime computed as the interpolation
+using the same factor, alpha and one minus alpha, so it gives alpha times
+the observed of x_j plus one minus alpha times the smoothed version of
+x_j minus one prime. This is basically
+how you compute EMA. Sounds quite intuitive. You can see that by doing this, what do you mean by the
+weight decays exponentially? Let's forget about
+dynamic programming a little bit and this look
+at the had the real math. As you see that the jth
+smoothed value is computed as alpha times x_j plus one minus alpha times
+x_j minus one prime. Then let's do one step further. Let's see how to compute
+x_j minus one prime. You basically compute
+x_j minus one prime as alpha times x_j minus one
+plus one minus alpha times z, preface of smoothed value,
+x_j minus two prime. You can continue to
+do this expansion. Now you can actually
+expand x_j minus two prime into alpha
+times x_j minus two plus one minus alpha times the previous smoothed value,
+x_j minus three prime. You can do this
+expansion for awhile until you have no smoothed
+value in the equation, everything you have
+are observed values. Then after quite a
+few number of steps, you basically have alpha
+times x_j plus alpha times one minus alpha
+times x_j minus one [inaudible] all the way
+until x_1 is present. Then if we write this
+in a more compact form, you basically have
+one minus alpha to the power of j
+minus one times x_1. For any other observations,
+higher than one, then you have alpha times one
+minus alpha to the power j minus i times x_i and then you have a summation over all
+the x_i's from two to j. If we don't use
+dynamic programming, if we trace back to the
+very first computation, this is basically what you
+have to compute x_j prime. Why do we call this
+exponentially? If you look at the
+two coefficients, one minus alpha to the power
+j minus one times x_1 and one minus alpha to the power
+of j minus i times x_i, you can see that these weights of all the observations actually
+decay by the factor. Every time that i is
+farther away from j, then this weight is smaller, because we have one more one
+minus alpha times to it. In other words, the weight of an old observation
+decays exponentially. Why exponentially?
+Remember that we have j minus i and the power. That is why it is
+exponentially decay. Before talking more about mass, let's look at real
+examples of EMAs. If you use EMA to smooth the airline
+passenger data, in fact, you can actually choose
+different values for the parameter alpha and then you get different
+smoothed curves. Remember that alpha is the
+number between the two. If alpha equals to zero, then basically you're over
+smoothing everything, so everything will be just x_1. Why is that? Because from
+the previous slides, you can see that every
+other observation has the factor of alpha, only x_1 does not, so if our values still zero, then basically you
+have the flat line. That is just using the
+first observation to smooth out the entire sequence. On the other extreme, if alpha equals to
+one, the purple curve, you can see that
+there's basically no smoothing at all and then the curve is essentially identical to the
+original time series. Because when alpha equals to one, then that means whenever you are actually computing
+the interpolation, you're not considering
+old values. You're not considering the
+previous smoothed value, you only respect to the
+current observation. In between 0-1, there are some very meaningful
+smoothed curves. You can see that either
+the red curve or the green curve make a lot sense. In reality, you can actually try different values of
+alpha and see which one gives you more visible effects of the trends and
+seasonal patterns. Some more math, how do
+we interpret alpha? You can see that you can select it from alpha
+in between 0-1. How do we interpret it? In fact, alpha is also known as the decay factor of
+exponential moving average. This decay factor means
+that by every unit time. Here, unit time is
+exactly important, which will be discussed later. By every unit time, the old value is going
+to decay by alpha. That means the
+proportion of alpha of the old value is gone or the remaining value
+of one old value after every unit time
+is 1 minus alpha. Alpha is known as
+the decay factor. You can see, and that's why
+when alpha equals to 1, then, by every unit time, the old value will decline by 1. That means it's
+going to disappear. There's no smoothing at all. When alpha equals to
+0, there's no decay. Every old value will be
+carried over in the future, and in fact, using the
+particular definition. The whole theories will
+be smoothed by what? By the very first
+observation x_1. Just note that the notion of decay factor is different from the concept
+called decay rate. Nothing you right here
+when you're looking at radiation or whatever
+other syntax. Here, the decay rate
+that we will discuss later is the
+parameter called EMA, and that has the relation to
+our populate is not alpha, it is actually a minus
+negative logarithm of 1 minus r. In practice, you can select any
+alpha in between 0-1. You don't want to say they are all one in the two extremes, but any value in the middle could be
+meaningful and, again, try multiple values and see which one fits your
+application better. This is how you actually compute EMA and interpret the
+decay factor alpha. Remember that to compute EMA, you're basically interpolating
+the current observation and this previously smooth value. You interpolate two values. In fact, there's another
+way to look at EMA. That is to consider the impact
+of every old observation. In this case, we assume
+that every observation, no matter whether
+it's the very first one or a more recent one. Everyone has the impact
+to future values. This is why EMA is
+related to accumulating point array because
+every observation will be carried
+over to the future. In reality, there are
+lots of such examples, for instance, the P&L. Profit and loss of your financial strategy or financial portfolio will be
+carried over to the future, but not every observation has
+equal impact to the future. In fact, their impact
+will decay over time. Why?Because of your P&L. Your profit 10 years ago
+or your loss 10 years ago should have a smaller impact to your current
+financial planning. We assume that this decay
+is done exponentially. If you take this view, the EMA is essentially the weighted average of
+all historical values, but they are the
+weighted average, not the absolute average, and the weights are computed
+by the remaining impact. Whenever you compute EMA, it's essentially summarizing
+all historical values. Every value has the weight and that is decaying over time, and only the remaining impact is going to affect
+the current value. If you take this view,
+you can see that EMA has lots of connections to radiation or to
+survival analysis. Indeed, in radiation or
+in survival analysis. In fact, there is the
+concept called half-life. That is usually mentioned. Basically, that
+means that the time required for the impact
+to reduce in half, and this is actually
+a common way to describe how soon
+that decay happens. Why? Because every observation has the impact to
+the infinite future. You can't say that, "Okay, at what time that impact
+will be all gone?" Instead, you're
+talking about the time needed for the impact
+to reduce in half. This is known as half-life. Knowing half-life, you can
+say that you can describe EMA either using the decay
+factor alpha or the half-life. That is the time required for the very first observation
+x_1 to reduce in half. In fact, you can actually compute the relation of alpha in half-life accurately.
+Remember that. After we have done
+the expansions, we have the smoothed value x_j prime equals the 1 minus alpha to the power of j minus 1 times x_1 and plus the
+weighted sum of x_I. To compute half-life, we
+only need to look at x_1. We can see that for the impact
+of x_1 to reduce in half. Basically, we want 1 minus alpha to the power of j minus 1, to what? To equal one-half. If we assign one-half to 1 minus alpha to the
+power of j minus 1, then, we have j minus 1
+equals to the logarithm. The logarithm of the base
+one minus alpha, one-half. In fact, j minus 1 here
+can be interpreted as the time between the very first observation
+t_1 to the j's observation. If you know the timestamps
+are sampled evenly. We will see another example later if they are
+not sampled evenly. j minus 1 is essentially
+the number of unit type between the
+very first observation and the current observation. If we use the natural
+base for logarithm, would basically have j minus 1, that is the time. Now, equals to logarithm of two over logarithm
+of 1 minus alpha, and then, you take the negation. This helps us identify the connection between
+half-life and alpha.

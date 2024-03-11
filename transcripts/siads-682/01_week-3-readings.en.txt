@@ -1,0 +1,57 @@
+Okay, let's get to work exploring and
+situating the readings for week three which is about networks. So I know that in your networks class
+that you've taken on the way to taking this class, you've talked
+about how networks can be everywhere. You can find them anywhere you look. That's certainly true in social media
+where the networks can be either explicit. So something through the follower
+following relationship or implicit through interaction. So we might form networks or
+induce networks via interaction. So if I interact with, if I'm account A and
+interact with account B in some way, we form an edge between A and B. The objectives for
+this week as I've put here again are for you to articulate how networks
+can be the substrate for modern social media networks and
+how those networks can be different. And so
+I'm going to ask you to describe how and why different networks can
+exist within the same data. And then in the assignment for this week,
+you're going to be thinking about and constructing different varieties
+of metrics over these networks and what those things might mean. And the readings this week, as I have
+intended every week, intend to kind of stimulate your thinking around
+how these might be useful and in what ways these might matters. So the first piece is
+a piece by Sinan Aral and colleagues out of MIT looking at
+the spread of true and false news online, and particularly it's looking at the
+spread of true and false news on Twitter. And it's using network metrics
+to compare the two groups. So here's a figure from the paper
+that I've reproduced here. You can see that true news
+is being depicted in green. False news is being depicted in red and
+you can read explicitly about how they define those things, and where they
+get those information in the paper. And one of the things you can see is
+over a variety of different metrics that they've computed, there are differences
+between true and false news. And there are some alarming ways
+in which they're different that I'm going to ask you to
+reflect on this week. So the reading reflection for
+this week is along those lines, which types of networks are functioning to
+power, the findings in the Aral reading? So how are they defining networks? How are they getting those networks and how are they using them
+to power these findings? And then follow-up,
+I want you to conjecture here. What possible ways can you imagine to
+alter the dynamics that are presented in the paper? So I often say that these
+are not laws of physics, right? These are not laws of nature. We can, through design, alter and change
+the dynamics that we see in these systems. So I'm curious for your conjectures about
+how you might change the dynamics that you're seeing in the Aral reading,
+and then you could actually posit ways to measure those things as
+well in you're reading reflection. The second reading for this week is
+by Deen Freelon and colleagues, a professor at UNC looking at Russian
+influence operations on Twitter in the context of the American election. So here's a figure from that
+paper that I've reproduced, looking at the network formed by
+different accounts, interacting. Some of which are owned and
+operated by the Russian state, particularly a group called
+the Internet Research Agency or the IRA. It seeks to influence American
+political discourse and discourse in other parts of the world. All right, so the reading reflection for
+this reading, if you choose it, is what network
+statistics or signatures might you compute to distinguish the types of
+networks written about by Freelon? So thinking about what Freelon
+is presenting here and kind of merging it with the way
+the approaches taken in the Aral reading, what would you compute and
+how do you think that would matter? And how do you think
+that would be of value? Why do you think it would work? So I want you to further explain,
+why do you think it would work? Not just here's the math behind
+how I compute the thing. I also want you to conjecture and think critically about why do
+you think that would work? Okay, I hope you enjoy it and
+best of luck.

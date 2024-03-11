@@ -1,0 +1,239 @@
+Hi, my name is Chris [INAUDIBLE] and
+I want to give you some idea about what's going to happen in your
+comprehensive oral exam. What we've done is, we've assembled videos
+from three previous students who have done the exam, and who have graciously given
+us permission to use their recordings. Now I'm not going to show you the entire
+exam for any one of these students. I'm going to give you a sense of what it
+feels sort of the logistics around it, what you'll hear from
+the examination team. I'll give you some idea about how
+students responded to questions, how they use different support tools,
+like notebooks effectively. And then just give you
+a sense of what it's like. In this first segment, you'll hear me as the adjudicator
+in the process, welcome a student. Just ask him some questions to sort of
+get them comfortable with the situation. And then I'll turn things over
+towards the end to my colleague, Anthony White who's
+the examiner in this situation. >> Hallo
+>> How are you? >> Fine. >> You know what, we have communicated
+in slack a whole bunch of times and I do not know how to pronounce your name. >> [LAUGH] My name is [INAUDIBLE] okay. >> Okay, that's very easy, ken, I think you know roughly
+how this is going to work. This is your comprehensive exam, and right
+now there are two of us and one of you, that's not going to be the case for
+your exam. What's going to happen in a minute is,
+I'm going to adopt my role of adjudicator. What that means is, I have I have
+the rubric printed out beside me, and my job today as the adjudicator
+is to listen to the conversation that you have with my colleague and
+friend, Anthony white. So, what I'm going to do in a minute
+is I'm going to drop my video, I'm going to mute my microphone and I'm going to just listen to how
+things unfold with you and Anthony. And with that,
+I'll turn things over to Anthony and he can describe the rest
+of the process to you. >> Now once I've done my
+part as the adjudicator, I turn things over to the examiner, in
+this case, Anthony White, who will reveal to the student the question and then ask
+the student for his initial response. >> All right then, hi. >> Hi. >> It's good to see you. >> So my handy iPhone will
+serve as our official clock. And of course you're probably wondering,
+so what is it that we're
+going to be talking about? And the topic that was randomly
+selected for you is topic number one. And that's the one I
+call the client topic, in other words you have to imagine
+a scenario in which you have a client etc. So, what we're going to do is,
+I will start the clock. Then I'm going to read that topic to you, which will give you just a few
+moments to orient yourself to that. Then you going to breathe life into
+the conversation five minutes or so, set up the scenario etc. And then following that, I'll pose
+a series of questions, and you and I will just talk, and
+together we will run the clock out, okay? >> Let's have a listen to what kin
+has to say as his opening response to that question. My client is I can imagine
+is Prime Minister or office in Singapore. And my role is a senior data
+scientist in covid task force of Department of Health
+in Singapore government. And the task is to analyze
+on how public policy like vaccination policies mask
+face covering policies or other lockdown policies like
+gathering restrictions, how they affect the trend or
+number of confirmed cases and death. And I think first of all
+the practice questions to myself here is what would the data
+science results be useful And I think the data science result would
+affect the government policy and lockdown versus which coupled to
+the well being of the general public. And so we need to consider
+consequences of the data science result or
+analysis like who will be affected and how the data science results
+can benefit to the society. And it is important because
+normally as a civil servant or public servant, our work should
+be towards the best interests of the general public rather than any
+other individual or senior officers in the government including
+the prime minister or the president. So who belongs to a political party. So we have to recourse years
+of the analysis results or data science results being
+distorted by political bias. >> Once the introductory remarks are over, that gives the examiner chance to
+open up the floor for more questions. So let's listen to what Anthony
+asks of kin as a first question. >> That's a nice introduction. Very good. I was going to say I'm going to
+pretend that I'm the prime minister. But I'm not going to go quite,
+I'm not going to go quite there yet. I'll just pretend I'm in
+his office in their office. And so the the first question I
+wanted to ask you about is the so this data set that you examine,
+what does this, what story does the Singapore data tell? Did you get a chance to,
+to look at the Singapore data? >> Yes, of course. Well I actually compared
+some city which is very similar to Singapore,
+like Hong kong and Taipei and Tokyo, which is the four
+major east asian cities with similar very similar culture and
+wealthy of them sharing the chinese culture because
+of the of the three cities. The majority of Chinese. Okay, and what I see is that with the face covering policy has high
+correlation of the, I mean the high negative
+value of correlation coefficient to the daily
+new confirmed cases. >> Now that was a nice response. And so Anthony pushes a little
+bit further and says, hey, just to be clear here,
+you actually did more work. You actually compared things and
+that's actually an opener for kin to share some of the work that
+he did in some of the notebooks. So have a look to see how effective
+it is to share notebooks at the right time during the conversation. >> So, so what you're telling me is you
+didn't just look at the Singapore data because looking at the Singapore
+data in isolation, it'll tell you, it'll give you some story, but
+it's actually as you point out, it's important to look at it
+in a comparative perspective. So I really like that aspect and an idea. I just was wondering like you know, use
+the word highly You said high correlation. But we'll just say highly correlated. And so, I wanted to sort of dig in and
+understand. So ,what numbers are we talking about? And then, of course, if I'm part of
+the Prime Minister's office, right? And so, you got to talk to me before you
+get to talk to the [LAUGH] Prime Minister. >> [LAUGH]. >> Yeah, and so, am his Chief of Staff. And so I want to know what this means,
+actually. What does highly correlated,
+actually, mean? What does that mean for
+us in this city state? >> Okay, well,
+this is my Singapore dataset. Yeah, I wrote it out. And I create some new columns
+that are like daily new confrontations-
+>> That's a really nice answer. Now, Ken actually went on and showed us
+some more visualizations that he used. Now, this is kind of interesting
+because he bridged questions here. And that's certainly allowed. But it was part of a bigger story. So, it was a really effective
+technique that he used. And I want to share that
+with you right now. >> Okay,
+I think one of the interesting thing is to compare similar
+cities in the same region. So that we can have more knowledge about how the policies affect each of the city in terms of the daily confirmed, right? And, again,
+I have computed some new columns here. So that I can use a live chart to
+compare different cities here. Maybe be taxes, the franchise is small. The blue one is Hong Kong. The orange one is Singapore. And the red one is Tokyo. >> Now that's all we want to
+show you from Qin's exam. I want to, now, take another example. This is from a student
+whose name is Trish. And Trish was given
+a different question than Ken. But you'll get an idea of how this works. Again, a little bit of
+showing you the process. Here, Anthony Jovi is the adjudicator. So he does the introduction. And I'm the examiner for Trish. >> So I'm going to pass it over to Chris. And then he's going to
+read you your question. Which was randomly selected for you. And then pass the ball to you. So can kick off into your opening
+presentation, opening remarks. >> Cool.
+>> Thank you Anthony. Trish, how are you? >> I'm good, how are you doing? [LAUGH]
+>> Am good. You'll be happy when this is all over. I can tell. >> [LAUGH]
+>> It's like just get the question. Okay, so the question that has come up to
+our through the miracle of random number generation. Is the split, apply, combine one. That's question number four. >> Okay.
+>> So what I'm going to do is I'm going to read through that prompt. Just to give you, an extra five or
+10 seconds to orient your thoughts. Then I'll turn it over to you. >> Okay.
+>> To give me your introductory blurb. And then the rest of the time,
+I'll start my stopwatch here. The rest of the time we
+will spend talking about. What I think you think is
+interesting about the question. Okay, sound good? >> Sound good. >> Good, the prompt reads as follows. The split apply combine data analysis
+pattern identified by Hadley Wickham. In a 2011 paper published in
+the Journal of Statistical Software describes a strategy for analyzing data. Describe the pattern and how it has
+been implemented in various libraries. Discuss how the split, apply,
+combine pattern can be used to glean insights from
+the COVID-19 data hub data set. Provide at least two examples
+of its use from your exploratory analysis of the data. And with that,
+I'm going to turn it over to you. >> Cool, so, yeah, the split apply
+combine strategy is really where you break down a problem
+into manageable pieces. Operate on each of those
+pieces independently. And then pull them all back together. And split, apply, combine, like you
+mentioned, is definitely most commonly used in the manipulation, data cleaning
+phase, exploratory data analysis. Which is what I used for this project. And Pandas team, actually,
+implemented the split, apply combine strategy using group by. And so, basically, group by allows
+you to split the dataset into groups. And then they apply step of this. You can do many methods. You could do aggregation,
+apply transformations and filtrations. And aggregations, really,
+are about summary statistics. So say, you wanted to compute the sum or
+the mean for each of the groups that
+you you split into. Transformations are about custom functions that you might want to
+apply to a specific group. >> Now, I cut Trish off there. Why I just cut the recording there, because we then talk a little
+bit more about filtration. And that allowed me to go deeper
+into that specific topic. Because it's something that I felt that
+she was comfortable talking about. And that I could push a little bit more
+on the edges of her understanding. Let's listen to hear what she has to
+say when I asked her about filtration. >> But
+I don't think there's a specifically. But I also will say, for
+the other example, doing a filter first. Not doing a group by at all. That is something that I did do also
+in my exploratory data analysis. Just because, for example,
+if I just wanted to filter out the states. I could have just filtered out. And only said if it's in this list of
+states, then those are the states I want. That would be like filtering out
+all states that aren't US states. I don't know if there's really a pro or
+con to either. I think the only benefit is, when you
+filter on the bigger data set, you might be keeping more columns and stuff
+like that than you might actually need. If you do a group by, and then filter
+smaller, you could kind of shrink down the information that you're
+actually keeping in that new data frame. That group by would return. >> Now, the next segment is kind of fun. Because it's one of those
+cases where the student and the examination team are sort of aligned
+and we're thinking along the same lines. So a question that I ask,
+actually, you can see the smile appear on Trish's face as
+she's very comfortable with this topic. And then launches into
+a more detailed description. Or a more detailed answer rather
+to the question that I asked. The world map. And you split all your
+data according to country. Your apply is actually selecting a color
+that's encoding some sort of variable. And then the combine is putting all
+the countries together in the world map. >> [CROSSTALK]
+>> That's one of the exact visualizations I created for two. Yeah, I see. >> I made a bubble map plot. >> Maybe we should do this all over again. Get you-
+>> [LAUGH] Yeah, I know. I think you'd like my little graph for
+that one [LAUGH]. >> So, that's what I want to
+show you from Tricia's exam. The third student who gave us an exemplary
+performance on the comprehensive oral exam is Ric Vic. I want to show you this initial clip. Because there was some technical
+issues right at the beginning. And we resolved it. So, if something weird happens,
+we can't hear you. Don't panic. We'll solve it. And then we'll move on. Again, this should now be starting to be
+familiar to you with the structure of it. But we'll show you the intro
+to this segment, as well. Ritvik, how are you? >> Sorry, hey guys, well, how you doing? >> Yeah, we're doing well. >> Thank you for making time to
+interview me at this time, that's great. >> Not a problem, so, I'm Anthony White. I'm here with Chris Teplovs and together, we are going to participate
+with you in this discussion. Having said that,
+my role is that of adjudicator. What I will principally be doing is
+observing taking notes and helping score. In the main, your conversation is going to
+be a one on one with Chris, all right. So you don't have to worry about the two
+of us, like lobbying questions at you throughout the accessible
+portion of the conversation. All right, so what I'm going to do
+is I'm going to turn off my video, turn off my audio and listen and
+turn everything over to Chris. >> Now,
+Ritvik got the visualization question and he elected to share his screen again,
+not required, but available to you. And I want to show you how easily he
+talked to the work that he did and also how he gave us evidence that he
+did do a lot of work above and beyond the sort of the minimum requirements
+that is one or two visualizations. But I want you to have a listen
+to this is a longer segment to give you an idea of what it
+might look like as it unfolds. >> Can you see my screen? >> Yes
+>> Okay, great. So, I created a bunch of visualizations is
+to prepare for this particular question. And as part of that visualization,
+I've created some bar graphs, basically trying to get the number of
+confirmed COVID cases for each country. So I took a stop shot of
+the COVID data set at the country level and
+tried to analyze [COUGH] That data because I want to
+take a global picture of what's happening around the world. So that data set was quite rich, provided surprisingly much more
+information than I really needed for my analysis such as population was
+I didn't expect that to see there. But it was really handy to see
+population in the data set, which I later used to calculate
+some some interesting ratio maybe the ratio of new cases
+over total population. So I tried to kind of
+get the total new cases by country in a bar graph
+here that you see right here. And then I was not really impressed and
+kind of convinced with this paragraph. So I tried to, because there are so many
+countries in the world like 200 plus and this doesn't really
+represent it quite well. So I looked into top 20 top 30
+countries sorted by number of confirmed cases to get a clearer understanding
+of what's happening in the world at the moment in terms of COVID. And then I kind of plotted a scatter
+plot as well using plot li library. Which kind of made this whole
+experience quite interacted. So I used date as on my X axis and the number of confirmed
+cases on the Y axis. And then I actually used the color
+encoding that comes as part of the plot library. And I used administrative area level one
+which basically represents the name of the country in the dataset. So have the nice breakdown
+of that data set. But even though with this approach,
+I kind of have to take a trend line. I can see what's happening where but
+I just have to hover on the line to understand which countries what
+especially down at the bottom right there are lots of lines and
+scatter plots were lapping. So I decided to kind of filter on key
+countries that I wanted to focus on. So I looked into India, France,
+Brazil and the United States >> Now Ritvik was doing really well and the questions were getting harder and
+harder. So if you are the better you do,
+the harder the questions get. But I want to give you just a sense
+of how this might come about. So he was giving me some
+great visualizations. I saw that he did some coral plants and
+I asked him one question about that. I'm not going to give you his answer but
+I'm going to give you a sense of the question that I asked
+>> Let's go map. Let's take a look at the map and what I want to ask about on the map is, can you identify sources of
+bias in this visualization? >> Okay, so those are three
+former students of Milestone 1, who we felt did really well on
+their comprehensive oral exam. And we wanted to give you these little
+vignettes, these snippets from their exams to give you a sense of how
+things unfold during the exam. Now, some of the questions
+are the same for this iteration. But the data sets different, so we're not
+using the same data set that we used for these exams. So, of course, your visualizations,
+your talk, your clients, whatever, are going to be different, but you get
+a sense of how it's going to unfold and hopefully that will lower the stress. All you have to do is prepare good
+answers for the questions and we'll have a great conversation.

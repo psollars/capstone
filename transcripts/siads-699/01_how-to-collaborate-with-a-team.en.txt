@@ -1,0 +1,222 @@
+One of the most unexpectedly
+challenging parts of Data Science is actually not the technical problem-solving
+aspects at all, it's that data
+science collaboration is a serious
+engineering problem. A lot of mature organizations with data
+science still struggle to find ways to have their data scientists
+work well together, and with other parts
+of the company. It's actually a multi-billion
+dollar industry creating tools and practices that
+make collaboration easier. A lot of data science projects fail because of these aspects that don't work
+so well together. It's easy to make a project that works on your own computer. It is hard to make that
+useful to other people. Even though this project is ostensibly about creating
+a technical project, you will be encountering
+some of these issues. You may find that some things
+that are easy for you to do with one person become more
+challenging with three. You can probably
+infer from there how those challenges
+get increasingly complicated as you
+go from 3 to 5 to 10 to 100 to 1,000 people
+working in an organization. Here you will get
+just a little bit of a taste and
+begin to cultivate some awareness of how those
+problems happen and what are some of the ways that you can mitigate them as a practitioner. Some of the possible
+issues that we see, first, sharing code and developing in
+parallel. Not trivial. When you are the only person
+working on a project, you can write the code in a
+way that makes sense to you, and you don't tend to run into too many issues beyond forgetting what you
+did previously. When you and someone else are both developing similar bits of code and you have
+to make them work together somehow,
+that gets tricky. You have to keep your changes synced with them
+and vice versa and sometimes you have to manage if the changes that you've made
+conflict with one another. The more code you
+have to work with, the harder this gets. Another thing is tracking
+modeling results. If you are someone who's
+exploring a lot of different predictive
+models and you want to optimize to find the best model, you're going to be
+exploring many of them. Other teammates might have
+different ideas as well. Then a further issue becomes, what if you make a cool model, but you have to send that to
+your front-end or deploy it, and then later you
+make another model. How do you update it? Basically tracking what
+models you have already tried and which ones you have published or pushed
+onto a teammate, that is not trivial and it gets harder the more models you're
+exploring or considering. Sharing datasets
+is another issue. Datasets tend to be
+not as small as code. They're often bigger.
+Sometimes they are too big to keep on your laptop. Providing access to
+your data set to other people and moving
+it between machines, can get unexpectedly difficult, especially when your dataset
+is on the larger side. Another issue is reproducing your work on someone
+else's machine's. If you and your
+teammates don't have the same Python libraries or the same Python versions or sometimes even the same
+operating systems, you will run into
+issues sometimes. Making sure that your code can be run in other environments, environments meaning
+another computer, this can turn into some
+headache sometimes. It's especially common in the Python language and
+there have been a lot of tools developed around
+this to manage what is called dependency hell. Project management in
+general is a huge industry. There are many approaches and
+techniques to dealing with the basic human
+challenges of keeping on task when you have people who have different working styles, priorities, and interests, as well as their own personal
+lives and schedules. Because of so much of data
+science is now remote, I really encourage you to
+lean into the challenges of managing a project
+where you have teammates that are not coming into the
+same office as you. This is increasingly what the workplace looks
+like and it's super exciting because it
+opens us up to work with people with radically
+different schedules, and different time zones,
+different lifestyles. But it also poses
+some new challenges. Project management
+is a huge area of its own research
+and practice, and I think you will find that it's really rewarding
+when you get it right. But it's not something
+that we wake up knowing how to
+do from scratch. As I have hinted, I think that more data science
+projects actually fail for these reasons than
+purely scientific ones. I don't know what a really reliable and certain number is, but there are
+people who estimate that the majority of
+data science projects are simply never put
+into practice because they end up stuck on
+someone's computer somewhere. You make something,
+it's beautiful, but how do you share
+it with anybody? This is something that we
+increasingly believe is a real loss of potential
+in data science work. Even though in this class, we're not learning
+expressly how people get around these issues
+and to a large extent, these are unsolved problems. I really hope that this is
+an opportunity for you to experience and encounter some of these possible challenges, and start to get a sense
+of how we deal with them. How you deal with it is
+going to be up to you. I'm actually not going
+to be grading you based on your
+project management, what I'm grading you on is going to be your final project. I'm not going to enforce
+any certain ways that you face these challenges, because I think that there
+are a diversity of tools, there isn't a right
+answer a lot of time. I'd just like to share some of the tools that get used
+in data science for project and
+collaboration management that may or may not
+be useful to you. They're are just some
+of my favorites, and if you find something
+cool that you like, I really encourage
+you to share it in the course Slack
+channel with your peers. For code sharing and versioning, keeping track of what
+you've done over time as well as
+developing in parallel. You and your teammate
+can both be working on different versions of
+code, I recommend Git. Git is a software toolkit that gets used on
+your computer and GitHub or GitLab
+which are places to host your Git project. I will happily do any
+walk-throughs of this in class, if there's a request, I can make a video for this. Just ask me if you're
+struggling with this and you'd like to try it. If you are using a lot of experiments in machine learning, maybe you're trying
+a whole bunch of different hyperparameters
+or model architectures for a machine learning model, some people enjoy using
+experiment trackers like DVC, MLFlow, Weights & Biases. There is a huge set of tools in this space and many
+of them have free versions. If you are using Python
+and you have a lot of libraries that are
+dependencies of your project, your project needs them to work, consider exploring
+virtual environments. There are several
+ways to do this, there's Conda,
+Virtualenv, Pienv. You can use any of
+these if you have to keep a list going of everything that's needed to run your software and make sure that it's easy to
+port to other places. Next, in terms of data storage, your University of
+Michigan Google Drive gives you unlimited storage. If you have a
+pretty big dataset, this is a pretty good
+place to put it. Using libraries like Pydrive, you can link your
+Google Drive Storage to your Python code. You can access things
+in your Google Drive through your Jupiter Notebook. Finally, I'd like to recommend project organization
+schemas like Cookie Cutter Data Science. This is a toolkit
+that helps you set up a structure of folders
+inside your project, and then it helps you keep track of where do
+you keep your data, where do you keep
+modeling results, where you keep documentation, and where do you keep code? For some projects, this might
+be a really nice toolkit, it gets everybody
+on your team on the same page about how we're going to organize the project. Another thing I'd like to
+mention is that writing cleaner code will also
+make your life easier. I know that in MADS, there's some
+programming instruction but you don't get graded necessarily on
+having cleaner code, and certainly, you do
+not have to turn in software engineer quality
+code as a data scientist, I am not expecting that. But one thing I'd
+like you to know is that when you write
+cleaner code, it serves as it's own
+documentation and it becomes easier for you to
+work with in the long run, easier to be published for
+new people to understand it, and easier for your teammates to understand what you're doing. Couple tips. First, consider functions
+instead of scripts. In data science, we often
+get into a place of writing really long scripts of steps that we're going to do in something like a
+Jupiter Notebook. If you find yourself
+repeating a chunk of code, consider writing
+that as a function. So you only write that
+once and then you call the function
+whenever it's needed. This will keep you from losing track of
+somewhere that you might modify it in one part of your script, but not the other. It makes it quite readable. It cuts down on lines and saves you some headache
+in the long run. Anytime that you have a value, maybe you're setting a
+neural network and you want to give it a certain
+number of layers, try to stay away from hardcoding values, use
+variables instead. When I see a number that's
+in somebody's code, I often have no idea where it came from or what it's
+supposed to mean. If you use a variable, it becomes easier to
+give it some meaning. You can define it with
+a useful variable name, which brings me
+to my next point. Use an expressive variable name. You can name it something
+like numblayers. Put that in your code.
+That's a kind of documentation about
+what you're doing, and it helps you maintain
+that anytime you update that, you don't have to remember to update it anywhere else
+it's used in your script. Use variables instead of values. This in the long run will
+also save you some headache, and pick variable
+names that roughly tell you and other people
+what the variable does. Try to avoid using x and y, or as I used to do xxyy, xx, xy, etc. Don't do that. Don't be like me. I could never figure out what I
+did after a week. Another thing that's unintuitive
+to a lot of people is that readable code is actually preferable to
+extensive comments. We hear a lot about the
+importance of documentation, and commenting is
+a useful thing, but you can overdo it. Comments actually are very
+quick to get out of date. It's very easy to leave a comment somewhere and
+then forget about it, and then update your code later but forget to
+update the comment. Now you've got a comment that doesn't correspond
+to anything in your code and your teammate
+comes in and looks at it, and that is confusing to them. They're like, "Am I supposed
+to see something here? I don't see anything
+here." Try not to do that. Whenever you can, write
+code that's easy to read and expresses its intention through variable names
+or function names, instead of writing really
+long comments that are likely to get out of date fast. When you do use a comment, it should explain the intention
+of what you're writing. Try to explain what
+you are trying to do in your code block. Another thing I'd
+like to suggest is removing dead code blocks. Another habit that's easy
+to get into is commenting out a big part of your code and then
+just leaving it there. If you're using version
+control like Git, you don't have to
+do this anymore. If you're not using
+version control, then sometimes this has a
+purpose because you don't want to lose your code,
+but in the long run, try to avoid having dead
+code blocks that just clog up your code and
+make it less readable. The last thing that
+I will suggest is consider taking the time to
+review one another's code. In a lot of organizations, code review is a
+regular part of life, code review might happen
+every day or every week, every time you change some code, sometimes multiple times a day. Code review helps us
+keep code readable. We understand one
+another's work. Even if your code review is that every two weeks or so you just sit down with your teammate
+and you take turns sharing, this is what I wrote
+and how I wrote it, and then you can give one
+another some feedback on it. If you need a code review, I'm also happy to
+consult here and give you some opinions. I have seen some
+really nice code from people in MADS before, so I know that there
+is expertise within the student body essentially. I would ask around, don't be afraid to get
+one another's opinion, and learn how to give code feedback to one another
+nicely and professionally. It's a super useful skill. Those are just my
+big ideas about it. However you deal with these
+challenges is up to you. I am not going to be
+assessing you on, "Did you use functions
+instead of scripts?" I want you to write code
+however you're comfortable, but I'd also like
+you if you feel that you have the time and the
+bandwidth within this course, if you feel like you're in a pretty good place with some of the data science aspects
+of your project, I'd encourage you
+to push yourself a little bit to try to take your code to the next level with some of the tips and the tools
+that I'm describing here, and you may very well
+enlighten me with something new that you found that would be useful
+for everyone.

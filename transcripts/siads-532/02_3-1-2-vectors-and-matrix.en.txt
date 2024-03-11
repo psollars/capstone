@@ -1,0 +1,77 @@
+Based on the two examples, you know how
+vector implementation is more powerful than itemsets because they
+can cover numerical data. To put it more formal,
+we define a vector X. We put a little arrow on top of X
+to indicate that this is a vector. We represent the bait object X as
+the vector of P dimensions x1, x2 to xp. x1, x2 to xp are all numerical values
+in the corresponding dimension. So in this example, we put the arrow on top of X to
+indicate that this is the vector. But if there's no ambiguity,
+we also usually denote that just as uppercase X or
+sometimes even a lowercase x. So in this case, X is the p dimensional vector because it has p attributes. Every attribute this defines
+the dimension of your vector. It is equivalent to say that
+dimensionality of this x vector is p. And xj can be any real numbers. Of course, since X can be any real
+numbers, it could also be either 0 or 1. If all your x i xj's are from 0 or 1 and
+this vector is called binary vector. So based on the definition of vectors, we
+can now look at a collection of vectors. Net gives us the matrix. In this matrix, we're basically click on a list of
+vectors with the same dimensionality. That means they share the same number
+of dimensions, they share p dimensions. Every row is the vector that
+corresponds to one data object and you can see that every
+row vector has p-values. Every value is corresponding to
+the particular first second the js, the fifth dimension and
+every number is a real number. So you can see that these numbers
+corresponds to the first dimension. These numbers corresponds
+to the j dimension. That means these are values of different
+data objects of the j attribute. And we usually record the n number. In this case,
+n is the number of rows in this matrix and n denotes the number of vectors. P denotes the number of dimensions. And in that case, we call this
+big matrix that n by p matrix. So n times p is read n by p, in this case. That just indicates that the matrix
+X has n rows and p columns. So now we can say that the matrix X
+is the collection of row vectors. Every row vector corresponds
+to the data object. You can see that this is the row vectors. This corresponds to one data object. But note that because we're
+the only wisdom matrix, every column of the matrix
+also represent the vector. It causes the column vector and,
+of course, a column vector of a matrix does not correspond to the data
+object to a single data object. And in fact, the column vector represents
+the attribute in your data set. And this vector summarizes all
+the values of this particular attribute, all the end data objects. So that gives you the recommendation of
+the attribute instead of a data object. So one matrix is essentially a collection
+of those row vectors and column vectors. We have n row vectors
+corresponding to n data objects and we have p column vectors
+corresponding to p data attributes. So this is what we know
+about the m by p matrix. You may be familiar with
+mass of matrix operations. One very interesting
+operation about matrices is known as the transpose of a matrix. So given the original X matrix, one thing we can do is
+to put every row of this matrix into the column of the new matrix. So in this case, the first row of the matrix X becomes
+the first column of the new matrix. And the second row becomes
+the second column so answer force. We can transpose every row of the original
+matrix into the corresponding column of the new matrix. And once we are done with this,
+we have another matrix. Comparing the two matrices, we can say that the values on the diagonal
+of the two matrices are the same. Because no matter how you
+flip the rows into columns, these data objects will not be flipped. And this new matrix is no
+longer the n X p matrix. It is a p X n matrix. Why, because now it has p rows and n columns because you have flipped
+all the rows into columns. And we call this new
+matrix the transpose of X. So this is the flipped version
+of the original matrix. So we can see that through
+the transpose of the matrix, we can now get a new matrix. That is the p X m matrix. The all the row vectors of the original
+matrix become the column vectors in the transpose. And all the column vectors in
+the original matrix becomes the row vectors of the transposed matrix. So XT is the transpose of X. Now, we can take a look at a few
+examples of how we can use vectors and matrices to represent data objects. In the left hand side of the slide,
+you see the matrix of product ratings. It has n rows and every row
+corresponds to the user database and every column corresponds to the product. For example, if I work for Amazon,
+Amazon sells millions of products, so they're big data matrix. We have millions of columns. Every cell in this matrix recorded
+the ratings of the i-th user and the j-th product. So every sale records the rating
+of one user on one product. Sometimes, we have a binary value. The user will only tell you whether they
+like the items or not and sometimes, we have numerical ratings. So the user could actually rate the
+product from one to five or one to ten. If I take one row from this matrix, it gives us the representation
+of one particular user. Looking at the ratings of this user and
+different items and different products,
+you can tell the preferences. You can tell the personality of this user. If you take a column from this matrix, it gives us a representation
+of one particular product and looking at a ratings of different
+users on the same product. You can tell the quality or
+the market of a product. So on the right-hand side of this slide, we see the matrix that is
+known as the microarray. Every row of this matrix
+corresponds to the gene and every column of the matrix corresponds to
+the sample or an experimental condition. So every cell in this microarray matrix
+corresponds to an expression level of one particular gene under one
+particular experimental condition or in one particular sample. So we can see that the two examples
+give us the idea of how can we use matrix representation to deal with very
+large, to deal with real world data sets.

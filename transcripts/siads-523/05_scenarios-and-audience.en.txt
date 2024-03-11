@@ -1,0 +1,175 @@
+Hi. Welcome back.
+In this section, we're going to talk
+about those scenarios and how to work with an audience. So let's get started. You'll know from looking
+at the scenarios that one of them is
+for Chicken Kitchen. Between the two options
+presented there, one was Kendall County in Texas and one is Frederick
+County in Maryland. Your job is to narrow down
+to which county looks more amenable to be the site
+of the next franchise. In order to do that, you
+have to think about "How would I make that decision?" Well, we know that that company has some particular,
+that it thrives in communities with
+particular demographics. They tend to be communities
+that are wealthier, that lean a little bit
+more conservative, that have more recent building, and that have the disposable
+income in order to eat out. We also know that
+Chicken Kitchen, while technically in
+the fast food category, is like places like Panera, one step up from budget fast food places like
+McDonald's or Burger King. So it's not just do they eat out, but can they afford that extra couple of
+dollars per entree. So in order to decide, I need to learn some more
+about those communities. So I'm going to walk
+you through some of the data sources that I would use and some of the
+questions that I would ask to help
+me figure that out. But before we do that, I want to talk a little
+bit about context. Even from the earliest phase
+of your research here, I want you to be mindful
+about who the audience is for your ultimate communication and this question of "what's your why?" And this will come up a couple of times as we go through the term, which is a thought
+coined by Simon Sinek. So let's talk first about
+who you're trying to inform. In your practice as
+a data scientist, sometimes you'll be talking to peers and that's when you're using all kinds of
+data science slang. That's when you're talking
+about Python or R, you're talking about JavaScript, you're talking about
+complex statistical tools. And as you work up to managers, you may stop talking
+so much about the minute details and start talking a little bit
+more big picture. But ultimately, the
+decision-making power in each of your scenarios lies with
+the executive of a company. And that's important because there
+are several factors that come into play when we're
+talking to executives. First, you're
+talking to the folks who actually have the power to make decisions. And because
+they have that power, they're also extremely busy. So the power is in you to be succinct in the ways
+in which you communicate. And that's why we'll
+explore things like a short executive summary and a long-length report. And that's why your oral
+presentation that you record is going to be
+so relatively short. But executives are
+often not expert in data science or perhaps not
+even expert in statistics. And that means we can either
+load them up with a bunch of technical information that
+they may not understand, which could lead to some
+unintended outcomes, or we can be that bridge
+builder who figures out how to communicate that information to the executives in a
+way that's respectful, appealing, engaging,
+and that ultimately guides them to adopt the decision
+that you feel is best. And there's always some ambiguity in the choices that you make. So even in this example scenario that we'll be
+working through all semester, at any point, the recommendation
+could go the other way. And the idea there is to
+recognize that it's rarely the case that there's
+only one good answer. So again, we're not going
+to concentrate on here, "Did you decide
+the way we decided?" But instead, we want you to
+think about the arguments you make and the case you make for why your decision
+is the best one. As we're thinking about
+that executive audience, we're thinking about
+"what's my why?" We're thinking about
+what they need to know in order to
+make that decision. That means we're going
+to be judicious about what data we look at that
+we ultimately include. And you're going to find
+as we go through this process that you're going to find a ton of information. And at first, everything is going to simultaneously look
+important and/or relevant. And over time, as you become more knowledgeable and
+more confident about the ways in which that data is starting to roll
+together for you, you will start to realize that some of that data
+is more persuasive than others and some of your arguments are more
+persuasive than others. So in a way, you're going
+to let your garden grow, and then as you get
+ready to present, you're going to weed out the information that's
+less important. The other thing you might
+be thinking about is, do you already have credibility? So we've all had that class with the world-famous professor
+whose slide decks look terrible and who
+bumble as presenters. But we put up with
+it because we know that they're amazing and
+they won the Nobel Prize. So we'd better listen, right? In most cases, if you
+are in this position, you don't yet have that
+level of assumed authority. And that's why we'll need
+to think about how we can use graphical
+elements and text and formatting and vocal
+delivery to help build you up, to sort of be your backup
+singers as a professional. So let's think a
+little bit more about those executives and
+what they care about. Duarte points out that
+for-profit executives tend to have their minds
+on these three things. First, they have
+their mind on money. How can we maximize
+our revenue and maximize our profit
+with the lowest costs? So arguments about money might be particularly
+persuasive for them. Secondly, they're
+interested in market, having a bigger share
+of the market and, or perhaps thinking
+about the time between research and development
+and getting to market. So there's often a sense of
+time urgency for executives. They don't want to spend
+too much time developing a product that might
+take six years to come to market if they could find a product that they
+could develop in three years and with
+similar revenue outlooks. And finally, they tend to
+care about exposure, which means they tend to
+maximize retention and sometimes maximize the status
+quo, and minimize risk. Now, this last one, if you're working
+with a for-profit executive in a startup, you might find that
+their motivation is a little bit different. So the Mark Zuckerberg Facebook "move fast and break things" is an exception to this rule. But my entire career, I have always worked
+for non-profits and non-profits are driven
+a little bit differently. So when we think
+about non-profits, they might also care
+about other things. So imagine that you're pitching to the head
+of the hospital, or the head of the United Way, or the head of an
+arts organization, or the head of an
+independent school. They tend to also care about things
+like trust and reputation. So they both want to maximize the support they have
+for the community, but minimize potential
+embarrassments, wobbles, mistakes, or fissures in how
+people think about them. Secondly, they often tend
+to think about impact, which is that they
+really want to achieve the mission of the
+organization and they want the most dollars and the most effort to
+go into achieving that mission and not into
+unproductive activities, wasteful spending, poor
+use of staff time. They also value relationships. Not-for-profits are often
+concerned with human beings as either their clients
+or their customers or the benefactors of something. So they want to maximize
+those human relationships, whether they are with
+someone who will receive a service or they're the one who's funding
+that service, and they often want to
+minimalize what for lack of a better term, I'll
+call individualism. Minimize the sense that everyone stands
+alone in isolation. And finally, non-profit executives, especially those who work
+in the arts or research, often want to maximize those
+very messy opportunities. Creativity is messy,
+it's expensive, and it's very human-driven. Research takes time to develop, to test, to validate. So they want to make sure
+that there's a lot of time that can go into
+those process things, whereas maybe a for-profit person is really focused on product, and minimize distractions or
+things that get in the way. So a good head of a research group will want to
+maximize the amount of time they're spending on research
+and minimize the amount of time they're spending on bureaucratic paperwork,
+for example. So you can see how depending on what kind of executive
+you're pitching to, you might use different
+ways of communicating. Now, sometimes you'll get a for-profit executive
+who also cares about relationships and
+oftentimes you do get not-for-profit
+executives who often care about money as well. But knowing the sense of
+what matters to them will help give you a lens
+for how to look at data. And I'll give you one more example. In my old life, I worked for an
+elementary school principal, and my value when I worked with students was
+I really wanted to see them using their brains
+in problem solving and making decisions and practicing
+higher-order thinking. But this present principal had started his career
+as a school janitor. And that long career that
+led to him being a teacher and
+ultimately a principal meant that he was
+really concerned with people feeling safe
+and happy in a space. So if I went in and
+talked about, "Oh, they're doing all this
+difficult problem-solving," he would paste this polite but
+sort of pained smile on his face. So I wasn't going
+to be able to make my message carry out well. But if I told a story of
+engagement, if I said, "I'm trying this
+new experiment with my students and what
+I'm finding is that they're really diving
+in and they're really excited about
+learning and they really can't wait
+to come in the room and keep learning every
+day," he would light up. Either way, I was
+asking for support for the methods I was trying, and either way, my
+ask was the same. But in one situation I could get a stronger response from
+him than the other. So he was more likely to say yes when I framed it
+in things he valued. So be mindful of that as you move through these scenarios. Next up, we're going to
+start our data exploration.

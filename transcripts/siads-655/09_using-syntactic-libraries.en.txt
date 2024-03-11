@@ -1,0 +1,120 @@
+So far we've seen a bunch of different syntactic
+techniques for analyzing the
+structure of language. Let's take a look at a few
+of the libraries that you might use and practice
+to actually do this. One of the basic
+libraries that you'll use is known as NLTK. NLTK is a general
+purpose NLP library and this encompasses more
+than just structure. In fact, you have
+implementations and many syntactic and
+semantic algorithms. There's part of speech tagging, multi forms of parsing
+including constituency and dependency parsing and
+some additional techniques that we haven't even
+talked about yet. That said, NLTK doesn't
+typically involve any deep learning or
+any sort of things like the vector models
+that you did in week two. It has many different built-in
+datasets and corpora. The benefit of these
+is that if you want to do rapid experimentation, you can actually just download
+them within the package programmatically and you'll
+be able to access them. It also has bindings for some other libraries
+like CoreNLP, which we'll talk about shortly. NTTK is pure Python and is typically designed
+for educational use. There are few production
+facilities that do use it, but it does have quite
+a few tutorials. However, as a result
+of being pure Python, it's often very
+slow in some cases. It is often behind
+state of the art, in fact for many of the
+algorithms that you might use. But that said, as a first pass, it's a great library to
+try to do something with the easy-to-use API and often
+extensive documentation. It's been around for about a
+decade and so remains one of the standards for trying to
+learn and understand NLP. Other more modern library
+that you might run into is going to
+spaCy and in fact, you'll use this in parts
+of homework three. SpaCy implements many
+different NLP algorithms, mostly friends
+syntactic but it does include some semantic
+analyses as well. These include part-of-speech
+tagging, parsing; only dependency parsing,
+co-reference resolution, name entity recognition
+and others. One of the benefits of SpaCy, as this capital C
+indicated in its title, involves quite a bit of C in the backend, which you never see, it's only python implementation from the programmer's side. But it means that it's
+very fast in practice, often orders of magnitude
+faster than NLTK. It has multiple models, you can seamlessly swap in, say if you're working
+with Web Data or news data or things that
+have different sizes. Should you want to actually have a smaller model that say, runs on a phone versus a browser. SpaCy also includes
+multilingual support. Should you want to do something, say in French or
+Spanish or Chinese, you can actually
+load in models for spaCy to make these all work. A third library that you may run into and one of the
+biggest libraries for NLP is known as CoreNLP from
+the Stanford NLP group. This includes many state
+of the art models for a syntactic and discourse tasks. This includes some of the
+things we've talked about, like part of speech tagging
+and parsing and co-reference, but also other things like
+co-reference resolution, entity linking or even
+information extraction all of these packaged
+under a single API. It has a pluggable pipeline
+that given some text, we'll run through a series of these different syntactic or discourse analysis and return
+to you a mocked-up object. CoreNLP is written in Java, which doesn't mean
+that it's fast, but it means that to
+access it through Python, you have to use bindings. This are very well
+built-in these days. It does take a little
+bit of wrangling to get a Java server up and running, but the tutorials are quite good. If you do need robust
+state of the art NLP, CoreNLP is a good option
+and it is regularly updated with each new NLP paper from the Stanford NLP group. Essentially theory
+is rolled straight into practice at your benefit. Also has multi-lingual support, notably for Chinese and Arabic so you can do many of the
+same different analyses. They're supported with all of these different syntactic and discourse tasks in
+different languages. Another recent entry into
+the approach is Stanza, which again comes
+from Stanford NLP. This is again a state
+of the art model for syntactic and discourse tasks. But unlike this, it does not include all the
+different aspects. In fact, it's written in
+Python using deep learning. To use Stanza to
+its fullest extent, you'd likely need a GPU or
+Graphics Processing Unit on a graphics card to
+take advantage of the fast math you need
+for deep learning. That's said, it also has
+bindings to CoreNLP. You can use some of the new
+deep learning techniques as well as the CoreNLP pipeline for doing some of its analysis. It's more likely to be close to any of the state
+of the art papers, given that most of the
+field of NLP has moved to deep learning for some of the most advanced techniques. It too has multilingual support. To do a quick comparison
+of these libraries, just to get a sense
+of what's available, I'll show you four
+of these libraries. I will say that these are
+not the only four libraries and there are many
+other libraries that actually build upon these four that let you do
+more advanced NLP. But say you wanted to look at sentence splitting
+or word splitting. In fact, all of these
+have common APIs for figuring out where
+are word boundaries or sentence boundaries. This is actually
+somewhat hard technique, depending on how you interpret the period
+in a given sentence. Looking at the rest,
+you can see that not everything is
+a green checkmark. For example, only NLTK
+support stemming and in practice many folks use lemmatization
+instead of stemming. Similarly, you can see
+that for entity linking, which is to create a named entity and link it
+to some reference space, only CoreNLP supports this. Again, only NLTK will
+support things like word sense disambiguation or co-reference resolution is only supported by spaCy or CoreNLP. There are many of these
+different techniques and I encourage you to
+look at the library that you might want to use to see what sort of other
+unique features it has. For example, one that
+we've talked about, NLTK has the ability to
+download packages or SpaCy has the ability to download different pre-trained models for working with different
+types of text. There are many such
+customizations that you can make depending on the API
+that you'd like to use. We'll mention one other kind of interesting library that's built upon spaCy, known as TextaCy. TextaCy builds different information extraction techniques on top of spaCy. For example, it'll do
+noun chunking to find common noun phrases or you can use regular expressions
+over parts of speech. For example, any number of
+adjectives followed by a noun. This can be really useful
+for identifying key phrases. It can even extract
+dependency triples such as subject verb, object from a dependency graph. If you want to do large-scale
+information extraction, this is a good library
+to try for this. In fact, it provides
+programmatic access to common corpora like NLTK on
+top of its infrastructure. There's lots of other
+different useful tools and TextaCy is not alone in
+this different NLP library. I encourage you to check
+out which kinds of libraries will work
+for your needs.

@@ -1,0 +1,140 @@
+Welcome back to
+perception and cognition. I want to talk right now about
+detection and estimation. Particularly when we're good and when we're bad at
+these different tasks. The first thing that I
+want to talk about is this notion of
+just-noticeable difference. That is where we can detect that two
+things are different. We saw an example with
+these gray squares before where it was possible to detect them when there was
+a difference that was huge. So if asked you which was lighter depending on
+the specific shades, there were situations where
+you were able to tell me that they were different and
+situations where you are not. This happens to work across all the
+different senses actually. So if we think
+about if we were to touch a fingertip or the hand
+using two different points, depending on how close
+those points are, we would not be
+able to distinguish those as being different. So if we move this caliper
+down here and move it closer, you wouldn't be able
+to tell that there was a difference because
+the neurons that you have, your touch sensors in that particular area of
+the hand aren't that great. So the closer we
+move this caliper, the harder it becomes to tell that I'm touching
+two different points. This is the notion of just noticeable difference
+and it applies both senses like touch
+and senses like vision. The thing that tells
+us how this works or determines what the
+just noticeable differences is, is related to this idea
+called Weber's Law. Weber's Law is
+this specific formula and what it has is a constant, this K. It has the
+intensity that is how much we feel a particular
+thing and the Delta, the change in intensity
+that we need to be able to perceive in order to say
+that something is different. So how does this work? Let's say, we have a room in
+which people are whispering and we know
+that the constant K, let's say, for sound is one. So if the room is
+very very quiet, this intensity too
+is very, very low. The amount that we have to
+increase that intensity to be able to tell that there's
+a change is only two. So that is Delta two over two is one so that we're
+maintaining the constant. So if we're in a very different
+room where it's very loud we again have to maintain
+this constant of one. Our intensity now is at
+100. We're very loud. In order for the difference
+to be detectable, now we have to increase
+our intensity by 100. So instead of increasing it by just a little bit in
+the really quiet room, we have to be really loud for someone to be able to
+detect that difference. So this is part of the
+things that constrain us when we think about
+just-noticeable difference, this constant and what the relative intensity is of that signal whether
+it is the color, whether it is the sound. So we're going to
+consider this when thinking about
+just noticeable differences. Most continuous data because of this is actually
+perceived discretely. So if we look at this gradient and if you focus on the particular
+things in the gradient, what most people will see
+if they stare at it for a while is that it will look like they're actually
+bands to them. It will be very
+difficult to detect all the different shades of
+gray in this visualization. What you'll see is again, these bands because
+there will be periods, the places in the
+particular visualization that you won't be able to
+detect the difference. So let's move on to this
+interesting idea of estimation. This is a slightly different
+concept, but highly related. If I show you
+these two circles on the screen and I
+asked you to tell me how much different in area the bigger circle is
+relative to that little one, this is actually hard
+for a lot of people. Some people will
+say it's two times. Some people will say
+it's three times. Some people will
+say it six times. The reality is it's
+four times and most people are unable
+to do this accurately. This has to do with something
+called Steven's power law. This is a different law again, like Weber's Law that tells us about the way we
+perceive things. The equation for Steven's power law is
+a little bit different. We have intensity, we have
+sensation, and we have power. What people have done is
+these different experiments to figure out for
+different senses, for different kinds of
+signals what that power should be and for different kinds of things
+whether brightness, smell, area, length, and so on, we have a very different piece. So how does this work? We have the actual signal
+and the perceived signal. So if I draw a line of different, or I draw multiple lines
+on the screen of different lengths what
+is true for length is that your actual length is pretty accurate when I asked you to tell me how long it is. So the actual length relates nearly one-to-one with
+perceived length. So there's a perfect correlation between these two things. So if I take this line and it has a unit length of one and
+I ask you how long it is, most people are able
+to tell me quite accurately perceive this
+as a length of one. So they're able to say, "It's one." That's great. This is exactly what
+we want and even more important when it comes to visualization is in comparison. So if I asked you how much longer one line
+is relative to the other you're able to answer this accurately again and say
+it's two times as long. So length has
+this perfect relationship between the actual signal
+and perceived signal. This is great for us when we
+can use it in visualization. Now, it turns out that area is actually a little bit
+different and worse. With the actual and
+perceived are not a perfect correlation and it's actually much worse when
+we think about volume. So people tend to actually
+underestimate when asked about area and volume in terms of what the signal actually is. So if I say, "What's
+the area of the circle?" It happens to have
+a true area one, the reported areas is 0.7. If I asked you to tell me
+what the volume is of this one cubic whatever volume sphere, most people reported as 0.6. So there's a little bit of
+an underestimate that happens. There's not this great perfect correlation as
+we see with length. That is why we're
+are going to prefer length when we're using this retinal variable to encode data in our visualizations. We prefer not to use area and
+volume if we can avoid it. We can't always avoid it
+and you've probably seen visualizations that
+looks something like this. This is a map. This might be election data
+or whatever it is and we're encoding particular pieces of
+information using circles. What we're asking the viewer
+to be able to do is look at the circles and figure out what the area is and be able
+to estimate these things. This is really, really hard, but in this particular case, it was necessary given
+the particular choices. So what have people done? People have started thinking
+about ways of doing this, in particular, in map-making. If we have a notion of
+this one unit circle and this is absolutely scaling and then we're going
+to triple in size. So this is perfectly accurate. The area of this larger circle is three times the area
+of the smaller circle, then we're going to 6,
+then we're going to 12. Now, knowing that people underestimate these
+differences- so if ask you, how much bigger the three is than the one and I don't
+give you the texts, you're going to underestimate. So what people have done is applied this kind of correction, which is called
+Flannery's compensation. Where they make the circles just a little bit
+bigger in order to fool the eye into seeing
+what the actual scaling is, using this apparent
+scaling notion. So if we overlay, you can see that
+the 12 is bigger, the red 6 behind the
+blue 6 is bigger, and the 3 is bigger as well. So we're fooling the eye. As you might imagine, this
+comes with some cost. If someone is good at this task or someone
+is aware that they're bad at estimating areas and we apply Flannery's compensation, then they're going to
+read the wrong thing. They're going to see something bigger than it actually is. So this is the idea
+that you can make corrections for these problems that we see with Steven's law, but you have to use them with caution because we're lying
+essentially with the data, a little bit with
+the visualization. The takeaways from
+this particular segment is that there are
+perceptual limits, things like
+just-noticeable difference and as we're informed
+by Weber's Law, that limit our ability to
+determine differences. We also learn that
+input signal does not necessarily equal perception and this is Steven's law
+and this will impact the accuracy of
+our reading of data. We can correct for
+some of these things, but they should be
+used cautiously. So thanks for listening.

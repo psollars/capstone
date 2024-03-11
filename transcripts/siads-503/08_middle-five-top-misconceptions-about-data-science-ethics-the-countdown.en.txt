@@ -1,0 +1,196 @@
+Now that I've covered the
+top five misconceptions about data science ethics, let's get into the next five. I've grouped these together around the heading
+"Professional Ethics" because these are misconceptions
+that I believe you may encounter when working as a
+professional data scientist. I'll start counting from
+my last five with number 6 and that's that ethics
+is public relations. So in industry, I have some experience in
+industry and you'll hear more about industry experiences from some of our guest speakers
+later on in the class. In industry, there's sometimes this very porous distinction between ethics and
+public relations. If we just do what people want, then we're being ethical
+and ethics is satisfied. Now you can see that this
+isn't true if you believed my earlier slides about how ethics isn't just public opinion, it's not public relations either. Of course, there
+is some relation, like there are many
+unethical things that are deeply unpopular. If we started doing
+some unethical things, it's quite true that
+people wouldn't like it, but there are also
+many situations where doing the right
+thing is unpopular. So brace yourself for that. Doing the right thing
+may also be unpopular and good public relations
+might be unethical. So just make it
+clear in your mind, public relations is
+some different class, it's called data science
+public relations, but that's not this class, this class is about ethics. This is a tough moment for the tech industry and
+social media particularly. This is an image of protests
+against Facebook in the UK. I chose this image
+because I really I'm unnerved by the uncanny
+weirdness of this. I guess it's a papier-mache,
+Mark Zuckerberg head. It's interesting that
+the public relations in many cases is advising tech companies where there are ethical concerns
+to do a variety of things, but public relations doesn't
+really match and over time, any kind of reasoning
+about the situation. So for example, there hasn't
+been a big public outcry earlier about some of the
+things that Facebook was doing. There was this Cambridge
+Analytica scandal that we'll reference later in the class that brought a lot
+of public attention. But before that,
+Facebook was still doing those things and there
+just wasn't a lot of outcry. So you can't really
+track what people want you to do with
+the right thing to do. In this case, there are many instances where in
+privacy, for example, there hasn't been
+much public outcry about things that I think everyone agrees are pretty awful. Then maybe the outcry really
+depends on the new cycle or a particular telegenic case or a particular incident that
+sticks in people's minds. So ethics is not
+public relations. I'm belaboring the point. You get it? Let's
+move on. Number 7. The next one is ethics is
+compliance with the law. Now it seems somewhat like I shouldn't have
+to say that because it maybe seems obvious but there's a thing when you're
+working in industry or a government or a non-profit or wherever and it's
+sometimes called compliance or legal affairs or the general counsel's
+office or something like that but that is not the
+same thing as ethics and we know this maybe from my example earlier about
+the Civil Rights Movement, I think we all can say that
+there are laws that are unjust in the world
+and if we say that, I admit there are
+laws that are unjust, it's showing you that ethics is not the same as
+compliance with the law. This is a big problem
+in data science because people who are unfamiliar with the consequences
+of what can go wrong in data science situations
+sometimes equate the law and compliance with the law with ethics and so they think if I check the checkbox for compliance as long as we're
+not breaking the law, it will all turn out okay
+and that is not true. Ask any lawyer, you can do horrible things that are
+completely legal and some data science
+analysts have done them and we'll see them as
+examples later in the class. So yes, I think you should probably be in
+compliance with the law. There are very few instances
+where you shouldn't be, but that doesn't mean
+that you're done. So don't give ethics to the company lawyer or the university general counsel because that's not
+where it belongs. I hope that lawyers are ethical, but it's just again, really not the focus
+of this course or of Data Science ethics. Number 8. Number 8 is one of my favorites. It's ethics is doing
+the right thing at a specific pivotal moment. What do I mean by that? Well, I think before I got interested in data science and ethics and justice and fairness, I think there was a
+kind of fantasy that I had that many people
+have that there's going to be this moment and you're working
+on something and there's just going
+to be this crisis of ethics where everyone says, "Oh no, there are two
+paths in front of us, what are we going to
+do, this or that?" You have to think about like, what's the right thing to do? If I'm a good person, I'm going to take this
+path versus that path. That's not really what ethics
+looks like in practice. You'll hear that from
+our guest speakers, I predict but I also
+know it from experience. It's quite common that there is no pivotal moment that
+makes you stop and consider the ethics of a situation and you make a lot of incremental
+decisions in your life as you go about living it and
+working and being a human and they add up to
+something but at the time it can be hard to
+isolate them and to say, well, this really is where
+it took a wrong turn or this is the thing that really made it go the way that was wrong. It's quite likely that your ethical task might
+be to make time for reflection where no
+time exists or to insert ethics into a conversation where it does not exist. It's also quite likely that we could have things
+go terribly wrong ethically and it's really common that an organization
+that produces something horrible is composed of individual people who
+are all trying the best they can and making
+the best decisions that they could with the information they have available to them. So it's all of these individuals doing the right thing as
+far as they can tell, will add up to an organization
+doing the wrong thing. So don't think about
+data science ethics or any ethics as waiting for that moment where
+you suddenly think, oh, I'm going to reach
+for the ethics book. This is where the ethics applies. It kind of worked
+into everything. I'm not saying that there
+aren't pivotal moments. There might be, but I
+think they're more rare. We may hear about some from our guest speakers but
+there are also these just general living your life
+where we have to figure out how what we're doing
+adds up to something. Number 9, number 9. So number 9 is again
+about what it's like to be a data science professional
+and think about ethics. Number 9, the misconception is ethics means determining which situations have ethical
+implications and by implication, which situations don't
+have ethical implications. So it's like, well, this one we're fine, this one
+we might have some trouble. This one we're fine, this one
+we might have some trouble. It's like you're a
+router and you're directing certain problems
+into different pathways. That's not really
+what ethics is like. One of the reasons is that
+I think you'll find if you think about any
+situation long enough, there's some ethics there. So there again,
+like the last item, they are all mixed
+in with everything, ethics is everywhere and woven together with
+everyday experience. But in addition, your job as an ethical person is
+not really identifying situations that have
+ethical implications, although we might want
+to think about what's their magnitude or
+what are the harms? We'll get into that a little
+later but nonetheless, I wouldn't think of it as a yes/no kind of
+question like this has ethical implications this
+don't because this partly is a way of passing the buck or of intentionally not looking at something where
+there are these situations. Number 10 is ethics is someone else's problem
+and this really comes up quite a bit in data
+science ethics practice. One scenario that you might imagine is that your job is to do a particular thing
+in a pipeline or a workflow and you do that thing, you have to trust the other
+people in the workflow or in the pipeline or in
+the organization that they did what they
+were supposed to do. So for example, maybe your job is to perform
+a data analysis on some data and it's not your business where
+the data came from, it was handed to you and your job was to perform
+the data analysis. Similarly, it might be that your job is to collect some data, but it's not really within your purview as to why or
+what's going to happen to it? Now, that's a logical way
+of thinking and I'm very sympathetic as someone who has
+worked and has done tasks. It makes sense to divide things up and to have
+a division of labor. But over and over again, we see the situation where
+everyone kind of thinks that someone else is going to look
+into this and no one does. So there's partly an
+organizational role here to be sure that someone's
+looking into ethics, but also there needs to be some responsibility
+that we have to think a little bit out of our concrete specific
+assignments because otherwise, no one's ever going to
+think about this stuff. So ethics is not something that you
+should just say, "Well, I'm not a lawyer, I'm not in compliance, I'm not in public relations, I'm a math guy, I don't
+really deal with people, I don't know what you would say, but I wouldn't say
+any of those things because I think ethics
+is your problem." I'll give you an example there. This is one of my
+favorite misconceptions. So there's an oath that
+doctors have to take, they don't actually take
+it, I think but anyway, Hippocrates came up with
+it a long time ago. This is a butchered version
+of it to make it more up to date with the first
+lines excerpted for you. But the Hippocratic Oath, it's familiar to most
+people and it starts out first, do no harm. The actual oath, it's funny, it doesn't really
+start out that way, it starts out with
+this statement about how you shouldn't
+train anyone to be a doctor because we have to
+keep the knowledge of being a doctor in a closed
+group just for doctors, presumably so you can
+make a lot of money. But that's not the press
+of the Hippocratic Oath. The press is that do no harm is the first part of the
+Hippocratic Oath. People have proposed
+that there should be a data science Oath. The reason I'm making a comparison and that
+others make this comparison between medicine
+and data science is that they think that
+there are a number of situations where it's
+really impossible to imagine someone who is
+not a data scientist, a lay person, an outsider, making a good ethical judgment about a data science problem. The reason for that
+just like in medicine, is that these problems
+are technical. So if I said to you, I'm afraid this patient has
+somnambulistic rabies and we have to do an appendectomy
+with reverse polarization, maybe that's nonsense, it is, but maybe it's also a
+technical procedure that only you understand as
+a surgeon or a doctor. Data science is like that. A lot of the techniques that
+you learn in the classes in this degree are fairly obscure
+to the outside person. They don't know about
+what you're talking about with all of your eigenvectors and kurtosis and various things and we're not really going to be able to explain
+those things to them. So there are a variety of ethical situations that
+will come up in which you are the only person that is going to be able to
+identify the problem. That's why you can't assume
+that data science ethics is someone else's job and
+that's what distinguishes this class Data Science Ethics, as Professional Ethics because we need to consider the
+problems that might arise with specific techniques in data science because as a
+professional community, we are the only ones who are able to make judgments
+about these. Yeah, maybe you could
+ask the statisticians or the mathematicians or the computer programmers
+or someone else, but really, if you're going
+to have a profession, the reason it has to make these ethical judgments is
+that the buck stops with you. That brings us back to number 10, ethics is someone else's
+problem is a misconception because there's really no
+one else you can turn to, it's your expertise that
+makes you the person who has to consider the ethical
+implications of data science. I'll stop this group there.

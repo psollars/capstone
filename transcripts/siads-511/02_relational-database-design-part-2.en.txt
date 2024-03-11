@@ -1,0 +1,100 @@
+So like I said, we're not going to argue with the design of the user interface,
+even though it has this vertical
+replication of data. What we're going to do
+is we're going to come up with a way to spread
+this data across multiple tables so
+that we end up with no replication of the data in
+the tables that we produce. So what we're going to do is
+we're going to go through these columns and we are going to basically decide is this column part of an existing
+object or a new object? And so once we have an object,
+we'll add stuff to it. So it's like what are the things and what are
+attributes of things? And so this is the set of columns. Now, the interesting thing is that the first
+thing that you got to do is you got to figure out
+what your first object is. And again, I talked about how you're often in a room and there are people who go through this process that have a
+good instinct about this. And in a lot of applications, the simple answer is the user. So if you think of a multi-user
+system, often the user, and you tend to draw
+that first table or that first object in the middle so that everything
+else connects to it. But in this situation, this is a single-user
+application, so we can't just say, oh
+the user is kind of the core thing. So you ask yourself, what is the single thing that this
+application is organizing? And this is a music system that tracks the tracks we
+own, and plays tracks, and keeps track of tracks
+that are parts of albums, and which albums
+belong to which, etc., etc. How many times we play the track, and after a while you
+figure out, oh maybe, maybe, just maybe, the track is the first thing that
+we should work with. So let's basically make
+a table that has tracks. Now, we kind of got that
+column configured out. Now we've got a table of tracks. So we can look across and there's certainly like the
+title of the track. So we'll put the title in here. So we've got the title,
+so the track has a title. And then another thing
+that is pretty easy is numbers are no big deal, right? We don't worry about vertical
+replication of numbers. The fact that we
+have things that are both rated fours,
+numbers are cheap. So we'll just right
+away stick the length, we're going to stick the genre, and we're going to stick
+the number of plays, and the length, and the genre, and we're just going to
+put those in the track. And so we've sort of got this
+taken care of, we've got this taken care of, and we've got this taken care
+of and that taken care of. They're just all attributes
+of track, like length. Those are just attributes. So we've kind of got length,
+we got the count, we got the rating, and then we got
+the track and that's taken care of in
+that track title. So we got one table. Now, it's not random that
+the columns that have the string vertical
+replication are like there are the ones
+that we don't have. And so we'll basically say, okay, what other
+things do we have? Well, we have an album, right? And so this is the album and
+all tracks belong to albums. It's a little less
+of a mess if you're doing this in a
+whiteboard in an office, but you get the idea. So tracks belong to
+albums and albums, well, albums you can't just
+put the artist's name in here because there could be
+many albums to one artist. And so you have an
+artist out here and albums belong to artists. Right? So tracks belong to albums and albums
+belong to artists. So we've got this done
+and we've got that done. So the only column we
+have left is the genre. Now, the genre, let's see if we can get a
+different color here. Yeah, we could actually take the genre and we could
+connect it to the artist, we could connect it to the album, or we could connect
+it to the track. And this is a situation where actually the decision that we're going to make here is going
+to change how this will work. So if we connect it to the track, you change this to a new thing and it won't affect
+any of the other tracks. But if you connect
+it to the album, use this connection, the
+connection to the album, if you change it in this
+album of Who Made Who, and you change Rock, the
+genre of Who Made Who, then all these are
+going to change at the exact same moment. Right? And if you connect genre
+to the artist, all the AC/DCs, I have
+many of them, of course. If you change the genre of AC/DC, then all the genres of all the AC/DC tracks are going to change
+at the same time. And so you can sit there
+and you can argue, is the genre an
+attribute of artist? Is it an attribute of album? Or is it an attribute of track? And the right answer in this
+one probably is track. And so you basically decide
+that you're going to connect genre to track
+and away you go. And you end up with a picture
+that looks like that. Isn't it amazing how much nicer this picture looks
+than my scribblings? So you have track, you have rating,
+you have length and count that are
+attributes of track. They're just numbers,
+they're cheap. There's a title in track
+and that's probably what's missing with this.
+There's a title here. This probably should be the track table with a title in it. Genre belongs to track. There is one genre and many
+tracks have one genre. Many tracks connect to one album and many albums connect to an artist. And so this is a way to basically
+make it so that you'll, again, also notice that all
+the vertical representation, things that have
+vertical replication ended up with their own
+table and things that are just numbers and
+are otherwise not vertically replicated ended
+up as attributes in a table. And so that's our data model. Now, you probably are
+thinking to yourself, well, that's not the most
+perfect data model, and the answer is, yes. We're going to simplify for now. Some of these
+things about which artist belongs on which album. An artist might not
+always be a group. It might be a set of individuals, but let's ignore that for now. But that's the cool
+part of data models. At some point you might
+want to actually just build a really good music data model that doesn't
+have so many of these that is not quite as
+simple as this one. But for now, we're going to work on the mechanics
+of this and we're going to assume that this
+is a good data model for which to model music. Up next, we're going to talk about
+how we build keys and add keys to these tables so that we can make the connections
+in between tables.

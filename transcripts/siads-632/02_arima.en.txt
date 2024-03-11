@@ -1,0 +1,170 @@
+We've introduced three other
+regression-based models. AR, autoregression,
+MA, moving average, and ARMA is the
+combination of AR and MA. As we said that, ARMA
+can only be applied to time series that you have
+already stationarised. As I promised that there are models that could be applied
+to original time series. One of the models
+is known as ARIMA. ARIMA from the name, you can see that it
+definitely has lots of connections with AR and MA. In fact, ARIMA is known as the Autoregressive Integrated
+Moving Average model. You can see that's
+why we don't like the acronyms in the fields
+of time series assets, there are just too many of them. It combines the power of
+multiple models, the AR model. Basically, the AR part means that it uses
+the autoregression, that the new observations
+depend on direct observations. The -I in ARIMA is actually use of differencing to make time
+series more stationery. You can say that it
+automatically helps you to stationarise your
+time series data. Idea is to use differencing that we
+have introduced before. So by applying this, the result time
+series may be more stationary and ARMA
+could actually apply. The -MA part in
+ARIMA is essentially the moving average
+model that assumes that the residuals of a previous
+observations propagate over time and it propagates
+to future observations. ARIMA is essentially the
+combination of AR, MA, and uses the idea
+of differencing, so that you can actually apply this model directly to
+original time series. The equation of ARIMA regression is known as the following. As you can see that, it
+looks very similar to ARMA. In fact, it is the case. To specify ARIMA, we have
+actually three parameters. P, that is the
+maximum lag of what? That is the maximum lag
+of the autoregression. That means how many
+operations you want to look back to predict
+the future observation. We call P the lag order. Q, we know that is actually a parameter of the
+moving average. But before Q we
+actually have a D, as this parameter is
+the difference order. Remember that we
+said that we can use differencing to actually make a time series most stationary. We can actually
+apply higher order differencing to compute the
+difference in differences. In this case, the B is actually
+order of the differences. If D equals to zero, then we are just applying
+ARIMA to the raw data, we're not using
+differencing at all. If D equals to one we're
+actually replacing the pocket as the difference of the current observation minus the previous observation. So if zero, we're making
+predictions on a raw value, one, we're using the first order
+differencing, and two, we're using the second
+order differencing, so on and so forth. Q, of course is the
+order of moving average. That is the maximum window size of the moving average model. The only difference between
+ARMA and ARIMA in terms of the regression
+equation is actually the Y-t prime and
+Y-t minus one prime. You can say that by
+using Y-t prime, we're applying the first
+order differencing. That is Y-t prime equals to
+Y-t minus Y-t minus one. So you can see that it's important that
+after differencing, Y-t minus Y-t minus one
+should be considered as the observation of Y-t of time T instead of
+time T minus one. So ARIMA as we said that, it integrates all the
+other three models, AR, MA, and ARMA. And in fact, you can actually show the other models are
+just special cases of ARIMA, ARIMA has three
+parameters: p, d, and q. The AR model is essentially ARIMA model with different values in parameter p, but for the other two parameters, they're just zero, so ARp
+is essentially ARIMA p, zero , zero and MAq is essentially ARIMA
+model zero, zero, q. That means it does not
+look back in terms of those alterations
+of auto-regressions. It does not apply differencing, but it uses moving average
+of the windows as q, and ARMA is essentially
+ARIMA p, zero, q. That means, I do look back p
+observations in alteration, I do use moving
+average of window q, but I do not use differencing. So ARIMA, you can see is just a generalized version of all the three auto
+regression-based models. To verify this, you can
+actually compare ARIMA two, zero, two, with ARIMA two, one, two, and different targets. The thing that we want
+to verify is whether ARIMA is essentially applying differencing and
+top of the target. So we call ARIMA two, zero, two, but we want to predict
+for the logarithm, and we call ARIMA two, one, two, but we directly
+apply that to log y t. That is the logarithm,
+but without differencing, and the results are
+exactly the same, that means ARIMA is essentially
+applying the idea of first-order differencing
+on the prediction target, the rest will be similar
+to ARMA and in fact, you can see that
+the left plot and the right plot are
+completely the same. That means ARIMA d
+equals two, one, applied on row time-series
+data is the same as applying ARIMA with d equals to zero and the difference
+is time-series data. So, what about the
+predictive value, the predictive power
+of ARIMA models? We can see that it is also
+comparable to ARMA model, but because of the
+use of differences, it is harder to
+actually compare them directly using RSS,
+and why is that? You can see that in
+the left plot we're actually making
+predictions on logarithm, so RSS is around 1.5, and because we used
+the log of one, we're actually predicting
+the second-order logarithm, and on the right-hand side, we use ARIMA two, one, two model, but the prediction target
+is on the original data, and in that case, the actual predicting target is the difference
+of the passengers, that is not the logarithm, that is not the
+second-order logarithm, and because of this difference, you can see that RSS are
+just not comparable. RSS of the second-order
+logarithm is around 1.5, but RSS of the difference of
+the original data is huge, and that just means that when the target time series are
+not at the same scale, then you cannot
+directly compare RSS. Instead, what you should do
+is to compare [inaudible]. So this is about using AR, MA, ARMA and ARIMA
+to make predictions. But in all the examples we're showing how to make
+predictions for the past, we learn the models using the entire time series to
+observe and then we're trying to make predictions for the timestamps that
+we have already seen. Then what about making forecasts? What about making
+predictions for the future? In fact, this can be very easy, all you need to do is to take the model that
+you have learned, and then make the predictions of future timestamps one by one. You can see that, first, you train the
+autoregression model using ARMA or ARIMA with
+observed series, and then once the
+model is trained because you have
+anything up to Y_n, so you can actually make a
+prediction for Y_n plus 1. Suppose the predicted value of Y_n plus 1 is Y_n plus 1 hat, this is essentially your
+forecast for the next timestamp. Then the interesting thing is, once you have the predicted
+value of Y_n plus 1, you can actually use that to make the prediction
+for Y_n plus 2. This is actually making easier further forecasts
+into the future. Suppose the predicted value of Y_n plus 2 is Y_n plus 2 hat, then next time you can use
+Y_n plus 2 hat, of course, with all the history and Y_n plus 1 hat to generate Y_n plus 3 hat, so this process is known as rolling prediction or
+rolling forecasting. You make the forecast of
+one future value first, and then you make use of this forecast to make
+further forecasts. By doing that, you can actually get the figure on the right. You can see that ARIMA is actually trying to make
+forecasts into the future, remember that we only have
+observations until 1960s, this is making
+predictions beyond 1960s. You can see that the forecasted
+values make lot of sense, they still preserve the pattern. To summarize
+autoregression models to make predictions
+of time series, you can see that they are all applying a basic assumption, that is the
+observation of future, the observation of Y_t depends on the observations in
+the previous window. You either use AR to predict, and you use previous
+observations to compute Y_t or you
+use moving-average to propagate the errors in the previous observations
+to compute Y_t. But either way, the assumption
+is that the observation of Y_t depends on the last
+observations in the past. Then different models make
+different assumptions. Autoregression, AR, assumes a linear regression using previous-values to
+predict the future value and moving average assumes the smoothness of the
+noise of the error or the white-noise error that's in the previous observations. When they're combined,
+you get ARMA, that basically makes
+two assumptions, linear regression of
+previous values and smoothness of the errors and then you can even combine ARMA with idea of differencing,
+and the assumption is what? The assumption is that
+after differencing, the time series becomes
+more stationary. Well, in reality since we're actually using
+a regression model, we don't have to just use
+the previous observations or errors as the independent
+variables, and in fact, we can actually consider to use many more complex patterns as independent variables to make predictions for the
+future or futures. There's the huge room of making use of time
+series patterns, such as trends, such
+as seasonality, such as cycles, or even outliers to make
+predictions to the future. In many cases, we
+don't just have to use the observations
+in a past window, we can actually export
+these patterns, from the entire history to try to make prediction
+for the future. Recently because of
+the development of neural network methods or other more advanced
+machinery methods, instead of using the
+linear regression in this autoregression
+based models, people started to use
+non linear models or more complex and powerful
+machine learning methods to combine these features and to make predictions
+into the future. You can see that in
+machine learning, there's the concern
+about what model you use and what features you use. In autoregression, we use
+linear regression as the model and we use the previous
+observations or error as the features. In reality, we could actually use those much more
+powerful regression or machinery models and also much more complex and
+useful patterns as features. This is where you can
+really connect time series patterns to time
+series predictions.

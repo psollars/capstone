@@ -1,0 +1,75 @@
+Hello, and welcome to another Postgres for
+everybody walk-through. In this walk-through,
+we're going to use, instead of the Python anywhere, or a Jupyter notebook, or even the terminal
+on your own computer, and using P-SQL, I'm just
+going to show you a way to use a high desktop application to work with your SQL database. I've already installed
+this DBeaver. It's free. It's open source. It's quite amazing, and
+it works pretty well. Not all of these
+desktop applications work well with Postgres
+databases like, there's a pgAdmin that doesn't work well because your database doesn't
+have enough power, but Dbeaver seems
+to work out okay. The way these navigators work, is they have what are
+called connections. This can do not just Postgres, but as you'll see a
+whole bunch of things. You go you find your way
+into your assignment, and we're going to do this
+very first assignment. I could use this in the database. Psql is a client. We're not going to
+use that. Our client is going to be Dbeaver. What we're going to
+do is we're going to go in the Dbeaver, and we're going to say
+add another connection. It already knows about Postgres. Now if you first install it, it may have to
+install some drivers. Don't worry about it. It
+seems like that works just [inaudible] fine,
+and what you got. You're going to go
+back now to the data that you've got and the
+data that you've got, I'll show that to you in a
+second, is user pg.pg4e.com. That's the name of the host. The database name,
+we're going to have to copy and paste that
+back and forth. Database and the
+user are the same. We'll do that and that. That came from your assignment. We can copy our password
+and come over here, and for the password. That's literally
+all you need to do. Again, we're creating a client
+through which we can send, SQL commands. Here we go. We've got this, it says this
+is a database connection, and within that, you can have
+more than one databases, but right now we only
+have one database. If you keep opening this up, you see that the
+schemas, these two, the pg catalog, this has got
+stuff that Postgres needs. Sometimes you'll actually
+select from that. But don't had it, in the information schema. That's like its own internal
+stuff, leave that alone. The place that you work
+here is in this public, and we're going to
+be making tables, which currently we have none. We want to run some SQL. If you a bunch of these over
+here on the left-hand side, you want to have
+this one selected. Then you click on this
+thing that basically says, make a new SQL script. This is a script, and
+the destination of the SQL commands
+is that database. If we go back to
+our assignment now, and we look, this Create table is the first thing that
+we're supposed to do. I'll say, Create table, and then I am going
+to hit the Go button. That's what this little
+execute SQL statement is. Look at that. It told
+us that it worked. Now if we pop this open, there's supposed to
+be a table here. Maybe I need to refresh
+it or something. We'll refresh the connection. Oh, somehow I lost my connection. Refresh the connection. I refreshed the connection, and then we see the pg4e debug. Now I'm going to go
+and do another script. The script is right here. I'll close middle
+public window there. I'll go to the next thing
+I'm supposed to do. I'm going to run
+another Create table, pg4e result, and I
+type that in here, and then I run it. Then I go over here and I do a refresh, and I see that one. It wouldn't hurt if
+it auto refreshed, but away we go, we're only
+going to do a few of these. Then what we're going to do, is we've created
+these two tables, and we're going to
+do checking answer, which is going to check to see if our tables are created because, my Autograder is now connecting to that
+database connection. At this point, if we
+do another refresh, you see that this
+meta table showed up just like it said
+it was going to do. You've now created this. There's things you
+can do and can't do, and import and export are
+a little bit different. Most of the assignments
+you will be able to do in this class, using either a Dbeaver, or P-SQL. I tend to focus on P-SQL because sometimes you're
+working on a server and you logged into that server and you got to type the
+commands and command line, and so there's nothing wrong with knowing how
+to use command line, but there's also nothing
+wrong with knowing how to use a more
+advanced client. That was just a really
+quick walk-through on how you might use Dbeaver
+as your client, sometimes as a substitute for P-SQL or a compliment
+P-SQL. Cheers.

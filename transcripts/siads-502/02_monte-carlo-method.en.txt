@@ -1,0 +1,75 @@
+Welcome back to math methods for
+data science. In this video, we're going to talk
+about the Monte Carlo method. The idea of the Monte Carlo method is to
+compute some parameter via simulations. Typically, we created
+an unbiased estimator for the parameter that we're
+trying to estimate. This is easiest to see by examples. In the first example,
+we want to compute pi. We know the area of a circle
+with radius r is pi r squared. So the fraction of a square with side
+length s that is contained in an inscribed circle is the area of the circle
+divided by the area of the square. Which is pi times s over
+2 quantity squared, the area the circle divided by s squared,
+the area of the square. This gives us pi over 4. So the idea then, is to choose a bunch
+of random points uniformly distributed throughout the square, and compute what fraction of these
+points land in the circle. This will give us an unbiased estimate for
+pi over 4. Multiplying this estimate by 4
+will give us an estimate for pi. The second example
+concerns batting averages. The batting average of a baseball
+player is the number of hits divided by the number of bats. It's normally denoted using
+three decimal places, for example, 300 would be
+a batting average of 30%. Assume that when a player is at bat,
+their chances of hitting the ball are independently and
+individually distributed. Assume there are 300 at bats per season. What is the chance that a player with
+a 25% chance of hitting the ball hit strictly more balls than a player with
+a 30% chance of hitting the ball? If this event occurs, then we would mistakenly believe that
+the worst player is actually better. Example 3,
+this again concerns batting averages. Assume that when a baseball
+player is at bat, their chances of hitting again are
+identically and individually distributed. Then again,
+assume there is 300 bats per season. A league has 100 players in it,
+only 1 of the players is a 300 battier, and the remaining are 250 batters. If a player hits above
+a 300 batting average, what is the chance that
+they are a 300 player? So we can compute this again by simply
+simulating the task at hand, and using that to estimate it rather than
+computing the probabilities explicitly. Example 4, a line has an infinite
+number of people in it. They all have i.i.d birthdays distributed
+uniformly throughout a 365 day year. Starting at the beginning of the line, we
+asked each person to declare the month and the day of the month of their birthday. What is the expect a number of people that
+need to declare their birthdays before 3 people share the same birthday? Okay, again, we could compute this
+by just simulating it many times, and then seeing how many people it takes
+for each time and taking the average. The Monte Carlo method
+only gives approximations. However, we can often estimate
+a confidence interval. If we know the standard deviation
+of the underlying sample, then 2 times that standard deviation,
+2 sigma divided by square root of n distance from the sample
+mean gives us a good confidence interval. Because by the central limit theorem,
+the sample mean is distributed normally. So this will give us
+the confidence interval. However, we need to make sure
+we're using the right sigma. We can take the sample variance and
+just take the square root of that. However, in certain situations, this will not be an accurate
+estimate of the standard deviation. For example, if there is a rare
+event where it's very large and we haven't observed that rare event, we would be very often estimating
+the standard deviation. If the outcome is binary, then plus or minus the square to vent
+one over the square. It event is a safe confidence
+interval we saw at the variance of a 01 random variable was
+always less than 1/4 and only achieved this if it were a fair coin. So the variance off end
+samples is 1/4 times and very into the fraction. And if we take the square root of this, we get the standard deviation,
+which is going to be standard. Deviation is less than one over to squirt,
+and so, therefore, plus or minus two standard deviations really just translates
+into plus or minus one of our squared. And this is a handy approximation
+to know in your head that if you want to estimate some
+probability to within Epsilon, you need about one over epsilon squared. Different samples note that the standard
+deviation might be much less. For example,
+if the probability of event occurs is only one in 100 we saw that the standard
+deviation would be P times one minus p, which would be, about one over 100. This would make the standard
+deviation much less then 1/4. However, our estimation of it will
+not necessarily be very accurate in this point. Unless we have a very good estimation of
+P, we're not going to be very accurate, and so we have to watch out for
+this situation. The main advantage of the Monte Carlo
+method is that it's very easy to run in very complicated situations. We have seen how to compute
+the expectation and the variants analytically, but this
+will only extend to simple situations. The disadvantage of the Monte Carlo method
+is that it doesn't work very well for rare events or
+events with very extreme outcomes. Another disadvantage is that it can
+require quite a few runs to obtain an accurate measurement, and
+this could be time consuming or require a lot of computational power

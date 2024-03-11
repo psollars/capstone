@@ -1,0 +1,616 @@
+Hi everyone. My
+name is Yumou Wei. I'm a lecturer III from
+School of Information. This is the very first
+tutorial from a series of PyTorch tutorials
+that are part of the SIADS 642 deep
+learning class. Through those tutorials will show you the
+essentials of PyTorch, a very popular deep-learning
+framework that you may find helpful for your milestones
+or capstone projects. Without further ado, let's get started with
+this first tutorial. On screen here we have notebook. This notebook is
+actually adapted from the official PyTorch
+tutorial on tensors. If we follow the link, you will see their
+wonderful tutorials here. I think there are tutorials so wonderful that I don't think I can create a better
+one than theirs. In this notebook, I augmented their tutorial with some of
+my own thoughts and some of the points that I think it
+would be valuable for you to know in your capstone
+or milestone projects. This whole series of tutorial
+is all about PyTorch. What is PyTorch? PyTorch is a popular
+and in fact, I think, is now it's probably the most popular deep
+learning framework that allows you to accomplish three very important
+tasks in deep learning. Firstly, allows you to build a neural network of
+arbitrary complexity. As you may know, deep learning basically means neural networks. One of the most
+important feature of any deep learning framework
+is to allow you to build a neural network that
+is arbitrarily complex. You can have however many
+layers of neurons you like, or it will have however many parameters you'd like in your neural network, as long as they all
+fit in your memory and password precisely
+allows you to do that. They can freely design any neural network you want with the tools provided
+by PyTorch, of course. Secondly, PyTorch allows you to perform computations on
+special hardware accelerators. Once you have defined
+your neural network, which is basically a bunch
+of mathematical operations, matrix multiplications
+and you can perform those operations on, not only on your CPU, but on some special
+hardware accelerators. Most prominent example of
+a hardware accelerator is a GPU graphical
+processing unit, which is probably the most
+common hardware of salary. Here's where deep
+learning nowadays and of course we have some
+newer examples, some more advanced
+technologies including a TPU Tensor Processing
+Unit invented by Google, and a bunch of more
+special accelerators. As long as the
+hardware accelerator is supportive of PyTorch, then you can perform
+the computations on those accelerators. As the name suggests, of course, the speed of your
+computation would be a salary will be very fast compared to that
+on ordinary CPU, right on your computer. Lastly, but definitely
+not the least, PyTorch allows you
+to automatically compute the gradient
+of the loss function, which is usually
+at the very end of your neural network with respect to all the weight vectors
+in neural network. Once your network gets
+very complicated, it gets very big, then it's tedious, if still possible at all, to compute the gradient of your loss function
+with respect to any of the weights in your
+neural network manually. What's good about PyTorch
+is that it allows you to use a technology called automatic differentiation
+to allow you to compute all the gradients needed
+for the back propagation, which is a way to optimize the weight vectors
+in your neural network. Those are the three
+very important in tasks that PyTorch can
+help you accomplish. Of course, among many
+other tasks that many other features that
+PyTorch also supports. That's pretty much a high-level
+overview of PyTorch. Now we're moving on to the centerpiece of PyTorch
+races, which is tensors. Tensors are really at
+the core of PyTorch because they're pretty much the only way that data is
+being represented in PyTorch. Just like NumPy array is
+at the core of NumPy. Because in NumPy, all the data is being represented as
+a n-dimensional array. Here we use tensors for
+data representation. Later in this tutorial, we will see that there is a very nice connection between
+Numpy arrays and tensors. They're usually convertible
+from one to the other. Of course, whether you
+have some text data, image data, video data, or even some molecule data. If you're working on maybe deep learning for
+scientific discovery, maybe you had to work
+with some molecule data. Whatever your input data is, you will have to convert
+those data somehow into PyTorch tensors before
+you can really use PyTorch. Now let's look at what tensors are and
+how we can use those. Here, this paragraph is actually from the
+official tutorial. They said that tensors are specialized data structure that very similar to
+arrays and matrices. Actually, a tensor is
+a generalization to the mathematical vectors and
+matrices because a vector is a 1D array and a matrix
+is like a 2D array. A tensor in mathematics is usually a
+multi-dimensional arrays. They usually has three
+or more dimensions compared to a
+vector or a matrix. That's why it gets
+the name tensors. In PyTorch, we use tensors to encode inputs and
+outputs of a model, as well as the model parameters. Like I said, basically, all the data is being represented in PyTorch
+using tensors. Tensors are very similar
+to NumPy arrays, except the tensors can run on GPUs or other hardware
+accelerators. Any effect, which
+we will see later. Tensors and NumPy
+arrays can often share the same underlying
+memory storage. We'll convert a NumPy array
+to a tensor or vice versa. You don't have to copy the data. Also, tensors are optimized for automatic
+differentiation, which is basically
+the mechanism that PyTorch uses to compute the gradient of
+the loss function. If you are already
+familiar in the arrays, you'll be right at home. Of course, you will get started
+with tensors very fast. The PyTorch overall says, If not, then follow along, but here I delete that line because at
+this point in maths, you must have been familiar
+with NumPy array already. There's no excuse for not being familiar
+with NumPy arrays. But anyway, you can
+still follow along and you'll quickly discover the similarity between NumPy
+array and PyTorch tensors. Very first tab, of course, we had to import
+PyTorch and NumPy. Just import torch. We don't have to
+give a nickname for PyTorch is just called torch. Unlike NumPy, we
+had to sometimes call it NP. But that's okay. It's just a convention. Let's look at how to
+initialize a tensor. We have to have some tensors
+to get started with. Actually, there are various ways of initializing a tensor. Actually added a link here. A more complete list of tensor-creation operation can
+be found in this link here. If you click this link, it has a section of creation operations and there are a bunch of functions you can
+use to create a tensor, which we'll see a few
+in our notebook here. Here are some examples. You can create a tensor
+directly from some data. If you already have
+some data here, that's in the form
+of a nested list. You can just create a tensor by using this constructor here. Is torch tensor,
+passing the data. Then it will create a tensor. Of course, we can also maybe try to print
+out this tensor here. X-data. There is a tensor in the same format as your list. That's a very simple way. Also, if your data exists in
+the form of a NumPy array, instead of lists, you can also create a tensor
+from the NumPy array. Here basically we first cast that data into
+a NumPy array. Then we use the function
+torch from NumPy, is a very clear name. That function will create a
+tensor out of a NumPy array. We can also randn, and I can print out
+the tensor here. It's the same answer as before. Yet another way is to, you can create a tensor
+from another tensor. If you already have a tensor, then you can copy the shape and datatype
+of the other tensor. Here are some examples. We can create a tensor that
+is full of ones. It's a tensor where all
+the values are one. Here we use a special function
+called torch, ones_like. The word like here suggests that all the properties of
+this input tensor, x_data will be retained
+for the new tensor. Or the new tensor is x_ones but because there's ones_like, so that means we're going to
+fill this tensor with ones, but retain the properties
+of the original tensor. Later we'll print
+out this tensor but here are some more examples. Not only we can create a
+tensor flow ones but we can also create a tensor
+full of other values. Not necessarily ones, but
+here example right here. We can create a tensor
+full of fives for example. X_fives, we can use
+this function called torch.full_like
+passing the data. Here you have also to pass in the field value
+for this tensor, which is five in this
+case but of course, you can use other
+values as well. We'll print out
+this tensor later. We can also create
+a random tensor. A tensor with a random value is filled in out of
+an input tensor. In this case, it's
+called x_ randn; random. We use this function
+torch.randn_like. The random function,
+will actually returns some value like a uniform random value
+from between zero and one. It will fill your tensors with
+some random decimals here. You pass in x data, which is your original tensor
+but here in this case, the official tutorial chooses to overwrite the datatype
+of this new tensor. You can specify the datatype because x data is actually in the datatype
+of an integer type but here we can specify that the new tensor should be of a new datatype
+of torch.float. Let's print out those examples and see what they look like. We had the ones tensor
+which is basically a tensor of integer ones but you can notice that
+they have the same shape as our original tensor x data. If we move back, see here is our x data or maybe go even further x data is
+an array in this shape, but with different values. But here we have tensorflow ones but of the
+same shape and datatype. That's what the function
+ones like does. Similarly, for the fives tensor, we have a tensor of the
+same shape and datatype, but with a different
+field value. Of course, the random tensor is just a random array
+but now the datatype is different from
+the original tensor because we have overwritten
+the datatype here. It's now in a type of float. Then naturally all of
+those functions are listed in the link here. You can check for more information from
+the documentation. That's creating a tensor
+from another tensor. Actually, you can just create a tensor if you know the
+shape of your neural tensor. Here are some examples that
+when you know the shape of your neural tensor
+you can create a tensor with a specific value. Here, add a link here. Because its random tensors
+are sometimes very useful. There are a bunch
+of other operations that allows you to
+create a random tensor. You can refer to this link here. A very commonly used
+function is called torch.randn which
+draws the numbers from the standard
+normal distribution. An example here, we only had torch.randn,
+which like I said, it draws numbers uniformly
+on the interval 0-1. It's a uniform random
+number from 0-1. In this case, we
+know that the shape of a new tensor is going
+to be two and three. Two rows and three columns. With that shape, we can
+create different tensors, all of the same shape but
+with different values. For example, you can create
+a random tensor torch.rand, and a one tensor torch.ones. Notice here we're
+not using torch.ones like because we're not creating a new tensor
+from another tensor, but we're just creating
+a brand new tensor. There's a difference between torch.ones and torch.ones like. Because there's no tensor to
+model after in this case. We just create a new
+tensor with all of ones. Similarly, for the zeros tensor, there's a function
+called torch.zeros. It pass in the shape
+and will generate a tensor flow zeros
+of the shape. But of course, there
+is a similar zeros like function that allows you to model
+another tensor. Of course, you can also create a five tensor using
+torch.full like, pass in the shape and
+pass in the fill_value, which is five this case. Let's see how they look like. Their random tensor is just
+a random number which may be different from
+your screen because it depends on the random
+seed in this case. One tensor just flow once, zero tensor like that, and five tensor so is a
+tensor flow of fives. One observation maybe
+you can make here is that when we create
+a brand new tensor, instead of using
+torch.ones like or zeros like is that the data type of the new tensor
+is actually float. Because you can see
+here it displays as one point suggesting that
+essentially a float number. That's actually because the
+default datatype of PyTorch is a float 32 bit or just float. If you didn't specify
+any datatype, PyTorch will think that
+you want a full tensor. That's good because
+float numbers are basically the real numbers. Usually, our data comes in real numbers instead
+of integers. That's a very good
+default choice. If you didn't specify
+the datatype, then everything will just
+come out as float tensors. Now that we know how
+to create tensors, and now let's try to know
+more about the tensor. Let's try to understand the
+attributes of a tensor. A tensor can have
+many attributes, but the three most important
+ones are their shape, datatype, and the device
+on which they are stored. For example, here we
+can create a tensor by drawing some random
+numbers from 0-1, and this tensor has
+a shape of 3-4. Three rows, four
+columns is a matrix. We can print out is three
+attribute here, shape, the type, and the device. Let's try to print now. You can see that the
+shape of the tensor is a object called torch.size, but actually torch.size
+is a subclass of tuples. It's basically a tuple that
+has values of three and four. Datatype is torch, float 32-bit. Because like I said, the default type is
+32-bit float numbers. The device this tensor
+is stored on is a CPU, because we haven't reached
+the GPU sections yet, so we're running
+everything on CPUs now. But later I will show you
+how to run things on GPUs. Those are the three very
+important attributes that you should know
+about array tensor. Actually, there's some more can be said for
+the shape attribute. In this example above, we just basically grab the attribute by
+using tensor.shape. But actually, there
+is a method called size that you can use to return the shape of
+a tensor as well. So here, basically, I can run this example. It tells me that the size of the tensor is three and four, which is exactly the same as what I get from tensor.shape. But what's good about size is
+that because it's a method, you can actually pass
+in some arguments, specify a single dimension that you want to
+know the size of. Sometimes you may not
+be so interested in the overall size of a tensor, but you may be particularly interested in the size
+of a single dimension. For example, I may want
+to know the size of the first dimension or maybe the size of the third
+dimension, and so on. In that case, the size
+method will be very handy. For example here,
+I can try to print out the size of dimension 0, which is the first dimension by just passing in this
+parameter here, dim equals to 0. That's the only parameter that this function size accepts. Then it will print out the size of the specific dimension and similarity for
+dimensional 1. Here is a little null here. Dim is basically what's
+known as the axis in NumPy. In NumPy, sometimes
+you can specify an axis on which the
+function will be executed. But here, basically, you have to change all the
+access to dim in PyTorch. Let's just quickly
+see the printout. It tells me that the
+size of dim 1 is 3, size of dim 1 is 4. That's basically what
+the size function does. Of course, here's
+the link for merge short documentation you can refer to if you're interested. But of course, you can also just because what's returned
+by the shape attribute is basically a tuple so
+a force you can just slice that tuple to get the
+size of each dimension. Here is just a very
+simple example. You get the same information, but it's actually a
+different programming style, depends on which one you like. I personally prefer
+the use of size, but maybe you like
+slicing the tuple better. I just pour this extra
+information here just so you know that there is this
+function called size that can do the same
+thing as shape. Sometimes it could
+be more convenient. Now that we have seen the
+attributes of a tensor, now let us try to see what operations we can
+perform on tensors. Actually, PyTorch
+provides a lot of operations as shown here; arithmetic, linear algebra,
+and matrix multiplications. Lots of operations you
+can perform on tensors. Basically, what's available in NumPy will also be
+available in PyTorch. I think one very
+nice thing about design of PyTorch is
+that they try to mirror NumPy as much as possible so that you can transition
+from NumPy to PyTorch very smoothly with a
+very smooth learning curve. Basically what's available in NumPy is very likely to be
+also available in PyTorch. You're going to see a
+very comprehensive list here following this link. Each of those operations
+can be run on GPU. Of course, typically at a
+higher speed than on CPU. If you're using
+Colab which we are, you can try to
+allocate a GPU for you by following the
+instructions here, and actually,
+that's exactly what am I going to do now
+because I'm going to show you how we can use GPUs. If you're using Colab, you can follow the
+following steps to switch your runtime
+to a GPU instance. You can just click
+''Runtime,'' and here you have this change
+runtime type, right-click that. Here you can see that
+it allows you to choose a hardware accelerator. Currently is none because
+by default it is CPU, but we can change it to a GPU. If you're lucky, you can go to the premium, but I don't want. You can choose Save here. You can see that Colab is trying to allocate
+a GPU to you, and it says that you now
+connect it to your new runtime. You had to terminate
+the previous one. Of course, you have. Now
+we're on a GPU runtime. Because we have deleted
+the previous runtime, we have to re-import all the
+packages we'll be using. Now let's look at
+how we can use GPUs. Maybe the first question
+you want to ask is that, how can we know if we're
+already on a GPU runtime? How can we know that if a GPU
+is already available to us? The designer of
+patronage no set as well so it provides you with a very handy function here is called
+torch.cuda.is_available. That will tell you whether a GPU is available
+to PyTorch or not. In this case, because we do
+have a GPU here in a bag, so it returns true, which means a GPU is
+available to you. GPUs are often referred
+to as CUDA in PyTorch. CUDA is a software toolkit that supports programming
+on NVIDIA's GPUs. You can click their links and read more
+information about that. Luckily because we have PyTorch, we don't have to actually programming CUDA ourselves
+because we have PyTorch. But as you can imagine, the four runners
+of deep learning, when they didn't have
+PyTorch back then, they must have written a
+loss of CUDA code themselves in C plus plus in
+order to use a GPU. That's probably why
+they are celebrated as the forerunners
+of deep learning. They should, they deserve
+the respect and everything. Actually here is a very cool
+page that you can check. If you have a GPU at home, you can actually check that
+how powerful your GPUs are by clicking on those
+corresponding sections. But I won't go
+into details here, but you can check
+this on your own. Actually, here is a pro tip. There is actually
+a terminal command that you can use for, first of all,
+confirming that you do have a GPU and secondly, you can check the
+status of your GPU. It's called the nvidia-smi. Short form for a video
+system management interface. You can click on the page
+and know more about that. But basically, it's a
+terminal command that we can run in this way
+in our notebook. You can just run this
+command in the terminal, and it shows you a very
+nice information board here that tells you some
+information about your GPU. But I think the most
+important information is, so first of all, we have a
+Tesla T4 GPU in the back. Here, it actually shows you. This is the total amount
+of GPU memory you have, it's around 16 gigabyte. This is the amount of GPU memory that's
+currently being used, so is a memory
+usage information. Here, this number usually
+tells you the utility of your GPU currently is zero percent because we're
+not really using the GPU. But if you're running a
+model for a long time, you can see how much
+GPU power you're using. Hopefully, it's 100 percent, but sometimes if you have
+maybe some inefficient code, it could be below 100
+percent then that actually suggests that you could improve your
+code a little bit. It's very useful
+information as well. Of course, if you have a running process
+that uses your GPU, it will be displayed here, but currently, we have none. It's a very useful command. I use it a lot in my terminal when I'm
+running a job using GPUs. Sometimes to switch
+seamlessly from CPUs to GPU or vice versa, I think the best
+practice is to define a device object that actually represents your current
+choice of device to run a tensor operations on. That actually allows
+you to write what we call a device-agnostic code. You can click the link here and see more information
+about what that means. But basically, that
+boils down to here that you define a
+variable called device. That variable is a
+torch device object. The torch device is a
+constructor for a device and it accepts a string that tells
+it the name of the device. The common paradigm of
+defining a device is that you can use a very
+neat Python line here. The device is going to be
+Cuda if Cuda is available. Else is going to be CPU. It's a very neat
+one-liner of Python. You can define device here. Let's try to see
+what device we have. Of course, it's Cuda
+because Cuda is available, and Cuda remains GPUs. That's how you can define
+this device object. Now, once you have
+this device object and actually those tensor
+creation operations, most of those can accept a keyword
+argument called device. That's exactly where we can
+just pass in this device variable so that your tensor will be created directly
+on that device. You don't have to
+create a tensor first on CPU and
+then move it to GPU. You don't have to do that. You can just directly, once you have this
+device defined, you can just directly create
+a tensor right on GPU. Here is actually example. The torch ones or tensor creation operation can accept a keyword
+argument called device. Here not only I
+pass in the shape, but also I pass in the device. I hope this tensor
+will be created. If we print out the result here, you can see that it's the same tensor we saw
+before, full of ones. But now it has device is Cuda 0. Cuda 0 means it's the first GPU. I think we only have one GPU, but if we have more GPUs, they'll be referred
+to as Cuda 0, Cuda 1, and 2, and so on. Of course, you can also
+check its device here, the device attribute
+you can see that is all for type Cuda
+and index is zero. That's the first GPU. If we already have a tensor that's already
+on a specific device, for example, it's
+already on GPU, then you can create a new
+tensor on the same device using those ones like or
+zeros like method. In this case, you don't
+actually have to pass in a device because well, the like word is going
+to take care of all of those because like means you're
+going to copy the shape, copy the datatype, and also the device of your
+original tensor. You don't have to worry
+about the device. Here, I can just create a
+tensor flow fives using this torch full like
+passing my original tensor, which is the ones tensor that
+I just created on a GPU. Of course, the full
+value is five. In this case. I didn't
+pass in a device variable, but if we print out its device, you can see that
+its CUDA index zero is on the same device as
+the ones tensor because the like part of this function will basically handle
+all those stuff. We will make sure
+that it's created on the same device as
+your original tensor. Of course, sometimes you may find yourself in
+a situation where you first have a tensor on CPU but later on you want
+to move it to a GPU. In that case, you can use tensor method called
+to. The to method. For example, we have the
+same data here in a list. We first create a
+tensor out of the list. If we print out the device here because the default
+device is always CPU. Because every
+computer has a CPU, but not necessarily a GPU. The default device is the CPU. Here we have a tensor around CPU but we want to move it to GPU. Then you can do x_data.to, and passing the device. Whatever device you
+want this tensor to be in can pass the device here. Now if you print out
+the device, of course, it'll be on CUDA index 0. Sometimes this actually matches the case where you
+have your input data. Your training data to a model. Could be a tensor
+that sits on a CPU. But later on, during
+training you want to move a batch of
+that data onto GPU, and that's exactly how
+you can achieve that. We'll talk about that
+later in the series. But of course, always keep
+in mind that actually moving a tensor from CPU to GPU, if the tensor is very large, then it can be very
+expensive in terms of the time and
+memory requirements. That's how you can
+work with GPU. Now, let's just look at some other operations
+we can do with tensors. For example, all the
+NumPy, indexing, and slicing you are familiar with can be applied
+to tensors as well. Just some simple example here. Define a one-tensor
+four-by-four. Then you can grab this first row by passing
+in an index here, or the first column. Passing an index like that, a colon followed by a zero. You should be familiar
+with it already. The last column. Here, the dot, dot, dots, triple dots basically means for all the previous dimensions, I'm going to grab
+them all is basically equivalent to having a colon for all the previous dimensions. But for the last dimension, I'm going to pass in a negative 1 that's grabbing the last
+column of the matrix. Of course, you can also
+change the column at index 1, the value of that
+column to zero. If we print out the result, you can see, of course, because the tensor
+is full of ones so the first three
+rows are all ones. But here you can
+see that once we changed the second
+column to zero, the second column
+becomes column of zeros. There are many more
+indexing and slicing operations you can
+do for tensors. They are pretty similar to
+what's available in NumPy. Of course, you can also join two tensors together or
+more tensors together. There are essentially two
+important operations. The first one is called
+torch.cat or concatenate. This function basically, if we take those tensors, which is defined if we
+print out the result here. Because we're going to
+concatenate three copies of that same tensor
+along dimension 1. That's actually the same
+as NumPy horizontal stack. We're going to stack those three terms horizontally along dimensional, and
+non-dimensional one. As you can see here, it looks like we
+have basically has three copies of the same tensor. The first four columns bit onto the first copy and
+the second copy, and third copy, and so on. We have three copies
+arranged horizontally. But of course, you can
+also do it vertically. The three copies of the tensor. If the dimension is zero, that means you concatenate all the tensors that
+will allow the column. We will have three copies. Those are from the first copy
+and second copy and so on. That's the same as
+NumPy.vstack, vertical stack. There is also a function called torch.stack that can also
+join tensors together, but it's a little different from torch.cat because it always
+create a new dimension. As example here, we have
+the same three tensors. But in this case, we're going to stack them along dimension 0. You can see the result here. Well, on surface
+it looks similar to the vstack here we just did, but actually different
+because it creates a new first dimension. This actually had a similar
+behavior as numpy.stack. The difference is actually in the shape of the new tensor. If we compare t2 and t3 here, remember that t2 is
+created by torch.cat. Those three tensors along dim 0. But t3 is created by torch.stack three tensors
+along dimension 0. If we compare their shapes, as you can see that t2
+has a shape of 12,4. That's actually 3 times 4
+because we have three tensors each has a size 4,
+fourth dimension. We will combine them
+together that's going to be 12 in total along the first dimension and four for the
+other dimension. But for the stack, it doesn't combine
+the first dimension, but it creates a new first
+dimension that it has a size of three because we have
+three tensors to start with. Essentially you can say that
+t2 is a flattened version of t3 with the first two dimensions completely combined
+into one dimension. But t3 keep those two
+dimensions separate. It prepends a new
+dimension at dimension 0. You can read more in
+the documentation. Of course, another
+important operations is the arithmetic operations. Here are a few examples. The matrix multiplication. There are basically lots of
+ways you can do with this. Here will show you three ways. You can use this operator and tensor transpose that will give you the matrix
+multiplication. It's also available in NumPy, or you can also do the same
+thing in NumPy as well. You can also do tensor.matmul,
+matrix multiplication, tensor transpose, or
+if you have a new, you can create a new tensor. Create a new tensor here that's filled with basically
+random values first. But if you call this function torch.matmul, matrix
+multiplication, pass in tensor, and its transpose and you can specify a keyword
+argument called out. Out basically means once the function finishes
+its computation, once it get the results, is going to store the result
+into this out tensor. Whatever tensor you put it here, the result will be
+stored in a tensor. Because y3 is a brand
+new random tensor so after this statement, it will be filled with the
+result of this computation. Or you could just do y3 equals to torch.matmul
+tensor transpose. Is just a different
+programming style. Of course, you can also compute
+the element-wise product using the star operator. Again, tensor times
+sensor and so on. I'm not going into the detail, but just print out
+the result here. This result comes from
+the last statement here. Well, you can play with those examples
+yourself, I guess. Sometimes if you have a
+single element tensor, if your tensor just
+contains one number, you can actually use
+this method called item to convert that single
+number into a Python value. For example, here, if we do an aggregation
+by doing a sum of all the tensors which is defined above because we
+take a sum of all the values, then all the values will be aggregated into a single value. In that case, we
+can just do this. If you run this,
+you can see that agg.item because we call the agg.item here,
+the item function. It will actually become
+a Python number. The type is actually a
+Python type is float. Sometimes you'll
+want to for example. The value of your loss function is usually a single number. If you want to do some more
+operations on that number, maybe print out that number and you may want to convert
+the loss tensor, which is a single
+element tensor into a Python number because
+you will basically save some memory because once it becomes a Python
+number it will no longer exists on your
+GPU so you can free up some of your GPUs. We have seen this idea of applying a function to
+what tensor and get a result. Here actually, there are some so-called
+in-place operations. Once the operation
+is completed it will store the result directly
+back into your tensor. It will modify your
+tensors in place. Those operations are usually denoted with a
+underscore as a suffix. Here are some example, copy_, meaning I'm going to copy
+the value of y into x, I'll replace all the values
+in x with the value of y. Here, x.t_. That means I'm
+going to transpose x but I'm going to
+do this in place. X will now entirely
+becomes the transpose. More of this in-place operations can be found
+following this link here. Here's just one example. If we do just run
+this example here, so this is a tensor we have
+as before and now if we just do a in-place add
+of this tensor, so we add five to this tensor
+but in a in-place way, now the tensor itself becomes
+the original tensor plus 5. That's the effect of
+a in-place operation. Here is a special note. Well, in place operations
+can save some memory. It can also cause some
+troubles when computing the gradient because you
+have replaced the old value, there is a loss of
+the history here so their use is
+actually discouraged by the PyTorch community. Actually to summarize, typically a tensor
+operation can be invoked in three ways and especially for those
+arithmetic operations. For example, let's take the square root
+operation as an example. Here we create a
+two-by-three random tensor. We can compute a square
+root in three ways. The first way is I
+can use torch.square root passing the
+random tensor and thus the syntax here is invoke torch plus the name of the operational
+you want to perform, is usually a name of some function that you can
+look up in documentation, and pass it into a tensor and
+some additional arguments. Then you will get a result. Or you could do it in this way, the tensor itself.square root. Instead of using a
+torch.square root you can just apply the square
+root right on a tensor. It's like tensor. some operation plus some
+possible additional arguments. Those two are the
+non in-place way, meaning they will create a new tensor that
+contains the result. But here the third way is of
+course the in-place away. You can just invoke
+tensor.square root with underscore that indicates is a in
+place operation. The syntax is tensor.[op]_
+that's a in-place operation. You will basically override. Once you get the result
+it will overwrite your tensor with the result. We can just run those
+two right here. What it displays is actually the new value
+of your tensor because the last operation
+is a in-place one so your tensor itself
+will get the new value. Rest assure that of course those three ways all give you the same result, for example We can use this
+function torch all close to compare two tensors. If we compare the
+first and the second, whether they are all
+close, yes, they are. Of course we can compare
+the first tensor and a tensor itself because now the tensor itself contains the square root of
+the old tensor. Are they all close? Yes,
+they are all close. Those are the three ways
+that you can usually apply a PyTorch
+function to a tensor. I personally prefer the
+first way because, well, I guess it's because it is like you apply a function
+to some tensor, some input. It is consistent
+with this notion of applying a function to some input and
+getting an output. I personally feel that the second way is a little
+bit less intuitive. The third way, because there's
+an in-place operation, is actually discouraged
+by PyTorch. I will never use the third way. Finally, let's just talk
+about the connection between the NumPy array and PyTorch tensors because
+as we said earlier, those two can be
+converted back and forth without worrying
+about the memory usage. They usually share
+the same memory and if you change one of those will also
+change to the other. Here, let's see how we can convert a tensor on
+CPU to a NumPy array. We have a tensor for all ones. The function we
+use to convert it to a NumPy array is
+basically.numpy. Let's print out the result here. Well, you have a tensor
+for all ones and now you also have a NumPy
+array for all ones. Because they share the
+same underlying memory, if you change the tensor you
+also change the NumPy array. For example, if we do a in-place addition of
+this tensor with one, not only will we
+change the tensor, the tensor now has a value of 2, but also the NumPy array, NumPy array will
+also have a value of 2 because we added one
+to the tensor and they share the same memory so NumPy array will
+also have a value of 1. NumPy array to tensor. We have already seen this. It's basically the from
+NumPy function. No problem. In this case any changes in the NumPy array will
+also be reflected in the tensor because they
+share the same memory. We do a NumPy add of
+one to this tensor. You'll see that the tensor
+itself is also changed to the new value same
+as the NumPy array. Of course, that's the conversion between
+tensors on a CPU to a NumPy but if your tensors
+are on GPU actually or other non-CPU devices they cannot be directly
+converted into NumPy. You have to first
+convert them to CPU tensors before you can
+convert them to NumPy. Here is our example actually. I have one tensor of shape 2 and 3 that's on
+the device cuda. I force it to be on
+the device cuda. Here I'm trying to convert
+into a NumPy array. You actually trigger an error and that error message is
+actually pretty clear. It says that it cannot convert this tensor to NumPy
+and it suggests you to use tensor.cpu to copy the tensor to the
+host memory first. It's actually a pretty
+good error message. If you follow that message
+by calling the CPU and then NumPy then you are able to convert that tensor
+into a NumPy array. With that we shall conclude our first tutorial on tensors.
+Thank you for watching.

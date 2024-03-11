@@ -1,0 +1,49 @@
+Welcome to Week 4. We've talked a little
+bit about syntax and a little bit
+about word meaning. Let's go a bit deeper and
+broader in the Week 4 content and talk about semantics
+and the kinds of social information that
+we can get from text. Let's look at what's going
+on in this conversation. Here, the person on
+the left he said, "Do you want to think
+from Zingerman's?" The person on the right
+he said, "Tom's new job." Person on left he said, "Do you need silverware too?" The person on the right he
+said, "Nope, I'm all good." What can we learn about
+this conversation? Well, for one, it looks like
+someone is ordering food. If you've been to
+Zingerman's in Ann Arbor, you might know that Tom's new job is in fact a Turkey Reuben. However, this requires
+some understanding of what is going on and
+what this entity is. We might be able to
+pick up on this, say, by looking at silverware
+and knowing that silverware cue's some
+eating activity, or that Zingerman's
+is a restaurant, and that you might order
+food at a restaurant. We might also notice
+a few other things. For example, the
+person on the left uses proper punctuation
+and capitalization. The person on the right doesn't
+use periods, and in fact, adopts a more
+informal tone saying, "Nope, I'm all good." This might suggest a certain type of social relationship between these two people texting each other. What do you
+think it might be? In Week 4, we'll try
+to tease out both of these types of tasks
+using questions asking, how do we understand what's
+the semantics or meaning of this and how we can recover this type of
+social information. If you think about the
+meaning of a sentence, we can say that semantics
+is going to describe, well, the meaning of the
+words and the sentences beyond trying to ground it
+in the real-world itself. We can think about what
+do particular words mean? What kind of entities that
+phrases referring to? For example, understanding that Tom's new job is
+in fact not a job, but a Turkey Reuben. Or what kind of event
+is taking place? Understanding that
+this interaction is describing an
+ordering food event. We could also think
+about this social information and
+trying to recover it. What can we infer through the fact that one person uses punctuation and
+another doesn't? Or that there's more
+colloquial phrases? How can we use this type of social information to
+study society itself? We can look at how to
+use social information, semantics, discourse, and different types
+of applications. We'll look at all of
+these together in Week 4.

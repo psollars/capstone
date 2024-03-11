@@ -1,0 +1,164 @@
+Okay, by this point you've looked at
+census data, you've looked at trends, you've looked at profiles
+of consumers in that area. You're starting to get a pretty decent
+sense of these two communities. So it's time to make a decision. Now, as I've mentioned before, there
+is always a certain amount of ambiguity in these scenarios,
+so there is no correct answer. Data can often point us in
+a couple of different directions. And in this case, I think the major thing that it does
+is point out that we are looking at a community that's already really
+well established with tons of restaurants and a community that's much smaller, but
+growing at a really rapid rate. And it's going to be hard to
+know which of those is correct. You want to ask yourself, what is my instinct telling me, where does
+the data line up to match that instinct? And once again, what were
+the priorities that were listed, and a lot of the priorities had to
+do with community components. The sort of conservative culture,
+the recent development, and available spending money. As we look at Kendall County, Texas, I sometimes think
+pro/con charts are helpful. So in this case, the pros are
+it's growing really fast. It is a conservative community, and we know profits correlate to conservative
+voting for this organization. It's got high home values. It's got a high median household income, which speaks to the availability of
+disposable income to spend on eating out. And it's got potential for
+big growth if we are patient. However, it's currently a really small
+market and the profits could be delayed. In which case, our
+recommendation might have to do with, we might pursue this option
+but not decide yet, and look at things like
+how much does land cost? What does the building commission
+say is going to happen? How much does it cost to sit on a piece
+of land and not build it for a few years? Those would all be possible
+action steps you could take. It doesn't have an interstate nearby, which means that most of the traffic is
+going to be local as opposed to people passing through on their
+way to someone else. There's not a university, which means we're not going to have
+that constant influx of young people. We mentioned that tourism
+goes with the interstate. It is a slightly shorter
+commuter distance, which might mean slightly
+less time in the car. And from our analysis
+using Yelp and Google Maps, we know that it's a place that currently
+doesn't have restaurants like ours. Meaning it doesn't have sort
+of the Panera, the Baja Fresh, the Chick-fil-A sort of price point,
+it's mostly the Burger King, McDonald's. But oftentimes those are the type of
+restaurants that come someplace in later. In looking at the data and
+running our pro/con choices, we decided to go with
+Frederick County, Maryland. So that's our recommendation, and we feel
+that we have lots of data to back that up. And what are our action steps going to be? So we might have action steps that
+tell us the degree to which we're certain we should break ground here. So our action steps might have to do
+with things that concern us still, even though we've made the recommendation. One recommendation might be where
+should we look first in the county? Frederick city seems like an obvious
+choice, it's the biggest one, it's where the university is,
+it's where the interstates intersect. The second action step might be because
+there are already two Chick-fil-A restaurants there, is there a need for a third upscale fast food restaurant that
+sells chicken, as Chicken Kitchen does? Is that an asset or is that a challenge? We might need to do some consumer research
+or some taste tests or some focus groups. We might need to start asking for
+zip codes when people go to our other locations to see if they
+happen to be from this area. And finally, we might need an action
+step about can we afford to be here? We need to maybe know how much
+the land costs, whether or not there is any available land, and whether, again, the places that we
+could build are places that attract the population that makes
+our restaurants a success. So even your action steps in a way are ways of giving more nuance
+to your recommendation. Which makes sense. Professionals
+would not do a soup-to-nuts market analysis in the four weeks
+of the course. All right? So, we looked at all the data, we've got some action steps, let's
+talk about writing the summary itself. So an executive summary frankly is
+kind of what it sounds like it is. It is a short abridgement of a longer
+report. It fits on a single page. And I always think it's
+called executive because if there's only one page that your boss
+reads, it's going to be this page. So it has to be both succinct,
+so it fits on a page, and comprehensive enough that they can
+get a big picture of what's going on. So if you have three action steps, you
+will list them in your executive summary. And then in the fuller report,
+you will kind of balloon that out and go into a lot more detail. So you have to be really judicious.
+Some people actually write their executive summary last
+after they've written the report. And some people write the executive
+summary first because it gives you an outline that you can then use for
+the larger report. So you'll need to play with
+what works best for you. Again, we've talked about how
+the executive summary is that sort of one-page summary overview. And sometimes it seems kind of silly that
+you've got a page that tells you what you're going to learn on the next pages. But all I can say is if
+you've ever seen Romeo and Juliet, it opens with someone coming
+out and giving this prologue. And in the prologue, they absolutely tell
+you, two young people are going to die and it's what keeps their families
+from continuing their feud. So if it worked for Shakespeare and
+it's worked for 300 years, I think it'll work for us as well. We're going to use a format that Duarte
+talks about both in Data Story and in her earlier books, called a slidedoc. And hopefully this will add
+some visual variety and help you think in new ways
+about an executive summary. The first thing you want to know is that
+this is a horizontally-focused document or a landscape-focused document. Oftentimes, when we write reports,
+we write them portrait style, right? With the 11 inches of our
+paper going up and down and the 8-and-a-half inches going across, if you're from another nation you
+might have page shapes like A4, where usually it is taller than it is wide.
+We're flipping that for this project. The advantage is that a lot of these things
+are being read digitally right now, but we're still formatting our
+reports like the olden days. So you're going to actually use
+your presentation software and your document is going to
+be wider than it is tall. We're also going to take advantage
+of using multiple columns and we'll talk about that a little
+bit further in our talk. We've made a template available to you if all you want to do is
+populate it and format the text. You can also choose your own formatting. And again, we're going to keep it to
+one page for the executive summary. Eventually, you'll return
+to this document and build out the full technical
+report after next week's lesson. So, executive summaries
+have a lot of components. First, a title. And unlike in fiction, we're going to actually give a title
+that signals the decision itself. We're going to try to
+minimize as we do this work. We're trying to minimize the guessing
+that the executive has to do. So we're going to have to play
+a game of Captain Obvious here. You would have a subtitle that makes
+it clear this is the executive summary, which is a signal that there
+is more to it than this. You're going to give some background
+information about why you did the work. You're going to clearly state
+your recommendation and support it with evidence. You're also going to talk about why
+you didn't pick the other choice. Because that is a great example of
+thinking about your audience and thinking about what they
+are likely to ask you. So instead of having that come up
+in a Q&A or in an email response, you're going to offer that forward. You're going to think about the action
+steps based on those questions that will give people a little bit more nuance
+about where you felt confident about your data and where you didn't. And then we're going to go back in and use some preattentive attributes,
+which are some design moves that help make some information pop
+forward and some information recede. So, some tips before we
+go look at a sample. Try not to use slang, try to stay in
+formal language whenever possible. So try saying $75,000 instead of 75K. If you're in a company that has
+more casual writing standards, feel free to ignore that. You want to explain but
+not condescend or talk down to folks. And the best place that I go for
+this kind of language is I go look at vox.com's explainers, and
+the URL is on your slide. They do a really nice job with this of
+being clear and recognizing what novices might want to know but then speaking
+to folks in a very respectful way. You are going to have to be clear and concise, which probably means you're
+going to have to cut some extra words. I almost always write what I want
+to say and then I have to go in and take out words, which might mean you have to
+take out some hedging language. So you can't say, I think it appears
+to be the case that Frederick County is more advantageous location
+if my data is correct. You don't have room for
+two lines for that, perhaps. So maybe you say the demographics are
+right for us to choose Frederick County or to explore Frederick County. Any time you can add visual variety
+to your text is good, bulleted and numbered lists are good. They're easily read and they make your
+paper look more visually interesting. We're going to talk more about bad
+news as we go through the course but sometimes you're investigating
+something that the client doesn't want. And in that case, you should state
+it clearly, don't sugarcoat it. Don't put in a lot of like, I know you
+were really hoping this would happen, but it didn't. I think it's easiest on
+everybody if you're just clear. I have a student who is working on
+a client and the client was hopeful, the client was a library and the library
+was hopeful that the community would really endorse building a second branch. And she did the interviews and
+the interviews said, we'd actually just rather have
+the bookmobile come here than go through the expense
+of building an entire branch. She didn't build a big emotional
+argument about it, she just said, this is something we were looking for,
+the response didn't come back as expected. This is the recommendation
+I have for moving forward. And finally, you customize
+those action steps so they fit the world you found in the data. They help you plug those
+holes where the data didn't satisfactorily answer questions or
+where data surfaced new questions. So, here we see that all of
+those segments are present. We see that the language
+is very economical. Although you see, when we prepared this, we made the 75K mistake right there
+and apparently right there. You see that, too, we have made even a little call-out
+box that emphasizes the key features. So anybody on picking this up is
+going to immediately know some of the information that is useful. And we've here talked
+about the rejected option. And we talked about preattentive
+attributes on the list of things to contribute. And those are places where we
+have played with the text or played with the formatting so
+that certain things stand out. So we have this use of a list here. We have bolded texts that leap out at us. We have section headers.
+We've got a numbered list. And we've got this highlighted
+list over here as well that uses a different font styling. And all of these are ways in which
+we fit a really economical but useful amount of information
+into a really small space. And one of the things you'll notice is
+that we don't have any data visualizations at this point. Most of the time with an executive
+summary, there's not room for them. We're actually not going to talk about
+visualizations until the third week. So this is just a concentration on text. So next up, some tips for
+constructing your executive summary.

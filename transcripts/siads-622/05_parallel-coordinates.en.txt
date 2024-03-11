@@ -1,0 +1,134 @@
+All right, so we've talked about
+novel glyph kind of techniques for use in multidimensional data set. I want to introduce an entirely new kind
+of encoding, so one that's very different. It's a little bit of a glyph, but it's
+also a very different kind of chart type. This is a parallel coordinate plot. Parallel coordinate plot has some
+similarities to the star glyph. So, if you remember that
+from the last video, we're going to see some similarities. Except instead of using
+things around a spoke system, it looks like a wheel,
+we're going to just line things up, and you're going to see that
+in an example in a second. So, let's say we have our kind of
+really small data set that we used as an example early on. We have students, and we have tests. So, those are the three D variables and
+the five V variables. The way we construct a parallel
+coordinates plot is for every variable that we care about. So, V1 one through V5,
+we're going to generate an axis. So, it goes from 0 to 10. This is,
+you can get zero points on the test. You can get up to 10 points on the test. We're going to look at the first student,
+okay? So, the first student scored
+a seven on the first test. So, we put a little dot that
+we don't draw it a little dot at where V1 is a value of 7. And then we go to the next test, which is
+V2, V2 the student didn't do so well in, so we have a point at three. We will then draw a line
+from the seven of the three. We'll then go to the next test and draw
+line, going up to four, and then an eight, and then back to a one. Okay, so we basically modelled that
+student's performance in what looks like a line chart on top of
+this parallel coordinates plot. This is the performance for Student Two,
+and similarly, this is the performance for Student Three. So, this is a standard kind
+of parallel coordinates plot. Now there are few tricks that
+we're going to talk about. in a second, one is that these variables
+don't always neatly align between zero and 10, so miles per gallon can go from
+like, let's say, 18 to 50, I don't know. However much you can get miles per gallon. The weight can go from, like a few 100 pounds
+to a few 1000 pounds depending on whether you have a motorcycle or a large car and so
+on, so it doesn't range just from 0 to 10. So, you're often going to have to
+normalize this data somehow and shrink it down. The other interesting weird constraint
+about this, and this is where parallel coordinates shine is that, if you have
+lots of data, it suddenly becomes very difficult in a static representation of
+parallel coordinates to actually find anything of interest. Where parallel
+coordinates are great is in supporting interactive features to allow you to
+target specific things within the data. So originally, like if you have a data set
+with lots and lots of different students, for example, you're going to have a zillion line
+charts being drawn on the screen. But parallel coordinates allows you to
+interactively select things that you care about in order to filter the data. So, for example, we might say, I only want students who
+did well on test two, okay? So, what we will do is draw a little
+rectangle on the axis corresponding to test two, and
+highlight the region that we care about. So, the range of values that
+we care about maybe between, six to eight is drawn interactively. What that will do is it will highlight
+those students that have that specific parameter or test value that we care
+about, and will hide the other ones. So, the other ones will either
+vanish totally from the display or will just become much more
+similar to the background, okay? So, the ones that we've
+selected become more salient. Now we can make an additional selection. Let's say I want a student who's
+performed very well on test V1. Okay, so test one. So, we can draw another selection on the
+access corresponding to the first test. And only that student that meets
+both of my parameters performing well on test one and
+test two will be displayed here. So using this,
+what we can do is identify that subset of the data that corresponds to specific
+properties that we care about. So, let's say I'm searching for a car,
+for example, like I want to buy a car. I might do things like select a range
+of prices like I only want a car. I'm only willing to pay
+a certain amount for a car. I require this number of miles per gallon, I need this amount of horsepower and
+so on. And what we can do with that is basically
+isolate those cars that match all our parameters, okay? So, when we have to make these trade offs,
+this is a great kind of visualization technique to support
+that kind of analysis, basically allowing us to
+draw these different ranges. The other cool thing that
+you'll see about this is, you can dynamically drag
+these ranges up and down. So, you can filter or extend them as you
+see fit, to basically include more data. So, if you notice that your particular
+filter has eliminated all the data like there are no cars that match this,
+you can basically say okay, I'm willing to tolerate higher price or
+lower miles per gallon or whatever it is. Okay, so that's supported, the other
+interactive thing, that support is you can reorder the columns because while in this
+case the columns make sense to be ordered as like, test one, test two,
+tests three, test four, test five. That doesn't always hold. And sometimes you just want to reorder
+them because you want semantically, like all the inputs to a system to be on
+the left and all the outputs, for example, to be on the right. So, this is our running example. This is our car data set,
+it's a little bit hard to read. But there are different variables that
+are being mapped to different axes. You can see that the last one,
+because it's an ordinal things like the number of cylinders kind of fixed
+you can have one, two or three. Let's say, all the data points
+basically go to one point, like they're not sort of equally
+nicely distributed straight across. But this is where you can actually
+see the interactivity shine, so you'll see a selection
+being made on one column. You'll see that selection being dragged,
+everything that matches will be filtered. Now we're going to make another selection. Nothing matches, but
+as we move that range slider over, were able to find cars that match
+our particular constraints. Here they're going to add another one, that's more or less it. So now it's just going to repeat, but
+this is basically the way small multiples. Sorry, the way parallel coordinates works. And you can again move the axis as you
+want, so you can drag and drop them and reorder them if you wanted to. Okay, there are a number of
+different design choices and constraints when picking to
+use parallel coordinates. You have to figure out how you're going to
+do the normalization oftentimes, like you have to think about the top and the bottom
+of the axes as being some zero and one. You have to think about the ordering,
+so does zero always go on the bottom? Does one always go on the top? Sometimes it makes sense to invert those
+things depending on the semantics of the data, you have to think about
+the initial ordering of the axes. How should you order them? In some cases, it's obvious maybe it's
+over time, in some cases, less so. There are also extensions
+that people have proposed for dealing with categorical data or for
+independent axes and some things that people have done to like overlay
+correlation statistics, for example. So, if you know variable one is correlated
+with variable two, sometimes people will overlay additional correlation data
+kind of between the axes, for example. So, there are lots and lots of different
+extensions to parallel coordinates. These are just a few tools that you
+can find available free on the Web. You can do this in Jupyter Notebook as
+well, so some of the things we've done in Python, there are parallel
+coordinated implementations, but they're more sophisticated ones as kind
+of individual packages, XmdvTool is one, Parviz is another. Parallel Sets is an interesting variant,
+it's lumping together sets of data. So, instead of single lines representing
+different individuals or instances or cars or whatever, it lumps them together
+and generates kind of these thicker lines. This is a particular visualization
+of survivors on the Titanic. So, you have sets of people corresponding
+to the class of passenger, the gender, what their job was, whether they survived
+or not, and so that's represented in these kind of larger collections of lines
+that have been grouped together and then split apart, and you can similarly
+filter using this kind of drag and drop technique that we've seen before. Okay, take away. Parallel coordinates are really powerful. They're hard to understand. You have to train people
+in order to use them, like they're not necessarily
+the most natural thing. People have to think about the order of
+these things, whether the order means anything, the axes are flipped,
+you have to think about how to filter. There is some some learning
+costs to using these, but it applies to most of these kind of
+more fancy visualization techniques. So, you have to think about this. They have their own set of limitations,
+this learning curve. The dimensions need to make
+sense in parallel, and they don't always make sense
+to be visualized in parallel. But then once you've decided to use
+parallel coordinates, you can start to tackle this problem of picking your axes,
+picking the normalization, and so on. And again, I will point out
+that there are a ton of, like, kind of derivative extensions to parallel
+coordinates that may work really well for certain kinds of data sets. So, I encourage you to explore the space,
+and parallel coordinates and sort of see if there are some
+that are better or worse, because a lot of them have
+additional overlays or additional interaction techniques
+that may make things better for you. Some of them, for example, will collapse all the edges
+that are similar into one line. And so, there's kind of this nice,
+smoothness that we'll see when we talk about some network visualizations
+later in the semester. But all these features might be useful,
+depending on the underlying data and what it is that you're trying to show or
+see. All right, and with that,
+thank you for listening.

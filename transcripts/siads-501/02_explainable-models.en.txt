@@ -1,0 +1,91 @@
+Welcome back. Let's talk about making your data analysis
+understandable. At the end of this lecture,
+you should be able to describe what is meant
+by a black box model, and explain why
+there's a trade off between accuracy
+and explainability. By a black box model, I mean something that
+you can't look inside. The model gives outputs
+for certain inputs, but people don't see or can't understand how that output
+is derived from the inputs. So what is it about this book that makes Amazon
+recommend it to you? Why is this ad shown
+to you and not to me? Why are these people grouped
+into the same cluster but this other person was
+not in that cluster? By contrast, a model is
+interpretable not black box if a human can guess
+the output for a given input, if a human can describe
+what features in the input are
+affecting the output, and if a human can describe input changes that would
+affect the output. So when I say a person can describe what features of the input are
+affecting the output, that would be something like, these people are in
+the same cluster because they all have
+master's degrees, or this movie was recommended because you love
+romantic comedies. When I say a person can describe input changes that
+would affect the output, that's saying something like, if the movie were
+20 minutes shorter, the model would predict
+a higher box office gross. How can we make
+our models interpretable? Well, one way is just to pick a model family that is inherently more
+understandable to people, that they can understand it in terms of specific features. For example, a decision tree, you can look and see, well, it's making a decision, does it have a red square or not? That, of course,
+depends on the tree not being having thousands
+of choice points in it. But if it's a relatively
+compact tree, that'll be understandable
+to people. Linear regression, it's pretty
+understandable to people. If you reduce the length
+of the movie, you'll increase the box office, or as the x value goes up
+the y value will also go up. The K-means clustering,
+where you can describe the cluster in
+terms of its centroid, that's relatively
+understandable for people if the distance function is something that
+they understand. The thing that defines whether two points are close
+or far from each other. By contrast, there are some other model families that are not inherently interpretable, and many layer neural network
+is deliberately designed to be able to compute weird
+non-linear functions. So if one of the inputs
+changes a little, you don't really have
+an intuitive way to guess how the output
+would change. Now, if you restrict your attention to only
+interpretable model families, if you reject those models like neural networks that
+aren't easily interpretable, you may be foregoing other desirable properties
+including accuracy. So depending on the application, that may be an acceptable
+trade-off or it might not. For example, if you have
+a model that's predicting very short-term fluctuations
+in stock prices, you're going to do
+program trading without any human involvement, then you don't really need people to be able to understand particular decisions that
+the model is making. You'll prefer to have
+the most accurate possible one, because you're going
+to make trades and you're going to win or
+lose money from that. You might still like to
+understand and characterize situations where the model's
+likely to perform poorly, so you can turn it off during times when it's
+likely to do badly, but you wouldn't restrict
+yourself to simple models at the expense of
+better predictions. On the other hand, Netflix
+customers may be happier with a set of movie recommendations whose source is
+understandable, "Hey, this is because you like romantic comedies," even if
+it means on average, they're slightly worse in the recommendations that
+they're giving compared to what they could do with a black box algorithm that's completely
+not understandable. So even if your model family
+is not easily explainable, you may be able to provide some understandability
+through examples. Here's an item and here's
+how it's being handled, here's the prediction
+made by the algorithm. Why does it make that? Well, we could explain that by saying here's some other items, some other input-output pairs
+where they are similar to the one that we're looking
+at and because those were the correct outputs for
+the inputs on these other items, that's why the
+algorithm is making a similar output for this item. Another thing we might do to
+make things understandable, the algorithm is taking
+an input, producing an output, we could highlight
+the features of the individual item that had
+an impact on the results, and maybe even
+tried to articulate some simple rules based
+on those features. Even though, those
+simple rules don't fully capture everything that
+the algorithm does, that might be enough to give people some intuitions about it. So maxims, in this case
+questions to ask. First, is there
+an intuitive explanation for this model output? Which features does
+the model focus on? Is this a situation where we
+need an explainable model? Now, speaking of the benefits or perhaps drawbacks of
+explainable models, have you heard that
+the ideal airplane site crew is a computer autopilot, a human pilot, and a dog? Yeah, the computer's job
+is to fly the plane, the pilot's there
+to feed the dog, and the dog's job is to bite the pilot if
+he tries to touch the computer. I'll
+see you next time.

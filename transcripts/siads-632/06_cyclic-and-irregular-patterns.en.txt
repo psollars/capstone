@@ -1,0 +1,249 @@
+Now we have talked about the
+trends and pseudo patterns. Let's look at cyclic
+and irregular patterns. Cyclic patterns also
+known as cycles, are relatively long
+term oscillations about a trend line or a curve. There's difference from the trend or pseudo pattern is that they may or may
+not be periodic, or they may not be even repeating in a
+single time series. For example, you know that stock market is
+going up and down, and going down and up. You know that they are bullish
+and their bearish periods. But you can't really
+time the market. You don't know how
+long a pattern like that is going to last and you don't know
+when it's going to last. That's the difference between the cycle and the
+seasonal patterns. In this particular example, you can see that there
+are many cyclic patterns, many cycles that takes a bell shape going up
+and down, up and down, but some are wider
+some are smaller, and you can't really time. In this particular
+example you can see that, we're actually using
+the sine wave to indicate the different speaking the cyclic pattern and
+a seasonal pattern. Remember that a simplest
+seasonal pattern is a sine wave. But in this case, you can
+see that the frequency of the sine wave is actually
+changing over time, because this is actually a sign of experience dove sine x. That means that we still
+have this cyclic pattern, but the frequency of this cyclic pattern is
+becoming larger and larger, it does not follow the
+fixed period of time. That's why that all of
+these are cyclic patents, but they're not necessarily
+seasonal patterns. A cyclic patterns could
+be even more complex, this is an example that we
+discussed in Data Mining 1, this is known the cup
+and handle pattern. If you see this pattern
+in stock market, many people believe that, it indicates that the stock
+is is going to going up. But you can't say that this
+is the period pattern, because you don't know how
+long it's going to last. You don't know whether
+you are looking at the cup or the handle, and you don't know how
+large the cup will be, how large the handle will be. In this case, these can
+be better described as cyclic pattern into or
+for seasonal patterns. One cyclic pattern could be decomposed into smaller
+cyclic patterns, in this case, two curves. How do we extract cyclic
+patterns from time series data? Apparently they're harder to do. Their harder to deal with, their seasonal patterns, because the patterns are not
+necessarily periodic. If the cycles have
+approximate periodicity, then you can construct
+them similarly, just as if you are extracting
+seasonal patterns. You can use discrete
+Fourier transform to transform your time series data from the time domain
+to frequency domain, and from the frequency domain, you can actually identify
+the different patterns. However, if the
+cycles do not really follow even approximately
+in the periods, then you need to use other
+methods to discover them, such as Wavelet Analysis. Wavelet Analysis is
+actually another type of classic measures
+in signal processing. It solves the big problem
+with Fourier transforms. Remember that in
+Fourier transform, we transform the data from the time domain that is
+measurement over what? Over time, into the
+frequency domain, that is strengths over frequency. It gives us information
+about which frequencies appear and
+how strong they are. But it does not give us information about
+when they appear or you can't locate the different
+waves in a time series. This is actually quite
+important for cycling patterns. It does not really matter that
+much for seasonal patterns because we know that
+the seasons are coming back again and again, so you don't need to locate
+where the seasons are in the time series because
+you know that they're coming back in a certain frequency. But for cyclic pattern is
+quite important because maybe the cyclic pattern will
+just appear once or twice in your series, and it's very important
+to locate where exactly they appear
+in time series. You can do this with
+wavelet transform. Wavelet transform despite the very complicated
+mathematic background, it preserves the information
+of both the time, location, well location means that
+location in the time series, and the frequency of a signal. All you need to do
+is to knows this; you don't have to actually
+know the actual math. But if you're interested in actual math of wavelet transform, you can actually look up it from the textbook or from any other textbook of
+signal processing. Here we're also showing a demo of a wavelet transform
+and that is known as the continuous wavelet transform. That is transforming the
+continuous repetition in the time domain into the continuous representation
+in the frequency domain. Here, instead of just
+strengths over frequency, we also output the
+location of the wavelet. There are also discrete
+wavelet transforms available. These are very widely used
+for time circumstances. In this example,
+you can see that we have wavelet of
+different frequency. We use every wavelet
+as the filter, and we run every wavelet of different frequency
+over the time series, to record the location and the strengths of this
+wavelet in this time series. By doing that, we're recording the metrics over time and over
+frequency of the wavelet. The value of every row and column in this matrix is the strengths of this wavelet. You can see that the
+difference between the wavelet transform
+and Fourier transform is that the output is actual
+matrix instead of a vector. In matrix, you have rows and
+columns corresponding to different frequency
+of the wavelets and different locations
+in a time series. There amount of selections on what wavelet to use
+as the filters. I leave the details for students who are interested in
+signal processing. Just remember that the output of wavelet transform is the
+matrix instead of vector. Input of wavelet transform is actually the time series
+represented in the time domain. Output is the frequency
+by time matrix. In the matrix, every
+value corresponds to the strengths of the wavelet at the particular frequency and at particular time,
+in a time series. Of course, when the matrix is fairly large and when the dimensions are
+fairly continuous, you can interpret the
+matrix as the heatmap. Columns corresponds to
+timestamps and they're ordered. Rows corresponds to different frequencies of the wavelets, and they're also ordered. From this heatmap or this matrix, you can actually extract
+more complex patterns. You can use whatever matrix
+analysis tools like PCA, like SVD to extract even more complex patterns from the output of
+wavelet system. This is the typical example of the result of the
+wavelet analysis, the input is actual time
+series in a time domain. Output you can see
+is actual heatmap. The rows are time, columns are frequency
+in this case, and the magnitudes corresponds
+to the strengths of a particular wavelet at
+that particular frequency, at that particular time
+in the time series. You need just eyeball it. You can actually identify it more complex patterns
+in this matrix. This is another very
+interesting example. This is real example
+that we created, wavelet transform outputs
+of different time series signals we obtained
+from wearable devices. You can see that if
+the user is walking, the wavelet analysis of the
+time series looks like this. If the user is
+sitting or standing, then the patterns
+are quite different through the wavelet analysis
+results of the time series. You can actually
+make use of these to facilitate downstream tasks, such as classification
+of user activity, of sports and activity or
+classroom, so on and so forth. Basically, we extract signal
+patterns through Fourier transform and cyclic patterns
+through wavelet analysis. You can also extract
+irregular patterns. How to extract
+irregular patterns? Well unfortunately,
+irregular patterns does not have this
+very fancy transforms. What you can do is actually
+to remove other patterns. You identify trends, you
+identify seasonal patterns, and then you identify
+cyclic patterns, and then the rest are
+irregular movements. In this case, irregular
+movements are usually extracted
+from the residual of a time series model. Suppose we have a good
+model of the time-series, the function T. Then you
+can actually compute the predictive value
+of the time series and the observed value
+of the time series. Then if the difference is large, and that indicates some
+irregular patterns we will introduce this
+further when we are talking about time series models, remember that we have two very
+basic time series models. Additive model. That
+means the time series is the summation of trend,
+cycles, seasons, and irregular patterns or multiplicative models
+where time-series is the product of the four
+different types of patterns. Then, even without the
+fancy forecasting models, you can use these two
+very simple models of the four type of patterns
+to do the decomposition. That helps you to identify certain anomalies and
+outliers from time-series, or random movements, or
+noise, so on so forth. They are all captured
+by irregular movements. For example, if you
+see that the value of certain timestamps are so much different from
+the neighbors. Then this indicates an
+anomaly or an outlier. In other words, if you
+have a prediction model, that is summarizing the trend or the seasons or the cycles of
+this time-series pattern, but observed values are so different from the
+predicted values, then that indicates outliers. Well, sometimes the
+outliers are bad. For instance, the sudden
+drop of stock market, but sometimes the
+outliers could be good. For instance, we introduced this example that people
+are looking at the spikes of block mentions of certain book titles and the Amazon sales rank
+or the same book. They found that the two spikes actually are correlated
+to each other. There's the two day gap. They conclude that the mentioning of book titles in
+social media has the predictive power of
+purchasing of E-market. In this case, every spike in a time series is
+essentially an anomaly. In this case, this is actually
+an anomaly that is good, that has real value. In fact, if you use Python, if you use the
+Statsmodel package, there's something called seasonal decomposition that helps you to extract the trends and
+the seasons, but not cycles. Then the rest, they consider
+as the irregular patterns. They assume that
+the simple model, that the time series is basically the basis which
+could be just the mean. The trend and seasonal
+patterns and error. The error indicates
+irregular patterns. This model could also be either additive or
+multiplicative. This simple model is the
+implemented instance model. If you apply this package, you can actually see some really interesting
+decomposition of the airline passenger data. The left part here gives us the seasonal decomposition
+result of the air and air passenger data
+using additive model. The top plot is the
+original time series. After decomposition, it gives you a series of three plots. This is the trend plot that
+gives you the overall trend. You can see the
+trend is moving up. Then the seasonal plot gives
+you the seasonal pattern. You can see that the
+trend is no longer here. They all have similar
+levels and it's very clear that they actually have
+different seasons here. Then the residual graph, the residual plot gives you the resilience of
+trend and seasons. After detaching the trend and seasons from original
+time series, what's left is represented
+in the residual pattern. But you can see that
+in a residual pattern you can still see some patterns. These patterns don't
+have very clear seasons. In fact, many of them
+are actually cycles. If you could actually extract
+cycles from this residual, then the rest are really
+irregular patterns. The right plot gives us very similar results but using
+the multiplicative model. You can see that still, given the original theorist, it gives you a trend curve, a seasonal curve,
+and residual curve. This time the residual
+curve is more random than the original curve on
+the left hand side. There may be more
+irregular patterns using the multiplicative
+decomposition model. We're basically finished
+talking about how to extract four types of
+time series patterns, including trends,
+seasons, cycles, and outliers, or
+irregular patterns. How to use them in add? Except for describing
+what time series look like and identify trends, we can actually use them for downstream Data Mining and
+Machine Learning tasks. For example, given time-series
+data, in our example, the wearable sensor data and sometimes you have
+categories assigned to them, then you know that the user
+is running or walking. Sometimes you don't. But from this different time series data, you can actually apply this
+pattern discovery methods. In this case, we are assuming this discrete wavelength
+as its results. Then that will help you extract many different
+patterns that trends, seasons and cycles, and
+spikes, so and so forth. Then you use these patents, you feed them into downstream tasks such as
+classification and clustering. You use these patents as features or you use these patterns
+to help you apply, let's say image
+processing techniques and two time series, because basically
+the wavelength has its transforms time
+series into images. Or you use matrix, prediction methods
+matrix as this methods, it's basically Fourier transforms time series into
+vectors and matrices. Once you extract this patterns, you use these patents as building blocks for downstream
+Data Mining tasks. To this regard, it is no different from mining
+sequence data, matrix theta, or
+[inaudible] data. To summarize time-series patents, I want you to
+understand that you can decompose the time
+series into trends, seasons, cycles, and
+irregular variations. There are many
+different measures to extract each of such patents. When you're extracting trends, you should really
+remember they're moving average based methods, especially email,
+because that's so commonly used in practice. If you are interested in
+season or seasonal patterns, think about Fourier transform. You don't have to
+understand the math, or the real connections to
+a theory or the proofs. But you need to understand
+that what the input and output of different
+Fourier transforms are, so then you can actually
+select the right methods. Fast Fourier transform is what
+you want to access elect. If you want to extract
+cyclic patterns, you use wavelet transform and
+then find the right package and you should remember
+the input output, and that's good enough. You should know that
+all these outputs can be used to extract even more complex patents
+and can be used as building blocks of downstream data mining and
+machine learning tasks,. That's all about
+time-series patterns. Thank you for listening.

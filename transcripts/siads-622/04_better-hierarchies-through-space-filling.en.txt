@@ -1,0 +1,165 @@
+Okay, welcome back. We're going to change gears a little bit. We've talked about node-link diagrams
+in various ways of making them work for visualizing hierarchical data. I want to switch to a very
+different kind of technique. A space filling technique is
+an alternative in this space. So the most common space
+filling technique is a treemap, and this is an early example of
+a treemap display Ben Schneiderman and his group at Maryland sort
+of invented these things. And this is just a really simple old
+example again from the early nineties. There are much more sophisticated
+versions that you'll see in a second, but the basic construction of these
+follows a simple algorithm. So let's say we have a hierarchical
+data set that looks something like this. So we have all the fruits that
+we've sold in our market. Okay, so
+we have our total sales at the top. We have sorry, we have all these different
+items, including fruit that we've sold. So we have total sales at our supermarket,
+which include fruit, meat and dairy. And underneath that we have subcategories. So underneath fruit, we have apples that
+we've sold cherry, strawberries, grapes. Under meat we have chicken, beef,
+pork, dairy, milk and cheese. Okay, so that's our kind of hierarchy. All the sales of fruit, meat and
+dairy and then specific items underneath. And there's values associated. So how much money we made
+off of each of these things? So how do we build a treemap for
+this data set? We basically the start by
+propagating the values upwards. So we calculate the values
+like the total sales for all the intermediate
+nodes in this hierarchy. So, for example, we add chicken, beef and pork sales 400, 200 plus 200
+to calculate the total meat sales. And then we add up fruit
+plus meat plus dairy, and we get the total sales in our market for
+this time period. Okay, so to draw this,
+we basically draw a rectangle, that's the first thing that we do. So we draw the rectangle, that rectangle
+is going to represent total sales. That's going to be 2000 bucks. We then will go to the next
+level down in the hierarchy. So we have fruit at 600 meat at 800 and
+dairy at 600. What we will do is we're going to pick
+either to start with horizontal or vertical. We're going to pick
+horizontal in this case, and we're going to divide up this
+high level rectangle into pieces. So we're going to draw two lines that will
+give us three pieces that have a ratio of six to eight to six. So basically,
+we're going to draw it like this. And then the ratio reduced down is
+basically three to four to three. The fruit is at the top. There's a ratio of three to four, so 600 to 800 then a ratio of meat
+to dairy four to three again. Okay, so the middle rectangle is a little
+bit bigger representing the meat chunk, okay. So basically, now we have divided up the
+2000 into three piles of 600, 800, and 600. Next step, we go one level down. So let's start with the fruit. Were going to go one level into the fruit,
+and we're going to pick the other
+direction from what we started with. So we picked horizontal cuts at first. Now we're going to pick vertical cuts and
+again we want the ratios to be maintained. So we're going to make three vertical
+cuts so that the rectangles that emerge are going to have the same
+ratios of one to one to two to two. Okay, so that's our division here. So apples are represented in the far left,
+then cherries, strawberries, and grapes, okay? We will do the same thing for the meat. Okay, so we go one level down. Now there's a ratio of two to one
+to one and finally down to dairy. So one to one, okay, so
+milk and cheese were the same. So this is a space filling technique. A treemap approach applied to
+this really simple data set. Sometimes what people will do
+is they will double encode. So colour will also mean,
+the amount of money that you made, so we can do this double encoding and
+makes it a little bit easier to read if the rectangles become
+really distorted in size. This is particularly useful. Remember sometimes it's hard when
+rectangles have funny shapes to read them. And so
+adding this color encoding will help. Sometimes the color will be
+used to encode another feature. So let's say we also have the units
+sold not just the amounts. So apples, we sold ten units, cherries,
+we sold ten units, strawberries, we sold 100 units and so on. We can use that other variable and
+do a color encoding or density encoding based on that
+in this particular example. So this is a really simple treemap. The problem with treemaps is
+that you get things like this. So when they become really complicated and
+there's a lot of data, a lot of the hierarchy
+is quite complicated. You get visualizations that look like this
+and these are really, really hard to read. Okay, so while you can kind of sort of
+tell the general sizes relative to each other within a local area, it's really
+hard to compare rectangles that have been, that are very far away and
+have very different shapes. Remember, this is the integral
+versus separable thing. Because of the way these things are shaped
+a really tall, narrow rectangle, it's hard to compare to something
+that looks like a square. Okay, so this is problematic when
+we want to make those comparisons. So if I want to know how much bigger
+one of these rectangles is relative to the other, that becomes quite difficult. So people have tried various techniques
+to make these things look more appealing. So there are strategies like the order
+in which you lay these things out and sort of optimizing them
+to look more square like. So this is Usenet,
+that's a news group web, you know, a news group system that used to exist
+where we had these different categories. And so this is a visualization of
+basically how many posts were made in each of these categories. I forget what the color encoding is
+because it's not that important. But basically,
+the different amounts of posts in each of these is represented visually
+through the treemap representation here. There's a little bit of manual magic
+that was used to make this happen. And it's also a greedy algorithm, so
+you can see that it starts with big rectangles in the lower left,
+and they shrink very quickly and become kind of unreadable in the kind
+of upper right corners of these things. So each corner sort of has lots of dense
+information because those are all news groups that have very
+little posting information. So it's really hard to read in there. You might need interactivity or something
+else basically, be able to zoom in. Okay, so
+people have tried various algorithms, various automated algorithms
+in order to do this. And so there are optimization
+algorithms that try to generate treemaps that approximate
+the actual allocations, the actual distributions without
+being perfectly exact, right? So they're going to tolerate making
+kind of other kinds of shapes and other kinds of cuts and laying things out
+a little bit differently so that they are an imperfect representation,
+but they're pretty close, okay? So this is various algorithms applied, you can go look at this paper and there's
+actually kind of a web demo that lets you see this in action as it
+simulates to build these things. These are different techniques. Slice-and-dice, cluster, squarified,
+pivot-by-middle, and so on. You can see just by looking
+at this that some of them are more readable than others. So, like the squarified or the strip is much more readable because
+of the sort of equal and aesthetically pleasing because of those equals shaped
+squares relative to the slice-and-dice. The other issue with treemaps
+is sometimes it's hard to tell what is included
+in which subcategory? So if we have a higher
+level kind of rectangle and we've divided it up into chunks,
+sometimes it's not possible to easily figure out what sits
+inside of something else. So if there's just kind of clean lines
+here, like there's some cushioning, but in some cases, it's hard to tell,
+in this case what they did was they added padding to support your eye basically to
+figure out what's included inside of what. But in examples like this, in some cases,
+it really is hard to tell which are sub classes of higher level classes
+just looking at the visualization. So people have tried to solve
+this through various techniques. One is including sort of the padding on
+the outside of the rectangles as we go, so we lose a little bit of space. The other approach is this
+is kind of a simulated 3D, this is called a cushion map. So we create this kind of simulated
+surface that's three dimensional. And so it's easier to see what
+things are included in other things. It looks, it kind of has this view that things
+are sitting one on top of the other. So that kind of gradient allows us to
+better understand what is contained inside of what. This is a different kind
+of space filling technique. This is one that was used in
+a in a tool called FundExplorer. What is problematic about treemaps
+sometimes is they only show the data that's there. They don't show the data that's not there. Sometimes the data that's not
+there is equally important, and we would like to find ways
+of representing that. In this case,
+this person is buying various stocks and they're making investments in
+certain sectors, but not in others. So they're buying one stock but
+not buying another. So how do we represent that? So this is an approach that's a space
+filling technique that allows for having additional kind of background
+information that is showing us potentially where we're not investing. Maybe that's for good reason,
+maybe that's for a bad reason. But either way we can see that additional
+detail of what is not being purchased by having that as a background layer and
+putting the space filling basically on top of that background layer and
+moving things around so that they fit. So there are a bunch of other space
+filling techniques I mentioned some of them earlier. This is called a sunburst visualization,
+but people have gotten crazy creative with different space filling because
+of that optimization nature. So this is another example
+of the space filling. We're no longer using rectangles
+were using crazy polygons. Here's another space filling
+approach using circles and so on. So these are all examples. The interesting thing about them is that
+each of the shapes here are better at preserving the underlying
+data distribution. Because of that optimization nature
+were often making rectangles that are not totally accurately
+encoding the underlying data. By using other shapes,
+other shapes than just rectangles and squares were able to have
+a much better representation. So this is an alternative where it is
+important for people to be able to compare those different sizes and
+have a more accurate read. Now, of course,
+there's a problem with any of these things because it's really hard for people to
+compare a triangle to a square, right? Like then you're adding
+another layer of issues. So while you are correctly
+preserving the ratios, it still doesn't necessarily
+make it more readable. These are though, very aesthetically pleasing. So there is that to say about them. All right, so just a few takeaways. Space filling techniques are a great
+alternative to node-link. They make much more
+effective use of the space. This optimization problem is one of the
+motivators of all the different approaches that you see. And whenever there are optimizations, people find it like a ton of
+different ways of solving them. And so both this applies both to space
+filling and the node-link diagrams. And you can go to this website and
+sort of see a survey of all the different approaches people have tried for
+hierarchical tree based visualizations. Lots of examples. So, as always, with any of these
+things that we do in this class, your choice of a particular encoding,
+your choice of interactions will depend very much on the underlying data
+distribution and the tasks that you have. So you as the analyst, what are you
+trying to get, you as the person building communicative visualizations,
+what is it that you're trying to show? So it's always: consider the kind
+of the data and the task. Try different kinds of algorithms, different kinds of approaches
+to find the best one, right? And with that, thank you for listening.

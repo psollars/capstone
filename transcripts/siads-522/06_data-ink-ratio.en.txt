@@ -1,0 +1,223 @@
+Welcome back to
+our discussion around design. What I want to focus on now is the notion of data-ink ratio. You'll see this as
+another thing from Edward Tufte that
+pushed extensively, but what I actually want
+to do in this set of slides is walk you
+through the argument, but also why it's not really supported
+and why it might be an aesthetic choice and less so about expressiveness
+and effectiveness. So it's important for us to
+understand where this comes from because a lot of books
+will push for this idea, but I want to push back
+on it a little bit and explain how it actually works and where it makes
+sense and where it doesn't. So Tufte has two specific rules and I'll explain both
+of them in a second. Thou shalt maximize
+the data-ink ratio and thou shalt maximize
+the data-density. So let's go through each of these to understand how they work. The first is this notion
+of data-ink ratio. So the question is
+I'm thinking about how much ink or
+how much toner you would have to use in order
+to print something. You can think about whether
+that ink is being wasted. So how much of the actual
+ink that we used to print the graphic was
+actually important? So if we have a visualization
+like a bunch of bar charts, the thing on the left here, we can ask the question, have we used more ink than
+we actually needed to? Ideally, we're going to use only ink for things that
+actually encode data. So the Tufte notion around
+this is that one should eliminate things that are unimportant from
+the visualization, so redundant information
+should be eliminated. So if we have the Bar
+chart visualization on the left over here, so each of these is
+like a mini bar chart; you have two different bars corresponding to
+each and so each of these grid cells is a different kind of comparison that we might want to make. So what Tufte said
+is that you can take those visualization
+over here and subtract out this ink that you're basically not using for
+anything useful and remove it. Why do you need this extra
+stuff if all you're trying to communicate is this
+information on the right. So you can go from
+this little bar chart over here to this little
+bar chart over here. It's equally expressive
+in the notion of Tufte, and his argument is that it is actually more
+effective because you've eliminated things that are
+cognitively inefficient. So when your eye is scanning
+from the left to the right, for example when you're trying
+to compare the different, let me get a different color, you're trying to
+compare different bars like these two bars, it's easier to do that
+if you don't have all these distracting
+boxes in the way, and all this extra
+information, like these stars. Why is that
+information necessary? It's clear which bar is bigger, which is what the star
+is indicating, why do I need that star? It's also clear to read
+from this line over here, how much different this
+line is from this line. You have the axes,
+those still exist, you have the zero line down here. So why do you need
+all this extra stuff down here? You can just throw
+all those extra things away and end up with a much cleaner base line
+that connects the bars, that lets you read it in
+a much more effective way. So this is the idea of
+improving this data-ink ratio. So how do we do this?
+Above all else, Tufte says, "Show the data." This is reasonable. If we
+lose anything of the data, it's not as expressive anymore, then we've done something wrong. We want to then engage in this repeated thing of
+maximizing the data-ink ratio. So erase non-data-ink, things that are not conveying
+actual information. So this star at the top which is telling us which bar
+is taller or not, we don't need that anymore,
+so let's get rid of that. We also want to erase
+redundant data ink. So when we're looking at the different bar
+chart over here, like these boxes,
+why represent it as a box when we can simply
+represent it as a line? So that is the notion of
+erasing redundant data-ink. Once we've done that, we should look at our
+visualization and decide if we can keep going like we can keep
+eliminating stuff. So if we do this iteratively, we should be able to arrive at a very nice visualization that is minimalist in the sense of data-ink ratio and has
+equal expressiveness and is perhaps more effective because it doesn't have all this other
+distracting information. Now, how does this actually work? If we apply this
+to its end state, does this actually make sense? So let's say we have a bunch of tasks that we're
+trying to support, we have a bunch of comparisons, and so we have
+these different options. So we have option one, which is low data-ink ratio and option two which is
+high data-ink ratio. Our preference, in theory, would be that we should
+prefer the one on the right because it is
+equally as expressive, but it is actually more effective because we don't have all
+this distracting information. So let's do this for
+a different visualization. Let's take this boxplot
+for example. So we have a bunch of
+box and whisker plots sitting next to each other, do we need to use
+all this stuff on the screen in order
+to encode this data? Couldn't we reduce some of these lines and
+throw them away? The answer is, of
+course, yes we can. So let's instead of
+having lines over here, let me start drawing
+a little bit. We have these lines
+representing the median, we have these extremes
+of the whiskers, we have the end points over here. So those are the key points, basically, in the visualization. So let's throw
+all that stuff away and just encode
+the data using this. So we're going to have
+a dot now where the median, and the line starts where the top of the box started up to
+the top of the whisker, and another line from the bottom. Show this in a different color. Another line down here going
+to the bottom over here. So this is the same data. You can see I switch
+back and forth. We basically have
+the same data being encoded in a much simpler form. Looking at this, we've done
+one step, let's keep going. Using Tufte's rules, we can
+still throw some stuff away. Why don't we throw away
+the lines and use a much simpler representation?Why
+don't we just do it like this, where the tops and the bottoms
+are represented using these little triangles indicating
+which direction to go. A lot less ink being used,
+same expressiveness. Arguably, this is starting to be a little bit less effective. This becomes a little bit
+more difficult to read. So blindly applying Tufte's rule here is going to result in something that looks
+perhaps like this, which is not actually
+very readable. It's very minimalist, but
+it's not very readable. Even if I teach you
+how to read it, you still might
+find it challenging because it's difficult, it's very hard to track over
+these large, white spaces. Here's a smaller example
+where we've manipulated color to bring back some of
+the effectiveness, but again, we're going to have
+these problems of readability because the lines that allow the eye to trace from the top to
+the bottom are gone. So let's go back to
+this intermediate point. So maybe there's this notion
+of going too far. So Tufte's algorithm
+does not actually tell us when we've gone too far. Maybe we have to have some sense
+of that aesthetically. So this in Tufte's view
+is where you should stop. You shouldn't go beyond this. Now, does this still work? Is this still a better solution? Not so much. People have actually tried to
+analyze this idea. So what they did was they
+looked at a bunch of different implementations
+of box and whisker plots. So you have the original one in this panel, one at the top. So this is the
+traditional box plot. You have the schematic
+plot just a little bit using less ink for the line. You have a line plot over here where the box is eliminated, and then there is
+mid-gap plot which is the version that
+we've been playing with the Tufte is encouraged.
+So they tested this. They basically said
+how accurately can people read these
+different visualizations. They encoded a bunch
+of fake data, they put it in front of people, and they ask them
+a bunch of questions. So it turns out that the boxplot and line
+plot are actually much better and give
+much more accurate estimates than the mid-gap plot. Let me pull this up. So this is the line
+representing mid-gap, and you can see this is
+more inaccurate going up. So you can see that
+the mid-gap when the interquartile that is the range here isn't
+the number of millimeters. You can see that performance with the mid-gap is much
+worse than line and box, and even over here at
+this extreme when they're close, mid-gap actually performs worse than the line and the box. It gives this idea that one should prefer this
+visualization down here to the traditional box plot up here is perhaps
+not even accurate. So we have to be
+very careful when we apply the strategy of this data ink
+ratio transformation in actual visualization because in terms of perception
+and psychology, it might not actually
+be the right thing. The other thing that Tufte pushes for is this notion
+of data density. So the data density is
+a way of thinking about the number of entries in our original table in
+our original data table. So if you think about
+the spreadsheet, you were given it had a bunch of columns and a bunch of rows, and you think about
+how many different kinds of comparisons one could make
+when given the raw data, and then you ask
+when I've expressed that data in a graphic, how many of those comparisons can actually still be supported? So ideally, if we have lots of entries in
+the data matrix, we should be able to
+maximize and have lots and lots of
+different comparisons possible given our choice of
+size for the data graphic. So if we were limited to this much area in
+the data graphic, what we actually want to make
+sure is that we're using all the space that we can
+for the visualization. We don't want to just
+have one visualization in here when we can have four or more to support lots and lots
+of different comparisons. So this is Tufte's favorite
+example that reflects this as Menard's map of the march of Napoleon's army
+to Russia and back. Its encoding lots and
+lots of different things. So you see the size of the army
+in the height of the bar, and so this is how many people
+were alive in the army. You see them march
+from France to Russia, and you see the march back, so encoded in color, and at the bottom over here, this line reflects
+the temperature. So you see people dying
+as a partial explanation. So as the army was marching back, you see in certain key points people were dying as
+the temperature drops. So the army was facing some challenges
+because of temperature as it was retreating. Lots of different comparisons
+are possible here. You see the march geographically, you see the size of the army, you see some explanation through the temperature encoding. All these things are being pushed in this particular
+visualization, and so you get lots of things in here simultaneously
+and it's great. Now, pushing this to an extreme, here's something called
+a matrix scatter plot. It has lots and lots
+of data being encoded, there's lots of
+comparisons being made, but arguably this is becoming a little bit difficult to read. So there's a lot of
+stuff being encoded here and lots of different
+data cells in comparisons. But this becomes a little bit
+more challenging to read just in
+this particular form. So this might be
+an extreme example, whereas this is maybe reasonable, this is extreme, and so
+we might not want to go quite as far as this
+in many situations. So there's a number of
+questions that we're going to have to ask ourselves
+when we do this. So we are going to think about the different domain tasks
+that we want to support. We're going to have
+to think about the abstract version of
+those tasks look like. Then we're going to try and
+come up with the simplest, cleanest representation possible that still
+has all the data. With a caveat again that sometimes simplest and cleanest
+is an aesthetic choice rather than one that's based
+in actual psychological, or cognitive, or
+perceptual evidence, and so we have to be
+careful about applying this brush of erasing, this eraser I guess of erasing different things or
+adding more elements to the visualization
+without thinking through what it actually
+means for the tasks. So the caveats to consider
+like a way of thinking about this is that Tufte comes from what's known as the
+cognitive efficiency school, where it's really important for the person to be able to decode as accurately as possible. Now, even being in that
+cognitive efficiency school, he's still made some mistakes
+and the recommendations, but that is the basis of a lot of the things that he's offered
+as design suggestions. The other caveat is that
+Tufte is a minimalist, and so he produces
+art like he has an art practice and he produces sculptures
+that look like this, or like this and they're
+very minimalist, they have a certain
+aesthetic property to them and that has been
+applied in the way he's chosen to build
+his visualizations or recommendations
+around visualization. So the takeaway is
+there that supporting many comparisons is probably a good idea when
+the tasks calls for it. So thinking about what
+you want to support, but that minimalism has an aesthetic choice
+in a lot of cases, and data ink and data
+density are driven ideas, are not all validated
+experimentally. So don't take
+everything that people say in terms of throwing away certain pieces of ink or putting in lots of visualizations all into the same display or actually validated through
+some experimental practice. So these are good things
+to think about, the idea of high data ink
+or data density but not always great to apply. With that, thank
+you for listening.

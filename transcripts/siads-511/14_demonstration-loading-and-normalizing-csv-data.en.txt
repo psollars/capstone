@@ -1,0 +1,116 @@
+Welcome to another
+walkthrough of SQL. We are now going to work
+on something that takes all these techniques
+that we've been doing this week and puts
+them all together. So what we're going to
+do is we're going to take a CSV file, and we're going to load it, and then we're going to
+automatically normalize it. This is a interesting technique
+because a lot of times what you're going to be doing is taking a large amount of data, and then pull it into a database, but you want it to
+be fast and small, and so you want it
+to be normalized. Of course, we're going to reduce the vertical replication. So here we have two things. I'll just call them x and y, Zap A, Zip B, One, Two. So we've got vertical application
+in the second column, and so we're going to
+make a one-to-many, not a none-to-many,
+a one-to-many. We're going to make a one-to-many
+table out of all this, but we're going to
+do it automatically, and we're going to
+use sub-selects, and we're going to use sub-selects and we're going to use SELECT
+DISTINCT. And watch. It's a pretty cool technique. Okay? So the first thing
+you've got to do, you're going to have to
+download this. So I've got a terminal running. This is just in my
+home directory, and I can call wget, and now I should have this stuff, and if I take a look at this file right here that I just
+downloaded, which one is it? Techniques CSV.
+03 tab Techniques.csv. We see it's a little
+tiny bit of data. That's just the data we're
+already playing with, right? Okay. So that's good. So we've
+got it sitting there. So now what we can do is we're going to
+eventually load this in, but I wanted to get
+that done first, and that's the load. Okay? And so I'm going to just type these even though they're not there, so it doesn't matter, and then I'm going
+to create a table. So the idea is that
+you load this into a table that matches the CSV. And I'm going to have
+the x and the y. Oops, don't do that. Undo
+whatever that was. I want the two columns that just come in because I'm taking
+these in as texts. Eventually, we're
+going to convert these into a foreign key relationship, but for now, it's just text. I'm going to hold a little spot to have that foreign key later. So I'm going to do
+a CREATE TABLE, and that's just to load it in. Then I'm going to have
+a lookup table, which is just some texts
+for the name of the thing. I should probably put a UNIQUE in there, but I don't need it. But I could make that
+a VARCHAR UNIQUE, but for now, I'm just
+going to make it be TEXT I'm going to have a SERIAL,
+that's really important, and make that be the primary key. So y has an id SERIAL, a primary key of id, and y of TEXT, and then
+I'm going to create the actual ultimate table
+that I want this to be in. So it's going to
+have an id column, which is a primary key, it's going to have the x value, which is the first column, and then a foreign key. Now I could set all this
+foreign key stuff up. And I'm going to basically say that there's a uniqueness
+constraint between x, which is the text,
+and y_id. So that there's only one
+combination of Zap and A, you can't put Zap and A in twice. So I'm making my
+uniqueness constraint two columns wide, okay?
+So there we go. So the first thing
+I'm going to do is I already download this file, and I'm going to use
+the psql command copy. So I'm saying, put it
+in the table xy_raw, parentheses x,y says here's the two columns
+coming from the CSV, break it up with the CSV delimiters, it's a CSV file. So that should insert four
+records, and I can say, SELECT star FROM xy_raw.
+So there we go. So I've got the data that
+came out of the CSV, and y_id is currently empty because I didn't put
+it in this copy. The only thing we've done
+is loaded these things. Okay? So then what we're going to
+do is use SELECT DISTINCT. Now, remember, DISTINCT basically ensures that we only get one row. So I've got vertical
+replication in this y column. So you'll notice that
+if I do a SELECT DISTINCT y FROM xy_raw, well, let's stick an
+ORDER BY on there. ORDER BY y. Oops, SELECT DISTINCT xy_raw. ORDER BY, no underscore. There we go, and now it's even sorted. Nice and pretty. Now,
+here's the cool thing. We are going to use
+a SELECT sub-select, INSERT INTO y, into the y column, which
+is that TEXT field, right? And then SELECT DISTINCT. This isn't exactly a sub-query, but it kind of looks like we could make it be a FROM and a sub-query. It kind of looks like a sub-query here. But what it does is it selects
+distinct y from xy_raw, which is exactly what we did. And I'll throw an ORDER BY on
+that for yuks before I run it. But then we're going to take
+the results of the SELECT DISTINCT and we're going to
+insert that into the table. I'm going to do ORDER BY y. Now, I can say
+SELECT star FROM y. So what we really did, because
+we did a SELECT DISTINCT, we only got one of
+each, that's the key, and then because we
+have a SERIAL column, we got the 1 and the 2. So we got 1 maps to
+A and 2 maps to B. That's the key. Now, we have
+another sort of tricky sub-select. So we're going to update xy_raw. So let's do a SELECT
+star to refresh our memory FROM xy_raw. So right now, this has the string and it
+has an empty y_id, so we're going to use
+an UPDATE statement to populate this id, and we're going to do it by
+setting it to another query. So it's going to go through every one of the rows in xy_raw, and set its id to be SELECT y.id, which is this little id
+number from the y table, FROM y WHERE y.y, which is the A and
+the B, equals xy_raw. So it's like joining this up, connecting this one A row to both of the rows that have A and sticking the 1 in there. It's probably just
+easiest to run it. It's pretty cool. Now, I can say SELECT star FROM xy_raw.
+So look at that. So you saw how that
+UPDATE statement set the corresponding,
+these now match, right? But what's happened is this
+y has become redundant. So I can insert this again, I can pull
+just the x and the y_id from xy_raw
+into this xy table, which is sort of my ultimate
+destination table, it's got only the foreign keys, it doesn't have the y bit, so I'm kind of converting it
+into a pretty little table. But mostly, I'm just throwing
+away the y. I could do this with an ALTER TABLE,
+DROP COLUMN y. ALTER TABLE xy_raw
+DROP COLUMN y. There's two ways to do it. So now, if I did a SELECT star
+FROM xy, it's so pretty. It has the track or whatever, the x thing, each row
+has a primary key, and it has the corresponding
+foreign key that points properly. SELECT star
+FROM this y table. Right? So it works perfectly, and so we can write an
+awesome little JOIN. So we SELECT star FROM xy joined to the y table
+on the foreign key, xy.y_id equals the primary
+key from the y table, which is exactly what we would do if were looking
+at a one-to-many, right? And so we're seeing all these things. So we've reconstructed our
+data and we've used the join, we even see the
+join values here in the y_id
+and the underscore id. So this notion that we can
+use SELECT DISTINCT and then the apply the three most
+critical tricks here, other than a copy to load
+the stuff in the first place, are this SELECT DISTINCT
+insert, just this one here. INSERT INTO y, parentheses y, SELECT DISTINCT y FROM xy_raw, which is the thing that removes the vertical
+duplication and then assigns the serial number for
+each one of those things. And then to go through and, in effect, use the string in the xy_raw
+to look up the id, and put that in the xy_raw, and then the next bit
+is just to get rid of the redundant parts of xy_raw, and it creates a nice
+little table that makes all the sense and is properly
+normalized, and away we go. So I hope you found this useful. I kept this as
+simple as possible, and we're using really
+small variables. You're going to do some
+homework that does this over and over and over again with a couple of different examples. I hope you found it useful.

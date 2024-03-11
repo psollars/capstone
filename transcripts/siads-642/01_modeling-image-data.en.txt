@@ -1,0 +1,68 @@
+Hi everyone. This
+is Paramveer Dhillon from the School of Information at
+the University of Michigan. I would like to welcome you all to the second week
+of this course. Last week, we got an
+introduction to the field of deep learning and we're creating neural
+networks in general. We also saw several
+success stories of the field of deep learning, as well as we dug deeply into a specific type of neural network called the simple
+multilayer perceptron. In this week, we will study a new neural network architecture known as a convolutional
+neural network, which have found widespread use for image classification tasks. Let's recap the fully connected
+multilayer perceptron that we studied earlier. As we know, the power of
+neural networks in general, and multilayer perceptrons
+in particular, lies in being able to automatically extract
+a hierarchy of features at different levels of abstraction for a given
+classification tasks. In other words, neural
+networks obviate the need for feature engineering as required by standard machine
+learning methods. However, one of the downsides
+of a multilayer perceptron, especially a fully connected one, is that it has too many parameters and it
+is not able to incorporate certain kinds of special
+input structure that is required to model data
+from certain domains. Let us consider the task of scene understanding
+or more broadly, image analysis, where we'd
+like to figure out what is happening in a given image
+or a sequence of images. For example, consider the image of a basketball player
+trying to dunk. There are several key
+parts or features in the image that can aid
+us in understanding it. The hands and the
+arms of the player, the basketball, or
+just the basket. Or in the case of the
+image of a pickup truck, we get important
+signals regarding the object in the
+image from the wheels, license plate, and headlights. Similarly, the
+windows, doors, roofs, and steps contained
+valuable information in the image containing houses. Important commonality
+in these images that can help us understand what's happening
+in these images is the spatial proximity of
+the various key features. Actually, the problem of
+image understanding that we just discussed is a subproblem in the field
+of computer vision, whose broader goal is
+to enable computers to see and make inferences
+from images and videos. Computer vision
+involves several tasks such as object detection, scene segmentation, and scene
+understanding among others. The input to all the
+computer vision models are the raw pixels in the images, which are just
+matrices of numbers representing the intensity levels of various spatial locations. The images that are used as input for computer vision models are typically grayscale or color images with
+corresponding RGB, that is red, green, blue color intensity levels. Now that we understand the focus of the field
+of computer vision, let's see how we can learn visual features for various
+computer vision tasks. Based on what we have
+learnt till now, a straightforward approach would be to flatten the pixel values of the image and feed them as inputs to a
+multilayer perceptron. However, the problem with this
+approach is that it loses the valuable signal captured by the spatial structure
+of the image, such as that the
+houses have doors, windows, and steps that we
+saw on the previous slide. So a key idea in learning useful visual features for a computer vision is to use the spatial structure
+of the image. For instance, one way of
+doing that could be to use some spatial filters to extract spatially contiguous set
+of pixels in the image, and then feed those
+image patches to a multilayer perceptron
+as shown on the slide. Building on this idea, then we need some
+mechanism of weighting those extracted patches from the image to highlight
+their relative importance. Further, it might make
+sense to use several of these spatial filters of varying sizes to extract features at different
+resolutions. For instance, some of the smaller filters could
+extract features that contain highly local information about the image and the bigger ones captured more global information. It turns out that Convolutional Neural
+Networks or CNNs for short, formalize this idea
+that we just described. It comes as no surprise that deep neural architectures
+based on CNNs or Convolutional Neural
+Networks have led to significant advances
+in computer vision over the last decade.

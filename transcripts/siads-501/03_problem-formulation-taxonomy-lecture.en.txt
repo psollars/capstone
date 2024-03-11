@@ -1,0 +1,150 @@
+Welcome back. Today's lesson provides a taxonomy for
+different types of data science problems. At the end of this week,
+you should know the taxonomy. You should be able to recognize
+the different types of problems that articulate why some problem belongs
+in one category or another. And you should cultivate curiosity about
+problem formulations, asking yourself, what's the real problem? And finally, you should recognize
+the dangers of proxies for the outcomes that you really care
+about because proxies will be gained. Our first problem type is classification
+or probability estimation. You have a sequence of items. And for each one,
+you want to assign a discrete label to it. Here, the items are emails and you want
+to assign the label, okay or spam. We could also have more than two labels, then it would be called a multi-class
+classification problem. Also instead of just
+giving a discrete answer, you might also assign probabilities
+to the different classes. Now, when you're talking to a stakeholder,
+a client, how can you recognize that the problem they're asking you to
+work on is a classification problem? Well, you might ask yourself, are they
+dividing a set of items into groups and are the groups predefined in advance? Also, you might listen for phrases
+like predict what kind of thing it is. If that's a phrase you're hearing in
+coming out of your own mouth or or that of your client,
+you probably have a classification or some kind of prediction problem. So another kind of prediction
+problem is regression. With regression, you're trying
+to predict a continuous outcome variable based on one or
+more features are independent variables. The simplest form of regression problem
+is predicting y as a function of X. Here, we have a linear regression
+line in red predicting a value for any given x value. But that's a particular kind of model for
+doing the prediction. What makes it a regression problem is that
+there's a single outcome, a dependent variable and there's one or more other
+features the independent variables. A third type of problem
+is similarity matching. In a similarity matching problem, we again
+have items with a bunch of features. But instead of predicting one feature
+from the others, as we do in a regression problem, our task is to decide
+the similarity of any pair of items. For example,
+suppose we want to do roommate matching. We have some attributes,
+do people like to stay up late or they clean or they quiet or noisy and two people will be more similar if they
+match on a lot of these attributes. You might have, you might care
+more about some attributes and others you create some
+kind of distance metric. How can you recognize when you have
+a similarity matching problem? Well, you've got a bunch of items or
+people and given an item, you want to be
+able to find other similar items. You might hear phrases like,
+nearest neighbors or distance metric or any pair of items or good matches. Those would be all be
+indicators that maybe you've got a similarity matching problem. Another problem type is clustering. So a clustering problem is when you
+want to divide things into groups. But you may not know in
+advance what the groups are. So for clustering the groups
+aren't predefined and they may not have names whereas for
+classification you have predefined groups. Now, a clustering problem might
+build on similarity matching. We you try to group things that are all
+close to each other in this example, we use spatial distance and assign one
+of three colors, yellow, red or blue. Notice that the the one item in
+the center, this yellow one, is a little bit hard to
+assign to a cluster. It's sort of close to
+the bottom red group. It's also sort of close
+to the left yellow group. In this case,
+we decided to group it with the yellow. If we had made for
+clusters instead of three, we might have ended up making
+a group of maybe just these things. How do you recognize when you
+have a clustering problem? When you're dividing things into groups
+that aren't predefined, your often doing it for exploratory analysis trying to
+understand what kinds of things you have. And this will be,
+this will work especially well, if you're able to come up with good
+descriptive names for the categories or groups that you come up with. You might recognize that you're dealing
+with a clustering problem if you hear phrases like, divide them into groups or
+figure out what kinds of things we have. Or the word clustering or the word communities if it's
+people that are being grouped. Another problem type is
+co-occurrence grouping. Goes by a number of different names,
+frequent item, set mining, associated rule discovery, market basket analysis,
+item to item collaborative filtering. It's a particular kind of clustering
+where when you group items based on co-occurrence of some behavior
+with respect to the items. Items that people buy together, people who
+read one book also read this other book, items that are both liked on Facebook. For example, on Amazon, people who
+bought this item also bought this item, this other item. Actually a little historical note,
+the first version of Amazon's item recommender came out of my own
+group lens research project, which we we first published about in 1994. Some of my collaborators on that project
+started a company called Net Perceptions. And Amazon bought their
+the recommender product to use for their for
+their first recommender system on it on Amazon before they ended up
+building their own internal engine. So, how can you recognize
+this problem type? Well, you're trying to find related items. You might hear phrases like,
+what else did they buy, people who like this also tended
+to like and other similar phrases. Another problem type is profiling. We've taken this whole taxonomy
+from chapter in the book that we've assigned to you for reading. For this category profiling,
+they really snuck in two problem types. So one is profiling. Can you give a description that
+summarizes a group of items or the relationship between variables? So something like, people with credit cards generally
+spend 400 to a $1,000 per week. Or our audience for coverage of the
+Wimbledon tennis tournament second round is usually about 300,000 viewers at 8am. Now this is sometimes useful. This kind of profiling is useful for
+creating personas or archetypes for thinking about who your typical customer
+is or what a typical behavior is. You can use it as a mental model for
+designers. You can also use it as a mental model for
+detecting anomalous outcomes. The second type of problem
+that they've included here, which is really anomaly detection. The blue triangle here is anomalous. It doesn't fit the general pattern and
+when you have something like this for those of you who remember Sesame Street. It's you know, one of these
+things is not like the others, one of these things just doesn't belong. When you see something that's anomalous,
+it deserves more investigation. Maybe we should have our fraud detection
+department call this person and check whether all of those credit
+card charges are really theirs. So how can you recognize these two problem
+types of profiling and anomaly detection? Well with profiling, somebody would
+be asking what's a typical person or a typical item or a typical behavior? And for anomaly detection, they'd be
+saying one of these things is not like the other,
+one of these things just doesn't belong. Or what's unusual or
+suspicious or surprising. That would be anomaly detection. Our next problem type is link prediction. Which things that are not linked yet
+probably will be linked in the future? For example, is person C likely to become friends with person B in
+the next time period or is webpage C likely to add
+a link to page B sometime soon? You can recognize that you're being asked
+to work on a link prediction problem when you hear phrases like,
+predict what connections will be made. What will they read next? What new groups will they join? Who will they talk to next? What new friendships will form? A data reduction problem is
+where you have many features and you'd like to reduce them to just a few. One technique is called
+principal components analysis. This figure illustrates taking
+three dimensional data and reducing it to two components. Or typically, you'd have many
+more than three dimensions and you might have more than two
+components that you're reducing it to. You can recognize this kind
+of problem if somebody says, hey can we roll up some of these things
+into a single composite feature or are some of these features redundant? Can we combine them? Or can we can we project all these
+things into a two-dimensional map so that we can visualize the whole space? Those would be indicators of
+a dimension reduction problem. In a causal modeling problem,
+you try to see whether A causes B. If we change the value of A,
+would it lead to a change in B? For example, does smoking
+cigarettes lead to premature death? And we often represent a causal
+model in terms of a block and arrow diagram like you see on this slide. A big question in causal analysis is
+whether to condition your analysis on third variables and that's something
+we'll be looking at in a future week for this causal diagram. How can you recognize when you're dealing
+with a causal inference problem or causal modeling problem? Well, somebody might say does X cos y or
+does X lead to y or they may ask counter factual questions,
+if we change or improve or reduce X,
+will that improve or solve Y? Those are causal modeling problems. The Gardener Group provides a different
+breakdown of problem types and their model organization's progress
+from easier problem types to harder ones with prescriptive analytics what I call,
+causal analysis coming later. So they begin with descriptive
+things like clustering. Going on to diagnostic things
+like classification and regression looks at past data. To predictive analytics,
+which looks at classification and regression where you're
+predicting future outcomes. And finally, too prescriptive or
+causal modeling. Now, I have a maxim that most prediction
+problems are really causal modeling problems in disguise. That is, you might think you're trying
+to predict things but you really want to know if you change something, can you
+change what will happen in the future. Not always true but it is worth asking
+yourself when you're facing a prediction problem what the client wants
+to use the predictions for. Do they really want to use it
+to do counterfactual is of if I change something, can I predict
+what will happen when I change that? The reading bike I do suggest
+a different breakdown based on two axis taking the same four types of
+problems from the Gardener analysis. And just breaking it into two axis
+of whether you're doing data versus intelligence, descriptive and
+predictive things versus higher level intelligence diagnostic and
+predictive things. And on the second axis, hindsight
+versus foresight, past versus future. As in many of these two by two boxes, you'll see the best thing
+in the upper right. So the ultimate goal being is
+prescriptive or causal modeling. So those are some alternative
+problem formulation taxonomies. I'll see you next time for the impact of
+problem formulation and in particular, the danger of proxy outcomes for
+the outcome that you really care about.

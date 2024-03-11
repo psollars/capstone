@@ -1,0 +1,184 @@
+Hello. So far we have
+discussed distance, degree distributions
+as well as clustering. In this video we're
+going to discuss how to find important
+nodes in a network. This is the topic of
+networks centrality. Let's look at the
+karate club network that we have looked at before. Let's think about this network. If you had to guess which were the most important
+nodes in this network, just purely based on the
+structure of the network, which one would they be? I know this is a hard question
+because there are probably many different ways
+that you could think about answering this question. Many different ways about
+thinking about importance. For example, we can
+think of importance as the number of friends that a node has or the node's degree. If we go by this measure, the five most important
+nodes are the following; 34, 1, 33, 3, and 2. However, we could argue that importance is not really about
+how many friends you have, but more about how close you are to everyone else
+in the network. It really should be
+based on proximity, not on the row number
+of connections. If we go by proximity, then the most important
+nodes are; 1, 3, 34, 32, and 9. It changes a little bit. Instead of 33, we now have nine, and instead of two, we now have 32. We could also imagine that we define importance
+based on whether or not a node shows up in between shortest
+paths of other nodes. You could define it
+as the fraction of shortest paths that
+pass through the node. If you do that, then again, this list of the five most important nodes
+shifts a little bit. Now we have 1, 34, 33, 3, and 32. You can see that depending on exactly how you
+define importance, you get some changes, although most of the nodes
+actually stay the same. The goal for this video and for the next couple of videos is to carefully go through different ways that people
+have thought about centrality, about measuring
+importance in networks and think about the
+assumptions that they make. Networks centrality is an important problem
+because it can help us do a lot of
+things in the real world. For example, it helps us identify nodes that are
+influential in social networks, like for example in
+social media networks, it helps us identify
+nodes that can disseminate a lot of
+information to other nodes very quickly or they
+can help us prevent epidemics by making sure that those nodes are
+not spreading it. In transportation networks,
+it can help us figure out what the hubs of a particular
+transportation network are, like in the case of airports. In the case of the web, centrality measures like this, is exactly one of
+the ingredients that helps us figure out what
+important pages are. Is one of the main
+ingredients that helps Google figure out which pages should be placed high in the ranking when they serve pages to you
+after you issue a query. Centrality can also
+help us figure out which nodes prevent the entire
+network from breaking up. That is if we were to remove
+some nodes from the network, which ones would cause
+the network to fragment into multiple
+components and so on. There are many applications that this idea of centrality has. There are also a lot of different measures
+that one can use. Here I'm listing a few
+of them and we're going to be talking about some
+of these in this course. In this video we're going to
+talk about the first two, degree centrality and
+closeness centrality. Let's start with
+degree centrality, which is probably the
+most basic one of all. The assumption is that important nodes are those
+that have many connections. Depending on the type of
+network we're looking at, we can define it differently. For example in the case
+of undirected networks, we would use degree. But in the case of
+directed networks, we can either use
+in-degree or out-degree, just like we did for a
+degree distributions. Let me define this
+more precisely. What we're going to do is
+we're going to say that the degree centrality of
+node v is going to be d_v, which is the degree of
+v divided by N minus 1, where N is the number of
+nodes in the network. In other words
+we're going to ask, what fraction of the nodes in the network are connected
+to this node v? The reason why we have N
+minus one instead of N, is that we expect that the node v is not
+connected to itself. It's really N minus
+one other nodes that are available for
+v to connect to. This measure would go from 0-1, zero would be the
+case where the node has no connections and one would be the case
+where the node is connected to all the
+other notes into network. For example, Node 34
+here has 17 connections, has degree 17 and there
+are 34 nodes into network. The degree centrality of node
+34 is 17 over 33 or 0.52. For 33, this is 0.36. If we look at directed networks, as I said now we
+can choose whether we apply the in-degree
+or the out-degree. This is the in-degree version so that in-degree
+centrality of node v is now the in-degree of v
+divided by N minus 1. For example, if we
+look at node A, A has an in-degree of two and there are 15
+nodes into network, so the in-degree
+centrality of node A is going to be 2 over 14 or 0.14. For L, It's going to be 3 over 14 because L has
+an in-degree of three. If we change to the out-degree, now we're counting outgoing edges instead of incoming edges. Now, A has an out-degree
+of 3 over 14, because it has three
+outgoing edges. While L has an out-degree of 1 over 14 because it
+only has one outgoing edge. Let's talk about the
+second centrality measure, which is closeness centrality. The assumption of closeness
+centrality is that important nodes are
+close to other nodes. The way we're going to define
+closeness centrality for a node v is that we're
+going to take N- 1, which is all of the
+nodes in the network, minus the one we're
+looking on, minus V, that's in the numerator, and in the denominator, what we're going to do
+is we're going to add up the distances from node v
+to all of the other nodes. So we take the sum over u in N, the set of nodes in
+the network minus V, we're not going to look at
+the distance from v to v, and then we add up the
+distance from v to u. So here d, v, u is the distance between the a new based on the length of the
+shortest path and so effectively what we're
+doing is we're taking one over the average distance from node v to all the other
+nodes in the network. In this case, for example, node 32 has a closeness
+centrality measure of 0.541. Again, this measure is
+also between zero and one. Now one of the things that we're implicitly assuming is that, this node v can reach all of the other nodes in the
+network and if it cannot, then this number will be infinity and then it will be unclear what
+the centrality is. We could define it to be zero, but that doesn't work very well. Let's see what happens
+when you have nodes that maybe cannot reach all of the
+other nodes in the network. This often happens with
+directed networks because now we have to actually respect
+the direction of the edges. Although it could happen
+in undirected networks as well if you have
+multiple components. How to measure the closest
+centrality of a node when it cannot reach all of the other nodes, what
+do we do in that case? Let's take L as a running example to discuss our options here. One option is to consider only the nodes that
+L can actually reach and just follow the same
+computation that we followed for the previous
+way we measured it. What we will do is
+we'd say, okay, the closeness centrality of L is going to be in the numerator, rather than having N-1, we're going to just
+have R over L, which is how many nodes can
+this node actually reach. In the denominator, instead of taking the sum over all of
+the nodes into the network, we're only going to take it over the nodes that L
+can actually reach. So we'll take the
+sum over u in RL, and then we'll add
+up the distance from L to each of those u's, and so what would happen
+here, for example, is that L actually can only reach node M. You can see
+that if we go from L to M, M has no outgoing edges, so we're stuck there, and so L cannot reach
+anyone else other than M. So if we
+follow these option, then we're going to have
+is that R of L is just M, so the numerator is one and the distance from L to M is one, so the closeness centrality of L is just one over
+one, which is one. But that seems strange
+because that would say that L is a
+very central node, and just by looking at
+it, it really isn't. It can only reach
+one of the node, how can we say that
+is very central? So this is too high
+of a centrality for L and so this option
+is not so great. But there's another
+option we have, which is to consider only
+the nodes that L can reach and then normalize by the fraction of nodes
+that L can reach, so we follow the same procedure. We only measure the distance from L to the nodes that L can reach, but then we penalize L for only being able to
+reach one of the nodes, so this is how it would work. We would say that the
+closest centrality of L is going to be the same
+term we had before, where we have in the numerator, the number of nodes
+that L can reach, in the denominator, the sum over the distances from L to all of the nodes
+that L can't reach, so we don't have any
+infinite terms there, but then we have an
+additional term here, which is the fraction of RL
+or the number of nodes in RL. How many nodes L can reach
+divided by n minus one, so what fraction of all
+of the nodes L can reach? What this gives us is, well we already know this
+term is one over one, but this term now is one
+over 14 because L can only reach one of the 14
+other nodes into network, and so now the centrality
+of L is much lower, 0.071. This is the one that we would
+probably use in practice. One thing to note here is
+that this definition matches our definition of
+closeness centrality when a graph is connected, because when a
+graph is connected, then the set of nodes that a node can reach will
+be the same as N - 1. Since by definition,
+in a connected graph, a node should be able to
+reach all of the other nodes. This would be
+strongly connected in the case of a directed network. Okay, so let's summarize
+what we have so far. We looked at two
+centrality measures and we're going to be
+looking at more of them, but we're starting
+with just these two. We looked at degree centrality, which assumes that important
+nodes have many connections, and we define it this way, is going to be the degree
+of the node over N - 1. Where n is the number of
+nodes in the network and then we looked at
+Closeness Centrality, which assumes that important
+nodes are those that are close to other nodes
+in network distance. The way we define it is
+using this formula here, so we look at the nodes
+that a node can reach. We measure the sum
+of the distances, take one over the
+average of that, and then we penalize a node if it cannot reach all of
+the nodes in the network. That's this term right
+here or we don't penalize for the nodes
+that a node cannot reach, but then we can get strange
+scores for some nodes, as we saw in the case of L. Okay, and that's all for this video. In the next video we're
+going to be looking at another way of defining
+centrality so I'll see you there.

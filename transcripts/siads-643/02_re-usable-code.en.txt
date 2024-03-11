@@ -1,0 +1,126 @@
+So it's important when
+you're writing code, whether it's something
+that only you're going to consume or you're going to
+be sharing it with others, that the code is maintainable. Now sometimes when we're writing a short
+and simple script, we can get away with writing
+something that isn't easy to maintain and something that we can just do a
+quick and dirty job. With for sharing our
+code with others, we want to make sure that
+the code is maintainable, it's comprehensible and
+follows good patterns. Something to keep in mind is that the person that you're
+sharing the code with might be yourself, six or 10 months from now
+or a few years from now. So it might be even if
+it's the same developer, it might be that you're
+the one who benefits from making your code
+reusable and maintainable. There's also an aspect of this. On the other end, you reusing code that
+others have written. When you're going through
+solving a problem, you should think to
+yourself, is this a problem that only I have? Because if it isn't, it's quite possible that
+somebody has already solved the problem or that then maybe there's a good library
+that you could use in your code to solve
+the problem that you have. One of the things to think
+about when you're writing reasonable code is
+to avoid repetition. You'll sometimes see this
+stated as the DRY principle, which stands for don't
+repeat yourself. When you see code repeated, you can look for how to
+replace that with loops or functions and how that might
+make your code more general. Let's look at an
+example of repetition. So let's say we have a
+function called get_data, that's fetching data
+from a location. We can see we're calling that
+function in this example, six different times with different file names, but
+they're pretty similar. We see some repetition here. Now, I want to point
+out that not repeating yourself isn't always
+necessarily the place to start. Sometimes it makes sense to write code like
+this and to see the repetition because
+that'll let you see patterns to generalize it. So in this case, the
+pattern we can see is that the path that the files are stored
+in is the same for all the six calls were
+making, servers/ data. We can also see that there are repetitions in the
+names of the files, accounts in the case
+of the first three, and sales in the case
+of the last three. There are also repeated dates. We can see January 1st, 2nd, 3rd, for both different
+types of files. So we can see the patterns. So sometimes it's okay to
+let the repetition be there. But then once you see it, you can start to
+understand how to adapt that to less
+repetitive code. So here's an example
+of how we could have that same code but in
+a less repetitive way. As a reminder,
+there's the pattern of the file name at the
+bottom of the slide. So we can see how we're
+adapting to that pattern. So here we're defining
+a few variables. We're defining path, which is the pattern in the file name that we solve repeated in all cases, we have prefixes here, which are the two different files that we saw in our
+six different calls. Then also dates which outlines those few
+different dates that we saw in those
+six different calls. You can see here that we're using the pandas date range function. This is a really handy tool and this is an example of a place where we have a problem that's been solved
+by another library. You may have come
+across the date range in some of your other
+work with pandas, I'll come back to the total
+fetched variable in a moment. So with the prefix
+and date lists, we can loop through
+both of those and call get_data in a way that we can just specify the pattern once and then make the calls
+within the loop. The way we were
+specifying the pattern here is with a Python F string, which lets us indicate within the string variables
+that we want to substitute as the
+string gets created. So here we are
+starting the string with the path server/ data/, then the prefix of the file which we're getting
+from the outer loop. First, we loop through accounts and then we'll
+loop through sales. Then an underscore, and then the date from
+the inner loop. The reason we have date.date, is that the date object
+that we have from panthers get range has a date method
+which will give us a date, as it happens, will
+generate in the format that we want in the filenames
+that we have, our example. Since we're looping,
+we could easily keep track of how many
+files we've fetched. So in this case we're
+starting with zero, which I pointed out earlier,
+we're starting with zero and then we're incrementing
+on each fetch we increment. Now, this is an
+easy way to expand the number of files if we need to increase the date range, which you could see, that's
+something that you can see happening in this case. We can expand those cases pretty easily by changing
+the date range. The date range
+function has a lot of flexibility to let us do that. Another important concept in writing reusable code
+is loose coupling. What I mean by that is
+encapsulating your code in functions or classes and making sure that those have well-defined parameters and common return values
+and things like that, so that you can adapt to different situations but not
+have the code that's using your functions and
+libraries need to understand a lot of complexity about what's
+going on within them. So let's look at an
+example of that. So using our same case
+from our example before, let's encapsulate the code that we saw earlier
+in a function. So earlier I had
+defined path prefixes and dates as variables
+above the loops. Here I'm defining
+those as parameters to a get_all_data function. Within the function we have a fetched variable which
+will be incrementing later. We have the same two
+loops that we had before. We have the get_data line is actually exactly
+the same as we had before with the same pattern. Then we're returning
+the number of fetched items at the
+end of the function. Now calling that, we will assign the return value
+to total fetched. Here's the function call. We can see that we're
+calling server data, which is going into
+the path perimeter. We have the tuple for
+account and sales, which is going into the
+prefixes parameter. We have dates which we're
+not defining on this screen. Or we can assume that
+we're defining it as a pandas date range and passing it to the
+dates parameter. Now when you're
+generalizing your code, be careful not to overgeneralize. This is an example of
+defining this as a function. So this is a good
+example of a way to generalize some of the
+code that we saw earlier. Now, you want to be careful
+not to overgeneralize. There are ways that you could generalize
+this even further. For example, the format of the file name is embedded
+right here in the function. You could imagine
+situations where the format of the file name
+might be slightly different. So you would want to
+pass it a format and handle it differently depending
+on different situations. I advise against
+doing that too early. Do that when you need it. Once you encounter the
+situation where that changes, then that's the time to
+start to handle that case. So to write reusable code, starts simple.
+Don't overthink it. Avoid overgeneralizing too early when you need that
+generalization, you'll get there. One way to start
+generalizing is to notice places where
+you are repeating code and finding ways to reduce that repetition with
+functions or loops or bot.

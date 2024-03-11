@@ -1,0 +1,234 @@
+In this video, we're going to take a closer look
+at the problem of selection bias. Selection bias arises when there is
+a lack of comparability between two groups that are being compared. It refers to the fact that people can
+often choose which action to take, say whether or
+not to get health insurance. The insured may differ
+from the uninsured for reasons other than
+health insurance per se. So as mentioned in the previous video,
+this is the most serious problem that methods of causal inference
+are trying to solve. So let's go back to the question of
+whether health insurance causes better health. This question is central to the debate
+on whether the US should adopt some version of universal healthcare. The US is the only rich country
+without universal healthcare. Obamacare, which was
+introduced back in 2010, is the closest to a universal health
+system that the US has ever implemented. It requires citizens to buy health
+insurance with a tax penalty for those who don't. The tax penalties were designed to
+make insurance more affordable for low income people, however,
+in 2019 those tax penalties were removed. Today there are still about 30 million
+Americans without health insurance. The uninsured can use the emergency
+room as their primary care physician, but emergency department's are not
+required to provide long-term care. Moreover, Services are expensive, and some of the costs are passed
+on to the taxpayer. So it's clearly an important
+question whether health insurance has a positive
+effect on people's health. In this context, the fundamental
+problem of causal inference is that we cannot observe a person both with and without health insurance
+at the same moment in time. As a result, we cannot calculate the causal effect of
+health insurance on a person's health. We have to make do with the health
+outcomes that we observe, since that is all we got. So what if we compare the average
+health status of the insured with that of the uninsured? Is this an all else equal, that is,
+ceteris paribus comparison? Let's look at some data. In 2009, the National Health
+Interview Survey collected data on the health insurance
+status of married couples. Respondents were asked to report their
+health status on a five-point scale ranging from one equals poor health
+to five equals excellent health. The couples were also asked
+whether they are insured or not. Now, as shown in this table, we observed differences in health
+between the insured and uninsured. For men, the difference is
+about 0.3 in the health index, and for women it's almost 0.4. These are relatively large differences
+when measured against the standard deviation of the health index,
+which is about one. But is this naive comparison of
+the insured and uninsured ceteris paribus? In other words, is this an apples to
+apples and oranges to oranges comparison? A simple comparison of
+respondents with and without health insurance is
+probably not other things equal. This table shows that there are important
+differences between the two groups. For example,
+the insured are more highly educated, with a schooling gap
+of nearly three years. The insured are also more
+likely to have a job. The difference in the share of people who
+are employed is 7 percentage points for men and 21 percentage points for women. So these differences in education and employment can bias our estimate
+of the average causal effect, because more educated people tend
+to be healthier to begin with. They exercise more, they smoke less, and they're more likely to
+wear seatbelts on average. Moreover, the fact that we see large
+differences in observed variables should worry us that there might also be
+differences in unobserved variables. So what exactly are we measuring
+when we compare the average health status of the insured and
+uninsured? To fixate this,
+we first need to determine the notation. Our population of interests are all
+people who can in principle obtain health insurance. Thus, the unit of observation
+are individuals i. Our goal is to estimate the average. Causal effect for the full population, yet we only observe a sample of
+the population, say a few thousand people. Thus we will have to apply
+statistical inference, which we will come back
+to in the next video. There are two main variables,
+the first is the outcome variable. In our case, the outcome is a person's
+health on a scale from 1 to 5. The second variable is the treatment
+variable, this is what we want to change. Here it's whether or
+not the person has health insurance, so it's a binary variable. Note that a lot of the language that
+we will use comes from the medical literature, such as treatment and
+control group. This is because our mental model
+are randomized controlled experiments, which revolutionized the medical
+sciences in the 50s. Now we may also have data
+on other characteristics, such as a person's gender,
+education, and income. These variables are called covariates, and they describe individuals
+before they receive treatment. So the causal question is
+whether D affects Y, and in our case it's weather health
+insurance has a causal impact on health. A general framework for thinking about
+causation is the potential outcomes model, also known as the Neyman–Rubin
+causal model. In this framework, a causal effect is defined as a comparison
+between two potential states of the world. In the first state, a person gets
+health insurance that is D = 1, and then later she reports her health status. The person's health status in this
+state of the world is her potential outcome under the treatment condition,
+so it's Y1. In the second state of the world, the same
+person doesn't get health insurance, that is D = 0, and
+then she reports her health status. So the person's health
+status under the control condition is her potential outcome Y0. So each person has two potential outcomes,
+Y1 and Y0. One potential outcome corresponds
+to the actual or realized outcome, and the other potential outcome
+represents the counterfactual outcome. The dilemma is that we can only
+observe one potential outcome, either the person gets health insurance or
+she doesn't. Thus, the counterfactual outcome is
+the outcome that we don't observe, but we can imagine and work with it. The key idea of the potential
+outcomes model is that the causal effect of the treatment,
+say health insurance, is the difference in potential outcomes,
+Y1- Y0. Now here's something
+important to keep in mind, potential outcomes are distinct
+from actual outcomes. Potential outcomes
+are hypothetical random variables. On the other hand, observable outcomes
+are factual random variables. To highlight the distinction, we denote
+potential outcomes by superscripts, 1 and 0,
+depending on the state of the world. Since we observed one state of the world,
+we can link potential outcomes to actual outcomes using
+the so-called switching equation. So the outcome Y = DY1 + (1- D)Y0. Because D is either 1 or 0, one of the two terms
+on the right hand side of the switching equation will be 0. So Y equals Y1 for
+individuals who are treated, and Y equals Y0 for
+individuals who are not treated. Now we can rearrange terms
+on the right hand side, to see that the actual outcome equals
+to the potential outcome under the control condition plus the difference
+in potential outcomes times D. The difference in potential outcomes is
+the treatment effect, defined as tau. It gets added to the potential outcome
+under the control condition if D equals 1, that is,
+if the person received the treatment. Whenever we work with models, it's important to know
+the underlying assumptions. Now a key assumption of the potential
+outcomes model is the stable unit treatment value assumption,
+otherwise known as SUTVA. This assumption has two main components. First, we assume that there is
+no interference between units. This means that the effect of having
+health insurance is not affected by whether others have health insurance. In reality, this may be violated though. For example, one could imagine that
+the quality of medical services depends on how many other
+patients a doctor has to treat. But we need this assumption to write an
+individual's potential outcome solely in terms of that individual's
+treatment assignment. The second part is that there is
+only one version of the treatment. If there are multiple
+versions of the treatment, it becomes difficult to understand
+what the treatment effect means. Imagine some people get a light
+version of health insurance, whereas others get full coverage, but
+we don't really know who gets what. Then it would be unclear what
+effect we're actually measuring. To get a better understanding
+of the potential outcomes model, consider the following example
+from the mastering metrics books. So we have two students, Khuzdar is a visiting Student who
+recently arrived from Kazakhstan. While Kazakhstan has a National Health
+insurance system that covers all its citizens automatically, in the US
+Khuzdar has to decide whether to opt in to the university's health plan or not. Now Khuzdar decided to take
+up UM's health insurance. Maria is also coming to
+This year from Chile. She doesn't think she will get sick,
+and so she decides not to get health insurance
+and use the money for traveling. Now in this table you can see the actual
+and potential outcomes for Khuzdar and Maria, as well as their
+treatment assignment. So let's start with Khuzdar, Khuzdar
+has health insurance, so D equals 1. According to the switching equation,
+Khuzdar's observed health outcome, which is 4, equals his potential
+health outcome under treatment. Likewise, Maria doesn't have health
+insurance, so for her D equals 0. Maria's observed health outcome,
+which is 5, equals her potential
+outcome under control. Now you can see that the individual
+treatment effect is not the same for Khuzdar and Maria. Turns out that they probably
+made the right choice. Khuzdar decided to get health insurance,
+and he benefits from it,
+as his health increases by 1. So for him, the question is whether
+he's willing to pay the price for insurance to improve his health. Maria didn't get health insurance,
+but she also doesn't benefit from it. So her potential outcomes are the same
+with and without insurance. But remember that in the real world
+we never observe the counterfactuals, so it is impossible to calculate
+individual treatment effects. This is the fundamental
+problem of causal inference. Even learning about the distribution of
+individual treatment effects, that is, whether most people have a positive or
+negative causal effect, is often too difficult and
+requires additional assumptions. Khuzdar and
+Maria offer an interesting comparison, because they made different
+insurance choices. So let's compute the difference in actual
+outcomes between Khuzdar and Maria. Khuzdar's observed health status is 4, whereas Maria's observed
+health status is 5. So the difference in health
+between the two students is -1. In other words, a naive comparison of
+Khuzdar, who has health insurance, and Maria, who doesn't, suggests that health
+insurance is detrimental to one's health. Now our intuition tells us that
+this result is probably wrong, but what exactly went wrong here? To find out, we need to carefully examine
+what we're measuring when we compute the simple difference in actual outcomes. So the first thing to do is to link actual
+to potential outcomes using the switching equation. Khuzdar's actual outcome equals to his
+potential outcome if he gets health insurance. Maria's observed outcome is her potential
+outcome if she doesn't get insurance. Now let's do a little math trick,
+and simultaneously add and subtract Khuzdar's potential
+outcome under no insurance. We can do this,
+because the two terms add up to zero. So what happens is that we get
+the individual causal effect for Khuzdar, which is Y1K- Y0K. And the difference in potential outcomes
+under no insurance between the two students. So the second term is the selection bias,
+it's the difference. Health status between Khuzdar and Maria,
+if they both don't get insurance. In other words, this tells us how
+Khuzdar and Maria differ on that exact same conditions,
+namely without health insurance. So, naive comparison of Khuzdar and
+Maria health, gives us two things, a causal effect, which is what we want,
+and the selection bias. Now perhaps the problem of
+selection bias has something to do with our focus on particular
+individuals rather than groups. It could be that this individual
+differences average out when we examine large groups of people. So our attention shifts now
+to average causal effects. In a group of N people, the average
+treatment effect is defined as the sum of individual treatment effects
+divided by the number of individuals. As you can see, this is the same
+as subtracting the average value of the potential outcomes. So Y0, from the average value
+of the potential outcomes Y1. So the average treatment
+effect of health insurance, compares average health in
+hypothetical scenarios, where everybody in the group does and
+does not receive health insurance. Notice that just like the individual
+treatment effect, the average treatment effect is not a quantity that we can
+calculate with any data set known to man. This is because it requires
+two observations per person, one of which is the counterfactual
+outcome, which cannot be observed. But maybe we can still get some useful
+estimate of the average treatment effect with observable health outcomes,
+since that's all we got. To simplify the notation,
+we can write AVG subscript n, to describe averages instead
+of using the summation symbol. So here you small n for
+the number of people, because we are looking at the sample
+rather than the full population. So the difference in group means,
+is the average observed outcome among the insured minus the average
+observed outcome among the uninsured. Now we can replace actual
+outcomes with potential outcomes. The difference in group means is then
+simply the average potential outcomes of the insured, if they get insurance
+minus the average potential outcomes of the uninsured,
+if they don't get insurance. So the difference in group means tells
+us something about potential outcomes, but not necessarily what we want to know. We are after the average causal effect
+involving everyones Y1 and everyones Y0. But instead,
+we see the average Y1 only for the insured and
+the average Y0 only for the uninsured? Now to better understand
+what we have here, let's assume that everyone has
+the same treatment effect. That is, health insurance makes everyone
+how fair, but the same amount, Kappa. Using the constant effects assumption,
+we can rewrite equations solely in terms of Kappa and the potential
+outcomes under no insurance, that is Y0. The equation now reveals that naive
+comparison of the insured and uninsured equals to the causal
+effect of interest. Kappa plus the difference in
+average potential outcomes Y0, between the insured and the uninsured? This second term describes
+the selection bias. Y0 of person i,
+is everything about that person that is related to health except for
+health insurance. Thus selection bias,
+doesn't go away when we compare groups. It's the non-insurance differences
+between the insured and uninsured. So as we have seen at
+the beginning of this video, the insured and
+uninsured different important ways. For example, the insured, a better
+educated and more likely to have a job. What we don't know is whether
+they also differ in an observed characteristics such as
+exercise eating habits. As we will see, if the only source of
+selection bias are observed differences, then the problem of selection
+bias is relatively easy to fix. However, if we find that they're
+important, observed differences between group, chances are high that there
+are also important unobserved differences. Because we don't know what is an observed
+differences are either, because we can't measure them or simply because
+we don't have the appropriate data, it's difficult to correct for,
+Those unobserved differences. So, the main challenge of causal
+inference is to eliminate selection bias, that arises from such unobserved
+differences between groups.

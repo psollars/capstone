@@ -1,0 +1,255 @@
+Welcome back to our journey
+through data models. We're going to continue to think about how to encode data. What I want to talk
+about now is how we might automate some
+of this encoding, because in a lot of situations, we're going to have
+very complicated datasets and it's going to be
+a little bit more difficult to imagine what the representations should
+look like on the screen. The same algorithm though
+that we use for automation, we can use manually. So we're going to
+walk through what that algorithm looks
+like and be able to apply it in the
+visualizations that we construct without using any
+particular piece of software. So again, our goal here is to be able to answer
+this question. Given the data and the task,
+we're going to try and find a set of representations that are effective and expressive. We're going to start leaning on an algorithmic solution
+for doing this, whether it's automated or
+something that's driven by us, because now we're starting
+to see datasets that actually have lots and lots of different variables that are being encoded simultaneously. So before when we had
+our simple bar chart like this, and we have two
+variables, A and B, and their nominal, and
+then we have the height, which is this
+quantitative variable. So that is a really simple setup. We have one quantitative variable and one nominal variable. Now, it turns out that in
+a lot of real visualizations, we have a number of variables
+that we have to consider. So we have many variables. Some are quantitative. Some are nominal. Some are ordinal. So let's say we have
+this dataset over here that has two
+quantitative, two nominal, and one ordinal data
+in the dataset, and we're going to try and
+figure out how to encode it. We have all these
+different choices, we have position, we
+have texture, and so on. We have, as you can see, an exponential number of choices to make when we
+have this dataset. So this is one
+particular encoding. We're going to take
+the Q1 variable and encode it in position. We're going to take
+Q2 and use density, and one using texture
+and two using length, or three using shape and so on, but we could have
+a totally different encoding. So now, Q1 is being
+encoded through texture, Q2 is through shape and one
+through position, and so on. So this is a totally different
+encoding that's possible. How do we pick which
+is a good one? How do we think about
+the right way given this dataset to actually generate a reasonable
+visualization? Again, exponential number, we want to be expressive
+and effective. We also want to be consistent, and this is going
+to be important. So the properties of the image, the visual variables should match the properties of the data. So clearly, we don't want
+to use the wrong thing. So we talked about this before. Shape is not great for
+encoding quantitative data. So some things, we're not
+going to want at all. It's also going to be
+the case that we will prefer to encode the most important variables
+using the best, that is, the most effective
+visual retinal mark. So the encoding for the most important data
+should be the best one. That is, a person looking at the visualization and
+trying to read out the data should be able to
+do the best job possible for the most important data
+in that visualization. So what are the rules that
+we can follow to do this? Mackinlay and his APT tool, which is going to
+be the automated solution we're going to consider, it's called A Presentation Tool, started to think about
+the different layers in terms of effectiveness, so things that are
+very accurate like position versus less accurate. Separating this out more, we have this nice table that
+basically is telling us what should be our preferred way
+of encoding variables. So if we have
+a quantitative variable, position is going to be
+the best thing to do or color hue is going
+to be the worst, and these things over here in gray are things that we
+should not be using. So for ordinal, we
+shouldn't be using shape. For quantitative, we
+shouldn't be using texture, connection, containment,
+shape, and so on. But if we have
+one quantitative variable, we might use position. If we had two, we might use
+position and then length. So that's what this
+is telling us. The most important
+quantitative variable, we're going to pick
+using position, and the next most important one, we're going to pick using length. That is the basic idea
+of the algorithm. The algorithm is greedy. We're going to take the most important
+variable that we care about and pick the best
+representation from the list. We're then going to
+cross it off the list and continue with the
+next most important. So let me show you how
+this works in action. We have our importance ranking for these three
+different variables. We have quantitative 1,
+quantitative 2, and ordinal 1. So the first thing that we see is that we have
+a quantitative variable. We're going to look over, and we're going to read
+that from the list. Now, it turns out that position
+has actually two things. We have X and Y. So we can actually knockout position using the first
+two quantitative variables. So quantitative 1 will take X, quantitative 2 will take Y. Once we do that, we
+have to knock out position from consideration
+from any other variables. So no other variable
+can now use position. We've used X and Y. They're gone. Now, what we have is ordinal. So ordinal 1, we
+look down the list. We see that the next best
+thing is density, and now we're going
+to knock that out. So density is gone from consideration if we had
+any other variables. The output of this
+is a visualization that looks something like this. We have Q1 on the X-axis, Q2 on the Y-axis, and density. This is just some variable
+that we've be encoded here, some data that goes from 4-6-8, and we can see that we're using the shade density in order to represent that
+in this visualization. So using this encoding, given the ranking that we have, this is the best that we can do. So same dataset, we're
+going to now reorder it. So now, Q1 is going to
+be the most important, O1 is going to be the
+next most important, and Q2 is now going to be the least important
+thing in our dataset. So again, Q1 quantitative, position is the first
+thing we can use. Looking down this list,
+we can use X or Y. In this case, we're
+going to use X. Then we're going to take O1 and use the remaining
+position variables. So in this case,
+it's going to be Y. Once we've done that, position is knocked out
+from consideration. So we had X and Y,
+now they're gone. Q2 is the next thing that
+we have to consider. Position of course
+has gone already. It turns out that length, angle, and slope are not going
+to be great for us because of the visualization
+we're going to use. So we're going to
+skip to the next one, which is going to be area. I'll explain why we
+skip in a second. But once we've done that, area is knocked out
+of consideration for any possible other
+future variable. So now, we have a visualization
+that looks like this. Q1 is encoded on the X-axis, O1 encoded on the Y, you can see the layers
+of these dots, and then Q2 is represented
+in the size of the dots. So this data is being encoded based on my ordering
+of the importance, Q1, then O1, then Q2. Position gets consumed by Q1, then O1, and then
+Q2 consumes area. Let's try a different
+technique, Q1, Q2, N2. So now, we have to quantitative, and then one nominal. In this case, it's
+called nominal 2. So we're going to
+again use position, and then for N2, we're going to look at the next best thing, which is color hue. In this case, this
+nominal variable, I picked nominal 2 because it only has two different things. We see it in this visualization. There's a blue and
+an orange that's used to encode at
+this particular dataset. So this is an example
+where we have to quantitative and
+one nominal variable. Why is it that we skip sometimes? So let's imagine we have a scatter plot that
+looks like this. So we've used position
+because we've knocked it out using this quantitative variable
+the x and the y. Now, we can have a visualization
+that looks like this. So let's say that there are
+two different groups here. So color is totally reasonable
+in this particular case. We have this next nominal variable and one or
+whatever we call it, and we're going to use a
+red and blue to encode these dots using
+these different shades. So that's the next
+most likely thing. But let's say we have
+a black and white printer. So now this coloring
+isn't going to work, this red and blue is not
+going to show up well here. So we can't actually
+use color hue given the constraints in which we're printing or generating
+this visualization. So we have to go
+to the next thing. Now texture is the next
+thing on the list, but that doesn't really work
+for us for design reasons. So looking at it, it
+doesn't actually look good. Like the aesthetic that we are trying to portray
+is not maintained. Texture is going to be the
+thing that we skip there. The next thing that we
+have is connection. So those dots that are
+part of the same grouping, either originally the blue or the red are now being
+connected using these lines. So again, this grouping
+is maintained, like you can tell that all
+these belong to the same set, and all these belong
+to the same set. The problem with
+this is that if we have a really
+complicated data-set, now we have all these lines that starts to look
+like spaghetti. It's also that people understand
+visualizations that look like this as a network diagram and not necessarily
+a scatter plot. So in this particular case, connection, that may
+not be the ideal setup. Then we go to containment, so here we're going
+to draw this area, this underlying thing that basically is going to
+indicate the connection. This is no longer the red and the blue of the original
+visualization. We have this other kind of thing that we want to
+represent containment around. So we have the things that are in green and the things
+that are in blue. But this becomes messy as you can see when the data
+has these weird shapes. So containment might be a weird and hard thing
+to follow visually, if we have lots and lots
+of different groups, and they're laid out
+in a strange way. So in this case, containment might not be
+the right answer for us, if the data is distributed
+in a certain way. So this is often why we skip. So you can't just
+use the best thing in the list because it just happens to be the next
+thing in the list, you have to consider what
+it will look like given the constraints of
+the printing of the display, aesthetic concerns,
+whether people will understand it or whether
+the Data will support it. So these are reasons
+why we'll skip. So just a few more examples
+we're going to increase this. We're now going to have
+four different variables, Q1 followed by O1, followed by Q2 followed by N1. So now again, same thing
+as before we're going to use position for
+the first two things Q1 and O1, Q2 again, we're going
+to skip down to area, and nominal one, we're going
+to skip down to color hue. So that's the next best thing
+that we can use phenomenon. It will generate a visualization
+that looks like this. Now we have both the color and the size of the dots
+to encode N1 and Q2, which are the lower
+importance variables given the ranking. Same deal here Q1 followed
+by Q2 followed by N2, followed by Q3, same deal, we're going to look
+through Q1 and Q2, knockout position nominal, we're going to pick the next
+thing which is colored hue. So every single area
+but it's supposed to knock out color hue and then Quantitative three and we're going to knockout
+area doing that. So we have a visualization
+that looks like this. Q1 on the X-axis, Q2 on the Y-axis, N2 is the color hue. So it's either orange or blue, and Q3 is now the size. So we've taken four variables
+and given their importance, we've chosen
+this particular encoding because the most effective
+things are positioned, and then the next
+thing are things like color and area and so on. The APTs system actually
+does this automatically. The way it works is that by
+interacting with the system, you're describing what it is that you find most important. So imagine a system
+where you drag and drop things based
+on the importance. So the most important
+variable is Q1. So that's the first
+variable that you drop onto the surface. The next most important thing
+is Q2 and so on. But the APT algorithm as it searched the design space
+and looked at this particular data
+that it had about which visualizations were
+best which encodings were best for which datatype, and then started knocking
+things out based on some set of heuristics that knew about how to
+generate charts, and what you indicated
+as the user, what the most
+important thing was. It turns out that this
+was an old technique, but now actually being used in systems like Tableau which is a very modern piece of software for
+generating visualization. So we actually see
+this in use today. It is limited in a bunch of ways. It doesn't cover
+all visualization techniques. It does not deal
+with interactions which is going to be
+something that's important. So some things that are
+less effective can be made more so using
+interaction techniques. There are still heuristics
+that are needed, so they're implemented
+in the solution itself like it knows what
+a bar chart should look like, it knows what a black and
+white printer looks like, and so it makes decisions
+based on some heuristics. If you're going to
+apply this algorithm manually then you have to consider what that
+would look like. But APT did that for us and Tableau to some extent
+does that for us today. Is going to be
+important though in the broader work that we're going to do when
+thinking about visualization, and we're going to do
+this over and over again. So that algorithm that I demonstrated is part of
+the set of tools that we're going to have and
+repeat over and over again in considering
+what it is that we want. We had to order by the
+importance which variables we thought needed to be best expressed in the most
+effective way possible. So we ask what needs
+to be expressed? What is the most effective way
+of expressing it? Our vocabulary for
+doing this is going to grow as we see
+new visualization techniques. So we're going to see
+many new task types, we are going to see
+many new encodings, idioms, interaction
+patterns, and so on. That will lead to
+many more mechanisms. So you're not going
+to have to rely on just this simple list of
+things that you can do, you're going to develop a broader set of
+tools to do this. So the takeaway is,
+the APT algorithm gives us this greedy algorithm, for basically figuring out
+the technique that we're going to want to use in generating
+the visualization. It can be used manually, and it will generate what is likely and expressive and
+effective visualization, but it is doing so in
+a constrained environment. So there are situations for which it will not work and we're going to want to go outside of what the algorithm
+is suggesting. So not just doing exactly what it says looking at the next item
+in the list. There's going to be
+other things that we couldn't do or need to know
+to do this better. With that, thank
+you for listening.

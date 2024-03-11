@@ -1,0 +1,491 @@
+I'm going to follow up
+Nia's work with a bit of a discussion of how
+to annotate plots, which is useful not just
+for exploring data, but for communicating
+your results to others, whether it be in presentations, papers or other media. So let's continue with
+the previous example, looking at the Dow Jones Industrial average's
+closing values over the past century or so. Just to refresh your memory, I'll go ahead and
+re-plot the data. So matplotlib inline,
+bring in numpy, bring in the pyplot
+scripting interface. I'm just going to copy and
+paste our closing values. So here's our years
+and then we'll just paste in these closing values. Okay and let's plot
+them with pyplot. Remember that we saw more
+fine-grained details after applying a
+logarithmic transformation. However, since we're trying to showcase periods of
+economic downturn, let's draw some attention to those periods by
+highlighting them in red. So we'll create log values
+and the basic plots. So log closings is
+np.log closing values, and we're going to plot
+these against years. Now, here I want to use the axv span function to add vertical spans
+across the x-axis. So I do this by calling plot.axv. So axis v span, so vertical span, I'll just use from 1928 to 1940 and I'll color that as red, and I'll set the alpha
+channel transparency to 0.3 or 30 percent. I'll do the same thing from 72 to 82 and the same thing
+from 2000 to 2009. Now, you might notice
+that the regions we've chosen involve a bit
+of subjectivity. For instance, the
+Great Depression is generally considered as occurring between 1929 and 1939, but that doesn't mean the market was falling the entire time. For instance, you can see
+a significant rebound partway through the 1930s. For the purposes of
+this example however, we're just visually
+approximating these areas where the graph drastically
+drops or tends to flatten. If you want to explore
+though the recession in greater depth or see how our estimates stack
+up to reality, you can check out
+the Wikipedia page, which you know I love
+to get data from, which lists a complete set of the recession's throughout
+US history, and here's a link for that. So marking every single recession might be a bit cluttering. So let's just come up with
+a graphic that emphasizes the Great Depression and
+the recessions in 2008. Just to make this
+visually appealing, let's shade the area under the curve using the
+fill between function. So I'm going to use pyplot.plot the years in the log closings and plot.filled between the years and the log closings and the
+alpha channel of 30 again. So here's some documentation
+on matplotlib fill between, I think it's great for time
+series data in particular. Here's some information on
+the matplotlib markers. So I've downloaded
+the ping and put it in your drive as well, but the markers are
+quite interesting. There's a lot of different
+markers that you can use. The colors aren't important in this graphic just what the
+markers actually look like, and you can use them
+in many places in matplotlib and these
+are just the defaults. You can of course
+create your own patch objects as you see we've put. So we might want to
+actually point out the high and low
+points for each event by placing some of these
+markers on the graph. As you can see, there's lots of different customization
+options and we've seen a couple
+of them previously. So let's crop the coordinates
+of some of the high data. So I'm going to make a list here, high markers for i in range, the length of years and if
+the i is in 1928 or 2007, that's kind of range. Now, we're going to call plot, and we can indicate
+that we want to add markers at the
+coordinates we grabbed, and we can set the
+color of the face or the edges of the markers as
+appropriate, which is nice. So to do this we would
+just call plot.plot and we pass in the years and
+our log closings, right? So our x and y values
+as appropriate. Here, I'm going to say dash v. So that gives me a marker type, and I'll pass in the
+high markers where we actually want those
+markers to be. So this is going to be a
+downward pointing arrow at those high markers. Next, I'm going to set
+the marker face color to be green and the marker
+edge color to be black, and there's lots of
+different options here, and then I get to set a general marker size and
+I'll set that to eight. I'm going to add that
+fill back between. So I'm going to plot the
+fill between, the years, log closings and
+set our data here. Now I'm going to do the
+same thing for the low. So here are low
+years, 1932 and 2008, and for low markers, I'm going to create
+the low end markers, and then I'm going to
+plot this as well. I'm going to use a couple
+of different parameters here and you can look those up to get an
+interesting perspective. I think the most important
+one here is the z order, the very last parameter
+z order for most of you, but a couple of my folks
+out there z order of three. Alright so here's some
+documentation for the edits, and I think they're all
+worth a quick read. So the first one is
+actually on the z order. So when you're plotting
+in graphics in general, you have your x and
+you have your y, but then you have
+z as well which is essentially like a
+stacked interface. So when we plotted our
+green one and then we plotted our fill between and
+then we plotted our red one, our red one would have
+actually shown up underneath the fill between
+or it would have been hidden, and so we had to set that z
+order to pop it to the top. You can get this a
+lot when you're using things like Microsoft Word or PowerPoint too often and you have to select
+an image and say, right-click sent back, and that essentially is
+controlling the z order. There's also a link here about
+all the different kinds of colors that you can use in
+matplotlib that are named. You can actually use RGB strings, CMYK strings and so
+forth, but often, we just pick a handful of
+named colors for exploration. Then here's some information on the different lines styles. If you wanted a dashed line or a dotted line or a
+dotted and dashed line, you might do different things. So with annotations
+there's actually a coordinate system
+that we can use, and there's a table I'm
+going to paste here from the matplotlib documentation
+on that coordinate system. So we can see actually
+there's a number of different potential
+coordinates that we can use. We can talk from figures
+perspective or from an access perspective or
+from the data perspective, and we talk in points, pixels, and fractions, and I'm not going to go through all of this. So here's the table
+from the docs, I'm going to encourage you
+to go look at those docs. I'll just show you a
+couple of examples. So let's bring in what we
+just did as a set of markers. Remember that since we're in the default Jupyter matplotlib mode, our figure is automatically closed at the end
+of cell execution. So I'm just going
+to copy and paste. So bring in our markers, plot our marker phase
+and our fill between, and we'll do the
+same thing for low. So that's exactly what
+we've done before. So even though we placed markers, it'd be nice to explicitly
+label each event and also give your audience some sense of how big the drop actually is. It's a bit hard to tell
+given our logarithmic scale. So first, let's calculate the percentage change for both the depression
+and the recession. So I'm going to create
+the depression difference here and remember, we're in a logarithmic
+scale so we'll use np.exp, and we'll take our closings, our low markers minus
+our high markers, and I'll do the exact same
+thing for the recession. Then I'm going to change
+these into percentages. Alright. So this should look
+fairly reasonable to you, the key being here
+is that we're using exponential because we've
+got this logarithmic scale. So now we have to fix some
+labels and add some arrows. To do this, we'll need
+to specify the location where the points that we
+want to place these objects. To do that, you'll have to first select a coordinate system, and while I've listed some above, I'm not going to
+demonstrate them all. We're just going to go
+through a couple of examples so that you'll gain
+enough familiarity to annotate plots on your
+own and to understand the documentation should you need to use a different
+set of coordinates. So first up, let's
+use an example using the axis fraction
+coordinate system which puts our origin, 0.00 at the lower
+left of the axis. So here I'm going to
+say plot.annotate, I'm going to say the
+Great Depression and add in the percentage
+for the depression. You'll notice I used
+slash in to span this text across two lines. I'm going to set my xy parameter, and I'm going to
+use 1928 and 5.8, and I'm going to set
+the x,y coordinates to the data coordinates. So you can see that that
+makes a lot of sense here, the 1928 and the 5.8. We can look at that right on our plot and see from our data, I guess that makes sense. Then I'm going to set the xy text to be slightly off from that. But in this case, I'm going
+to use the text coordinates, I'm going to use
+the axis fraction. So this is like a 20 percent and a 60 percent on the fraction, and this takes some
+playing around with. I can change the font size
+and the horizontal alignment. So I'll do that here. Then I can set the
+properties of the arrows. So again, I'm not going to
+go into detail on this, but I wanted you to be familiar to have at
+least seen it once. So we've got this arrow style, I want pretty plain looking arrow with a normal sized
+head on it if you will, set the color to black and set the line width equal to three. So you can change what
+the arrows look like to control a little bit
+what the graphic means. So next, let's add
+the Great Recession using the axes points
+coordinate system, which are the number of
+points from the lower left. So I'm going to annotate again, great recession
+instead of depression. I'm going to set our xy
+values to data values again, so 2007 now and 9.4. But in this case, I'm
+changing the xy text to 140 points by a 155 points versus the percentage on
+the size of the axis, and I set the text
+coordinates to axis points. Now you can use either of
+these, it doesn't matter. I just wanted to show you
+some examples of both. It might really
+depend on how you're rendering the texts like if you know how big your
+image is going to be already in points
+or pixels or not, or if you want a general area, it depends why you're building
+the arrow or the image. Now I'll make some arrow as well and change the head
+width a little bit. So we can also draw horizontal
+lines dotted to help you approximate how
+long it took to recover from each of
+the economic downturns. So we want to layer
+them behind our markers which means we'll need to
+specify the z order value. Higher numbers get moved towards the front and smaller values are pushed towards the back
+on this z or z-axis. So you're going to
+do that through this ax horizontal lines. So the x is horizontal
+line and I'm going to take our
+closings or high markers. Set the color to gray,
+center line style, and I'm going to push the z
+order all the way back to zero and I'm going to do that for all of our high markers, our low markers throughout. All right. So we see a
+nice rendering there. We've got dashed lines, but they're behind our
+markers which are front. We've got nice little
+arrows and we see different size arrowheads and
+different sized text being called out and there was a lot of manual work done for this. I played with it a couple of times to change
+some of the values. But you can see it's actually
+a pretty handy chart if I wanted to include
+it in a presentation or well a computational narrative of a Jupyter notebook
+that we wanted to render. Note that the depression
+took almost 20 years to recover or return to
+the same point value. But by contrast, the recession reached pre-crash levels
+in under five years. That's not to say there
+weren't lingering effects in the years after. I want to draw your
+attention to the fact that the percentages aren't
+entirely accurate though. For instance, the high prior to the recession was roughly
+14,000 points while the low hovered around 6,500
+a drop of over 50 percent. The reason is because we
+only provided yearly data, but presumably we would get a more accurate
+representation had we been given monthly
+data instead. So keep that in mind when you're sharing this
+with other people, the focus here is
+on the technique. So here's a couple
+of notes for this. Here's a nice discussion
+on stack overflow about the difference between points
+and pixels if you need it. Some technicalities
+on using arrows and I think that the way these
+prompts are done with dictionaries of values
+can often elicit a lot of magic and mystique
+and so unfortunately, there's often you have to add stock exchange or stack overflow. Here's a tutorial
+on annotations and matplotlib that goes into
+these in more detail. So this lecture is brief. I wanted you to be aware
+of how to annotate. You'll need to know how
+to annotate things. But there's definitely
+more to be done here. Remember everything's an artist. You're just layering artists in various places and here's some
+documentation on patches. So remember that patch comes from that MATLAB Interface and
+all of our renderings, our visual renderings are from a patch and in fact we have these fancy arrows that
+you've been seeing and they're actually
+a fancy arrow patch that inherits from patch. So you can learn more
+about that if you want to. Next, we're going to talk about
+the species area example. This is a great
+relationship to show. So it's a nice historic
+set of data on plants species diversity from coastal regions and islands and here's the citation if
+you're interested in it. Let's bring in an actually
+an image of it right now. So there's an image of
+the California coast and some island information and a data table and this is
+from the original paper. So to the right, you'll
+see the figure of the state of California
+and the surrounding areas and a table with
+various information collected on mainline
+areas in nearby islands. We're going to be focusing on two variables in particular. A which stands for the area
+measured in square miles and S1 which represents the number of native species in a
+particular region. Let's go ahead and load our data into two separate DataFrames; one from the mainland
+and one from the islands and we're not including the island groups here. So bringing in pandas, and it'll just create
+the island DataFrames. So these are the islands. These are the various
+area values and these are the species information, the number of native
+species in each of those areas and we'll do the same thing for the
+mainland DataFrames. So we're bringing in two
+DataFrames and it has area. We see lots of different
+species there as well. Now let's build a scatter plot. So I'm just gonna say plot.scatter and I'm
+going to look at the area versus the species. So when we plot the data, it looks like a square
+root graph and in general we get the shape
+resembles power model. This is interesting as an Ecological Observation
+between the number of species in area and this is known as the species
+area relationship. So with that knowledge, let's write down a
+mathematical model that captures this relationship. So I'm going to bring the
+power model function and I've linked here to Wikipedia. I'm going to render it as Latex. So one of the things I would
+like you to get out of this lecture is that
+you can have both in your and Jupyter
+notebooks and in your matplotlib images
+more scientific notation if you need it and you can
+do that through Latex. So the details of the
+power model function are really not as important here. If you're interested,
+there's lots that you can go read about that here. But I just wanted to show
+you some of the derivation here in comparison and how you can embed that in your computational narrative
+for these Jupyter notebooks. So if we transform our variables
+according to this model, we'll get something that
+looks like a line and we can use Numpy as
+polyfit function to them find our slope of
+the line M and the y-intercept B and before
+manipulating these values back into our parameters of interest which are
+actually C and Z there's you can see from
+the second bottom equation. So let's start with the mainland. So let's build a polyfit line off the areans species data. So I'm going to use some
+tuple unpacking here. It is tuple unpacking, but it doesn't have to
+be written this way. So I'm showing you a
+slightly more complex way. We're doing two
+assignments in one line. So I'm doing mainlands ad and
+mainland log c and this is equal to np.polyfit
+and when he send in log base 10 of the area
+and the log base 10 of the species and the
+last parameter of one and then we unpack those
+into those two values. So we're going to create some evenly spaced
+x values as well. So the x values
+equals np.arrange. So those are nice and
+evenly spaced and let's create a straight
+line to fit this data. So an AB line values is equal
+to our midline zed times x plus the mainland logs c
+for each x in the x values. So we're actually just running that second function
+there at the bottom across all of our data and now let's print
+the line and the data. So we're going to
+plot.scatter and I want to do this Numpy log-based 10 Theta. Again, this all comes from
+the power model function. The details are probably
+not super important here. I just want you to
+know that you can scale your data in this
+way and so that you might see lots of
+examples that are like this and you
+might find need to do this and this is a place where you might want to do that. So we'll plot the area and the species and then let's
+plot our line value. So that's just our x values plus our line intercept
+values. All right. Now we're going to
+repeat the process for the island DataFrames. So this is basically
+copy and paste, but now we're bringing
+in the island DataFrame. So this looks pretty interesting, but we can't really compare
+these two things well. We see that these lines fit and it's a nice straight
+line and so forth. We see two sets of axes
+have different values. For instance, the island ranges from
+minus two to three on the x-axis while the mainland is one to five on the x-axis the. Y axis values are different too. So we can't really compare
+these two to one another. So let's plot both the island and the mainland data on the same figure so that we
+can visually compare the two. Instead of using
+log A and log S for our x and y-axis respectively, let's just keep the
+original values and use a log scale on the axes instead which might make it easier for someone to
+interpret in this case. So I'm going to take
+the island c values again just reference
+that function if you're interested where I got this and 10 to the island log c and mainland C is 10 to the mainland logs c. We're just going to
+plot our data as is. So I'm just going to
+scatter plot our data as is with two different
+sets of markers; one for the islands and
+one for the mainland. Now, we're actually going to tell matplotlib that the
+axes should be scaled and you'll see that matplotlib is numerous little niceties
+that allowed this to work. So we don't actually have
+to deal with all the data scaling and transformation
+work ourselves. So first off, we're going to tell matplotlib that the
+scale of the y axis is logarithmic and
+that the scale of the x axis is logarithmic. You don't have to do this.
+We're able to scale our data. So one thing we can do
+is transform our data. The other thing we can do is transform our axes
+scales as well. So I'm going to put in
+the grid lines as well. So plot.grid true and I'll
+set the Alpha actually to 50. Now, to get our new points, we're going to use
+the np logspace to generate a set of x
+values that are spaced evenly on a log scale
+base 10 and then to calculate our y values using the original
+equation from before. So here I'm going
+to get x values and I'm going to go from
+minus two to five and get 50 of them and I want
+them spaced in this logspace. If you remember way
+back to slides 505, there were different ways to get values and linspace
+was a very common one, that's just a linear space from Numpy and this is
+just saying we're interested in the
+logarithmic space because that's what
+our axes are in. So let's build that line
+for the island values, so it's our island C times x to the islands z
+and we're going to do that for x in x values and we do the exact same thing
+for the mainland data. So we're just building
+a list comprehension of it across all of our values. Then we're going to plot
+the x-values against the line values and we'll
+set a couple of colors. I'll use dark orchid and maroon
+as well to change it up, and then we'll put a legend in the lower right. All right. So that's pretty impressive. It's a nice looking plot
+which shows us the difference between the island and the
+mainland habitat loss. We've got trend
+lines and we've seen two different ways to
+scale the same data. One we scale the data, the other we scale the axes. Now, the details of the power-law formula
+might seem a bit intimidating here and I would encourage you to go back
+and take a look at it. But the purpose of
+this video actually isn't so much on the
+power law modeling, but instead on using the toolkit matplotlib to
+engage in visual exploration of data and how to apply
+whatever scaling method you might be interested
+in to that data. So while our plot already
+looks pretty and colorful, let's try and add a
+bit more analysis and annotation to the plot to
+document our findings. For example, we can now answer the number
+of native species that might change as a result of the
+decreasing land area. This might happen due to a number of reasons including
+deforestation, due to increasing
+agriculture use, urbanization as a result of population growth,
+industrialization, or tourism. Of course our model is quite crude but it's still useful to be able to estimate the effect
+of area on biodiversity. But before we move on, let's add some labels that
+people know what we're trying to present and what
+the numbers actually mean. Now, remember that we've
+left the default Jupyter function which closes off figures at the end of a cell on. So this means that we have to
+recreate the whole plot and that might seem really laborious here,
+certainly does to me. But that's because
+you're watching a video. In practice, you'll
+constantly be editing and rerunning cells instead of
+creating new ones like this. So let's just copy
+and paste some data. So we'll bring in our data, we'll scale our axes. I'm going to clean up some
+of the titles too and so look what I do
+here for the x label. So this is some more Latex
+being dropped right in. So it's a normal text string. But then there's a dollar
+sign and a carat two. This a little odd-looking. This is actually using Latex to show that the value
+is in mile squared, and latex really outside the scope of this lecture
+but keep in mind that matplotlib was designed to help scientists communicate
+data results, and so there's lots of nice
+functions in there to do so. We'll plot the y label as well and we'll put those
+gridlines back on. Now I'm just going to plot
+our data as we did before. Now I actually didn't calculate the intersection
+of the lines. I'm going to leave
+that as an exercise if you're so interested. But it would be pretty
+reasonable to use the fill_between to show
+the area difference, and you might get by now
+I like fill_between. I think it's a nice
+way to visualize the difference and
+magnitude of differences. So here I'm going to
+take our x values from 12-15, our ablines, our two ablines and plot
+them from 12-15 and then use fill_between and take a look at what this looks
+like and set a legend. Now, I'm going to annotate the charts some
+more too and here, I'm using a mixture
+of Latex and Python. The Python values are after
+the percent sign and this is just one of many ways to
+format strings in Python. A Latex value is
+hinted at because of the dollar sign at the beginning and at the end of the string, and that's how matplotlib
+knows that you are breaking into Latex
+math mode it's called. This allows us to use the scientific notation
+and let it shine through. So we're going to add a new annotation and
+I'm going to go right into Latex math mode and I'm going to say I want
+S sub island is equal to and then I'm going to add some numeric formatting here. So that's a nice thing
+that you can do with this particular way to do sub-strings or insert
+data in strings. So I'm indicating that there's some variable c that's going
+to come into dictionary that follows this string
+and I wanted to have two decimal places after
+and then I want A carat. So that means either the power of and then I'm bringing in some data value z from the dictionary that
+follows and I want it formatted to two
+decimal places. So very scientific
+notation throughout. Again, this is not the purpose
+of this lecture per say, but I wanted to
+show you that it's a powerful opportunity
+in the code base. I get to set the x, y to 100, 100 and set the
+x coordinates to data. Then what's interesting
+here is I'm going to rotate this 35 degrees. So it took actually a bit of playing around with this to find the right size and
+rotation that I wanted to. So this makes it look like I just knew all of those numbers, but actually I round
+the cell many many times to find something
+I was happy with. So we can do this for the
+mainland too and I'll just copy and paste this
+on the mainland. So now we can calculate
+the percent loss of the number of species
+if we were to cut the areas in half and so this is just a nice little
+infographic way to say how we might
+see things change. I'm going to add that string message to the figure as well. So 50 percent of
+loss would result in a biodiversity dropout
+and we'll bring in again, this is saying that
+there's going to be a dictionary that
+follows the string that will have a value for main and a dictionary that
+follows the string that'll have a value for island, and that those are both
+decimal values or numbers. So then here we'll just put in the dictionary main of mainland loss and
+island of island loss. I'm going to make a color to this message and drop
+it on our plot as well. So plot.annotate. I'll add the message at the xy values and
+the texts and data, and then I'm going to add
+some arrows style and you'll see I'm using an
+interesting arrow style here with the square bracket and that is more of like brey
+style call-out, and you can take a look at
+that to better understand that in the arrow style on
+the arrow connections and then I'm actually adding
+a bunch of connection. So a bunch of angles, a bunch of twists in here. Essentially, I'm drawing
+a bunch of lines in a primitive graphics language. All right. So that looks
+really interesting, right. We've got some text. The text is scaled and it's on the lines. The text is really
+interesting in the way that it's got subscripts
+and superscripts in it. We have a call-out of
+exactly our size of area, and it's got some nice
+little piped lines out, and you can see that
+we've really changed this figure to say a lot
+more than we did originally. Again, it looks like
+I just was able to do a bunch of that
+by eye, I wasn't. I played around with
+a lot of things. As you're doing a visual
+exploration of data, you build this up over time and then you can start
+to add these call-outs to communicate your results to other people whether they be other data scientists on a team, marketing people,
+CEOs, and so forth. Here's a few reference materials to help you especially
+if you're interested in the original research
+behind this or how to embed these mathematical
+equations in your figures. So the reference to
+the actual detail on the species area
+relationship is here. Writing mathematical expressions. So you can see the
+matplotlib details here and here's a Latex sheet if you're so interested in
+understanding better how you can do this quasi
+rich formatting in there. All right. So I
+want to talk about one more fun little part. This is completely optional. You can just quit watching
+now if you want to, but a lot of people are really
+interested in xkcd comic, it's a thing in the data science geekdom
+computer science world and I want to show you a
+neat little Easter egg before we wrap up the lecture. You can make your own
+xkcd style plot simply by wrapping your plotting code
+with the line shown below. So essentially it
+indicates that for a context of using Pyplot, we should use the xkcd
+formatting filter and it's really not important, but it's a little fun. So you can say with plot.xkcd. So this essentially is called
+a context and it means that all of the future commands should be called against
+this particular plot. So now we'll just copy across all of our plotting
+information that we. So I'm not changing any of this. It's all just coming
+across as normal and so while the style may not be appropriate in all situations, it's definitely a fun edition and I think it's a nice
+way to play around with designing your
+own info-graphics or data science comics, and I know it just lightens
+thing up a little bit. In this lecture you've seen a
+number of different things, a number of different techniques and I don't expect you to actually be able to do
+them all from heart. I wanted to demonstrate though
+that it's not just about dropping data from a
+data-frame onto a plot, you certainly can do that. As you learn more about
+what your data means, you can start to annotate those plots to
+communicate that data. Now, in this degree, there is a data communication class
+that you'll be taking as well. So we're not going to be
+labor this point I think, but I wanted to demonstrate that as you
+learn these techniques, you should be thinking about this document that
+you're creating, this computational
+narrative, what it means and who else
+is going to take it. So when you pass this
+Jupyter Notebook onto somebody else, how will they know what
+you actually discovered? What was actually meaningful? If they can scan through and see some figures and read
+captions by those figures, read information
+within those figures, and read comments in your code, that's a pretty powerful way to interact with data and
+to interact with others.

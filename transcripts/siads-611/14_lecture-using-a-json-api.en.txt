@@ -1,0 +1,35 @@
+So the next sample code that
+we're going to look at is a bunch of code that is going to
+actually pull JSON from an online API. In particular, the Star Wars API. Which is a fun little thing that
+has data about Star Wars films and characters and
+kinds of creatures, etc. And so we're going to do this
+in a way that's a little more complex because
+we're going to spider. And we actually don't know
+what data we're looking at. It's not like the email data where we're
+going 1 2 3 4 5, we're actually going to retrieve a document, then you read the
+document to see links to other documents. And then you retrieve those links and you
+put them in our database as to be retrieved. So this is an application that maintains
+a to-do list of URLs to retrieve. That's kind of the spider
+web crawler aspect. So the table that it's using
+is a little more complex. We certainly have
+a primary key and some JSON. We have the URL we've retrieved,
+we have the status of it. Whether or not it's been
+retrieved or not. And then we have some created_at and
+updated_at stuff. And so like I said, this works like Google
+search, in that it looks to, it find URLs and eventually it retrieves them
+all, which is a few hundred. So when we run this program, it starts by inserting a few known
+URLs as the starting points. And then it goes and
+grabs 10 more documents. And you can see the 200 is
+the fact it's successful. And then it retrieved 2200 characters and it counts the to-do list at end of each run. So there was only 2 in this to-do list. Now there's 34,
+because it found some more. And the to-do list goes up and then as it
+retrieves things it goes down, goes up and it goes down. And eventually, you know, this
+loaded 10 documents and ultimately it had 35 more to go,
+but we can stop. This database persists
+from some run to run. And at that point you can take a look, in another window you can look at
+your Postgres with your psql client. You can see where it's at, because again
+this is just Python is one client and psql is another client. So then you can start it back up. And in the beginning it says,
+yep, I'm back. I've still got this database. I've got 35 to go, give me five more,
+five more, five more, five more. And eventually,
+there's about 200 plus documents. And then when you get loaded, we will start playing with that
+retrieved JSON by using SQL, we'll make some indexes, and review
+a whole bunch of ways to use JSONB. [MUSIC]

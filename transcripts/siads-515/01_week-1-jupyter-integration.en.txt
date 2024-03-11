@@ -1,0 +1,43 @@
+So we've been talking a lot
+about shell commands and we sort of pretended that that
+exists independent of Jupyter. In fact, you can access shell
+commands from Jupyter and let's take a look at how
+we're going to do that. So here we are in our Jupiter environment
+and we've been dealing a lot with command line interface through the terminal and
+you can see our commands that we've done. In fact, what we can do is,
+I'll introduce you to one more command. I'm going to clear the screen and
+I'll type history, history will show us all
+the commands that we've used and we can look at the sequence
+that we use those commands in. That can be helpful for you to figure
+out how you got to where you are. What we can do in addition to using the
+terminal with commands, is go ahead and go our go to our Jupyter environment and
+we're going to create a new Notebook. So here we have our Jupyter Notebook and
+what I can do is, we can say that there's a variable, just
+to convince you that this is all working. a = 1, a, that's fine. What we can do is we can run commands,
+we can run Linux commands from within the Jupyter Notebook by
+prefixing them with an exclamation mark. We pronounce exclamation marks as bang. So this is bang LS and
+if we run this cell, we see that this is what the current,
+the contents of our current directory is. So I've CD'd, I've changed directory
+into this directory before starting, so that's the only file that
+I have there right now. If I looked at bang LS of
+the parent directory, I see this. So, I can access these files,
+I can do interesting things with them. For example, I can assign
+the output of that LS command to a. So I could say, a = !ls. And then if I take a look at a, I find out that it contains
+a list of our current files. If I went back up here and did !ls I would now have
+a list of our files. If I take a look at parts of that, I see that I can access that
+list element by element. So you can see how that would be useful, if you had to traverse
+files within a directory. We could also do something like
+!head ../data/ride_final.csv and quickly take a look at the output of that. We could possibly pipe
+that to a variable but that seems unlikely to do. So whenever we need to execute a Linux
+command line from within Jupyter, remember, we have two ways of doing it. We can either go to the terminal and
+run it or you can use the bang command from
+within Jupyter to go ahead and do that. We'll talk a little bit more of a magic
+commands in the next couple of weeks. So we've had a chance to look at some
+of the Linux command line interface functions that can help
+us as data scientists. The next steps that we're going to follow,
+are to use some of those command line interface commands to
+wrangle some of our data. So you're going to start with data that
+looks something like that first block on the screen. And you're going to wind up with a file
+that looks like that second block. And we're going to use our Linux commands
+to help us manipulate that data into the form that we need for further
+analysis, in the rest of the course.

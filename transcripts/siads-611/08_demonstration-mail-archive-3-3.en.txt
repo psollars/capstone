@@ -1,0 +1,88 @@
+So welcome back to the
+Part 3 of our email archive database full text searching. So we're
+in pretty good shape. We've got our
+database all loaded, we've got a nice little
+GIST index, and we're able to do ts_query WHERE clauses. Now, I want to explore
+a little bit more of the kinds of things
+you can do with ts_query. So far, we've been doing
+single-word queries like to_tsquery english monday. But now I want to
+add some things. And so it turns out that this
+little to_tsquery language is actually a query
+language and interestingly, you can make syntax errors in it. So personal and learning. When you're querying for
+personal and learning, you are going to find that says, I need both of those words. It's sort of a standard and operation. So that says personal
+and learning have to show up in those rows. So then we can select the words but in order, and this
+use the operator that is the less than
+dash greater than. That says personal and learning, but personal has to
+come before learning. And so that's ordering. So that basically will give
+us a different set of rows. I don't quite know why there's no personal followed by learning, but it's not there, we found no rows. Let's see if it
+goes the other way. Learning followed by
+personal and there we go, we have one that has learning
+followed by personal. So learning followed by personal is the way
+that I read those. You can add a not. I want learning and not personal. Not personal. Exclamation
+point is not. Exclamation personal
+ampersand learning means not personal and learning. So we'll see what we get for that. We've got a whole
+bunch of learning but without the word personal. So very few people
+are talking about personal learning or learning and personal in the same sentence. So that's one. So the to_tsquery, like
+I said, is a language, and I'm going to make
+a syntax error when I say parentheses
+personal learning, and that's because
+inside this string, it's actually a query
+language of its own. And so this one is going to give me a syntax error. Oops, need a
+semicolon there. So it says syntax error in tsquery and it just
+like it didn't like the syntax of it because I used a special character in there and in a way
+that it didn't like. And so if you're taking
+stuff from the user, you use this plainto_tsquery. And so it's like, "Well, whatever. I'm just going to throw away things I don't understand
+rather than blow up." So I look at the personal
+learning with the parentheses, and it can work, right? And this is a syntax error
+from to_tsquery, but it's not a syntax in plain. It just throws stuff away. We can look at phraseto_tsquery, a I followed by think. First, we'll do it without
+phraseto_tsquery and that's what we see. That is I followed by tsquery and the phrase one is just
+kind of like a phrase. And so it's I think is a phrase, which is I followed by think. It really is a
+transformation from this I space think to
+I followed by think. And again, you can think
+of this as something where you're letting the
+user type something, but you don't want them
+to have to know how to type all these fancy
+things that to_tsquery. And if you have Postgres
+greater than 11, you can take a look at, this is a syntax that kind of came this minus personal learning, is a syntax that kind of
+came out of Google that is a way to say not
+personal and learning. It's the same as this. And so this is
+websearch_to_tsquery. A lot of people are
+going to end up writing kind of little grammars, transformers that would take these
+Google-style things and then convert them. So that works. Minus
+personal says not personal plus learning
+anywhere in it. And then the last thing I
+want to do is I want to show you something
+about text ranking. So text ranking is, it's important to know
+that text ranking is not really participating
+in the WHERE clause. All of our optimization,
+and inverted indexes, and all the stemming is to make the WHERE clause go faster, to pick the the documents
+you're going to see. Once the WHERE clause
+has thrown away most of the documents,
+which is its goal, then the documents
+are retrieved and the rank is a computation based on the retrieved documents. And then you can ORDER BY. I can ORDER BY ts_rank descending, right, and give me
+the most highest rank. And the ts_rank takes a
+ts_vector and a ts_query. Cleverly, you probably would
+want them to be the same, but it doesn't have to be the
+same as the WHERE clause. But in this case, so what it's saying is like we did pick it and double at said that personal and learning
+were in this document. But then we're saying
+how good were they? Were they closer? Etc., etc., etc. And so there's a couple of different ranking functions
+and you can read up on those. But the ts_rank is
+just a calculation on the retrieved documents. So let's take a look at this and we're going
+to print the rank out. So now this is this rank, right? And it's ordered
+in descending order. So this one here is
+the most seemingly, most relevant about
+personal learning. And I think if we
+looked at that one, we would probably agree with it. And some of these have less and less relevance as they go on. So that's really cool. And then there are more than
+one ranking algorithms. There's this ts_rank
+and then ts_rank_cd, and you can read up on those in the Postgres
+documentation. They both simply
+are computations on the retrieved record set and they just do a different
+computation. I'm not sure. In this case, it even threw out some things that were in or out, and that's because it does
+a different calculation. There's a whole bunch
+of research on how to do ranking, etc., etc., etc. And so that's where
+I'm going to stop. I've got some stuff
+where you can use regular expressions and make indexes based on
+regular expressions, and I'll leave that for another time and you can
+take a look at that. That's sitting here in
+this 06-Python.sql. Okay? Hope that you found all these demonstrations
+useful. Cheers.

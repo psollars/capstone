@@ -1,0 +1,94 @@
+Welcome back to math
+methods for data science. In this video,
+we're going to talk about graphs as matrices. What is a graph? A graph is a tuple. The first coordinate, which is V, a set of vertices, which is just a set, and then E is a set of edges. An edge is just a tuple of
+two different vertices. In this example here, we have a graph G, and the vertices are A, B, C, and D. We can draw these out, graphs are easy to visualize. We have five edges; an edge from A to B, an edge from A to C, an edge from A to D, an then from B to D, and an edge from C to D. This particular
+graph is undirected, so the edges don't have
+directions on them. Now, we can represent
+this graph as a matrix A. It's going to be a
+four by four matrix because we have four vertices. We're going to label the
+rows and the columns, we're going to think about
+them at least as being labeled with the
+vertices A, B, C, D, E, A, B, C, D. We put a one in an entry
+if there is an edge there, and a zero otherwise. There's no edge from A to A. There is an edge from A to B, there is an edge from A to C, and an edge from A to D.
+There's an edge from B to A, not from B to B, there is no edge from B to C, but there is an edge from B to D. Now C has edges to A and D, so I'll put 1 on
+those columns and 0. Otherwise, and D has edges to A, B, and C, so there are all 1s. This is the
+corresponding adjacency matrix for our graph here. Notice that it is
+a symmetric matrix because it is not directed graph. Now, the neat thing, and the reason this is powerful, is because the properties
+of the matrices actually tell you things about
+the graph and vice versa. We want to see what
+we can learn by imagining the graph not just
+as a graph but as a matrix. Just to give you a taste
+of this connection, A is the adjacency
+matrix for a graph. What is A squared? Well, A squared is the
+number of paths of length two from two vertices. So in the ijth entry A squared, it'll be the number of paths
+of length two from i to j. The number of paths of length
+two is just the number of k. If we have two
+vertices here, i and j, it's the number of different in our immediate points
+that we can go to, to get from i to j. The number of k that
+are in the middle. To see this, note, this is a claim here, that the ijth entry of
+the matrix A squared is just the ith row of
+the adjacency matrix, which corresponds to vertex i. So carving out the ith row dotted with the jth column. What we're doing is
+we're going to sum this entry A_ i1 with A_1j and then A_i2 with A_2j, and so on and so forth and we get this summation right over here, which is just the dot product of the ith row with the jth column. Now notice that all this is
+doing is summing up over all possible intermediate
+points k and asking is there both an edge from i to k
+and an edge from k to j? If so, there's
+definitely a path of length two through vertex k from i to j and so this
+will just count them up. Let's do a small example of this. We can do it for our
+previous matrix, which was 1, 1,1, 1 and then B was connected to A and D but not C, and C was connected
+to A and D but not B. Sorry A and D are not connected
+to themselves either. We have this matrix here our A. We can multiply it by itself, and if we multiply
+the first row times the first column, we get 3. Because we have zero
+times zero and one times one and one times one,
+plus one times one. If we take the first row
+times the second column, they only have a one in the
+last together, 1 there. Similarly, if we'd take the first row times the third column, we get the same because the second and the third rows
+and columns are the same. If we take the first row times
+the last column, we get 2. We can fill out some more
+by just symmetry here. If we take the second row
+times the second column, that will give us 2. The second row times the third column
+will also give us 2, and on the second row times the fourth column will give us 1. Again, by symmetry, we can
+fill out more of these. This has to be a 2 here, and we know this is 2 and
+here we have the same. This is our matrix. If we draw our graph again, we can indeed see that there's three paths of length 2 from a to itself
+and go A to B to A, A to D to A and A to C to A. There are, for example, two paths of length
+2 from B to itself, go B to A to B, B to D to B, and there are two
+paths from B to D, sorry B to C. I go B to A to C, or B to D to C. Indeed it checks out a
+definition of two paths. In social networks this is the number of common
+friends between i and j. It actually has a nice
+intuitive meaning. You might wonder, why do we multiply matrices
+in this goofy way? Here's one justification for it, because it corresponds nicely
+to taking walks on graphs. Similarly, if A is the
+adjacency matrix for a graph, A to the t represents the
+number of paths from i to j of length t. To see this, you note again that
+this is just equal to, A to the t equals A to
+the t minus 1 times A, A to the t minus 1. We're assuming by
+induction encodes the number of paths of length t minus 1 from one
+vertex to another, and so we multiply them together. What it's doing is
+it's summing over all possible penultimate
+vertices in the path. What could they possibly be? If k is a penultimate
+vertex on the path, there has to be a path from i to k of length t minus 1, and then an edge from k to j, and the number of paths that go through k is equal to the number of paths
+of length t minus 1, from i to k, which should
+be this number here, times this number here, which
+is going to be 0 if there's not an edge from k to
+j, and one if there is. Again, this considers all
+length t minus 1 path from i that can return to j with
+only one additional edge. What can we do with this? Well, let's say we wanted
+to check if G is connected. A graph is connected, if for any two vertices, there exists a path
+between i and j. Note that if there exists a path, there must exist a path of
+length at most V. Because otherwise you've used one
+vertex twice in the path, and then there would be a shorter path where you just cut up that
+in-between route. The idea then is to compute the summation from t equals
+1 to V of A to the t, and if the ijth of entry of this matrix
+is greater than 0, there must be a path of
+some length from i to j, and if this length to B ijth
+of entry is equal to 0, there is no path from i to j and the graph will
+be disconnected. In summary, matrices
+can represent graphs. It both gives a way to
+interpret a matrix as a graph and a way to interpret
+a graph as a matrix. Matrix multiplication
+then corresponds to counting paths in a graph. This is a deep connection that goes beyond counting paths. But that's what we
+studied in this video, and nearly every global
+graph analysis technique uses this connection. Namely, representing the graph as a matrix and then some
+linear algebra property. In particular, eigenvalues and eigenvectors correspond
+to community structure, and I hope that you will see
+this connection unfold more deeply in the rest of this
+course and your degree.

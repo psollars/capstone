@@ -1,0 +1,256 @@
+I want to start off with
+some Cloud fundamentals. What are the fundamentals
+of the Cloud? Where does this come from and what are we comparing it to? You'll often hear the phrase, we're going to go to the Cloud. Where are we coming from
+when we go to the Cloud? Where's that happening at? Let's talk a little about some
+of the Cloud Fundamentals. Cloud computing is
+typically compared to, oftentimes without saying it, to on-premise data centers. We compare these things
+without really stating them. Let's take this use case, you are about to
+receive a lot of data. You are doing some
+medical research, and you're getting
+some image data from some x-ray scanners, and each patient that gets scanned generates one
+terabyte of data. You have 1,000 patients that you're getting data
+on. That's a lot of data. You need to be able
+to store this data, you need to be able
+to access this data, and you only need this
+data for six months. On the on-premise manner, you would go to
+procurement and say, hey, we need to store a lot of data, like a fairly large
+amount of data. Help, procurement
+would put out an RFP. You would eventually
+buy some servers and some compute resources
+and some hard drives, probably in a ray to
+ray of some sorts. You would go to your data center On-premise and you would sit there and you would
+physically lift that equipment and
+put it into a rack. You would assign IP
+addresses to it. You would configure the
+access controls to it, and then you'd be able to go. That process is months. Depending on your organization, it may be longer than months. In the Cloud world you go, you request some resources, and you start
+uploading your data. It's a five-minute process. What sets the Cloud
+apart is you pay for the usage that you need when you are using it and if
+you're not using it, you don't pay for it. Go back to your
+on-premise data center. You bought this
+hardware, you have it, it's in your data center, your six months are over,
+you no longer need it, that is still in
+your data-center, it's still collecting power
+or still using power, and it's sitting there doing nothing with the Cloud
+when you don't need it, you shut it off and you
+don't pay for it anymore. The Cloud provides these
+compute resources, both servers and CPU
+to look at the data as well as applications or
+value-add on top of that. I call that later on, special sauce, I'll get
+to that in a minute. In some ways, what cloud
+computing does is it moves this paradigm of
+hardware to being software. When you're thinking about
+cloud computing resources, you don't think about disks spinning in a data
+center someplace, you don't think about the physical weight of
+all those disks. You don't think about
+having to manually load these things into racks. You issue a command either through a
+graphical interface on a web page or through
+an API call in Python, and you now have access to those resources
+you need instantly. You don't have to actually think about it in
+terms of hardware. Cloud vendors create ecosystems around their product offerings. Amazon and Google
+both have a way to store what they
+refer to as objects. We would call them files. All of the systems around
+both Amazon, Google, and Azure for that matter, all use that storage mechanism. They all have a shared
+vocabulary to get storage. Now, the way Amazon does it is different from the
+way Google does it, and it's different from
+the way Azure does it, but ultimately they
+all do the same thing and all of their
+tooling reuses it. The beauty of this is your
+usage of Cloud is real-time, and fundamentally
+that is what is separating the Cloud from any other type of
+offering you have. You use what you need
+when you need it. We go back to that
+web example earlier on and we think
+about our website, it has ups and downs in traffic. We sometimes have
+a lot of traffic, 1,000 requests a minute. Sometimes we have 10
+requests a minute. The Cloud lets us scale and pay for the resources to
+respond to that traffic in real-time with
+no upfront costs or minimal upfront costs
+depending on your funding model. This is an interesting
+Agile problem. Mads doesn't have
+an Agile course, but I've got a residential
+Agile course and one of the things that
+we talk about is how quickly can we get a
+proof of concept alive? How quickly can we provide
+a proof of concept? What this does is it
+changes this environment. We think to ourselves we
+want to spin up a website, how quickly can we
+spin up a website? Well, using the
+Cloud in minutes. The Cloud brings these
+value add services to us, it's not just Compute. If you think about what most applications at some point need, they need a way to process data, we call that Compute, but they also probably
+have a database. Early on we give
+people in the Cloud a server and they would go
+install a database, well, Cloud vendors got
+wise to this and they started providing managed
+databases in the Cloud. This goes all the way up
+to serverless systems, which I'll talk about in a
+second and ground stations. Yes, you can actually control a satellite in space
+using cloud computing. Amazon offers a service
+called AWS ground station. How is this getting priced? How do we think
+about the way the pricing for the Cloud works? You are billed in real-time
+by the second for the services that you
+are using in real-time. Often that is a
+compute resource. You'll hear me say compute
+and that really is translated into like CPU and RAM. Your laptop computer is
+likely have one CPU unit. Your desktop probably
+also has a one CPU unit. You can get servers in the Cloud that have
+hundreds of CPUs unit. RAM is the number of
+things you can do simultaneously on your computer. When you load a
+file from pandas, you are likely loading
+that into RAM. If you need to load a really
+big file, you need more RAM. We also store things. This is the videos for this class are
+stored in the Cloud. We think about disk space
+which disk space is the concept of a server that's running and has
+a disk attached to it. You've plugged in your USB stick to the back of a computer. Object storage is where we
+put objects and objects have, could be images, video,
+files, text, whatever. Transfer, you are billed most of the time to take
+data out of the Cloud. When you are making a
+website and users go to your website and they
+request that front page, you are billed for
+that transfer fee. It's not a lot, but
+it does add up. Then lots of Cloud providers
+have common added value on top of these things and
+they've created special sauce. What does this
+actually look like? Well, this is an image from Google and you
+can see that here I am creating a new instance
+and they've called this instance e2-medium and
+below that is an e2-standard. My e2-medium comes with two
+virtual CPUs and four gigs of memory and my e2-standard comes with two virtual CPUs
+and eight gigs of memory. On the right, you can see
+that my cost there is $25 per month or $0.03 an hour. Amazon they don't
+actually show the price, but you can see there's
+different instance types. The one that's selected
+here is a t2-micro, and that's got one CPU
+and a one gig of memory. I choose the amount of
+compute power I need, and I create my instance
+and then I've got that provision to
+me and I can do what I want to do
+with it in real-time. Now, Cloud vendors realize
+that a lot of people who are new to the
+Cloud don't actually know how their
+application works. This happens to
+everybody at some point you've built something. You can run it for yourself, but how is it going
+to perform when lots of people are using it? How many of these
+instances do you need? If I were going to
+go with a T2 large, how many of them do I
+need to run my website? A lot of these vendors
+are coming up with this concept of serverless. Serverless implies
+the lack of a server. We learned earlier
+what a server is. If you're hosting a website, you have a server someplace
+because someplace there is the service that is
+responding to that traffic. What serverless is really saying when we talk
+about it in terms of the Cloud is you the user, the customer of
+this Cloud service doesn't have to
+think about servers. They will build the servers
+you need behind the scenes, and they will scale them
+for you and they will deprovision them for you
+based on use in real-time. Now, this is an amazing
+model when it works well and oftentimes it
+does work really well. The one thing that can be bad here is if you've got
+a bug in your code, you can spend a lot more money than you think you're going to. I mentioned earlier that
+the Cloud providers have special sauce. I randomly went through and found some of that special sauce that different providers add. Alexa, we're often most want Alexa is a little devices
+mine over there is lighting up that we can talk
+to it and answers questions. That is an AWS service. You can write your
+own Alexa plug-ins using AWS and the
+ecosystem around it. Maybe you want Alexa to
+read a story to you. You could actually
+store that file in AWS's storage system
+and you can have a keyword trigger
+Alexa to store that using a serverless function. You don't actually have
+to provision servers. AutoML, both Google
+and AWS have this. Azure has it, it's not quite as stable. AutoML is the concept of, here's some data, here's
+what I want to predict. Go basically figure
+out the best way, go build a model
+programmatically. Doesn't always work well, but most of the time it does
+and it saves a lot of time. You're not going to get a
+perfect model out of it. But you can get a pretty
+good model fairly quickly. It is not cheap to do
+this because effectively, you're spinning up a bunch
+of Cloud resources for trial and error as it tries to predict that value
+programmatically. Augmented AI, I pretty
+obvious what that is. It's the concept of
+having Systems help you. We'll get into this a little
+bit later in the class. I think we covered that
+in the fourth week, database servers and we're going to combine
+that with NoSQL. Every Cloud vendor
+out there provides a mechanism for a database. MySQL, Postgres, Oracle, MS SQL, and it manages these. Now the beauty of this is you yourself don't have
+to be an expert in how to set up and manage a database for people who have been
+database administrators, DBAs, that's a lot of work to get that initial
+database set up, figure out how the backups
+are going to work, figure out the access
+control systems. All these Cloud vendors
+have a way of doing that and integrate backups, automatic upgrades, making sure your database
+doesn't go down. I'll talk about
+that in a second. NoSQL is an alternative to
+traditional SQL database. All the Cloud vendors
+have a way of doing that. Kubernetes is an
+interesting way of managing servers and services. I'm not going to get too
+much into Kubernetes, it's an amazing grouping
+of technologies. I suggest you look into it, but it's not really
+part of this class. AWS has a fraud detection
+thing for retail. You basically give it parameters
+and it comes back with, does it think that it's fraud. Email. Every single
+Cloud provider has a mechanism of sending
+and receiving email. They all do somewhat
+the same thing. They all approach the problem
+somewhat differently. IoT. So if anybody has been
+in a college town recently, you'll be aware of the
+proliferation of these scooters. These scooters and
+sometimes there are bikes, you walk up to them, you
+use the app on your phone, you scan the label, you drive them around town, and then when you park
+them, you get a bill. AWS has an entire
+management platform for IoT based devices. IoT is short for the
+Internet of things, but you can do all sorts of cool things and AWS has
+management for it and it's huge value-add because
+you don't have to worry about firmware or pushing
+your updates out. Can you imagine doing
+software upgrades on thousands of scooters that
+are scattered around town? PowerBI is a business
+intelligence program built on top of Azure. It's pretty slick. Amazon has something
+called QuickSight, it wants to be a
+Tableau competitor. It's not very good. It works, it's quick. It integrates with all the
+AWS services pretty well. If you've got a
+database running on Amazon and you want to do some analytics on it using QuickSight works really well. PowerBI does that
+with Azure too. AWS Connect is an amazing
+piece of technology. You can see where
+this comes from. Imagine for a second that you are running a
+retail operation, a large retail operation. As you're standing up
+your retail operation, you've got to worry
+about all the things that a retail operation has to worry about taking
+orders, shipping, etc. But the one thing
+that's going to make your retail operation stand
+out is it's customer service. You don't have people
+just calling you. You also want to have live chat. AWS Connect is what Amazon
+uses internally for its helpdesk and its
+supporting tools. But they made it
+available to anyone that wants a call center or
+chat-based helpdesk. It is an amazing set of tools that allow you to call and say, person on the prompt is like, "What, do you need
+help with today?" You answer the question
+using your words. The same technology
+that's behind Alexa translates that into
+what's called an intent. Then it can route you to
+a person or try to help you online where it's fine as you can write that coding and you can use the
+same thing and text. Whereas if you're chatting,
+what do you need help today? You can type something
+in and it will try to figure out the
+intent from there on. Serverless functions. I wish we had more time in
+this class to go into this. A serverless function
+is exactly that. You write a piece of code
+that is a function do it in Python and Node and
+a variety of languages. Effectively it takes input like any function does and
+it returns an output. All three providers have
+a way of doing this. You can scale it from one call to 100 million calls
+pretty quickly. It's an amazing
+set of technology for quickly deploying
+applications. CDNs, this is short for
+content delivery network. A content delivery network is basically the way to spread
+your content across multiple, what are called edge locations
+so that people who are coming to your service
+get information, typically websites or videos
+from their closest region. Now I've spent probably
+five minutes on this slide. I think Amazon has
+over 100 services. Google has over 100 services, Azure has over 100 services. These are the ones
+that I chose at random because I thought
+they were interesting. But I could keep going all day on this topic and
+we'll as we go through. Thank you. Our next video
+is going to take a look at how this is physically laid
+out within an environment.

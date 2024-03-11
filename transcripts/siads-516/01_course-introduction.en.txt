@@ -1,0 +1,37 @@
+Hi.
+M name is Chris Teplovs and I'm a lecturer in
+the School of Information. Welcome to Big Data,
+Scalable Data Processing. In this course,
+we're going to focus on well, big data. But what does that mean exactly? Sure, it can refer to massive amounts of
+data, and we'll be looking at some of the defining characteristics of big
+data in the first week of class. But big data also refers to a mindset,
+a way of thinking, about tackling problems that you
+probably haven't experienced before. Remember how pandas changed your life but
+also required a shift in approach? Say from pythonic to pandorable,
+as I like to say. Well, we're going to shift
+gears once again and get you thinking about mapping and
+reducing. Wait, what? Mapping and reducing? What's that? Don't worry, we're going to
+introduce that early in the course. It's going to be our foundation for
+most of the work that we do. Our main concern is scaling up our
+analyses in a cost and time effective way. Got a few terabytes of data? No problem. A few petabytes? Maybe no problem. Say, how big is a petabyte anyways? Well, word on the street is that
+the human brain can store around two-and-a-half petabytes of memory. And remember the movie Avatar? They used about 1 petabyte of
+data to render those graphics. Exabytes? Yeah, now we're sweating a bit. How can we possibly handle that much data? Well, we'll talk a little bit about
+the theory behind all this work, but the majority of our focus will be on the
+use of Spark data analysis framework for the analysis of big data. We will cover the theory and
+application of MapReduce strategies, the use of resilient distributed
+datasets in cluster computing, and higher level abstractions,
+such as data frames and Spark SQL, which facilitate efficient
+analyses of large amounts of data. Okay. So that's the overview. How are we going to accomplish this? Each week, there will be videos
+that I'd like you to watch. In those videos I'll be alternating
+between showing slides and working in notebooks. You'll also encounter the occasional
+in-video quiz that you can use to check your understanding of the material. Each week there will also be a homework
+assignment that will test your ability to apply the tools, techniques,
+and principles to new situations. I want to mention, that because we're
+focusing on large amounts of data, there will be a fair bit of time in which
+you're just sitting there waiting for the results of an analysis. Where possible we provided
+modestly-sized data to minimize the amount of time
+spent staring at your screens. In some cases though, you will need to
+prepare yourselves to be a bit frustrated because you'll wait a few minutes only
+to find out you've made an error and you need to try again. So make sure you leave plenty of time for
+the homework assignments. I hope you enjoy the course, and I look
+forward to seeing you in office hours.

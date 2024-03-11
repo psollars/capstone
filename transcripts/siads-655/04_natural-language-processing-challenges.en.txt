@@ -1,0 +1,150 @@
+All right, welcome back to NLP. Hopefully in that first segment, I gave you a lot of
+excitement and opportunity, and you might say,
+"Well, the future seems bright to NLP." In fact, you may
+realize that there are many different natural language
+processing applications that you interact with
+on a regular basis, either on your phone
+or in your home. We can do many different
+cool things these days. We can say, do
+question answering. If you use your favorite
+search engine and you search for who invented
+the computer monitor. Well, natural language
+processing is responsible for giving
+you the right answer. But of course, not
+everything works. To give you two examples, well, who invented running? One of the famous examples here is bad information extraction. Running was invented
+by Thomas Running, who tried to walk twice
+at the same time. This is obviously
+not a good example. You might say, well, this is not a failure of
+natural language processing, but a failure of data. In fact, that's often
+a very common case. Even something as simple as text classification
+can go very wrong. To give you a famous example, Amazon developed a machine
+learning classifier to try to pre-screen resumes as a part of its
+recruitment process. They trained on tens of
+thousands of resumes to try to figure out who they should interview as applicants. After several years, it
+was actually discovered the classifier itself was
+penalizing female applicants, and there's a longer story
+on this that you can read. The moral of the story is
+that text classification, as a whole, can
+actually go very wrong, have many different
+types of biases in it.. What makes NLP
+difficult as a task? Well, we can think about
+what makes language hard. Well, for one thing, language
+is inherently social. All of the communication
+that we try to generate either writing or spoken has a lot of common
+sense baked into it. The things that we
+don't have to say to the other person who
+probably knows them. Another thing is that there's
+ambiguity at all levels, both in terms of what the words mean and what they're
+intended to do. As a result, solving natural language
+processing task is really considered an AI complete task. If we can solve Natural
+Language Processing, say, have a chat bot that could fully converse with us like a human, we probably need to solve things like that general AI problem. Let's focus a little bit on that second point
+about ambiguity. I want to emphasize
+that language really is ambiguous on many levels. One of my favorite
+examples of this, is headline that came from
+the Guardian newspaper, British Left Waffles
+on Falklands. You might say to yourself,
+"What were they doing?" One interpretation is,
+well, what's the verb here? It could be that left is
+the verb, and in fact, maybe the British
+are giving folks on the Falkland
+islands some waffles. Another option though, is that the British Left is a
+political leaning group, and in fact, the verb is waffles, and they're sort of trying to decide whether to invade or not. Trying to make sense of
+this headline requires you to resolve this ambiguity as, what's the most likely sentence? You might think this is a
+pretty far-fetched example. But just to give you a really
+much more simple example from the textbook,
+I made her duck. Seems like a pretty
+straightforward statement. But there are many
+different meanings that we can think about. One, I cooked waterfowl for her, I cooked waterfowl
+belonging to her, and in fact, the her
+is modifying the duck. I created a plaster duck, or perhaps a wooden
+duck, that she owns. I caused her to
+quickly lower her head in a way to avoid an object. There are many other
+possible meanings of this very simple sentence
+depending on context. Trying to make sense of
+how to interpret something correctly could be
+very challenging for humans even for
+simple sentences. Now picture machine that
+has no common sense and don't necessarily grounding
+of what these words mean. This is an example of why natural language
+processing is hard. NLP, the P in NLP, you can think about
+as a processing for language representation. So the NLP task generally
+tries to think about, how do I represent
+language for some end use? How do I classify something? How do I translate something? How do I do speech recognition? Here, just to give a fun example, do I want to represent
+lettuce spray or let us pray in a way that lets me distinguish
+both from them, if I wanted to say text analysis? You could think all of these
+different representations have different trade offs, and we'd like to figure
+out, how do we do this in a way that makes NLP easier? From an information
+theoretic view, we can think about a
+way to think about NLP, as a person thinking a thought here, this thought will be x. They're going to try to
+encode x in language. In this case, they've said the British Left Waffles
+on the Falklands. As a part of this,
+another person has to decode this encoded thought. There's some loss
+between when you're thinking something and
+when you encode it, and what the other person
+has to decode what they think you encoded
+that thought as. This creates this chain reaction where you might have
+mistakes along the way. If you have someone say
+who's trying to think X, and they say, "Well,
+I like Waffles", but they happen to
+say in Italian, this creates a famous idea from Warren Weaver,
+whose thoughts, who'd during the Cold War, they were trying to prioritize
+translating Russian. He said, "When I look at
+an article in Russian, this is really
+written in English, but it's been coded in
+some strange symbols. I'll now proceed to decode." I think that this
+translation metaphor is a good way to think about, how do we try to make sense of language and treat computers as a way to decode that into
+the thoughts that we have? Of course, there's a lot of world knowledge that's
+baked into this. Let's say that you're at
+the park with your dog, and someone says to
+you, "What a cute dog!" They're in fact talking about your dog who's running around. Even though they don't
+mention the fact that you own that dog, there's this baked in
+implicit assumption. Of course, someone
+might say to you, "Pets aren't allowed here." In fact, there are
+suggesting to you, as a pragmatic implication, that you should take your
+pet and go somewhere else, even though they're not
+saying it's your pet, or that this specific pet isn't. This is an example of
+world knowledge that may be tough for
+computers to understand. Finally, as one last example, if someone says, "That
+mushroom is poisonous." Even though this has
+nothing to do with your dog in the statement itself, it's probably an implication
+that your dog is somewhere near a mushroom, and that you probably should
+not let the dog eat it. As another example of how
+world knowledge might matter, let's think about
+linguistic variation. Humans are endlessly
+creative in their language, and in one of my favorite maps, we could see about how we call that fizzy drink that comes
+in the aluminum cans, here at Michigan, we
+often call those pop. But if you're on the
+West or East Coast, you might call this soda. If you are from the South, you might just call
+everything a Coke. In fact that there's these
+different variations that refer to the same object, makes it a huge challenge for machine learning or a natural language
+processing systems, as they have to deal with
+this type of ambiguity in terms of we have different
+words for the same thing. Another big challenge though, is that text comes in
+all shapes and sizes. We have, say,
+everything from books, which are long
+narrative discourses, and these very short
+text messages, may have a lot of implications
+that are baked in, even to a single letter. We have long structured
+Wikipedia pages with lots of meta information that we might need
+to make use of, and we even have things
+like social media. Here, the problem I have with reporting is it's too literal. Everyone knows that people
+talk different everywhere, and you know what she
+means, just like we do. The are very few words spelled correctly in this tweet here. However, we as people have no problems sort of understanding what this tweet is saying. A machine learning system from natural language processing
+may have a very tough time trying to figure this out as the words don't look
+like anything it knows. How did we deal
+with this in text? As a data scientist
+working with text, I want to emphasize that
+you should also always pay attention to what kind
+of text you work on, and think about how
+do I make use of this particular type of text
+for my NLP applications? We'll talk a lot about
+that in this course. You should understand
+who your authors are and how they write, as these may provide important
+features that you can use. I also want to emphasize in
+general for data science, but also especially for
+natural language processing, to always check your data. As a result of checking
+your text data, you often learn quite
+a bit about how to do a better natural language
+processing task, and to check your outputs
+to make sure that you don't have
+unintentional bias as well.

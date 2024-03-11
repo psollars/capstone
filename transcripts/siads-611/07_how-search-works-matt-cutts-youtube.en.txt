@@ -1,0 +1,48 @@
+Hi, my name is Matt Cutts. I'm an engineer in the
+quality group at Google, and I'd like to talk
+today about what happens when you do a web search. The first thing to understand is that when you do
+a Google search, you aren't actually
+searching the web, you're searching Google's
+index of the web, or at least as much
+of it as we can find. We do this with software
+programs called spiders. Spiders start by fetching
+a few web pages, then they follow the
+links on those pages, and fetch the pages they point to and follow all the
+links on those pages, and fetch the pages they link to, and so on until we've indexed a pretty big
+chunk of the web, many billions of pages stored across thousands of machines. Now, suppose I want to know
+how fast a cheetah can run. I type in my search, say cheetah running speed
+and hit return. Our software searches
+our index to find every page that includes
+those search terms. In this case, there are hundreds of thousands
+of possible results. How does Google decide which few documents
+I really want? By asking questions, more
+than 200 of them, like how many times does this
+page contain your key words? Do the words appear in the title, in the URL, directly adjacent? Does the page includes
+synonyms for those words? Is this page from
+a quality website or is it low-quality,
+even spammy? What is this page's page rank? That's a formula invented
+by our founders, Larry Page and Sergey
+Brin, that rates a web page's importance
+by looking at how many outside
+links point to it, and how important
+those links are. Finally, we combine all those
+factors together to produce each page's overall score and send you back
+your search results, about half a second after
+you submit your search. At Google, we take our
+commitment to delivering useful and impartial search
+results very seriously. We don't ever accept payment
+to add a site to our index, update it more often, or improve its ranking. Let's take a look at
+my search results. Each entry includes
+a title, a URL, and a snippet of text to help me decide whether this page
+is what I'm looking for. I also see links
+to similar pages, Google's most recent stored
+version of that page, and related searches that
+I might want to try next. Sometimes along the right and
+at the top, I'll see ads. We take our advertising business
+very seriously as well. Both our commitment to deliver the best possible
+audience for advertisers, and to strive to only show ads that you really want to see. We're very careful to distinguish your ads from regular
+search results. And we won't show you any ads
+at all if we can't find any that we think will help you find the information
+you're looking for. Which in this case, the
+cheetah's top running speed is more than 60 miles an hour. Thanks for watching. I hope this made Google a little bit
+more understandable.

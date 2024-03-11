@@ -1,0 +1,49 @@
+So we have introduced
+the general definition of sequence representation. There are a few related concepts to sequence representation. One of them is subsequence. So a subsequence is part of a longer sequence after dropping certain items
+from the longer sequence, as long as you keep the order. So in this case, if we still denote x_1, x_2, to x_k as the original
+sequence, and 1, 2, to k are the orders
+of these items, we can define a subsequence of this longer sequence as
+another set of items, and these items all appeared
+in the original sequence, and that means the index of this items have appeared
+in the original sequence x, but they may or may not
+be exactly k items, they may be fewer
+number of items. As long as these indices
+are preserving the order. So X prime is the
+subsequence of X. In other words,
+all the k items in a subsequence have to appear
+in the original sentence, and their orders have
+to be identical, but the actual position indices may or may not be
+exactly the same. So let me give you some
+examples of subsequences. Still remember this example of sequences to be or not to be. So in this sequence, the items are words, and words have orders. We can name the subsequences
+of this longer sequence, and we can characterize them
+into different lengths. So length three
+subsequences of to be, or not to be would come in
+the following sequences; to be or, be or not, or not to, and not to be. We can see that in each
+of these subsequences, all the words have appeared again in the
+original sequence. In this case, they're all considered active in
+the original sequence. So if this is a case, we call this subsequences
+conservative subsequences. Then we can see another
+set of subsequences. They also have the
+same lengths three, but the difference between
+the first set is that, among these items when they appear in the
+original sentence, there might be gaps. In other words, they
+may or may not be conservative in the
+original sentence. For instance, to be not, you can see that
+all the three items appeared in the
+original sequence, and the orders are preserved. But what's omitted
+is another word, or in between be and not. In this case, to be not
+is still considered as the subsequence of
+the original sentence but it's no longer a
+consecutive sequence, it's a long consecutive
+subsequence. This applies to the
+other subsequences; be not be, to to be, and to or not. So all items have appeared but there might be gaps
+in between those items. Now if you look at
+these two examples, these two are also
+length three sequences, not be to, or, or be be. Are these still subsequences
+of the original sentence? In fact, in this
+case they are not. Although, all the items have also appeared in the
+original sentence, to be, or not to be, you
+can see that you can't find an align
+order among them. So in this case, these shorter sequences have violated the original order
+in the original sentence, and that's why they're not considered as subsequences
+of the original one.

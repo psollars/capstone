@@ -1,0 +1,247 @@
+Sometimes we want to select
+database on groups and understand aggregated
+data at the group level. We've seen that even though Pandas allows
+us to iterate every row in a data frame, it's generally very slow to do this. Fortunately pandas has a group by
+function to speed up such tasks. The idea behind group by is that it
+takes some data frame, splits it into chunks based on some key values and then
+applies computation on those chunks, and then combines the result back
+together into another data frame. In Pandas this is referred to as
+the split-apply-combine pattern. So let's take a look at an example. First, we'll bring in our pandas and
+numpy libraries, we'll import pandas and import numpy and
+let's look at some US Census Data. So we'll read this data from datasets
+/senses.csv, and we're going to exclude state level summarizations,
+which I have a some level value of 40. So we just want to keep those
+that have a some level value 50, it turns out there's only two some
+levels in this data file 40 and 50, and let's look at the head of that. Okay, so that's the data that
+we're going to work with. In the first example for
+group I want to use this census date. Let's get a list of all the unique
+states then we can iterate over all of those states. For each state we can reduce the data
+frame and calculate the average. So let's run such a task for
+three times and time it, and for this we're going to use this
+cell magic function %%timeit. So I'll say %%timeit -n3. So I'm going to run this
+cell three times and Jupyter will present me
+some of the average values. So for state in df sub STNAME.unique. So this projects the data frame
+state name and then a list of all the unique values in there and
+we're just going to iterate over that. We're just going to calculate the average
+using numpy for this particular state. So the average equals mp.average and then we'll do df.where,
+df sub STNAME is equal to state. So we want to exclude
+those that aren't and we'll use a Boolean mask here .drop in a,
+and we just want to project the census 2010
+pop and pass that all into average. And then we're going to
+print it to the screen. So we're going to print counties and
+state, state have an average population of and
+then we'll print the average. We see that gets up and running. So if you scroll down to
+the bottom of that output, you can see it takes a fair
+bit of time to finish. Now let's try another approach using group by,
+so again, we're going to say timeit -n 3. For this method, we're going to start
+by telling Pandas we're interested in grouping the state by name,
+and so this is our split. So for group, frame in df.groupby STNAME. So we're saying that we want
+to split on the state name. You'll notice that there are two
+values that we set here. Group by actually returns a tuple
+where the first value is the value of the key that we're trying to group by,
+in this case a specific state name. And the second one is the projected data
+frame that was found for this group. So we add  a tuple back from group by. Now, we include our logic
+in the apply step and that's just to calculate
+an average of the census 2010 pop. So here it's easy, we just say
+the average is equal to mp.average and we just project from the frame the one
+column we're interested in census 2010 pop. And we don't have to do any further
+reduction here because we know it's all for a given state, and
+then we're going to print the results. And so this looks the same print
+Counties in state group have an average population of whatever
+the string of the average is. We don't have to worry about the combined
+step in this case because all of our data transformation is actually
+printing out our results. Now, let's run this. So that's a huge difference in speed and
+improvement of roughly by two factors. Now 99% of the time you'll use group
+by on one or more columns, but you cannot also provide a function to group
+by and use that to segment your data. So this is a bit of a fabricated example,
+but let's say that you have a big batch
+job with lots of processing and you want to work only on a third or
+so of the states at a given time. We could create some function which
+returns a number between 0 and 2 based on the first
+character of the state name, then we can tell group by to use this
+function to split up our data frame. It's important to note that in
+order to do this you need to set the index of the data frame to be the
+column that you want to group by first. So we'll create some new function
+called set batch number, and if the first number the parameter is
+the capital M it will return a 0, if it's a capital Q it will return a 1 and
+otherwise, it will return a 2, and then we'll pass this
+function to the data frame. So df = df.set_index STNAME and
+then here's our function. So we'll define set batch, if items Sub 0 is less than
+M then we'll return a 0. If it's less than Q then it's in
+our second batch will return 1. Otherwise, we'll just lump it into our
+last batch and we're returning to. So the data frame is supposed to be
+grouped by according to the batch number. We're going to loop
+through each batch group. So for a group and frame in tf.groupby and we just pass in our function
+to the set batch number, and then we'll print out there are,
+let's say the length of the data frame the number of records in group and
+the group name for processing. Notice at this time, I didn't pass
+in a column name to group by, instead I set the index of
+the data frame to be STNAME. And if no column identifiers pass, group
+by I will automatically use that index. Let's take one more look at an example
+of how we might group data. In this example I want to use
+a dataset of housing from Airbnb. In this dataset there's
+two columns of interest, one is the cancellation policy and
+the other is the review scores value. So we'll bring this in
+df=pd.read_csv from datasets and we'll bring in listings.csv, and
+let's print out the head of that. So how would I group by
+both of these columns? Our first approach might be to
+promote them to a multi index and then just call group by. So here I'll just say df=df.set_index and I just say I want the cancellation policy
+there and the review scores value. When we have a multi index we need to pass
+in the levels that were interested in grouping by. By default group by does not know and does not assume that you
+want to group by all levels. So here we just say for group and
+for frame in df.groupby and then we say we want level 0 and
+1 and let's print that out. And so there we can see that
+we get lots of different groups by both levels
+that we're interested in. So this seems to work out okay, but what
+if we want to group by the cancellation policy and review scores but separate
+all of the 10s from those under 10. In this case, we could use
+a function to manage the groupings. So we'll define some function called
+groupingfun and pass in an item, we'll check that the review scores
+value portion of the index. Item is in the format of cancellation
+policy and review scores value, so it's a tuple. So if item sub 1 = 10,
+then we're going to return item sub 0 and 10.0, so
+we'll leave that one basically alone. Otherwise, we're going to return item
+sub 0 and just the string not 10 by 0, because we just care about
+breaking them into two groups. And then for group and frame in
+df.groupby we pass in our function grouping_fun, and
+let's print out the groups. Okay, so there we see that we've
+grouped by either things that have some cancellation policy
+flexible moderate strict and super strict,
+and/or some score either 10 or not 10. Let's look at the head of our data frame. All right, so
+that's what our data frame looks like. So to this point, we've applied very simple processing to
+our data after splitting, really just out putting some print statements to
+demonstrate how the splitting works. The Pandas developers have three broad
+categories of data processing to happen during the apply step. Aggregation of grouped data,
+transformation of group data, and filtration of group data. So the most straightforward apply
+step is the aggregation of data and this uses a method called
+agg()  on the group by object. Thus far we've only iterated
+through the group by object, unpacking it into a label
+the group name and a data frame. But with agg() we can pass in
+a dictionary of the columns. We're interested in aggregating along with
+the function that we're looking to apply. So let's reset the index for
+our Airbnb data. So df = df.reset_index, and
+remember you have to assign this to the data frame or
+you have to use in place equals true? That catches me up quite a bit still so
+keep that in mind. So now let's group by
+the cancellation policy and find the average review
+scores value by group. So we want df.groupby cancellation policy. So that's as it was before but now on
+that group by object that gets returned, we want to call .agg(). And to .agg() we give it a dictionary and the dictionary is the column
+were interested in targeting and the operation or
+the function that we're interested. So here I'll pass in review scores value
+and np.average and that's just on numpy. So that didn't seem to work at all,
+just a bunch of not a numbers. The issue is actually in the function
+that we sent to aggregate, and this is me just showing a mistake that
+I did as I was preparing this lecture. Np.average does not ignore not a numbers. However, there is a function
+that we can use for this. So actually I want to write the statement
+all over again just the same as it was. So do you have to group by
+cancellation policy .agg(). But now in there I want to pass the
+function np.nan_mean, and this just called gets the mean values the average but
+excludes not a number values from that. Okay, so there we can see that we actually
+have our review scores values for each category in nice aggregate form. And you can see how simple and
+readable that was to write We could just extend this dictionary
+aggregate by multiple functions if we want to or multiple columns. So df.groupby cancellation policy call agg,
+and now in our dictionary, we just pass in all of
+the different functions and columns that were looking
+to create from that value. So we'll pass in review scores value,
+I'm going to send in a tuple here, numpy is not a number mean and numpy
+is not a number of standard deviation, and then reviews per month and here I'll
+pass in the numpy not a number mean. So take a moment to make sure you
+understand the previous cell, since it's somewhat complex. First, we're doing a group by on the data
+frame object by the column cancellation policy. This creates a new group by object. Then we're invoking the ag
+function on that object. The ag function is going to apply one or
+more functions that we specify to the group data frames and
+return a single row for DataFrame/group. When we call this function we sent it
+two dictionary entries each with the key indicating which column we
+wanted functions applied to. For the first column we actually
+supplied a tuple of two functions. Note that these are not functioning
+indications like mp.nan_mean with parentheses after it or function names
+like nan_mean in quotes in a string. They're actually references to functions
+which will return single values. The group by object will
+recognize the tuple and call each function in
+order on the same column. The results will then be
+in a hierarchical index but since our columns they don't show up as
+an index per say, then we indicated that another column in a single function
+we wanted to be run should be run. So this is really important that you
+understand what's happened here and how that statement was created. If you understand that
+you're flying that's great. If not, you really should go back and
+review that statement and this taxed or this part of the video
+to understand better how this is being called underneath. So transformation is different
+from aggregation where agg returns a single value per column. So one row per group, transform returns an
+object that is the same size as the group. Essentially it broadcasts the function
+you supply over the group dataframe returning a new dataframe. This makes combining
+data later quite easy. So for instance suppose, we wanted to
+include the average rating values in a given group by cancellation policy. But preserve the data frame shape so that
+we could generate a difference between an individual observation and the sum. So first, let's just define some subset
+of the columns that we're interested in. So here I'm just going to
+make a variable calls and say we're interested in the cancellation
+policy and the review scores value. This just makes it a little
+cleaner as I'm typing it in. Now, let's transform, I'm going to
+store this in its own data frame. So transform df = df sub
+cols.groupby cancellation policy.transform and
+I want np.nan_mean and let's take a look at
+the head of this data frame. So we can see that the index here is
+actually the same as the original data frame, so let's just join this in. Before we do that let's rename
+the column in the transform version. So I'm going to say transform df.rename
+and I'm going to take the review scores value because it's not actually
+the review scores value anymore and rename it to the mean review scores. I want this axis equals columns,
+and in place equals true, and then I'm just going to
+merge the data frames. And so df = df.merge, I pass in transform
+df as the other one, and I want to merge on the indexes because the index is
+between our two data frames are the same. And let's take a look at
+the new df that we've created. So great, we consider our new columns and
+place the mean review scores. So now we could create for instance
+the difference between a given row and it's group the cancellation policy means. So we do that just by df sub mean_diff,
+so that's the new column we're creating and assign this to np.absolute. So I want to take the absolute value
+of the review scores value minus the mean review scores. And so here you can see that there's
+a number of things going on. I'm taking our review scores value. I'm vectorized passing the subtract operator across that with
+the df_mean review scores. So we're we're making
+the difference there, and then I'm calling the absolute value
+also vectorized across that and sending it back to the mean df,
+and let's take a look ahead. So the group by object has built-in
+support for filtering groups as well. It's often that you'll want to group
+by some features then make some transformations to the groups, then drop certain groups as
+part of your cleaning routine. The filter function takes in a function, which it applies to each group data frame
+and returns either a true or false, depending on whether that group
+should be included in the results. For instance if we wanted to only those
+groups which have a mean rating above 9 included in our results. We'd say df.groupby,
+the cancellation policy, then we'd say .filter, and
+here we would pass in a function. So Lambda X and we just want to
+take a look at the mean of X. Again, remember we have to use nan_mean
+because we have nans in there and we just want the means where the review
+score values are greater than 9.2. Notice that the results are still indexed
+but that any of the results which were in the group with a mean
+review score of less than or equal to 9.2 were not copied over
+because of how we did our projection. By far the most common operation I invoke
+on group by objects is the apply function. This allows you to apply an arbitrary
+function to each group and stitch the results back together for each apply into a single data frame
+where the index is preserved. So let's look at an example
+using our Airbnb data. I'm going to get a clean
+copy of that data frame. So we'll just load that from the csv,
+listings.csv, and let's just include some of the columns
+that were interested in previously. So I'm going to drop those columns
+except for cancellation policy and review scores value and
+let's look at that. In previous work we wanted to find
+the average review score of a listing and it's deviation from the group mean,
+and this was a two step process. First, we use transform on
+the group by object and then we had to broadcast
+to create a new column. With apply we could wrap
+this logic in one place. So I'm going to write a function def calc
+mean_review_scores and pass in a group. So this is working on a data frame. So group is a data frame just of
+whatever we've grouped in this case the cancellation policy. So we can treat this as the complete
+data frame that we're operating in, so it's a bit of a mind shift. Here, I want to create an average value,
+so that's just equal to numpy nan_mean
+of the group review_scores_value. And then now we want to broadcast
+our formula and create a new group. So group sub review scores mean
+equals np.abs, our absolute value, the minus the group sub review scores
+value, and then we'll return the group. So now we just want to apply
+this to all of the groups. So df.groupby cancellation_policy.apply
+send in our function that we want to work on all of the groups
+the calc_mean_review_scores, and let's look at the head of this. Using apply can be slower than using
+some of the specialized functions, especially agg(). But if your data frames are not huge,
+it's a solid general-purpose approach. Groupby is a powerful and commonly used
+tool for data cleaning and data analysis. Once you group the data by some category, you have a data frame of
+just those values, and you can conduct aggregate analysis on
+the segments that you're interested in. The group by function follows
+a split apply combined approach. First, the data split into some groups, then you apply some transformation
+filtering or aggregation. And then the results are automatically
+combined for you by Pandas.

@@ -1,0 +1,65 @@
+Hi everyone. We're going to
+continue our conversation about how long the norm-based
+policy intervention last. Remember, in the previous study, the policymakers together
+with the experimenters send out norm-based interventions and it's a one-time thing. In this paper, the researchers
+followed up to see, how long does the fact last? They have sufficiently
+rich data to look at the persistence
+of the interventions. What they did, was to go back and examine what happened
+in summer 2008, that's a year after
+the intervention, and then summer 2009, that would be two years
+after the intervention. The way they perform
+the evaluation is to regress the household
+level water use on treatment dummies and then also pre-intervention measures of use. What you have here is Y_it; Household i in year t and
+y is the water usage. Here, you have three
+treatment dummies; T_1, T_2, and T_3. T_1, remember corresponds
+to the technical advice, T_2 is the weak norm, and T_3 is the strong norm
+or the social comparison. They follow the usage. What we have here is the
+long-run effects, which is so. Let's first take a
+look at summer 2008. Again, the omitted variable
+is the control group. A year later what happened? We first take a look
+at treatment 1, which is the technical advice. It has no effect. The magnitude is small and is not statistically significant. Treatment 2 actually had a statistically
+significant effect during the year of
+the intervention, which is summer 2007. But a year later, it no longer has an effect. The sign is negative, but it's not significant anymore. Treatment 3 is the
+social comparison or the strong norm treatment. It remains significant and
+the magnitude is also large. The coefficient is negative 0.64. What happens two years after? In summer 2009, we see
+that Treatment 1 and 2 are no longer differentiable
+from the control group, whereas treatment 3 has a
+weakly significant effects. The magnitude decreases
+by about half. The one star means that is significant at the
+10 percent level. What this though does is that social comparisons
+in this context, have lasting impact
+on water consumption. Consumers consumed 2.6 percent less than their counterparts in the control during
+the summer of 2008, that's a year after the
+intervention and 1.3 percent loss than their counterparts in the control during
+the summer of 2009. The researchers were no
+longer able to detect a meaningful long-run
+treatment effect for the weak social norm. Just telling people that
+you should do this, every job counts, or
+you should conserve water does not have
+a long-term effects. The technical advice actually, just providing the
+information on how to save water does not have an effect. It didn't have an effect the year it was
+implemented compared to the control condition and it didn't have a long-term
+effect either. These results tell us, it also suggest some differences in the channels through which normative appeals and social
+comparisons affect behavior. Normative appeals in terms
+of injunctive norms, promote little more than
+behavioral adjustments. There's another
+well-known paper which is due what you should,
+if only others, which means that normative
+appeals or injunctive norms have little impact on behavior unless you couple
+it with descriptive norms. The social comparison treatment basically inject both injunctive
+and descriptive norms. The takeaway from
+this experiment is that non-pecuniary strategies can be quite effective in
+promoting conservation effort, but not to every intervention
+is as effective. What we learned
+from this study or this pair of studies is that social comparisons could
+have long-term effects. If you think about that's
+a onetime mailing effort, which still has an effect to two years later is
+quite remarkable. Where we are at this point
+is to look at how one could use data science or social information to
+nudge pro-social behavior, in this case, water
+saving behavior. The technology here is quite old. You just send out a letter, but the letters are sent
+out from the authority. We're going to then
+follow up with two other studies which
+looks at real-time feedback. It turns out that the
+magnitude of the effect can be quite a bit larger
+for real-time feedback.

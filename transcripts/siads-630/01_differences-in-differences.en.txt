@@ -1,0 +1,131 @@
+This video will introduce you to
+the differences-in-differences approach, a method designed for
+when we observe units repeatedly overtime. Diff-in-diff is probably the most
+common method you will come across. It's even more common than
+the instrumental variables or regression discontinuity approach. So it's useful to learn
+more about this method and know how to implement it in practice. Let's start with a motivating example. Suppose you work at some
+e-commerce company and you want to increase total revenue. You don't know whether
+you should increase or lower the price of your product as Bob
+could in principle increase revenue. For example, if you lower the price,
+more people will buy the product, but every sale generates less revenue. On the other hand, if you increase the
+price, fewer people will make a purchase. But for each item you sell,
+you get more money. Economics 101 says that
+if the price elasticity, in absolute terms, is greater than one, lowering the price will increase
+purchases enough to increase revenue. According to this graph, the sweet spot,
+that is the optimal price, is somewhere in the middle between
+the price P1 and price P2. The problem is we don't know
+where we are on the demand curve. As a side note, the long-term strategy of any business
+should be to maximize profits. However, it can be beneficial to
+maximize revenue, especially if you own a small business as it allows building
+up the market share and reputation. So how can we learn where
+we are on the demand curve? Well, ideally, we would run an experiment
+and randomly vary the price for each user. The question is whether we would feel
+comfortable running such an experiment, and this probably depends on
+the nature of the platform and the sensitivity of the users. If the price variation will be saved
+into the users, for example because they talk to each other, then
+the price experiment may be too risky. For example, users might get angry if
+they find out that they are being charged more than others. Charging different prices to different
+users can be seen as unfair, even if we would tell them that the price
+variation is completely random. And the alternative approach is to
+change the price in some regions. For example, countries or
+states but not in others. The treatment group are regions where we
+change the price at some point in time and the control group are regions
+where the price does not change. So far, we have always looked
+at data on individual units on a single point in time. We call this cross-sectional data. Now suppose we have data on the same
+units over multiple points in time. For example, before and
+after the price change. This is called longitudinal or panel data. Now, why is it useful to have a before and
+after measurement for the control group? Well, this allows us to account for any other external changes that might
+co-occur with the price change. For example, it could be that sales
+pick up at the same time as we change the price because the price change
+takes place during the holiday season. So there are all of the control group is
+to identify this time trending sales so that we can distinguish
+between the time trend and the change in sales that was
+caused by the price change. Moreover, by varying the prize at
+the regional rather than the user level, we can also reduce the saliency of
+the price variation relative to the experiment where we thought about
+varying the price of the user level. So here is the basic idea behind
+the differences-in-difference approach. For now, let's assume we have two groups,
+a treatment group and a control group. And we have two periods,
+a pretreatment peered, so T equals 0, and the post treatment period, T equals 1. None of the groups is
+treated at T equals 0, but one group and
+only one group is treated at T equals 1. It seems ideal to have before and after
+measurements for the treatment group. But as mentioned before, focusing only
+on this difference might be problematic. There could be time trends
+the co-occur with the intervention. So we use the change in the control
+group to calculate the counterfactual. We would have expected in the treatment
+group absent the intervention. The difference-in-differences method
+compares the treatment groups difference in the outcome from before to
+after the treatment to the difference experience by the control group
+over the same period of time. The first difference is the outcome
+after the intervention minus the outcome before the intervention. We calculate this for each group that
+is for the treatment group and for the control group. The second difference is
+the first difference for the treatment group minus the first
+difference for the control group. Note that the diff-in-diff
+approach provides an estimate of the average treatment
+effect on the treated or att. However, if treatment assignment
+is completely random, such as in an experiment, then the diff-in-diff approach provides an
+estimate of the average treatment effect. Now let's look at the numerical example. Suppose you have sales data for
+two countries, the USA and Canada over a period of two months. The company decided to lower
+the price in the US in June, so the US will be our treatment group. The control group is Canada. For the Canadian business,
+there was no price reduction in June. So as we can see here
+in the table in the US, revenue was 91.5 in May and 107.9 in June. Contrast in Canada,
+revenue was 76.9 in May and 69.3 in June. So based on these numbers, how can we learn about the causal
+effect of a price reduction on revenue? Well, first, we could just ignore
+the fact that we have panel data and focus on the month of June. This simple comparison gives us an
+estimate of the treatment effect of 38.6. However, the two countries may
+be fundamentally different. That is, they may differ in
+the absence of the treatment. In fact, looking at the month of May, we see that the revenue was much
+higher in the US compared to Canada. So it could be that the company
+decided to reduce the price in the USA because they see more
+potential in the USA. A second approach is to do a before-after
+comparison for the treatment group. This yields a much lower estimate of
+the treatment effect, which is 16.4. However, here, we ignore the possibility
+that sales might have decreased in the absence of the treatment, so
+we might underestimate the true effect. We can see evidence for
+this if we look at Canadian sales and see that it declined, but
+the price remains the same. So the problem with before-after
+comparisons is that other things change overtime, not just treatment status. Indeed, revenue declined by 7.6 in
+Canada over the same time period. We can use the control group where
+the price did not change to compute the counterfactual for
+our treatment group. However, this doesn't
+come without assumption. The assumption we are making here is
+that the US would have had the same decline in sales as Canada if the company
+didn't change the price in the US. This is called the parallel
+trends assumption. We basically assume that there is
+nothing unique to the treatment or control group that changed overtime. Anything that changes overtime
+effects the treatment and control group in exactly the same way. In other words, there are no time
+variant country specific confounders. So the best approach is to use
+all the available data and to do a difference-in-differences
+comparison. So let's put the two pieces together. We calculate the before-after difference
+in the treatment group and subtracted before-after difference in the control
+group to account for the common trend. This is why it's called
+the difference-in-differences estimator. Instead of focusing on
+the difference in absolute levels, we look at the difference
+in changes overtime. Note that we will get the same estimate if
+we took the difference between the US and Canada in June and then subtract the difference
+between the two countries in May. Now let's talk briefly about the key
+assumption behind diff-in-diff. We assume that anything that changes
+overtime and that might affect the outcome cannot systematically differ between
+the treatment and control group. In other words, unobserved confounders
+might change overtime, But we assume that they change in the same
+way for the treatment and control group. Remember that in randomized experiments,
+we assume that there are no systematic differences in
+the levels of unobserved variables. For example, if we randomly
+assigned users to conditions, we assume that on average,
+users in the treatment group like the product as much
+as those in the control group. Here we make the assumption that there are
+no systematic differences in the changes of unobserved variables. So we don't need the absolute levels of
+confounding variables to be the same. We could have a situation where users
+in the US really liked the product, whereas in Canada,
+users are less excited about our product. What we need is that the change in
+how much users like the product is the same in both countries. Otherwise, we would violate
+the parallel trends assumption. Note that the parallel trends assumption
+is untestable because we don't know what would have happened in
+the absence of the treatment. The best we can do is to look
+at pre-treatment trends and test whether they are indeed
+parallel between the two groups. But to do this, we need more than just
+one pre and post-treatment period. The simplest diff-in-diff calculation
+requires only four numbers. But in practice,
+we often have more than just one pre and one post-treatment period. So in the next video, we will look at how
+we can use regression models to estimate treatment effects in a diff-in-diff
+setting with multiple periods.

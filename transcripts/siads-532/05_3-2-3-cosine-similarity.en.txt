@@ -1,0 +1,89 @@
+So we're done, right? We have fun to nice
+distance matrix that have served all the limitations
+of that product. Not yet. There are still some problems with either
+Manhattan distance or Euclidean distance. And the problem is that the vectors are
+not normalized when you calculate these two distances. Let me give you one example. In this 2D coordinate system, you have
+two vectors X as (1, 2) and Y as (3, 1). So you can calculate
+the distance between X to Y. Use any of your favorite distance matrix. Let's see Euclidean in distance. But now, let's look at another vector Z. Z is (3, 5) so
+you can see that Z has the longer, has the larger magnitude than
+any of the two vectors X and Y. The question is, do you think Z is
+closer to X or Y is closer to the X? That really depends. You can see that X and Z, actually, their directions are more
+close to each other, right? But if you use Euclidean distance,
+you will find that the distance between X to Z will be
+larger than distance from X to Y. What does that indicate? That basically indicates that
+vectors with larger values are just more likely to get a higher or
+lower distance from other vectors. Of course, the higher distance, right? Because when you calculate Euclidean
+distance, it's essentially the summation of the difference on each
+dimensions takes a square. So if one of the vectors happen
+to have very large numbers, then the difference on that dimension
+is just more likely to be higher. Does this matter in top products as well? Yes, of course,
+because on each of the dimensions, you're calculating the product
+of the two values. So if one vector has a very large value, then it is more likely to yield either
+a very large positive number or the very large negative number and
+a damaged, right? So one example to illustrate the problems
+of this distances is the text data. Again, if you look at three documents, the first document contains
+two words data mining. The second document contains 6
+verse; data mining, data mining, data mining and the third document
+contains only one word, data. The question is do you think document 1
+is closer to document 2 or document 3? I would say document 1 intuitively is
+closer to document 2 because document 2 is essentially the same document. You copy and paste that for
+multiple times, right? Document 3 shared some words,
+but it may be broader. Now do the distance matrix or
+the symmetric matrix agree? And in fact,
+because document 2 has more words and remember that when we deal with text data, every work can only appear
+multiple times or do not appear. So the values on the vectors are or
+low negative, right? If document 2 has more words,
+then just make it more easier that just make it easier to get hired 
+at product to other vectors. And also makes it easier to get a higher
+euclidean distance to show the documents. Why, because when it has more words,
+the difference between the word counts to show the documents
+will happen to be larger, right? And this is another paradox and
+this is not ideal. Similarly, because document
+3 has fewer words, it is just less likely to get a higher
+dot product to other documents. Why, because on each dimension, we are calculating the product
+of the two values. It also make it more likely to get a lower
+if leading distance to shorter documents. That's in favor of document 3 that
+makes it looks closer to document 1. In fact, it's not. So how to solve this problem? To solve these problems, people are looking at a different
+metric called the cosine similarity. So cosine is the similarity
+metric that basically measures the angle between two vectors. So if you look at this illustration
+in this 2D coordinate system, you have two vectors X and Y. The angle between X and Y are weaker spot the direction of
+two vectors not their magnitudes. Now, if you look at the vector Z,
+you can see that the angle between X and Z is actually smaller than
+the angle between X and Y. So that indicates that Z is actually
+closer to X in terms of direction, right? Instead of the Euclidean distance,
+the straight line distance. So the cosine similarity between two
+vectors is essentially the normalized dot product. The denominator is essentially
+the summation of the pairwise of the dimension wise meriting that is
+the dot product of the two vectors. But below the line,
+you can see that it has to normalizers. It basically calculate the square
+root of the sum of the squares of each of the vectors and
+you get the product of it. So that normalizes the longer vectors
+that normalizes the magnitude of the two vectors. So cosine can be calculated based
+on this normalized by product. Comparing to the other symmerity matrix or
+distance matrix such as the product or Euclidean distance,
+cosine symmerity has lots of advantages. First, it is also symmetric. Cosine symmerity between two
+vectors are the same if you swap the order of the two vectors. Now the good thing is at
+cosine symmerity is nicely bounded between the value of minus 1 to 1,
+okay? This is very nice because Euclidean
+distance or Manhattan distance or that product line of them is bounded. So in some cases,
+when your vectors are very large, when your values are very large, the they
+could quickly go beyond the limit. Because cosine symmerity is bounded,
+we can talk about the largest cosine symmerity or
+the smallest possible cosine symmerity. And in fact, if you compute the cosine
+symmerity of one vector to itself, you will get the largest
+cosine symmerity is one. If you compute the cosine
+symmerity of the vector and another vector that just point
+to the opposite direction. So X and
+-X then the cosine symmerity will be -1 that is the smallest
+possible cosine symmerity. Any other any cosine symmerity
+between any other pairs of data objects will be in
+between these two extremes. Another nice property about cosine
+symmerity is that if you are the only ways along negative vectors. For example, the document word vectors, cosine symmerity between two documents
+will always be greater or equal to 0. Why, because all the numbers on
+the different dimensions either positive or zero. In this situation, what happens if two
+documents yield cosine symmerity in that equals to 0, that basically means their
+vectors are orthogonal to each other. In other words, if two vectors are 90
+degrees apart from each other, then they will yield
+cosine symmerity zero. And if you see net that basically
+indicates that the two documents or the two data objects
+are unrelated to each other.

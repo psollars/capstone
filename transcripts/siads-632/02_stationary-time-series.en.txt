@@ -1,0 +1,361 @@
+So we talk about the statistical
+properties of real world time series, such as mean, variance, trends,
+sublattice, makes it hard for expert relation to make predictions. So let's look at what kind
+of time series are ideal for making predictions into the future. These time series are known
+as stationary time series, since we know that simple
+prediction methods cannot explain the statistical properties
+such as mean and variance. So if only these statistical properties of
+the time series never change over time, then that will make the life of
+the predictors easier, right? Then it becomes much easier for
+us to make predictions into the future. Well, these time series are known
+as stationary time series, and they have the following properties. They have flat trend. In that case, they have constant mean. And in many cases, we assume that
+the constant mean is 0, right? So you can see that if the time
+series is stationary, then it's flat. And the values,
+yi to yn has constant variance, right? We will see what that means later. And we assume that there is 0 covariance. That basically means that there's no
+correlation between different timestamps. And if all these properties are true, then we call the time series
+a stationary time series. So what are the examples
+of stationary time series? Well, one good example is
+a so-called white noise. Let's look at two particular white noises. The left figure plots the white noise
+series from the white noise distribution. And the right figure plots
+the Gaussian white noise. Which is sampled from the Gaussian
+distribution with 0 mean and constant variance. And what can you tell
+from these two parts? You can see that the stationary time
+series are more or less flat, right? If you plot the mean of both of the time
+series, this should be around 0. And they have constant variance. What you mean by you
+have constant variance? That means if you look at the spread out
+of the values of different measurements, you can see that the spread
+out looks similar, right? In other words, the variance of this
+time series does not change over time. There is apparently some variance, because you are not just
+seeing the flat line, right? You are actually seeing random patterns
+that are moving up and down, up and down. But the spread, right,
+of the largest value and the smallest value seems
+to be always constant. And if you see some time series like,
+this they look random. They have flat mean, and
+they have constant variance. Then you call this stationary time series. Of course not all time series
+are stationary, right? For example, if we look at the left plot,
+you can see that it is not the stationary time series, even though that part
+of the values look random, right? So they're jumping up and down randomly. And this is because there is actually
+a trend, right, in the left figure, right? If there is the trend that is not flat,
+then it is nonstationary. And if you look at the right-hand side,
+right, what's wrong with this plot? The transfer is on the right-hand side,
+right, has 0 mean, right? And the values are also
+randomly jumping up and down. However, if you look at the spread out of
+the largest values and smallest values in each time window, you can see that
+the spread is increasing over time. And that means the variance of the time
+series is actually changing over time. In this case,
+it is actually increasing over time. No matter what,
+as long as the variance is not a constant, the time series is also
+known as non-stationary. So why do we care about
+stationary time series? This is because the stationary time
+series has very nice statistical properties that makes it easy for
+prediction. And in fact, if a time series is
+stationary, and it has 0 mean, then the prediction is basically as easy
+as sampling from a white noise, right? And sampling from a white noise,
+or any other simple distribution, is actually quite simple. And if we write this mathematic equation
+down, basically we assume that yt, that is the measurement taken at t,
+is essentially a white noise. In this case, the error at time t, right? And we assume that this error term
+Sampled from the white noise. Unfortunately, this means that making
+the prediction is the simple test. This does not mean that
+the prediction is good, right? If yt is basically sample from white
+noise, that means it's random. That also means that it does
+not have any signal, right? Or it does not make much sense
+to predict for the future, because the future is random. Well, this could be a good thing or
+could be a bad thing, right? The good thing is that
+making a prediction is easy. You basically make a guess, right, and
+you guess cannot be too wrong, right? But the downside is that
+also know guess is good. Fortunately, most real world
+series are not like that. There are always sequence and always makes
+sense to make predictions into the future. Let's take the airline
+passenger data as an example. I know that we are enough
+with this data set, right? You can see that the time series of
+air passengers is not stationary. And why is that? If you plot it, you can actually see that. Suppose we're computing the mean
+of the time series over time. That means we're just using
+the sliding window, and we compute the mean and
+we roll it over time. This mean is not flat, right? So the mean of the airline
+passenger data increases. Similarly, if we plot
+the standard division, right? Basically, the standard division is
+connected to the variance, right? If we plot the standard deviation over
+time right using a rolling window, you can see that the standard deviation
+is also increasing over time. That means the variance is
+basically increasing over time. As we introduced in the previous lecture,
+you can see that there are seasonal patterns, right, very noticeable
+seasonal patterns in this time series. And if you see seasonal patterns that
+indicates that there is covariance, right, among the data points. Because any measurements taken one year
+away in this figure should be correlated. All right, so the mean increases,
+the variance increases and the covariance is not zero. That basically proves that the airline
+passenger data is not stationary. So in fact, many times series
+in reality are like this, they're not strictly stationary. But some of them are weakly stationary. That means they satisfies some of that
+statistical properties we introduced, but not all of them. For example, some time series
+are known as covariance stationary. That means the covariance between nearby
+values is the constant, even though that there might be a long linear trend,
+a know flat rent or changing variance. And some punters are known
+as trend stationary. That means that the mean of
+the time series is the trend line, is actually linear line, it's not flat,
+but there's the linear trend. And the variance is a constant and
+the covariance is 0, right? If you still remember
+the example that we see, the random time series
+data where is the mean. So in reality, right, we really want
+to transform the real world time series into either strictly
+stationary time series or weakly stationary time series, so
+that we have a better life to make focus. So that it is easier to model the time
+series and then to make predictions. So how to transform the time series into
+either strictly stationary time series or weakly stationary time series? One of the approaches
+is known as detrending. Basically what you want to
+do with detrending is to manipulate the observed
+values at every time step. Let's say yt, right? We want to correct it by
+the empirical mean of this series. That means which has formed the observed
+value yt into the standardized value y't. That is yt minus the mean of the time
+series at this given time point, right? And you can see that mu t is actually
+the estimated mean of the time series, based on the history or
+based on other aligned series. And mu t means this is the expected mean,
+right, of the measurements at this given time T. And yearly,
+the correspond to the trend, right? So if you subtract mu t from yt,
+you're actually removing the trend, right? So if the time series has
+the linear trend that is going up, the mu is basically a linear line, right? By correcting this linear line. You're basically getting the station
+time series which means 0. Related to detrending people like to
+use the so called standardization. Basically, you compute
+the z value of the series. And the z value can be computed
+as the observed value by T, minus the mean of the entire series and normalized by the standard
+deviation of the entire series. This is actually commonly used as
+normalization techniques for vector data. That is to say, if you assume that time
+service reputation is related or is almost the same with the vector reputation,
+then you can use standardization. This is the very popular
+method used by many people. Personally I don't quite like
+this method because that requires us to know the mean and
+variance of the entire series. And we assume that mean and variance don't
+actually change overtime as we can see, that does not really apply
+to many real worth series. So other measures to standardize the time
+series without the assumptions that we know the mean and variance and
+they don't change overtime. Well there are measures
+called differencing and I would say that these measures are
+simpler, but they have fewer or they have weaker assumptions about the data and
+they're actually widely used in industry. So what is the idea behind differencing? Basically we want to use the difference
+between the adjacent values right, to surrogate, the observed values so
+that the level means can be removed. What do we mean by level means,
+that means, the mean is flat, but they're not 0. Mathematically, suppose we're
+looking at the time stamp tj. Then all we need to do is to surrogate
+the observed value yj into yj prime. That is yj minus yj minus one. So in other words were actually
+computing the difference between the current observation and
+the previous observation, and we use net difference yj prime as new
+observation of the current timestamp. Now these two things at the yj prime,
+although it's computed based on yj and
+yj minus 1 right after standardization. After this process, it should be considered as the observation
+at tj instead of tj minus one. Why is that? Because when we are dealing with
+predictions, we don't want to look into the future, if we look into
+the future were cheating, right? That means yj prime which is
+the difference between yj and yj minus one can only be considered
+as the observation of yj right? Because at yj we should
+already observed yj minus one. And j minus one we have not observed yj. So this simple idea is
+known as differencing. And in fact you can actually compare
+the difference between the detrending and differencing to see
+what their effects are. So in this figure we first plot
+the original time series of the airline passenger data,
+then we apply the detrending. We use the observed value yj
+minor the estimated trend right? As we know that there's
+the detrend that's going up. Does that make sense? So after the detrending you can see that
+the mean becomes surrounding metro right? So the time series if we just care
+about the mean is flat, right? Although we can still see
+the very noticeable seasonal patterns as well as the increasing
+variance of the values. You can also achieve
+similar effects using. Difference is basically if you surrogate every of value as the number of
+airline passengers this once, minus the number of airline passengers
+in the previous ones right? You can more or
+less get the similar pattern as you can see there mean is also
+surrounding 0 right. There still exists similar patterns but you can see that comparing to the
+detrending part it is more random right? In other words it is closer to
+the stationary time series. Occasionally we could also
+use longer differences. Remember that with differencing we
+just computing the difference of the current value and
+the previous value, right? You reality,
+we could use the current value. And computer difference between it and
+the value thats taken farther away, right? For example, if you know the period
+right of the signal patterns of airline passenger data is 1 year,
+then you can compute the difference using today's measurement minus
+the measurement one year ago, right. And you use the measurement one year ago
+to minors the measurement two years ago. By doing that, you still computing
+difference, but you have a larger window. And this larger window can help you
+remove some seasonal variations. Well, in reality this
+is only applicable if we know pretty much what the period is for
+seasonal variations. If they are natural periods, for instance
+days of the week, right, months of the year, or annually, if we know that and
+see the patterns are at such frequencies, then we can use longer differences
+to further improve the [INAUDIBLE]. So these are about using the simple
+idea of code differences, right, to standardize the time series data into
+something that is weakly stationary. Another very interesting concept
+to this stationarization of time series is known
+as the return right? And in fact return is so commonly used in
+financial market analysis, right, well, suppose your time series is the stock
+market price, is the price of one stock. Let's say Google, right. Then you can also try to use
+differencing to make it more stationary. If you use the difference
+of yj minus yj minus one, this is known as the price
+difference at time tj right? So if the current stock market
+value of Google is 1000 and if the price yesterday was 999,
+then the price difference is $1. But we more often use this return to
+describe the change of market price and the return or, well,
+strictly the raw return, is the rate of the price difference. And all this to say, if we assume that
+right all the values are above zero, then we can interpret the raw return as
+the profit or the loss of the investment. That means if you buy the Google
+stock at 999 yesterday and you sell it at 1000 today, right? The rate of your profit, how much money
+you make or how much money you loss, is actually known as
+the return of your investment. So mathematically,
+the raw return of the price or of any positive time series is
+actually using yj minus yj minus one, previous observation and then normalized
+by the previous observation, yj minus one. Right, so the standardized
+value yj prime is actually the difference of
+the current observation and the previous observation over
+the previous observation, right? So you can see that it is mimicking
+as investment, that you buy, you spent yj minus one to buy a stock,
+and you sell it today. So this yj prime is
+the proportion of money, is the rate that you make
+from this investment. So this is known as the return. But in reality, in stock market assets,
+if you work with a trading firm, you usually use log return
+instead of the raw return. And in log return we're actually
+using another differencing, but this time it's not a difference
+of the observed values. It's a difference of the logarithm
+of their other value. Which is to say,
+if you assume that all the observations, the current observation and
+previous observation, are both positive, then we can compute the logarithm yj prime
+as the difference of the logarithm of yj minus the logarithm of yj minus one. So you can see that this
+is still differencing. The idea is still differencing, but it's the difference of the log of the
+observed value instead of the raw value. Right, and if we compute the difference
+using logarithm, it's called log return. Well, wait a minute. Why do we call this the return? This is just the difference. It's not the rate right? Why is this called a return? But this is actually
+an interesting question. You can actually compare log
+return versus the raw return. In fact, if we use r to indicate the raw
+return, r is actually the difference between the current value and the previous
+value normalized by the previous value. Then the logarithm of 1 plus
+r is basically the logarithm of yj over yj minus one. And this is actually the logarithm. This can be written as the log
+of yj minus log of yj minus one. And that is why the log return is called a
+return, because it's essentially a ratio. And in fact, if r,
+if the raw return is way smaller than one, well this is almost always
+the case in a short period Right, because Google stock won't actually
+double itself within a day, always in a minute, right? If r is way smaller than 1,
+then mathematically, the logarithm of 1 plus, or
+is actually approximating r. This is neat, right? This means that if you use not return,
+right? If the return is actually not that much,
+your r is actually very small. And a ran is always small,
+in a short period of time. Then, the log return is essentially
+approximate the raw return, right? So that means that they are almost
+measuring the same property, right? And that is also why the logarithm
+is called return instead of just the difference. So long return has lots of
+connections to the raw return. Why do we need to use it? Why don't we just use the raw return,
+right? You could also use raw return, but
+people like logarithm for reasons, right? And the reason is that,
+it depends on how your time, sir is. The values are distributed. If the values are really
+lonely distributed, then using raw return is perfect. However, if the values and
+log are normally distributed, right? Then, using logarithm gives you
+better statistical property. Why?
+Because you're taking the log, right? What we mean by the values
+are log normally distributed. Well, that means that
+the shape of the distribution, if we plot the values, looks like
+a log normal distribution, right? And the log normal distribution
+is really skewed, right? It has the relatively long tail,
+but not the very long tail, like a power law distribution. And in fact,
+when we are dealing with financial data, price is usually log-normally distributed. Why? Because prices are always non-negative,
+right? So unlike normal distribution
+that has two tails, one on the left, one on the right, then
+the left tail is actually much shorter, because price are actually log negative,
+right? And the distribution is
+usually right skilled. And in this case, using log-normal
+distribution to model the price data is much better than just
+using normal distribution. And that's also why we like logarithm. Another reason that we
+like logarithm is that raw return would become
+computationally efficient. Inefficient if you need to
+aggregate them over time periods. Why is that? Because in that case,
+you have to do lots of multiplications. And as we say that we don't like
+multiplications when the numbers are small, numbers are way below 1, right? When we're talking about
+estimating the [INAUDIBLE] model, we know that we always want to use
+additions instead of products when the numbers are much smaller than one. And in this case, using log return instead of the raw
+return will help us achieve this group. So to give you some concrete
+example of different returns, let's look at the stock
+share price of Tesla, right? As you can see that the price of Tesla
+has been very strong recently, right? This is the original time series
+of the of the tester price. And let's see whether we can
+use different stationarization methodology methods to make them more or
+less stationary, right? So if we use just the price difference, basically the current price
+minus the previous price. We have removed the mean, right? The mean is [INAUDIBLE] a zero. However, you can see that the variance
+changes dramatically at the beginning, except for the current two years for
+the most recent 2 three years, the variance has been much smaller and
+in the recent tools are years. There's the huge burns. You could also use price return. If you use price return, the raw press
+return instead of price difference, you can see that the meaning is also flat,
+it's actually surrounding 0. But the variance becomes much more
+comparable, and that means if you use price return to normalize
+your time series, then the result, the normalized time series is much
+more stationary, which is great. And then if you use logarithm, you can
+see that there's almost no difference between the results of logarithm or
+the raw return. That means when you know the changes of
+the prices are actually not that large or in stock market is always the case, then using logarithm you very well
+approximates the role price return and you can still enjoy the statistical
+probability of the normalized time series. You can see that we could also
+stand The airline passenger data, using logarithm in this case right? And the blue curves are actually
+the localized data. You can see we are also
+plotting the routing mean and rolling standard deviation
+of the normalized data. If you look at the rolling mean,
+that is the orange curve, you can see it's flat, right? And it is strong in there. And if you look at the rolling
+standard deviation, the green curve, you can see that it's not zero,
+but it is around the same level. So that is to say that although we
+cannot guarantee that this normalized time series is stationary,
+they're at least weakly stationary. So that is why we like to use
+tricks such as log return, raw return or just difference
+to standardize time series. So what does the difference tell us? As we see that no matter whether
+used log return or raw return or difference or the simple difference,
+the basic idea is the same. Basically you use the current
+observation right, and you take out the previous observation,
+then you do some transformation. So what does this tell us? So really we do this. We use differencing because we hope after differencing yj prime
+will become stationary. Right, so this is the hope. And if this is the case, if y prime
+becomes stationary, then you can actually make a case of y prime instead of
+the original value y fairly easily. Once you have a case of y
+prime all you need to do is to add that back to yt minus one to
+get the actual prediction of yj. In other words,
+suppose we apply the simple difference in that yt prime
+is yt minus yt minus one. And then suppose this difference, right, is actually sampled from white noise,
+right, epsilon t. Then we know that yt is essentially
+yt minus one plus epsilon. Does that make sense? So all we need to do is to actually sample
+an error from white noise epsilon and then we add that back to yt minus one. That's how that we can actually
+get the prediction for yt. As we can see that although the prediction
+is still quite simple in this case, and maybe it's not a good prediction either,
+however, there is signal already, right? It's not completely random because yt,
+everything depends on yt minus one, if we use differencing. If we assume that
+the difference is stationary. So by doing simple differencing, we can actually make a prediction
+of yt given yt minus one and some white noise, and in reality we
+can also do higher order difference. Basically we compute the difference of the
+current value to the previous value and then we compute the difference
+of these differences. And by doing this, the higher level
+differences could actually remove trends. In other words, suppose we have already
+computed the difference, right? The normalized value of yj and
+yj minus one. Then we can take another
+level of differencing, right. We have yj prime prime equals to
+yj prime minus yj minus one prime. And if you actually want to expand this
+equation, you can see that yj prime is yj minus yj minus one and yj minus one
+prime is yj minus one minus yj minus two. And by doing this we can actually apply, we're actually applying higher order
+difference to the original time series. Why do we need that? Because if the assumption is,
+the hope is that after second level differences right,
+then yj prime prime becomes stationary, then the original observation yj plus one
+can be predicted using the previous value yj plus the error sampled from the white
+noise distribution and a constant. And this constant here actually
+indicates a linear trend, right? Why is that? Because you have y1 and you have y2,
+that is y1 plus this constant. You have y3,
+that is y2 plus this constant. So you can see that in every time
+step you're increasing the value by this constant. And this constant becomes
+the slope of your trend. So this is what you can actually
+achieve using higher order difference. To look at a particular example,
+this is still the airline passenger data. And these are results from differencing,
+but with different orders, right? If you use first All the different things. That means you're just subtracting
+the previous observation from the current observation. You get these normalized theories. You can see that it is more random,
+it has the zero mean, and the variance sounds like it's
+not actually changing that much. You can further apply
+second-order differencing, right? And you can compare that after
+second-order differencing. That means you compute
+the difference of the differences, then that answer becomes
+even more stationary, right? You can see that it's even more random,
+and some of the signal patterns are much less
+obvious, and the mean is still zero, the center deviation is also
+not changing dramatically. That's why that sometimes applying
+higher order differencing helps you to get stationary or
+weekly stationary time series. But in reality we certainly use higher
+order differences when the order is beyond. So you can see that we have introduced
+many different ways trying to standardize a time series, so that the transformed
+time series is more stationary, right? We don't say that it is stationary. There is actually statistical test to
+test whether series is stationary or not, but after transformation we hope that the
+new series is at least more stationary or weekly stationary, right? And before you actually make actual
+predictions, you want to make these transformations so that the follow-up
+prediction becomes easier.

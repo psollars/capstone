@@ -1,0 +1,350 @@
+Alright, welcome back. Let's talk
+about the encodings. Let's talk about how to
+actually get something on the screen so that
+we can use some of the networks and
+think about some of the better techniques
+that we might have to get better looking networks and what makes a good
+looking network in fact. There are various criteria, and this is one of
+the ones that I like. This is Ben Shneiderman's
+criteria for what makes for a good
+network visualization. First point is that
+every node is visible, as it relates to
+the overview first, details on demand stuff, but every node is visible. You're starting with an
+ability to see all the nodes. In reality, this may not
+be practical if you have 3 billion nodes you may
+not be able to do that. But in most common
+network visualizations that are actually usable
+as network visualizations, every node should be visible. For every node you should
+be able to count, and I would add maybe
+estimate the degree, you should be able to tell that this node is connected
+to lots of other nodes, whereas this node is
+connected to barely anyone, so you should be
+able to estimate how many and maybe if you zoom in, you should be able to
+count specifically. From every link, you can basically follow it from
+source to destination. An edge exists on the screen, I should be able to tell what the source node is and
+the destination node is. I should be able to look at the visualization and be
+able to figure that out. Then finally, because these are very common tasks when it
+comes to network analysis, clusters and outliers
+should be identifiable. Most network visualizations have certain interesting
+distributions of data, there are tightly
+packed groupings. If you think about friends, they're tightly
+grouped and they might have a few weak edges to another
+tightly connected group. Same thing happens with
+genes and other structures. Finding clusters and finding those people who don't seem
+to be connected to anyone or genes that are not connected to anyone
+or weakly connected to things becomes
+an important task and so these are the criteria. Every node visible,
+every node count degree, be able to find the source
+and the destination, clusters and outliers
+are identifiable. We have that, that's great. But the issues for us
+is; what do we do? How do we actually represent this network data on the screen? How do we draw the nodes?
+How do we draw the links? How do we lay out the graph? These are things that
+we have to consider when we have this node-link
+structure that we want to put visually somewhere on the
+display or printed out. We have lots of options
+for text design, we can pick colors and
+shapes and whatever. Shape, color, size, location, any of these things can
+be modified by us and based on whatever
+the underlying data is and we're trying to represent, we might make very
+different choices. Some cases you'll see
+nodes that are labeled. In some cases you'll
+see nodes that just are circles and you
+have to mouse over them to get a sense
+of what they are. Sometimes we'll use color
+to encode another variable. Sometimes we'll use the shape. Sometimes the shape will
+encode something like the amount of money this person has or how long they've
+been in the company. We can play with these
+other variables on top of the shape as we did with a lot of the earlier examples
+in the course. If we did a scatter plot, we'd have similar considerations but now to this we have to add all these other things about link design, for example. Links can be colored
+differently or the width of the links can be
+different or they can be labeled or unlabeled, the shapes can be different
+so how do we lay them out? How do they sit on the screen? Should they be
+polylines or straight or orthogonal or grid or curved, these are all choices
+that we get to make. Okay but, the okay
+but is if we are not considerate of the
+power that we have, and we just try and
+take a network dataset and just plot it
+out on the screen, what we might end up with is something that
+looks like this, a big spaghetti diagram, which arguably doesn't meet the requirements of
+Shneiderman's criteria anymore. Visually appealing, this is a visualization of the internet. You see computers connected
+to each other and the colors, I forget what they represent,
+but visually appealing. It looks like traveling
+out in space, maybe this is engaging. Nodes themselves you
+can't find them. I would challenge you to be able to detect a node in here. You can't easily trace from edge, from source to destination, you can't easily
+count the degree. You can tell where
+there are certain dense nodes or dense structures. Beyond that, nothing much. Clusters, maybe you can tell some of the bigger
+structures are there. Outliers, maybe a little bit, I don't know, certainly
+not in a reliable way. This is the problem with really large network
+datasets and even with all this power
+that we have about how to shape the visualization, you might end up getting something like the
+spaghetti network. Here's another example of a spaghetti network which
+is arguably even worse. How do we fix this? We don't want big messy things like
+this that are unreadable. Maybe they're cool to
+look at, but really, not really usable for any kind of visual
+analytics problem. We're going to think about boosting effectiveness
+and we're going to think about a few different
+strategies for doing this. The first is considering using layout algorithms to do this. This sits at both the technique
+and the algorithm level. You'll see examples
+that intersect, but algorithms are going to be the principal drivers for the different layout approaches. Planar graphs are an attempt to basically lay this thing out
+but reduce edge crossing. We don't care about the
+specific placement of the nodes only in the sense that they
+minimize edge crossings, that they're going to be specific algorithms that I'll demonstrate that
+have this property. There are also
+grid-based approaches where the nodes are fixed
+to specific grid points. Instead of allowing
+them to move all over the place, we're
+going fix them. There are orthogonal
+visualizations where instead of letting the
+edges go wherever they want, we only let them route
+over maybe a grid. There are curved
+lines which are a little bit more flexible. These might be
+useful for reducing edge crossings or making
+things more readable. There are ways of
+enforcing hierarchies, so even though a
+network is not a tree, sometimes we can force it into a tree configuration and so we have what looks like the root node and so that makes somethings a
+little bit easier. There are layout algorithms that look like this
+which are circular, sometimes there are variants
+of this chord diagrams. If you're in biology, you might have seen something like this. Where the nodes are
+basically laid out around the circle and
+edges crossing between. These are different
+layout heuristics and different algorithms
+can basically do this. But even within each
+of these categories, there's a zillion algorithms. There's a zillion
+algorithms for example, for getting cleaner layout. What makes for a good layout? People have studied this. This isn't like
+we're just inventing some area of research that we
+don't know anything about, we actually do have some ideas through experimental designs that tells us what makes for a layout that is both
+aesthetically good and useful. People have looked at
+different aspects of networks, they've looked at the
+number of edge crossings, they've looked at whether
+edge length matters. Does it need to be uniform? Or can it be all over the place? The area, can a graph be
+distributed all over the place? Or does it need to be
+compact and tight? Does the total edge
+length matter? If there are some edges that are really long, some of
+them are really short. Or the total of them
+when you sum it up if the edges are really high, if it's a high number
+is that a good thing? There also bends, how
+much do the edges bend? Is that a good thing
+or a bad thing? It turns out that edge crossings are the most important
+feature here. All these other things
+are important too and will determine
+whether a person thinks of visualization or the
+aesthetic or be able to do certain tasks on the network
+through the visual encoding. But edge crossings or it turns out the most
+important thing. If you think about
+it, it makes sense, so edge crossings introduce problems for the visual system
+because as you're trying to trace across from endpoint to endpoint or figure out how many edges are going
+from a specific place, the interference of other edges, crossing and making a mess like introducing
+that spaghetti look, are going to be problematic
+for achieving tasks. Reducing edge crossings
+is going to be one of the primary drivers for a lot of the different
+algorithms that we see. To figure out whether a
+graph can be drawn with no edge crossings is a
+graph theoretic problem. But basically, planar graphs are graphs
+that can be drawn, laid out without
+any edge crossings. I'm going to show you
+two different examples on the screen and
+I'm going to ask you just to consider them for a second. Which of these is planar? Can you move the nodes
+around so that you can draw on these two different networks so that there are
+no edge crossings. Here we go, these are two
+different examples of networks. Really simple ones for nodes. Can you move the nodes around so that there are
+no edge crossings? It turns out that the answer
+is yes to both of these. Both of them can be made planar, these are both planar graphs. You can move the node
+on the far left down and the node at the top
+down to the middle and you get a planar representation where there are no
+edge crossings. Turns out that you can prove that this is the smallest
+non-planar graph. If you take a network
+data set that you have and there are
+tricks basically for figuring out if
+you can collapse a node that are two nodes together based
+on whether they're linked. If you end up with a fully connect five node structure like this, this is non-planar. There is no way of
+moving the nodes around in this visualization so that there are
+no edge crossings. In real-world scenarios, you're going to get
+a bunch of these. This will exist within the
+various graphs that you have, so if you have a fully
+connected five-note sub-graph, you will be unable to remove all the edge crossings
+in your layout. What algorithms
+will get us close? Given the fact that we can't do perfect and getting rid of
+all the edge crossings, what algorithms
+will get us close. There are a few
+different strategies, one is the convert
+to tree approach, so you basically
+decide that one of the nodes is going to be your route and then you
+do a depth first search, basically expanding
+outwards and then you lay out the network based on that. There are going to be edge
+crossings a little bit but by enforcing the structure
+where it makes sense that there should be something
+that's considered a root, you might be able to
+get close and minimize some of the edge
+crossing by doing this outward going layout. This is a different way
+of doing a tree layout. This is using an algorithm
+called Sugiyama, which is implemented in a
+few different packages. But a graph business one
+that's commonly used. The other way of doing
+this is to approximate and so if you've seen some of these animated
+visualizations of nodes moving around and trying to lay themselves out on the screen. That's an example of a simulation that is doing a
+force-directed layout. The way this works is that
+edges are treated like springs and they will
+basically pull nodes together. If we have two nodes that
+are connected by an edge, there will be a spring
+that's tightening the connection between them so that it will pull
+these things out. At the same time, we're going to treat nodes like charged particles and they're
+going to repel each other. Down at the bottom
+you can see the nodes are repelling each
+other and moving away. When you have these two things going on at the same time both the attraction force and
+the repulsion force, and you let this thing
+simulate for awhile. That tension will cause
+the layout to actually end up in a reasonable configuration where edge crossings
+are minimized. Here's an example of
+this in an animated way. So this works great incidentally like when you have
+smaller networks, like calculating this requires a certain kind of simulation
+and that's expensive. There are approximation
+techniques that try and do this
+for larger networks. But you can see that we still
+have edge crossings like we can't totally avoid them in this layout, but we've
+gotten pretty close. Especially like the
+nodes that go out like a star are able to exist off on the side
+and not cross each other. Which is kind of
+an appealing thing here. This more closely satisfies
+our Shneiderman criteria. We can see the nodes, we
+can see the endpoints, we can count the degree, we can see the clusters,
+we can see the outliers. It's pretty good, and so different kinds
+of techniques that use this simulation approach will generate various representations
+that look like this. There are some alternatives
+that I want you to consider and are very
+different techniques. So not using one of these planar attempts to make graphs planar through force-directed layout
+and things like that. So these alternatives
+include things like skitter. This is one example
+where we're using the coordinates or
+other attributes of the nodes in order
+to lay them out. This is a network visualization
+of a computer network. The nodes represent computers and if they're connected
+to each other, there's an edge between them. The nodes are laid
+out along the circle, basically depending
+on the longitude. Where in the world
+are they located will determine their placement
+along the outer circle. One place you might have the US and another place you
+might have China, and we're going to
+lay out the computers along that circle representing
+roughly the Earth. The radius, so whether
+they're pulled to the middle or on the outside, is going
+to depend on a function. In this case, the function
+is going to be the degree. The more connected
+a node is, the more it is pulled to the
+center and nodes that are not connected to very much
+sit on the outside edges. Nodes that are basically
+the strong connectors that tie lots of places in the world together will
+sit in the middle. This is just one approach
+where we're going to, instead of letting the
+layout go as the layout wants, we're going to enforce certain layout characteristics to make this more readable. Again, positioning nodes based on in this case one attribute
+which is the longitude, and another attribute which is the degree of that
+maps to the radius. Here's a different
+approach, this is a matrix based representation or matrix based visualization. Here we have all the nodes, both on the rows and the columns and if there
+is an edge between them, we color that small dot, small cell
+in a certain color. If they're in a
+certain department, we might, or in this case, and we'll maybe they appear in a certain place in the book or as part of a certain group, we might color those
+things differently. There are algorithms that seek to basically move the rows around
+or the columns around, like you can switch
+them like there's nothing that says that the order that they come in
+should be alphabetical, or random, or whatever. So there are algorithms
+that seek to basically move these rows and columns, switching them in order so that things that look the same or columns that looks the
+same sit near each other. That's why you see
+these kinds of blocks appear and manifest
+on the screen. If you are a social
+network analyst, you've been taught
+to read these plots. It's still a little bit
+difficult but you know like these dense structures like the darker blue in
+the upper left, corresponds to a strongly
+connected sub-graph, like all those people are
+connected to each other. There's a node that's
+in the lower right that is connected to
+lots of people weekly. There's this plus sign you can see that person
+making where that person is connected to lots of
+people across lots and lots of different places
+in the story, for example. There are star-shaped
+network component. Again, you've been taught,
+if you work in the space, how to read these things, but there is a learning
+curve to that. This is an example that combines that matrix visualization
+plus a node-link diagram. Here, they've taken clusters of people and made them into a node, and the node itself is a matrix. This is all done interactively, so you can circle
+certain nodes in the graph and it will
+collapse them dynamically. You can go and look at the demo and play with
+it a little bit. It will collapse all
+those nodes into a small matrix representation
+and still retain the edges. The edges from that
+small subgroup will still be represented visually and show you how these different sub-communities are related to each other. One more esoteric type of
+network visualization. These are two different
+visualizations of networks. One is E-coli, a
+biological structure, and the other is the
+Linux call graph. In the Linux operating system, you have functions
+that are calling other functions or packages that are calling other packages. This is all the different functions that
+are calling each other. They are represented as nodes and if they
+call one another, then there's an
+edge between them. The gene expression is if one gene is controlling
+another gene. If this gene starts, it will make this other gene go. These are two different networks. You can see from the blobs
+that they're different, but it might be very difficult to tell why they're different. What is it that is different and what is it
+that's similar about these? In networks like this, there are classes of nodes. Despite being very
+different domains, there is a specific
+node called a master, and then a manager, and then the thing
+that is regulated. The master, basically, is able to call either other functions
+or tell other genes to go, but it itself is not told
+by anyone else to go. There's no gene or no
+function that calls it, it just knows to run. There's the middle
+managers that are told by these masters
+that they should go, and then there's these lowest
+level things at the bottom, which are functions or
+genes that are told to go or run but don't tell
+anyone else to go or run. This is a visualization of this with these different
+nodes stacked. Same thing, E. coli on the left, Linux call graph on the right. You have the master
+regulators in the middle, sorry, at the top, the middle
+managers in the middle, and the workhorses, the
+things that are told to do something but don't
+tell anyone else to do anything, down at the bottom. What you could see from
+this is that these things, while having similar
+classes of things, the masters, the managers, and the workhorses, they're
+allocated quite differently. In E. coli, there are very few masters or
+middle managers, but lots and lots of workhorses. In Linux, there's a ton
+of middle managers, but a smaller amount
+of workhorses, and somewhere in between
+in terms of masters. This is a very different way
+of looking at this dataset, which is hard to tease
+out relationships among these different kinds of nodes and representing
+it in this way. The hive plot is taking
+that data that we just saw and representing it
+on these different axes. If you remember the
+star plot configuration in the first week, when we talked about
+multidimensional data sets, this is a similar idea, where you have all the
+master nodes, basically, lined up on one axis, all the workhorses
+lined up on the other, and all the regulators
+lined up on the third. You can also get a sense
+from this visualization, these different
+relationships between them, so how many edges exist between the masters
+and the workhorses, the masters and the
+middle managers, how many more of these
+different things exist? By putting these
+visualization sides by side, it's easier to compare them, like this's much more
+compact representations of these different things than maybe this one and certainly
+better than this one. That is the function of a
+hive plot representation. There are many implementations of hive plots, so
+if you like this, if your data's suitable
+for this representation, there are ways of building
+these quite easily. Takeaways from this. Node-links
+are the primary type. I've shown you a few
+other weird things like matrices and hive plots. Arguably, hive plots
+are like node-links, but there are limits to how creative and crazy you can
+go in terms of techniques. Where you can go creative
+and crazy is the algorithms. There are many different
+kinds of encodings and many different kinds of algorithms that you can apply, and as you'll see in a
+second, also interactions, but you should try
+different layouts, basically, to figure
+out the optimal one. As you work with
+network data a lot, you will get a sense
+of which ones work better and which ones work
+worse with certain kinds of data. Interaction, as you'll
+see in a second, will basically boost
+our effectiveness. Despite telling you that
+they're not as common, I will still encourage
+you to take a look at things like matrices and
+hive plots as alternatives. Hive plots in particular are
+great for small multiples, matrices are often great for specific domains that are often thinking in terms of
+matrix representations. They've learned to read
+matrices and so for them, it might be far more suitable. With that, thank
+you for listening.

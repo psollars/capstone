@@ -1,0 +1,202 @@
+In this lecture we'll be talking about probability
+distributions, or functions that give
+you the likelihood that some outcome will occur
+for every possible state. Along the way, we'll look at different types of distributions, which you may or may not
+have encountered before such as the normal distribution
+or the t distribution. We'll also talk about the
+central limit theorem, and the differences
+between populations and samples before closing with some remarks on how to choose the right distribution
+when you're off doing your own Data Analysis. So to make the idea of a distribution a
+bit more concrete, let's take a look at a
+canonical example, a die roll. Assuming we have a fair die, we'd have a one in six chance of landing
+on any particular side. So the probability distribution looks something like this. Let's import matplotlib,
+and plot that. In this case, we only have
+a fixed number of outcomes. But what if we had
+say a 12-sided die, or a 120 sided die, or a million? The probability of getting
+any particular number would get closer
+and closer to zero, and it's almost as if we're
+working with continuous data. In other words, it becomes
+equally or likely for some random variable X to take on the outcome somewhere
+between a range of values. Then we end up with
+something called a uniform distribution which looks like it has a flat top. Let's go ahead and plot
+a normal distribution between zero and one. So import numpy as np, we'll do the start
+at negative one, stop at one, x-range
+equals stop minus start, n 10 make our n equal 10. Here I'll concatenate
+three lists together, one for each portion
+of the distribution where y equals zero before
+the specified starting value, where y equals x before our
+selected range of values, and where y equals one
+after our stopping value. So x and then our three list, and then y 0 for i in range, and let's plot this. Now, if I were to ask, what is the probability
+of getting it exactly x equals 0.5 with an
+infinite number of zeros? Well, the answer would be zero. The better question might be, what is the probability
+of getting a value between 0.4 and 0.6? That would simply be
+the area underneath the curve between 0.4 and 0.6. Let's shade in that
+region of the curve. So let's import math, and we'll plot this again, and shade everything in. The plot above is an example of the probability
+density function, which has an important
+property that every y probability
+corresponding to the same x, must be zero and one. Also, the total area under
+the curve must sum to one. After all, we're a 100 percent guaranteed to land on
+some possible state. For those of you who are
+familiar with calculus, the probability of
+an outcome between a given range is in
+general the following. However, don't worry
+if you aren't familiar with an integral or what that is, the main idea you need to
+know is that the probability of a random variable takes on the value between some range, is simply the area under
+the part of the curve. Something else you
+might run across is a CDF or a cumulative
+distribution function. As the name implies,
+this function accumulates probability
+and gives you the total probability
+of being less than or equal to some x value. So for example, what would be the corresponding CDF look like for the uniform
+distribution above? Well, at negative one, we have accumulated
+zero probability, since P X is less than
+negative one equals zero. Now, let's continue
+along the x-axis. At x equals zero, we have split the
+distribution evenly in half, and since the
+distribution is uniform, this means that there's a 50 percent chance of
+getting a value of zero. Finally, the probability of
+getting one is a 100 percent. So if we plot these points, we get some linear graph, where the area underneath the curve looks like a triangle. For instance, we can do y, and discourse CDF, and plot this, and we have a triangle. So there's other
+common distributions. Now, while a uniform
+distribution is easy to work with in many
+practical applications, it's unlikely that every outcome will occur with
+equal probability. For instance, if we
+replicated some weighted die, and while we don't condone
+cheating in games, this would definitely alter
+the probability distribution. So there are numerous
+ways of weighting dice. Some of which are shown
+in the picture above. Let's pretend that we ended up drilling holes in our dice. How might the probability
+distribution look now? Let's check it out. Of course, these
+distributions don't necessarily have to refer
+to physical objects. It's not often we come
+across a weighted coin, but there are many
+situations that are analogous to flipping
+a weighted coin. For instance, let's say we run a company that
+produces battery packs, and we know that
+historically roughly three in a 1,000 is defective. This is essentially
+flipping a weighted coin, where p equals 0.003
+probability of defect, and 1 minus p equals 0.997, probability of working product. This simple distribution with two outcomes is known as
+a Bernoulli distribution. However, we want to know how likely it is for
+each of us to get more than 50 defects out of our total batch of
+10,000 batteries. To answer this, we can turn
+to the binomial distribution. The PDF is shown above where p is the
+probability of success, or in our case, we're defining
+success as a defect. N is the total number of trials, and k is the number of successes. But before we continue, let's visualize the shape of
+this distribution and plot the PDF for a simpler case
+with smaller parameters. So first, we've chosen
+a range of x values, such that the distribution
+display ranges from 0.1-99. So we'll import
+scipy stats stats by known from scipy
+stats, set-up our X, and start plotting
+where we're saying bo is the blue circle dots
+indicating we want blue, and ms is the Marker size, and let's set our xlim, and x-axis limits to 20-60, and then we'll put
+some titles and axis labels on here
+and check it out. Now, returning to
+our original problem of calculating probability of 50 defects out of
+10,000 batteries, we'd want to find the P with 50, 1000, 0.003 because it's a
+30 percent or 0.3 chance. Fortunately, you won't have
+to calculate this by hand. We'll use Scipy stats package to help us simplify this process. So first, let's print what
+we just talked about, and we'll print the
+probability of getting more than 50 defects. Note that getting
+more than 50 defects out of a batch of 10,000
+isn't very likely at all. You may have noticed that the
+binomial distribution looks pretty similar to a normal
+distribution or bell curve. However, there are a
+few key differences. For starters, one is a discrete distribution while
+the other is continuous. But in a similar
+procedure discussed in the uniform distribution
+section above, if we let n become
+significantly large, the binomial distribution can be roughly approximated just
+by a normal distribution, by following the
+mean and variance. Let's plot the PDF for the normal distribution and calculate some simple statistics. If we use the parameters
+n equals a 100, and p equals 0.4 from before, then we can do the
+Mu, a variance, Sigma, x equals np linespace. So we can create
+range of x values, plus or minus three
+standard deviations from zero and plot that. Now comparing this to what we had before, it's pretty close. The same functions that
+applied before work well here. So we can do probability
+equals stats norm, print this values, and plot this, plot the fill portion of this. So if you want to play
+around with this a bit more or see more
+about this function, here is a link to
+the documentation. Normal distributions
+are frequently encountered in
+statistics and we'll leverage our knowledge
+of this to conduct statistical tests in
+the next section. Yet what happens
+when we don't have a good sense of what a
+population's parameters are? Let's start talking
+about the differences between populations and samples. In this case, we somehow
+magically knew that the firm's mean number of
+defects and standard deviation. In that case, looking at a normal distribution
+is appropriate. Another random variable
+that's normally distributed might be
+people's heights. If we ask everybody in the
+world to report their height, we could compute the mean and standard deviation for
+the entire population. Unfortunately, in most cases, it's probably not feasible to ask every single person
+we're interested in, instead we can only take samples
+of the whole population, in these cases we
+would want to draw inferences not with a
+normal distribution, but by using something
+called a t-distribution. The t-distribution takes
+in a parameter df, which stands for
+degrees of freedom. This is equal to
+your sample size n, minus 1, so df equals n minus 1. Below, we overlay the
+normal distribution and several t-distributions with
+varying degrees of freedom. So let's create some data to do this and start plotting it. I'll put a little legend on it. Notice that the
+t-distribution has fatter tails than a
+normal distribution, but as n approaches infinity or we have a
+larger sample size, the t-distribution is closer to being a standard normal curve, that's a normal distribution
+with a mean of zero and a variance of one which is shown by the dotted
+red line below. Recall from the previous
+lecture where we talked about
+standardizing variables or computing a z-score, we can find the z-score of
+a single sample as follows. However, if we repeatedly take multiple samples
+and then plot the mean of each sample in a so-called sampling
+distribution instead, what would this distribution
+even look like? To find out let's just
+take a bunch of samples, with the help of the
+computer of course, and then see what happens. So let's import all of
+our usual suspects, let's create an animation tool to pull a random sample
+and plot the mean, the number of iterations and sample size are adjustable below. You don't need to worry about understanding this
+animation portion, let's just use this to try sampling from different
+distributions and exploring a bit. So we'll do iterations
+equals 200 and equals 30, we can play around with the
+different distributions by uncommenting sum of the x lines below and replacing
+them with new ones. Let's create the function that
+will do the plotting where curr is the current frame, so def update curr, check if the animation
+is at the last frame, if so, stop the animation. So do bin size,
+plot the histogram, axis, notice that the
+distribution is also normal and has a mean roughly
+equal to zero and that the standard deviation of Sigma divided by the square root of n, also known as the standard error. The z-score is the sampling
+distribution is just. This looks almost the same
+as the previous equation, but with a few key differences. For starters, we're taking
+a difference between individual sample means
+and the population mean, we also use the
+standard error instead. The cool thing is
+that the Central Limit Theorem states
+that this holds true even if we take samples from a non-normal distribution. Feel free to try sampling from
+a uniform distribution or an exponential distributions by uncommenting out the
+appropriate lines above. One more thing to note, this is only valid if our sample size is
+sufficiently large. The rule of thumb is n is
+greater than or equal to 30, try changing this and
+see what happens. When we don't know
+what the population standard deviation or have
+really small samples, we have to instead
+calculate the t-score. So this was quite a bit of
+material for one lecture, but keep in mind that you
+don't need to memorize all of these distributions and that their corresponding
+PDFs and CDFs. The important takeaway
+is that the distribution helps us model
+particular scenarios, and which one you choose will depend on your particular
+application you're working on. Also, there's a
+difference between looking at an entire
+population of interest, and taking samples
+from a population. Fortunately, the CLT provides us with some powerful
+insights that will allow us to compute statistics
+and draw inferences about your data which we'll
+go over in the next section. If you ever find yourself needing some help with picking
+the current distribution, here's a list of resources
+that might help. Just for fun, here's a neat diagram
+showcasing a number of different distributions
+we didn't have time to cover all of them in
+the current lecture, but just in case you want to
+explore on your own there's even more detail
+in the link below.

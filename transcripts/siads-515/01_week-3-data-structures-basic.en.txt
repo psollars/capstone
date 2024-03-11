@@ -1,0 +1,174 @@
+In this next segment, I'm going to
+be talking about data structures and I want to do two things. I want to review some of the basic data
+structures and make sure that we're all up to speed on some of the functionality and
+utility of the different basic types. And then I also want to talk about
+some Advanced data structures called collections. So let's go ahead and start with that. So basic data structures
+consists of lists tuples sets and dictionaries and let's go through
+each of those one by one so lists. Are a type of collection all of these
+things are types of collections lists are ordered and
+importantly their changeable. Another word for changeable is mutable. There are similar to
+arrays in other languages. If you're familiar with other programming
+languages as I mentioned before in this week's lectures,
+they are indexed starting at zero. So the first element is element 0 I will
+sometimes call that the zeroth element it gets very confusing as to
+what the first element is. Has the zeroth element is but
+what's important for you to know is that if you want to
+pull out the first element of a list we call it the zeroth element
+lists can consist of mixed types. So each element in a list
+can be whatever you want. You can mix strings and integers and
+decimals and objects and lists in Python are commonly
+denoted by square brackets. Okay.
+So here are some examples of lists from our notebook. There are generally two Ways to create
+a list from scratch one is you can initialize it with the with
+a list object like this or you can use empty square brackets. Both of them will give you an empty list
+the length of an empty list as you can predict is 0 and
+if we try to access that zeroth element or the first element depending on how your
+accounting of an empty list we get an index error, which at this point
+should not cause you any panic and in fact,
+that is what you should have expected. By calling the zeroth
+element of an empty list. So let's take another list here. Let's set this up as squares. These are squared number. So 1 4 9 25 and 36 and take a look at that output the default
+output also use a square bracket notation. These square brackets are just put
+there for your viewing pleasure. They are not actually
+part of the structure so squares at zero of this point at this
+point will give you that element of one. That's the first element up here. If we want to access the last
+element we can say minus one so we can start counting at the other end. What do you think- to does? Right, it gives us
+the second-to-last list. We can slice lists so
+we can ask for elements 1 through 3 remembering that we start with
+element zero we can ask for everything up to but
+not including number two. So that's 0 and 1 we can ask for
+everything from 2 and up. And finally, we can ask for
+everything by using the colon operator. Sometimes you'll see this as an operator. Let's continue on in our
+investigation of lists. So what we can do is have a list now,
+we're going to call it cubes. These are Cube but numbers and
+then we can have yet another list that is a list
+that consists of two lists. So here's our powers list. So it's a complex data structure. It is a Of two lists each of those
+lists as integers in them and we can address elements in
+that list by saying Powers 0. So this is the zeroth
+element of powers and then within that the 0-1 second 0 1 2 index gives us 9 sometimes
+you'll need to copy a list. And here's why copying can be
+problematic if we say we have copy of squares as As just
+equivalent to squares. So here we have. squares and here we have a copy of squares
+those are identical and then if we take our copy and
+append the number 49 to it. Then you see that our copy of squares
+has a new element 49 that's expected. What might not be expected to you. Is that are original. Variable squares has also had
+that number appended to it. So it turns out that
+this is simply a pointer to the same in-memory data structure. So copy of squares and
+squares are identical if we want to do a deeper copy of squares. We would have to call
+Copy on the original one. So now squares copy gave us this deep
+copy of squares already with 49 on it. If we take our deep copy of squares and
+a pen 64 to that then we see that our deep copy of squares has 64 whereas
+our original one has not been affected. So remember if you don't want to
+affect the initial copy of something you want to call Dot copy on it and
+then operate on that copy. Another question that I'm often asked is
+what's the difference between append and extend. We're quite used to a pending values onto
+the end of a List, but let's say you had a list of integers and you wanted to
+append another couple of integers to it. So one might be inclined
+to Simply take that list. Say 64 in 81 and a pen that two squares if we do that we wind up with something
+that's not quite anticipated. We wind up because remember
+lists can be heterogeneous. We have an integer and
+integer an integer and so on up to this last element,
+which is not an integer, but rather a list of integers, so
+that's not quite what we wanted. We wanted one for
+9 25 36 49 64 181 so let's get rid of that last element here and
+take a look at it again. So we're convinced that we've
+gotten rid of that last element. So I used the Del operator on squares. Let's extend that instead of
+a pending it by passing it a list and then taking a look at that. So now we've flattened that list
+of 64 in 81 right on to the end of squares the last thing I want to talk
+about lists in terms of review our list. Prehension, 's list comprehensions
+are very commonly encountered in Python. It's a very pythonic way of
+thinking about things here. Let's go ahead and create a list of
+squares by creating an empty list and then iterating over a range up to 10 and
+taking a look at what we get. So I arranged up to 9 and here we're appending the square
+of each of those numbers. So we start off with zero and
+up to 81 the other way of doing this is to use a list comprehension one
+way of doing that is to use a map where we're going to use an anonymous
+function called the Lambda and then say for every value of x take the
+square of X and apply that to the range of 0 to 9 and initialize that as a list so
+this will give us exactly the same thing. This is a little bit hard to understand. So there's a shortcut in Python
+called a list comprehension and it looks like this so we're going to
+use square brackets on the outside and we're going to give
+an expression x squared. This corresponds to this
+part of the Lambda. So x squared for X in range 10,
+you can see how that maps onto the more traditional mapping
+using an anonymous function and that maps onto the sort of usual
+comfortable way of doing things. But all three of these
+are exactly equivalent. The next basic data type I want to talk
+about are two poles also called tuples. These are very similar to lists
+with one important difference tuples are not changeable. Once they're assigned you
+can't change the values. In other words. They're immutable the reason that that's
+important is that immutable objects are hashable. What does hashable mean hashing in Python at least a hashable
+object implements a function. Underscore underscore hash underscore
+underscore that returns a constant value for the lifetime of an object think of
+it as almost like a serial number and hashable objects can be used
+as keys in a dictionary. So that's really important
+when we get onto dictionaries. It turns out the keys have to be hashable this ability to Hash an object
+to be able to quickly discern two objects from each other to see if
+they're the same is really important. So the hash method operates on
+the contents of that object. Let's go ahead and take a look at some
+examples of tuples in our notebook and here I in your notebook. You'll see that I prompted you to
+indicate why this is important to you. Why is immutability important because tuples can be there can
+be used as keys in a dictionary. So let's go ahead and
+create a couple of variables latitude and longitude with these values. And let's go ahead and pack these up using
+Tuple notation, which is a round bracket. So here we're going to
+create a tuple called cord that's going to consist of latitude and
+longitude. We can unpack that by going
+the opposite direction. So here coordinate now contains these
+two values of latitude and longitude. We can unpack that by using the same
+sort of approach of the reverse, so here we're going to have the latitude
+and longitude come out of coord. And if we run that we
+should get no problem notice that if we did
+something like cord data, we would raise a value error right
+not enough values to unpack. We asked for three. We only got two that makes sense
+because here we've only initialized it with two values. So again,
+don't worry about errors you can fix them. There are a few cases a special
+cases of tuples an empty. Tuple can be useful in some cases. It consists of absolutely no elements and the other special case that I want to
+alert you to that you'll sometimes see is this special initialization
+that doesn't use parentheses, but instead uses a trailing comma so
+a tuple with one element can be initialized with a trailing comma so
+you see That that is a one Tuple. So you'll see that in particular a lot
+in things like Django and flask and web Frameworks our next basic
+data type that I want to review. Our is sets sets are similar to lists,
+but only contain unique values sets also differ from lists in that they're not
+ordered and the elements must be hashable. They provide set operations. So things like Union intersection
+difference the methods that are commonly To use our add and remove and
+they're commonly noted denoted by braces. So let's take a look at
+what this looks like here. I'm going to initialize a set called
+animals that consists of dog cat horse and dog if we look at animals, then we don't have all four because
+dog is repeated so here for Animals. We only have cat one
+cat one dog one horse. We can do Boolean questioning so
+we can say is dog in animals, so you Can see how that could
+be used in a in a conditional or an if statement something like turtle in
+animals will return false for our case. We can initialize this we can do another
+example of a set where we want to look at the different the unique letters that are
+in some very long word turns out that this is the longest non contrived non technical
+word antidisestablishmentarianism. If we wanted to know how many different
+unique letters there are in there. And efficient way we could initialize
+that as a set and we would find out that these are the letters that
+we found in that particular set. And we could therefore be
+able to State quickly and efficiently that there are 12 unique
+letters in the longest non contrived and non-technical term in
+the English language. Dctionaries are another basic data type
+dictionaries are probably the most common data structure that you will use as data. Scientists and they provide a way
+to map from one value to another that is from keys to values
+the keys must be hashable. We've talked about hashable for
+tuples for sets and F dictionaries. There are commonly noted
+by key colon value pair. So the colon is important and
+in braces and as I mentioned they're very
+common data structures in Python. Let's take a look at some examples
+of dictionaries in our notebook. So dictionaries are indexed. Keys which are any immutable data type so
+they can't be lists or sets even though the elements within a set are immutable
+tuples are legitimate Keys as long as they don't contain mutable types and
+strings are commonly used as keys. So here we might set up a dictionary
+that consists of city populations. So here we have a number of cities and
+these are the largest cities in the world so we can set up that dictionary
+of city population and take a look at it the representation. Is identical to our setup of it? We can extract an element by passing
+that in square brackets as the key. So the key DACA Returns the population
+value the value over here we can ask questions like is Beijing
+in our in our dictionary. Yes.
+It is is Ann Arbor there. No, it's not we can assign a value
+given a key and a value so we could assign the city population
+of Ann Arbor to be a hundred and 2934 and then ask that question again if
+Ann Arbor is in that City population. It's true. We can iterate through
+the values of the keys and values of a dictionary by
+using the items operator and we could then go in and examine each
+of the elements by iterating over them.

@@ -1,0 +1,91 @@
+Hello and welcome to
+another SQL walkthrough. So we're going to now grab a flat file, that's just a flat text file, and
+read through it as if we are going to, we're going to load it into a database. We're going to make one column,
+put each line in the column. So we're going to make a line,
+we'll create a table called mbox and we're going to read it in
+as a line of text, right? And so the data we're going to
+look at is from my Python for Everybody class, the mailbox short. And we're going to be reading through
+these records and we're going to use things like regular expressions
+to pull things out of these records. So we're going to write SQL that's
+just kind of like reading a flat file. So a SELECT is going to
+read this whole thing. But first we've got to
+get it loaded in. And so there's a couple ways that
+we could get this loaded in, we could do a wget, we could pull it
+down into our local directory, and then we would copy from mbox_short.txt this file off our home,
+our local directory. And with this delimiter. And so
+what's going on here is naturally the copy reads this line by line, but
+we actually don't want to split it. We want the entire line, all the way
+from the beginning to the end, to be into one column. So it's going to split by
+newlines. And so what you pick is you pick in this case,
+we don't want it to split. So we're going to say, we're not
+going to use delimiters at all. So we're going to use
+a delimiter of a bell. And that's a character that doesn't
+appear anywhere in this file. And so I could do that, but I want to
+do something even more awesome. I want to say copy mbox, which means
+load mbox, FROM PROGRAM, right? And we are going to run wget. And
+these are some parameters. This is quiet, and this is the send the output
+to the standard out and this at sign is an extra parameter and then
+that says retrieve all this stuff and feed it, in the background,
+into copy and with delimiter E007. So let's go ahead and just run
+that one. Oops, come back. So that did it. It loaded it,
+it pulled it off the Internet and then put it right into mbox.
+So I can say SELECT star FROM mbox LIMIT 5. Of course, it wouldn't hurt
+if I could type SELECT right. So there we are. There's our five rows,
+our first five rows of it. And it's just this exact thing stuck in.
+Now we could do tricky stuff. We could pull things out and
+we could create foreign keys for some of these things, but for now, we're just going to play with it
+from a regular expression perspective. So, let's take a look at
+all the lines in the mbox where line is starts with
+the letter From and a blank. So that showing these things.
+There are 27 rows and that's the actual lines that
+start with From and blank. And so that was one. We can ask,
+we can say, you know what, I don't just want the line. I would like you to scan up to the first
+at sign and then go up to the next space. So what we're going to do is we're
+going to pull out this email address. And so what we're going to do is we're
+going to look for the substring line. So line is the whole thing and
+we're going to look and pull out the entire email
+address right there. Okay? And so we're going to look for, we're going to pass the line through
+the following regular expression. We're going to look for
+a blank, start extracting, then any character one or
+more times followed by an at sign, followed by anything but
+a blank. So this is a bracket, so it's a single character, but the
+caret in the beginning is not. So that's not a blank. Plus
+appends to that and says one or more times, and the parentheses says
+stop extracting, followed by a blank. And so this is we're going to apply this
+to the lines that start with From space. So we're going to pull out the email
+address from each of those lines. And so now we've got the email address
+and we're using regular expressions. Okay, this is kind of
+a mess because this whole little substring line where we're
+extracting the email address. We got to repeat it a couple times,
+because we're going to do a GROUP BY. And we're going to group by, in effect,
+the entire email address, and we're going to order by the count
+of the email addresses. We're going to select the email address
+and the count of the email address. It's kind of like running
+SELECT DISTINCT, but counting the ones as
+you're throwing them away. WHERE line is like From, starts with
+a From space, GROUP BY the email address, ORDER BY the count of the email
+address descending, right? So let's run that and
+it is going to make us a count. Look at that, Chen Wen, like in Python for Everybody, Chen Wen is five
+times, appears five times. And so she had five email
+messages in the first month or so of 2008 in the Sakai project,
+which is where this all came from. Okay? And so we can do the
+same kind of thing by, if we really wanted to not repeat the
+substring line and regular expression. We could have done this as a sub-select. So this here is this string, but there's no SELECT DISTINCT,
+so that's all of them. So you could think of this sub-select as
+producing a one-column table, right? So that sub-select produces
+a one-column table. And then what I can do is get
+the email and then count the email, again, this is like a virtual
+table, from the sub-select. GROUP BY email ORDER BY
+count email DESC. So this is a more succinct way to
+say it because I'm not replacing. I'm not repeating the substring over and
+over and over again. So this is going to give me
+that same count but, most developer database folks will tell you
+don't use sub-select if you don't have to, and what I would say is, don't use
+sub-select in online things and you can use sub-select in
+data mining applications as long as you don't
+have to wait too long for them to run. If it's the difference
+between four seconds and six seconds, as long as you've got to run
+it not too often, you're probably okay. So there you go. We've turned
+this flat text file. We retrieved it automatically right on
+the copy, turned it into a bunch of rows, one column, and then we played
+with it with regular expressions. Hope it helps. Cheers.

@@ -1,0 +1,156 @@
+Welcome back. In this segment I've got another empirical
+case study for you that'll help us work through the ideas I introduced as topics
+related to accountability and governance. This is the case of
+the Facebook Pride Emoji. I'll just show you a news
+headline to get us started. This news headline is Who Gets to
+Use Facebook's Rainbow Pride Reaction? An interesting thing about
+this case from 2017, is that some of the people
+involved in the case, particularly Megan Steiner was a University of Michigan
+student interested in data science. So this is an interesting application
+of data science ethics done by a data science student. I think you're probably aware of
+what I mean by a reaction, but just in case you're not,
+Facebook has a series of reaction emojis. It used to have just the thumbs up which
+is also the corporate logo of Facebook the social media platform,
+but it added the heart and then the other faces that you
+see along the top of the screen. In 2017, Facebook had a program by which
+it would try to make the platform, I guess more dynamic and interesting by having rotating reactions
+that were specific to the season. So perhaps they would have one related
+to Christmas at Christmastime in the United States. An interesting thing happened in 2017 and that's that coinciding with the height
+of the celebration of LGBTGIA+ or gay or
+queer Pride events in the United States, they introduced as one of their
+seasonal emojis was the fluttering rainbow flag usually a symbol of
+gay rights in the United States. So the interesting thing about this
+though, is that who got to use the symbol? So if you were using Facebook at that
+time, you might see that someone else had reacted to a post using
+the gay pride symbol, but when you went to react
+the symbol would not appear. So how exactly did that happen? As best we can figure out I suspect
+that this was intended by people within Facebook to be pro gay pride action
+by the company, so they added this and they thought this is going to be a pro
+gay pride sort of action by the company. Tthe issue with that though is that
+Facebook is a global platform. So it's used in countries, excuse me, where people who might indicate their
+support for gay pride are doing so in an environment where it might
+be against the law to be gay. And so how does Facebook then reconcile
+the desire of some of its employees. Maybe it's LGBTQIA+ caucus to promote some sort of positive gay pride
+message with the fact that you could end up in serious danger if you promoted
+such a message in the wrong country. It ended up coming up withwWith
+a system by which only users in the United States saw
+the particular rainbow pride reaction. And in fact only some users
+in the United States. And again,
+I think this is a very reasonable I understand the thinking of
+the people involved at Facebook. It makes sense to me that you would want
+to make a statement about gay pride, but at the same time be sure
+that people were safe. So I'm not trying to sound unsympathetic
+to the Facebook employees that promoted this. However, this leads you into some
+pretty tricky analytic territory in data science because the problem
+I suspect they then faced is how do we identify people who should
+be able to indicate gay pride? That probably led them to
+the question how do we model maybe they started by saying
+sexual orientation, but then they thought that's a little
+bit scary because the sexual orientation is a protected category
+in some states in the United States. However, they aren't necessarily
+using that category in a protected context like housing or employment, but still it's something that you
+could say is a sensitive category. It's a demographic that people
+can get very passionate about so they decided to model people who
+were likely to support a gay pride. So that was I think what they ended
+up trying to do and they looked for proxies that would help them
+simply identify that and so we know of one proxy that they used and
+I can state that proxy and that's that there was an official
+Facebook page for gay pride events. And if you liked that page you would be
+identified as someone who was supportive of gay pride and you would receive the
+rainbow pride reaction in your interface during the seasonal event of gay pride. I think this went sideways on Facebook for
+a number of reasons, like one reason that it went sideways is an interesting
+because it is also somewhat unexpected. They were trying to make
+a statement that was pro gay pride, but it was then attacked largely by
+people in the gay pride community. So the people who were most upset by this from the news coverage that I saw were
+people in the gay pride community. Essentially what they said is
+this they said I understand that you're trying to make this positive
+statement about gay pride, however, you've constructed a system so
+that it profiles people to try and decide if they are already
+supportive of gay pride. If they are already
+supportive of gay pride, then they get a chance to participate but
+if they really, really hate gay pride and they're really, really against it, if your
+system works as designed, they might not ever know that there is a gay pride
+reaction and maybe if their friends aren't supportive they might not ever
+know that there is a gay pride reaction. So the activists in this space basically
+said what you've done is a little bit the opposite of what you tried to do
+because rather than making a forceful statement, this company supports gay
+pride, you've made the statement that if you already support gay pride,
+Facebook supports gay pride. If you don't support gay pride,
+Facebook doesn't want to talk about it. And so
+they saw this emoji as a kind of betrayal of the principles that
+Facebook tried to promote. So an interesting thing here is that
+there was no transparency in the system as to how you would be profiled
+as supportive of gay pride. Does construct a model for those interested in I believe
+it calls it LGBT issues. It doesn't disclose how it
+constructs such a model. It provides that model to advertisers. So I imagine that it uses it
+claims it uses over 300 factors. I mean, I imagine it might look for
+things that you post, pages that you like, advertisers
+that you click on, things like that. Links that you share to
+identify this LGBT issues. It calls it an affinity for advertisers. So these researchers tried to figure
+out what was going on by buying ads using the LGBT affinity and then asking people who saw the ads if
+they would participate in a study and then in that study they would say do you
+see this little rainbow icon or not? And then they would try to work back
+as to why they thought the people were doing this were seeing this or
+not seeing it. They found some interesting things. They found that it was their guess that
+Facebook had identified certain cities in the United States as places
+where it would roll this out. So if you lived in a rural area,
+you were not targeted for the rainbow pride reaction. Cities, I guess tend to be more
+likely to support gay pride. But still it's an interesting proxy to use
+because it's definitely one that might irritate you if you were a supporter and
+you were in a rural area. They also did some funny stuff where they it's really not clear why some geographic
+areas were included and some were not. So some major cities were not included and it didn't cleanly map onto some of
+the ways that the analysts in this article were trying to figure out
+what was actually going on. So it remains somewhat opaque and they refused to disclose how
+they did the model overall. I think it was probably
+a pretty bad move for them and they ended up scrapping the entire
+program of having seasonal emojis. I think one of the reasons
+that this was a bad idea for them is that they seem to have not
+foreseen that this would be a very sensitive thing to do and
+in keeping someone's safe from accidentally disclosing their pride
+in a context in which it was dangerous for them, I think they also
+undermine the message. So that was a mistake. You can also use the same techniques that
+we have talked about in some of the other material in this class of doing like air
+analysis looking at false positive and false negatives, you can also use that
+technique to think about this case and it shows that there are some problems. So for example, you have a potential for
+very serious harm so we know that people who
+express support for homosexuality or gay rights in some
+political context around the world are, they're targeted for physical attacks. They might be arrested. So we have a really high risk of harm and then depending on the fact that
+Facebook is doing a really great job at geo-locating everyone, but we know that
+in any system there are errors and so if you are located in the wrong place by
+Facebook, it might be that you are offered this unsafe way to express yourself
+when you're not able to do so safely. If you decide that the pride emoji
+is only available to people who are already supportive, it's not
+clear that their friend network or their family network is
+equally supportive and really expressing support for
+pride is going to depend on whether you understand what Facebook is
+doing when you click that button. So if I totally understand Facebook and I click that waving flag,
+I will know that everyone who sees that post is going to see that I
+responded to it with a rainbow flag, but what actually happened when they deployed
+this system is that people click on all kinds of things and they don't understand
+completely what's going to happen. So they would then get a response
+from a friend or a family member. Why does it show a rainbow
+flag after this post? It says that you responded with this
+rainbow flag and the person who originally clicked didn't really realize
+what they were disclosing and who they were disclosing it to. So anyway, there were a number of
+problems pointed out largely again by gay rights activists who were meant to
+be the beneficiaries of this system, but they ended up coming out and saying,
+that the system basically makes gay people unsafe and that it also doesn't show
+support by Facebook for the gay community. And they also compared it to some other
+examples like they said would Facebook if the point of it was simply customer
+service in the sense that I want to express myself and if I like blue I
+should have a blue button to press and if I like gay rights, I should
+have a gay rights button to press, would they then have hate speech buttons
+to press that would be anti-gay rights and Facebook hasn't done that of course,
+but this is the kind of logic of it. So you see I think this is also
+an interesting case that gets us into the question of how foreseeable are some
+of these issues a key thing in this case is that Facebook did do I think
+a reasonable job of thinking through some problems, but when other problems
+arose they wouldn't issue any public statements about it and didn't change
+course until the promotion was over so they didn't seem particularly responsive
+to the risks that were raised and I think that also angered
+the people that were complaining. So you could say that they put a lot of
+effort into ex-ante accountability, but then didn't really have a great
+plan after something went wrong or at least they decided not to do anything
+until the the planned promotion ended at the date that they had
+already said that it would end. So I'll stop there, but
+I have some more great examples coming up.

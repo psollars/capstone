@@ -1,0 +1,176 @@
+Up to this point,
+you've been using the Jupyter Notebook
+system to acquire, manipulate and visualize data. But what we haven't
+really talked about is what the Jupyter
+Notebook is or the ideas that have emerged in
+data science around this Notebook is important
+artifacts of our work. You see, it's an
+emergent phenomenon. Computer scientists like myself have been writing programs using a variety of different
+paradigms over the years. We have a rich language to
+talk about best practices, how they engage in
+encapsulation for instance or through modules and APIs. How to test our work
+to make sure it's correct through
+test-driven design and development and even how to keep track of individual
+files and work on them with others in
+distributed teams using version control
+systems such as Git. But the field of data science isn't the same as
+computer science. While we adopt many of these
+techniques and practices, there are times when we
+have our own practices and our own ways of
+doing things which are more distinctly related to data science instead
+of computer science. I actually think that
+visual exploration of data, where the goal isn't
+to write a program per se but to gaining
+insight around data that you're working with is a great example of a task that most computer scientists or even statisticians don't have to deal with
+regularly, but we do. Given the relative newness of
+the field of data science, we have limited
+traditions and guidance, which are really our own. But the one tradition
+that seems to be forming is the importance of a
+computational narrative. In our case, this is
+the Jupyter Notebook, as a way to
+investigate, document, explain findings of our data. The name computational narrative I think is really wonderful, though perhaps at
+times misleading. It's just said we're weaving together both
+computational narrative, code for mining and training models and our
+interpretation of the results. For the assignments
+for this course, your job is actually to build these computational
+narratives. Jupyter Notebook artifacts, which explain to me and the
+graders in this class your process and discoveries with the data we've
+given you and of course a broad problem statement and how you've gone
+about addressing that. So given that we're expecting you to create a
+computational narrative, we should probably discuss
+what it actually looks like. I've linked to the
+course resource is a document by Adam
+Rule and others that describes there 10 rules for a good computational
+narrative. I think this is a
+great place to start, and so we'll talk about that now. So the first rule of a good computational narrative is to tell a story to your audience. This means you need to
+understand your audience and be able to communicate
+beyond blocks of code. Data science teams are
+increasingly inter-disciplinary, and I like to think of them
+being made up of someone like a computer scientist
+or statistician, maybe a marketing professional
+and social scientists who bring some domain knowledge, and of course yourself. So you should think about how
+you would build a narrative that can speak to all of
+these different perspectives. The second rule of
+computational narrative is that the narrative itself doesn't
+just discuss the results, but also the process. In this course in particular, we're talking about the
+visual exploration of data. As you examine the relationships between
+various variables, you start to form new insights. It's important to document those insights so that you
+and others on your team can smoothly continue to
+make progress and understand your data
+and domain better. The third rule they
+suggest is use cell divisions to
+make steps clear. I think this is really interesting and there's
+much room for us as a discipline to understand
+what actually a cell is, as a unit of code or text. When I begin using Jupyter
+I tended to have two cells. The first one was my whole
+program and the second one was my interactions with the
+current Python interpreter. It's very much bringing a
+software engineering mindset to bear on my task. Because I'm insured
+in my use of Jupyter, I started to break
+my code up into cells or collections of cells and started to use headings in my markdown to
+organize my notebooks. It seems clear to me
+that cells brings significant power to explain ability and readability
+of the notebook. But I think there's
+many opportunities for further iteration on this concept and I'm genuinely curious to see where
+it's going to go. Modularizing code
+is the fourth rule. I think this comes very much from our understanding in
+software engineering. You want to incapsulate code
+that you write in functions, be able to call those functions instead of copying
+pasting your code. But I think it's really unclear, however is when you
+should move out of the functionality out of the
+notebook and into a library, either a formal library that you might install with conda or pip, or an informal handful of Python supporting files which you
+import it into your notebook. The crux of the
+question for me is when does data science
+turned into programming? How will future notebook
+environment better support this? The next rule is to
+record your dependencies. I think I would probably
+say that this is both the weakest feature in current computational
+narrative environments, as well as the one
+that I think has the strongest potential
+to be strengthened. I would go even further than
+the authors of these rules to suggest you shouldn't just
+record your dependencies, but you should record them
+in a way that can result in a replicable environment
+automatically. Now, the rise of web
+services has actually caused a huge boom in
+technologies to support this. Things like
+containerization systems such as Docker and Kubernetes. I would be really surprised if Jupyter Notebook software didn't evolve to support these
+technologies more natively. The sixth rule the author suggest is to use
+version control. Now, this two comes from software development
+practices. So I'll be honest. I think that software
+development tools for version control are overly-complex and lack
+features for data scientists. So while the use of
+Git, for instance, is pretty standard right now for managing
+computational narratives, I actually think it's a
+really poor solution. It's worth dropping the
+computation part for a moment, considering the narrative aspect. Version control for
+documents isn't at all like version
+control for software, and new environments
+like Google Docs, which allow for inline edit, type version tracking and even collaboration
+are now common. One example where you can
+find this work being done in the data science ecosystem is in the Google Colab project, where the notebook
+environment has many of the same features that you would expect to find in Google Docs. The seventh rule is to build a pipeline from your document. Now, I like the intention
+from this rule, but this is another place where I think the tool support and an understanding of
+our workflows as data scientists just
+isn't there yet. The authors bring across concepts from computer
+science such as; build scripts in
+continuous integration, but I'm unsure that
+these are really suitable for the
+fast-paced and often changing analyses we engage in in computational narratives. Certainly a lot of
+robustness can be gained through the use of
+continuous integration, but it's expensive
+to create tasks and even more expensive
+to change them. When I engage in
+data exploration, I'm constantly digging and
+weaving through the data and a test-driven approach
+would be much too unwieldy. Now Rule and his
+co-authors didn't actually suggests
+using TDD per se, but I feel that
+the integration of these software
+development techniques such as command
+line parameters and continuous integration
+will unduly change the nature of how computational narratives are used by a breadth of members
+on the data science team. Instead of forcing my
+perspective on you though, I want you to read the paper by rule and check out some of the example systems they
+use such as interact. That chime in our slack channel, and let's discuss what building
+a pipeline really means, and how we might
+accomplish this in novel ways while
+preserving some of the characteristics of rapid
+iteration that we're used to in a computational narrative
+environment like Jupyter. Now, the last three rules I'm going to group together
+into one meter rule, which I call make your
+notebooks usable by others. This includes a host of policy
+issues around access to the notebook and associated data or even computation if needed, as well as the design
+of the notebook itself. I think a wonderful link and the related reading is
+the link to binder, which is a great
+project aiming to make Jupyter Notebooks
+just usable on the web without having
+to install anything or having any particular
+computational environment. This is actually
+phenomenal as it requires back-end servers to execute
+the Notebooks themselves, which in turn requires
+computational resources. That's just put together
+for you by the community. Now, mentioned in rule nine, which is designing your
+notebooks to be read, run and explored is the
+ideal IPython widgets. I think these are compelling
+and novel aspects of computational narratives
+that we really don't see in generalized
+software development. I've included in this
+course a couple of basic examples of
+IPython widgets. If you're looking
+for a challenge, I think playing with a
+variety of widgets out there or even creating some
+of your own would be great. In this video, we discussed what the computational
+narrative perhaps the most central artifact being created by data scientists is. The work by rule is always excellent at outlining
+the current state, but this is fast moving, and I expect there
+to be more rules, heuristics and capabilities of these environments come forward even over just the
+next five years. In your assignments
+in this course, you need to build computational
+narratives and I'll be grading them in parts
+through the lines of this lecture and
+the work by rule. But I want you to pause for a moment and think
+a bit more broadly, because we're really
+at the beginning of a discipline and starting to think about our traditions
+and work practices here. What do you think might make when engaging computational
+narrative environment? Share your thoughts on
+our class slack channel and let's get a discussion going.

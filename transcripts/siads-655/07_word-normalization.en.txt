@@ -1,0 +1,119 @@
+If you've seen in some of
+the previous segments, words can vary quite a bit, and one of the ways that
+NLP tries to combat this very different types of
+word forms is normalization. Just to give you an example, what do these words
+have in common? Cool, cooler, coolest,
+coOooOooOolll, uncool. They all share a common meaning that's affected by
+their suffixes, or affixes, or even infixes like those
+extra o's in the middle. This is an example of
+morphology in English. Languages can add these
+prefixes, or suffixes, or even these infixes in some languages to affect the
+meaning of the base form. Cool is our base meaning, and then we add this -er
+to indicate that it's cooler or more cool
+than something else. In many cases, these
+additions can be repeatedly applied to create new
+different meanings. We could say uncoolest. English has a relatively
+limited morphology, but other languages
+like Hungarian or Turkish have very
+rich morphologies, and as a result,
+they can end up with tens of millions of
+unique word forms, which can create huge challenges. In fact, let's think
+about the effect of morphology on NLP. For one, all of this morphological variation and the addition of suffixes, and infixes, and affixes creates many different unique
+word forms to analyze. If you think about
+these as features, this creates a very sparse
+feature space because many words may not occur
+a lot in a training data. In some language, most of the words are
+morphologically derived, which creates an even
+sparser data space for doing machine learning. This creates a
+tough challenge for many NLP models which
+often have to limit their vocabularies or the number of unique words that they can reason about due to space constraints or
+efficiency constraints. NLP has developed a set
+of techniques that try to normalize words to a
+much smaller space. Let's look at a few of them. One idea is a technique
+known as stemming. Stemming is going to use
+fixed rules to remove common endings to just
+what's known as their stem. A stem isn't necessarily a word. Let me show you an example. Here, I've taken apple, and a common stemming
+operation will say remove the e on apple and
+replace it down to appl. This is helpful if
+dealing with plurals, so apples will also
+be reduced down to appl, as well applely. But because this is rule-based, things like appleish will
+still remain as appleish. If you run this, it will
+not always produce a word, so if you need to
+interpret the output, sometimes it can be
+quite challenging. But because it's rule-based, it is very fast in practice. One of the most
+commonly used stemmers is what's known as
+a Porter stemmer. This is often what's
+most used in English. An NLP package called NLTK, the Natural Language Toolkit is often one of the most
+used for doing stemming. Here, I've shown you the example that we just
+saw on the previous slide, where apple, apples, applely, and appleish are passed
+through the Porter stemmer. As you can see, we get
+out that base stem, A-P-P-L for the first three, but appleish doesn't match
+the Porter stemmer rules. I should also say that
+stemming is imperfect. Even though we can be robust
+to apple, and apples, and applely, other words may get mapped to
+the same ending. Here, universal, university, and universe all get mapped
+to the same stem. These do share a related meaning in the sense of universal, but it's probably not ideal
+if you want to try to reason about language and we
+have this conflated stem. Other stemmers do exist, like Snowball and Lancaster, and people do use these. Another option is a technique of what's known as lemmatization. Lemmatization will use
+some knowledge base to figure out what's the
+root node form of the word, which is going to be
+known as a lemma. A good example of this is the word cool from
+our first slide, where we showed that
+cool is itself a word, and it has a base
+meaning that's modified. One of the challenges
+is that lemmatization often requires knowing the
+word's part of speech. To show an example, "I was meaning to
+tell you about cats." Meaning here is used as a verb, so if we were to lemmatize it, we would want to
+replace it with mean, whereas if I said, "I look
+for meaning in cats", meaning is used as a noun here. Here, we would want to
+keep the whole word as meaning for our lemma. To give you two other examples, let's look at WordNet
+and SpaCy lemmatizers. Many NLP packages
+will support these, and NLTK will use what's known
+as the WordNet ontology, where simple rules
+are part of that. That will help us
+figure out what's the base meaning of words. If we import the WordNet
+Lemmatizer and I pass the phrase "I was meaning
+to tell you about cats", we can see that we maybe get a different output
+from what we expect. Was, was actually
+truncated to wa. Maybe it should be truncated to be instead our representation. We get meaning is not correctly
+lemmatized to say mean, but we do get cats at the end lemmatized
+just the word cat. Let's look at another
+example of a lemmatizer. The SpaCy package will use
+part of speech tagging and simple rules with look
+ups to do its lemmatization. If we pass the same phrase in, I was meaning to
+tell you about cats, we see that it gives very
+different lemmatization output. For one, it replaces pronouns with a special
+pronoun marker. It does correctly replace was with the right
+lemma form of be, and it also replaces meaning
+with its correct form mean. Finally, it also replaces cats with its correct form cats. SpaCy is a little more
+complicated than NLTK, but you could see that if you
+want to use lemmatization, it's important to see what
+your lemmatizer actually does. As a final idea, we could think of a
+technique that's recent, known as Word Piece segmentation. Their basic idea
+is what if we kept all the words but split them up into their own
+different components? To take one of the
+most morphologically derived examples in English, establishmentarianism,
+we could see that we could break it up
+into different suffixes; establish, -ment,
+-arian, and -ism. The idea is if we could keep these meaningful pieces
+as separate features, we could learn combinations from sequences of these suffixes, affixes, and infixes,
+that would let us reason about the
+language itself. Many algorithms learn
+these directly from texts, and are not rule-based
+themselves. But increasingly, many of the deep learning advanced
+libraries will use Word Piece segmentation to be robust to the different
+types of word forms. Finally, as some practical
+considerations to take away, I will note that stemming
+is not always useful. As you saw before, it may
+create errors in the data by stemming multiple words with different meanings
+to the same stem. It's important to actually
+vary your data to see whether this does actually affect your downstream task in practice. You should also ask how
+much data do you have? Often when we have
+lots of more data, stemming does often not
+have as much of a benefit. I'll also note that lemmatization takes time because we have to do other aspects like tagging each word with its
+part of speech. This creates an overhead, and it may not always be
+worth it if you're running this in a very tight loop. I will say that word
+pieces are very useful when you have
+combinatory features, so if you're using on certain
+texts like legal texts or academic texts that tend
+to use complex word forms, Word Piece segmentation can actually be a useful technique.

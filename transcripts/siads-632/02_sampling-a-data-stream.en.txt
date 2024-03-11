@@ -1,0 +1,315 @@
+To understand, how to
+mine data streams, let's first look at how
+to sample a data stream. As a reminder now, what is a data stream? A data stream, is
+a list of ordered or timestamped data
+objects or events. Mathematically, a data stream is the set of undefined or
+infinite number of pairs, where in each pair you have, is there simple or the
+complex data object XK and is there a
+timestamp, or an order. This indicates that we
+don't have access to the entire history
+and the data stream also arrives continuously
+into the future. As we see that one
+real world example of data stream is
+the tweet-stream, where every event is
+that single Tweet. The Tweets, arrives continuously and they're identified
+by timestamps. The challenges of
+mining data streams, can be summarized as
+one example question. Lets suppose you are dealing
+with 500 million Tweets per day and you only
+have the capacity to keep 1000 tweets, right? How can you do data
+mining in this case? As you can see that in
+this particular example, you want to reduce 500
+million into a 1000. Mining stream data, has quite a few objectives and those objective are very special, comparing to what we have learned with sequences or time series. First, you want to store only
+a small portion of data. This portion can be very small, for instance, 1000
+out of 500 million. You want to update the results
+or your storage online. Because the new events
+are actually coming in as time goes into the future. You want to deal with
+events in order, you want to make a
+decision right away. When one event arrives, you don't want to
+delay the decision and you don't want to look back. Because we are not storing
+the entire historical data, if one event is kicked out, is excluded, it is gone. You can't actually reverse
+the decision about it. As you can see that all these
+objectives are pointing to a very commonly used
+technique, sampling. Because essentially,
+you want to actually sample 1000 tweets
+out of 500 million. In fact, most of these challenges can
+be indeed addressed. If you always just keep
+a sample of the events, instead of storing the
+entire history of events, you keep the sample and this
+sample can be very small. Then, whatever you do
+with original data, for instance, if you want to do a frequent pattern mining, if you want to compute
+some narratives, you want to build model, if you want to make predictions, you deal with the sample you have in hand instead of
+the entire data-set. By doing that, you could
+ask yourself lots of data mining problems and meet the challenges
+of data streams. But this indicates that, the sample has to be very good. We usually prefer the
+unbiased random sample, so that every old
+or new event has the same chance to
+present in that sample. But the question is, how
+to sample a stream so that this quality can be ensured? Sampling the data stream can
+be particular challenging. How can you randomly
+sample key events from a huge number
+of data streams, let's say, N events? Then, the samples adapts
+to incoming events, right? In other words, whenever
+we receive new events, the sample needs to
+be updated to give the new events a chance. How can you also assure that every event has the same
+chance to be included in the sample and does every event includes both historical
+and incoming events? You can't add a new
+arrival into the sample, so that all the items
+in your sample are new. You also can't keep out
+events always in sample, so that the newer arrivals
+do not have a chance. In particular, suppose
+you are dealing with the stream of items and here, using colored squares to indicate that those are the
+items, those are the events. But you can imagine that one of the squares could be any
+complex data objects, such as the matrix or such as itself could be a
+sequence of words. How can you actually
+extract the sample that contains only
+a few data objects? These data objects, are
+distributed evenly through the entire history of the
+sample and both out events, and new events have equal
+probability of being included. Well, this problem
+is quite challenging because we're dealing
+with a stream, right? Naturally, you can think about, what if we're not
+dealing with stream? What if we're dealing with
+the static set of events? In other words, if we have
+observed all the events, if we stored all the events and we don't have new
+events coming in, then we're just dealing
+with a fixed set of events. If that is the case, then sampling is actually
+a simple thing to do. Suppose there are N, let's call them static in comparison to dynamic
+events in total, then you can just
+always sample K events uniformly at random and
+without replacement. That means, if we have included one of the squares
+into the sample, you take it out before
+you sample another. In this case, every
+event will have the same probability to be
+included in the sample. What is the probability? Well, because K is the number
+of events in the sample, K is the sample size, N is the population size, then the probability that every event is
+included in the sample is just K over N. In this case, we have the
+probability in sample, that is 7 over 19. I know that both of
+them are prime numbers. Well, sampling the fixed
+or a static set is easy but sampling streams is
+much harder as you can see. But we contribute from
+the simple approach. The first attempt for us to
+sample data stream like this, is that for every incoming event, you just throw the coin to decide whether it should be included
+in the sample or not. This is exactly what you were
+doing with the fixed set. Well, but the problem is
+that you don't actually know how many items there are or
+how many items there will be. In other words, the ideal
+probability that you assign every event into
+the sample is K over N. But we actually don't
+know N. The solution here is to assign a very
+small probability that every event is going to
+be included in the sample. This probability is so small, It is comparable to K over
+N. Whenever we don't know N, we just try the very big
+number in the denominator. In this particular example, because we don't
+know how many items there will be or there
+were in the stream, we just apply the very large
+number as the denominator. The probability that
+every event upon arrival will be
+included in a sample could be just 7 over 1,000. We think that 1,000 is actually a large enough number that could be close to N or could even
+be larger than N. In fact, many people do do that when you're dealing with
+a data stream. When they're sampling
+a data stream, they assign a very
+small probability. Then they throw the
+coin upon arrival for every new item to decide whether that should be included
+in the sample or not. But this simple approach, this first attempt of
+sampling a data stream has pros and cons and actually
+probably more cons. The good side is that it
+is very easy to implement. In fact, it is as simple as randomly sampling a static set. But the problem is that, we don't really know N, we don't know the probability that we should use
+to throw the coin. If the stream appears to be much smaller than the
+numbers, than 1,000, then we won't actually have
+enough items in the sample. On the other hand, if the stream is very large, then we'll eventually
+run out of capacity. No matter how small the
+probability you use, you think 1,000 is big
+enough as the denominator. But what if the stream ends up to be having 10,000 events? If you think 10,000 then what if the stream came
+with 1 million events? You really don't know that. In this case, it will
+feel even when when the stream is small or when
+the stream is less huge, as long as your estimate
+does not really reflect the real number of events in the stream,
+you will have problems. Well, this doesn't work, but we know that this
+is a simpler approach. Why don't we try something
+that is slightly better, slightly smarter we hope. Why don't we always keep
+the most recent K events. You said that okay,
+if the event is huge, then you will run out of capacity by only keeping the
+most recent K events. We will never run
+out of capacity. Does it make sense? You may argue that when a
+new event comes in, you can still run
+out of capacity, whenever you sample to deal with, when we have enough
+events in the sample and when the new event arrives, then we just add it in and
+we kick out an old item. Or the oldest item. In this case, we're
+always guaranteeing that there will be the fixed number
+of events in the sample. As the illustration,
+no matter how many events we have
+received in the past, we don't include them
+into the sample, we only include the
+most recent K events, in this case selling
+events in the sample. Does that make sense? As in, when the new event arrives, we just add that event in, and then we kick out the
+oldest sample from the event. No matter what we do, we're actually just keeping the most recent K
+events in the sample. This process can be
+run into the future. Well, that sounds
+fair, don't you think? But this method also have
+its good side and bad side. The good side is
+that we will always have a sample of
+K. Which is great, we will never run
+out of capacity. But the downside is that the sample only
+contains recent events. The older events are all
+kicked out as timely as the size of your stream is larger
+than size of the sample, and this is actually unfair. In more technical term, describes this as the
+phenomena of concept drift. This is exactly the scenario when you're actually
+chatting with your friends. You started to talk
+about American football, and one sentence after another, one chat after another, you were talking
+about data mining. You can see that concept drift always happens when you actually deal with
+the large stream If you only keep the
+most recent events, you may conclude that, this is the conversation
+about data mining, but in fact, you started
+with American samples. Neither of the simple
+strategies were quill as is, but what if we can
+combine them to so that we can get a more
+powerful sampling method. Well, we can do that simply
+by chunking the data streams. For instance, when we
+receive the data stream, we just chunk them into an
+arbitrary number of M events, a chunk as M from every chunk, we sample one event. In this case, we could have
+one representative per chunk. If there are more chunks
+than the sample size, we just keeps the most
+recent K samples. That means the representatives of the K most recent chunks. Well, this sounds reasonable. For instance, if you're dealing
+with a stream of squares, we first break them into
+let's say chunks of four events per chunk
+as M from every chunk, from every bucket, or
+we just sample Walden. If you just look how
+the distribution of the items over stream, it is actually much more
+uniformly distributed. In other words, it is fairer. Is that really the
+case? Well, maybe. In fact that is what many different companies use
+to sample your data streams. For instance, when Twitter
+sends us there tweet stream, Nobel Data holes or garden hose, no matter what the name is, they do this sequential sampling. In other words, for every 10 tweets, this
+is not one of them. This is essentially using
+this chunking idea, but you can actually see
+the problem with chunking. Let's look at the
+good side first. The good side is at
+every recent event has the fixed probability that is one over M to be included
+into the sample. Because you sample one
+event per M events. Ideally, if you select a good M, could actually be quite similar to N over
+K. In that case, you could guarantee
+that you will have a recent event with probability of K over
+N to be sampled. Another good thing is that you will never run out of capacity because you only keep
+the representatives of the recent K chunks. But problems are also unclear, is concept drifting
+solved? No, it's not. You can still observe
+concept drifts when you have too many items into
+your industry. Because even if you have
+chunked the stream, you can't still only keep
+the most recent K chunks, and the concept may
+have already drifted. Another problem is that
+it is still not fair for other events as they are more likely to be
+kicked out, why? Because we're only keeping
+the most recent K chunks. In fact, if you look at how we deal with the Twitter stream. We're trying very hard to store the historical samples that
+they send us, or hard drives. But it is actually quite
+costly, as I can guarantee you. If we only keep the most recent tweets and
+throw out the old tweets, we're fair of that
+we cannot construct the entire history or the representative sample
+of the history of tweets. Given though that this chunking based method works
+reasonably in reality, it still has lots of problems. There are even more
+attempts people have tried to sample data stream. For example, for every
+new event coming in it is actually a simple
+decision because we want the probability that every
+event is included in the sample to be K over N.
+So for every new event, we don't have a choice. We basically keep the number of events we have
+received so far, so we know N and then we insert every new event into
+the sample with the fixed poverty of k over N. This step is
+actually quite fair, and no one would actually argue that because this
+is the objective, you want every event to
+be included in the sample which is the probability
+of K over N. Here, K is actually the
+size of the sample, and N is actually the
+current number of evens. So net indicates said
+we're actually keeping the count of how many events
+we have received so far. In cases that we cannot keep the count because we don't
+know the entire history. We just gave the estimated number of the total number of events. In this case, to
+show the example, suppose we actually knows
+the history of the stream, although we didn't keep all those items when
+those are the ones, the red square coming
+in is actually the 100th event in the stream. Then we keep this item into the sample with the
+probability of seven over 100. Then when a new
+work item comes in, because the number of events
+have increased by one, then we sample this new item into the sample by the
+probability of seven over 101. Then when newer items come in, the number of total events
+will increase again and again. So we will actually respect to the most recent number of items, and then we include
+this green item into sample with a probability
+of seven over 110. So and so forth. This blue item with
+probability of seven over 118. This approach is actually
+quite intuitive. Basically, you keep the number of total events so
+far if you can. If you cannot, if you
+have lost a history, you just give it an estimate. Then whenever you
+receive the new item, you assign the
+probability that is K over the current total
+number of items. But the problem you can see with this approach is that the N, the number of events
+actually increases over time Of course, the
+estimation can be wrong. What's wrong if N
+increases over time? That means even if you
+use this approach, you can see that it is unfair to new items because the
+denominator is larger. Actually, the blue item, actually has the small
+probability to be included into the sample
+rather than the green item. That is not fair for newer events. You can
+think about that. Well, if only we have
+a way to crack this, when N-th event has arrived, while if we have a smart way to adjust the probability
+of the old items so that the probability
+that any of the items so far to be included in the
+sample is the same, is fair, is equal. Can we do that? Well, you're
+basically suggesting that, first of all, you have to
+know N. If you don't know N, then is harder to
+actually deal with this. When a new event comes in, you use a flip a coin. You flip a coin to decide whether you actually include
+this into the sample or not. In this case, the
+probability is K over N. You keep increasing the number N. Then you can
+see that difficulty is. You also need to adjust
+the priority of old items. Suppose the newest item, is a blue item has the
+probability of seven over 118 to be included
+in the sample. Then we want to correct the probabilities
+of the red item, the green item, the gray items, so that they also have
+the same probability. In other words, arrange the denominator of the red
+item and the green item, so that the denominators
+are all 118. To guarantee that every item has the fair probability to
+be included in a sample. For the newly arriving
+items, we know N, we can just assign a probability and that is K over N. But because the older items actually had a larger
+probability to be included, because zero decision
+have been made. We have to go back to actually change their probabilities of being included in the sample. We change them or into the same probability
+that is 7 over 118. Well, is this durable at all? Teachers tell us that
+we cannot go back. We cannot go back to the
+history because we have discarded all the items in the history if they
+were not even sample. How can we adjust the denominator of the
+probabilities of the older items, when they were a really included or excluded from the sample. When it's put them aside, even if we have a way
+to adjust denominator of the probability of old
+samples over the old items. Don't we have the problem of
+updating. Whether they mean? Well, that means suppose
+currently we're looking at the blue item, item number 118. The probability is 7 over 118, and we did all our best
+to actually adjust the probabilities
+of the other items also into 7 over 118. Then what if a
+newer item arrives. Whenever the newer items arrives, remember that the number N
+actually increases by one. Now the probability that the
+newer item is going to be included in the sample
+becomes K over N, given that new N
+that is 7 over 118. We have to do this
+all over again. We have to adjust the blue item from 7 over 118 to 7 over 119, and then we have to adjust
+all the older items. Their probabilities,
+which we have already adjusted into 7 over 119. Well, this is challenging indeed. But in fact, if you
+want to assure that the probability of every item
+into the sample is fair, is equal, then you will have
+to do this adjustments. Let's see, suppose
+we will do this. How can we do this? Remembers that all the decision for the owed events
+have already been made. How can you adjust their probability when the
+coin has already been thrown? You can see that the key of sampling and of
+this stream here, is essentially to adjust
+the probabilities. We adjust the probabilities
+of old items, and the solution to this
+is called resampling. Resampling meaning that, suppose the probability of the new in a sample is K over N, then the probability
+of the older event in a sample is greater
+than K over N. Why? Because when we made the decision of one of the older items, the number N was small. By doing resampling, we should actually
+reduce this probability. We can actually make a signal decision and by the way we want to kick
+out the older event. This is actually intuition
+behind recently. We know that we cannot re-throw the coin that
+has already been thrown. If you were lucky,
+you were actually in the sample with the
+higher probability. But we do have a way
+to actually reduce your probability
+of being sampled. All we need to do
+is to resample you. We make another decision to decide whether we should
+adjust your probability, and with a flip another coin. Basically, to decide whether we want to exclude
+the other items, that is already in a sample
+and this is the intuition behind reservoir sampling
+that we will introduce next.

@@ -1,0 +1,136 @@
+Welcome back to Introduction to Information Visualization. We've talked about
+a couple of the functions, record and analyze of
+information visualization. I want now switch gears to the last one which
+is communication. You're often coming
+to the visualization with a particular insight, that is you want to communicate that insight
+to somebody else. You've discovered something, you want to show it
+to somebody else and teach them about that insight
+using a visualization. This is another one of Playfair. We're in Playfair first example. This is from 1786, showing a particular thing
+about exports and imports into Denmark and Norway in
+favor or against England. So this is showing over time. Again over here,
+imports and exports, whatever it is or maybe it's
+flipped and you can see it balance in favor of
+England or balanced against. You can see this flip
+that happens around 1750 something over here, that led to this flip. So the goal here is to communicate something
+about the underlying data, this insight to that something interesting happened
+in the 1750s, and suddenly the balance in favor of England
+was very high, whereas before, it was against. This is an interesting way
+to communicate that. So Playfair has chosen to use this particular visualization
+in a communicative way to describe some insights about the particular things discovered by analyzing the data. In today's world,
+we're often using analysts tasks and communicative
+tasks simultaneously. So we have analysts doing something but then they need to tell other people about them. So in the act of producing visualizations
+for analytical roles, or producing things that can be used for communicative purposes. So this is a visualization, very large display using
+a system called Spotfire. It's a it's a nice system for
+generating visualizations. The person has generated
+some interesting facts about the data and then showing
+them to an audience, to other people working
+in the company, or people that they're
+presenting to. So this is the communicative role after having discovered
+something interesting. In this particular case, they
+might be able to also make adjustments
+dynamically as they're describing and people
+are asking questions. So that's an interesting property where you can go back and forth between the analysts task
+and a communicative task. This is an old example, Florence Nightingale's cause of mortality in the army
+of the East. This was intended to
+communicate the reasons why people were dying in
+the Army in the 1850s. So she generated
+this very nice map. This diagram, called the coxcomb, that basically
+reflects the deaths over time and due to
+different things. This was used to communicate to the army that this was a problem and what they
+should do about it. So very powerful
+compelling visualization, again abstract representation
+that is showing something about
+the underlying data that she discovered and wanted
+to communicate. Jumping ahead, this is
+an example from 2001. This is a visualization
+of the Internet. So this is something
+called the Opte Project, where they go and
+collect a bunch of data about the conductivity of different computers
+on the internet. It's a very interesting diagram, it's very hard to actually understand anything about
+the underlying data. What this is communicating
+is something interesting and inspiring
+about the underlying data, but perhaps, not
+something that's directly useable just by looking
+at this visualization. So you might be able to see these different
+clusters and things that are in the middle
+of the visualization, things that are highly
+connected, and so on. But without additional
+information, this is not actually
+particularly useful. So it has this function of being inspiring and great in
+that sense engaging. But perhaps, not useful
+for a specific task. That's perfectly fine. Not every visualization
+will need to have some cognitive or
+some learning role. We might just be
+targeting inspiration, we might just be targeting learning in a very different way. But it's important to make
+that distinction and be honest about that when making
+visualization choices. We're actually trying
+to communicate, or analyze something specific, or do we want to communicate some higher
+level concepts like, it's inspiring or
+something like that. This is another example. This is when you
+don't have computers and can only resort to
+these cardboard displays. So this is what happens in
+the senate floor or congress, they're not allowed to show
+anything that's computerized. So what they'll often
+do is print out these interesting and sometimes
+not so great displays of information in order to communicate something
+about the data that they want to offer to others
+in the audience. So either the TV audience or other members of Congress
+that are sitting around. There's a really nice website
+called Senate charts, which tracks all of
+these things that you can see some labs, sometimes at the different
+choices that they make, is an American flag necessary
+for this visualization? Probably not, but it's
+one that's intended to communicate and compel
+something in the audience. It engages them in
+a very specific way. People will often use
+visualizations and the communicative role
+for political purposes. So we'll talk about
+this example a few times over the course
+of these lectures. This is a visualization
+of the interaction of different components
+in the Obamacare medical plans. So
+this is the ACA. So these are the interactions of the different things,
+it is very ugly. This is a very ugly
+visualization. All the different elements of it are graphically not nice, it looks complicated,
+it looks messy, it looks like something
+you don't actually want. As you might imagine,
+this was put out by the Republicans as a way of communicating his very
+negative view of Obamacare, and there are other forms of this that are much more positive. So this is again a very
+political example of using information visualization and it communicative goal to
+achieve some effect. The goal broadly of communicative
+visualizations however, is to teach someone something, or at least to support
+some teaching. So often, there's text
+involved and we want to engage the reader or viewer in
+some ways so that they learned something from the text by seeing the visualization. So this is going
+to be critical for our understanding of
+communicative visualizations. We're not trying to go in
+one here and out the other, we're actually trying to
+teach them something. At the root of all
+of these things, analytical tasks,
+communicative tasks, all visualization is
+about comparison. It's about using the visual
+system to compare things, bigger/smaller, up/down,
+there/not there, like a pattern/not
+like a pattern. This is going to be
+key and cross-cutting across all the different kinds of information
+visualization tasks. So the main takeaways are that we have three different
+kinds of tasks, record analyze, and communicate with many different
+kinds of subtasks. The analysts tasks are all
+about pattern finding, the communicative task
+are all about teaching and
+everything in between. That is, you can have
+tasks that involve both an analytical role
+and a communication role, a recording role
+and communication, or analyzed communicate
+record all at the same time. So there are many different combinations
+that are possible. So it's important to be able
+to make the distinction. What is our current goal with this information
+visualization, or the software that
+we're building, or the particular technique
+that we're using, and so on. But these are
+the high level versions and making that distinction
+in our head is going to be critical and useful for making determinations
+about the best technique. Then in critiquing
+other people's solutions, we're going to want to be able to apply this language
+in a good way. With that, thank
+you for listening.

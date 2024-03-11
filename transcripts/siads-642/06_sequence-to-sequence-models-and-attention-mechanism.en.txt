@@ -1,0 +1,81 @@
+Hi everyone, this is Paramveer Dhillon. In this video we will study
+a new kind of recurrent model where both the input and
+the output are sequences. .Next, we will also study how
+we can get a recurrent neural network to focus on certain
+parts of the input. As we will see, this has applications in lots of
+areas including machine translation. Till now we have seen
+text modeling problems, which can be solved using one
+of the two RNN configurations. Either we input a sequence of
+text as input to the RNN and output a single label,
+also known as a many to one mapping and as is done in, for example,
+the task of sentiment classification. This RNN architecture is also known as
+an encoder, since it encodes a sequence of text into a single vector,
+which is then used for prediction. We have also seen a second configuration
+where we input a single vector, but the output is a sequence. This is also known as
+a one to many mapping and a good example of this configuration,is
+the task of image captioning. This RNN architecture is called a decoder as it decodes a single
+input into a sequence. This brings us to another powerful
+RNN architecture known as a sequence to sequence model or
+simply seek to seq2seq models. Seq2seq models models,
+essentially combine the many to one, and the one to many RNN architectures to
+construct many to many architectures. Therefore, seq2seq models are also known
+as an encoder-decoder architecture. Since they combine a many to one
+encoder with a one to many decoder. There are several important real world
+applications of many to many architectures like these. The most obvious one is machine
+translation, where the input is a sequence in a source language and the output
+is a sequence in a target language. Another one is summarization, where
+the input is the full text sequence and the output is a summarized text. Other applications include dialogue
+generation or code generation. Next, let's look at how a seq2seq
+encoder decoder model looks like for the task of machine translation. So as we can see on the slide,
+first we encode the entire text, which in this case, the cat likes to eat
+pizza into vector using an encoder RNN. All the information in the source text is condensed into the final
+hidden state of the model. This final encoded hidden state
+also provides a starting point for the decoder RNN to start
+decoding the text. As we can see, the decoder RNN
+converts the encoded text embedded into the final hidden state of
+the encoded RNN into a sequence of texts, into the target language,
+which in this case is Spanish and we get the output sequence,
+el gato le gusta comer pizza, which is the translation of our sentence,
+the cat likes to eat pizza in Spanish. An important thing to note
+is that in the decoder RNN, the output from the previous step is fed
+into the input of the next time step. And the initial hidden state
+that the decoder RNN works with is the final hidden state of the encoder. This is why sometimes text
+generation from encoder decoder architectures is also known
+as conditioned generation. This is so,
+because the decoder is generating text conditional on the final
+in encoder hidden state. Now, the encoded decoder architecture that we just saw might seem a little
+strange from a modeling perspective. This is so, because the information
+about the entire input sequence, the cat likes to eat pizza is
+condensed into a single vector, which is also the final hidden
+state of the encoder RNN. Hence, the decoder RNN only
+focuses on the final hidden state of the encoder RNN while
+generating decoded text. A more satisfying solution to this
+seeming information bottleneck would be the decoder RNN can focus on different
+parts of the encoders hidden state, as opposed to just the final hidden
+state while generating text. This extension of the encoder
+decoder architecture is done via what's called an attention
+mechanism as we will see next. So, let's see how an attention mechanism
+solves the information bottleneck of stuffing information about the entire
+sequence into just one vector. Attention mechanism
+operates while decoding and generates attention scores by taking
+dot product of the decoder hidden state with each of the encoder hidden states. This is done to compute similarity
+between a given decoder hidden state and the various encoder hidden states. So that we can quantify how much
+different parts of the input should contribute to the output
+that is being generated. These attention scores are then
+passed through a softmax distribution to compute probabilities or
+an attention distribution. Next, the various encoder hidden
+states are combined with each other in proportion of their
+attention distribution. And this composite encoder hidden state is concatenated to the decoder hidden
+state via the decoder is generating text. So, now unlike a vanilla encoder decoder
+architecture that we saw earlier, the decoder can selectively pay attention
+to the different parts of the input encoders hidden state while generating
+output text in the target language. As we just saw, there are several
+benefits of the attention mechanism. These days state of the art NLP models
+use some form of attention mechanism. Attention mechanism solves the information
+bottleneck problem is now the decoder can focus on the relevant parts of the input
+sequence by weighting them accordingly, as opposed to just the final
+hidden state of the encoder. Low and behold, attention mechanism also helps with the
+vanishing gradient problem, as it provides a shortcut to access information from
+distant parts of the input sequence. Finally, attention mechanism also provides some degree of
+interpretability to our model. As we can see what the decoder was
+focusing on while it generated a certain output.

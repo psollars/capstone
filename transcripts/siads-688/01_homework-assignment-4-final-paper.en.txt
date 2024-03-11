@@ -1,0 +1,118 @@
+Hey everyone. I'd like to discuss the last
+homework assignment, which is the final
+paper for this course. These are the sections which are required
+for the final paper. You have an introduction,
+literature review, experiment design, conclusion slash
+limitations and appendices. The introduction or
+motivation essentially is a place where
+you want to define the problem. What's the problem? One small example is children
+are given planners in elementary schools and expected to plan their homework
+and activities. The problem is that
+they're terrible about it. The other part about motivating your study is to talk
+about who cares, so there are thousands
+of children and parents frustrated by this. You want to elaborate it says this is a course
+about data science for social good you
+want to elaborate the social good aspect
+of your problem. In the literature review you
+essentially want to talk about what others have done
+about a similar problem, and what the open questions are and what you're
+going to do about it. What have others done about it? You want to write a short
+literature review here, and here we want to ask you to at least
+discuss three papers, preferably it is not in the
+format of paper 1 says this, paper 2 says this, paper 3 says that. You want to integrate the findings and
+the open questions, and what you're
+going to do about it is essentially your
+overall approach. The design part which is
+really the key piece of this paper is about
+several parts. Who are the subjects
+or participants? How representative they
+are, if they're not, just go ahead and say they're not a representative sample
+and that's okay too. The key part is your main
+experimental variation, and that has to be exogenous. In the past, some of the
+experiments proposed were not experiments because there isn't any experimental variation. You also want to define your independent variables
+and dependent variables, so the dependent variables are the outcomes that
+you are collecting. In our energy conservation papers the sequence of papers
+about water consumption, the outcomes are how
+much water people consume in their
+daily activities. In auctions, if you're
+running an auction, lets say a charity
+auction on eBay, they can be bids, bidder profits or efficiency. The independent variables are variables that hopefully
+are exogenous, so for instance, bidder values, the gender, age, major
+education level. It's important to write down explicitly what your
+set of hypotheses are. The hypothesis should
+come from two sources. One is theory, they can come
+from social science theory, economics, psychology, sociology, or empirical
+observations. For a theory based experiment, you want to write down what the theoretical predictions are, so these are your hypothesis. Recall that in the first- price sealed-bid auction that we run in 630, 631 actually, the risk-neutral Bayesian
+Nash equilibrium bids is supposed to be, n minus one over n
+times your value, so n is the number of
+bidders in the auction, so it's a very
+precise prediction. From an empirical perspective, if you've have experiments
+shown in the past that, for instance women
+are more risk averse, you can write that down
+as a hypothesis as well. Essentially that's
+your predictions and what you expect to
+happen in your experiments. A critical piece of the
+experiment design is you want to calculate the
+sample size ahead of time, so this is also called
+the power analysis, and you want to what is your ratio of this effect
+size to standard deviations. There's a standard way of
+calculating sample size which we went through in
+631 experiment design. You can also use the data
+from previous experiments, so you can use
+their variances for your own power calculation
+and the effect size. But you cannot use their
+sample size because most of the experiments
+that have been run and published
+are under powered. This is a quick review of
+sample size calculation for differences in means
+assuming equal variance. You have, let's say
+two conditions, a treatment and a
+control condition. If you expect them to
+have equal variance, and expect no more distribution
+of the outcome variables, then the sample size is to split the sample equally across
+the two conditions. The formula on the
+slide is going to be your sample size for each
+experimental condition, and that it depends on
+the Sigma-delta ratios. Let me remind you what Delta is, so Delta is the effect size which is the difference
+between the treatment and the control mean and Sigma is the standard
+deviation in the data. If you don't have any actual data from a similar experiment, you can just say, well, I expect my Sigma
+-Delta ratio to be one, six or 10 percent
+or seven percent, so it depends on the
+type of the experiments. You can specify what your
+Sigma- Delta ratio is, and that will give you
+a unique sample size. The standard is to
+use Alpha equals 0.05 and a power of 80 percent
+or Beta equals 20 percent. If you want to be able to detect a half standard deviation change between the control
+and the treatment, then the Sigma- Delta
+ratio would be two. You can plug it into the formula, you would need 62
+observations in each cell, notice that half a standard deviation
+difference is quite large, and sometimes we might expect
+much smaller effect size. The whole pairs, you're halfway through for your
+capstone project, you've designed the experiment
+and get feedback on it, and all you need to do now, after this course is
+to collect your data. You might be running
+your experiments in your organization
+by emailing people, randomized people into different
+groups and email them, you could also use online subject pools which
+are fairly easy to use, and so those include YouGov, prolific, eBay, or
+Amazon's Mechanical Turk. In terms of expenses, Amazon's Mechanical Turk
+is probably the cheapest, Yougov is probably
+the most expensive in terms of how much you're
+expected to pay the subjects. If you are planning to use one of the online subject pools and
+you need subject payments, you can apply for funding. It's not my budget, but the school for my
+undergraduate class, my student project
+teams can each get a small amount of research budget to collect their pilot data, and I encourage you
+to do that as well. Finally, in this paper you should acknowledge the limitations
+of your design, and think about what
+might go wrong. It will be fantastic
+if you can use this design for your
+capstone project, so you are way ahead of everybody because already done
+you're halfway through it. The last part is the appendix. Here's where you will want to put down your experimental
+instructions, and it could be email
+messages to your subjects. Recall for [inaudible] and price. In their appendix, they have
+these different versions of letters that they send
+out to the residents, so you need to include
+let's say if you use email, you have email messages, chew the subjects in the
+control condition and those in different treatment
+conditions and that's it. I hope you enjoy the course and good luck with
+your final project.

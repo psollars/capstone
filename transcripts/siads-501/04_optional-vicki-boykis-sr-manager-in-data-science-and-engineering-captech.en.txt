@@ -1,0 +1,545 @@
+So I'm delighted to have with
+me here today Vicki Boykis. Thanks for joining us. Can you start by just
+tell us where you work, your title, what your
+role is currently. Sure. Thank you for having me. I am a Senior Manager in Data Science and
+Engineering at CAP Tech, which is a consulting company. Great. This course is titled
+Being a Data Scientist. You are a Data Scientist, I think you
+self-identify that way. Tell me if I got that wrong. When did you first realize that you were a Data Scientist? I think probably later around the time that title
+became popular. So a little bit
+about my background, I graduated with a BS in
+Economics from Penn State, and then I went on to work in Economic Consulting in Washington DC for
+a couple of years. Then I moved to Philadelphia
+to be closer to my family. I worked for a couple of
+companies doing data analysis. So that's really where
+Data Science started, and then I started reading
+more about the field. It really started
+becoming a keyword around I would say 2011-2012, and I started reading
+more and more in the news about what Data
+Scientists were doing. So they were doing things that were then above my skill level. I was doing a lot of
+SQL then primarily, but I realized that the more engineering and
+the more SQL I did, and the more work with
+algorithms I did, the more I could identify
+with being a Data Scientist. So I then moved from an analyst to a Data
+Scientist's role. Great. So who do you think of as being your primary influences, either in data science or out? Well, the early ones were
+probably Drew Conway who came up with the infamous data
+science Venn diagram, where he talked about
+what data science did. I used Chris Alvin's
+website a lot. He has a fantastic
+website that has resources on how to
+do things in Pandas, which is a package
+for Python that came from his own journey
+into figuring things out. I had a lot of managers that were helpful
+in guiding me to figuring out how to ask the
+right business questions, which is a really
+important part of data science particularly
+when you're in consulting. I think Julia Silge, who is a Data Scientist
+at Stack Overflow right now does a lot of really inspiring work
+out in the public. So I'm going to get a little
+bit later in the interview. I'll be asking you about your
+advice for our students, and cautions, and more about this distinction
+between Data Scientists in your previous role
+as Data Analysts. But I think it might help to just get concrete and make sure we're on the same page about what a
+Data Scientist really does, and I'm hoping you can do that in the context of telling
+us a project story. Maybe some project that
+was ultimately successful, but had some challenges
+somewhere along the way, and maybe we can explore
+what the role of the Data Scientist was at each of the interesting points
+in that project. Well, I think the role of the Data Scientist
+has really changed, or morphed, or is not
+completely fully defined, which is why there are
+so many blog posts and so many articles talking about what it is that a data
+scientist actually does, and having been at around
+three different companies now, doing data science
+and worked on I don't know five or six
+different client sites, I have to say the role of the Data Scientist is
+different at each one. So if it's a smaller company and you're the first
+Data Scientist, you might be doing a lot of actual engineering
+work in building out the infrastructure to get to the point where
+you can do data science. If it's a larger company, you might be solely
+doing statistics and are responsible for putting
+any models in production, or making dashboards where
+other people can see them. So the role of the Data
+Scientist is really based on those parts of
+that Venn diagram that Drew Conway
+drew so long ago. It's part statistics, it's
+part business science, and as part engineering. But it's really up
+to the individual company to figure out which pieces of
+those it needs and on you as a Data Scientist
+to push your role. So I'll give an example. So I'm a special case as well
+because I'm a consultant. So I think of myself as a
+Data Science generalist. So I can do all of the parts of the Data
+Science pipelined, and I actually encourage
+a lot of people, I know we will get
+to advice later, but I encourage a
+lot of people to be generalists because it allows you a lot more flexibility
+in any given project. So a project I worked on recently was the
+ability to forecast when buses or trains arrive for a given transportation
+network in North America, and so part of that
+was getting the data. So the data comes from an API
+or Internal Data Sources, figuring out what
+that data means. What does this mean,
+what does this column mean, organizing the data, figuring out what
+statistical model you want to use to accurately
+predict arrival times, doing a lot of
+literature reading, putting that model together in an exploratory way using
+again Jupiter notebooks, and then actually
+putting that model into production,
+which again means, you have somebody
+external to you who can query something and
+getting an answer back. So in this case, it
+would be either an app or a website that they
+could go to and say, when is this bus or train
+arriving at the stop? So that's an end-to-end process, and I would say for any
+given data science project, there's always a point
+where you're thinking, I don't know if this
+is going to go right, I don't know if it makes sense because you should always be questioning assumptions about
+what the data tells you. Usually when you get data, it's not going to be clean, it's not going to be the iris
+dataset or empty cars or whatever else you work with in more clinical setting or
+more academic setting. It's going to be data that
+has a lot of missing values, a lot of misspelled names, a lot of columns that
+you have to chase people down and get
+to those answers, and then when you
+get to that data, you have to reshape
+your assumptions again. Then come back to the
+main stakeholders, who are the people
+collecting answers from the data and talk to
+them a lot about it. So all those steps in each
+data science project, but there might be steps
+along the way where you have to rethink and re-evaluate. So let me drill down a
+little bit on that project, maybe starting with what we were referring to in this course as the problem formulation stage. So you describe this
+as you wanted to forecast when trains and
+buses were going to arrive. Presumably, you're
+given a schedule, and so it's supposed
+to arrive at 2:35 and you're trying to figure out when is it likely
+to actually arrive. So who wanted to know the
+answer to that question? Who was it for? So that was the organization. So it was a major metropolitan
+transportation agency that was interested in [inaudible]. Okay. Did you have a sense of what they were
+going to do with that? Was it to display it to riders, or were they using it
+for management purposes? Exactly. Well, I think
+a little bit of both, but mostly they wanted to
+improve customer experience. Because if you think
+about the way that you use public transportation
+applications, what is the thing that
+you care about the most? Seeing when the
+public transportation is going to come so you can
+plan your day around that. Okay. So you're supposed to create something that they would make visible to customers? Correct. Got it. How involved were you at that
+point in the project? Was it handed to you or did
+you get to go query them and ask questions I
+was just asking now? Yes. So I was pretty involved. Usually as a consultant, what happens is you'll come
+in and there will already be a pre-defined question that the main stakeholders have, and when I say stakeholders
+in a consulting sense, it's the people who actually
+hire you to do the work. They're interested in
+solving this problem. So they usually have some
+theories and hypotheses, and I think this is the case across all business lines theory. When you come in, if it's either your boss or your boss's
+boss or someone external, they have some theories
+about how the world works. For example, why we're
+not getting trained data or why are customers are leaving or why we
+need more revenue, where we're getting
+more revenue from, and they want you
+to prove it out. It's your responsibility as the Data Scientists to
+push back on that a little bit and ask why they
+wanted to do this. So in consulting, we have
+something called the Five Whys, which is where you
+literally ask why five times to get to
+the actual question, and so it's happened
+that for example, I've been asked before, "Well, what is the revenue
+from this product?" So the answers are what is the revenue going
+to be next year, and so my answer is not to go run and build a model quickly, but to ask, "Well, why
+do you want to know the revenue for next year?" Well, because we're having issues with one of these
+other product lines. But why are you having issues
+with this product line? Well, we're not sure, and
+so the real question is, this other product line
+that we're talking about not specifically
+this thing. So really the first part
+and of that project too is meeting with the stakeholders and finding out what
+the actual question is. Do you find yourself
+sometimes in that phase? I mean, imagine that there's some principle
+in the consultancy, they're selling the consulting
+service to a client. I'm wondering whether
+there's a specific kind of question that you're asking
+during that 5Y phase. That's about what
+data do you have available and
+questions like that. If you have any
+thoughts on what's the special role of
+the data scientist during that problem
+formulation phase, that's what I'm looking for. The role is, I think
+mostly to listen, to first listen to
+what people are saying and to ask those kinds of questions
+like you're talking about. Where do you have
+the data is more of a tactical question
+and that comes later. But the real question is, what is the actual thing
+that you're trying to ask? The second most
+important thing is, what is going to change if
+we answer this question? So for example, let's
+say that we can predict when trains are
+arriving within five minutes. What is the impact for you? How are you going to
+be measuring that? What are you going
+to be looking at? So it's not just like
+you're going off on a wild goose chase and
+implementing your algorithm. You're really working
+with the people who care about answering
+the problems. So you're starting backwards. So yeah, I would say the
+thing that you want to do is start backwards with what you think the answer should be or what you want
+the answer to be and what you're going to have as an outcome of the whole
+data science process. Great. So then we get to
+a data collection phase. You described that
+there's an API that well, I'm not sure how much
+detail you can give, but what kind of information was available
+from that API and what information did you discover was missing from that API
+that you wished were there? Yes. So the API just
+gives general information about where buses and trains are located at any given time. So it gives it on
+certain minute or, I think, it's half hour
+or whatever, increments. It tells you which line
+you're looking at, like the name of the line, it tells you which route it's on, it tells you where the train is located or the bus is located, and it doesn't give
+much more than that. So there's a lot of extrapolation that had to happen as a result. So in this, you describe this phase where you're trying to understand what all the
+columns mean and figure out what's missing and do
+imputation and and so on. What was the biggest surprise you found during that stage? I don't know if
+there was one thing. It was just really
+trying to figure out what the terminology
+meant to them. For example, there was this
+number that said route. Well, what does route mean? How many routes are there? How many buses or trains
+can be on a given route? So it's really trying
+to make sense of the business logic that
+they're looking at. Is there any place where
+you have missing data? Because there can be misfires between when the bus and
+train report data. So right? Mm-hmm. So you have to take
+all that into account. So then you got to
+this modeling phase. What approach did you
+take to modeling? There are a couple different
+ones that I looked at. So I looked at linear regression. I looked at XGBoost and I
+looked at neural networks. So this came directly from
+reading about the literature of what kinds of models were applicable to the same kind
+of problem I'm facing. So this is another thing. Usually in data science, you're never working on a problem alone or your problem is
+never really that unique. So there's a lot of
+problems that are common across
+business industries. The more data science
+projects you do, the more you figure out
+which of the models or which statistical approaches make sense for the data that
+you're looking at, based on the shape of the data, based on the frequency of the data, all that
+kinds of stuff. So a common problem, for example, in almost every job, I've been asked to look at
+customer churn which is why do customers leave our product or why do customers
+leave our website? This is a pervasive
+problem and it's one that's always have to be solved. Another common one is
+looking at A/B testing, especially for e-commerce sites. So A/B testing is changing certain
+features of your sites. So for example, for Amazon, the add-to-cart button is yellow. If you change it to green, are you going to get more people to add items to your cart? You change one thing
+on the site for a certain population
+and then you test whether that population
+does better, aka, converts, aka,
+buys more things. So there's a common
+set of problems that are common across
+all of data science. For transportation, a
+lot of the literature I found had to do with extra
+boost and predictions. A lot of the work
+around transportation is really around geography, figuring out where bus
+stops and train stops are, so you can accurately
+predict when things are going to arrive at a
+certain geospatial location. So that's more like
+that geographic realm. So actually, did you end up
+using XGBoost as your final? I ended up using a couple of different ones for
+different scenarios. I see. So then you
+got your models, you're predicting times when the trains and buses
+are going to arrive, you compute some error rate. Presumably, you do some cross validation or
+something like that. Yeah, sure. You got that now. How did you give
+it to the client? You said you somehow had to engineered it into something that they
+could use day-to-day. Yeah. So usually, the client
+is not, how do I say this? They're not interested in the internals of the statistical
+process that you did, although that's something that you always want to present. They're interested in what
+you actually came up with. So how late is the
+train going to be? How bad is this bus line doing? So something that you always want to do and
+something that we always do in consulting is we present all the methodology or
+we have it with us, but we usually present the
+relevant results first. So we'll present the model
+and then the way you hand it over is you actually
+have two production lines. So the model returns some
+results but you have to connect it to say a website, for example, or a dashboard. That's actually going
+to show them that and that they can interact with. So it's not just the printout. So that's a whole other
+section of data science that's now quickly being known as machine learning engineering, that a lot more people
+are moving into. Because I think, and I've
+written about this before, but we're past the
+age when people just create models on laptops
+and hand them over. Data scientists are now
+becoming much more part of the engineering process and
+the engineering organization. They sit with developers and they need to learn skills
+that developers have, so that the model is not just a static thing
+that's sitting there, it's actually incorporated
+into a system. An example of a system is
+Amazon's recommendation system, you click on a book and
+Amazon, for better or worse, recommends you similar products or similar enough that they hope that
+you're going to buy. So there's a recommendation
+model that's behind that. But it's not static, it's part of the website, it's part of the
+customer experience. So those kinds of things which
+are called data products are things that we want to
+hand over as data scientists, that are working and that people can use on a
+day-to-day basis. So in this case of, you're predicting the train
+and bus arrival times. Did you actually work
+with the engineers at the transportation
+agencies so that they would integrate your model
+into what they were doing? Yeah, and I built part
+of that myself as well. You've built part of it. Okay. Yeah. So that's the end-to-end
+experience as well. My close model has to be able to integrate with
+the larger ecosystem. Okay. So for example, getting the real-time data
+feed and sending it back to them in the format that
+they wanted so that they can display it to the writers. Did you have any, either on this project
+or other projects, any stories of what you
+had to look out for? What could have
+gone wrong if they took your model and
+integrated it the wrong way? I mean, I can imagine if
+there are misunderstandings, your model could get integrated incorrectly and they
+could think that the results mean one
+thing or use it in a setting where it hasn't been calibrated or
+things like that. Yeah. So interpretability is a big problem in data science. There's a lot of perception from some
+companies or some teams that data scientists work in a closed black box environment and they just produce a product, and then they push it out, and there's no
+understanding of how it works other than
+here's how it works. So yeah, the key is always
+having data scientists work directly with engineers
+as much as possible, to explain what the inputs are, what the outputs are, what can happen in this model. Then to always have
+that documentation of, well, here's this
+error rate, well, here's the AUC,
+here's the ROC curve, here's what this really means. Most importantly, to have artifacts that you leave
+behind that are easy. So for example, you could
+say something like, "Well, this train is going
+to arrive late with a 95 percent confidence
+interval." This and this. Not a lot of people
+will understand that. But if you phrase it in
+a different way and say, "This train is most likely to be five minutes late," and then have the documentation
+backing that up, that's going to make
+a lot more sense. So interpretability and making sure that other people outside the data science organization
+really understand what you're doing is key
+to the hand off, I think. So you said, you're often having to work
+with the engineers, and I imagine many of our
+students will as well. Do you have words of wisdom on what you need to
+understand about their job or what they want to have from the data scientist in order to make that
+interaction go well? I think the best
+thing is actually to start learning engineering by yourself as aside of what you're doing in a data
+science curriculum. Again, I said this before, but the generalist
+approach is really important because
+as a generalist, you can talk competently about all the steps
+of the model process, particularly the
+integration keys. So something that I advise
+people to do is to learn SQL which is the first
+step into engineering, I advise people to learn a programming language that can integrate with engineering. So Python is my
+language of choice. Also in our program, yeah. Well, that's excellent. Python is the best. Yeah. So Python is going
+to get you pretty far. If you can speak Python, you can start talking
+to developers pretty intelligently
+about what they're doing. Make sure to talk to the teams, sometimes the teams can be
+isolated or from each other. So the goal is to make sure that the data science teams talk to the engineering teams
+as much as possible. At that point where you're
+releasing an artifacts, so what you'll usually do is if the two teams are separate, you'll release a
+prepackaged model. That's what in Python is known as pickle model or some artifact. You need to tell them
+what that means and how they can integrate that
+into production systems. So learn programming, learn
+how web services work. Have you had situations where the engineers
+come to you and say, "Oh, we can't use that,
+that won't scale?" Yeah. I'm trying to
+think if I have. There have been issues where we've had
+incompatibilities between. So sometimes what will happen is the data scientist's
+will write the code in one language like R
+Python and they'll want to deploy in something
+like Java or Scala. That's something that
+happens fairly often. So I think in that case, it behooves everybody to sit together at the beginning
+of the project and say, "Well, what do we really
+want this project develop?". Great. Thanks. I think that sets the stage
+nicely and I want to ask if you have any signature
+questions or maxims, things that you always ask
+or things that you always say that you find yourself coming back
+to pithy heuristics. So my general mental model is that not everything
+has to be new and shiny. So the technology
+has to fit the need. A lot of people are
+using neural networks, deep learning, all of
+that kind of stuff. If you don't have a problem that requires that like for example the transportation problem
+there because it's more complicated to model
+transportation networks. But I tweeted once
+that 80 percent of the world runs on
+linear regression and I truly believe that. Sometimes you don't even need a data science solution per say, sometimes you're just
+averaging things, sometimes you're
+just doing reports. So it's important to not jump to the most complicated
+thing right away and to really
+understand the problem and to see which kind of
+modeling approach makes sense. So I guess keep it simple,
+it would be one of them. The second one which
+I've talked about before is to make sure that
+you're talking to people. A lot of times what
+data scientists are doing can be perceived
+is being in a black box, and we want to take
+that mysticism out and the value is not
+necessarily in your model, it's in you as a
+human being being able to communicate
+your model and being able to pick
+the right model and talk to the right people and bring them all
+together to make sure that they value your results. So I'm not sure what
+that would be called, but yeah, probably
+just communication. I wrote down make sure
+you're talking to people. Yeah, make sure you're
+talking to people. Are there any what I refer
+to as ethical commitments, things where you
+would not do it or would do it only under
+duress after making sure that whoever was asking you to do it said you understood
+why you were objecting? Yeah, that's a hard one. I think the really big
+debate around this right now is around
+personal information and how that's being shared. As a data scientist, you're always going
+to have to deal with some personal information, basically you're a
+social scientists. So you're studying how humans perform some sort of
+behavior even when you're dealing with things like
+operations management where you're looking at how
+factory equipment performs. Humans are going to factor
+in there somewhere. So the most important
+thing is to make sure that the information doesn't get shared more widely
+than it's meant to be. So we've all seen the stories of data breaches, data leaks, there's also interorganization
+data leaks where you're just sharing people's personal
+information in plain text. So I think in the
+news a lot we hear about ethical breaches
+from Facebook and Google, Amazon's recognition AI which is used in police
+cameras and whatnot. But I think for most practical
+working data scientists, don't go to those companies. The biggest thing
+they'll encounter is just personal information being shared all over the place, and inferences being made
+on not enough information, and models being
+generated that are not correctly modeling the world. So I think the answer there is to stop and think about
+what you're doing, and to talk to your stakeholders. If you don't feel
+comfortable with that, talk to someone on your team about what
+you're doing and be like, "Hey, can I have a
+sanity check here?' Does this sound
+right? Should we be using this data?"
+That kind of thing. So in your experience, about how much of
+your time gets spent on problem formulation versus data collection and manipulation, analysis and modeling,
+or presentation and integrating it
+into action flows? So problem formulation
+probably takes up let's say probably a good
+first two weeks of every project at least. So most of my projects
+as a consultant are anywhere from eight weeks
+to 8, 9, 10 months. So at least the
+first 2-4 weeks of any given project will
+be really formulating, flashing out the problem, figuring out who
+needs to be involved, how to get all the
+various teams involved. The majority of my time in any given project is
+spent cleaning data. Every single data science
+project that I've had probably 80 percent of my time has been
+spent cleaning data. I think that's
+something that doesn't get talked about a lot, and it's really important to understand and it can
+be very frustrating. So this stems from things
+that I've talked about before like not clean
+data coming in as inputs, the engineering team upstream not providing you with inputs, people not putting
+crack data into forums. It's just human nature. If you're dealing with human data, that data is going
+to come in messy. So that's a big
+part of it and the better you are at data cleaning, the faster that process will go and the better you are defining the problem and
+talking to the people, even that process
+will go even faster. Modeling is probably
+actually one of the smallest parts of the process because it's
+fairly straightforward, it's not as straightforward
+because you still have to do iterations
+on the model, you have to make sure all
+the data makes sense, you have to do the
+back and forth. But compared to all
+the other parts, that's probably the smallest
+and then actually putting that model somewhere where
+it's living on a server, where it's serving
+recommendations, where it's doing
+what you want it to, that it also takes
+significant chunk of time. So I was making a pie chart here. I got 80 percent for
+data manipulation. Twenty for everything else. Twenty for everything else. Equal shares with
+the other three or? I'd say that's about
+true probably. Well, let's say 50 percent
+for data manipulation, 50 percent for
+everything else with engineering probably taking
+up 30 of that percent. So now I'm getting 50, 30, 10,10. Yeah, that sounds about right. Or really 10, 50, 10, 30 in order. That sounds about right for an average project and of course, it's going to be
+different for everyone. Okay. So this integrating
+into production is actually a fairly
+significant piece then. Yeah, for sure. I sense a little disappointment about how much time goes
+into the data cleaning. Frustration, I'm not sure
+what the right word is. How have you come to terms that? Is it just a necessary evil and still not funner or have you figured out a way to turn it
+into something that's fun? Yeah. I mean, I think
+it's just essential. So I enjoy going through the entire process and I know personally that I'm
+going to get to the end. So it's like a level
+in a video game. It's a challenging level, but once you pass it, you get to the funner parts of actually building the model, and then deploying
+the model and then seeing people actually
+use your work. So that's a good motivator. I see. So you're just inoculating the world's future
+data scientists to know that this frustration is coming and don't give up on being a data scientist
+because of that? Yeah, totally. How would you suggest that students allocate
+their learning time, among knowledge and skills that will serve those
+different phases? They need to spend
+half their time on learning how to do
+data cleaning well or? Well, I don't know that you can learn data cleaning as much as you're exposed to it
+in the workforce. Okay. I would say the biggest
+thing you can do, is to learn to program well. Whatever language you choose and sounds like you use Python, so I recommend that. Just learn to use Python really well on a variety of
+different problems, and that's going to get you
+far and the other half, is learning how to ask the right questions
+so that you don't have to do as much data cleaning. It's like the tag
+team of the two. Okay. So if you ask the right
+questions and the problem, well, it's not only the
+problem formulation stage. It would also be you're calling people up and ask them what
+does this column mean. You might not have
+to clean it yet. You might not have to clean it, or maybe it makes sense, or maybe you don't need
+this column at all, or maybe you don't need
+this data set at all. Maybe this is the data set
+that you're looking at. Maybe this isn't really the
+model that you want to build. So yeah, talking to
+people throw out all the stops of the process
+is really important. So you're in a
+managerial role now. You hire other data scientist? I help in that process, yeah. So what do you look for when you're hiring a data scientist? Yeah. The biggest thing is probably
+intellectual curiosity. Just an interest in doing things, in asking questions, in being able to
+verbalize all of that. So of course, I looked
+for hard skills. I look for experienced
+with Python, with R, with any type of
+data process that you have. If you have any of that on your resume, I'll ask about it. I want to have a conversation
+with you because I'm not trying to grill you or
+find out what you don't know, I'm basically trying to find out if I want to work with you, and how you are as an employee and how you
+are as a communicator. So I'm looking for both the communication part of the skills and if you've done any programming or any of that stuff or statistics if you can explain it well to me. Great. You described moving from data analysts to data scientists
+about eight years ago. Where are we going to be as a
+field eight years from now? What will be different
+about data science? Who knows? I think in the near future, what's happening is the
+commoditization of data science. I can send you a link to something I've
+written about that. What basically the algorithms themselves and the packages, like TensorFlow and Keras
+have been built out. It's not to say that
+they're easy to use, but they've become much easier to use than
+they have been before. The part of the process that
+we're really getting to, is everything is
+moving to the Cloud. So we're trying to build
+these systems that do machine learning in
+the Cloud at scale. So I think that we're really moving to a place
+where people need more engineering skills if they want to continue
+to participate. Probably it might
+be a discipline of engineering or it might become something
+totally different, but what I'm seeing
+in the near future is a lot more
+engineering involved. Let me ask you about that. Because I can imagine that it could go just the opposite way if the packages are there and you now don't need to
+write as much code yourself, that gets cheaper and
+therefore the softer skills, the ability to ask
+the right questions, the ability to call
+somebody up and say what does this column mean and figure out what
+they're saying. That those ought to have a larger relative importance because the engineering in
+some ways has gotten easier. Yeah. So the way I see it as the engineering of the
+models has gotten easier, but the integration
+of the models into the larger systems that
+companies are building out, that's kind of the hard part now. Data Analysis won't
+ever get to that point. Data Analysis always
+needs to be very hands-on and very
+hands-on and every human. So that piece won't change, but it's like engineering and data science are moving together, and so it's hard to say
+what that'll end up being. There might be technical Data
+Science project managers or there might be just researchers that focus solely on
+creating new models. That will be where everything
+is as hard to say. In the long term
+where that's going, but I know for sure
+in the short-term, it's going to be all
+about navigating these big systems that
+we're building out. Got you. The applied
+data scientist is at least going to have to be conversant with the
+machine learning engineer or whatever that gets called, who is putting it
+out in the Cloud. [inaudible]. Yeah got it. All right. Any last bits of advice
+for our students? I think it's really easy
+to get overwhelmed by how big the field
+is and how much you have to learn and just how much writings out there about what
+you have to know. I would say, just take
+it a piece at a time. Doing personal projects is
+always a really good idea. If you have some data idea
+that you're curious about to explore those or as
+part of a class project, maybe for extra credit, that would be a good thing. Becoming familiar with GitHub is always a huge plus
+coming out of courses. If you have GitHub
+on your resume I always look at it and
+talk about it with you. Just be curious. Be thinking about the kinds of data problems that are going
+on in the world and read the tech news and
+become familiar and conversant with some of the technologies that are
+being talked about now. Great. Well, my students will be very glad to
+hear that everyone's supposed to get extra credit and I thank you so
+much for your time. We appreciate your blog and I
+hope the students will too, and I hope they enjoy
+this interview. Thank you for having me.
+It's been a pleasure. Thank you. Bye. Bye.

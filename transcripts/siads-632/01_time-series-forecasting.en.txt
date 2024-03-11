@@ -1,0 +1,162 @@
+Hello everyone, welcome back. In the previous lectures we've talked
+about how to extract patterns from time series data and how to compute
+similarities between time series. From today, we'll be going into another
+big family of topics related to time series expanses that is known
+as time series forecasting. Let me remind us again and again that a
+time series is essentially a list of time stamp values or
+measurements taken at different times. But this time, instead of using X to
+indicate the series, I'm using Y. And no particular reason,
+it's just because that we like to use Y to indicate that those
+are our targets of predictions. And in the rest of the slides, you should
+recognize that Y is the time series, where y1, y2, and
+yn are numerical measurements and t1, t2, and tn are the timestamps
+that those measurements were taken. So predictions and forecasting. Similar to sequence data, we also care
+about making predictions, especially about making predictions into the future when
+we're dealing with time series data. The definition of making
+prediction is easy. Given the timestamp t,
+we want to find what should the value yt, associated with that time stamp, be? Or in other words,
+if we take the measurement at t, what would the measurement be? And in many cases we're particularly
+interested in making predictions when t is actually in the future right? And in this case finding
+yt is known as forecasting. For example, let's look at this time series plot
+of the stock market price, right? If you can see that,
+all the way through 2020, we are observing lots of scattered points,
+and those points indicate that we have already
+observed the value of this stock price. But you can also see that at the end of
+this plot, we're actually making guesses. We are making plots into the future, so those are data points into the year 2021,
+which has not arrived. So that means we're trying to make
+predictions of what the stock price will be next year, so
+by doing that we are making forecasts. There are [INAUDIBLE] of applications
+of time series forecasting. We have seen the application
+in financial market. Another application is weather, and
+no matter whether we're doing that way or not, we are making predictions about
+what the temperature will be tomorrow. Trying to forecast the traffic load
+at particular intersections or highways are particularly important for
+urban planning. Time series forecasting is important for
+business planning as well. Trying to predict the supply and
+demand in the future. In [INAUDIBLE] we use a math
+program in making forecasts. We want to predict the number
+of enrollments right? Of course, we hope that enrollment is
+going up quickly again, year after year. Time series forecasting has also found its
+applications in healthcare and epidemics. A particular example recently is to
+predict the active COVID-19 cases in the United States, or
+in particular states. Of course, many people are interested
+in making predictions about elections, and that can also be viewed as
+an application of time series forecasting. So that's why we're so interested in making predictions
+of the future time series. While we're spending lots of time talking
+about making predictions into the future, I want you to know that making predictions
+about the past can also be useful. We use predictions on timestamps that are
+not into the future to fill the missing values. For instance, if there should
+have been a measurement, but we didn't take the measurement, then we
+can look at the entire time series and try to make a guess of what
+the measurement should have been. And making predictions about the past also
+helps us to understand correlation or even causation. We also commonly use that to
+make counter factual analysis. By counterfactual analysis,
+we mean asking questions. What if, right? What if we had done x, y, z,
+what would the outcome be? So in these cases we're actually making
+inferences about the past, right? Instead of into the future. So, in summary, making predictions
+about the past helps us to know how to make predictions about the future. That's why we're interested in both
+making predictions of a time stamp that is in the past or in the future. So how to make predictions? Let's first look at making
+predictions into the past. Because that severely easier. And why is that? Because we would usually
+know two timestamps, one before and
+one after the timestamp of interest. And let's see we know two data objects ET. Assume that the timestamp T time steps and
+TJ. And to make the prediction into the past, we wanted to know why T
+where T force between T&TJ. So how to make the prediction? Well, it is quite easy, right? All we need to do is to make
+an inference based on the values nearby. In this case YNYJ. So if we plot YINYJ on this,
+you know coordinate system. We can see that we can
+always draw a linear line. That you know con XY in logic. And then given anytime T in between TINTJ. We can just find the projection
+of tea on the same night. Right, and that gives us the value. Why in that is our predictive value. If we were believing that time series
+is linear in between Yi and YJ. And we can use it right down
+the mathematic equation, by the way, in this lecture you will
+see many equations right? If you have trouble
+understanding them on the fly, I encourage you to read through them. And to do the mass you know offline or
+just come to the office. So you can see that to find
+the predicted value YT given timestamp T, we can just compute. The interpolation of YINYJ. Basically, to find the projection of the
+time T on the same night that connects. Why and why Jay so? This simple strategy is
+called interpolation. Net works really well for
+predicting values into the past. And that's because that we would always
+observe one timestamp before and one time stamp. After you know the timestamp of interest. So for this reason. Interpolation is commonly used
+to re sample a time series. What do you mean by by
+recently a time series? As we know that when the time stamp is
+connected right, it could be at weeks. It could be at days it
+could be at minutes, right? But when we're analyzing the whole
+sequence the whole time series, we may be interested in looking
+at yearly patterns, right? Or looking at? BI weekly patterns sensor force. So in many cases what we needed to do. Is to re sample the time series to find
+the measurements that should have been taken. For instance twice a week, but we haven't. And in this case we need to use
+interpolation to guess want to measurements would have been. We can also transform the irregular time
+series into the equally spaced work and that is also quite simple. Worth discussing, imma we said that you
+know many times there's you know taken. Where the time stamps are not evenly
+distributed and you want to realize them. We need to make this is of the missing
+values and we can use interpolation. And this is the particular
+example of interpolation, right? Suppose in the airline passenger data that
+we forgot to take the measurements in three years. You know the most straightforward
+thing that we can do. There is actually to just
+use linear interpolation to make guesses about values
+that we have not taken. So this is about making
+predictions in the past. Then what about making
+predictions in the future? You know related to interpolation? This also Australia called extra pulation. Right, that's basically making
+predictions based on timestamps. Now in the past, and
+then you know, trying to guess for the value mass into the future. Right, for example,
+sometimes we know these values. These are basically you
+know the past you know. Data points in time series an. Let's also assume that T is
+there older timestamp then TJ. Then basically what we want to know
+is the measurement taken at Time T. By this time T is actually
+newer timestamp then both I&J. Well of course the same strategy
+could work here, right? By actually connecting, why I and
+YJ through linear line, right? Because that were interested in T that
+is actually out of the range of T&TJ. So what we need to do is to extend. This night this dinner night and then to find projection right of
+the timestamp T on this linear line. And in this case we can also
+make a case about Yt right? And if you look at
+the mathematic equation, it is actually completely
+the same with interpolation. So life is good, right? Why don't we just use this? Why don't we just use this
+simple strategy to make cases, to make forecasts into the future? Well, the problem is the following, right? Say if you look at this example that
+we are extending this near line to get Yt given timestamp T. And then the two most recent
+timestamps becomes Yj and Y. And then in this case, we're always only considering
+two existing data points, right? Either Ty and Tj or Tj and T. Once we make the first guess. We make the first prediction. So it's of course. And we're also assuming that local
+trend generalizes to the future, right? What do we mean? What we mean by local trend with
+the local trend is essentially indicating 5 linear night between Yi and
+Yj. But if you observe this local trend, it's fair to assume that anything in
+between this range follows in trend. It's not fair to assume that this local
+trend can extend into the future. And you don't actually know whether T
+is actually far away in the future or actually very close by in the future. And if you continue to use this strategy
+that we actually to inflation and why? Because if you care about making
+even more predictions right, you will be predicting more and
+more time points onto this linear line. And because it's near
+line has the up trend, then the time stamp values in your
+forecasts will be just larger and larger. Also, this simple strategy gives you the
+point estimation, the point prediction, of the future value and
+does not really explain the variance. Right, because we just assume that
+the same local trend will follow. So normally we don't really
+do this in practice. We don't really use this simple
+extrapolation in practice when we're making forecasting. So you can see that if we're not careful, we could be making new
+predictions one by one. And all the new predictions will be placed
+on the same local trend by right and the predicted values. Y prime will be larger and larger. That leads to inflation, right? And in the end the only information
+we considered when we're making these predictions is still just the very
+reason two time points Ti and Tj. So what can we do beyond
+simple extrapolation? If you're not going to use that for
+time series prediction to the future? Well, we assume that suppose we have
+found a better prediction method. It should consider the statistical
+properties and the patterns of the whole theories instead of just considering
+the most recent two time points. Right, for example, the message should
+consider the mean of the time series and how the mean of the time series
+change over time, right? So basically we're talking
+about what trends. As I said that but simple extrapolation
+measured does not explain variance. So that means we do care about
+explaining the variance of the timestamp measurements we altered. In other words, the standard deviation
+right of the Y1 to Yn should be explained. And we also care about the covariance. Covariance basically can be interpreted
+as the relation between one timestamp and another time stamp. That is, let's say two measurements
+away or a lack of three away. So the covariance between the lag
+time stamps indicates whether one reading in the time series
+depends on the previous readings. Right, and we all know that
+in reality it you really do. We also care about
+expanding the trend right? As we discussed that when we're
+extracting trends from time series, there are linear trends, right? They're linear trends right? And we usually need to
+fit them using what? Using regressions or
+using moving average so and so forth. Also, we do want to explain patterns
+such as seasonality, right? This is another example
+from time series patterns. To summarize, we assume that
+suppose we have found a reasonable a desirable prediction method to
+make predictions into the future. It should at least help us explain
+the statistical properties right? Such as mean variance, covariance,
+trend, seasonality, any sense of course. And because these properties. Maybe for
+overtime an over different time series, then we expect that the simple
+explanation is not able to expand.

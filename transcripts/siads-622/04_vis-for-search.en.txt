@@ -1,0 +1,202 @@
+Welcome back. I'm
+going to talk about a very specific and narrow task that involves text right now. This is the task of
+thinking about encoding search through visual
+and visualization means. Basically, the task of
+search is, we have keywords, so search terms that
+we're looking for and we would like to
+find matching documents. You go to Google as
+a very common task. Right now, most systems when
+you go and you do a search, all you get back is a bunch of text snippets like just
+the little descriptions of where the word appears and then maybe a sentence
+or an example or two of where the word appears. Then you're asked to
+make a decision about whether you want to go
+explore that document or not. There are other examples
+that are more sophisticated. People who are professional
+librarians or others who have a deep need for understanding their
+search results through other mechanisms, visualization is a mechanism by which we can support those
+kinds of tasks. Why might we want to consider
+visualization for search? There are a number
+of things wrong with standard search
+engine result pages. They don't give us a lot of information about
+what's going on. They don't tell us how strong the match is to our search query. There's no indication other than it's at the top of the list. We don't know how frequently the term appears in the document, we don't know how
+terms are distributed. If I search for multiple words, how are they distributed
+in the document? Do they appear everywhere
+or are they just in one particular small space? What's the overlap
+between the terms? Are both terms that I've
+searched for co-occurring in the document or is one at the top then
+one is at the bottom? Which may be undesirable, or maybe it is desirable. It just depends on the task, but we don't get any
+sense of that with standard search engine
+results encodings. We might not know anything about the length of the document, whether we're searching for
+a 500-page dissertation or a really short Wikipedia article that explains something to us. We can't tell much from the way these things
+are represented today. The ranking is opaque. That's a second-order problem. Most visualization
+systems or sorry, most search engine result pages have no visualization that indicates how things were ranked. Things that are at the top are
+presumably more important, but we don't know how
+much more important or anything else about that data. There's an inability
+to compare results. A search done on day 1
+and then again on day 2, we might not be able to
+compare the results. Did we get something new?
+Did we get something old? If we search two
+different search engines, we go to two different websites, we do a search for one and
+a search for the other. It's really hard to compare those sets of results
+that come back. There are limits to the term relationship so
+we might want to describe. Do I want documents that
+mentioned both words? Or do I want to mention one word but not the other
+or the other way around? It becomes really difficult
+to represent conjunctions and disjunctions in standard search engine
+interfaces and result pages. These are reasons
+why we might choose to find other ways
+of representing, visually, search engine
+results and allowing people to manipulate those
+through visual encodings. This is a really simple
+example, very old one, that demonstrates
+a very different take on search
+engine result pages. Instead of just getting a long list of things
+that you found, it represents each particular
+search in this circle. Each circle is a search
+that was issued for a particular keyword
+and the Venn diagram, and you can move these
+things around to look at the intersection
+between these, will tell you which
+documents mention, for example, sets of words. In the bottom left,
+this person has said, "I want to find documents that mention all three of
+these words together." The size of the circle is reflective of how
+many documents match. That might be an
+interesting thing. But being able to basically manipulate these things and move the circles around to
+construct these Venn diagrams, is a nice way of basically
+being able to identify how many results
+are coming back to you and what the overlap is
+between those documents. This is a particular
+visualization that's narrowly focused on a subset of the
+tasks I mentioned before, but is an interesting
+way of doing that. This is a very different
+representation of data related to search. In this case, it is a
+visualization in this cloud of words that are potentially
+alternative search terms. If you search for, this is Apple iPhone, you might want to
+be able to identify other terms that are related as ways of exploring the space. Maybe you didn't know
+the proper way to search, search engine recommendations
+that currently exist in a long list at the bottom of your Google search
+engine result page, might exist in this
+visual format where words that are really related and possibly the next best
+thing to click on, will appear next to the words
+that you did search on. Apple and iPhone up here at
+the center of this display, but other words that might be relevant possibly
+appear next to it. That gestalts distance
+thing that will kick in. Will allow you to click on
+other terms and add them to your search terms basically to find the right
+set of documents. If you weren't quite
+getting what you wanted, this is a nice mechanism,
+visually, to identify other words that you can
+use to explore the space. The next one that I
+want to talk about is something called TileBars. When we search for some documents or some terms in the
+document collection, it's sometimes hard
+for us to tell whether there are
+interesting results, because the way
+snippets come back, they don't really tell us, especially when we have multiple words that we're searching for, how those words
+relate to each other within that structure
+of that document. If there happens to be a
+sentence that mentions, like, we search for three
+words, there happens to be a sentence that
+mentions all three words. Then maybe the search engine
+will do the right thing and pull out that sentence
+and show it to us, but there are maybe
+other sentences that do similar things that mention
+two of the three words or all three of the words and we're not going to get a sense of how rich that document is and whether it's useful to read it or not. The TileBar's task
+is basically to minimize the time to decide
+which documents to look at. It looks basically like this. This is a search
+engine result page for three specific queries
+that this person has done. Their query terms are
+osteoporosis prevention research, you can see that
+in the upper left. Then each row in the search
+results set is the document. In this case it's just showing
+the title of the document, but you could also
+have the snippet, and then the TileBar visualization
+that sits next to it. The way TileBar
+works is like this. On this axis, the x-axis, we have these different marks. They correspond to different
+pieces of the document, so maybe sentences or paragraphs. But the length the
+total length of that corresponds to
+the document length. If we have a really
+long document, we're going to have many of
+these little marks in a row. A short document
+will have very few. Each of the rows themselves corresponds to a specific term, so the search engine term. Remember we searched for osteoporosis prevention research. In this particular example
+that's on the screen, we only searched for two terms. We have a row for each of these
+terms, Term 1 and Term 2. Each of the document blobs is represented by its own market, so this might be a paragraph, for example, each of the chunks is represented
+as its own block. In this document, I don't
+know, there's maybe like 10 different
+paragraphs in the document. Now, the interesting
+thing is the color. What the color is telling us is, how often that word appears
+within that paragraph. You can see that
+Term 2 which is dark black in this particular
+paragraph that's pointed out, happens a lot in that
+particular chunk. Term 2 happens a
+lot within there. The interesting thing about
+this is that you can look at this visualization
+and identify places in the document where both Term 1 and Term 2 appear, or identify places
+where only Term 1 appears or only Term 2 appears. That will allow you to
+identify whether it's worth considering this document or
+not depending on your need. Let's see how this might look. This was our original
+search result, or sorry, our original query, osteoporosis
+prevention research. The first document is interesting because you can see there are basically, in
+the same columns, all three of those words are
+being heavily activated. That means that there
+are a number of paragraphs in the middle of this document that are mentioning all three
+of those terms. All three of those
+terms can be found within that same subset
+of the document. If we wanted documents
+that talked a lot about osteoporosis prevention
+research as a concept, this document might be great because we've found paragraphs within there that
+are actually about that topic or potentially
+about that topic. In contrast, we have these documents that
+are highlighted now where only one of the words
+is common across all the doc, all the paragraphs
+in this document so the word research appears
+throughout all the paragraphs. But osteoporosis and prevention don't really happen very often, whether this document and
+very rarely together. What this is telling us is if we cared about that
+particular concept, osteoporosis prevention
+research, that first result is probably the way to go and all the other ones
+are not so great. What we can also tell
+from this visualization is the length of the document. If we want a document where it's very short and
+succinct and maybe like, really targeted and
+maybe we wanted the second document in this list. In the second
+document, those words are appearing altogether within the same paragraph
+but the document itself is shorter and
+maybe much more focused. We can go and click on that and explore it a little bit more. This mechanism basically
+allows us to make these very quick decisions about what we want to look at next. There are a number of
+advantages to this. It's a simultaneous indication of the relative document lengths.
+We talked about that. The frequency of term sets in the document and
+the distribution of term sets with respect to the specific document
+on each other. This is all the benefits
+of the TileBars. Now there are a
+number of negatives. The mental model like, thinking about representing documents or paragraphs as these little icons on the screen, is sometimes
+difficult for people. The other thing is
+that this works really well for very linear documents. Documents you read from
+one end to the other but there are many other
+documents that exist that are more hyperlinked and they might have images and you might bounce around a little bit. Those may not be ideal for
+that linear representation where you have all the marks appearing one after
+the other in a row. Just to wrap up, visualization of search results is a
+very common task. Unfortunately, one that is
+not broadly implemented. Despite the fact that we know
+that we need these things, most search engine result pages
+look like kind of like Google. Google is the big
+winner in this space. We do not, unfortunately,
+see a lot of visualizations and yet
+visualizations can provide in specialized
+task contexts a great mechanism for
+better understanding whether you got the
+right documents, whether they were good documents, which document was good, whether your search is, whether your query was any
+good and so on. While we don't see this much
+in commercial use today, I guess I would encourage thinking about using
+visualizations. If you have very specific
+dashboard environments or specific contexts, where you have domain tasks, where people are willing
+to basically invest the time to learn how to use
+these visualization systems. You could basically be
+speeding up a lot of different tasks and processes
+and making them more effective by using
+visual mechanisms. There are many different subtasks that one could consider. As you saw, many
+different alternatives for doing these visualizations
+based on whether you're looking at
+sets of documents or specific documents
+or specific words or some combinations
+of these things. Hopefully, you get some taste of that through both this lecture and the readings that
+you've been given, of different alternatives
+to explore in the space. With that, thank
+you for listening.

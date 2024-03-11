@@ -1,0 +1,203 @@
+Let's talk about time
+series alignment. Think about the scenarios
+that you have two runners, one runs faster than the other. Then if you want to align the
+trips that they're taking. Suppose they're actually
+taking the same trip. The faster one needs to
+wait for the slower one, well, normally the case. But sometimes if the other
+runner becomes faster, then they will have to wait for the other
+runner in return. This is the intuition
+behind that. You have to align
+two time series, if one suddenly move
+faster than the other. In this example, if you imagine that there
+are two runners, one is running at uniform pace, and that's the blue runner, and then the other
+is accelerating. They will be generating two
+different time series and you'll want to compute similarity
+of the two time series. You can see that because they're running at
+different pace, then it is very likely that whenever you
+take the measurement, they have a distance apart. But we actually know that
+they're running the same trail. So there should be a
+way to actually match the shape of the trail well so that we don't run into
+this alignment problem. In many scenarios, we have
+misaligned time series. This can be because
+of many things. For instance, we
+happen to measure one of the time series
+earlier than the other or one of the time
+series has part of the data irrelevant to the
+actual interesting segment. In many cases, we need to align different time series before
+we find the similarity. Well, what are the principles
+of time series alignment? First of all, every
+point you want answers must be matched with one or more points in
+the other time series. Well, this is assumed that when we are aligning
+two time series, we're not getting rid
+of any data points. We're respecting to
+every data points. But we have the freedom
+to match one point in one time series to one or more time points
+in the other time series. As far as there is the match, we don't need to care whether
+there are multiple matches. Usually, there's
+another assumption that is at the first point, right? Each time series are
+naturally aligned. We assume that the two runners are starting at the same time, but we're not actually suggesting that the first time point of the first time
+series of x can only be matched to the
+first time point of y. In fact, they can still be matched to one or
+more data points. Similarly, we usually
+also assume that the very last time point in one series is matched with the very last time point
+of the other series. Of course, they can
+be matched to a few more as long as the last
+two points are matched, it could match to more
+than one time points. The fourth requirement is very important because of
+the ordering nature, the sequential nature
+of time series data, we don't want the alignment
+to break the orders. That is right. If one of the time points
+in the first series is matched to one of the time
+points in the other series, then anything before that x_i should not be matched to anything after y_j and vice versa, otherwise you're
+breaking the order. Intuitively, we assume
+that the two runners start at the same time
+and end at the same time. We assume that in between
+the start and the end, one could wait for another
+and there may be returns. So in that case, one data point of one time
+series may be matched to multiple data points in the other because one is
+waiting for another. But we assume that
+they're both proceeding, they're are not coming back. We assume that there's no breaking orders in
+the alignments. We can see that the basic idea of time series alignment can be
+illustrated in this figure. If you use Euclidean distance as the distance function
+of two time series, you're assuming that every
+time point is naturally mapped to every time point in the
+corresponding time series. So there are 1-1, one matches and the first
+one matches the first one, x_2 measures to y_2 and
+x_ n measures to y_n. Then there will be exactly
+the same timestamps in both series. But if we allow alignment, then one data point in x could be matched to
+multiple data points in y. Sometime later maybe
+one data point in y could be matched to
+multiple data points in x. In this case, we only need to assume that every data point is matched to someone or both in one data points
+in another series. We don't assume that
+there's one-to-one match. We also assume that the
+matches are just preceding. So all these matching lines do not intersect, and that's it. This is the basic idea behind
+time series alignment. But you can see that this assumption is
+actually quite flexible. There may be many possible ways of aligning two time series. For example, I could
+say that, okay, x_1 is matched to y_1, y_2, y_3, y_4 to y_10. Then y_11 is matched to x_2
+to y_11, so and so forth. That's probably a legitimate
+alignment of the sequences. But what we actually want
+to do because we are caring about the similarity
+between time series, we want to find the
+optimal alignment. So how to find the
+optimized alignment? Well, we assume that whenever
+we match two data points, xi and yj, there will
+be a cost and let's call this cost d, xi and yj. What does that mean? That means whether you've matched xi to yj, if xi is very different from yj, then the match is
+actually not good. But if xi is very similar to yj, then the match might
+be very good and we measure that difference
+as the cost. You could also use
+current distance or absolute distance
+or any other distance. This is the distance, this is the cost of matching
+two individual data points. Now, if you find any alignment, that will give you
+all the matches of data points in X
+and data points in Y. Then there will be a number of such costs because one
+has to be matched to at least one data
+point in another so all we need to do is to find the alignment that gives the smallest sum of
+all these costs. If we can find the
+alignment that gives us the smallest sum of all
+these matching costs, then we call this alignment
+an optimal alignment. The sum of the costs
+will naturally provide the distance between
+the two time series under that optimal alignment. The particular algorithm to find such optimized alignments is
+called Dynamic Time Warping. Okay. Finally, we have the
+acronym that we can remember. We have DTW, that is actually
+the airport of Detroit. I like this acronym. I don't like all the
+other acronyms of time-series data like DFT, FFT, and later on we will
+introduced many other acronyms. As I said, unfortunately those are what the inventors name them. But this time DTW
+is actually quite easy to remember,
+Dynamic Time Warping. So basically,
+Dynamic Time Warping finds the best alignment up
+to the current time index, xi and yj, and it assumes
+that the optimal alignment up to the current
+time points depends on the alignment up to
+the previous time index. That is actually quite natural. We're here so far. The two runners are here so far. Then how they are
+going to proceed in the future definitely depends on how they are
+aligned in the past. This is the basic
+assumption behind DTW. Suppose all the
+previous timestamps are matched so up to now xi and yj. We have matched
+the subsequence in X up to xi and the
+subsequence in Y up to yj. Then to match the
+next data points, we need to select from three actions. Which
+three actions? Well, one of the runners
+wait for another. X waits for Y, that's one action. The other actions, of course, Y waits for X or
+they both proceed. If you think about the example of two runners then it's very easy to understand that there
+are only three actions at any given time. Well, if X waits for Y, in alignment we
+basically want to extend the X series by repeating the
+previous observation of X. Why? Because X does not
+move so we will just repeat the value we observed at the previous time index of X. Similarly, if Y waits for X, then we want to extend
+the series of Y by repeating the previous
+observation and in this case, we treat it as if
+the current value of the series is the same with
+its previous observation. Y waits for X. Of course, if both of
+the series proceed, then we will just go to
+the next time index of both series and we match
+the next points of X and Y. In this case, we can see
+that mathematically, we can write this down
+as the equation and that takes the action
+amongst three. What we want to
+find out is the DTW that is the best
+optimal cost so far. Add i and j, and that indicates that. We are now at the ith index of X series and the jth
+index of Y series. As we see that as long
+as there is a match, there's always a cost, D, xi, yj, and that is the difference between the
+two values, xi and yj. Here we want to use the square distance if we want to compare with
+Euclidean distance. This cost is only the unit cost at the current time points. Remember that DTW i and
+j is the optimal cost of everything before xi and yj so we need to add this
+unit cost to something, to something that is
+the previous alignment. That is the alignment up to
+the previous time index. We can see that
+there are actually three options and we want to take the minimum among the
+three options because we want to find the
+best alignment. So what are these three choices? The first
+choice is to add this unit cost to
+DTW i j minus 1. That means, suppose we have
+found the optimal alignment, up to x i and up
+to y j minus one, that means the previous
+time index of y. Then, we want to repeat x_i so that x_i is not only
+matched to y_j minus 1, it is also matched to y_j. In this case, the series x is essentially waiting
+for the series y. Suppose we do this, we add this unit cost d
+to DTW i j minus 1, that gives us one option. Well, we actually have
+two more options. In the second option, we add this cost to
+DTW i minus 1 j. That is the optimal
+alignment up to index i minus 1 of x and index
+i in index j of y. By taking this option, we are basically repeating
+the observation of y_j, so y is waiting for x. In other words, the
+current iteration of y_j is matched to not
+only x_i minus 1, but also x_i You can see that we have yet another option. In this option, no one
+waits for the other. In this case, we are basically
+adding the unit cost to the DTW i minus
+1 and j minus 1. That means we're not repeating
+any observations in x or y, so x i minus 1 is matched
+to y_j minus one, but the next data point, x_i and y_j will be matched. Both of those sequences
+will proceed. Taking any of the three options, we can calculate a value of DTW. We basically add the
+cost d to any of the three options and we take
+the minimum because we are caring about the
+optimal alignment. Whichever number is smaller, we assign that to DTW i j. This is the basic idea
+behind Dynamic Time Warping. You can see that at any
+given index of x_i and y_j, we have three options. We can either repeat the
+previous observation of x_i or the previous
+observation of y, or we can both precede. How to calculate
+DTW in this case? Well, you can see that definition of DTW i j is recursive, because if you want
+to compute DTW i j, you need to have DTW i minus 1 j, DTW i j minus 1, and DTW i minus 1, j minus 1 ready all ready for you to calculate
+the next number. This definition is recursive. Of course, if you have a
+recursive definition exist, you can actually implement it in a recursive way,
+just use recursion. But as we introduced
+in Data Mining 1, we don't want to
+do that because of the waste of resource to
+calculate recursions. Instead, we always want to
+use dynamic programming. Does that ring a bell to you? Dynamic programming
+again, our old friend. The reason we want to use dynamic programming is
+because we don't want to actually recursively compute many unnecessary computations. Because if you calculate DTW i j, you have to calculate DTW
+i minus 1 and j minus 1, and you have to trace all
+the way back to DTW 1 and y. In many other passes, you will trace back
+to the same point. The same point has to be
+computed again and again. In dynamic programming,
+we don't go backwards, we always go forward. We always start with
+the most simple case, that is DTW 1, 1. That means we are just matching
+the very first element of x and very first element
+of y. Why is that? Well, by definition,
+they have to be aligned because we said that
+when aligning time series, we always assume that the
+first time points are aligned. Now once we have DTW 1, 1, we gradually extend it to longer sequences by
+filling in the table. By filling this table, whenever we are computing
+one of the cells, let's say DTW i j, we assume that we have everything smaller than
+i and smaller than j. Does this ring a bell to you? Careful readers should
+actually connect this with another algorithm that we have introduced in Data Mining 1, which we'll be reveal later.

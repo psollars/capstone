@@ -1,0 +1,84 @@
+Association rules are usually useful
+enough for classification tasks but in some scenarios they can
+be not as informative. Let's consider the following
+example that we're evaluating the associations that customers who
+buy computer games also buy videos. We computed that the support
+of this association rule is 40% and the confidence is 66.7%. They look pretty high, right? But in fact a high support and confidence can be misleading. So what if the overall poverty
+of buying videos no matter whether they have bought
+games is already 75%? In this case the probability
+of buying videos alone is even higher than buying games and
+videos. In such a case we may say that
+the other way around the other associations that customers
+who buy computer games are not buying videos may
+even be more informative. If we compute the support and
+confidence of this other associate room, we can see that the support is only 20%. The confidence is only 33.3%. But in this particular example,
+this rule is more accurate, even though it has the lower support and
+confidence. So, how do we deal with this problem? This basically implies that we need to
+measure the true correlation between X and Y between the two patterns instead of
+just using the conditional probabilities because conditional probabilities can
+be misleading if we don't compare that with the marginal probability. So support and confidence are not sufficient to
+indicate true effectiveness of patterns. What we need to know,
+what we need to do is to measure the correlation through
+the two way contingency table. We're looking at a two week contingency
+table right where we are summarizing the number of transactions with
+the item games, without item games, with item videos, without item videos. There are four sales as
+highlighted that are very critical in this contingency table. This cell tells us the number of
+transactions that has the item games and then has the item videos. And the sale below it gives us the number of transactions that has the item games but not videos. And the sale is the sum
+of the two numbers which basically counts
+the number of transactions with games whether or
+not they have videos. Then this is we're
+looking at tells us that there are 3,500 transactions that contain the item video, but no games. And the sale below that
+tells us that there are 500 transactions that contains
+these games no videos. Again, this sales summarizes
+the numbers in the same column that gives us number of
+transactions without games. And then if we look at these numbers, these numbers compute
+the sum of the same rule that tells us that there are 7,500 transactions that contain games whether or
+not they have games. And this number tells us that
+there are 2,500 transactions that do not contain videos whether or
+not they have games. And finally this number in
+the lower right corner tells us that there are 10,000 transactions
+overall in a database. So based on the two week contingeny table
+we can compute quite a few in this matrix. And each of the matrix
+tells us how interesting the association rule is for
+decision making. Let's start with one of these
+measures which is known as the lift. What lifts us is to measure the ratio of
+the conditional probability from X to Y and the marginal probability Y. So intuitively if the conditional
+probability of Y given X is much higher than seeing
+Y alone with or without X. Then we know that the association from
+X to Y is more likely to be real. So we can write lift as
+the conditional probability of Y given X normalized by the property of Y. We just use the fact of
+conditional probabilities, we can rewrite this ratio into
+the joint probability of X and Y normalized by the product of PX and PY. So we can see that this joint probability
+PXY measures the fraction of transactions that contain both X and Y normalized
+by the total number of transactions. To compute that we just need to look up
+the numbers in this contingency table. This is the number that's the number
+of transactions with both X and Y. And if we normalize that by
+this number we get PX and Y. To get PX essentially we
+need to find the number of transactions ways one of
+the variables in this case games. And then again normalized by
+the total number of transactions. And PY similarly we can
+just find this value. That means just the number of
+transactions with the Y variable normalized by the total
+number of transactions. Now with the understanding of
+the lift score let's see whether we can compute the lift of the two
+variables we're interested in buying games and
+buying videos in this equation. You can see that the number
+4,000 comes from here. The number 6,000 comes off here. That is the number of transactions
+having games whether or not they have videos and the number. 7,500 comes from here and
+that's the transaction number of transactions with
+videos whether or not with games. And by computing the ratios,
+we can see that the lift score of games and
+videos is 0.89. Now, we can also compute the lift
+score of the variable games and the pattern no videos. By doing that we can measure the
+interestingness of the association that when customers buy games. They are less likely to buy videos. To compute this, we just need to look for numbers from differences. We need to compute the fraction
+of transactions with games and without videos. So we look up the number in this community
+table as 2000 so we put 2000 over here. Normalized by 10,000 of course, and
+then we need the fraction of transactions with games net still 6,000. But now we need the fraction of
+transactions without videos. So we look up the number
+here that is 2,500. We put the number back you and that
+gives us a new lift score that is 1.33. So we know that the lift score of
+the association rule from games to no videos here. This little symbol is rate as no. So from games to no videos is 1.33 and
+by comparing those two numbers, we can see that the lift
+score of games to no videos is actually larger than lift
+score of games to videos. That means when customers buy games they
+are actually less likely to buy videos.

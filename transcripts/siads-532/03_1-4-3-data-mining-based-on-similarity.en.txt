@@ -1,0 +1,110 @@
+So now you can see that we
+can make use of patterns to build lots off downstream
+data mining functionalities. We can also do that
+through similarity. So what is the similarity
+of data mining? Similarity is
+actually a measure of how much two data
+objects are like each other. Now also, related concepts. One important concept
+is so-called distance, which measures
+exactly the opposite. A distance between two
+data objects measures how much they are
+dissimilar to each other. Let me give you one example
+of similarity and distances. So we have three data objects. We're laying out them into this 2D space to
+illustrate their relation. So the following statements
+are equivalent to each other. We could say that A has
+the higher similarity to B than C. We could also say that A is closer to object
+B than to object C. It is the same
+thing to say that A has the lower
+distance to B than to C. So you can see that really similarity is
+the opposite of distance. Similar to patterns, the
+concrete measurement of similarity or distance really depends on the data
+representation. If you represent your
+data as itemsets, you may require different
+similarity function versus if you represent
+your data as vectors, you may require another function for similarity or distance. Like patterns, similarity
+can also be used to build more complex data
+mining functionalities. For example, in a
+classification task. Again, if we have two
+classes red and blue, and we want to figure out
+the label of a new item. One thing we could do is to
+compute the similarity of the new object to all the
+existing classifying objects. If we see that the
+new data object is closer to objects in
+one particular class, in this case, the new object
+is closer to the red class. We can assign it to the red
+class with high confidence. As such, the intuition is captured by the so-called
+k-nearest neighbor classifier, which is a classical classifier, simple but very powerful. Again, in this example, we want to figure
+out the label of the unlabeled data object. Starting with the
+unlabeled object, we can first compute
+the similarity or distances between this
+object to existing objects. Then we can sort the data objects by their
+distance or similarity to the new object so
+that we can find k labeled objects that are
+nearest to the new one. They call this the
+k-nearest neighbors of the new data object. In this x, we can
+see that there are three objects that
+are closer to x. These are the three
+nearest neighbors of x. Once we can compute the
+k-nearest neighbors of a data object, we can assign this
+new data object to the majority of
+the class tables among it's k-nearest neighbors. In this particular example, among the three nearest
+neighbors of x, two of them are red and
+only one of them is blue. So we can fairly assign
+x to the red class. We can also use similarities or distances for
+clustering purposes. Again, in a clustering setting, we want to group unstructured data objects into meaningful clusters.
+So how to do that? We can first compute the
+distance between any pair, between all pairs
+of data objects. Then based on the
+pairwise distances, we can find a group, find a grouping of the data
+objects so that we can minimize the distances between the objects that are
+clustered in the same groups. Meanwhile, we can also maximize the distances between
+the data objects that are partitioned
+into different groups. By doing this, we can usually achieve very meaningful clusters. Similarly, we can also use
+similarity for ranking. As we discussed, there are
+two scenarios of ranking. In the first scenario,
+you have a query. So the goal is to rank objects that are closer to the
+query higher than others. Suppose that we're presented with the following data objects, and then we're given the query. All we need to do is to compute the similarity between the query to any other data objects. In this case, we can see that the similarity
+between the query q and x_2 is higher than a
+similarity between q and x_3, and is even higher than
+similarity between q and x_1. Based on this calculation, we can rank the data object, the x_2 above x_3, and above x_1. Although this is the very
+simple and intuitive algorithm, it has lots of applications. For example, in search engines, which you use every day, the task is to rank the web pages based on how similar they are to the query that's
+issued by the user. In this case, you
+can see that when the user typed in a query
+"Applied Data Science" our program is ranked to the top. In another scenario of ranking, we do not have a query. If we don't have a query, we will rank that
+data object higher if it is close to many objects. So in this particular example, we don't have a query, but we can still give the
+order to these data objects. The objects x_1,
+you can see that is closer to many data
+objects than others. x_1 is close to five objects versus x_2 is close
+to only two objects. In this scenario, we can rank x_1 higher than x_2
+because intuitively, it is more important
+in this dataset. Here's one example
+of how to apply this simple intuition in
+a real data mining task. In this visualization,
+we are visualizing the co-citation network of
+the Sloan Digital Sky Survey, where every node is the paper, and two nodes are
+linked together. Two nodes are considered
+to be similar if they are both cited
+by other papers. So we can see that
+the York paper, which is on the
+lower left side is considered to be
+more important than the other papers because it is closer to many other papers. So this is the simple
+illustration of how can we use similarity to rank data objects among many other data objects. We can also use distance or similarity for
+outlier detection. Remember that the goal of
+outlier detection is to find data objects that are considerably dissimilar from
+the remainder of the data. Imagine that we're presented
+with the following dataset. We want to figure out which
+data objects are outliers. So in these scenarios, we can see that the red
+triangle is more likely to be an outlier from the majority
+of the data objects, simply because that if
+you compute the distance from the red triangle to
+all the other data objects, all the distances are
+above the threshold. So we have discussed two simple data mining outputs,
+patterns, and similarity. We can see that patterns and similarity are
+two basic outputs. They can be used to produce more complex functionalities of data mining including
+classification, clustering, ranking, predictions,
+and outlier detection. I hope you understand how the k-nearest
+neighbor classifier works because it's really a simple and powerful algorithm
+for classification tasks. I also want you to remember that the particular definition
+of patterns or similarity, really depend on the data
+representation that you select, whether you use itemsets or whether the only
+way is vectors.

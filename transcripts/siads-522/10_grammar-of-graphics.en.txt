@@ -1,0 +1,315 @@
+So welcome back. We're going to go through the last step
+of implementation. We're going to focus on
+the Grammar of Graphics. As our mechanism for taking data and encoding it in some way that's usable as a visualization. I'm going to try and
+sell you on this as a very powerful technique that sits somewhere between full GUI and programming from scratch. So again remember we have tools like Tableau and Excel which have this graphical user environment which will make it
+easy to degenerate certain kinds of
+visualizations but maybe restrictive and the
+kinds that you can make. We can program from scratch, but that means learning lots of new programming languages
+and techniques which is great if you
+have some great new idea for a visualization technique. But in most cases you're
+not going to have that. There's something
+in between which is the Grammar of Graphics
+which will allow us to generate visualizations
+by ordering marks on the screen given our data set. So how does Grammar
+of Graphics work? Grammar of Graphics, again, sits in these in-between
+spot that takes data and figures out
+how to generate marks. Grammar of Graphics focuses on encoding data with
+visual channels and encoding them using marks. So that is the thing that sits. We're going to have
+a programming language, a domain-specific language, that tells us which encodings and which channels to use
+and also which marks. But that is going to be a very small set of things
+that we have to actually implement in order to get very nice looking
+visualizations. It's going to take care
+of a lot of other stuff. So most implementations, when their program of
+Grammar of Graphics, will take care of
+certain things like drawing axes on labels and so on. So this is a nice feature
+of most implementations. You can focus on what you need to and let the system
+take care of the rest. So there are many implementations
+of Grammar of Graphics, so the specification is similar, but it won't be exactly the
+same, I'll show examples. But ggplot, which
+is something that's used in the R
+programming language, Vega-Lite, which is
+a JSON-based thing you can use JavaScript. Altair which is actually a Python layer around Vega-Lite that I'll
+show an example of. The specific terms that these techniques use might
+be a little bit different, but you'll see that the actual language is
+very similar abstractly. So once you figure out the high level way of talking
+about Grammar of Graphics, the implementation
+should be much easier. So again, we're going from
+tables that look like this to visualizations that look like the thing on the right. So we're going to try and
+find that middle ground that program that basically is going to let us
+do that encoding. So what is it that
+we're going to do? Grammar of Graphics
+again consists of these three things data,
+encoding/channels, and marks. So we have to describe the visualization that
+we want in these terms. This is a data set
+about cars, again, data set that we
+like to use because it's quite simple
+and straightforward. We have miles per
+gallon, we have weight, and we have these points
+representing specific cars. So how do we generate this visualization
+given this data set? The first thing that
+we have to do is tell the Grammar of
+Graphics what data we have or what data
+we're going to use. So in this case, we have
+miles per gallon and weight, and we need to indicate that those two things
+are quantitative. Again, just like everything else that we've discussed so far, Grammar of Graphics
+and all systems like it are aware of which encodings given
+the nature of the data. So if you have
+quantitative data sets, they're going to use specific
+encoding techniques or use different kinds of axes or chart types, or
+whatever it is, but there's heuristics
+and algorithms built into Grammar of Graphics
+implementations that will rely on what data
+is being fed in. So miles per gallon and
+weight are being fed in as two quantitative variables
+that we care about. The next thing that we have to describe is how we
+want to encode them. So miles per gallon. We're going to use the
+x position for weight, we're going to use
+the y position. Okay, so that is the next part
+of the specification, this is the encoding
+and the channel. The last piece that we have to say how we want
+the market to be drawn. So in this case, we
+just want a point. We just want a circle to
+represent each of the cars, and that's pretty much it. So we've indicated which
+variables we're going to use, miles per gallon and weight; we indicated how we want
+them to be displayed, x position and y position; and how we want
+them to to be drawn in this case a point,
+and that's it. That is how the
+Grammar of Graphics works for this particular
+visualization. So completely
+straightforward, just indicating these three
+different things: data, encoding/channel,
+and marks. The options that we have are varied depending
+on the implementation. So for marks, we have
+different kinds of points, different kinds of blinds, different kinds of
+bars, and so on. Depending on your implementation, you're going to want to look at the documentation to
+figure out what that is. But in most cases, you're
+going to be able to generate most of the standard
+visualization types. So these basic mark
+definitions will be enough for you to generate most of the visualizations
+that you see. Manipulating these marks, you can then modify their
+position, their color, and all that stuff that we've been using so far
+in thinking about, so far as a retinal variables, that is going to be the thing
+that we're going to use. Okay. Back to our example, miles per gallon, weight and so this was
+one visualization. Now, let's say I have a question. The question is, I
+want to know what the difference is between
+manual and automatic cars. So this visualization do not express that fact or
+the answer to that question. So how are manual cars
+different than automatic cars? You'll notice that manual is not actually being encoded
+in anything here. So these no longer expresses the answer
+to my questions but, we can fix that quite easily. Will fix it by saying, I have this other variable
+called manual. It is a zero or one variable, whether the car is
+a manual shift, manual transmission,
+or automatic. We're going to indicate
+that it's nominal. So you see that we've
+modified our data over here to indicate that we have this extra thing
+that we care about. So pull out this nominal column
+from the data set. We're going to also
+indicate that we want color to be used to encode that and then everything else is
+pretty much the same. But, now what the Grammar
+of Graphics implementation does is it generates
+a new visualization for me that has as previously the points encoded
+on the x and the y axis, but adds these coloring
+based on the value. Is it manual or not? Zero or one? In this case, it's blue or orange. That's great, but we saw
+this before that we have problems if our output
+devices constraints. Let's say I have a black
+and white printer and so color is not a great
+thing to do here. Where Grammar of Graphics shows its power is really easy to fix. We just erase color and
+we replace it with shape. So now we just change and
+the representation over here, in the program we say, "Don't use color
+anymore, use shape." So now we're using circles and squares to represent
+the manual transmission, whether the car has manual
+transmission or not. Can we do the best
+of both worlds? Certainly, just add an extra row to the Grammar of
+Graphics definitions. So now, we have two rows, where double encoding
+the manual transmission variable as both color and shape. So that's a nice way of getting
+the best of both worlds. Okay, now let's say I
+want to see distribution. So I have my original
+raw data set. So the data set actually
+is telling me that there's miles per gallon
+and it's encoding that value for all the cars. It's encoding the weight
+for all the cars, whether there's manual
+transmission or not that's encoded
+for all the cars. To do distributions
+requires aggregations. So now we want to know, how many cars of a certain type have certain weight
+distributions or whatever it is. So in this case what we're
+going to do is given whether a car is manual
+transmission or automatic, we would like to see
+the distribution of the weight
+variable, let's say. So now we have this new kind of Grammar
+of Graphic encoding. What we're going to see as again a very similar thing
+that shows us the data, the encoding/channels and marks. So the only thing that's going to be different
+and important here is we're going to use these aggregator
+functions over here. This is something that most Grammar of Graphics
+implementations support. So there will be a set of these transformations
+that you can rely on to generate new aggregate
+things about the data. So in this case, what I'm telling
+the system to do as I have two variables: weight
+and manual transmission. So again we have weight
+as quantitative, manual as nominal, again zero or one, and then I tell it bin
+all the weight things. So look at the weight
+variables and bin them. So all cars with similar
+weight things should sit in the same bin and that should be encoded
+using the x position. We're going to encode the number of cars that
+have that property. So how many cars are
+of a certain weight? Let's say, the number of
+cars that are 3,000 pounds. We want to count that number. So that becomes the length of what we'll see is
+later in the bar. So that is the height of
+this element over here. So each of these things is a bin, we're going to
+count the number of cars that fall in that bin. Then, we're going to encode that using this length
+which is the height. We changed the mark
+from point to bar, because now we don't want
+just a little dot over here, we actually want a bar being represented or being used
+to represent this data. So again, the bar tells us
+that we have a bar chart, and this case it's the histogram. We have the variables
+that we care about, quantitative and nominal
+variables weights and manual, and then we apply these transformations
+or bending the weights, or counting the number of
+cars that are in each bin, and then we are coloring using, whether it's a manual or
+automatic transmission. Again, this representation
+is passed to the grammar of
+graphics engine and it will generate
+this visualization, including all these labels, the legends, the axes and so on. So you don't have to worry
+about any of that stuff. You just have to figure out
+what representation you want and what aggregation
+transformations you want, in this case binning
+and counting. So why is this useful? It's useful because
+it's easier to specify many different kinds of
+charts and combinations. So it's very easy if we want to try a lot
+of different things. We're going to just switch one word or one term in
+the visualization code, in that domain specific language
+of the grammar of graphics and it'll generate
+the visualization for us. It's going to help us design charts systematically because it forces us to think about what
+it is that we're building. So the way we write
+this program forces us to say, this is what we want
+the data to be, this is what we want
+the encoding to be, and this is what we
+want the mark to be. Then, I'll show in a second, it'll help us evaluate
+chart systematically. This again, is in the language
+of expressiveness and effectiveness that
+we've used previously. So easier to specify. Again, we have this example. We can take this,
+just five lines of code essentially that is
+being used to describe, but is a pretty
+good visualization. We haven't had to think
+about the layout, we haven't had to
+think about the grid or the axes, or whatever. All that's done for you using the grammar of
+graphics implementation. The design systematically,
+you can think about the ordering of the importance of your variables and
+then pick from this list. So you have these lists of encoding techniques and you
+can look through the list, just as we did before
+with the APT algorithm in order to figure out which encoding we want to try and use. But we can do this schematically and go through the list and pick the right thing
+that will work for a visualization given
+whatever constraints we have. The printer, the data,
+whatever it is, this can be factored in as we construct the visualization. Evaluation, we can also
+do systematically. So before, well, we
+thought about when we're judging whether something was expressive and effective, was basically having
+the simulated view or decoding the visualization. So we had the true data
+over on the left over here, so true data over here, we had the thing that the person saw and we
+could then basically ask, is the thing that the person sees equivalent or not
+and how close is it? So are they saying A is 1.1
+when it's actually one? Are they saying B is four
+when it's actually five? These are things
+that we could ask via simulating this experience. We can do this using grammar
+of graphics as well. So instead of simulating
+the reading and writing, the decoding and
+encoding process, we can simply generate
+the grammar of graphics representation of
+the input and the output. So we can see that
+the input is this. In the dataset, we have this
+nominal variable which name, we're representing it
+using the x position. The score is a
+quantitative variable being represented as link, the mark that we're using is bar. The way the person reads
+that visualization decoding that back from the visualization into a grammar of
+graphics representation, we see that those two things
+are equivalent. Then we know that these
+are equally expressive. So the input and
+the output are equally expressive because the grammar of graphics definition we
+generate from looking at the visualization and looking
+at the data are the same. Looking at another visualization, we can actually compare. So now we have the bar chart and the circle plots that we've
+thought about in the past. We can again decode these, and we can do the same thing using the grammar of graphics. So instead of trying to
+generate the actual tables, we're just going to generate the grammar of
+graphics representations. So name is being encoded as a nominal variable
+through x position and one through the y
+position and the other. So we can see x
+position y position, one and is encoding
+the score through the link. It's quantitative variable, the other one through density. This one is encoding it using bar and this one is using
+as a circle point. They're equally expressive
+because there's equivalents. We're using the same variables
+and they're being encoded each uniquely
+in some way. But we can also
+answer the question, are they equally effective? For that, we can look at
+our nice little handy chart, and we can see that length is better for encoding a quantitative
+variable than density. So length is up here and
+density is down here. What that tells us is that
+they're not as effective. The visualization on the left
+for certain kinds of decoding task is much more effective than
+the one on the right. So if we had a choice,
+we might prefer the one on the left than
+the one on the right. That is something
+that we can determine by decoding the visualization as a grammar of graphics
+representation and then looking through
+this table that we have, that is describing which things are effective and which are not. So in terms of
+actual implementation, depending on the programming
+language that you have, you probably have access to a
+grammar of graphics engine. So Vega-lite is the most generic. This is a JSON representation. So it's also probably the one that takes the most
+amount of time just because there's lots of things that you have to define
+in order to make it work, but it's not that much more complicated
+than what we had before. So this is what we had before, up in the upper right hand corner we're saying we're reading in this empty cars file and then we're pulling out the miles per gallon and we're
+pulling out the weights, and then we're drawing the marks. So anything that is displayed on the
+right representation, this abstract representation
+of grammar of graphics also exist in the Vega-lite
+implementation. So you see that file
+is being defined here, the mark is being defined here. We just have to say
+a little bit more. So the type equals the point, filled equals true,
+that's over here. Then encoding, we have x and y. So that's telling us where
+to draw these things. We want to draw the miles
+per gallon in x, were also indicating that
+it's quantitative over here. We want to draw a weight in y and we're also indicating
+and that's quantitative. So this part over here is being encoded
+by this part over here. So this is a JSON file
+type representation. If you're using JavaScript, this might be
+appropriate and there's a library that will take this representational
+as a JSON file and spit out the visualization
+that you see on the right. If you're doing it in ggplot, which is based on R, you have something similar. Ggplot is actually going
+to make some inferences. So things like the variable type, whether it's quantitative,
+it's actually being inferred based on
+what you're doing. But more or less, you
+see the same thing. You have the definition of the mark and the point
+that's down here. You have to now remember that size equals two
+and shape equals 23, like you want a circular
+point that's filled. The shape value is 23. So you do have to think
+about that a little bit, but there's tools that
+help you with that. Then this X position, we're saying that's over here, this X and the y position
+we're saying that's over here. So again, we're invoking this libraries function called ggplot which is taking
+a bunch of arguments. I'm sorry that
+empty cars is over here. So ggplot is reading
+in the cars dataset and then it's
+reading through what you want to use to encode
+miles per gallon weight, and then what way you
+want to encode it. Altair is a similarly simple way
+of representing this. Programmatically, this
+is done in Python. It uses Vega-lite
+underneath, which is nice, but you don't have to think about the JSON representation, you just program in
+a very simple way. So you're basically going to say, I'm going to make a chart, it's going to take in this
+empty car's dataset as input, I then want to use Mark Circle and I want to color
+them in black, or blue, or whatever it
+is, that's over here. Then encode. So I encode
+X miles per gallon, which is quantitative and
+Y which is quantitative, which is this part over here connects to this part over here. So again, a fairly simple way
+of doing this using Python. The takeaways is
+that you can get far by just thinking about
+the data encoding as a marks. I didn't show very
+sophisticated visualizations, but it turns out you can
+actually layer just using a very simple set of grammar of graphic language constructs, you can layer a bunch of marks, one on top of the other to get very sophisticated
+visualizations. The grammar of graphics lets us easily describe what we
+want to see on the screen without having to
+worry about axes and grids and all that stuff
+like that all done for us by
+these implementations. So again, no need to worry about the little things
+unless you want to. It also gives us the power
+to evaluate more easily, whether it is a we got the right kinds of
+visual that we want. So programmatically we
+can generate a bunch of different examples
+and then we can test these to see whether they're
+actually showing the data in the most expressive
+and effective way possible given our task. All right. With that,
+thank you for listening.

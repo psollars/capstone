@@ -1,0 +1,103 @@
+So in the hopes of
+convincing you about the importance of data
+privacy as a data scientist, let's first review some
+conceptions of privacy. The three that we'll
+be reviewing are: individualistic,
+collective, and social. So first, thinking about individualistic
+conceptions of privacy. It's usually considered a yes
+or no decision to disclose. The most famous argument
+that's really based on an individualistic
+conception of privacy is the nothing to hide argument
+that Daniel Solove, who is a legal privacy
+scholar has dismantled. But just first to review the
+nothing to hide argument, it's thought that if you're doing everything that is
+legal and appropriate, that you don't have
+anything to hide. So there aren't any
+issues with surveillance. However, if you consider
+that privacy takes on a collective and
+social characteristics, and especially in
+terms of surveillance, where essentially Solove argues that you don't necessarily
+get to decide what is appropriate or what
+is legal that is in the power of the person
+who's doing the surveillance. So as a surveiller has more and more data, and potentially control
+over someone's life, the data subject may
+change their behavior. So instead thinking about
+privacy in terms of a social value which allows individuals to flourish
+and explore, etc. This is also been reiterated in a very famous legal
+brief by Warren and soon-to-be Supreme
+Court Justice Brandeis at the beginning of
+the 20th century, the right to be left alone. And again, taking on
+privacy in terms of a social collective value
+that individuals should be able to flourish and have
+their privacy respected. So furthering our discussion of different conceptions
+of privacy, Daniel Solove, who also discuss the
+nothing to hide argument, also has created a taxonomy
+regarding the life cycle of data and how privacy harms can happen throughout the
+life-cycle of data. First in collection, harms can
+happen during surveillance, during processing in terms of aggregation, dissemination regarding inappropriate
+disclosure, as well as invasion when the data that's collected
+actually causes harm in the sense of what
+decisions are made available or options that are made available to individuals. Another framework to consider when we're thinking about
+different conceptions of privacy is thinking about privacy in terms of
+appropriate flow. This comes from Helen
+Nissenbaum, who's a philosopher who
+studies data privacy. This is her contextual
+integrity framework. So she believes that information flow and
+appropriate information flow is at the crux of data privacy. So when these characteristics
+such as information type, transmission principle,
+information subject, information sender, or
+information recipient change. That privacy harms
+are possible because the flow of the
+information is exchanged. Keep in mind that this framework assumes a
+data as being exchanged. That not necessarily
+the issue here, but instead that what was
+initially agree to changes. So the main ones, especially in terms of analysis that data science do is issues regarding
+transmission principals. So how the data is moved and whether it's
+identified or de-identified, and especially
+they're issues that we'll discuss when de-identified data, so not having the personally
+identifiable information such as your name, is removed. However, if there are enough
+data points about someone, your identity can be deduced as well as information recipient, which is an issue when there
+are secondary use of data. These topics will come back to later on in a
+part of this module. So throughout this
+module we'll focus on my favorite datatype, genetics, to illustrate these
+issues at hand. So genetic data is
+being used, of course, in a medical capacity
+and medical contexts as well as they're direct-to-consumer
+efforts such as 23andMe, where you again, can
+get medical information as well as non-medical
+ancestral information. These direct-to-consumer
+companies are creating partnerships with one, law enforcement such as
+police to find criminals. You may have heard of the
+Golden State killer case, but also they are creating partnerships with
+pharmaceutical companies to share their data. So if you think about
+genetic data as being you, there's obviously individualist
+conceptions of privacy. However, your genetic data
+is very similar to anyone that's relatively related to you. So for example, that is how they found the Golden State
+killer was through a family member
+had similar DNA on the social media genetic website. So again, returning back to the faulty assumption of individualistic privacy in
+terms of nothing to hide. You might have nothing to hide, but it also isn't your
+choice whether to submit your data to, in any of
+these different contexts and said if someone related
+to you does and if it is used in the secondary capacity that you could be identified. This is true even in the
+sense of de-identified data. Then, given the privacy harms throughout the
+life-cycle of data, thinking about Daniel
+Solove' taxonomy. One, is the information collected in appropriate manner
+or when you throw away the cup that
+you're drinking out of and that cup is then taken and have your genetic data analyzed, was that really consented to? Then in the processing, again, speaking of aggregation, even if the data is de-identified, it is intrinsically you and
+could be re-identified as well as in terms
+of dissemination, understanding, who
+is it going to. There are genetic use protections in the sense of employment
+and health insurance. However, life insurance can use genetic data to
+inform their decisions. So from the last part of Daniel Solove's life cycle of data taxonomy around intrusion. That your life cycle or life insurance
+policy could be void due to updated information
+about your genetic profile. Again, context. Again, thinking about the
+transmission principle of what is thought to be
+de-identified genetic data is re-identified as well
+as if you give your data, especially to 23andMe or any of these
+direct-to-consumer companies, there are very minimal
+protections on who they can sell access to their biobank, there database of
+genetic data to. So when you initially sent in your spit to these direct-to-consumer
+genetic companies, did you consider
+the potential for law enforcement or for pharmaceutical companies
+to receive that, and is that inappropriate
+use of your genetic data?

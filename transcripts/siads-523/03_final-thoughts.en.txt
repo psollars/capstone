@@ -1,0 +1,104 @@
+As we wrap up this week and
+we wrap up this course, I just want to stop for a moment and
+give you some final thoughts. First of all, you'll be able to see the final version of
+the slide deck we finally settled on that we discussed in the earlier couple
+of segments in your course materials. But I want to start here and talk about
+some favorite resources that I've relied on over time to help me keep
+abreast of what's going on with data visualization. And you'll notice that
+all of us at SI have some overlap and we have some different influences. So you'll notice that
+hopefully your toolkit's growing as you move through the program. And I want to talk a little bit about who
+I've got going in my Twitter feeds that help me stay current. So the number one person, if you're going
+to only follow one person on Twitter, I would follow Alberto Cairo, because he
+seems to be be a sort of central hub. Lots of people inform him about
+what they're doing, and so he's a really great information source. The other person at FlowingData
+would be Nathan Yau, whose book we'll talk about
+in a couple of slides. Both of them are really good
+at aggregating information and being leading thinkers
+in how we work through the process of data communication and
+data visualization. When it comes to looking for facts or
+information or ways in which information is being visualized, I've mentioned
+before my fondness for The Economist. And so I really enjoy when they tweet
+out some of their visualizations. In fact, you saw the red and yellow one
+that we talked about in Week 3. I like to keep the St. Louis Fed
+in my Twitter feed because they're the folks behind FRED,
+which we looked at in Week 1, and oftentimes they surface a kind of data
+that just keeps me abreast of what the broader landscape of existing data
+sets are that I can use for things. And finally, USAFacts.
+This is a project from former Microsoft CEO Steve Ballmer to try to
+contextualize governmental data and draw conclusions for it for
+a mainstream audience. I don't always agree with how they
+how they go about visualizing things, so oftentimes this is sort of
+a mental talkback for me, but I think that skill of critically
+looking at visualizations is really important to keep
+that mental saw sharp. When it comes to blogs, I still am
+a blog reader even as they sort of diminish in favor of
+other forms of communication. So I've divided this section
+into two columns. First, where do I go to get
+great examples and great information about how things
+are being processed and visualized? Again, Alberto Cairo is a really great
+aggregator of information as well as a leading spokesperson about data
+journalism and data communication. FlowingData, again the site of Nathan
+Yau, also doing a lot of aggregation work also has some paid tier service that
+provides more instruction and tutorials. I do like to look at fivethirtyeight.com
+to see the ways in which they're conceptualizing different kinds of data. It can often be a good place to go
+to see how they are, for example, looking at how to conceptualize
+polling related to the primaries and compare that to other sources. For fun, I like to look at Junk Charts, which often is critiquing poor examples
+and talking about how they might be made better. Again, keeping that sort of mental
+problem solving going in my head. And the Data Visualization Society. We can argue whether this is a publication
+or a blog. They have started a new journal called Nightingale named after
+Florence Nightingale, who you've met a few times throughout your time
+here in the MADS program. So here we see sort of a more professional organization approach to data
+visualization that's really great. And then finally I would be remiss
+if I didn't talk about the WTF site, and this is a site that aggregates
+really bad examples of visualizations. It's on a Tumblr site, it's not always
+updated in any regular time order, but a great place to go if you want to
+test your thinking and do sort of a how would I fix this sort of exercise. When it comes to podcasts, amazingly there
+are podcasts about data visualization. My favorite is Data Stories. They talk a lot with academics but also
+with folks working in industry about how they are dealing with data, how they're
+representing it in dashboards, and the two hosts are very genial and
+a pleasure to listen to. So for me, when I've got a little
+bit of extra time I tune in and it's just a really great insight into
+the ways in which different people are approaching the worlds of big
+data sets and data visualization. And for general discussions about data and its impact on society, which wasn't
+really the focus of our course, I really like the Data and
+Society podcast. It again it doesn't have
+a regular posting schedule and it tends to be a little bit more academic, but
+also is a really great source for people who are curious about the ways
+in which the datafication of our world is impacting culture,
+underrepresented minorities, and the overall societal
+impact of working in data. And I think that's a good
+reality check for all of us, especially as your technical
+skills get really sharp, how we balance our ability
+to manipulate data with how we use data for positive results. And some favorite data communication
+titles. Storytelling with Data, which we used as the textbook here. There's also an accompanying workbook
+by the same author which helps you work through various kinds of visualizations.
+And I'm a big fan of Data Story, which is where we got the information
+about using slidedocs. It's a really great primer in how
+you communicate to audiences and ways in which you might
+deploy different tools. For visualization-specific books, I recommend Cairo's September
+2019 release of How Charts Lie, which I think is the sort of 21st century
+version of How to Lie with Statistics, which I think is also a great primer. It's an easy read, it's written for
+a mainstream audience. And I'm also a fan of
+Nathan Yau's Data Points, which is a great book that
+walks through visualization for both communication, but
+also data visualization as an art form. He has another book called Flowing Data
+that has a much more technical approach to data visualization. I like Data Points as a way of
+thinking really about the art of data. When it comes to data journalism and
+going to find examples of things that I find appealing,
+I like the New York Times. As you've noticed, I've used a couple of
+interactives from them in this course. I do like bloomberg.com. I think they're
+really clean and sharp. Again, you know I'm an Economist fan and the Wall Street
+Journal also does a great job and there is some classic texts on data visualization
+from the Wall Street Journal as well. I also want to remind you that U of M library does have subscriptions
+to all of these publications so you can follow them on Twitter or you can
+have them be in your blog aggregator and then you can look it up in the library's
+website to find the contemporary thing. The other thing that you might want
+to play with out of MLibrary is socialexplorer.com, which visualizes
+census data, both current and historical, and lets you do things
+like side-by-side comparison, so you can compare racial demographics
+from pre-Civil War to post-Civil War, for example. And it's always worth poking
+around because that is one of the largest libraries in the world and your
+tuition covers all of those resources. So with that being said,
+you've got some work to do. I can't wait to see what you come up with. And when your questions arise,
+we'll see you on the Slack channel or in office hours. Thanks for being a part of this
+course and good luck.

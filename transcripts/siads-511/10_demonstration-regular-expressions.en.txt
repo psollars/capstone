@@ -1,0 +1,116 @@
+Hello, and welcome to
+another walkthrough of SQL. We're going to play a little bit
+about with regular expressions. So I assume that you've watched
+the lecture on regular expressions. So I'm just going to sort of tell
+you what each one of these does. So I'm going to make an email
+table with just some text in it. I'm going to insert some
+email addresses in it. SELECT star FROM em is my table, FROM, so there we go. So we have a few things
+that we can look at. So let's take a look at
+some of these queries. So this tilde is a regular expression. It's kind of like LIKE but
+it's the regular expression one, so the difference is that this basically
+is going to take this umich and move it across the entire sort
+of match it moving across. And so anything that has a umich in it
+anywhere is going to match this one, you don't to put wildcards at the beginning
+and end, like you do on a LIKE clause. So that's really saying select
+where there is anywhere in the email address,
+there is a umich email address. The caret is the start, so that basically says select anything
+that starts with a letter c. So csev and coleen, of course, do.
+Then select something. the dollar sign is
+a metacharacter that says, show me everything that
+ends with dollar sign. So that has all the edu ones, so
+there's apple.com and apple.com. So the bracket is a single
+character that's a set. So what this is saying is, I want to see
+at the beginning of the line something that starts with g or n or t,
+that's what the brackets are. Okay? It's a set of possible characters. So there we go. The g or the n or the t is what we got. So, now we can look for any digit. So you
+can inside brackets, you can have a range. So 0-9 is a range. And again, it's
+still going to check every character, like is this a number, is this a number,
+is this a number, and then it finds it. So it'll find the ones that
+have a number in them anywhere. And it finds this one. If I have bracket 0 through 9, bracket 0
+through 9 as my regular expression, that says two digits right next to each other. But anywhere in the file.
+So that says this is ted79. That was a two-digit one, Before, we did a one-digit
+number anywhere in the email. So glenn1 matched, but if I want
+a two-digit number, away I go. Okay? So that's just sort of a review of
+some of the basics that we can do. Now, you can also take the email and
+run it through a regular expression. So this is just a WHEREe clause, right?
+But what we're doing is we're going to actually instead of just
+showing the email address, we are going to pull things
+out of the email addresses. And so, let's just show you this,
+it's kind of cool. And then, it's actually pulling
+the number out, right? SELECT substring email FROM
+quote 0 through 9 plus. So here we go, 0 through 9 is any digit,
+plus means one or more of them, kind of one or more of them. And what's happening here is
+email is the whole email address. But what we're doing is with this
+FROM inside the parentheses, it's different than saying which
+table it is, that's this FROM. FROM inside the parentheses says look,
+apply this regular expression and extract from email that fraction of this, that portion that matches
+0 through 9 plus. So that gives us the 79 and
+it gives us the 1. So, this is in a WHERE clause, right,
+where email is got matches this regular expression, and then you can
+also do it in the results of the SELECT. Now, you can also use parentheses. So what this is saying here
+is we're going to take the email and we're going to run it
+through a regular expression. And now in this regular
+expression is dot plus, which means any character one or
+more times, followed by an at sign. And then parentheses means
+start extracting and then dot star means zero or
+more characters, followed by stop extracting,
+followed by the end of the string. So what that really is saying
+is that's saying, go up to and start extracting after the at sign and
+go all the way to the end of the string. So that's how we've got umich.edu, we
+just got all the email addresses, right? So, the email is everything but
+we were able to go up to the at sign, start extracting, and then end
+extracting at the end of the string, and so we can get the email addresses,
+Pretty cool, huh? You can also just throw a DISTINCT. This is a perfect like
+example of DISTINCT. It's really just these rows, exact rows
+that you get without DISTINCT, except that the duplicates are now removed. So we go from six rows with two duplicates
+to four rows with no duplicates. And that's exactly what the SELECT
+DISTINCT does, and that's really awesome. The SELECT_DISTINCT is like, yep,
+just show me the unique ones. Just like in DISTINCT,
+we can do a GROUP BY. Now, this looks a little bit complex
+where we're seeing, but you'll just notice that the substring email has to be
+repeated over and over and over again. We're going to pull out the
+domain name, then we're going to count the domain names, and we're
+going to do a GROUP BY the domain name. I wish there was a way to
+make that a shortcut, but there's not really an easy way to make
+that a shortcut. But you will see here that what we're going to get is we
+are going to get the number of times, this is going each of these
+domains is going to be used. So remember that a GROUP BY and a count
+is kind of like a DISTINCT except it's keeping track of the ones
+that it throws away. So at one umich, but it's like that means
+the count is 2, so that's pretty cool. Okay, and you can put the substring in
+the WHERE clause as well, so we can say, SELECT star FROM em where
+the substring email FROM is blah, blah, blah, blah, blah
+This whole email from ".+@(.* that's basically saying
+in the WHERE clause, we're going to do the substring extraction
+and then match that to umich.edu. So there we go,
+and we can see the id, okay? So that is playing with regular
+expressions and email addresses. Let's go and play with tags a little bit. Tags is this notion that you
+have these pound sign strings, and we're going to make a little
+table of tweets, not too many tweets. We got three little tweets with five
+little tags, so we can see our our tweets. There's three little tweets and five tags. So we can of course use
+regular expressions that says, find #SQL anywhere in tweet tilde #SQL. So that's you're finding the tweet. That's
+really just a WHERE clause, right? That's nothing different
+than what we did before. But then inside the SELECT,
+you basically could say, I would like to take this
+tweet column from the Twitter, the tw table, and run this match.
+And so it's a pound sign. This is a regular expression. A pound sign
+followed by start of extraction followed by in braces a through z, lowercase
+a through z, 0 through 9, and underscore. So that's our legitimate letters,
+plus means we have to have one or more of those characters and
+then we stop extracting. So when we run out of, which in this case
+it will be the blank, it will start here, we'll go grab #SQL, and the blank
+will stop us, because blank is not in this set of characters
+that we are doing. g means do it more than once and
+then you're going to see that this sort of expands because some
+of these have more than one. And so this regexp_matches creates
+sort of some virtual rows. So this even though
+there's only three tweets, we get one sort of virtual row
+because regexp_matches sort of expands. And if we we can use SELECT_DISTINCT on
+that one as well, so that sort of takes our six tags and knocks her down to
+four tags because there are some duplicates. But we can also then hook back on
+here if we don't do the DISTINCT, we can hook back on the id
+of the row it came in and you can sort of see the mapping
+of which actual tweet. So tweet 1 has SQL and
+FUN, tweet 2 has SQL and UMSI, and tweet 3 has UMSI and PYTHON. So that gives you a little
+bit of regular expressions. Regular expressions
+are themselves a study. And so, you'll learn regular expressions probably as much from
+Stack Overflow as anything else.

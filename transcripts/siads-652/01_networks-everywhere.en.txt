@@ -1,0 +1,185 @@
+Hello. In this video, we're going to begin with a very basic definition
+of what a network is, and then I'm going to
+try to convince you that studying networks
+is a good idea. Let's begin with the definition. A network or a graph is a representation of connections
+among sets of items. Those items are called
+the nodes or the vertices and the connections are called the edges or links, or sometimes we call them ties. In this figure, we can see
+an example of a network. The nodes are simply
+labeled by letters and then lines that connect any two
+circles are the edges. One of the things to
+keep in mind is that when we visualize
+networks like this, all we care about is who
+is connected to whom? We don't really care about how far the circles are
+from each other. In other words, I could take this node D and drag
+it really far away, let's say all the way here. As long as D is simply
+connected to E, it doesn't really matter
+that it's all the way over here or where actually is. That's something to
+be careful about when we visualize networks. The location of the nodes
+and how long the edges are, typically carry no meaning. All we care about is
+who's connected to who. Why do we study
+structures like this? I'm going to give
+you two reasons. The first reason
+is the following, networks are not something new. In particular, people have been studying social networks
+for a long time. Here are two examples of networks that people
+have looked at. One in the 1970s and
+one in the 1930s. The one on the left is a
+network that represents friendships between the
+members of a karate club. In this does network you have node number 1 as
+the instructor of the club and node number 34 as the assistant of the
+instructor in the club. There's an interesting
+story behind this network that I will
+tell you about later. The network on the right is a network of friendship
+in a first-grade class, which was studied in the '30s. Something that both of
+these networks have in common is that
+they're small enough such that we can look at the network and start to
+see features about it. In the karate club network, we can see that the
+instructor has lots of friends and also
+that the assistant has lots of friends and that there is no
+friendship between the instructor and the assistant and so maybe there's something interesting
+going on there. Anyway, there are a lot
+of things that we can look at in these networks
+and make sense of. However, now that we have very large datasets and we can study networks that
+are much larger scale, things look a little different. What happens when we try to visualize these networks
+is the following, here's a network on the
+left of the World Wide Web, and on the right is a network
+of people who were arrested in Chicago and two people are connected whenever they're
+arrested together. What you can see is that when you try to visualize these networks, you basically cannot say
+anything meaningful. You cannot say anything about the structure of these networks by simply looking at them. This is one reason why we need techniques such as
+statistical analysis, models, algorithms that can help us take this very large structures
+and make sense of them. That's reason number one.
+Reason number 2 for why we want to study networks
+is that they're everywhere. What I'm going to do
+next is I'm going to show you a number
+of examples to try to convince you that if you learn how to study networks, you can apply these techniques to many different settings. Let's begin with social networks. In social networks, we try to capture relationships
+between people. We already saw one
+example of this. This was the friendship
+network in the karate club. Here's a network of
+e-mail communication among 436 employees of HP, and there is a connection between any two employees whenever
+they email each other, so we can begin to look at who talks to whom in
+this organization. Finally, here is a
+network of friendship, marital tie, and family
+tie among 2,200 people. These are social network. Networks can also help us understand transportation
+systems and mobility. Here's a very simple example of Ann Arbor bus
+transportation network. We could represent
+this map by connecting any two stops that are connected
+by a direct bus route. Here is a network
+that can help us understand mobility
+patterns in the US and the data for
+this network comes from how dollar bills
+move around the country. This is using data from a
+website called Where's George? Where people can go in, type in the serial
+number of a bill and tell the website where
+the bill currently is, and then other people who whenever they get
+this bill can go and do the same thing and they can see where the bill has been. Because in order to move one bill from location A to a location B, a person usually will have
+to transport that bill, then this is a proxy
+for human mobility. One interesting thing
+you see here is that the network resembles the US map. But this is only your
+imagination because this is all simply just where the
+bills are going to and from. But of course there's
+a connection between the two and so you can see that the major cities
+light up and that the general shape of the network cannot
+resembles the US map. This can help us understand mobility patterns of
+people in the country. Here's a network of direct
+flights around the world so we connect any two airports
+that have a direct flight. Again, we can see here
+that the world map shows up when we
+plot this network. Network can also tell us
+about information systems. Here's a famous
+example where someone took a lot of different blogs and somewhere left-wing blogs and somewhere right-wing blogs and they made each blog a node. Then a connection between the two nodes would
+happen if there is a hyperlink that connects
+one blog to another blog. One of the interesting things
+you can see here by just visualizing the network is that there is hyper-polarization. Left-wing blogs mainly linked
+to other left-wing blogs, and right-wing blogs mainly link to other right-wing blogs, and there in a lot of
+connections that connect one blog from the left to one block to the
+right or vice versa. Here's a network of the
+internet connectivity, so here you have routers, and the connections represents which router is connected
+to what router. Here's a network of Wikipedia articles
+about climate change. One of the things you see
+here is that there are different subtopics that are connected together
+and they're colored. I don't need for
+you to be able to actually see any of those labels. What I'm trying to show
+you here is simply that within a topic of
+Wikipedia articles, there are subgroups
+within that topic. Again, the connections
+here represent hyperlinks between the
+Wikipedia articles. One of the things that
+we'll be thinking about later in the class is, here is a network,
+just one network. How do we identify those subgroups or its
+sub-communities that might represent those subtopics within the topic of climate change? That's one of the applications that we'll be talking
+about later on. Networks also show up in biology. Here is a protein-protein
+interaction network, and studying this
+network can help us understand which proteins
+are very important, very central in the network, and even what
+functions they have. Here is another network which
+is showing us a food web, which animals eat which animals, which again can be
+studied to understand different patterns about the
+structure of who eats whom. I could continue with
+many other examples. There are financial networks,
+co-authorship networks, trade networks, citation
+networks, and on and on. The idea is that if we
+learn how to analyze, and how to study networks into different techniques that
+we can apply to them. Those tools can be very useful because they
+could be applied to a broad range of different
+settings and domains, and so that's reason
+number two for why we want to study
+this networks. Networks are everywhere, but
+what can we do with them? What are the applications
+that I have in mind that maybe we can play around or think about in this course? Well, let's go back to this
+e-mail communication network among the HP employees. What are interesting
+questions we could ask about this network? Well, for example, if a rumor
+starts in this network, is it likely to spread? Can we say something about the likelihood of
+a rumor spreading and does network just looking at the structure of
+who talks to whom? Or for example, if we're interested in figuring
+out who should be the initial spreaders of that rumor so that it
+spreads very widely? How do I pick the nodes
+to spread the rumor? Or maybe it's not a
+rumor or maybe I'm thinking about a norm
+within the company and I want to contact a few people to begin spreading this norm through
+e-mail communication. How do I pick this nodes? Who should be on
+nodes that I choose? In other words, who are the
+most influential people in this organization or at least in this subset of
+the organization? Here's again, the
+friendship network and I told you there's an
+interesting story about it. The story is the following, we have the instructor
+here, as I said, node number one and the assistant of the
+instructor, just node 34, and you can see there is no
+edge between the two and that's because they're
+actually not friends anymore. They had a big fight and they
+broke up their friendship. Now the assistant is thinking about starting their
+own karate club, and one of the things
+that you could try to guess based on the
+structure of this network is, where are the
+students going to go? Which ones are going to stay with the original instructor and which ones are going to
+follow the assistant? That goes back to the topic
+of here's one network, how do we find subgroups or sub-communities
+within this network? What happens here
+is that there is a clear cut around
+the middle here where the nodes to the left of this cut go with the assistant, whereas the nodes to the right of this cut go to
+originally structure. Again, this is one of the topics we'll
+study in this course. Is this club likely to
+split into two groups? That's something we
+can think about, and if so, which nodes
+will go to which group? Let's go think about the
+transportation network again. Here's a network of direct
+flights around the world. Let's imagine that
+we're worried about a particular virus
+spreading around the world, and we're thinking
+about which airports do we really have to protect? Which airports are
+going to be very important to protect
+because it could be Hobbs that will spread the
+virus all over the place? Well, that's the network question that asks about centrality. Which ones are very central, very close to others? How do we think
+about that question? Maybe there are certain parts of the world that are
+very hard to reach and were interested in
+figuring out which edges, in other words, which airports
+should we try to connect strategically so that those areas are no longer very hard to reach. That's another application
+we can think about. In summary, many
+complex structures can be modeled through networks. We can see how these things
+show up all over the place, and there's structures that
+are very large and very complicated sometimes
+when we visualize them, we cannot make any sense of them. Studying the
+structures can help us understand interesting
+phenomena in the real world. But in order to do that, we need the right techniques that can help us do these things, and that's what we hope to
+give you in this course. Some of the very
+basic techniques that can get you started
+thinking about networks, and if you have network data, what can you actually do with it? What interesting
+questions you can answer? I look forward to the course, and this is all for this video.

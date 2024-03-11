@@ -1,0 +1,102 @@
+Now that we have seen several
+centrality measures, in this video, we want to compare them. And what we'll do is that we'll
+take a single network and see how the different centrality
+measures rank the nodes differently. We'll do this for this directed network. In the first traveling measure
+we're going to look at is the most basic one which is In-Deg. So that means we're just counting how many
+edges are pointing to a specific node. And here we see that nodes 1 and
+6 have the highest in degree. They both have an in degree of four. All of the other notes have
+an in degree of just two. And so, this is trying to measure
+ranks both 1 and 6 as top notes, and it cannot distinguish between
+any of the other ones. All of the other ones
+come at second place. I'm going to be constructing
+tables like this, where I'll put a red line that
+indicates where the ties break. So In-Degree says 1 and
+6 are the highest centrality nodes, and everything else comes second. Next, let's look at closeness. And closeness is the one that looks at
+how far the node is from all the other nodes in the network. It looks at the average distance from
+the node to all the other nodes. And the nodes with the lowest average
+distance are the ones that are central. In this network 5 is the most
+central node according to closeness. And you can see that that makes sense
+because it kind of sits in the middle. It's sort of the one that if you want it
+to reach any other node in the network, you're probably closest to, right? So it's easy to get to this item network
+is easy to get to this size or network. You don't have to jump very much. Then 1 and 6 are next and
+then in again, it makes sense. Those are pretty central
+not a central as 5, but they're also kind of in
+the middle of the whole thing. Next our nodes 2 and 3. Now note that nodes 2 and 3 both have
+the same clothes and centrality but there is actually a structural
+difference between them. That difference is that node 2 here shows
+up in the shortest path between 1 and 4. That is if you're coming from node 1 and we want to get to 4 you have to go
+through node 2 in order to get there. Whereas that's not the case for 3. So while that doesn't really
+impact their closeness centrality, it is a structural
+difference between the two. And is the same thing on this
+bottom side of network 7 and 8, I will be discussing this
+side of the network and by the symmetry the same kind of
+ideas will apply here at the bottom. And finally we have nodes 4 and 9, and
+four comes last in closeness centrality. And that's because it does not have
+a direct edge to node 2 in order to go from 4 to 2 you have to first hop
+to node 3 and then you can get to 2, whereas for 3 and 2, they both can
+reach each other in just one hop. Other than that 2, 3 and 4 are the same,
+but because of that difference, 4 comes last for closeness centrality. Next comes betweeness centrality,
+and that's the one that says you're a central node if you show up in
+the shortest paths between other nodes. And this is where we'll
+actually see those differences that I was describing between 2 and
+3 become important. So the most central node for
+between a centrality is node 5. And again, this makes sense all of the
+shortest paths that take you from any node from this side of the network to any node
+to that side of the network are going to have to pass through node 5. And so it makes sense that this is the
+most central node it shows up in a lot of shortest paths. 1 and 6 same thing. They're very central, so they're a second. And now we see the third and
+we get the 2 and 7 are the third. And now between a centrality says that 2
+has a higher centrality than nodes 3 and 4, whereas in the case of closeness 2 had the same centrality as node
+3 as we noted earlier. So between us is able to distinguish this
+structural difference between two and three while closeness is not able to. Next is 3 and 8. And finally 4 and 9. Now let's look at PageRank. So what does PageRank say? Well, patriarch actually
+says that nodes 1 and 6 are the most central
+nodes in the network. And then comes 5. So it took kind of flips 1 and 6 and
+5 compared to closeness and betweeness. And the reason for that,
+or part of the reason for that is that five here points
+to both nodes one and six. So if you think about how Page Rank
+works 5 will give all of its page rank to nodes 1 and 6. Well, if you look at what 6 and 1 are
+doing, they are giving some of their page ranks back to 5, but they're also
+giving to other nodes like node 7. And so, that's part of the reason why
+5 ends up being second to 1 and 6. The rest is similar as between this
+you get 2 and 7, 3 and 8, and 4 and 9. So pretty similar but there's a bit of a flip in terms of
+which one is a top node for Page Rank. Next let's look at authorities from the
+hits algorithm from pops in authorities. In this case, you get that 1 and
+6 are number one, just like for PageRank. And then what's a bit surprising,
+is that 4 and 9 are next. So what happened to node 5,
+which had been pretty central for all of the other measures? What happened to node 2 and 7 which
+were definitely more central than 4 and 9 according to all of
+the other centrality measures. We'll discuss that in a minute, but let's kind of continue going
+through the authorities course. So then you get 3 and
+8,then you get finally 2 and 7 and finally you get node 5. So 5 has the lowest authority according
+to hit Which is very surprising because all of the others centrality measures
+had 5 as either first or second. And so here's what happens if
+you remember the hits algorithm is tracking two scores for each node,
+the authority score and the hub score. And so in order to understand
+what's happening here, we have to look at what's
+happening to the hub scores. So here are the hub scores. And what's happening is that, the nodes
+with the highest hub scores here are 2, 5 and 7, the ones that we were wondering
+about why they came so low in authority. So what's happening is that the way that
+hits is interpreting this network is saying that 2, 5 and 7 are very good
+notes, but they're just good hubs. Whereas 1 and
+6 are the ones that are good authorities. So you kind of have to interpret these two
+together in order to get a full picture of what this centrality measure is saying. And then finally, you get 3 and
+8, 4 and 9 and 1 and 6. So there's a bit of nuance here in
+the hits algorithm where you have to think about both measures together and
+to get a full picture. In Summary, what we see is that first
+no pair of centrality measures produces the exact same ranking of the nodes. While they may have commonalities there is
+no single pair that is exactly the same. And what's happening is that
+this centrality measures make different assumptions about
+what it means to be central. And those assumptions,
+will make an impact in the ranking. Even if they're correlated,
+they will make some changes in the actual rankings even in
+a small network like this. Now, you might be wondering,
+well then in that case, how do we know which one
+is the best measure? And that depends on the context. If it matters to you that nodes show up
+in the shortest paths of other nodes. Then between those should be it. What matters is that a node has a lot of
+connections pointing to it than in degree might be it. Sometimes we don't have the full context,
+we actually aren't clear. And in that case, what's best to do is
+identify central nodes by looking at multiple centrality measures and seeing which ones show up as
+central in multiple of them. So not nodes that happen to be first for
+just one, but nodes that are always in the top,
+say 10 percentile or something like that. If we're looking at very large networks
+for multiple centrality measures, it's a good strategy. And these will be all for
+our section on centrality measures.

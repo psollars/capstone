@@ -1,0 +1,110 @@
+So now we've got more
+and more pieces of our puzzle coming together. Now I want to return to
+the concept of MapReduce now that we understand a
+little bit more about Hadoop, a little bit more about the infrastructure on which
+we're building things. I want to talk specifically
+right now about MapReduce. You'll notice the
+difference formats that I have of MapReduce. So I say MapReduce is an
+implementation of MapReduce, the capital M, capital R, MapReduce refers to a very
+specific way of doing things. MapReduce originated at Google, and so you can start to imagine the demands
+that they had on their processing requirements and their processing
+capabilities. Now, MapReduce is, as I
+mentioned, Java-based. MapReduce historically
+leveraged Hadoop. So it was something that
+was built on top of Hadoop, it was the reason
+that Hadoop existed. It's now considered however, somewhat slow compared
+to other technologies. So we're going to focus on slightly different
+technologies, but they're all based
+on this approach, and so you have to be able to understand where it came from to understand where we're
+at now and where we're going in the future
+with this technology. I mentioned here, Spark. Again, that's where we're
+going to be spending a lot of time in our course. Here's a diagram of the general approach that
+we use in MapReduce. So we start off with an input of some key
+value pairs here. Now, what does that mean really? One of the datasets
+that we're going to use is called good reads. It's a series of book
+ID and rating pairs. So we have a book ID, might be something like the ISBN number for the
+book or some other ID, and then a rating of that book. So these are ratings by people who have
+presumably read the book, and these are stored
+in a data file. What we can then do
+is map this out. So we take each of these
+lines from our data file that consists of a
+book ID and a rating, and we send that out to a
+mapper that counts the ratings. Then what we want to do is pull together all of the
+ratings for a book, and then we're going to do
+that in the shuffle and sort. What we're going to do then is reduce all of those counts. So we encounter a
+book ID and a rating. We say, we've seen one rating. We're going to bring
+those together, typically using some sort of
+sum or count operation here. Then we're going to get
+an output key value pair of the book ID and the
+number of ratings. So again, we start off with
+a book ID and a rating. Our task here is to come up with the number of ratings
+for each book. So that's how we would
+do it in MapReduce. You can start to get a
+feel for the fact that this is a very different
+way of thinking about analysis than the
+analyses that you've done using Python or pandas or even
+in the Linux command line. So when we conceptualized MapReduce on distributed systems, we have this idea
+about different nodes. So the nodes refer to more or less the same
+idea that we talked about with distributed
+computing commodity machines. So node 1, node 2, and node 3 can be thought of as separate machines that could actually be subclusters
+of machines. So what we do is we preload
+the local input data. So this is where HDFS comes in. So HDFS is what allows us to preload the local
+data as input data. The mapping process is the
+part that happens next, and that's what we
+just talked about in the previous slide with the counting of each one or noticing that each rating exists. That emits this intermediate
+data from the mappers. Then we shuffle things together.
+So this is what you see. So let's say, we had a book ID of 1 and we
+had a book ID of 1 here, and 2, and 5, and 9, and 10. We have another book
+ID over here of 2, and 1, and 5, and 9, and so on. Let's put a 3 over here. What the shuffling
+stage is going to do is it's going to bring all
+of the 1s together here. So these will all be 1s
+that are shuffled over. Then in the reducing process, what we'll do here is we'll say, "Well, we have the key 1 and
+there exist six of them." So the rating we don't
+actually care about. We're simply trying to count
+the number of ratings. So that's how we have
+mapping up here. We have shuffling here, and we have reducing here. Now, I'm going to try to
+make this as concrete as possible by running through
+a word count example. So this is a traditional word
+counts example that will ideally show you how the
+MapReduce process works. Let's say I gave you
+an input file over here that had three lines in it. Each of those lines in this
+example contains three words. So here we have, deer, bear, and river, car, car and river, and deer, car, and bear. Our overall task here is to count the number of
+times each word occurs. I want you to take just a minute right now and think
+of how you would do this in pandas or Python. So let's go over and talk about how we would do
+this in MapReduce. Remember, the first thing
+we're going to do is split our input file line by
+line. It's a convention. There are other ways to split it, but typically we split
+things line by line, whether that's a CSV file
+where we have one row per data or we have a
+series of texts lines. That's another
+common problem that we encounter when
+we're doing analysis. So we have a text file, in this case three lines, each line with three words. So we split that up into
+these three separate lines. What our mapper is going to do is its going to
+walk through and actually split each of
+these lines into words. So that's part of
+our mapper here. What we're going
+to do here is say, in this particular case, we've seen the word deer
+over in our mapper, we're going to do something. This is what always threw me off when I was learning
+how to do this. We're going to simply
+make the assertion that, yeah, we have seen
+the word deer once. So this key value pair of deer, 1, we've got deer from
+our split over here. We brought it over and
+we've seen it once. The 1 is a literal value. We look at our second word bear. We do the same thing over here, where we emit the fact that we have seen the word bear once. Finally, we do the
+same thing with river. We say we've seen river once. Now remember, our goal here is to count the number of
+times each word occurs. Now to do that, and we
+can see that we've gone through the next line here in the next line and generated similar outputs of our mapper. Now, we want to
+count the number of times each word occurs. So what we're going to do
+is we're going to shuffle or sort or shuffle and sort our words so that
+they come together on each node of our
+computing cluster. So we're going to do a shuffle that brings all the
+bears together, all the cars together, all the deers together, and all the rivers together. Then within each of these nodes, so each of these boxes
+refers to a node. We're going to do a very
+simple reducing operation where we're going to take all the things that
+have the same key, in this case, bear, and we're going to add up all of the values
+that we see here. So we're going to
+have 1 and 1 is 2. We have a value of 3 over here, we have a value of 2 over here. For river, we also
+have a 2 over here. We're going to do a
+further reduction because we don't want
+these things separate, we want them brought together. So we're going to assemble our
+results by simply grouping all these things together and producing our final
+results that say, bear 2, car 3, deer 2, and river 2.

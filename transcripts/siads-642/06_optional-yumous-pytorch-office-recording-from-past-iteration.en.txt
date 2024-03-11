@@ -1,0 +1,454 @@
+>> Hey, Rain, how are you doing? >> I'm well, sir how about yourself? >> Good,
+I'm having a great time this month. >> Yeah. >> [LAUGH] because the workload is so
+light. >> [LAUGH] Not as many crazy questions
+about supervised learning [LAUGH]. >> Yeah, I have answered maybe
+less than 10 questions this week. >> Wow. >> Each week,
+basically from the beginning. >> Yeah, the load has been
+a little lighter this time around. >> A lot lighter. >> [LAUGH]. >> But
+you will go up next month in December. >> I'm sure it will. >> I'm going to to teach two classes. >> Again yeah. >> Yeah. >> What are you teaching? >> Data Money one and ARP. >> Okay. >> We have 230 students in
+Data Money one it's scary. >> Yeah, that'll be fun. >> [LAUGH]
+>> So do you have any questions
+from the big three or just >> I kind of came to hang out. >> But I was kind of also, had a kind
+of a couple of general questions on lost function in the BIOS term and
+just using it probability to build models. >> Yeah. >> I mean, I know where it goes in the
+formula, but I'm not sure I have a feel for how to do it or, for that matter,
+how to pick lost functions. There's a question this week, so
+I don't know if we want to talk about it, there's a question of
+the homework this week. >> Sure, we can talk about it. >> Or will talk about it next week,
+I don't know. >> Yeah, we can talk about
+them now if you like that. >> Okay yeah. >> I've been through just starting
+with loss function, I've been through the PyTorch documentation and
+kind of get the general idea right? Some are obviously more suited for
+in fact, there is something more suited for
+it's a classification problems right? >> Right. >> I guess I'm just trying to
+[COUGH] there doesn't seem to be a lot of guidance on when to use
+what let me put it that way [LAUGH]. >> So, for instance,
+cross entropy loss is an interesting one. >> Yes. >> But I also think that
+binary across entropy is- >> I think its easy >> Classification, right? >> Exactly yes, so why is for binary, two classes classification the cross
+entropy is for multiple classes? >> Okay. >> Yeah. >> And that particular one is
+a combination of SoftMax, so they're basically just different
+combinations of the mathematics for the log function really. I saw some posts where people were
+essentially writing their own loss functions, it seemed like which-
+>> You could. >> Maybe they weren't using PyTorch yeah. >> Yeah, you could be your own
+loss functions, that's fine. >> Okay,
+>> Yeah. >> So here's an interesting one, right? A BCEWITHLOGITLOSS. >> LOGITLOSS yes. >> Okay, so mhm. >> Yeah so essential here is
+>> My math's aren't as strong as yours, are you more? So, [LAUGH] but the sigmoid layer okay, combined the sigmoid layer and BCE loss. >> Yeah. >> Yeah so we take advantage of a log,
+some exponent trick for numeric stability. >> Yeah so,
+essentially if you use this last function, then you don't have to take
+the sigmoid of the final output? okay? Yeah, because the priority does that for
+you. It uses this trick,
+trick at that, because the signal function is essentially like,
+exponential function, right? If you take the log of that,
+then there could be some simplifications, so don't have to,
+take the same way and then take log. You can get the things can simplify. So this is probably started out
+as some custom log function or sudden custom lost function, and
+they put it in pytorch is someone was doing some combinations of sigmoid,
+and he said okay. Mm hmm. Yeah. Not church. Yeah, I think it's just a trick
+that we're trying to explore here. Ok? Yeah, yeah. And this one seems to handle
+says here is possible trade off. In the case of multi
+label classifications, the loss can be described as so. This is almost a more general one, right? If what common? Yeah, it is, actually, something good. Let me see. Mhm, multi label, but it's still binary classification. It was mhm. For multi label sequel, multi label. Multi class. Okay. And another difference that the targets
+is a real number is not zero and one is actually a real number. It could be a real number. So have you heard of things
+like other encoders? Yes. Yeah.
+So this last function can be used to train? Yes, actually, exactly saying here it can
+be used to train training or recorder. Okay. Yeah. I think this is just one of those things
+that requires practice with it and running it multiple times and
+see what the effect is of different. Yeah, actually, yeah,
+actually create some dummy imposing. Then you can do it by hands and
+do it by pytorch can compare it with us. Mhm. Yeah. Usually I would just use
+the cross entropy loss. Okay, Whether it's binary or
+multiple eyes, I'm just going to use that. Yeah, It's, BC forget BC las Yeah. Binary cross entropy. Yeah. Yeah, ok. Yeah. For regression, you will use
+something like everyone knows smooth. Everyone knows. So there's a coastline and bedding loss. Yes. What is that? Creates a crocheted measure loss given between input tensors and tensor label. Or dissimilar? Yeah, using the coastline
+distance nonlinear embedding's. So my service on. Okay, I guess I just need more practice
+forming some of these problems. And I think the the last function will
+get more obvious as you get into it. I appreciate that. Thank you. So you have some questions about homework? No, no. Bother.
+Well, there was the lost function. Was one of the questions on
+the homework choosing a new problem. Choose the input, output and loss. And that kind of started me down
+the rabbit hole doing this. I think I got it right. But we'll find out. Okay? Okay. Yeah, but yeah, I really wasn't
+thinking too much about the loss function because we had
+the models given to us. Really?
+So okay, I got into the losses. Really? Just just a single number, right? Right. You can. You can create that in many
+ways as well as meaningful. All right. And then we can move on to actually,
+I was planning to, sugar some visualizations about cop nets. Sounds good. Yeah, that should be do last week, but, yeah, I'm going to show that this week, actually, okay, so, Actually, I'm going to,
+closely follow this tutorial. This predatory official tutorial
+which is about transfer. Learning. So basically, it's about fine twinning. A model on a small subset of image net. I'm going to closely follow this tutorial. Okay? Yeah. After the training, I'll show you how to,
+which lies the continent. Okay. So make sure I'm using a GPU. Yeah, and then we can we can download data set. Pretty small. You have got to classes. Ants and
+bees try to do a classification here. So I'm just going to click
+through following their code. So let's see what we have here. So we have a bunch of data
+transfer transformations, but we're only going to use,
+Okay, let me see. So it's doing some data augmentation
+with the random resize. Right? Right.
+Right. Okay. So for the training wasn't even done. This thing with two.
+Took for training week, we go to image and, horizontal flip and finally turn them,
+turn them into tensors and known as them. I mean, those numbers are actually
+calculated based on the, imagine that training set. So that's the number of people
+Just copy paste or or again. Okay. Yeah. So they're going to be images of size 224 by 224 so that's the final science. Here we are going to
+create some data sets. We're using a building class called image folder provided by
+the torch vision library. So, my torch has this nice sub
+libraries or torch vision. It provides a lot of utilities for computer vision,
+including a dataset function. I think included under UTOs. That's right, I know. Where is that data set? Should be under datasets. There's an image folder. Essentially, it is a data
+set that is built on top of a folder that contains some
+images in this format. That's a root and class name and
+a bunch of images under that folder. Sorry? >> So the name of the classification
+label is the sub directory? Okay. >> Yes, yes. So, actually, we can see,
+in our case, this is our root, under the root we have trend as well,
+and under trend we have SFBs. >> Okay.
+>> And under this folder is a bunch of images? So we're exactly following
+the requirements of the image folder so that we can use that,
+we create the image folder for trend by addition, just the data set. Now we have to batch them, right, where we use the data loader
+to create batches of images. So we can say that because
+the images from image net are quite large in resolution and in size. So, usually we have to use
+a very small batch size for trending or
+fun trending on image in that data. So here one batch only
+contains like four images, which is created data loader
+on top of the data sets for trending and metadition. Only shuffle the image when
+we create the trend data set. The number of workers and p memory is just
+some routines you basically have to write. It's like the number of CPU
+threads to use for loading data. It also depends on the system. So you have to do a lot of experiments
+to figure out that number. P memory just makes it faster to
+transport data from CPU to GPU. You should know about that. Okay, so that's the data loader. Then we need to know
+the size of each dataset. So let's just take
+the length of each dataset. Also class names? It worse ants and bees. And also make sure we
+had to correct device. Okay, so that's just some set up. And here we can,
+I'm using their functions for visualizing displaying image in a grade. So here, we can display the first
+batch of the trend set. >> That's, so
+you should have four images, right? Because the batch sizes four, okay?. >> Right, so that's four images in
+the first batch of the training center. >> And those have been transformed
+their resized same way, and there, looks like one of them
+maybe have shifted off center. Okay, I get it. I'm with you, I think [LAUGH]. >> Yeah, so they have been resized, but
+we end with the normalization here, because otherwise we won't get
+the colorful images like this. >> [SOUND]
+>> We end with a normalization here. We subtracted the mean and
+divided by standard deviation back then. But here we multiply
+the standard deviation back and plus the mean back, yeah? Otherwise, what happens
+if you don't do that? Let's see. I think this is called image whitening, I think, or something similar [LAUGH]. >> Okay. >> Of course, because-
+>> And that's part of the transform
+when you're doing the load. >> Exactly, so we have-
+>> Okay. >> The final step is normalized. >> Okay. >> We got different images because
+we shuffle the training sets so that's why every time we run this code,
+it will display some different images. >> Yes, yes, okay. >> Looks at their,
+I think it's called whitening. So, if you center the image
+to have zero me in unit standard deviation,
+then it's whitening something. Okay, yeah. So here is just a function for
+training model. Let's skip this for now. Lets look at, lets load the model first. Lets create this function first. So, we're going to load a pre
+training model from py-torch. Again, it's from the torch vision. But it's not under data sets, under
+the models, I think, this is very nice. And the contribution models, it provides
+a list of pre trained models for different purposes, and classification
+is made examination and so on. Since we're doing classification, so those are models we can
+we can choose to use. And by the way, as besides that,
+I think my torch has another subsystem. Not letting me click through my, no. Yeah, resources models. So it's like a larger list of free
+training models that you can use for different tasks, right? From different companies
+from different developers. Yeah, it includes some of the vision
+models from contributions. Yeah, the congregation. Yeah, budget models. All right. Lets go back. So here we're using the resonant 18 model, which a relatively smaller model. Just enough for our task. Here we are, trying to changing
+the last layer of that model. So, okay, so, lets see. Lets first load this model first. So it's going to download
+this model pretty small. Then we can display the whole model. So, as you can see, we have a bunch
+of coalition layers followed by, it's like some sort of like
+a pre-processing before we go into the four big layers,
+like layer one, layer two. There's three there, or four Then
+after that is some average pulling. And finally, a linear classifier. Right?
+That's what we call micro processing. This is maybe 10 12345. >> It should be 18
+because it resonated 18. >> Okay? >> I mean, like, 18 layers in total,
+18 atomic layers in total. >> Yes. But actually,
+there's a group group into, big. >> Layer one, zero and
+layer one one separate layers. Yes. >> Right? So, each basic block was
+known as a residual block. This is why residual block. This is another one. So it looks like two blocks
+are grouped into one big layer. That's right. Yes, I think some of them. >> They're even sub layers down there,
+it looks like right? So a convoluted. So there are two sequential basic block
+as a convolutional layer a batch normal layer and a layer. Okay,? >> Right? >> I'm with you know? Okay? >> Great, yeah. Yeah, okay, so
+let's go back to this line here. So what those two lines
+do is actually to change. The final layer is called FC is
+the final linear classifier layer. It's actually here, so it used to be the all features used to be 1000 I see. If I don't, check those. It will be 1000. Because this model is
+the training on image, net and image that has has 1000 classes. So the output,
+the saddle output has to be 1000, but but in our case,
+we only have two classes. So we have to change the final layer, to produce output outsides too. Yes, I have1000,
+because we have two passes. >> Okay? >> So that's essentially what
+it is to learn to lines that do. Actually, that's a common practice
+when you want to find train. Some pre training classification models. And usually what you
+need to do is to change the final layer to reflect the number
+of classes you want to work with. In this case, it's two. Yeah, usually that's the only
+thing you need to do. Because for other layers,
+we would like to keep their waste right, because there are they trained,
+so we'd like to keep their ways. You don't want to change
+their ways like randomly. >> Well, that's the point, right? You're learning from that. You're using that model, right? So why rework the lower layers. >> Right,
+that model is your starting point. >> Yes. >> Yeah. So, actually, there are two cases. Two cases in in this tutorial. So one is fine training? Which means we train,
+we start with that pretrained model, then we train the whole model. We also adjust the waste
+of those previous layers. And also, the combat can be used
+as a fixed feature extractor, which means we phrase the waste
+except final fully connected there. There are two ways of
+using a pretrain model. Yeah. Okay, so that's the model. So what I'm going to do is
+to the first visualization is about visualizing
+the gradient of the model. So what I'm going to do is
+to calculate the gradient of the output with respect to the input. So what are our outputs? Okay, so in our case,
+it's going to be two, of course that's gone. Okay, so in our case,
+it's going to be a vector of length two, well, the output for each image is going
+to be just a vector of block, two. And, the value here
+represents the actually, that's called the logic as we saw before, the value here is called the largest
+at the value before we send, before I send them into a same
+wide function or softmax function. So this this lodge is
+somehow represent the score, of the first class, right? So, well, I think the first class is for
+is for ends. Maybe so.
+This is the score for ends. And the other one, of course, is going to be the score for bees. So the numbers like, I don't know, 2.13 this one is going to be maybe 1.2 or
+something. All right, some real numbers. And essentially what
+the classifier does is that it picks out
+the the class is associated with the largest score,
+largest number here. So in this case, I mean, we had to
+send those numbers through a softmax. Or, same way function. But the order will still
+maintain the order. So essentially we'll
+classify this image as ants because ants has a higher score here. >> And that score is based on the whites, as recognized by all
+the layers coming up to that. >> Exactly. >> Right? So it says this has making up things,
+right? 2.3 ant features and
+only 1.2 bee features or something else. I'm simplifying, I know. >> Yeah, sure, actually, yeah. You can say that this score is
+like a summary of all the ways. All the computations you have
+done all the way through, right? You had done all these all the way
+through up to the final point, and you get a score for that class,
+get another score of another class. So what are we going to
+do is to calculate, so first, I'm going to
+pick the highest score. So I'm going to find out which
+class has a higher score, and then I'm going to calculate
+the gradient of the score, the result of our computation
+with respect to the input image. >> So the image which we
+are trying to classify, yes. >> Okay? >> Yeah, because the rationale is that
+I sending some inputs to my model. My model now is thinking, this input
+should be classified as this class. >> Right? >> So I'm trying to figure out
+based on which part of the inputs does this model thing,
+this image should belong to that class. And the granting is a way to
+reflect that kind of relationship. Right? So we're used to. So what we have been doing is to
+calculate the gradient of that. With respect to the weights so
+that we can update all the ways. Right?
+But now we're going to do something different. We can get the gradient of that with
+respect to the input instead of the weights. So that's a that's a,
+saying I'm going to do. And now, for
+that I have to write some code. Of course, the code is actually here. It's called a visualized model. So actually, in the original tutorial, they have another function
+called visualize model. So it's for visualizing the predictions. But I will read that to
+visualize the gradient. So, let's see, how we do that. So essentially, well,
+we pick up with the models, set it to the evaluation mode and some boring stuff here and
+set up the you mention. Great.
+Yeah, here is a more interesting stuff. So here, we're sending him. So we're everything through
+the validation stand for each batch of inputs,
+we send it to the device. And here is the most important step, which
+is to just requires Grad said it was true. So what is that is to tell Petra
+is that I am interested in the gradient of this tensor in
+the computation that I'm going to do. So please record the gradient or
+allow me to carry the gradient of this, whatever tens or I have, by default. This is not said for the inputs. So but if all this is always false so,
+Petra, just just skip that and
+doesn't create any gradient for that. But here since we're in, that's
+exactly the thing we're looking for. We had to said, it's true and
+then we just passed an input through the model, got outputs. And then so
+the output is going to be well, it's going to be a tensor
+is a batch tensor. So this is my whole batch, then,
+it's real is just two numbers, and then I'm going to pick up the,
+looking for the index where the value is
+the largest along this dimension. So maybe this is the largest one. That's the maximum index
+is [INAUDIBLE] max. And here comes the second
+most important step, which is to calculate the gradient of
+that number with respect to the input. So I'm using using this
+function from the torch. ought to Grad library. It's just called dark red. So here is the variable that,
+we're taking the derivative. So here I'm taking, the whole batch. So the first dimension is a batch. I'm taking all the row vectors here, but interested in the I'm not taking them all. But only the where the value is is the
+largest, as identified by the industry. So maybe for this role,
+I picked that for this role. I picked that, one. That one I picked all of that
+are the largest values from each row, and they form of vector,
+and they're from another vector that has the same
+hired as my outwards. I'm sorry. >> I just be clear it's the max value of
+each row into a single column, right? >> Exactly. Yes.
+Exactly. Yeah, exactly. Yeah. The reason I have to
+take a some here is that? Well, this value here has to be,
+I mean, it doesn't have to be, but it's nice to be a scalar value. >> Mm. >> Yeah. Because if we keep that as a vector, then, then we are especially
+calculating the gradient of a vector with respect to a tensor,
+which is a doable. But we have to pass in some single
+passing the vector once or something. Yeah.
+>> So this is a two step dimension reduction thing, right? So. >> Yeah, right. All right. So, because each batch is
+independent from one another. So, taking this on, I taking some of them. But I mean,
+still essentially calculating the value here with respect to
+the first input in my batch. Right, because this number only depends
+on the first image in my batch. So you're the first image in my batch,
+the second one. So whatever that number is calculated
+based on the first guy in my batch, it does not depend on any
+other images in my batch. So I mean, even though I'm taking a sum
+here, but really, it's really calculating. It really gives me the grading of that
+number with respect to the first image. Really? Because the batches Sorry. The images are independent. The first row here is only is a result
+of some computation on the first image. So you can't go anywhere else. Right. Okay, so with respect to the inputs,
+so actually this thing returns a tuple, but there's,
+like, a one element couple. So we just gathered for
+the element and the input grass. The result of this calculation is a tensor
+that has the same shape as my input. Because it has to be well, I mean. Because there is a gradient for
+each single value in the input. So it has to be the same shape,
+and that's essentially the number and
+the number I'm looking for, right? That's the gradient of the, maximum
+activation with respect to my inputs. Yeah.
+So to write out the dimension, actually, the dimension is going to be and
+n c h w right. It's the same as the input. So batch size, number of channels,
+height and weight. So that's going to be a dimension of this. This guy. Okay.
+So here. So the next two lines basically,
+I'm getting it ready for displaying, the inputs,
+using the image show I defined before. So just some boring stuff. We can skip to Tesla here Okay, so let's think about what this tensor has,
+right? So it has a bunch of values
+like real numbers but we would like to display that as
+an image as a black and white image. So to do that, we have to scale the value
+so that the values like in between 0 or 1 otherwise the visualizing function
+won't recognize it as an image. So I had to do that. The way we normalize the the values
+is to recognize that, okay. So, actually I don't care about the actual
+value of the sign of the gradient, right. I mean the sign could be positive or
+negative. But grading of five and negative five. There are equally, they tell me the same. The same thing that this input has, it's is more affected by
+a change in the final output. So it's strongly related
+to this max number here. I mean whether it's five or
+95 it's just that the direction of that effect but
+the managerial. The effect is the same,
+whether it's positive or negative. So what we really care is the absolute
+value of the gradient instead of the actual value of the gradient. So here it's just safe to
+take the absolute value. So it takes absolute value of
+the gradient, everything absolute value. >> As you're moving along the gradient,
+and so I'll make sure I understand. >> Yeah, so here we're actually
+more interested in the, say for example, if I change this
+maximum output here a little bit, how how does that affect the input or
+or the other way around? So if the input change a little bit,
+how does that affect this output here? So we don't I mean, here. We don't care about that
+direction of change, right? We don't care about whether that
+should increase the degrees. >> How much is it changing? >> How much is that changed, right? >> Yeah, I think I understand. >> I'm sure you understand. >> Okay, so
+once everything is positive then we can just know unless
+everything by if any number X, which is subtracted minimum of the group. The subtract the mean and
+divided by the my ex minus mean mhm. So if we have a list of positive numbers,
+so that's the way of normalizing
+them into well it's between 01, you can see if X is the max number
+the maximum will become one. X is the mean. Then it becomes zero and all other
+values will become somewhere in between. So between 0 and 1, so essentially, the next alliance are taking
+the try to calculate the max and mean over the image over the entire image. So here the image,
+like two D array, right. So we're looking for
+the maximum mean or that array. And here we just do the normalization
+subtracted the mean and divided by the difference between Max and
+mean. And we had to take a transport just to prepare it for displaying that image. That gradient image. It's just a requirement
+by the m shell function. But really, here is the normalization. Oops, okay. So, actually, that's the key
+part of the of the code, and all the rest is really too, you know, are just the location of the image and
+display the gradient. >> Okay, yeah. >> So let's just see the result. Right? But the result is actually already here. So now that for
+now we're still using pretrained model, we haven't find training model yet so we're just grabbed their model and
+try to visualize the model. So let see those
+are the original images and here is the gradient activation now,
+three different channels RGB. So what ever seen. I think I am seeing something for example, for this one. Well, the gradient activation tells me,
+and the model is looking at somewhere here. Right, because here we got
+the maximum activation so lighter, the bigger the value. >> So that right where your cursor
+is seems to be kind of associated in the image with maybe
+underneath the thorax there. They don't see anything there. It's more obvious than
+in the bottom image. Right where there's this
+big splash of white. You can see that more activating. >> Right, So what? This, so what is the map is saying is that-
+>> I think this model might be better predicting than I am. I certainly don't understand
+what that image is. >> I think it's an here with. >> Something else. >> I think the visualization
+is essentially saying when trying to classify
+this image the model is primarily looking at those regions,
+right? All right, those regions
+are the part of the input center, most strongly related to
+the output to the score basically. So, roughly the region is here and
+for this one it's kind of all over the place yet because we
+haven't fun to in the model yet. For this one is a in the center, for this one is get the center as well. So let's now have a training. So we can find in this
+model a little bit and then we can see the Actually,
+we can skip ahead to the so here it is actually the results
+after we find trade model. I think the gradient map are improving especially for the second one. The right here is still like
+scattered a little bit. Right he's not very
+concentrated in the center but here it almost gives me the shape of that. I don't know if this
+is to answer maybe so. Yes. It gives me the shape of that the same,
+right? Its central. Yeah. So, yeah. So, actually we're not
+only doing classification, but also we're also doing
+a little bit of object detection. We're locating the objects, right? It's here. This one is hard to tell. Maybe around here, this guy is
+around here instead of that long. That long thing. Actually, I really don't know what it is,
+but yeah. So it is here. Right. So that's the gradient math. Mm. Yeah. So the other visualization we can do is,
+yeah. So it's to visualize what happens. After. So, what happens to the inputs
+after those, you know, later? One.
+There are two layer three, and therefore and so that's, okay. So the rich layer. Okay, so here is the, the first batch. And actually, I'm only doing the first
+image, so we're going to focus on this. So the first row is the is what
+we have after the first layer. The layer one. Yeah, it's kind of interesting. So So we call them feature maps. So when I think some feature maps
+do preserve the objects, for example, this one is almost look
+at the same as as the image. But some others are not
+preserving the object anymore. Something like this looking for
+some patterns, right? Right.
+So specific patterns and some activations seem
+to recognize features. Right.
+So we have this assume this is a swarm
+of something around something, right? We're seeing that center object,
+whatever that is, that's clear. Lots of straight lines. And that's okay. Yeah. So we actually have six. Sorry, 64 feature maps here. Each of them are displaying or recognizing different,
+features in the input. Mhm. Yeah. Okay, so
+that's what we have after layer one. And continuing through this is
+what happens after layer two. It's no longer a human readable. I don't know what's going on here,
+but still, I mean, things like this we can still recognize
+it is a already cool thing in the image. Some here, otherwise, I cannot recognize any of those I think
+we had about maybe 128 Fisher maps after the second layer,
+and then, into layer three is no longer
+recognizable, which is good, actually, because we're
+doing a bunch of nonlinear transformation of the of the image, right? So, I mean, if we are still able to
+recognize the image after, like, three layers, then our model
+is not doing anything at all. Right?
+So here, after some unknown transformation by our model, it's no longer recognizable, but, I think some of the future maps the. The activation is rather sparse. So, for example, there is no activation
+at all for this one completely black. But for some others is sick. It's like a all of them are activated. But for some, for most is rather sparse. Only a few points activating. I think we have 256 fish
+maps here at this level. Even more so
+in the legs in the final level. It's almost like an alien
+communication code. But, okay, yeah. But isn't I mean, yeah. So that's how the money
+is making decision. Yeah. So, actually, that's why I know
+those new networks received out of critics about,
+the end interpret ability. Yeah, it's very hard to tell
+what this model is thinking. Yeah. It's interesting to see each activations, the activations in each individual there,
+though. That's interesting. That's interesting. Yeah. Yeah. The decision making is becoming more
+foreign as you progress through the layers until it truly is alien. As you said there. Okay. Right. I'm sure this is my first
+time reading code to do this. It's quite interesting. Yeah. I don't think people are doing this from
+papers, but I really doing it myself. Quite interesting. Yeah, actually,
+we can we can do is to change the. This is for the first image. Let's see. Actually, I can do the second one, so just passing one here. I do. A second one, was not here, maybe. Okay. Okay. Why? Just call you guys. Mhm. Yeah, for the second image. Wow. Yeah. Mhm. Well, it looks like it's, I mean, it looks like this. This ants under a microscope or something. Yeah, right for
+some of the fishermen yeah, that looks like almost
+like photographic effects. Right.
+So right. Conversions to black and
+white or solarization or something like that, right? Right. And after that the second layer, next summer, still recognizable. It's a pretty bad Snapchat filter, right? Right, and then it's it becomes hidden. Hard to tell, hard to tell, it's really hard to tell, okay, all right. Yeah, I actually they were really nice. Some of them are really nice,
+really nice filter. Yeah. Yes, it seems that's it for today. >> Would you mind taking
+a look at just the details so, so that first set of
+semi recognizable things. That's layer one in the model. Would you mind going back up to the model where,
+>> Sure. >> Where we can just take
+a look at the individual, >> Yeah, so the,
+>> So layer one sequentially, >> It's all the way. I actually had to include
+those three processing model. So it's all the way up to here. >> So that is the first set of
+images there in that block from the beginning through layer 1, 1, okay. >> Exactly. >> So convolution. Batch normal on ReLU. And it's essentially applying this. So if I'm reading this right,
+so in the very first line convolution to D3 64, Colonel size. Okay, so that's the spatial filter, yes. >> Right. >> Okay and the stride, the amount of movement of
+the filter in the padding, okay. >> Padding, yeah. >> And so it applies a bigger
+spatial filter as the first pass. And then I used the three by it and
+its strides to, >> Right, yes, exactly. The reason for that is to reduce the size
+of the image drastic at the first step. >> So then in the next time,
+it's reduced the size of the filter, and it's applying it more
+often by only striding ones. >> Exactly you're getting it,
+you're definitely getting it, yeah. So that's the principle behind resonant,
+right. >> Okay. And then even in the next layer, layer
+two, it's still keeping the spatial filter size but it's changing up the stride
+there for the first pass. The first convolution pass. >> I think the reason here is, Yes, you want to reduce the size, right. You reduce the size, but again because, the residual connection you have
+to down sample the image again. So, have you had this? Is it covered in the lecture,
+the resonant? >> It's discussed, but not in detail. >> Okay.
+>> We talked about the features like kernel, the kernel size or
+the filter size. >> Okay.
+>> And now we get to see it actually, what is actually happening under
+the hood of resonant a little bit. >> Okay, so resonate basically, okay. So this block here is well,
+the second, I think, up to here and
+maybe the first field there is this one. So we got some input from upstream x. So one part of the input
+is sending to this model. The other part is so
+that's called the residual connection, or skip connection is skip this module. And, it's added to this to
+the output of this block. It's added to the upward. So that's the basic design of, resonate. Here because we reduce the side. We down sample the input
+image in this block, right. Because the stride is two,
+if we don't do a down sample here, then the result is no longer compatible
+with the import, so we cannot add them. So that's why we have a down
+sample layer here, too, to first increase the number of feature
+maps because it has to be 128 and second kernel size is one. So that means it's a point
+wise transformation, right. And strategies too ways to reduce the size
+to the same size as the output so that they can be added together. >> It's not really doing any
+transformation other than dropping, I guess intermediate pixels because
+of the stride, really right. >> It's really like that multiplying pixel
+by some number, that's it, that's it. >> Okay. >> Yeah. >> And this first two integers, right. So 64, 128, that's a number of features. 128 is the features. >> Okay, so the number of input
+channels and other channels. >> And output, okay. >> Because the first one,
+>> Yeah. >> This first one is three, right. It's a RGB image, the same channels, okay. >> Interesting. A little bit under the hood. It doesn't all of a sudden
+allow me to read the image, but it gives you some idea, yes. Because by the time you hit
+the second layer, you're doing so much reduction and so
+much, output features. That's why it becomes unreadable or
+unsuitable for examine, yes. >> Yeah, yeah, actually,
+there is a reduction in resolution, right. Yeah, clearly the reduction in resolution,
+right. Exactly, yeah. >> Okay. Pretty cool example. Thank you for that, appreciate it. I've got private tutorial here
+since I was doing and showed up. [LAUGH]
+>> It's good, so are you taking anything in December? >> Yeah, I'm taking the regular load. I'll start the milestone two,
+I guess and language. >> Natural language. >> Natural language. >> So okay. >> I'm a five years as busy as you,
+but I'll be busy. [LAUGH]
+>> So do you plan to continue your sports projects for milestone two? >> Well, I'm thinking about that because,
+quite frankly, we won't have to go and find a new data set and clean it. The last one was very difficult to do so
+and it's interesting. The sports project is interesting
+because I think ultimately, it's not just about classifying what
+is a ball and how people call it. But if you want to talk about
+prescriptive analytics, right, where should a pitcher pitch a ball to
+have the best chance of winning, right. I think that's really going to
+be the interesting question. We'll find out, I leave it to Anthony. He's the subject matter expert. I'm just the labor, [LAUGH] so, very good. >> All right. >> Thank you, I appreciate it. >> Thank you for joining today. >> Yeah, I'm glad. Sometimes I feel like I dominate
+the officer conversation, but I'm not chasing it. >> It's all right, all right. Glad to see you. >> Take care. >> Good night, bye. >> Bye.

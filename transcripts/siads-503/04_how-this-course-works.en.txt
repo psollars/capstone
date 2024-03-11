@@ -1,0 +1,96 @@
+I'd now like to talk to you
+about how this course works. I'm going to go through
+what we do every week. The first thing I need to say is that, every week we're going
+to do the same thing. And that's we're going to talk about what
+principles should govern the behavior of data scientists. And we're going to ask the question of how
+do we determine whether some action in data science is right or wrong. So that happens every week,
+that's the bread and butter of the class. However, I wanted to pause
+at the beginning and describe the structure of the course
+to you, because I think it might be structured a little differently
+than other courses you've taken. Yes, there are lectures, I'm giving you a
+lecture right now, we're doing a lecture, it's a lecture, that is probably
+something you're more used to. However, in this class because we're so
+concerned with practitioners and how practitioners are addressing
+the problems that we'll be discussing. We've actually arranged to have
+a series of guest speakers. Now these speakers are going to come
+in every week, there is at least one, they're going to talk to you
+about their own experiences and I'm delighted to have them as
+you'll see later in the class. Their bios are extremely
+extremely well-suited to give them expertise in this area. There are people who have have long
+experience at companies that you'd be familiar with and
+in government and in education. So I'm delighted that
+they're able to help us, we're really lucky in that they're
+coming in just to talk to us. They're either going to have
+a conversation in a more informal setting. Or we're going to listen to
+a presentation that they crafted just for us just for this class. I also convinced the people here at
+Michigan behind the camera to go with me on a field trip. So at one point in the semester, we're going to take a field trip to
+a place in Detroit nearby where there is a system deployed that raises a bunch
+of data science ethics questions. And we're going to talk to the people
+involved in that system and the people affected by it,
+so that's a head. As in many classes, we're also
+going to have outside readings and some of them will be videos or audio. The thing I wanted to
+emphasize about this, is that I didn't design the class so
+that the lectures review the readings. So that means that the lectures could
+provide material that only exists in the lecture, and
+that's why the lectures are important. The readings also could provide material
+that only exists in the reading and not in the lecture. I will try to connect to the lectures to
+the readings I'll make reference to them, and I'll emphasize particular
+points that might be challenging or difficult of interest. However, both the readings and
+the lectures are important and sometimes they operate independently. We'll also have a short quiz every week,
+I debated about whether we should have a quiz but
+I thought personally I lead a busy life. And I need some sort of assessment if
+I'm going to be sure that I'm up to date on everything I have to do. The idea of the short quiz is,
+to be short and not to be something you worry too
+much about, but just to provide some mechanism by which we can be sure everyone
+in the class has done the readings. They're on the same page
+at the same time and they're ready to complete the assignments,
+which I think are the meat of the class. That's item 5 on this slide the writing
+assignment, the writing assignments are a little different than other
+assignments in some classes. We're going to write using genres
+of writing that are things that you might encounter in your
+professional life as a data scientist. That means that we're going to write
+things that look like memoranda or emails, I guess or reports or assessments. And these are assessments that you would
+normally encounter as your practice in data science, it would be something
+that would just be a part of your job. We don't have any programming
+assignments in this course, we are going to look at one
+particular software tool. But in general the focus is really
+on writing and reasoning and not about any other kind of assessments. So the short quizzes as I said earlier
+are really meant to be not something you worry about too much. We want you to think most carefully
+about the writing because, that's really where the reasoning about
+ethics that we're doing in this class. Has the chance to affect the world
+by affecting perhaps your future co-workers your future supervisors
+even your future self. The teaching team of I have organized
+the class around framing questions, and the framing questions are set per week,
+so I have four sets of framing questions. Now I admit, I made these framing
+questions a little provocative and controversial. I'm not telling you what
+I think about them, but they're meant to get people
+excited about the topic. So the first week we're
+considering privacy, and a framing question that you might think
+about is, does data science hate privacy? In other words is data science
+opposed to privacy in some way? Because you know data scientists, we like
+data we want data we want more data. Whereas you might imagine a privacy
+advocate wanting the opposite. So our question for that week is, is it possible to have a privacy
+respecting data science? Week two we're considering data science
+and bias and classification, and the framing questions are,
+is data science backward-looking or is it inherently discriminatory. Now that's a big word, but I think I
+mean not a big word but it's a word that is loaded to say something is inherently,
+inherently, inherently. But because data science is produced from
+data and data usually describes the past. Some people have argued that data science
+is fundamentally backward-looking or conservative not in
+the political sense in the US. But rather in sort of the approach
+to making conclusions or predictions or decisions. The third week we'll talk about
+governance, accountability and the framing question for that week is. Can large automated systems even
+be effectively controlled, and if they're not controlled,
+when are you responsible? So we'll delve into issues
+of work practice, workflow, how is it that we ensure that
+there is accountability for systems when things go wrong, and
+then we'll talk about responsibility. So when is it that you
+particularly should feel or be responsible for some sort of failure. The fourth week we'll conclude by talking
+about data, so we'll particularly focus on data science ethics, and
+think about the ethics of data. That week we'll talk about where data
+comes from managing data and just really a whole bunch of things that we didn't get
+a chance to cover in the earlier weeks. And the framing questions we've chosen
+are, is there such a thing as raw data or as some people have argued,
+is raw data and oxymoron. We'll also talk about the issue of data
+portability, is it really ever a good idea to consider your data as portable, because
+that raises a host of ethical challenges.

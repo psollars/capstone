@@ -1,0 +1,64 @@
+Welcome back. You made it. Welcome to the final
+lecture of the course. In this brief lecture, I just want to share a few
+parting thoughts about this course and the
+concepts it represents. I have two parting thoughts. The first one is about
+the nature of statistics. In a lot of ways, this class is about getting
+comfortable outside of the black and white
+approach to statistics. That's a bit of a
+philosophical shift in both small and large ways. Conventionally performed,
+data work communicates precision rather
+than uncertainty. It matches what people expect, a single right answer
+to a math problem. Statistics, however, is
+not black and white. It has a lot of nuance,
+shades of color. It's a lot more
+interesting, in my opinion. Rather than live
+in and communicate in the gray scale
+version of statistics, we should embrace the
+full color version, even though it's messier
+and more complex. It's a field saturated
+with uncertainty. As a reminder from Week 1, it was John Cook who said that statistics is all about
+reasoning under uncertainty. If we're totally certain
+of our conclusions, then we likely don't
+need statistics. Now we can extend this
+idea to data science. Being an applied discipline, data science is all about decision-making
+under uncertainty. If we have informed decision-making and
+uncertainties always involved, it stands to reason that
+we should learn how to quantify and communicate
+that uncertainty. Now the wonderful thing
+about uncertainty in statistics is that we
+can often quantify it, which means that
+we should always be thinking about
+the transition from a single point estimate to some representation of
+uncertainty that surrounds it. That might be some type of frequentest representation
+of uncertainty. Now this could be a
+confidence interval, or maybe a layered
+confidence interval, or a layered confidence
+interval with a probability density
+function overlaid on top. Alternatively, we
+could represent that uncertainty as a
+Bayesian distribution. Now there's no
+universally right way or wrong way to approach this, the important thing is to
+represent the uncertainty. The second reflection is
+about multiverse analysis. I've tried to argue in this
+course that our default, particularly when working
+on statistical inference, should be to consider
+how robust a finding may be against a multiverse
+of possibilities. Now for some, maybe
+including you, this can be an uncomfortable
+idea because it might erode at the
+certainty of what we share. I prefer to see it
+as acknowledging the fundamental large
+world uncertainty inherent in every project. Just to reinforce this point, I want to reference
+one more quotation. This one is by one of my favorite statisticians,
+Bruce Thompson. He's an unusually gifted
+technical communicator of statistical concepts. Bruce writes,
+"Statistics is not about doing the same data analysis no matter the research
+purpose or the situation or no matter
+who is the researcher. Nor is statistics about black
+and white or universally right or universally wrong
+analytical decisions. Instead, statistics is about being reasonable
+and reflective." I think this is an
+excellent standard of practice for data science. When it comes to navigating the small and large
+world of uncertainty, let's all be reasonable
+and reflective. I hope you enjoyed the course. Thank you very
+much for watching.

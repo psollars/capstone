@@ -1,0 +1,52 @@
+So now we have introduced how
+to calculate similarity and distances between different vectors. Based on these calculations,
+we can actually use vector similarity for complex data mining tasks. Essentially, taken any two
+pairs of the data objects, you represent them as vectors and you make sure that these vectors
+have aligned dimensions. So here are the same number of dimensions, and the values corresponds
+to the same dimension. Once you represent your data objects,
+as is aligned vectors, you can calculate the similarity
+between any pair of your data objects. And that will help you conduct
+more complex data mining tasks, such as classification,
+such as clustering, such as ranking, recommendation, and
+even visualization of the data objects. Do remember that there are many choices
+of similarity or distance matrix, we have introduced five of them but
+they're actually more. The selection of different similarity or distance functions really
+depends on your data and task. We have introduced some scenarios,
+for example, if your dimensions are homogeneous, then
+you can use Pearson's coefficient, right? If your dimensions are not homogeneous,
+if they're measuring very different data attributes, then you should probably use
+cosine or the other distance matrix. There are many, many applications of
+vectors similarity in the reality, in the real world, for example, if you know how to measure similarity of
+text data, in our toy example you can see how we can represent documents
+into vectors and calculate similarity. You can use them for
+information retrieval tasks, one particular application of
+this is search engines, Google, Yahoo, and Bing,
+essentially what they did is to represent their documents in their
+index as vectors over words. And they can represent a user's
+query also as the vector, and essentially they can just wreck
+the documents based on how similar the document vectors
+are to the query vector. We can also use vectors to represent
+user's ratings on movies or on different products, and then we can
+calculate the similarity of the ratings. This will help us construct many
+different recommended systems or information filtering systems,
+such as news feeds, essentially you can represent every user as the vector
+of their ratings on different items. And then you can calculate
+similarity between the users, or between the items, and
+then you can find the item that has the reputation that's closest
+to the users preference. Vectors, vector invitations,
+and vector similarity or distances are very widely
+used in machine learning. In fact, they're used everywhere
+in machine learning, for example, one biggest objective of
+supervised machine learning is, essentially, to minimize the error
+between the predicted values and the ground truth labels. And essentially,
+you're minimizing the distance between the vector of predicted values and
+the vector of ground truth labels, their every dimension is one
+training example you have. Moreover, the Manhattan distance and Euclidean distance have a strong relation
+to some concepts in machine learning, they're related to the so-called L1 and
+L2 norms that's widely used in machine learning, and you can learn
+this from machine learning class. To summarize, I hope you understand
+how to measure similarity and distances between two vectors. And you should be able to
+calculate dot product, cosine similarity, Manhattan distance,
+Euclidean distance, and Pearson's coefficient by yourself given
+any two vectors that have line dimensions. And you should know that, which one to
+choose in reality really depends on your data, and of course on your task.

@@ -1,0 +1,107 @@
+In this segment, we'll try to talk about some of the issues
+around data sparsity in language models. And particularly, how we overcome those
+using smoothing and interpolation. So language models rely on observed
+text to fit their parameters and to estimate the probability of sequences. These probabilities are estimated from
+a particular training corpus, and this training corpus can take
+many different forms, from text, to children's books, to social media. Which type of data you train on will
+significantly affect your training probabilities. However, humans are endlessly creative, so
+many of the sequences that we might expect to estimate using our language model may
+not be observed in this training corpus. And unfortunately, the probability
+of an unobserved sequence is zero. This is because we have to use the prior
+data to estimate its probability. So how will we actually deal with
+this issue and handle data sparsity? I'd like to give you a few different
+examples of how we might overcome this. Let's start with an example, a case study
+from the Berkeley Restaurant Project. This is an early example of
+a voice assistant from 1994 for trying to help Berkeley, California
+residents find restaurants where they could call in, and the computer would
+transcribe and try to generate a response. In this particular, they needed a language
+model to resolve ambiguity in speech. From the speech and language processing
+book, you could see this example of how often each of the bigrams
+would follow each other. Say the word I would follow another I
+5 times in the upper left-hand corner. This is perhaps due someone stuttering. However, the most likely word
+to follow after is want. You could see that there are some bigrams
+that might be reasonable to occur, but never do, say, to spend lunch
+at a Chinese food restaurant. The bigram spend lunch
+has a zero probability, despite maybe being a reasonable
+utterance, because it has zero times it occurs if we wanted to
+use just a straight bigram count. So how do we overcome this? One technique for doing it is smoothing,
+which is a family of techniques for trying to avoid zero probabilities
+in these distributions. Here, I'm showing you a conditional
+probability distribution of the words that are likely to follow eat. Say that someone says I want to eat or
+get something. Unfortunately, because we've never seen
+eat followed by an or, the probability of this sequence is zero, although it may
+be a reasonable sequence to begin with. And in fact, these zero probabilities mean
+that we can't meaningfully compare this sentence to another alternative. So one idea is to redistribute
+the probability mass just a little bit so that no word has zero probability. Let me give you one example of this that's
+often simple but effective in practice. A simple approach is what's
+known as additive smoothing. Let me show you example of how this
+would work for a unigram language model. Here, we're going to add a small amount
+of probability mass to the count of each word. Normally, to get the estimate
+of the probability of word I, we divide by the account of the word
+over N, which is the number of tokens. Instead, we're going to add the count
+to a small amount of probability mass. And we're going to, to the bottom for
+the count of number of tokens, we'll add how much total probability
+mass we added to all the words. This essentially guarantees that when
+we add this small probability mass to everyone, we're able to account for
+how much probability we've given away. And to keep our probability
+distribution effectively balanced. So here on the left, you can see
+the probability distribution for a sequence of words. After smoothing,
+you can see that the probability for or goes up just a little bit. Where some of the probabilities,
+say, for after or food that were much larger
+go down just a little bit. The overall shape of our probability
+distribution looks around the same, yet now we can estimate probability sequences
+containing or with a nonzero value. We can do something very similar
+in the bigram smoothing model, where the count of each bigram
+has a small value added to it. And we again increase the count by
+how many different bigrams get that small amount added to in the denominator. Another technique for
+doing this beyond smoothing is what's known as interpellation. Let me
+give you an example of how this works. When we want to interpolate two language
+models, we'll typically use a parameter, here lambda that's between 0 and 1. Where we can say that if we have
+two language models, p and q, we combine some percent of p and
+a complimentary percent of q together. So for example, we could say one
+language model could be nihilist text while another language
+model could be Arby's ads. And if we wanted to combine these two, we
+could maybe get something that looks like Nihilist Arby's and its Twitter account. This creates a way to combine language
+models that are trained on diverse sources. We can also use interpolation for
+smoothing. So here, if we have sparicty in
+higher order language models, say in this trigram language model,
+where we condition on two context words. We can look at the probability
+of the trigram model, but then add the probability
+of the bigraham model or the probability of
+the unigraham model together. Again, these three lambdas will sum to 1,
+so that we're effectively balancing the probabilities across
+these different language models. And one effective back off is that if we
+don't see the higher order language model, say we never see the context
+words w i-2 and w i-1, we can essentially still use
+the probability from the biggram or the unigram language model to
+estimate the probabilities. There may be some language models
+that are used in situations where we have words that we
+have not seen before. If we do know all the words in advance, this is what's known as
+a closed vocabulary task. However, for many cases, we actually
+handle an open vocabulary task, where we have words that
+we haven't seen before. These are typically known as
+out of vocabulary or OOV words. And these words will always
+have zero probability, because we've never been able
+to estimate them before. One idea is instead to create
+a special word token known, as an UNK. And an UNK will reflect what's
+the probability of a word that we haven't seen? Essentially, it's a filler. To train these,
+when we want to train UNK probabilities, we can create a fixed lexicon of size V,
+this lexicon L. And then at text normalization, words that aren't in our lexicon
+are changed to an UNK token. And we can treat the UNK token
+itself like a regular token for estimating the probabilities. At test time,
+if we've never seen a word before, we simply switch it to this UNK token and
+use its probability for estimating the likelihood
+of a particular sequence. There's even a few more
+advanced things you can do, such as taking advantage of morphology. So for example, if you see the phrase
+I went blank with my friends, there may be some things that you don't
+know that you haven't ever seen before that could go in there. Say, spelunking or quiddiching. But for the most part,
+you're not surprised by these, because they end with the regular ending
+-ing, a particular verb form here. Words have regular morphology, and we'll talk a little bit about
+this at some point in the future. However, you can add the idea that we
+could simply try to recognize these and create unique UNK tokens that
+take advantage of the fact that certain words have regular
+suffixes or regular prefixes. And there's even an example here of some
+code that tries to create unique UNKs here for things like ing, or
+ed, or pluralization, or even things like they end in est. This is an example of where you can try to
+overcome data sparsity in your training data by using advanced techniques like
+smoothing, interpolation, or UNKing.

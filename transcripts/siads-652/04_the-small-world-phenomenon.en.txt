@@ -1,0 +1,137 @@
+Hello. In the last video we talked about how
+to measure distance between nodes in a network. After learning that the next
+obvious question is to ask, well what is the average distance
+between nodes in real networks? And in particular, what is the distance
+between people in social networks? How far away are we from each other? This brings us to this
+small world phenomenon. If you haven't heard about this
+phenomenon, what it says is that the world is small in the sense that on average,
+short paths exist between any two people. The question is,
+how shorter these paths and how can we actually measure their length? Well, Stanley Milgram, who was
+a social psychologist in the 1960s, was thinking about exactly this question. And in order to figure this out, or
+at least to get a sense to what the answer is, he developed these small world
+experiment which is very famous. So the idea of the experiment was that
+well, there was no data set that Milgram could go and look to just go and measure
+the distance between people in a network. He could develop
+an experiment that can try to get at the distance between
+random people who he selected. So he's selected, Number of people
+at random, and he tried to develop an experiment that could help him measure
+the distance between those people and some other person,
+what's called a target person. And so, let me tell you about the setup of
+the experiment and how he thought about measuring distance between again randomly
+select people in this target person. The setup was the following chose 296
+people who are their starters and asked them to forward a letter
+to this target person. The target person was
+a stockbroker in Boston. And the structure and the instructions for
+the starters were the following They were told to send a letter to the target
+if you know him on a first name basis. And if you don't know him on a first
+name basis, then send a letter along with instructions to someone you
+do know on a first name basis, who is more likely to know the target. The starters were also provided
+some information about the target. So they could get oriented and have some
+information that they could use in order to decide who to send a letter to if
+they didn't actually know the target. And so they were provided things like
+the city where the target live and the targets occupation. And the idea was that by tracking
+how many times these letters had to hop from
+the starters to the target, this would give us a estimate for
+how far the starters were to a target. And again, this would not be
+enough to tell us on average, How far away are two random
+people from each other But, it would give us some type of estimate. And so
+here are the results of the experiment. Milgram found that 64 of the 296 letters,
+actually reached the target. Then the median chain of the letters that
+actually reached the target was six. And this is where the phrase six
+degrees of separation comes from, if you've heard that phrase before. Here is a histogram of
+the chain length for the letters that actually
+reached the target. So on the x axis, we have the number
+of hops or the length of the chain. And on the y axis, we have the number
+of chains that had that many hops. So we can see that some had
+actually one hop others had two, three All the way up to 10. But the median was six. What are the key points to take from here? Well, first of all, it's surprising
+that a relatively large percentage of the letters actually reached the target. There are so many ways in which
+these letters could have been lost. Maybe people didn't want to
+participate in the experiment. Because they didn't find it interesting or
+didn't have time for it or whatever. Also maybe some letters you would
+expect that they hop around for a very long time and
+actually never reached the target. And maybe you would expect that that would
+happen for most of the letters that it would actually be very unlikely for many
+of these letters to just reach the target when people didn't have that much
+information about the target. Also the other key point is that
+this facts were relatively short. And that's really the main
+takeaway that for the letters that reached
+the median was just six. Were again one may have expected that
+maybe this number would have been hundreds of hops or something like that, given that
+there are so many people in the country. The other interesting point that often
+gets ignored here is that people were actually able to find this short paths. They're kind of two different questions. One is, if you have a network, is there
+a short path between a person to another person or on average if you take two
+people Is the distance between them short. That's one question and that question
+assumes that you measure the shortest path between the two notes,
+that's how we define distance. A very different question or
+at least a possibly different. Question is whether people can
+actually discover those paths. Given that people don't have information
+about the global structure of the network, they only get to see and
+know who their friends are, and possibly they might have an idea for
+who the Friends of the friends are. But beyond that,
+they probably don't have a very good idea. So the fact that using that local
+information they were able to actually find these paths
+is also interesting. Again, the results are very far
+away from stating that the average distance between any two people in the US
+or in the world is small or six or anything, because, well first of all,
+they only use 296 letters. Second, the number of six comes from
+just this 64 that actually arrived. Maybe the fact that most of them didn't
+arrive means that for most of them, these chains are very, very long and
+that's why they didn't arrive because it would take hundreds
+of hops to actually get there. We actually have no idea. And so,
+while this was a very interesting result, especially in the 1960s it is
+far from conclusive in terms of the what the actual average
+distance between two people is. Well since the 1960s, we've now obtained
+data that can allow us to measure these kinds of things in other ways
+that maybe use a much larger data set. So people have done
+this in other settings. The first one is looking at distances
+between people who use instant message So, in this set of results, researchers
+built a network where the notes were 240 million active users
+of Microsoft instant messenger. And the edges represented users who
+engaged in two way communication over a one month period. And when they take this network they
+estimate that the median path length or the median distance
+between two notes is 7. So while it is some much larger
+experiment or a much larger study, we still find that the median
+is a very small number like 7. Here's the full histogram of the distances
+and so you can see that some are shorter, some are much longer, but
+the median is around 7. So it seems like this gives us some hints
+that maybe it is the case that these networks actually do have a small
+average distance looking at other studies using Facebook data. So who's friends with whom
+people have found similar. We, it, so
+let me show you these on the left here, we have the number of hops or
+the distance between nodes of. People on Facebook. And on the y axis we have the fraction of
+pairs that have this number of hops or this distance. And it's actually shown here for
+different years. Now, this one on the right is the same
+thing, but restricting to just the US. And so what we see here is
+that in the global network, the average Length in 2008 was 5.28. And in 2011, it was 4.74. So not only are they small,
+his distances are short, five and four, but
+they seem to be getting smaller over time. And of course if you restrict to
+a smaller geographical area like say you look at just the US Then these
+distances become even shorter. So let's summarize what we've seen. First we saw that in
+the Milgram experiment, the network distance between people
+in the US is surprisingly small. The median chain was just six. But of course we have lots of caveats and issues with the study that make their
+results maybe not super convincing. Especially in the context of all the data
+sets that we now have access to. However, more recent experiments
+using instant messenger and Facebook networks have shown as that
+actually the trends seem to be similar these Shortest distances,
+seem to be small. So, maybe it is true, that these
+networks indeed have small distance and we do live in a small world. And so, while this social
+networks can be extremely large, in terms of the number of nodes and
+the number of edges, the connections between people seem
+to be structured in such a way, that the average distance between
+pairs of nodes seem to be very small. Just kind of an interesting
+finding you think about it, one could expect that because these
+networks are so large, maybe on average, it takes many hops to reach one random
+person to another random person, but it seems like on average,
+that's not the case. And this has implications for
+different things. So for example, it has implications for the speed at which things like
+information behaviors and seas. Can spread over a social network. And these are things that we're
+going to be talking about. So in week three,
+we're going to be talking about modelling the spread of information or
+other kinds of things or a social network. What we will also be talking about
+is trying to understand what are the mechanisms in the evolution
+of a network that allows it to structure itself in such a way that
+These distances are indeed very small. And so
+we actually have some understanding from a theoretical perspective
+of why maybe it is not so surprising that the distances
+are indeed very small. So those are things that will
+come up later in the course. See you there.

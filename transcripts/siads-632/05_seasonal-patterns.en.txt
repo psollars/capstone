@@ -1,0 +1,244 @@
+Now, we have introduced
+lots of methods to identify trends from
+time series data. Now, lets move on to talk about seasonal patterns
+from time series. Looking at these time series, that is the Google search
+trend of the keyword resorts, you can actually see that they are periodical
+patterns over time. These are known as
+seasonal patterns as they are almost identical, and they appear to follow
+a predefined period. You can see that
+the search queries of resorts or travel
+related searches, always peak around Christmas
+and then around summer. In fact, most of these seasonal patterns
+are naturally aligned to either hours-of-day or days-of-week or month of the
+year, so on and so forth. Then, you can also eyeball
+them by looking at, This is probably periodical
+pattern of the whole year. Then you move this
+to a next year, to a next year, to a next year and you can see that
+they're almost identical. Of course, when there are external shocks like
+the COVID-19 pandemic, you can actually see
+irregular patterns. In this case, the seasonal
+pattern is broken. Now, you have more examples
+of seasonal patterns. These two plots are from
+my own research study, actually in a year 2008, where we worked
+with a huge amount of search queries and
+Microsoft research. The left plot shows us
+that the difficulty of the queries measured
+by Shannon's entropy. If you're interested, I
+can forward you the paper. Actually follows
+periodical patterns during hours of the day. Search queries are the hardest for the search
+engine to answer, you're already
+surrounding TV time, Prime television time, 21:00 PM. The right-hand side,
+you can see that the number of queries
+somebody through a search engine
+usually peaks at what? Usually peaks on weekdays. But on weekdays, the the queries are easier to
+answer, on weekends, you have fewer queries, but the queries are
+actually harder because they could really
+be read to a reason. From either plot, you
+can see that they're very clear seasonal patterns
+with different time scale, one over hours of the day, one over days of the week. In the previous example, we have periodical
+patterns over years. Another example of
+seasonal patterns is of course, from ECG data. If you actually monitor
+your heartbeats, you have very clear seasonal
+patterns in time series. How do we extracts
+seasonal patterns? To answer that question, people start to think about what causes simplest
+seasonal patterns, and the answer is waves. What are waves? Well, waves are naturally
+periodical patterns. They have, of course, amplitudes. That means that how
+high are those waves, and they have wavelengths. Wavelengths essentially
+defines the period where this is over a year, over a month, so and so forth. The sine in wave is actually the simplest time series
+with seasonal patterns. In fact, there are
+many different, sine waves with different wavelengths and
+different amplitudes. If sine wave has the
+shorter wavelengths, though we say that it has
+the higher frequency, that means that the
+unit period is shorter, it happens more often. If a wave has the
+wider wavelengths, then we say that the
+frequency is lower and the height of the waves, the amplitude also can
+be any real number. In reality, there are lots of
+different waves in science, you can see that
+there are sine waves, there are cosine waves, basically you just shift
+the sine wave over. But there are also waves
+with different shapes, such as square waves,
+triangle waves, and many other more weird waves. If you're interested,
+you can actually find lots of these in
+signal processing. But what's interesting
+about this is that if you have two waves, you can actually mix them to get the more complex time series. In particular, waves with different frequencies
+and amplitude can be added up together to obtain more complex
+seasonal patterns. For instance, if we have two sine waves with different frequency
+or with different, let's say, wavelengths, you can actually add them together and
+you get the wave as below. You have the wave
+c_1 plus wave c_2, two times with the
+single seasonal pattern, then you got another time series with a more complicated
+seasonal pattern. You can still see the
+seasonal pattern, but they're apparently a mixture of two seasonal patterns, one wider and one shorter, or one more frequent,
+one less frequent. This is actually
+quite interesting. In fact, if you think about
+this from another angle, from the other way around. Suppose we have a time series that has more complicated
+seasonal patterns, can we decompose that into time series with
+simpler seasonal patterns? If we could do that, then that give us the way to
+extract seasonal patterns. In other words, can a
+complex seasonal pattern be decomposed into
+a mixture of waves? If we can do that, then we can describe how the seasonal pattern is repeating over time by the frequencies and
+amplitudes of these waves. Can we do that? Well, yes we can. It's not just we can, we're guaranteed to
+be able to do that. It's guaranteed by the
+so-called Fourier theorem, and that is the very classic mathematic finding.The Fourier theorem is definitely named after the famous mathematician
+Joseph Fourier. It states that any
+periodical function f_x can be written into the sum of a series of sine and cosine waves with various frequencies
+and attitudes. It's guaranteed that given
+any periodic function, of course the function has to
+be reasonable a continuous. It can be written into a series of simpler waves
+or simpler system patterns. So x just needs to be
+reasonably continuous. Most time-series fall
+into this category. Using Fourier theorem,
+we can assume that given any relatively continuous
+time-series data, we can actually decompose that as a series of sine
+waves or cosine waves. That's neat because
+now they'll help us understand the
+periodical patterns. This process is known
+as Fourier transform. It is actually very classic
+in sequence processing. If you're interested, there's a huge literature you can
+read about Fourier transform. Basically, we think about time series as the function of t, we know that this is basically a continuous repetition
+of the time series. Based on Fourier theorem, we can decompose f(t) with seasonal patterns into
+a mixture of simpler, similar patterns
+possibly just waves. Fourier transform
+help us achieve that. We know that Fourier
+transform has very strong mathematics
+foundation and you don't actually need to understand
+the proofs or the details, but you need to
+understand the input and the output of Fourier
+transform and the basic idea. To illustrate that, let
+me give you a demo. In this demo, you can see that
+we're trying to transform time-series data into the
+frequency plot in lower color. This time service
+data is actually the mixture of six
+different waves, the six different waves have different sequences and
+different attitudes. Fourier transform takes the
+input of a time-series data and actually find out which are the six different waves and then record their frequency and their attitudes corresponding
+to each frequency and this gives you the representation and the frequency domain. To look at this
+again, we start with time-series [inaudible]
+mixture that we assume are mixtures of different waves with different frequencies
+and different attitudes. Through Fourier transform, we're figuring out
+which waves they are, which frequency they
+actually take and at each frequency
+what's the strengths? What's the attitude of each wave? So by doing that Fourier
+transform gives you the transformation from time
+domain to frequency domain. You can see that this is actually the input and output
+of Fourier transform. The input is the time series that measures the value x
+and the time dimension, We call this the reputation at the time domain which we
+will emphasize next slide. The output of Fourier
+transform is actually another plot where the
+x-axis is no longer the time is actually the
+frequency and the y-axis is actually attitude of waves
+taking particular frequency. Output, we call it the Fourier's series and essentially it is the frequency on x-axis and the attitudes
+of such frequency. You can also interpret
+this as the vector of different frequency associated
+with the attitudes. So the input and output of Fourier transform
+are usually referred to as time domain and frequency
+domain. Now why is that? In the time domain
+representation, we basically measure
+how the signal strengths or how the x
+values change over time. On the frequency domain, we measure something different. We measure how the strengths of the waves change
+over frequency. The basic assumption is at the same time series
+can be represented as just a list of timestamps and that is representation
+the time domain. It could also be represented
+as the mixture of waves. In the latter case, what we only need
+to know are what the frequencies are. And at every frequency,
+what the amplitudes are. In this case, exactly the same data can be
+either represented in time by value or in
+frequency by attitude. On the an upper plot, you can see that this
+is the representation in the time domain and the lower plot is
+the representation of the same data in
+the frequency domain. The difference is the
+x-axis and the y-axis, they're representing
+the same information as far as the Fourier
+theorem is correct, and through Fourier
+transform you can get the frequency representation from the time domain
+representation. If you use the reverse process, you can transform
+something represented in the frequency domain into the original time-domain
+representation. In fact, you can
+transform between the time domain and
+frequency domain and time domain or
+the frequency domain, that representation could either be continuous or discrete. To illustrate that, lets
+show this two-by-two table, where we have continuous
+representation and discrete representations as two columns and
+time domain and frequency domain as two rows. So what is actually the
+continuous representation in the time domain well is
+essentially a function, the value of x_t as
+a function of t. The corresponding these
+crater limitation also in the time domain is
+based on timestamp. That is correspondingly,
+we also have the continuous representation
+in the frequency domain. The difference is that we're
+now measuring amplitude as the function of frequency instead of X as a
+function of time. The corresponding discrete
+representation in the frequency domain
+is the list of pairs. This time another
+list of timestamps of values are the least of frequency associated with the
+work, amplitudes. In other words, this
+discrete representation in a frequency domain
+is the actual of it. With the full representations, we can use certain
+mathematical tools to help us transform the same data from one representation
+to another. For example, from the continuous
+representation time domain using forward transform
+Fourier Transform FT, we can actually get the
+same representations. But in the frequency domain, those representations
+are continuous. Of course in reality, we really don't actually have the function of the
+value over time. Instead, what we really clicked is actually
+discrete ones. From the discrete representation
+in time domain we can also transform that into
+the frequency domain. This time we use the process cut the Discrete-Time
+Fourier Transform, DTFT. Well, I know. I don't like this acronyms either though this is basically how the inventors used to name them. I understand that
+there are lots of acronyms like this and
+they are very confusing, especially in time
+series answers. I don't like them either, but you can do with. We should just remember
+this intuition. The reason it's called Discrete-Time Fourier
+Transform is because the input is the discrete representation
+in a time domain. What about from the
+discrete representation to the discrete representation from the time domain to
+the frequency domain. In fact, this is something
+that's the most useful because we normally deal with another continuous
+function. But the sample. But the discrete least of this. In fact, you can also transform the discrete
+representation of time series in the time domain to the frequency domain using so-called Discrete
+Fourier Transform. Know the difference between Discrete Fourier Transform and Discrete-Time
+Fourier Transform. Discrete Fourier Transform, DFT, is able to transform a list of timestamped values into a list of a frequency and amplitudes. One problem of DFT is that it actually
+takes lots of time. There's actually a fast or the most scale-able
+approach called FFT offset. That's Fast Fourier Transform. That does the same thing,
+but it's way faster. DFT and FFT are commonly
+used for time series analysis. You don't need to understand the mathematics details again, but you need to understand
+the input and output. The input of either DFT or FFT is the time series represents
+the time domain and discrete. Basically this is what
+you really clicked. This is the list of
+timestamped values. Output is the so-called
+the Fourier Series is essentially a vector, where the dimensions
+corresponds to different frequencies
+and the values correspond to the amplitudes of the waves with
+certain frequencies. The dimensions are ordered. These dimensions corresponds
+to different frequencies. If you see the high
+attitude on one-dimension, that indicates that there is the seasonal pattern appearing at corresponding frequency. In many cases, we
+can actually see high amplitudes on
+multiple dimensions. That indicates that there are multiple seasonal patterns with different frequency or they are recurring in different periods. In reality the vector, the output of DFT and FFT can be used to extract more
+complex features. Why? Because they are vectors. We know how to extract patterns from vector data or metrics data. You can apply the same
+tricks to the output of FFT. You can extract
+principal components, you can extract singular values, and you can extract many
+interesting metrics patterns. This is the concrete
+example of applying FFT Fast Fourier Transform to
+the airline passenger data. You can see that
+the original input is actually given
+the time-domain. It is the number of
+passengers over time. After FFT, we obtain the representation in
+the frequency domain. The X axis is the frequency. Basically, how many times that the pattern occur per month. Then the y-axis is the amplitude, how strong are these patterns. You can actually see peaks at
+different fixes and labels. These peaks indicates
+similar patterns that appear yearly or twice a year or a couple of months
+so and so forth. Now we can see how to use DFT or FFT to extract
+seasonal patents. Once you have seasonal patterns, once you discover them, you can rearrange times series to reflect the seasonality. This is something that we
+normally do by using set of numbers showing the
+relative value of, for instance, the sales or the stock market price during different
+months of the year. This is what we know
+as seasonal index. For example, if the sales
+theory in October, November, and December are 80 percent, 120 percent and 140 percent of the average monthly
+sales for the whole year. We know that there is the
+seasonal pattern yearly, then we can just use
+the relative value, 80, 120 and 140 as the for
+seasonal index number for this months because
+we know that we are comparing these
+numbers to the average of the current period.
+Thank you for listening.

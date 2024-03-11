@@ -1,0 +1,241 @@
+Hi, I'm Tim NeCamp,
+I'm a PhD student in statistics. And today, we're going to be talking about
+hypothesis tests and confidence intervals using a case study in some research
+I've conducted, so let's get started. In this video, we'll bring together things
+we've learned to answer some interesting questions about online learning along. Along the way we'll learn about hypothesis
+testing and confidence intervals and see how these concepts can help us answer
+questions in real world situations. As a student working towards an online
+degree, you might be well acquainted with both the benefits and
+challenges of taking online courses. Perhaps you took part in a massively
+open online course or MOOC. On Coursera prior to
+joining the MADS program. One major issue in online
+courses is dropout. Many students who started online course
+don't make it to the end of the course. To prevent drop out in this study,
+we aim to develop an email intervention to encourage students
+to continue in the course. So now I'm going to provide
+a description of the study. The goal of the study was to evaluate the
+efficacy of different types of emails for bringing students back
+to an online course. We ran a series of randomized trials, randomization is a valuable tool for
+evaluating interventions. By randomizing, we can help ensure that
+the groups of learners receiving each type of email are similar. Then the differences in performance
+between these groups can be attributed directly to the email type. There were four different types of
+email interventions we sent users. One was the no email,
+where users receive nothing. Two was no problem email which is
+an email that just ask students to return to the course. Three was a global problem email which
+is an email that contains a generic data science problem to motivate
+students to return to the course. And four was a cultural problem email
+an email that contains a cultural specific data science problem to motivate
+students to return to the course. We ran our study in University of
+Michigan's applied data science with Python MOOC on Coursera. For the first three weeks in the course,
+Indian and US based learners were randomly assigned one of
+the four types of email interventions. And here, you see a visual of the three
+types of emails we sent learners. There are many questions that
+can be answered from this trial. To keep things simple,
+let's focus on a few key questions. Are the differences in course activity
+between US and Indian learners? Which type of email will be most
+effective at bringing learners back to the course each week? And do US and Indian learners respond similarly
+to different email interventions? To answer these questions,
+we want to look for differences between different
+groups of learners and email types. Now, we're going to take a look at
+the data set and do some exploration. So let's look at the data from
+running the experiment and see if there are any differences
+between groups first. First, let's explore the data set and
+see how its formatted. So here, I'm going to import the data set,
+I'm going to read in the CSV file. Note that each participant is
+represented by a row in this data frame. Note that there's information on
+which week of the course we're in. What sort of treatment was given,
+a user's total clicks, and what country they're from. The data frame contains a lot of useful
+information from the experiment. Week, tells us the week in the study. Click sum, tells us how many clicks
+the user had in the course that week. This will be our outcome of interest,
+with more clicks being a positive thing. Prob based, tells us what type
+of email they receive that week. With prob email meeting
+global problem email and rrel problem email meaning
+cultural problem email. Country, tells us which
+country the user is from, with IN labeling Indian learners and
+US for US learners. Now that we have some idea of
+how the data are structured, let's do some further visual exploration
+to try and understand the outcome. Click sums for each user in each week. So now I'm going to plot a histogram
+of the weekly click sums. Notice that the weekly clicks
+sums have heavy right skew. Fortunately, we've already
+discussed how to address this. Namely by taking a transformation. So let's try using a log
+transform before re-plugging. Some users may have zero clicks for
+the week. This is problematic for our transformation
+since we cannot take the log of 0. So to work around this,
+we'll just add a small fixed constant 0.5 before applying
+the transformation. Here, I'm adding the constant and
+now plotting a new histogram. Things are looking better. Our data now appears to be zero-inflated. There is a large number of people
+with 0 clicks in the course, which can be seen at
+the mode of log of 0.5. The non-zero clicks sums
+now look relatively normal. Now, we'll compute some
+summary statistics, since we are interested in comparing
+different email types every week. We will compute the sample mean,
+sample standard deviation, and sample sizes for
+each week and each email type. We can do this by using
+the pandas group by function. We first do this for US learners,
+and as an example here for using the group by function. Let's calculate the sample mean
+of each email type every week. So now I'm going to do that. You can see the sample means of
+each email type for every week. So now that we know how to use a group by
+function, let's do this, for sample size, sample mean and sample standard deviation,
+and put them all in one data frame. So that's what this
+chunk of code does here. It does it for the sample size sample
+mean and sample standard deviation. And here,
+I have them all in one data frame now. We're going to repeat this again for
+Indian learners. There's my data frame for Indian learners. These tables provide valuable information,
+but they make it hard to
+compare different groups. Visualizing these differences
+would be beneficial. Next, we will create bar
+plots of the mean log clicks. We're going to use subplots, so
+that we can present all three plots, one for each week, side by side. First, we'll plot the log click means for week one across the four email groups,
+for US and Indian learners. So here, you see us getting the week
+one log click means for US learners and then doing the same for Indian learners,
+and then plotting them here. We're going to do that again for
+week two and for week three, and then finally,
+we're going to plot them all together. So running this code chunk here
+should give us those plots. And yeah, you see the three plots one for each week for both US and
+Indian learners for the four different email types. There's quite a lot of
+interesting things we can see. But I'll focus on a few
+things in particular. Across all groups and email types, activity seems to steadily
+decrease each week. For Indian learners sending an email seems
+to increase the likelihood that they'll return to the course,
+especially in week two and three. We see this by comparing the means
+of no problem, global problem, and cultural problem emails to know email for
+Indian learners. Also, it doesn't seem like including
+a problem helps as there aren't big differences between the global or
+cultural emails and no problem emails. For US l earners sending an email
+doesn't seem to have an effect. In later weeks, emails even appear to
+deter people from returning to the course. We also note that Indian learners
+tend to be less active in the course compared to US learners,
+especially in week one. Though these differences
+appear to be large, they may just be based on randomness
+in our sample and estimation error. We'd like a way to understand
+if there is strong evidence that these differences are true. Hypothesis testing does exactly this. So now I'm going to talk briefly
+about hypothesis testing. Statistics provides tools to be
+mathematically rigorous in our claims and quantify how much evidence we have
+in our data to support a conclusion. For example, one question I
+may have is whether there is a true difference in
+average log clicks for US and Indian learners receiving
+the no problem email in week one. In the figure above,
+the difference appears to be large. But if there is a lot of error
+in estimating the mean clicks, the difference may not be so
+meaningful after all. One way to evaluate if this difference is truly significant is to
+perform a hypothesis test. Our null hypothesis would be
+their means are not different or that the mean of the US learners is equal
+to the mean of the Indian learners. The alternative hypothesis is
+that the means are different, or that the mean of the US learners is not
+equal to the mean of the Indian learners. In the end, we want to decide
+if we have enough evidence to suggest that the alternative
+hypothesis is true. There are various types of hypothesis
+tests for different scenarios and data. The diagram below gives you a taste of a
+smallest subset of many statistical tests out there, in some of the considerations
+when deciding which one to use. In this case, we're working with
+two samples Indian week one no problem learners and
+US week one no problem learners, which will assumed to be independent or
+unpaired. Our sample size is extremely large. We have over 700 learners in each group,
+because of this, we will use a z-test. Usually we would use a t-test, but there
+is really no difference between the two tests when the sample size is so large. You might recall from a previous video
+that we talked about computing a z statistic for sampling distribution. We're going to make a slight
+modification because we have two samples instead of one. Below is a z-test statistic for
+a two sample z-test. So now we're going to calculate
+the z-test statistic for our data. So here once again,
+we get the two groups of interest. We let x here stand for
+the x1 bar minus the x2 bar, the difference in sample means. We let mu be 0, which is defined by
+the null hypothesis, mu 1-mu 2 = 0. And then the denominator
+is the standard error, which we calculate using
+this function here. Now, we'll run this to get our
+z-test statistic, which is 2.99. We will consider this to be
+significant at alpha = 0.05 level. This means that we allow a 5% chance
+of making a false positive error, that is rejecting the null
+hypothesis even when it's true. Keep in mind that you get to
+select this threshold although typical values are 0.05, 0.01, and 0.001. Smaller values reduce the chance of error,
+but also require more evidence
+to make conclusions. Given alpha, we now need to
+calculate the critical value. The value to compare it to
+our z-test statistic for deciding if we should
+reject the null hypothesis. We use a two-tailed test since we
+don't care about the direction of the difference, just whether or
+not the means are different. So we divide up the 0.05
+are into 2.025 regions at both ends of the standard
+normal distribution. The critical value z alpha over 2
+is the value on the standard normal distribution that would give us
+an area of 0.025 on both sides. One way of calculating this critical
+value would be to look it up in a table either in a textbook or online. Luckily for us, we'll just use Python. So now, we're going to calculate
+the critical value which is going to be positive and -1.96. Since our z-test statistic is larger
+than the positive critical value, the 2.99 is bigger than the 1.96. We reject the null hypothesis H naught. Hence we conclude that there is strong
+evidence to suggest that Indian and US learners in week one receiving
+no problem emails do in fact have different average log clicks. Note that this doesn't necessarily mean
+that no problem emails perform worse for Indian learners, since Indian learners
+have less clicks in the course, generally. Now we're going to talk
+about confidence intervals. While it's great that we can
+now run hypothesis test for other comparisons of interest. It would be nice to get some
+sense of the error visually. One common way of doing this is
+by using confidence intervals. Confidence intervals provide
+a range of plausible values for a population parameter of interest. For example,
+I could construct confidence intervals for average log click sums for US learners in
+week one, receiving no problem emails. I could do this for
+all the different countries, weeks, and email types in our study. A 1 minus alpha percent confidence
+interval has the following interpretation. If the population is sample numerous
+times, then the resulting interval would capture the true mean 1 minus
+alpha percent of the time. The most common alpha is 0.05,
+giving us 95% confidence intervals, which capture the true
+mean 95% of the time. The smaller alpha is the more confident
+we are in the coverage of our interval, however, smaller alpha
+gives us wider intervals. I construct the 1 minus alpha percent
+confidence intervals as follows. I take the sample mean and add plus or
+minus z alpha over 2 times the sample standard deviation divided by
+the square root of the sample size. So now let's calculate the 95%
+confidence intervals for each of our countries experimental
+conditions in weeks in our study. So that's what this code block does here,
+just applies that formula. So now we have the upper bound and
+lower bounds of our confidence intervals. And we also have the width or
+the length of the intervals. Now we're going to do this exact
+same thing for Indian learners. So again, we have the upper bound and
+lower bound in the width. And now to make things easier, we're going to actually plot
+these confidence intervals. And went to plot them on the same
+bar plots we used before. So here we're going to basically
+make the exact same barplot. But now we're going to include error bars
+that have length with specified from the confidence intervals. And I want to pass that with into
+the yerr parameter into the bar plots. And then that should basically add on
+those confidence intervals into our bar plots. So I'm going to run this code here,
+and I do that again for week one, week two, and week three,
+and put them all side by side. So now,
+you see we have these bar plots, but now they have the confidence
+intervals included on them. The confidence intervals
+provide important information. We can now visualize the estimation
+error for each of the means, the less overlap between two intervals
+demonstrates that the difference between those two groups is more significant. For example, for Indian learners in week
+three, we thought that the no problem global and cultural email groups had more
+average clicks than the no email group. However, looking at
+the confidence intervals and the large amount of overlap that
+difference does not seem as significant. If the intervals were much narrower we
+may be more inclined to believe there is a true difference. The comparison for the hypothesis test
+we did before can be seen here as well. Comparing the week one, no problem
+email group for US and Indian learners, we see no overlap between the intervals. This matches the conclusion that
+the difference between these groups is significant. Confidence intervals and
+hypothesis test have different advantages. Confidence intervals allow us
+to visualize the error and allow us to quickly compare many
+different groups simultaneously. Hypothesis test focus only
+on one comparison at a time. Focusing only on one comparison
+does limit what we can find. However making a large number
+of comparisons can often lead to a large number of false positives. As we've seen using problems in email
+interventions might be an effective strategy for some learners, but we may be
+better off leaving other learners alone. In this case study,
+we used hypothesis test and confidence intervals to compare
+different intervention groups. One caveat on using
+the confidence intervals and hypothesis test above is the reliance
+on the normally distributed data. Though the log transformation helped
+improve the normality of our data, the data still had a large mode at zero. Luckily our sample size
+was large enough for us to use the central limit theorem and
+get around this issue. In the paper,
+the details of the trial design and analysis were a little more
+complicated than what was shown here. The paper use logistic regression and all comparisons were made using no
+email group as a baseline comparator. You'll learn more about some of these
+topics in the supervised machine learning course. But if you're interested in
+finding out more about the study, here's a link to the paper. Here's a visual of
+something that we made in the paper using the logistic regression. All in all you've learned
+a lot in this unit. Congrats on making it
+to the end of week one. You've learned how to use Matplotlib
+to chart and plot things. You've learned important statistical
+concepts such as hypothesis testing, centrality measures, transformations,
+and confidence intervals. For the homework for this week, you get the opportunity to apply
+the knowledge to a case study of your own. So have fun with that and
+we'll see you in week two.

@@ -1,0 +1,59 @@
+Hi there, I'm back again, and this time I
+brought Johnny Cash and his favorite monkey toy, which is half destroyed.
+How you doing? Johnny Cash, you want to
+say hi to the students? You want your monkey
+toy? He does want it, yeah, but he's polite.
+Okay. All right. Sit. Get it. Maybe he doesn't
+want, I don't know. Well, anyway, I'm here to talk about another
+vocabulary word with you. Our word for this week is power. Power in ethical analysis is also sometimes
+asked as the question, is a particular
+solution regressive, or is it progressive? Those words are used in
+the same way that they're used when people
+talk about taxes, not necessarily when people talk about regression analysis. Regressive or progressive,
+but I prefer the word power. So what I mean by power is that when you're
+doing an ethical analysis, it's easy sometimes to think about maybe positive steps that you might take or
+negative consequences that might result from a system. But those are always
+differential depending on the power of the
+people involved. So a key mistake or a pitfall that ethical
+analysts makes is that they don't identify the differential of power
+in the consequence. So let's say, let's
+take some examples for, oh, here we go, Johnny Cash. He wants to play tug of war. So if we do a fine
+or a fee of $10, everyone pays the same thing. That seems fair, but remember
+that for some people, $10 seems like a lot of money, and for other people it doesn't. That's a very simple example, but there are plenty of
+them in data science. I'm going to do one involving Johnny Cash if he can
+relax for a second. Okay, buddy, do you want
+to do your trick again? Let's do your trick. I'll
+hide this monkey here. I can't throw it
+because he'll chase it. Front, sit. I'm going
+to ask Johnny Cash. So let's say Johnny Cash, we had a data science
+system that was going to have some
+consequences for someone, is going to produce some harms potentially for some
+patients or stakeholders. Let's say in our discussions
+at the workplace, we decided we would have a public meeting to ask people
+what they thought about it and how they thought we
+could address the situation. So have we done a good
+job in this case, sit, of thinking about power? If you think, yes, I want you to use my
+right hand with your paw, and if it's no, I want you to use my left hand, and I'll put a treat in
+each hand, and ready? He's thinking about it.
+Oh, he went with no, that's right, Johnny Cash, you're getting better at ethics. So as it happens in this case, we haven't really thought about the power differential at all. So I'm not saying it's not good to have public
+meetings and to talk with affected constituencies about what's going
+to happen to them, but rather that what
+is a public meeting? It's a place where people
+go who have resources, and those resources are time, they have time and interests. So if you could think about how power or whether something's regressive
+or progressive, interacts with the
+system you are building. So what if it was a health
+system and people who were sick were more likely to be negatively
+affected by the system, but sick people were sick in such a way that they couldn't
+come to a public meeting. So that means that
+your intervention to try and make the system better is regressive in that it's emphasizing the voices
+of some over others. Now, I'm not saying you
+shouldn't have public meetings, you should have public meetings, but you have to think about how there's always this
+power differential whenever there's a consequence or even an intervention that's positive to make
+the system better. It works for some
+people and not others, and that's a key part
+of the analysis. All right, well, thank you very much for helping
+out, Johnny Cash. I see that you're really
+into your monkey. I think I'm going
+to let him have it, and we'll stop there. Johnny Cash, we'll
+be back next week, but I'll be back
+sooner. It's yours.

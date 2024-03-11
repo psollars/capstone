@@ -1,0 +1,147 @@
+Math methods for Data Science. Maximum likelihood with
+logistic regression. To move into logistic regression, we first have to go back to
+linear regression and then review some of the things we could do with linear regression. We could calculate a
+coefficient of variation or R-square to see if X
+and Y were correlated. We could calculate
+a p-value to see if R-Squared is statistically
+significant. That is different than zero. We could use a line
+fit to the data to predict Y from X or multiple Xs, and we could compare
+nested models. Since we now have
+a binary outcome like wins, losses, success, fail, in a group or not in a group, this is a hallmark of
+logistic regression, we can't fit a straight line
+to the data as it is. We could fit a sigmoid or S-shaped line which would give us a continuous function
+of probabilities of success across the distribution
+of some variable X. While we can get probabilities, we can also use logistic
+regression for classification. We can also have
+an outcome predicted by one or more variables either continuous, discrete,
+or categorical. We can test if each
+of those variables is statistically significant
+or different from zero, but we can't easily
+compare models. Using logistic regression to calculate probabilities and apply classification makes
+logistic regression a popular machine
+learning technique. The sigmoid curve goes
+from zero to one and tells the probability of a win
+at a given value of X. For instance here, the
+probability of X is around one. Here, the probability of a particular value of X
+is around 50 percent, and here the probability of this particular value of
+X is almost zero percent. In linear regression, we use a method called least squares. This minimizes the residuals or distance between the observed
+and predicted points. We also use these
+residuals to calculate an R-square or
+coefficient of variation. Logistic regression doesn't have residuals so we can't use least squares and we can't
+calculate R-square values. What we use for
+logistic regression is maximum likelihood. In order to perform
+maximum likelihood on a logistic regression model, we need to calculate
+the probability of seeing a particular data point given the line that
+we're estimating. We then repeat this
+for all data points, multiply the probabilities to get the likelihood of
+the line given the data, and then the line with
+the maximum likelihood is the one that we use. We can use this maximum
+likelihood to fit a logistic curve when X is continuous as in
+the picture on the left, or when X is binary as is
+the picture on the right. When we have our function
+modeling probabilities, our probabilities are constrained
+by the numbers 0 and 1. To help us model, we log transform the probability
+of a win or success, to the log odds of
+a win or success, which brings us into a new range of negative infinity to infinity. We want to take our
+probabilities and transform them into something that is
+not bounded by zero and one. We will use a logit function which is equivalent to the log of the probability of
+success over one minus the probability of success, to transform into the scale that goes from negative infinity
+to positive infinity. For instance, if we take a value where the probability
+was equal to 0.5, and we run it through
+the logit function. We get the log of 0.5 over 1
+minus 0.5 which is also 0.5, or the log of 1
+which is equal to 0, and so this point would then map onto the zero in
+our new distribution. Again, if we took a
+point on this curve, where the probability was 0.731 and we ran it through
+our logit function, we would get the log of
+2.717 which is equal to 1, and therefore that
+point would map on to the value of one. Once we've projected our points
+onto this new space, we can fit a line with an intercept and slope
+using a familiar formula. Since our points moved out to infinity and
+negative infinity, we need to project them back
+onto the proposed line. It is somewhat of a problem to have all of the points equal to infinity or negative infinity and so when we project them, we take them from
+negative infinity or positive infinity and drop them down onto our predicted line. We then have a proposed value for the log odds for each
+one of those points, and since we've taken
+our problem and projected our points onto the line
+of the log odd scale, we need to get them back into our bounded sigmoid curve to be transformed into
+probabilities. Once we get those probabilities, we can calculate a likelihood for that line given the data. Once we have those
+probabilities for each point, we can evaluate
+the likelihood for each group separately,
+wins and losses. Statistically, the preference is to calculate this in terms of log likelihood but
+we will do this in both likelihood and
+log-likelihood. So for instance, if we take
+all of our gray points and match the probabilities
+of each of those points, and then we take all of
+our black points and match the complement
+of the probability since we're trying to
+model the probability of loss rather than
+the probability of win, we can get our likelihood
+by multiplying or finding the product of all
+of these different values. In this case, the likelihood
+of this line would be 0.02. The log-likelihood just takes those probabilities
+and finds the log. According to log rules
+since we're finding the log of the product of
+multiple probabilities, we really could find
+the log of each of those probabilities and
+separate them into a sum, which would then give us the log-likelihood
+of negative 3.94. This value, negative 3.94 is the likelihood of
+this line given the data. However, we don't know if that's the maximum likelihood
+and so we would take that line and shift
+it slightly by rotating and find the line
+that maximizes the likelihood. This is the line of best fit. So that's the concept
+of maximum likelihood, in the context of logistic regression but let's take a more technical approach. To apply our maximum
+likelihood estimation method. We first write the
+log-likelihood function and then find values of Theta that maximizes the
+log-likelihood function. We start with a
+probability mass function of a Bernoulli distribution where Y is distributed as Bernoulli with
+some probability of success. We can write this
+probability mass function in equation forum
+where we substitute, Sigma times Theta
+transpose times X for p. Before we get too into this, I want to make sure we're all on the same page with
+respect to notation. In logistic regression, Theta is a vector
+of parameters of length m and we are going
+to learn the values of those parameters based off
+of n training examples. The superscript T in Theta_T x represents
+a matrix transpose. The operation Theta T x is equivalent to taking
+the dot product of the vectors Theta and x or simply a weighted sum of the components of x with
+Theta containing the weights. After figuring out
+the probability mass function, we want to write the
+likelihood function, or the likelihood of
+independent observations. This is equivalent to the
+likelihood of Theta is equal to the product
+from i equals 1 to n, of the probability
+that Y equals y given x equals whatever
+covariates we have in our model. We then can substitute in
+the Bernoulli equation. Once we have this likelihood with the probability mass
+function incorporated, we would then take the
+log of the function. You may be somewhat confused
+by the fact that I've been saying log and we've been
+taking the natural log. Most often in data science we're actually using
+the natural log so much so that it's basically replaced
+our use of the word log. So unless you see the word log with the specific subscript, assume it's the natural log. In maximum likelihood
+estimation we now need to use
+gradient ascent or descent to maximize the value of Theta by calculating the
+gradient with respect to Theta. In order to use gradient ascent, we need to move point to point. So we update our model by
+Theta_j new equals Theta_j old plus the learning rate Eta times the derivative
+of the log-likelihood. Our goal is choosing parameter Theta that
+maximizes this likelihood, and we know the
+partial derivative of log-likelihood with
+respect to each parameter. We're ready for
+our optimization algorithm. In the case of
+logistic regression, we can't just plug values in and solve for
+Theta mathematically. Instead we use
+a computer to choose theta and run the gradient
+ascent algorithm. The idea behind
+gradient ascent is the same as the idea behind gradient descent except now we're going uphill. If we continuously take small steps in the direction
+of a gradient, we will eventually make
+it to a local maximum. In the case of
+logistic regression, you can prove that
+the result will actually always be
+a global maximum. Here, Eta is the magnitude of the step size
+that we're taking. If we keep updating Theta
+using the equation above, we will converge on
+the best value of Theta. Yikes. Again, I'm not asking you to derive the
+likelihood functions. You do need to know the basics of these methods and
+the ideas behind them so you can advance in Machine Learning
+and Data Science. Ask yourself at
+the end of the day, can I describe generally how maximum likelihood works for linear and logistic regression?

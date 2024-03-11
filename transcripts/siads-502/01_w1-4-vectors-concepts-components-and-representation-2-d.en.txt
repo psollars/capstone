@@ -1,0 +1,37 @@
+Methods for data science vectors. Concepts components and
+representation in two-dimensions. What are vectors? Vectors are multi-dimensional objects. They're a way to describe
+directions in space? Classically vectors describe physical
+quantities like velocity acceleration and net force. They are integral parts of data science
+computer graphics, machine learning, and probability theory. Vectors are built from components. You can also think of vectors
+as a set of numbers or a list of numbers in two dimensions
+of vector will have two numbers. A vector is composed of two components in a two-dimensions vx and vy. Vector algebra can be defined as
+operations performed on a list of numbers. Let's look at an example from physics
+of how we should think of vectors. We're going to use a vector
+to describe velocity. Let's say a ball is traveling
+at 15 meters per second. We could have two separate vectors v1
+in which our components are 0 and 15. This tells us that this
+ball is traveling in the y direction at 15 meters per second. Or we could have vector 2 with
+the components 15 and 0 telling us that this ball is traveling in the x
+direction at 15 meters per second. Vectors tell us what direction
+the ball is traveling, but they also tell us the speed. Therefore these vectors
+are telling us both the speed and direction of a particular object. A two-dimensional vector
+contains two numbers where the vector v is equivalent to (vx, vy). The vector v is such that v is in
+the set of real numbers squared. We have the square because there
+are two components within the vector. The value of vx is called
+the X-component of the vector and the v y is called
+the Y-component of the vector. Vectors are represented in
+a number of different methods. All of these methods are equivalent. Our first set of notation is
+called component notation. This is what we've seen thus far. In this case, a vector is represented
+as a pair of coordinates, vx and vy. We also have something called unit vector
+notation that we'll discuss more in a future lecture. These vectors are expressed
+in terms of unit vectors, where unit vector i represented
+as i with a carrot on top is equal to (1,0) and j is equal to (0,1). Finally, we have a length and
+direction notation, represented in terms of
+the length of a vector which is represented as the vector inside
+of two bars and an angle or the angle theta relative to the x-axis. Unfortunately, vector
+notation is not standardized. Some authors try to help by making
+numbers constance Greek letters and vectors lowercase letters. Some use bold font and
+lowercase for vectors. And some use arrows
+above lowercase letters. All three of these
+notations are equivalent. I will try to consistently use
+the vector notation that has the arrow on top of a lowercase letter.

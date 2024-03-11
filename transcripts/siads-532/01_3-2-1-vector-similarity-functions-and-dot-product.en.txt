@@ -1,0 +1,141 @@
+Hello this is Qiaozhu Mei
+from School of Information. We will talk about
+similarity between vectors. As we mentioned, similarity
+is the concept that measures how much two
+data objects are alike, and an opposite concept
+is known as the distance, which measures how
+much two data objects are dissimilar to each other. We have known how to calculate similarity or distances
+of item sets. Now let's look at
+how to calculate similarity or distances
+of two vectors. Now, given two vectors which have aligned dimensions that means they have the same
+dimensionality. X contains p numbers each of
+which corresponds to one of the p dimensions and
+y contains a list of different numbers each of which corresponds
+to the same dimension. The questions, how similar
+are those two vectors are? We don't know how
+to calculate that, but we do have some iterations. We know that if two vectors
+share more empty dimensions, then they should be more similar. For example, if we look at binary vectors or offering
+item sets as example. This to binary vectors
+have three dimensions in common because in three
+of the four dimensions, both of them have no item. Differently, these
+two vectors x and z, z only show one dimension
+because one of the vectors has four different items and
+the other vector has only one item even though that there are multiple
+occurrences of that item. So if this is the case, any reasonable similarity
+function should help us understand that
+the two vectors x, y are more similar than x, z. Moreover, we know that
+given the same dimension if the values and the
+same dimensions are closer in the two vectors, they should have a
+larger similarity. If the values and
+the same dimension are very different
+from each other, then they should have
+a smaller similarity. Again, let's take a
+look at this example. These two data objects x and y, they share three dimensions and at each of the dimensions
+they have the same values. Beer appears once
+in both vectors. Milk appears twice in
+both data objects. Lemon appears once in
+both data objects. If you look at this example, the two data objects x and z although they also
+share three dimensions, the numbers on each
+dimension are different. Beer appears once in x, but twice in z. Milk appears twice in x, but three times in z, and lemon appears
+once in both vectors. In this case, because they share the same number
+of dimensions, but the numbers on different
+dimensions are different. Any reasonable similarity
+function should tell us that x and y are more
+similar than x and z. Of course, a customary function should also be able to
+handle real numbers because the vector limitation is all about how to deal
+with numerical data, and in many cases, we also need to facilitate
+normalization because some vectors just happen to have larger
+numbers than others. Just like some other sets just
+happen to have more items. So what does a similarity
+functions that satisfies these nice properties?
+There are many of them. Let's first look at the
+similarity function that's known as the Dot Product. The dot product of two
+vectors is essentially the summation of
+dimension-wise similarity. It is also known as the inner
+product of two vectors. Remember that the two vectors when we want to compute
+their similarity, they have to have the same dimensionality and the dimensions have
+to be aligned. If there is a case
+on each dimension, we can compute the product of the values xi and yi
+and then we can sum up all these similarities over all the p dimensions that gives us the dot
+product of the two vectors. Under each of the dimensions, we can say that xi
+times yi will be zero if either xi or yi is zero. That basically means that if one of the vectors
+has the empty dimension, then the similarity contributed in that dimension will be zero. Also, the value xi times
+yi will be positive. If xi and yi have the same sign that means
+if both of them are positive numbers or
+both of them are negative numbers their
+product will be positive. That means if on
+this dimension that x and y have similar values
+in terms of their sign, then they will contribute
+a positive similarity. Alternatively, if xi and
+yi have different signs. If one of them is positive
+and the other is negative, then their product
+will be negative. That means under
+the same dimension. If the values in two vectors
+have different signs, then this dimension
+will contribute negatively to the similarity
+of the two vectors. So this is what we know
+about dot product. Dot product helps us understand
+the relation between set intersection and the
+similarity of two vectors. Let's take a look of how to calculate similarity of
+two shopping baskets. One of the baskets contains four items and in this basket the item
+beer appears twice. The other basket
+contains three items. They don't completely overlap. If he chose to represent each
+of the basket as item sets, then essentially
+the first item set will only have three items. The multiple occurrences of
+item beer will be ignored. The second basket will also be represented as the item
+set of three items, and we can calculate
+the intersection of the two item sets that gives
+us another item set of only two items and this is
+because the first basket and second basket only have two items in common,
+beer and milk. But now you can see that the multiple occurrences
+of beer is ignored. How about we represent the
+two baskets as vectors and we know that vectors are more powerful to handle
+numerical data. So if we represent the
+two baskets as vectors, they will share all
+the four dimensions. The first basket will
+become a vector 2,1,1,0 that indicates that basically correspond to the four
+dimensions beer, milk, watermelon, and lemon and
+the second basket will be represented as another vector that corresponds to
+the same dimensions, and the numbers are 1,1,0,1. Now, we can calculate the similarity of the
+two vectors using dot product and that
+gives us by definition. We first look at the
+first dimension. The values on the first
+dimension are two and one, we compute the product
+of two and one, and then we look at
+the second dimension. The two values are one and one. So we add to this dot product similarity
+by one times one. That's the contribution
+from the second dimension, and the third dimension, we
+have value one and zero, and their product is zero. So the third dimension does not make any contribution
+to the similarity, and the fourth
+dimension also does not make any contribution because
+one of the values is zero. If we sum them up, the dot product between the
+two vectors will be three. So you can see that
+how this is different from the intersection
+of item sets. Because if you compute the intersection of
+item sets that gives us the item set of only two
+items instead of three, and using top product and
+vector representation, we are able to handle
+numerical data, which is enabling us rate here. So top product has many
+interesting properties. It has good relation to other sets and it's
+very easy to calculate, but it also have some problems. While the biggest problem about dot product is this
+mathematical paradox. Given an example, suppose
+we are looking at two vectors they share three dimensions while the
+vector has three numbers 1, 1, and 1 and second vector
+the values are 2, 3, and 1. The question is, do you think it is more
+similar between x and y or it is more similar
+between x and itself? Intuitively, any data's
+object should always be the most similar to itself
+not to any other data vector. But if you use dot product, the similarity between
+x and y will be higher than similarity
+between x and x itself. So that becomes the paradox. Moreover, because dot product
+has the close relation to set intersection when we
+deal with binary vectors, then it will also carry over all the limitations
+of set intersections and we have known that
+one big limitation of set intersection is at when
+item sets are not normalized, then a longer item set
+will just by chance to have a larger intersection
+to the other item sets. That product will also have this problem and the
+problem is that if someone just happened to have higher numbers
+and the dimensions, zero vector will
+just happen to have a higher similarity
+to other vectors.

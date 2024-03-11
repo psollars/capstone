@@ -1,0 +1,119 @@
+Hello and welcome to a
+screen recording for SI 611. This is going to
+show you the kinds of things you have
+to do to get things properly set up for your
+last week's assignment, for Week 4, to do the actual notebooks where we're connecting pandas and SQL. So you are probably
+looking here at Week 4, setting these up as a
+read-only database, turning in notebook assignments. And so you're going
+to grab these files. If the wget doesn't work, you're going have to
+download from these URLs and upload them into your
+Jupyter Notebook. Of course, your Jupyter
+Notebook lives in Week 1 under using Jupyter
+Notebooks or Terminal. This is an ungraded
+programming assignment that is our entree
+into Coursera Labs. And so among the files that you download are a couple of Python Notebooks. This is the first assignment. I'll go through a
+couple of these. The first thing you need to do, unless you've already done it, is make a copy of
+hidden-dist which is a file I gave you
+and I will show you. This has three sets
+of secrets in it. It has the secret for your
+PostgreSQL database, it has the secret for your
+Elasticsearch SQL database, and then it has the data for the read-only shared database. And so you've got to change these. Now chances are good if you've been doing the
+homework in the first three
+weeks of the class, you've already got this set there. And this read-only data, if you look, you
+will see that this is here under user and password for the read-only database, as a matter of fact, in that link which I'm
+not going to show you, you actually have the exact read-only that you're supposed to paste in here for the
+particular semester. And this is a lot of just notes, but ultimately these
+three routines give you the secrets for the three kinds
+of things you need. And then what happens is this Python Notebook
+uses the secrets. Okay? So each of the Python
+Notebooks use the secrets. This one is for using our magic, then there's the Python
+way of doing it, and then there's the
+very first assignment. But the first assignment, this first assignment is really just making sure that you've got
+your secrets right. So I'll move them like this so you can see in here. So it's pretty simple. This code here is code
+that I've written. Now, if you were doing
+this by yourself, you would just have
+an sql_string. But because I'm using this
+fancy hidden mechanism, I pulled the secrets in.
+It just is getting those five values and sticking them in into an
+sql_string the right way. This is the one of two ways
+that we're going to talk to a database in a Python Notebook. So this is the Python way, what I call the Python
+way of doing things, where we're just doing the
+kinds of things we did as we wrote Python applications and you'll see this import p-s-y-c-o-p-g-2, which is the Python
+Postgres connector, is kind of what that stands for, And then we're going to
+make our connection. The conn is going to be like a
+file handle, as it were, except that we will send each sql_query and then
+we'll get a result set back. And so it's pretty
+straightforward once this works. So I'll run this and that worked and then it says the Postgres
+connection data. You could wipe this whole thing out and just put an sql_string there,
+and that would be fine. I'm not doing that
+because I don't want to show you my password. You'll notice I haven't yet
+shown you my passwords. They're all sitting in here in hidden.py and they're all right. So let's go ahead and run this. So I'll start here
+in the first one. And that worked. I'm going
+to run the second one. That meant that the data
+came from hidden.py, but this next one is
+the one that's going to be the most important one. If that fails, then you'll know that
+you probably don't have your hidden data correct. So you're pretty
+much in good shape. We're talking to
+the read-only data. So that's the new one that
+you've got to be putting in. And it has a table called taxdata. So I'll run this query, And it's just a read sql_query. I mean, it's almost so easy. It's hard to spend
+a whole week on it. We've got some SQL and
+you send it down a database connection and that's
+the exact same thing we would have done in normal Python except now we got pandas
+involved and we're going to say, "Give me back a DataFrame." Read an SQL query, pull all that DataFrame, and then run it. So let me go ahead
+and run that one, and then I will take a look at the DataFrame that comes out, and that was the
+DataFrame that came back. And so that's just a
+normal old DataFrame. And so that's it. And at that point, you have successfully talked. Now if you've got
+your secrets right, then this SQL magic one
+ought to just work too. So we're doing things
+a little differently. The syntax that we're going
+to talk to SQL from within Python and pandas is we
+have loaded an extension. You had to have installed this. So you can go find that particular thing by reading some of
+this documentation that I've given you. And you load it.
+Percent load extension, that's a Notebook thing, and
+tell it to do autocommit. And we're going to
+do the same kind of thing. The string looks a
+little bit different. Let's go ahead and run that one. The string looks a
+little bit different. Again, you could wipe
+this all out and replace it with just one string
+assignment statement. But I'm going to use my
+hidden file and it's again the read-only connection
+that we're working with. We're going to make
+that connection by taking this variable sql_string, put a dollar sign in front of it. You do this once, and then that will be
+connected, and that worked. If you've got bad values in here, that's where this is
+going to blow up. Or maybe if you didn't put
+read-only in or something. But at this point,
+it's in good shape. So that's just the setup. So the basic SQL is
+you say percent SQL. This is activating
+that little plug-in, and you just start typing. So this is when I said that
+you're kind of in a psql-like environment where you can type any SQL you want and then run it. Now, the key thing
+is that you get a result set. And
+kind of like psql, it shows you the
+data right there. You can page through the data. Now, if we look at
+what's going on here, this is not a DataFrame. The thing that's coming back from the SQL is actually a result set. The result set is an iterable, a thing you can walk through
+to get all of the data. And we can say,
+"Hey, you know what? Take this result, I want a DataFrame. Give me a DataFrame
+and do the head." So it walks the result
+set and gives me back a DataFrame, and
+then all of a sudden, all my cool DataFrame things
+can work. Where am I at? I'll run that. So there's a couple other things
+you can do here. These are called bind
+variables and you can inside the SQL have the
+name of a global variable. This variable state equals, colon state says pull
+this word 'FINISHED' in. And so that's not really
+going to the table. It's way to put a
+binding variable in, just like we did back in Python. If you want to have more
+than one line of SQL, you put this double percent. We're going to have
+this result variable. Remember what we get back
+from a SELECT as a result, double less than, and
+then multiple lines, and then just it concatenates
+it all together, and then we can print
+out the results set again or we could turn it into a DataFrame or whatever. Now, if you have this pgspecial installed
+in your Python, which I do, then what you can
+do is run some of those commands that you
+can run in the psql. And so we can do things like find out what tables are there. So this magic SQL, this magic extension,
+basically makes it so that you can type SQL commands. And you could literally set
+up both the hidden file. It works commonly as you build. You could make it so that you
+could interactively explore with the percent SQL, and then you could run things
+with a connection, etc. So there's lots of choices
+that you have, okay? So I hope that helps
+you get set up.

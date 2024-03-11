@@ -1,0 +1,20 @@
+Now I've talked really
+quickly about piping, more generally that's
+called shell redirection. Our output from
+commands can be sent to a file or to another command. We can use the
+greater than sign to send the output of
+a command to a file or we can use the pipe to send the output of the
+command to another command. So for example, we
+can take a look at the first few lines of a file using the head command
+that we covered, and send that to another
+file called first few lines of text, firstfewlines.txt. Similarly, we can send the output of one command,
+in this case, head file.txt, to the grep command hence
+search for the word data. We can link all these
+three together. So for example, taking
+the first few lines of file.txt using
+the head command, piping it to grep
+for the word data, and sending it to a file called
+few underscore data.txt. Those are a bunch of examples of commands that can help us
+with data manipulation. In the next segment, we're
+going take a look at how to integrate all that with
+the Jupiter environment.

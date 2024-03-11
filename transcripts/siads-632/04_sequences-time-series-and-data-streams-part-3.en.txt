@@ -1,0 +1,135 @@
+How can we make predictions? We know that predictions
+are so useful in reality. If you can predict stock prices, you can become rich. Even if you can predict the weather, it's going to
+be quite convenient. But how can we make predictions? Here we're going to introduce a very commonly used data
+mining functionality and it's called data modeling. A data model is trying
+to take the input of the data representation and
+trying to output a model of the data or the understanding of the mechanism of the data. In some cases, it is
+the understanding of the generative
+process of the data. I'm sure that you have seen the word model or modeling
+in many different scenarios. For instance, when you
+look at databases, you talk about data models. When look at a user
+behavior data, you have behavioral models, you have this model, and model, and definitions of the word model can be quite different in different scenarios. But in data mining, whenever we are talking
+about modeling, we're usually referring
+to a statistical model. A statistical model is
+the particular type of mechanism to understand the
+process of data generation. That it helps us to understand the underlying
+properties of the data, the underlying
+mechanisms of the data. What's more important,
+it helps us draw conclusions about the data, to make decisions
+based on the data. We can look deeper into
+statistical data modeling. Basically, the input is the
+data you observe and output is statistical model
+that represents our understanding about
+how the data is generated, how the data is sampled, and how the data is
+going to appear. If we put statistical
+data modeling into the context of a
+data mining process, you can see that we have pretty much the same
+data mining pipeline. But the difference is that
+where we put data mining functionalities is now a box called statistical data modeling. That indicates that
+statistical data modeling is the particular data
+mining functionality. And the output of it is not just why do they define knowledge, it is the particular thing. The output of statistical
+data modeling are statistical models
+about the data. These statistical models can also be passed into the downstream
+data mining tasks. For instance, you can
+use data mining models, you can use statistical
+models to support machine learning or to
+support predictions. Can we name a few
+examples of models? Well, there are many models that are serving this purpose to understand how the data
+is generated and to help us draw conclusions,
+and make decisions. In one particular example,
+flipping a coin. If you have a coin
+with two sides, a head and a tail, and you
+flip it multiple times. This particular data
+generative process can be modeled as
+the Bernoulli trial. And basically, you have a Bernoulli model that governs the generation
+of the data. Then, if you apply this
+Bernoulli trial multiple times, you can observe a sequence
+of observations like a head, a tail, a tail, a tail, a head, two tails, and another head,
+so on and so forth. What does this
+Bernoulli model imply? The model basically, specifies our understanding
+about the process and tells you that the probability that if you flip a
+coin and you observe the head is p. Then the probability that if
+you flip the same coin, you observe a tail is basically one minus p. Based on
+this simple mechanism, you can actually measure
+a lots of things, you can draw conclusions. For instance, you now understand that the
+number of heads you can observe the n flips
+if the model is true, follows the so-called
+binomial distribution. Something that is
+plotted on the right. Then that could help you to
+estimate the probabilities what is p and what is  1 - p from the data you observed. Then, based on the estimations, you can make a guess of, "Hey, how likely that my next
+flip would give me a head?" Of course, this is just one
+of the simplest models. The other examples we have
+more complicated models. For example, back to the very timely
+scenario that if you want to model the
+spread of a virus, you use the harder model, a more complicated
+model called the S-I-R. This is another model. These are examples
+of statistic models. Among these statistical models, some of them are
+particularly used for making predictions. And these are called predictive models. We call statistical models with specific goals to make
+predictions, predictive models. Back to this data
+mining pipeline, we can see that now the output of statistical
+data modeling are models that you can use to understand the
+generative process of the data. And the particular use of this
+data mining output is to make a prediction or is to make a prediction
+in the future. In this class, we will introduce quite a few
+predictive models. Predictions and forecasting are two commonly used data
+mining functionalities applied to sequence data, to time series data,and to data streams. This is because that all
+the three data representations have orders among
+the data objects. Another interesting data
+mining functionality that we did not cover in detail iin Data Mining I, is outlier detection. When we're talking
+about time-series data, we hear lots of things
+about outliers, anomaly or surprising events. What are they? An outlier is basically an
+observation that is very different from
+other observations. It could also be the observation that deviates from our
+understanding about the data. You can see that the
+first definition is making use of a data
+mining concept, similarity. If the observation
+is very different, it has very low similarity or  very high distance from other observations, then it's probably an outlier. The second definition
+is making use of the data mining
+concept, modeling. If you have a model
+of the data and if the observation is quite different from what
+the model predicts, then it is probably an outlier. That leads to a
+third and actually a more practical
+definition of the outlier. If they have a predictive model, if they can predict the values, no matter the values in  the
+future of the of the values in history. If the predicted value is quite different from what
+we actually observed, then the observation could actually be understood
+as an outlier. There are many
+examples of outliers. Back to this time series
+plot of Google stock price. You can see that now, based on the data we observed, we have a pretty good
+understanding about the trend of the price. Then if you look at
+these data points, these are very different
+from what we observed. And these deviates from the trend line that
+we are plotting. In other words, if we make
+prediction of the price and these time points
+and the predictions should be very much
+different from what we actually observe. 
+So that's why these data points can  be called as outliers or anomalies, or surprisingly low prices. In other examples, we could actually argue that every
+rumor is actually an outlier. Why? Because it is abnormal. It is different from
+the majority of tweets. Especially, the rumors
+that spread very widely. You can see that outliers are, sometimes they make
+lots of difference. They're not just trivial
+data mining outputs. Sometimes they can be
+critical to society. Every rumor can be understood as an outlier
+in a data stream. In fact, if you look at the
+cluster of tweets over time, whenever there is a
+big rumor come in, you can actually see
+surprisingly large and wide spreading clusters. In this case, the outlier
+is not just a value, of your values. It is actually a complex data mining object. Of course, some of the
+outliers are correlated. If you look at the spreading of very critical rumor
+and then if you look at the movements of
+certain stock prices, sometimes you can see two outliers correlated
+to each other. This gives us the
+brief introduction of the definitions of
+the data representations, sequences, time series,
+and data streams. Then we introduced the new tasks, the new data mining
+functionalities. We're interested about these
+three representations, namely, making predictions or forecasting and
+detecting outliers. Then we introduced a new way to generate this
+data mining outputs. And that is called data modeling or statistical data modeling. I hope that you understand
+now the similarities and differences of sequences, time-series and data streams. Especially compared to
+other data representations, such as itemsets and vectors. I hope you understand that making predictions
+and forecasting is commonly used data functionality on these three data representations, because all of them care
+about the orders of data. Statistical data
+modeling provides the solution for
+making predictions, and it also provides the
+solution for outlier detection. In the rest of this class, you will see lots of concrete techniques to model the data, to make predictions, and
+then to detect outliers.

@@ -1,0 +1,67 @@
+Math methods for
+data science optimization. What is the gradient, and how does it help in optimization? You've heard me
+mention gradients several times in the previous lectures. We've had a brief definition at the beginning of
+this set of lectures. Gradient is a method used to find the minimum
+point of a function. Think of it as the speed at
+which you're sliding down a mountain at certain points
+to reach the bottom. But now we're going
+to go a little bit deeper into
+what a gradient is, and how it helps us
+in optimization. A gradient is represented
+by a Jacobian matrix, which is simply
+a matrix consisting of the first order partial
+derivatives of the function. How does a gradient help
+us in optimization? Remember our goal is to
+minimize an objective function. This function is convex, meaning a line drawn between any two points will be
+above the function. If we could find the point on the function where
+gradient slows the most, or the slope of
+the line tangent to the function is approximately
+zero or minimized, we have found the minimum
+of the function. This is a fundamental
+of calculus. In other words, finding
+the derivative equal to zero. When we have a function
+of two variables, we can graph in three dimensions. Every point on
+the graph has a slope, but it is not a line
+as this plane. Can we find a place in this function where
+the slope is zero? Does it mean something? How do we find
+the slope of a plane? You could use a pair of slopes; z, x and z, y, where z is the
+vertical dimension, and x and y are
+the non-vertical dimensions. In this case, the slope of
+the red line is negative, perhaps negative one fifth, and the slope of the purple line is positive, perhaps 1.5. Here are two examples of
+a plane, where in plot A, the purple line has a slope
+of two in one dimension, and the red line has a slope
+of zero in the other, and another plot, where the purple line has a slope
+of two in one dimension, and the red line has a slope of one in the other dimension, to help you visualize how
+to find slopes of a plane. Some quick calculus. Hopefully this is
+a review for most of you, but we're going to walk through the concept of a derivative here. First we have a parabolic curve and a single point on that curve. In order to find the slope of the line tangent to that point, we must find the derivative
+of one variable. If we have multiple variables, we need to find the slopes
+of the two lines with respect to each
+of the variables, and thus we will be calculating
+a partial derivative, one for each of
+the dimensions or variables. When we take a derivative in multiple dimensions we
+call this a gradient. We have to deal with this
+one cross section at a time. First by finding the equation
+of, in this case, the red parabola that lies on the surface that
+intersects that point, and then the slope
+of the line tangent to a point on that parabola. Then the equation of
+the purple parabola that intersects the red parabola
+at that given point, and the slope of
+the line tangent to the purple parabola
+at that point. Finding a gradient of two variables requires
+partial derivatives. Find the derivative with
+respect to the first variable, treating the second
+variable constant. So we are deriving as d/dx, or this can be written as df/dx, find the derivative with
+respect to the second variable, treating the first as a constant. So we are deriving as d/dy or in this case can be
+written as df/dy. Finally, we will put
+the derivatives into a vector. The first component is df/dx, and the second
+component is df/dy. Let's do an example. Say we have this function f of x, y equals x cubed
+plus 5xy plus y_ 4. If we take the derivative
+with respect to x; x cubed plus 5xy
+minus y_ 4 df/dx, we get 3x squared plus 5y. If we take the derivative
+with respect to y; x cubed plus 5xy minus y_4 df/dy, we get 5x minus 4y cubed. We can then put those values into our matrix [3x squared plus 5y; 5X minus 4y cubed], which gives us the gradient. What if I had
+more than two variables? It's a similar calculation. We derive with respect
+to the first variable, treating all others as constants, and then repeat this method
+for all other variables. We then write the
+partial derivatives for each variable in a vector. We'll talk about
+the next steps once you have a gradient in
+the next set of lectures.

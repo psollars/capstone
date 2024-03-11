@@ -1,0 +1,228 @@
+In this lecture, we're going
+to address how you can bring multiple DataFrame
+objects together, either by merging
+them horizontally or by concatenating
+them vertically. Before we jump into the code, we need to address
+a little relational theory and to get some language
+conventions down, I'm going to bring in an image to help with some of those concepts. Ok. This is a Venn diagram. A Venn diagram is traditionally used to show set membership. For example, the circle
+on the left is the population of
+students at a University, the circle on the right is the population of
+staff at a University, and the overlapping region
+in the middle are all of those students
+who are also staff. Maybe these students run
+tutorials for a course, or grade assignments, or engage in running research experiments. So this diagram shows two populations we
+might have data about, but there's overlap
+between those populations. When it comes to
+translating this to Pandas, we can think of the case
+where we might have these two populations as
+indices in separate DataFrames, maybe with the label
+of person name. When we want to join the
+DataFrames together we have some choices to make. First, what do we want a list of all the people regardless of whether they're staff or student, and all of the information
+we can get on them? In database terminology, this is called a full Outer join. In set theory, it's
+called a Union. In the Venn diagram, it represents everyone
+in any circle. So here's an image
+of what that would look like as a Venn diagram. It's quite possible
+though that we only want those people who have
+maximum information for, those people who are
+both staff and students. Perhaps being a staff member and the student involves
+getting a tuition waiver, and we want to calculate
+the cost of this. In database terminology, this
+is called an inner join, or in set theory,
+the intersection. It's represented in
+the Venn diagram as an overlapping part
+in each circle. So here's what that
+would look like. So with that background, let's see an example of how
+we would do this in Pandas, where we would use
+the merge function. So we'll import pandas as pd. First, let's create two
+DataFrames, staff and students. So I'll create the staff
+DataFrame first, pd.DataFrame, and I'm going
+to pass in a list of dicts. So the first one, Kelly, we'll set her role
+to Director of HR, and then we'll
+create another one, Sally, and will set
+her role to Course liaison, then the third person, James, we'll set
+his role to Grader. Let's index this staff by name. So staff_df equals
+staff_df.set_index('Name'). Now, we'll create this student
+DataFrame as well. So student df equals
+pd.DataFrame. We'll create a student called James and we'll say he's
+in business school. We'll create a student called Mike and we'll say
+he's in law school, then we'll create
+a student called Sally, and say she's in engineering. We're going to index
+this by name too, so student_df equals
+student_df.set index name. Let's just print
+out the DataFrame. So we'll first print out staff_df.head and then we'll
+print student_df.head. So there's some overlap
+in these DataFrames, and that James and Sally are
+both students and staff, but Mike and Kelly are not. Importantly, both DataFrames are indexed along the value
+we want to merge them on, which is called Name. If we want the Union of these, we would call merge passing in the DataFrame
+on the left and the DataFrame on
+the right and telling merge that we want it
+to use an outer join. We would want to use
+the left and right indexes as the joining columns. So we'll say pd.merge, we pass in the staff first and the student
+DataFrames second, so that's our left and our right. We set the how
+parameter to outer. By default, it's
+inner, I believe, so we have to set it here, and then say that we want
+to use the index values. So we'll set the
+left index equal to true and the right
+index equal to true. We see in the resulting DataFrame that everybody is listed and since Mike does not have a role and John does
+not have a school, those cells are listed
+as missing values. If we wanted to get
+the intersection that is just those people who are
+a student and a staff member, we can set the how
+attribute to inner. Again, we set both the
+left and right indices to be true as
+the joining columns. So we call it pd.merge and we'd say the left
+is the staff, the right is the student.
+How is the inner? So we're looking for
+the intersection here, and the left, and the right
+index values are true. We see that the
+resulting DataFrame has only James and Sally in it. Now, there are
+two other common use cases when merging DataFrames, and both are examples of what
+we would call set addition. The first is when we
+want to get a list of all staff regardless of whether
+they're students or not. But if there were students, we'd want to get
+their student details as well. To do this, we would
+use a left join. It's important to note that the order of DataFrames
+in this function, the first DataFrame is the left DataFrame and
+the second is the right. So pd.merge, staff_df,
+that's our left, student_df, that's our right, we say how left joins. So we're interested in
+joining against the staff_df and set left index equal to true and right index
+equal to true. So you can probably
+guess what comes next. We want a list of all
+of the students and their roles if they
+are also staff. To do this, we would
+do a right join. So we do staff_df on the left, student_df on the right, how equals right and left index equals true and
+right index equals true. We can also do it one other way. The merge method has a couple of other interesting parameters. First, you don't need to
+use indices to join on, you can use columns as well. Here's an example. Here we have a parameter called "on" and then we can assign a column
+that both DataFrames, have using the joining column. So first, let's remove our index. So we'll reset
+the index on the staff DataFrame and we'll reset the index honors
+student DataFrame. Now let's merge using
+the on parameter. So pd.merge, staff on the left, student on the right,
+we want a right join, and then we just
+pass on equals name. So we're saying join
+on that column. So using the "on" parameter
+instead of an index is how I find myself
+using merge the most. In fact, I rarely use indices
+in pandas DataFrames, especially where
+I'm just cleaning data as opposed to
+doing data analysis. So what happens when we have conflicts between the DataFrames? Let's take a look by
+creating new staff and student DataFrames that have
+a location information. So I'm going to create
+a new staff DataFrame. I'm going to say Kelly, her role is Director of HR, but I'm also going to a
+location of State Street. Sally, role Course liaison and location of
+Washington Avenue, then James is a Grader, and I'll say he's also
+on Washington Avenue. Then for our students, we'll say James is Business school, the location is on
+Billiard Avenue, Mike's Law School and his location is
+Fraternity House Number 22, and then Sally's school, Engineering and her location
+is on Wilson Crescent. The staff DataFrame, this is an office location where we
+can find the staff person, and we can see
+the Director of HR is on State Street while
+the two students are on Washington Ave. These locations
+just happened to be right outside my window
+as I film this. But for the student DataFrame, the location information is
+actually their home address. The merge function
+preserves this information, but depends either on
+underscore x or underscore y to help differentiate which index went with which column of data. The underscore x is always the left DataFrame
+information and the underscore y is always the right DataFrame information. So here, if we want all
+of the staff information, regardless of whether
+they are students or not, but if they are
+students, we want to get their student details as well, then we would do a left join
+on the column of name. So pd.merge staff, student, we're joining across the left
+because we want to get all of the information of students who are joining on Name. From the output, we
+can see that there are columns location_x
+and location_y. Location_x refers to
+the location column in the left dataframe, which is a staff dataframe
+and location_y refers to the column in
+the right dataframe which is the student dataframes. Before we leave
+merging of dataframes, let's talk about multi indexing
+and multiple columns. It's quite possible that the first name for students
+and staff might overlap, but the last name might not. In this case, we can use a list of multiple columns
+that should be used to join keys from both dataframes
+using the on parameter. Recall that the column name
+assigned to the parameter need to exist in both dataframes. So here's an example with some new first and
+staff name data. So I'm just going to
+paste this in quickly. But what you can see is that
+people now have a last name. So as you can see
+here, James Wilde and James Hammond don't match on both keys since they
+have different last names. So we would expect
+that an inner join doesn't include these
+individuals in the output, and only Sally Brooks
+would be retained. So pd.merge staff_df, student_df, we want an inner join, and then for on we actually
+pass in a python list, that's a list of the columns
+that we're interested in, those all have to match, so first name and last name. So joining dataframes through merging is incredibly common, and you'll need to know how to pull data from different sources, clean it, and join
+it for analysis. This is a staple
+not only of pandas, but of database
+technologies as well. If we think of merging as
+joining ''horizontally,'' meaning we join on similar values in a column found
+in two dataframes, then concatenating is joining
+''vertically,'' meaning we put dataframes on top or at
+the bottom of one another. So let's understand
+this from an example. You have a dataset that tracks some information over the years, and each year's record
+is separate CSV, and every CSV of every year's record has
+the exact same columns. What happens if you want
+to put all of that data, from all of the records together so you can
+concatenate them? Let's take a look at
+the US Department of Education College
+Scorecard data. It has each US university's data
+on student completion, student debt, after
+graduation income, and others. The data is stored
+in separate CSVs, with each CSV containing
+a year's record. Let's say we wanted
+the records from 2011-2013. We create first three dataframes, each containing
+one year's record, and because the CSV files
+we're working with are messy, I want to suppress some of the Jupyter warning
+messages and just tell read_csv to
+ignore bad lines. So I'm going to
+start the cell with the cell magic, %%capture. So you don't have to
+worry about this. It's just to suppress
+output as we're loading these CSV files because
+there are errors in them. So %%capture, remember that has to be at the very
+beginning of the cell, any cell logic magic functions have to be right
+the first line of the cell, and then we want df_2011, so we will read_csv from
+a college scorecards, and this is MERGED2011_12. Then you say
+error_bad_lines=False. That's just telling Pandas not to bother throwing an error, and I'll do that for 2012 again, that's
+datasets/college_scorecardMERGED2013, and then df_2013 as well. All right. Let's get a view
+of one of the dataframes. So I'll take 2011, and we'll just look at the top three
+rows in that. So we see there's
+a whopping number of columns, more than 1900, and we can calculate the length of
+each dataframe as well. So you do print len df_2011, print len df_2012, and
+we'll print len df_2013. So it's a bit surprising with the number of schools
+and the scorecard for 2011 is almost double
+that of the next two years. But let's not worry about that. That's probably buried somewhere
+in the docs why that is. Instead, let's just put all three dataframes
+in a list and call the list frames and pass the list into
+the concat function. So let's see what
+that looks like. So we'll say frames is equal to, this is a list of
+our three dataframes. So df_2011, df_ 2012, df_2013 and then we
+just call pd.concat. So that's a function on Pandas top-level module and
+we pass the list of frames. So as you can see, we
+have more observations in one dataframe and
+the columns remain the same. If we scroll down to
+the bottom of the output, we can see there
+are a total of over 30,000 rows after concatenating
+the three dataframes. Let's double check and let's
+quickly add the number of rows of the three dataframes
+to see if they match. So we'll just say the len
+of df_2011 plus the len of df_2012 plus the len of df_2013. Great. The two numbers match, which means our
+concatenation is successful. But wait, not all of the data
+is concatenated together, we don't know
+what observations are from what year anymore. So actually,
+the concat function has a parameter that solves such a problem with
+the keys parameter, and we can set
+an extra level of index. We pass in a list of the keys that we want to correspond to the dataframes in as the keys parameter.
+So let's try it out. So pd.concat, we pass in
+our list of dataframes, and then we just say
+the keys we want to be 2011, 2012, 2013. So now we have
+the indices as the year. So we know what observations
+are from what year. You should know
+that concatenation also has inner and outer methods. If you're concatenating
+two dataframes that do not have identical columns, and choose the outer methods, some cells will be NaN. If you choose to do the inner, then some observations will
+be dropped due to NaN values. You can think this as
+analogous to the left and right joints of
+the merge function. Now you know how to
+merge and concatenate dataframes together. You'll find such functions very useful for combining data to get more complex or complicated
+results to do analysis with. A solid understanding
+of how to merge data is absolutely essential
+when you're procuring, cleaning, and manipulating data. It's worth knowing how to join different dataframes quickly, and the different
+operations that you can use when joining data sets, and I would encourage you to
+check out the pandas docs for more on joining and
+concatenating data.

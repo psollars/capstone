@@ -1,0 +1,96 @@
+Okay, so we've seen how to calculate and
+visualize measures of central tendency, like median and mean, and also deviation
+measures such as variance, but there are other ways that
+we can describe our data. For instance, most of the time we
+want to know more about our data, and how its distributed, and for
+this we'll need to check out quartiles. So today, we'll be talking about
+how to calculate these quartiles, and visualize them using box plots. The quartiles within a dataset
+are just three points that divide a ranked data set. That is, you need to order the data
+points first into four equal groups, where each group comprises
+a quarter of the data. The three data points for this would be
+the first quartile, also called the lower quartile, which splits off the lowest
+25% of the data from the rest. The second quartile, also called
+the median, which cuts the data in half. And the upper quartile, which splits off the highest
+quarter of the data from the rest. Let's see how we might go
+about calculating them using Pythons Pandas Library. Let's see this in action. First, let's import the pandas Library
+as PD, and the matplotlib as MPL. And then the matplotlib py plot as PLT,
+and of course,
+the iris data as Iris PD dot read CSV. All right.
+Let's check out the first few rows, and we can tell that we have all
+of our species still, and across the different variables for length
+and width, for sepal and pedal variables. We can use the pandas.quartile
+method to calculate the three different quartiles,
+the lower 25%, 50%, and the upper 25% for
+sepal length variable. So we'll do
+iris.sepal_length.quantile([.25, .5, .75]). Cool, now the best way to
+chart the data set and their quartiles is to use a box plot. A box plot includes five values,
+the minimum value the 25% quartile q1, the median,
+which is the middle value, the 75th percentile which is Q3,
+and the maximum value. The value of the mean isn't
+included in a box plot by default. The matplotlib function to draw a box
+plot is appropriately called boxplot. The function requires us to pass an
+input data or a list of vectors. For example, we can pass this to
+sepal length variable like so, so we'll do p LTD box plot Iris,
+and then sepal length, and then we'll do PLT dot showed so we can
+see the plot that we've just created. We can see here from the line in the
+middle of the box that the median value for sepal length is about 5.8,
+across all of the iris types. The box plot represents
+a interquartile range. So the bottom line of the box
+is the first quartile, and the top of the box is the third quartile. The irq equals the third and
+the first quartile. So the interquartile range is
+between the 3rd and 1st quartile. In our case, that means 6.4 to 5.1, giving us an interquartile range of 1.3. The lines in whiskers extending
+from the box are showing the minimum value of about
+4.3 on the bottom, and a maximum value of 7.9 on the top. We can confirm all of these things
+using the .describe() function. So we'll do Iris.sepal_length.describe,
+like we've done in the past, and here we'll start to see that,
+yes indeed, the mean is 5.8, which is also the median, because
+the mean is not shown on the box plot. And we also have a minimum value of
+about 4.3, so we can see here that the box plot is really a visualization
+of these important statistics. Okay, so now let's play around,
+and see how we might also control the appearance and then add statistics
+by adjusting some of these parameters. As I said, the line inside of the box
+represents the median value, but we can also plot a marker for the mean using the additional parameter
+called showmeans equals True, and change the box plot to horizontal
+using the vert equals False parameter. So we'll do plt.boxplot(iris.sepal_length,
+showmeans = True, vert equals False). and then we'll do show the plot. Now, to add a bit more fun,
+let's see if we can do three boxes for the sepal length and petal width
+and petal length as well. So the first thing to do is to
+concatenate all of the arrays, and pass them to the boxplot function. So we'll do Iris variables to hold
+all of these, and we'll do Iris for each one of the variable, the four
+different variables in our data set. And we'll do a box equals
+plt.boxplot Iris variables, which we just created and
+showmeans equals True. Each box plot can have its own color, so we can go through this using
+the pyplot function setp(). So first, we'll just set up
+our box plot using box equals plt.boxplot Iris variables
+showmeans equals True. For instance, we can add the color
+red to the sepal length variable. And so we'll add this to the boxes, and will also change the cap colors,
+and let's see the whiskers too. We can take a look at this again,
+and we'll set up the same box plot. But this time, you can add the titles and axis labels using the .title Y and
+X label arguments. So we'll do plt.title and
+we'll call it the iris dataset, and we'll set that font size to 18, and will say that this is width and
+height for the Y title, and then for the X ticks, we will label
+those as the variable labels. Matplotlib box plot looks okay for
+the first pass at a visualization. But before we end the tutorial, let's take a sneak peek at
+plotting with the Seaborn Library. Let's say we want to plot a boxplot
+of sepal length by Iris type, so by the flower type. To make a basic plot in Seaborn,
+let's first load in the seaborn. So we'll import Seaborn as SNS. Now we can use the pandas dataframe, as
+input and use seaborn's boxplot function. In addition to the data, we can also specify multiple options
+to customize a box plot with Seaborn. So for instance,
+we can do seaplot will call this, and we'll do sns.boxplot
+y equals sepal length, x equals the species, and
+our data equals the iris data. We'll do these at .5 width, and this is going to also allow us to specify
+the width of the boxes in the box plot. And let's choose color palette scheme for
+the box plot with Seaborn here. We've chosen the colorblind palette,
+which is a friendly palette, but there are tons of other
+colors available in Seaborn, including deep or
+muted bright pastel and dark colors. Once we've made the box plot like this,
+or the way that we'd like it to be, we can easily save this as a high
+quality image file like JPEG file, so we'll do plot filename, and we'll call
+this a box plot with Seaborn dot jpg. Here's another way to save it as a JPEG
+file with a specific resolution. So if you wanted high quality things for
+publication, so we can do seaplot.figure and
+savefig plot filename. And then we'll say JPEG, and
+then by changing the DPI option, we can easily increase
+the resolution of the image. So that was just a sneak peek, but
+we'll talk more about using Seaborn, and when it might be
+the most appropriate later.

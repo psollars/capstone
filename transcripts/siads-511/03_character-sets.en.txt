@@ -1,0 +1,208 @@
+So now we're going to talk
+a bit about character sets. And we talked about text strings, but character sets are important
+to understand. I'll admit that I'm old, and
+when I started, the character sets didn't even have lowercase,
+that's how old I am, okay? So some of you watching may be that old,
+but I think most of you got into into technology some time after
+we had uppercase and lowercase. So the basic why in the old days we had
+only uppercase on a Control Data CDC 6500 computer had to do with
+memory space and the memory of the computers back then was very costly. And so the fact that we could use 6
+bits per character instead of use 8 bits per character, which is what
+ASCII is, was a tremendous saving, because every single bit of
+memory had to be handmade. And so but upper and lower case is
+really much better for humans. It keeps us all from shouting all the time,
+but back then, upper So there is several standards for
+upper and lower case back then, as we were moving from uppercase,
+only to upper and lower case. There was EBCDIC, which was the IBM
+mainframe standard, and then ASCII, which was the standard for the rest of us. And ASCII was a much better
+standard than EBCDIC, because it was in everything's in order. You can see ABC. So if you look at this ASCII chart, you
+can see there's a numeric equivalent for every character. So we got the characters. Some of these are non-printing in
+this first column, non-printing. Then we have like exclamation point,
+and some stuff we got. So the zero character is encoded
+inside the computer as the number 48. And these are hexadecimal, or octal, or
+binary, these are the actual zeros and ones inside the computer. This is an 8-bit format. So there's eight zeros and ones, and so
+that's a byte, we call that a byte, so if you got megabytes. And then you have some more characters
+in upper lower, upper case, some more characters, and then lower case, and
+some more characters, and it stops at 127. So for example, if you're thinking well,
+why is it that the exponentiation operator, raising to a power, in
+Python is star star, right? Well, that's because we had that
+character, and it was on keyboards for a very long time. And so we tend to use these ASCII
+characters as the only special characters that have great meaning. because just a lot of the programming
+languages we use are 20 and 30 years old. And so they really kind of stuck with this
+character set for the essential things. And if you look at like the less thans and
+greater thans, and all these characters. And there's nothing in here, for
+example, that's greater than or equal, which if we were doing this in math,
+we would say greater than or equal. But that's why greater than or equal
+is greater than followed by equal sign, because that character,
+greater than or equal character, one character, is not here, okay? And even though now they've got those
+somewhere, we tend not to use them, because we're sort of always afraid that
+we're going to run into a keyboard, or character set representation that
+doesn't have that particular character. And like a superscript squared,
+a little 2 that's tall, I mean, a 2 that's small and moved up,
+some character sets have those. So you could say x squared, and this little
+2 up there, and so we don't do that. So ASCII was our standard for a long time. It's a great standard, widely used,
+and we still use it basically. But and so in the old days, each character
+is a number stored in 8 bits of memory. Actually, you can go up to 256, and
+we'll talk about that, in 8 bits of memory. We call it a byte, and
+there's a function in Postgres and many other languages that
+can map between a character and its according number. So we've got what is the ASCII
+number for H, capital H? It's 72. What's the ASCII number for
+lowercase e? It's at 101, l is a 108. And then what is the character
+that's associated with 72? Well, that's a H, and what's the
+character associated with 42? It's an asterisk. So that's a good
+quiz question right there. What is the character
+associated with 42? Asterisk. Because 42 is very important. And so you can predict these numbers
+if you have a nice ASCII chart by going to find lowercase a,
+uppercase H is like right here. And then there's the 72. So you
+go from H to 72. You go from lowercase e, e to 101. And then if you're going to go,
+what's the 72? Well, you go down to 72,
+and you look over. What's 42? Let's go find 42, here's 42. What character's associated with 42,
+and that's an asterisk. And so you can just figure that out. One of the things we generally assume
+in ASCII is that like a is less than b numerically, and that is what we use for
+sorting and things like that. You'll also notice that
+uppercase is lower lexical, from a sorting perspective than lowercase. And in old days, we would even
+like subtract the current letter. I'm looking at minus lower uppercase A to
+get its position within the alphabet. So you'd subtract like 68 minus 65,
+and you'd get 3 to get to the D. Well, plus 1, and then you get
+the fourth character in the alphabet. So we used to do with these
+functions we have done, character, mathematics with characters. But that's not all that common these days. You're probably better off doing
+a greater than and less than. Now, I mentioned that inside of 8 bits,
+we can store up to characters 0 to 255. And so what happened is we
+started with under 127 for most of those printing characters and non-printing characters, but then they
+started adding things to beyond 127. And so we have like Latin-1,
+which is very US and European centered, which it has various like umlauts and
+schwas and various things like that. And they added them, and
+they picked numbers, right? And then Windows came out, and they have
+this character set called Windows 1252, and then they had the
+variations of these things. It sort of started getting to the point
+where all the ASCII would be the same, but then the second half would be
+different, and it would be important for you to know the code set. It's like, so okay, this is Cyrillic, this is Spanish, this is whatever. And so these became important,
+And the problem. The problem happened is
+you would get a file, and there was nothing in the file that would
+tell you which character set it was. And so if you misinterpreted it,
+you would just get messed up characters. And so there was all these overlapping
+character sets, because of this 128, extra 128 characters,
+which was completely different. And because they were not
+self-documenting, you'd send a file from Spain to the US, and
+you didn't get it right, or whatever. So they would create standards for what the second half of those
+numbers were up to 256. And they thought that was good enough, and
+the answer is no, that's not good enough, and it's a mess. So again, as the world moved
+towards more and more computers are not just Europe and
+America, we had to solve this problem. And so I'll be honest, if you had
+asked me back in the '80s or '90s, probably probably late '80s,
+you know, how to solve this. I would not have come up
+with this Unicode idea. I think it's darn clever, very clever. And so the idea is that instead of like code
+sets where you got here's a file and it's Cyrillic, here's a file and it's Turkish,
+and here's a file and it's Latin-1, and you've got to just tell people what it is. And then you have to tell
+your software which, and you have to install all these
+character sets on your computer. And then you've got to know them, and then you've got to code switch between
+them as you're looking at files, make one big character set,
+32-bit numbers are 2 billion. They actually limited it to 21 bits to allow a nice compatibility with
+another character set called UTF-16. And so there are character sets, and then
+characters within those character sets. But now what we've done is
+created one big character set. So if you want like Chinese, there's several
+different Chinese traditional, Chinese simplified. They're each a character set, and
+then they get their own set of numbers, and when a new character shows up. And a lot of these character sets
+are both modern character sets and even historical character sets. There's enough space in Unicode to
+have historical character sets. And so what happens is if you look
+at this and say, okay, what is 72? Well, that's an H. What's 231? So this CHR is actually looking up the Unicode,
+and so there I think that's a cedilla there. And then what's 20013? Well, that's the character for
+China, right? And so there's this much larger range,
+and every character has its own specific. So the 20013, that's in a range of characters
+that is like the China characters. And so if you look near there there,
+there'd be other Chinese characters, and so there's your slot. Here's your slot, here's your slot. Oh, you got a new character set? Well, we'll get you
+another one at the end. And and so there's a 150 character sets,
+and a 137,000 characters. But this whole Unicode is something
+that evolves over time, so that's why there's a version
+to Unicode, right? 12.1, it changes pretty rapidly, but
+then they don't break the old ones. And so they just find a place
+to put every character. And again, it's awesome,
+it's just awesome. Except here's the Unicode code chart, so you can see, go look around,
+it's just impressive. It's just really impressive how they have
+mapped all these diverse things into one character set. But here's the problem. We can't afford
+to make every character on disk, on a network connection,
+in a database, be 32 bits long. That would basically quadruple instantly
+the amount of space that we do for text. And a lot of what we put
+in these things is text. We put in numbers,
+which are automatically very short. Text is by far the greatest thing we put
+in databases, or send across the Internet. And so we needed a compression scheme, and you can go to that Wikipedia page,
+UTF-8, and you can watch the research. I think it's kind of fascinating
+how they came up with ideas. And so the idea is that you go in zero
+through 127, you leave that be ASCII and
+you make it so that that's one byte. So the most common format is ASCII, and then you got these code pages that go to
+the 256, and then they have the extension. So the idea is every character is from
+somewhere between one and four bytes. And I'm not an expert at this,
+but basically, what they did was they could
+have used 32 bits, right? But they actually created
+signal characters. They reserve some of the bits as
+signals in a way to make it so they could say you know what, this
+second character looks a certain way. And so we can kind of assume that
+the only thing if it's UTF-8, it's 1 and 0 in the first two bits. And then everything else has
+got to be something else. And what that allowed them to do was
+it allowed them to have a reasonable conversion, or not perfect, but
+reasonable detection of Latin, like the old Latin-1, the Cyrillic,
+and those other ones. So you could look at a file
+and say, you know what? I don't think this is Unicode. Now, it didn't tell you what it was, but
+you could say it's probably not Unicode, mostly because of these prefixes
+were not every single prefix. Okay? So basically, you can ask how long? So there's a concept of characters,
+octets, that's the fancy way of saying bytes,
+and then bit length, okay? And so we can look at this little tiny
+four-character Chinese. I think this stands for
+learning management. It's four characters,
+because that's four Chinese characters. And in Unicode, a Chinese character takes the same
+width from a character perspective. Now, octet length, this is how it's
+actually stored in the database. So that actually is at 12
+bytes to store four characters. So these must be around
+three-byte characters. These particular ones that I
+chose are three-byte characters. So there are four characters
+that turn into 12 bytes. And bit length is basically going to
+be always this number times 8, so it's 96 bits. And then ASCII tells us what
+the actual Unicode number is, because this just tells you that's
+only for a single character. What's the Unicode number for
+that particular character? Okay, so that's the difference between
+ASCII, but char_length, bit_length and octet_length, and this could be
+a column etc., etc,, etc. So it's any string that's sort of
+once it's kind of inside Postgres, it's going to be UTF-8. And so you can see that this
+would be 4 times 4 to the 16, if we're like using all 32 bits. So we're even saving on
+character sets like Chinese. So again, they're using some of these
+patterns, so they look at these patterns. And if they don't see these patterns
+in the later bytes, they're like, I don't think this is Unicode. And so they use this as a signal, so that
+they say look, I mean, this not UTF-8. And so they can at least detect by
+looking kind of algorithmically, you can say hey, can you tell
+me if this file is UTF-8 or not? And so because they made it
+the UTF-8 format more strict, and you can put anything in these four bytes,
+then they actually can detect like invalid Unicode. And
+sometimes you'll get it, right? Sometimes you'll be reading a file, or downloading something off the Internet
+that claims to be UTF-8, and your software will say no, it's not UTF-8,
+because it violated one of these rules. Now, the the key to UTF-8 was
+it started in the early 2000s. Like any technology that in effect
+wants to replace a previous technology, transition is
+a really important thing. And so the nice thing about UTF-8
+is ASCII is the same as UTF-8. Up to 127, ASCII's the same as UTF-8. And so an ASCII file is a UTF-8 file,
+so a lot of things I did, because I'm from the United States,
+I'm like, yeah, it's UTF-8. I was only using those characters
+anyways, right? And so it made it really easy to do it. Now in databases, and on file systems, you actually had to explicitly
+sometimes convert back in the old days. But now we don't, we just make UTF-8
+things in the database and files, and send them across the network. And so by 2004, it was it was a 60%
+of the web pages were already UTF-8, and then you look at the ASCII
+there that's by 2012, the ASCII is about 15%. So frankly, ASCII and UTF-8 are the same.
+ASCII is a perfect subset of UFT-8. So you can see that there's not much.
+There's Western Europe character sets, that would be kind of like
+those Cyrillic ones. And there was some Japanese character
+sets, and like everything else. And so you see them even in 2012.
+And so at this point, 94% of the pages in the world are just
+plain old UTF-8, and that's really cool. And so it took 20 years, but
+these days, we just assume UTF-8. If you look in Postgres, you will see that you can have a database
+with lots of different character sets. Now these, you should
+think of these as legacy. You should not say oh, I'm in Japan,
+so I'm going to use Japanese. You might find yourself
+in a legacy situation. You do not want to do these for
+new stuff, okay? These are the old kind of formats,
+and you want to come up with a scheme that translates
+these perhaps into UTF-8. So basically, and if you look at
+other databases like MySQL, it has like a jillion UTF-8s in it. What you really want is just to be UTF-8,
+and then convert your data on the way in. If you're kind of stuck
+with some legacy data, get your legacy data converted into UTF-8. And as of 2019 and later,
+you just use UTF-8 going forward. So now I want to just do a quick review of
+how we deal with these character sets in Python, and it has to do with external
+data being used internally in Python.

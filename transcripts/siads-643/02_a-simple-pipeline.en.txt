@@ -1,0 +1,93 @@
+Let's walk through a very
+simple example and then talk about some of the reasons
+why this might be inflexible and difficult to expand as the complexity
+of our pipeline increases. Now, while a pipeline doesn't
+have to be extremely complicated, there are some reasons
+to not be too simple. But let's walk through a simple example
+and then look at some of the reasons why this might be inflexible or might cause us
+problems as we start to grow our process. So this is a very simple Python script,
+shows a full pipeline. Let's walk through
+everything it's doing so we understand exactly
+what this pipeline does. We start with a number of dependency
+imports, we're importing pandas, we're importing a library called pickle. Which is from the standard
+Python library and we're importing a number of
+things from the sklearn library. We start by reading the data in and
+cleaning it up a little bit. This sales export Excel file that we're
+reading from already has data more or less in the format that we need. We're just dropping a couple
+of the columns ID, date and zip code in those steps. To get rid of those because we don't
+need them for our initial analysis here. The next thing the script does is
+splits the data into the target for price in the y variable. And drops, it takes all the rest of
+the columns, but drops price and puts that into the capital x variable. Which will be a data frame that
+we'll use in the following step. In that step,
+in the train test split function, we're splitting our data set so
+that we can do training on it. And then test against the outcome with
+the test set within using a simple linear regression model. And then fitting that
+model with the training set that we split in the lines above. Once the model has been trained, we then
+use our test set to compare our scores. And in this case we're using a simple
+metric of mean absolute error to see how our model performed. And the very last thing
+the script does is, it outputs the model to
+a file called model.pkl. Let's talk a little bit
+about the pickle module, you'll see this pattern a lot in
+these machine learning pipelines. Where you've gone to the trouble
+of training a model and now you want to save it. So that you can use it somewhere else in
+your pipeline, or move it to production so that you can actually run
+predictions against it. This pattern is extremely common
+using this pickle module. And it's quite handy to be able to
+take a full fledged Python object and to serialize it, to save it to a file. But because when you deserialize it, when you read it in to make predictions
+in another part of your process. What you're getting is
+a full Python object, that means that you're also getting code. And other things that are coming from
+the disk, and usually this is fine, especially if you can trust
+the files that you're reading in. But the key thing here is that you must
+trust the files that you're reading in with pickle. Because if you don't know what
+the source of that file is, that can be a source of malicious
+code that can enter your system. The screenshot on the slide here,
+which reads, warning the pickle module is not secure. Only un-pickle data that you trust, that
+comes straight from the documentation for the pickle module. So let's talk about some of the places
+where this is going to start to be difficult. If we start to expand this pipeline, add more data out of the things
+that we want to do in the process. So while it's really simple, there are some things in here that
+are going to be pretty inflexible. Starting with the filename that's
+hard coded straight into the script. If this changes, that's something
+that we would have to either adapt or change the script. Or add additional code to take in
+different files and concatenate them and that kind of thing. Also, the cleaning step that we're
+doing here is extremely simple. We're just dropping a few columns that
+we don't need in our analysis and in our training our model. The cleaning step can often be
+much more complicated than this. Dealing with data that's
+badly formatted or needs to be that format needs to
+be changed, that kind of thing. And that can sometimes be
+a very time consuming step, not just decode the cleaning, but
+also to run the cleaning step. Another shortcoming here is that we're
+simply printing the outcome of our metrics to the screen. And so we would need some way to capture
+that or somebody we need to monitor it. To look at different comparisons as you're
+running running with different data or you're making changes
+to the training steps. And then finally, writing the output, writing the outcome model to
+a file is also hard coded. So this is very tightly coupled,
+we have a end to end pipeline, but it is really we have to run
+the whole thing every time. Now I mentioned earlier that the cleaning
+step can sometimes be very slow. For this example, we're using in this example
+the data that I happen to be using. The lines where we're reading in
+the Excel file and dropping these columns actually takes longer than training the
+model and writing it out to a pickle file. It would be nice to be able to decouple
+those and as your pipeline gets bigger and bigger and more complicated. Those different steps that happen
+can take longer and longer, and so it can be nice to decouple
+which things run at which times. So even if a simple pipeline is useful for
+exploratory analysis or to demonstrate a point,
+they can be very difficult to scale. When your data grows, and
+as your analysis becomes more complex and you want to be able to add
+more things to the pipeline. It could be a challenge, especially if there are parts of
+the process that are very slow. Because you'll need to make a change, run
+the whole pipeline and that can take time. Making that development
+cycle of making a change and then seeing the effect that it had very
+long, which can be frustrating to develop. So you should really think about using
+tools that can help with that process. There could be times when we might want
+to add additional code to this kind of pipeline. To import different files or
+to add logic to cash things but when we start to get to
+that level of complexity. It's really a good idea to start
+looking at other tooling options. So this example shows that that simplicity
+can be nice because we can see exactly what's happening at every stage of the
+pipeline, right there in a single script. But as things get more complicated and
+we want to add complexity or cashing for different steps. That can be become very unwieldy
+pretty quickly when we start adding that additional flexibility. So as we build pipelines, it is really
+important to consider the kinds of tooling that can help with these
+kinds of challenges. Rather than building our own
+solutions that will make running the pipeline easier. And it will make it easier to
+grow as it gets more complicated.

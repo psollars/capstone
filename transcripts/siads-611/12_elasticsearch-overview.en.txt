@@ -1,0 +1,173 @@
+So now, I want to talk a little
+bit about Elasticsearch. Elasticsearch is one of many possible
+eventual consistency databases that you might use. I don't have a lot of experience, but it's the one I have
+the most experience in. So we'll use it. And it's really commonly
+used to add value to an otherwise ACID-based system. So the history of
+Elasticsearch is that it emerged from an earlier open source
+project called Lucene, and the idea was to replicate the things
+that Google would do. It wanted to be
+super distributed. It wanted to take a
+firehose of input data. It wanted to be able to handle
+terabytes of data at rest, do large-scale parallel
+searching really fast, throw cheap commodity hardware at it and make it go faster. It's very much an inverted index with value add, with languages, with stemming, ranking,
+and relevance, and all that kind of stuff. Probably far more
+sophisticated ranking and relevance than Postgres
+ranking and relevance, which is not bad,
+but it's not great. A recommendation engine, all the kinds of things that you might want to do in an application that wanted to have
+Google-like features. And at some point there's
+this thing that says, like every application
+has to have a search box. And I think that's a
+fair statement, that every application
+should have a search box as long as it has information that
+people might want to find. There was an earlier project
+called Apache Lucene, which is really the indexing
+part of the technology. Elasticsearch is a really
+smoothing layer on top of a lot of otherwise
+difficult to do. It almost is like when you're outsourcing to Amazon DynamoDB, it's like there's
+something in there. It's really complex. And the same is true
+for Elasticsearch. There's something in there
+that's really complex, but you don't worry
+too much about that. It self-organizes
+within Elasticsearch. And what happened was
+what started out as kind of a search box feature for
+applications has become a NoSQL database
+in its own right, primarily because the
+inverted index had to be super performant, and
+updated distributed, and there's a lot of really nice things
+about it that basically made it, almost out of the box, a really good NoSQL or
+BASE-style database. I am really sensitive when I talk to you
+about technologies, what their license is. And Postgres is an
+open source community, one of my favorite
+open source communities. It just impresses me
+how long they function and the high-level
+function that they have. Elasticsearch is not
+entirely open source. They use a license
+called a open core. There's a core that
+is Apache licensed. And then there's this
+Elastic company, I think it's called Elastic
+NV, that supports it. And they're a very large company
+and very successful company. There's a whole range of whether I like open
+core or not. There are some open core vendors
+that I think are monsters that just are open
+core's bait-and-switch. Elastic somehow is a
+reasonably sized company that has a pretty
+good commitment to open source to the point where I think a lot of people use Elasticsearch without
+even realizing that it's not an
+open source project, it's an open core project. Everything I've ever done with Elasticsearch is the
+open source version. The problem with most
+open core companies, if their open source
+version is lame, and then they're like,
+"Well, you should just pay," well, then that's pretty bad. So it's okay I think for Elastic to charge for
+hosting and consulting. As long as we can do
+the things we want with a pure open source
+version and they don't show any urge to sort of like deprecate the open source version or sort
+of like bait-and-switch you, I'm okay with that. But you
+take care of that yourself. You take a look at that yourself, and hopefully there's enough of an open source community around the open source parts
+of Elasticsearch, which is the core
+parts, that they're not going to be motivated
+to go sort of evil on us. Kind of the way I've talked to you
+about how I'm nervous about MySQL, which is not particularly
+an open core project, just because they
+own it. It's Oracle. So I use Elasticsearch in
+project that is called Sakai, which is an open source
+learning management system. A real open source,
+not open core. And we used it in a kind of a
+hybrid situation. So we have a database system, MySQL or Oracle, MySQL is my preferred, for
+all the transactional bits, and grades, and memberships in classes, and things like that. We outsource the file storage for PDFs and things that students
+and teachers might upload, and then we have an
+Elasticsearch instance. And we feed both the blog posting, discussion postings, and
+pages, and everything, we feed all that into
+Elasticsearch as JSON documents by
+extracting the text and then sending the text
+in as a JSON document. And we also have extractors
+that read through PDFs and Excel spreadsheets and
+Microsoft Word documents. And there are extractors
+that extract the features from those, and then they feed those into a Elasticsearch index as well. And then we have a search UI that we talk in the user interface, we talk to Elasticsearch.
+When you type something like relational into
+the search engine, we find the posts that
+mention relational, and the Excel spreadsheets that
+mention relational, etc., etc., etc. So it's a very hybrid system. We're not really using
+it as a NoSQL database. So that's just sort of a lot of how Elasticsearch has
+historically been used. Probably, one of the more
+popular applications of Elasticsearch is
+called the ELK Stack. Elasticsearch, Logstash. and Kibana, all open source mostly. And this is beautiful. They're using really
+Elasticsearch, in this case, less as a search engine
+and more as a NoSQL distributed database or
+eventual consistency database. Logs are the things that all these
+production services are generating as fast as they can. A lot of data analysis
+is done with logs, and so Logstash is
+basically receive these things and then just
+blast it into Elasticsearch. And I talk often about how most database
+activity is read mostly, but this ELK is
+often write mostly. I mean, on average, it's probably doing
+more writing and has a higher demand for
+quick write performance than it does read performance,
+which is really kind of great, in that it stresses the underlying
+Elasticsearch database in ways that you
+might not stress it. Like we don't stress it that
+way in Sakai because how many PDFs get uploaded?
+Well, a couple an hour, which is different than a log thing is coming
+out 100 times a second. And Elasticsearch can absorb
+a firehose of data. A lot of the early NoSQL
+work was read mostly. And so it could absorb
+it at a certain rate and it had a great
+read performance, but its ability to absorb
+writes was kind of troublesome. A lot of magic systems
+have trouble with writes, but this ELK application or this ELK kit means that write performance is
+really good with Elasticsearch. Then there's Kibana, which is a visualization system
+that you may run into. And once your data's
+in Elasticsearch, you can create dashboards that just kind of blast the queries out. And in this, you see multi-readers, supermassive performance, and nice parallel
+distributed scatter/gather, and all that stuff comes
+into play when you want to basically ask what
+happened in the last 24 hours, and boom, you have a dashboard. So this ELK is a really beautiful use of Elasticsearch as
+a NoSQL database that strongly pushes the envelope of write performance
+and read performance, and it simply couldn't be done with a relational
+database system. So you just make this
+Elasticsearch thing bigger and smaller based on the resources you throw at it. It automatically
+reorganizes itself. And in there, there's Lucene and a whole
+bunch of other things, but Elasticsearch is
+kind of like the nice wrapper that
+works around it. I mean, I haven't yet done
+anything with Kibana, but I really want to. I mean, I like Elasticsearch and I like its write performance and I like its read performance, and Kibana seems
+like a no-brainer. It's pretty dang cool. So if you look kind of at the
+internal architecture of it, it's all based on
+REST Web Services. That's why I say Elasticsearch
+is a wrapper for a whole bunch of
+complex things that themselves might be difficult. So in a sense, Elasticsearch
+is your DynamoDB, except that you can install
+it and run it yourself. So you can feed it data at a high rate of speed
+and you can take data out and get queries, and it's all inside,
+completely distributed. There's all this
+eventual consistency, everything is communicated, indexes recalculated
+and everything are all like just magically delicious. And we have a beautiful little
+REST Web Service API, which makes it really easy
+to talk to it in just about any language because you're using JSON and REST Web Services. If you're using Python, or PHP, or Java, or whatever, this is really pretty straightforward. And the Elastic folks have built really cool clients
+that make talking to Elastic pretty easy from a wide range of
+programming languages. Of course, given that the data can come in to any
+of those servers, that's how it has really
+super-fast write performance, it is an eventual
+consistency system because the indexes are done
+sort of after the fact. So any of those servers can
+receive a new document. Any of those servers can start the indexing
+of that document, then add those to
+the inverted index, and then the inverted index itself
+is widely distributed. So the newly indexed
+documents are sent across and then exchanged
+in a few seconds, to maybe a minute or so, they are
+all eventually consistent, but the indexes are
+eventually consistent. I would say probably because it's really based on
+a search engine paradigm, the distributed indexing is one of the most advanced NoSQL
+databases when it comes to distributed indexing
+because it started as a distributed indexing
+problem and then kind of wrapped a NoSQL database around a
+super-fast distributed index. So this gives you a sense of
+the structure of the URL. And the ones we'll be
+using in this class, we're going to use HTTPS. You can send the credentials
+right on the HTTP command. But the key is, on the end of it, there's two parts of the URL. One is an index. You
+could think of the index, the index is kind of like a table. So those URLs that you'll
+see when you start writing code, that's
+the structure. Again, it's a REST Web Service, so I'm showing you a
+URL that captures this. So next, we'll just kind of
+talk a little bit about the programming
+pattern for Elasticsearch. But then, the most fun will be in the actual
+code walkthroughs. [MUSIC]

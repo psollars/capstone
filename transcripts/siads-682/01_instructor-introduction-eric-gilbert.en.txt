@@ -1,0 +1,36 @@
+Hi. I'm Eric Gilbert. I'm the instructor for this class. I wanted to take a minute just
+to introduce myself here. I'm an associate professor here
+in the school of information. I also have a courtesy
+appointment in computer science. I have been at the school of
+information for about three years now. Before that, I was an assistant professor at
+Georgia Tech in the College of Computing. A few things you should know about me
+one is that I'm coming to you from my snowy bunker and
+a month 11 of the pandemic. So, you may see my dog. You may hear my young son who is
+doing home school from the house, but all that's nice, I suppose. I adore coffee and so you might see me
+drinking coffee throughout these videos. Also something that I'll talk about
+more is that I have a new instructional philosophy that's more participatory and
+less oriented Iran consumption. So I've tried to build that into this
+course as much as I possibly can, so you may see that come up through
+the assignments and through the videos. So a little bit about my research,
+because I think it informs this class. My research is very close to
+the topic of this classes. You'll see, I think,
+as we go through the course. So just a few kind of snippets of research
+that I've done that might be helpful to kind of orient you to who I am and
+where I'm coming from. This is you're seeing a diagram
+here from a paper that we published a couple of years ago,
+that is using data science and AI techniques to stream comments that
+are coming in on Reddit Live and then pipe them into a moderation system
+that allows moderators in subreddit, which are sub communities on reddit,
+to take pre configured actions. So we used a lot of kind of back end data
+science and human centered methods in conjunction to build this system
+that works live on Reddit. And it was deployed in a community of over
+10 million active registers and used for over a year. So it's called cross mod. You can go and
+read the paper that's side of there. If you're interested in more another
+example, that's a paper that's on the syllabus, for this course is the paper
+we wrote last year called Still Out There, which is about identifying
+Russian trolls on Twitter. So we know that the Russian state used
+Twitter to try to influence the election. We have a data set of those things,
+and we're able to build models that distinguish those actors from other quote
+unquote normal or everyday accounts. And the idea was to inform
+policy at Twitter and also keep people safe on the Internet. All right, so I look forward to
+having you in this class, and I'm really excited that you're here. Thanks.

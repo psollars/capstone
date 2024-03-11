@@ -1,0 +1,80 @@
+Math methods for Data Science
+Optimization, the basics. Remember the goal of
+optimization is to use specific methods to find
+the best solution to a problem. Maybe define the best functional representation of the data, and then the best hyperplane
+to classify the data. Recall the classification
+as optimization example. This is an example where
+we're trying to find the best hyperplane to
+classify some data. Essentially what
+we're doing is we're creating a division in the data such that the error or
+misclassification is minimized. This doesn't have to be
+a line or even a plane. It can be another set of
+functions like an ellipse. What is behind optimization? A lot of math. We have many data points, ai, and their associated outputs, yi, and we can learn
+some function that maps the data to its output Phi. This is the root of optimization. Why would we do this? We can use the developed
+functions to apply to other data to predict
+future outcomes. We can express in terms of
+an optimization problem. We can use parameters, aka variables, to build
+the function Phi. Then use statistical principles
+that take the set of ai to yi to evaluate the function,
+i.e, through likelihoods. We can use regression and
+classification methods like least-squares regression
+and logistic regression, or support vector machines. We generally want to
+train our algorithm on one set of data and
+validate it on another. Once we have a solid algorithm, we move to a testing data set. Our training data set is typically a sample of
+data used to fit a model, and our validation data set is a sample of data
+used to provide an unbiased appraisal
+of the model fit and fine-tune parameters. Our testing data set is
+a completely different sample used to give
+an unbiased evaluation of the final model fit. Test data is only used
+after the model has been parameterized and tuned with the training and validation sets. In data competitions,
+a training and validation set are
+usually released, and a test set is withheld. This test set is often what is used to evaluate
+different algorithms to determine the best one to figure out the winner
+of the competition. You will often see a validation data set used as a test data set, but this isn't necessarily a good idea because the training and validation
+samples are often split off one data set which has its own sampling bias that may be different from
+the testing data set. How do you know where
+to split the data? This depends on
+the total number of samples you have and
+the model you're training. It's specific to the problem and the split will depend
+mostly on that. You could also use a method
+called cross-validation. Once a training data
+set is defined, you may choose a certain percent of that to be the validation, with the remaining
+to be the training. You can do this repeatedly for different random samples
+of X per cent. Let's look at an example
+of training and validation and testing data sets. Is there a dog in the photo? We're going to come up
+with some algorithm. We would randomly select
+some percentage of the photos on which to
+train our algorithm. Let's say we're selecting all of these images and red to
+be our training data set, and the rest to be our
+validation data set. We then go through
+the algorithm for different photos in
+our training set until we have a tuned algorithm that will correctly
+classify these images. In this case, is there
+a dog in the photo? Yes. Is there a dog
+in this photo? Yes. Is there a dog in
+this photo? Definitely not. In this case, our inputs, x, are our images, and our outputs, y, are our decisions. We create some algorithm h such that for every little x
+in a set of big X, it maps to every little y
+in a set of big Y, which are real numbers. After we have a good algorithm, we move to a validation
+stage where we take our algorithm and apply
+it to a unique data set. One that doesn't
+have repeated values from the training data set. To calculate an unbiased estimate of how good our algorithm is, here we might record
+the percentage of images in the new validation set that
+were incorrectly identified, and try to minimize
+that percentage by tuning the variables that
+go into our algorithm. This was an example of
+a supervised learning algorithm, where we have a priori, or prior knowledge
+about the outputs and the data set that we can use
+to evaluate the algorithm. Methods like classification
+or categorization, linear regression, or
+logistic regression are supervised methods. Unsupervised methods do
+not have known outputs. We're trying to infer some natural structure
+within the data. This includes methods like clustering and
+dimension reduction. Principal components
+which we learned about in previous lectures are
+an unsupervised learning method. What we're going to discuss
+this week are components of optimization problems
+including objective functions, decision variables, constraints, canonical
+formulations, loss functions, gradient descent, and
+issues in optimization. Most if not all of these topics
+will be covered in much more detail in later courses on Machine Learning
+and Optimization.

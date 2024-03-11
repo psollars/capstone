@@ -1,0 +1,68 @@
+Hello, and welcome to another
+walkthrough of our Postgres. We're now in week three material. And the thing that's going to be the focus
+of week three, which I grab a whole bunch of ideas and I call them techniques, is a
+simple three-table many-to-many situation. We're going to have users and
+posts and comments. And the comment is effectively a
+many-to-many join table except it has very important information that's stored at
+that connection in the content, right? So created_at the content. There's all kinds of stuff here. A post belongs to a user. So we have a foreign key, account_id. And so, away we go. So let's go ahead and
+build these tables, just copy them all. Comments and all, and
+post them into there we go. Good thing I've got no
+typographical errors. If you see some of my slides
+that say TIMESTAMPZ, that was a common typo that I made. So anytime you see TIMESTAMPZ,
+turn it into TIMESTAMPTZ. Sorry about that mistake. And so now we have this all set up. Now, let's make this favorites also. Now, I want to talk a little
+bit about the ALTER TABLE. So one of the cool things about
+the database, and usually it's not right after you create it
+where you notice you've made a mistake, but we're going to fix
+a couple of mistakes. So if you look at the post table,
+you see that I made content VARCHAR 1024. I'm in a meeting and someone says whoa, we're going to have posts that are
+more than 1,000 characters. So I'm like, I better fix that. ALTER TABLE post
+ALTER COLUMN content TYPE TEXT. So what we're doing is we're
+changing a table, table post. We're altering a column, ALTER COLUMN. The name of the column is content,
+and the new type is text. Now, the key is this is also going to
+convert live during the database if there is already data. And so, ALTER TABLE is a
+very powerful thing. We can get rid of a column,
+ALTER TABLE fav DROP COLUMN oops. And so that gets rid of a column. And we can add another column, add a column ALTER TABLE fav
+ADD COLUMN howmuch INTEGER. And so, that adds a column. So we're able to play with
+the schema of these tables. The schema is very
+constraining on purpose. That's just how databases work. But we get to change the schema. And automatic conversion. You can convert something from a integer
+to a string, or a string to an integer. If you do an ALTER TABLE that
+converts from a string to an integer, it's going to try to convert it. And it will have trouble if there's
+strings in there that aren't legitimate integers. But you'd be surprised
+at how much you can do. And you can do it while
+the database is running and while actually transactions are happening,
+as long as you don't break the software. So if you drop a column
+the software's looking for, then all the SELECT statements will
+just like blow up in the next moment. But you can alter these tables.
+So that's pretty cool. So next thing I want to do is
+I want to load a bit of data. And so, you can make SQL commands. You've seen me just copying and
+pasting this stuff. But you can also do this by putting it
+all in a file and then running the file. So if I look at this file
+03-Techniques-Load.sql, the one thing I'm doing is,
+DELETE FROM account, remember how a delete statement
+works, it's delete all records. And this ALTER SEQUENCE, this
+basically restarts this serial number, so I clear them all out. This you wouldn't do in
+a live running database. I'm just doing this so I can do it
+over and over and over again. And then, I'm going to do some insert
+statements, fill some stuff up, just sort of to save it. Now, you need to figure out
+how to get this in here. And so, what I'm going to do is I'm
+going to make myself a terminal. And I am in that same directory. I could download that file,
+and I could upload that file. But the easiest thing to do
+is do what's called a wget. So wget actually retrieves
+a file using HTTP, and then stores it in the local directory. And I an going to grab this. Actually, that's not quite
+going to work because I don't have it
+up on its ultimate final its domain name is not final yet. So it's going to have to come from here. Okay, so if I do an ls minus l,
+you see that I have this file here. And if I do a nano of
+03-Techniques-Load.sql, there we go. And Ctrl-X gets me out of that. So I've got that file loaded. So that means that I can go back
+here in this same place and I can simply say read this file. So anything that says backslash,
+backslash i, and we'll have other things
+like backslash d plus, those are commands to the Postgres client,
+the psql client that you're using. They're not actual SQL. And so, if you're using MySQL or
+Oracle, this like d plus fav, there's a whole different name for that. And so, those are
+non-standard across databases. ALTER TABLE is pretty
+standard across databases. But certainly, CREATE TABLE's pretty
+standard, SELECT is pretty standard. But I'm going to use this backslash i,
+and that is going to load a file from this shell that I'm working at
+inside of my Jupyter notebook. And I copy that file there,
+and it's going to load it, and it ran all of those commands. See how cool that is? So now, I can say SELECT star FROM post. And there they are. So all those things were loaded up quite
+nicely, and that just saves me some time. Okay, so I'm going to stop now, and I'll pick this up a bit later
+with the same database.

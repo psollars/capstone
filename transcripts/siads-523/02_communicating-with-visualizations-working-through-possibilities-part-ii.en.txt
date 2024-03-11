@@ -1,0 +1,175 @@
+All right, so here we are
+in Google Sheets. You can see that we've gotten to the same
+visualization style that we had in PowerPoint. I'm going to move this
+one out of the way and let's work on constructing
+it from scratch. So super easy data set, right? No Python required. You're going to
+highlight the cells that you want to visualize, and you're
+going to pick this Insert Chart button. And this is why I prefer to start doing my explorations when it's simple
+demographic data or report data like this. It's why I prefer to start in Google Sheets because what comes up
+is this whole mapping of choices. And so it's really easy for me when I'm
+tired and I don't want to work very hard to figure out what it is that
+I'm trying to visualize. And so here it defaults
+to a line chart and this is interesting in part because what
+it shows is the different heights of data. So you can see that although we've really
+harped on Wisconsin in the example as being the state without change, the reality is my state of Michigan is the
+one that still has the biggest problem. And this chart does a good
+job of describing that. But I remembered thinking
+that I thought that what I wanted to do was show the trend of
+change from point A to point B. And so I kind of thought a slopegraph
+felt like a better way to go. So you could walk through this data. You
+could pick all of these different styles. We can layer them, we can add shading. We shouldn't make a pie chart,
+but look, it lets you. And so this is where you've
+got to keep your own sort of, your own compass
+of what looks right. I decided I might try to
+flip the rows and the columns and by doing that I actually got what
+it was that I was looking for. Now, in this case, you can see
+how having a lot of colors gives you a sense that maybe the two
+blue ones kind of go together and sort of the reddish-shaped ones
+maybe go together. And so here we have a lot of colors that are starting to give off
+a message that we don't want. Now you could take this
+right into PowerPoint and you could just trace over it or
+you can go and double-click on lines and decide that you want to gray things out
+until all that's left is Wisconsin. So we could do this this way. And then what I would do from here is
+I could play with line thickness. So maybe when I get to Wisconsin, which is that one, maybe I want to make
+the line thickness a little bit more. And again, I'm not having to
+think too hard, right? Because I can always toggle
+between these other choices and I like this option a lot. So the other thing that as I think
+about doing this is I also am always thinking about legends and
+do I need the legends that I have? So in this case, remember what we did in the final
+one is we just wiped it out, right? We got rid of this whole section and what we did instead was label
+the individual lines instead. Because the other thing that comes
+into play here is here again we have the data sorted hierarchically
+in alphabetical order, and yet the lines here are not in the order of the legend,
+and that can be a little bit confusing. So what I would do next is I
+would take this into PowerPoint. I would clean up this header.
+I could do it here if I wanted, but I get a little bit more font
+choices and I just still think it's easier to work in PowerPoint. And here
+I would add my header and my subheader. So as we come back and
+look at this visualization, you'll see that we've added the
+header, we've added the subheader, We've sorted the states.
+Instead of being in a separate column off to the side as a separate
+key, which adds visual clutter, we've actually put the states right next
+to the data lines which keeps things looking a little bit cleaner. And you can see that we do have
+the source of that data right here. And so we know that this is not data
+from the "Kristin Corporation," this is data we got from someone else. All right, so that's one example,
+and as I mentioned, I do use PowerPoint to go in and
+label things or take extra things out or to streamline things as well, only
+because that's easiest for me. And you aren't here to
+be graphic designers. You're here to be data scientists, hopefully progressing into
+being data analysts, and so you want to work as
+efficiently as possible. So use the tool that's easiest for you. So you can see that I really like these
+Free Press visualizations that were made several years ago. And I keep coming back to them because I
+think both that they were great examples for the time in which they were written and I think too that there
+are opportunities to streamline things. So here the visualization is trying to
+make a couple of significant points. One is that the overall spending
+is quite a bit down from before, so there's less money that's
+available to be spent. And so you see the overall length of the top graph is much
+longer than the second one. And also that they've sorted the types of
+spending into various smaller segments. And so here's a case where
+to show a lot of detail, we might be losing some
+of the big picture. So here's a case where we've got data,
+all we need to do is trace it. We don't actually have to go back in and
+create a spreadsheet, we could if we wanted. But in this case, I wanted to see
+if I could take anything away and really make the point of the smaller
+2012 spending really stand out. So here all I did was take some
+things away and consolidate things. So here's the after and here's the before. So I've done a couple things. I've changed
+some fonts and I've taken away some of the boldness of some of the fonts so
+that they recede a little bit. I've combined police and fire into a
+single category, so that I can really see, wow, police and fire together
+have gone from 17 to 47%. And you might remember in the before,
+there was this horizontal dotted line and that actually ended up feeling
+a little bit distracting to me. So between the consolidation and
+so having less text and also taking out the dotted line, now
+I really see the impact that the total spending is just quite
+a bit less than it used to be. And I can see that expenses in each
+of those categories is going up. So the issue of debt isn't really
+the key thing here that has changed for the city of Detroit. It's that there's less money and
+it's being spent much more disproportionately on public safety
+than it was being spent in 1960. If you're like me,
+I set up on my Twitter feed, I like to see things from The Economist. I like to see things from
+the Detroit Free Press. I like to see Wall Street Journal
+visualizations. I like New York Times visualizations.
+And I like the mental exercise and the mental practice of looking
+at how someone did it and thinking about how I might
+like to do it differently. I think it helps me feel a little
+bit more flexible in my thinking when it's my turn to
+create the visualization. Now, there may be cases if you
+are using existing data, so think about when you were
+looking in DemographicsNow. Every now and then you might find
+a pie chart and that looks really appealing to replicate,
+but the colors are off. What you can do in that case, if you've got a visualization that you
+like the general shape of, circles and pie charts don't trace
+very well in PowerPoint. So we've got a separate tutorial that
+Lauren made for you on how you can use the free Inkscape software, which is
+a free open source download on line. And she uses that to insert images and the software will actually
+divide that into layers. And once you have the
+pie chart in layers, then you can change the colors
+accordingly. No code. So this is a hack that works for
+those who like graphics, but want a simpler way to go about that. Here is another example, by the way. This is, I think we looked at
+this a little bit earlier. This is an Economist one.
+You can tell right away. It's got that Economist font,
+it's got the branding, it's got the source information.
+Gold standard is The Economist. This is a really interesting bit
+of data because it's clearly taking someone else's data and it's
+trying to tell its own story based on it. So on one hand what we see here is
+we used to have a lot of vinyl and a lot of cassettes and then we
+went to almost exclusively CDs and then we moved to MP3s and streaming. So here we start with this color coding
+that says, all the analog formats are in a shade of red and the digital
+formats are in a shade of blue. The challenge is that
+this graphic actually has a header that says vinyl
+should overtake CDs this year. This becomes harder for us to find because
+now we know that the leading actors or players in this visualization,
+what's important is not is it analog or digital, which is what the colors
+are telling us is important. We're actually going to be
+looking at two different analog formats, CD and vinyl. So Lauren did this example and I want to show you how she
+worked through it a little bit. So she took the Inkscape method.
+She started by thinking, well, what if she made some of
+the other analog things purple. So we would have vinyl
+would stand out, and then we would have vinyl
+compared to cassettes and CDs. So she played with purple for a while. It still wasn't quite telling
+the story she was wanting to tell. So she tried a different set of colors and here we're looking at sort of
+breaking the whole color scheme and now we're going to try vinyl being yellow
+and we're going to have CDs being pink. And now when we look at the
+2010, 2015, 2018 data, we see a little bit more
+distinction between vinyl and CDs. She still wasn't completely
+happy with that. So she said I think what's really
+important is this is a visualization about vinyl. So the thing that should really stand
+out is the vinyl should be red and then I can turn everything else blue and suddenly the red is the protagonist
+of this visualization. And when it comes to
+comparing vinyl to CDs, it's actually much easier to do that
+than it was in earlier versions. So again, take the time to explore. You
+could have remade this with PowerPoint, but really in this case Lauren's
+Inkscape tutorial is the way to go. And by the way, The Economist actually had
+a version of this graphic that appeared on its Twitter feed, which
+is the one on the left. And if you clicked through to the story,
+they actually had a different version of this visualization that used
+different colors and actually had a different takeaway message, so
+you can see the headlines are different. The Twitter one, the one we've been
+exploring, was comparing vinyl to CDs. The second one is just saying
+hey, formats are changing. So here is where that
+addition of text makes a really big difference in helping
+people see what you want to see. And as you'll notice as you're
+writing your report and in later weeks, in Week 4 you're working on presentations when you've
+got limited time and limited space, you really want to use the attention
+you have to be very clear and very direct about what you want
+people to see in that data. Now I'm going to take you over to the web
+to show you another fun way that this got visualized, so I'll meet you over there. So now we're on the
+American Enterprise Institute, which is a conservative think tank. They actually got this same data and they visualized it totally differently
+in one of these blog posts. And I'm going to click to get it started. What you'll see is that they've actually
+animated their bar graphs over time, and this time they're using
+horizontal ones. And what you'll watch is that whichever is the dominant medium
+is going to change as time goes on. So just think about we're not going to
+deal with animations in this course, but think about how fun it would be as your
+skills get more advanced to create an animation like this. Let's take a look. You can see that vinyl starts out in
+the lead and you see that little tussle between cassette and 8-track take
+place, that becomes dominant. Vinyl keeps dropping, keeps dropping.
+And you can see how this data is moving. The year countdown that you see
+in the bottom right corner, it's going pretty slowly. But the fact that things are moving
+as they switch hierarchies is actually kind of mesmerizing, isn't it? And know that if someone
+took a screenshot of this, you would know where it came from. You would know where
+your source data was and you would also know that it came from
+the American Enterprise Institute. So if someone screenshots this, puts this on
+their blog, puts it in their social media, it can still be tracked
+down to the creator. So hopefully you enjoyed
+that variation on a theme. All right, let's head back over
+to the slides.

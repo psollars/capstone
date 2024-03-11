@@ -1,0 +1,205 @@
+Hello and welcome to
+another sample code walkthrough for our Postgres class. We're currently working on connecting Python and Postgres. And so the first thing
+we're going to do is and by the way you can get the
+sample SQL that I'm using. I really prefer to
+run through this by simply copying and pasting. After the class, you can
+keep these SQL files. They're great examples,
+I refer back to them myself because once I
+figure something out, sometimes it's like put the two parentheses around it,
+and like why did I do that? But I would keep these. So this file's at
+www.pg4e.com/lecture/06-python.sql, and I always put comments at
+the beginning of these files. So first thing that I
+want to show you. So what I've got
+going here is I've got one screen that I'm going to
+one tab that's going to have my copying
+and pasting stuff, one tab where I'm going to run my Linux/Unix Commands and
+run all my Python code, and then one tab that's
+connected to my database. And you may need
+another tab that has your tunnel if you're
+behind IP filtering. So you may need a fourth
+tab, but I'm just all set. So the first thing that I suggest that you do
+every once in a while is just do a dt
+command in pg4e. And you see I've got a couple
+of databases, docs_stem and stop_words, and I should
+probably clean those up. So you just say
+DROP TABLE docs_stem Oops, I can't type docs_stem, CASCADE. Something
+was wrong there. Okay, DROP TABLE
+docs_stem CASCADE. CASCADE just means if there's any foreign keys, it wipes out
+the other tables as well. stop_words. And now I'll do dt. Now, don't delete
+any of these py4e_debug, meta, or result. Oh, I've got to get rid of
+this pythonfun too. DROP TABLE pythonfun CASCADE. So now I've got three tables
+left, pg4e_debug, pg4e_meta, pg4e_result, and these are all things that the autograder is going to use and/or needs. So if you mess these up, there is a early assignment that gets them set
+back up for you. So it's not fatal
+if you delete them, you just got to go back
+and get them fixed, otherwise the autograders
+are going to be unhappy. They're also a way for you to look at results of
+the autograders. We're not doing
+autograder right now. I'm going to clear my screen
+and so let's get to this. So the first thing is you've
+got to have a connector, what's called a database connector, and it's got
+to be a piece of code installed in your Python. And you can check to see
+if it's installed by just saying going into the Python and saying import p s y c o p g 2, is that what this is? I couldn't remember the name, psycops, it's what
+it seems like to me. And if that works, then you're good. Don't run this pip command. But if it doesn't work and
+this is the part where it all depends on how your Python is set up and everyone installs
+Python in a weird way. If you've got an Anaconda or this, I actually don't even use virtual environments and
+people tell me I'm terrible, but my Mac is nice and clean and I've got a
+brew-installed Python3. So I can just say pip3 install psycop2 and it says pg2, says I've already got it. So I'm good. That means that, and of course what will happen is these lines, this code
+will blow up in simple.py. So let me go grab the simple.py
+code. I just used a wget to
+https.www.pg3.com/code/simple.py and that in effect
+downloaded that file. So I can edit that file
+simple.py and so we see that. The next file I'm told to get is a wget of pg4e/code/hidden-dist.py. Now, the key thing here is if you take a look
+at hidden-dist, in general when people build code and they're going to
+give you like sample code, hidden-dist is copied
+to hidden-dist.py and so the file that really matters, the file that's really
+going to be used, is called hidden.py and you can move
+it or you can copy it, hidden-dist.py and
+then the idea is that hidden-dist
+has sample data but hidden has your real data. Now I'm not going to show
+you my real data. I have my real data in a
+folder right next door. Oops. Copy hidden.py dot. So I'm copying that, yours won't be in dot slash code and so now sitting here I've got
+hidden-dist.py and hidden.py, hidden-dist has the
+sample connection data. That's the connection data. It's same connection data
+that you're sitting using over here to connect
+to your database. It's all in there. I'm not
+going to show it to you. And if you take a look at simple.py, we're importing it and then all of the secrets
+in this connection. So when you do this
+psycopg2 connect, you've got to tell it the
+host you're going to, the database that
+you're going to, the user that you're going to connect with,
+and the password you're going to connect with.
+And that connect timeout is just three seconds. So what happens is this. So this secrets, that's just going and grabbing
+the secrets, which is just a dictionary, out of that hidden.py file and
+then I can look it up in that dictionary the
+keys that were in that file. Now, a connection in Python is,
+it's not exactly the same as it's very similar to in a
+sense this connection, but you don't, when you type commands you get what's
+called a cursor. And so if I do a \dt in
+this case and I say SELECT star FROM pg4e_result just for yucks. In a sense, what we would do is we have this
+connection, but then we would create a cursor and then to use the cursor to send the command and then the cursor
+would then allow us to read the records
+that come back. That's too long. So the cursor would take this command, SELECT
+title FROM pg4e_result, it would send it to the database, then we would get back in a sense a handle and then we would loop through and read all of the records that come
+back in the record set. So you see this where we make the connection. Now, the
+connection can blow up if you have the wrong
+ID or the wrong password, or the wrong host or whatever, but really if we want to
+send commands we call it, ask for a cursor. So we say, hey connection,
+give me a cursor, and a cursor is what we send SQL commands to inside of Python. So I'm just putting SQL, this DROP TABLE IF EXISTS
+pythonfun. You'll see that I drop often when I'm writing Python code. If I really wanted
+to start fresh, I'd drop the table and
+then I'd create the table, as compared to making myself manually drop or
+create the table. I'm going to print it out and then I'm going to execute it. So the execute, that
+actually sends it, and sends it to the database. That could blow up if I made
+a typographical error here, and we'll see a mistake
+in a second. It will blow up, that
+execute will blow up. And I'm going to create a table. I'm going to just get a
+autoincrement serial and a text, and I'm going to run that one. So that's sending that. And then this conn.commit, we do this on the
+connection object, it basically flushes it
+all to the database server. Sometimes the connection and
+the cursor to be efficient it doesn't actually send
+every command instantly. It kind of queues them up. So commit says look, you may or may not have sent
+all of these commands, but I want you to send them
+now. I'm going to wait. So when you see this commit, what you might see is
+your program running and running and running and you do a commit and it
+pauses for a second, and it's forcing all that
+stuff in the database, and the commit does not
+finish until data's actually written to the disk in the database, which is
+really quite nice. And then I'm going to do
+insert 10 records. The first thing that you see here
+is that there is a percent s, this is a substitution parameter and INSERT INTO pythonfun
+line VALUES percent s. The percent s is a
+substitution parameter, and if I'm going to
+execute that SQL, then I send it a tuple with
+a one-to-one correspondence. That this variable txt, which is a string, is one-to-one correspondence
+to these percent s's. Now, this little txt comma parentheses, this is the weird thing we do in Python when we have a one-tuple. We'd go percent thing comma close parentheses, and
+there's only one of them. But that's the way it
+knows it's a tuple. And so it's just one tuple. We'll see later when
+we're at more than one of these things it actually
+makes more sense. Here's the SQL with the
+substitution areas as the first
+parameter to execute, and then a tuple, which is the variables that represent
+the substitutions. And then I'm going to commit.
+So these four inserts might actually not be
+sent to the database, it might just kind of remember them.
+But when the commit happens, then all those 10 things
+are going to be there. You can do a SELECT statement.
+Right? So we send a SELECT
+statement and print it with a WHERE clause, etc.,
+and I do the execute. Now what happens is then
+at that point this cursor, once I've executed
+that SELECT id line FROM pythonfun WHERE
+id equals 5, then cur is like a handle
+and I can read it. And the fetchone method is kind of like read one line or read one row, as it
+were, because you can, in this case, I'm
+asking for two things, id and line, and so row
+ends up being a tuple. row sub zero is id and
+row sub one is line. But if there was nothing, then fetchone will
+give me back none. Otherwise, I'm going
+to print it out here. Okay? So that is kind of a return value. That's the pattern
+of a return value or a return set of records. So the fetchone, and
+we'll do this later, we'll do it over
+and over and over again in a loop until row is none and then you've kind of hit the end of your record set. And the whole thing is
+very efficient and it might call
+the database once, it might send a network
+request once or twice, but it's all optimized and
+you don't worry about it. You just say let me read
+through those returned records. Then what we have is
+insert, another insert, where we're going to
+insert another line with this RETURNING id, and that's where we
+want to know what was the unique key in the serial
+column that was assigned. And so then we just give it
+some more text and we're actually going to send
+a second line twice, last line twice, and then
+this insert actually returns a record set and we fetch that record set and then we take the sub-zero element of it, and then that turns
+out to be the id. Then the next thing
+this thing is going to do is make a mistake, where this is a syntax
+error in the SQL to show you how the cur.execute
+actually blows up. Now this is going
+to die right here. So it'll never get to the point where it
+does the connection commit and then cursor close, which is a good way
+to clean things up at the end of this program.
+Okay? So let's go back here and just before
+we start this program. So this is one of the
+nice things is when these Python programs
+are running you can simultaneously watch what they're doing. This one here
+is going to run so fast we can't stop it in the middle. Some of of your later
+applications are going to run slowly and you can watch what they're doing as they're talking
+to the database. So the first thing we notice
+is there's no table here. So now we're just going to
+run that python3 simple.py. So it dropped the table,
+it created the table, it inserted all those rows, it selected an id line
+where id equals 5 and it found the line 5. So I can go take this one
+over here and I can run it. So you see that's what that SELECT id line FROM pythonfun
+WHERE id equals 5 gives me back a row 5 that says Have a nice day 4. And you can see I
+see that same thing. Then I insert a new record. So if I do a SELECT star over
+here in my psql FROM pythonfun
+ooh, I'm always transcribing my 'o'
+and my 'r' FROM, you can see that
+Oh, no. What happened? Oh, look,
+see this new id 11? That's pretty awesome. See new id 11, and then I blew up? Let me show you what
+happened there. Because the thing
+that freaked me out as I did a SELECT star FROM pythonfun and I do not have
+a row 11 in my database. Can you guess why that is? I'm going to bring up the simple.py. So I did this INSERT and
+I've printed out the new id. But somehow, when I go look in
+the database, it's not there. Pause the video if you want to think about it for a
+minute. Just stare at it. Okay. You can hit "Pause", now
+I'm going to show you. So this is an example
+where the SQL executed. But because this blew up, it never did the commit. And what happened was both the SQL for the INSERT
+statement and the SQL for the SELECT statement
+were kind of running and this ran but it didn't
+actually flush it to the database until
+we said conn.commit. So this is an example where this insert sort of happened
+but it didn't happen, because it didn't get flushed,
+because it didn't conn.commit. So you got to be careful
+where all of a sudden, you're like I'm
+really surprised that my data didn't end up there. And you'll notice that what I
+tend to do is not sometimes you have a thing
+called autocommit, where you're going to
+put a commit after every one of these
+execute statements. That's a bit of overkill. So you'll notice in
+some of the things, I commit every 10 inserts or every 50 inserts or
+something like that. Otherwise, it'd
+be a lot slower and you'll see when it's doing a commit and we run some
+of those other bits of code, it's going to work. So there we go. A little bit of simple Python
+just to sort of see what the basic idea is of talking
+from Python to PostgreSQL.

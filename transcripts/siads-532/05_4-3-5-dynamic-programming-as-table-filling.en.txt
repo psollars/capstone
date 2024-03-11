@@ -1,0 +1,170 @@
+So what does this tell us
+in Dynamic Programming? Basically, whenever we're
+ready to calculate d(i, j), we need to make sure that we have the solutions for
+the three sub-patterns. That means whenever we
+start to calculate d(i, j), we need to have d(i-1, j-1) ready, d(i-1, j), and d(i, j-1) ready. As far as we have
+these three numbers ready we can calculate d(i, j), by evaluating among
+the three situations. In fact this procedure can be interpreted as simple
+as filling in the table, and here's what the
+table looks like. So in this table you're seeing two sequences of
+letters of characters, and you're seeing
+some blue numbers. You are seeing an eight
+by eight empty table. This is essentially what you're doing in dynamic
+programming to compute any distance of one
+sequence of letters x, that is vinter in this example, and another sequence y that
+is another sequence of items. In this case x is the word 'vinter' and y is
+the word 'writers'. So what about the blue numbers? The blue numbers
+are associated with every element in
+the two sequences, so essentially they are
+the indices of this items. This column are in fact just the indices corresponding to the ax in previous slide. They indicate the index of
+every word in the sequence x, and this row are
+essentially indices j that indicates the indices of every character in
+the white sequence. So place down the
+indices of i and j, you can see that every
+empty cell here, creates the spot for us
+to calculate d(i, j). For example, if you look at
+the cell in the first row, by reading the
+indices you can see that it is the spot
+to record d(0, 5), because i equals to
+0 and J equals to 5. Intuitively, that is
+the edit distance between the subsequence of x which is empty and the first five letters
+of the sequence y. In the other cell i equals to
+three and j equals to four. So intuitively, that is the
+spot to help us estimate the edit distance between the first three letters of x and the first
+four letters of y. Of course, what we want to
+do is to fill in this table, is to find the numbers that should have been filled
+in into each cell. At end of the day, the target of this arrows
+is to find the number here and the lower right color. That's where we
+calculate d(7, 7), which is the edit distance of the full sequence x and
+the full sequence y. So you can see that the algorithm of calculating edit distance is essentially trying to
+fill this empty table. So how can we do that? Well, again we start
+with the free lunch, we start with the numbers
+that are given us for free. Remember that
+transforming any sequence into this empty sequence or vice versa is essentially
+the length of that sequence. So the first row of the table and the first column of the
+table are given us for free. So this numbers are just corresponding to the
+indices of i and j. For example, if you
+look at this number, that is essentially
+the edit distance between the empty string of x and the first two letters of y. Without calculation we know
+that the number is two, because all you need to do is to insert two letters from
+the empty stream to white. Similarly, if you look at this number it is the
+edit distance between the first two letters of x and the empty stream and all you need to do is to
+delete three letters. So the first row and
+the first column, this one, are giving
+you for free. Now the question is from this numbers how can we start
+to fill in other cells? So given this numbers
+that are giving us for free what's the next
+number we can fill in? What's the next cell we
+can actually feel in? So the cell with the star indicates the next
+cell we want to fill in, and why is that? Because this is
+the only cell that all the three sub-problem
+have been solved. These are three subproblems
+corresponding to this cell. So this cell we want you
+to fill in as d(1,1), and the three subproblems
+corresponding this cell that is d(1,0), and this cell that is d(0,1), and this cell that is d(0,0). From the three
+subproblems you can see, if we choose to grow this
+cell from the left one, that is equivalent to
+say that we want it to just add one letter
+w into the sequence. Because this cell has
+already told us how to transform the subsequence of
+v into the empty sequence. So all we need to do is
+to add another letter w into the sequence
+to get d(1,1). So if we choose to go
+from the left-hand side, then all we need is 1
+plus 1 equals to 2 edits. If you look at the
+second situation, if you choose to find the
+number from the top cell, that means that we first
+find the distance from the empty sequence
+to the sequence of w. Then all we need to do is to first drop
+the first item from x. So d("v","w") equals to d(" " "w") plus 1 edit, and that 1 edit is to drop this letter v. So
+if we choose to go from the top cell we need 1
+plus 1 that equals 2 edits. In the third situation
+you can see that, suppose we choose to find the number of this
+cell from d(0, 0), then what we know is it takes0 operations to transform the empty sequence to
+another empty sequence. Then what we need to do is
+to look at these 2 items. If they are the same then that means we got this
+substitution for free, we do not need
+another substitution. If they are different and in this case they are
+different with each other, that means we need
+to further transform v into w. We need to
+substitute v into w, and in total we need 0
+plus 1 equals to 1 edits. So which one should we
+fill into this star cell? From the left we got 2 edits, from the top we got 2 edits, and the from the back
+door we only need 1 edit. That means to fill in
+this cell we just need 1 edit and that is through
+the diagonal subproblem. So you can see this is how we fill the number one
+into this cell. We can see that this number is calculated through
+the sub-problem from the diagonal cell. [inaudible] Okay. So what's next? Right. How many cells can
+we fill at this point? Remember that we only can
+fill in the cells when all the three
+sub-problems are solved. The three sub-problems
+are the cell to left, the cell to the top, and the cell to the
+top-left column. Right. So you can see that we can actually fill in two cells now. The two cells are
+labeled with star. But then in programming, we usually follow a
+particular order. For example, we always fill rows first before
+coming to the next row. So this just look at
+how to fill in this. Right. In this cell again, we have all the three
+sub-problems solved. All we need to do is to
+find which sub-problem would have given us the
+smaller number of edits. Again, you can see
+that if you choose to do this from the left cell, that means we find
+the edit distance of first V and W. All we
+need to do is to add another letter R. So if we
+choose to go from the left, we need one plus one
+equals to two edits. If we choose to go from the top, we need two plus one
+equals to three edits. If you chose to go
+from the diagonal, we need one plus either
+one or zero edits. Whether it's one or zero, we look at this element and this element because
+they are different. So we actually need one
+more substitution that give us two edits. So you can see that
+either we chose to go from the left or go
+from the diagonal. We will end up with two edits as long as we don't
+go from the top, then use small edits. So that means we can feel free to fill in the number
+two for this cell. After filling this cell, that makes the cell to the right of it
+ready to be filled, and we can continue to do this, to fill in one row after another, and then in the middle we can look at how we can
+fill in this cell. So this cell is known as T44. Again, once we are here, which shows between
+the three situations you will go from the left. It takes four plus one
+equals to five edits. If we go from the top we need three plus one equals
+to four operations. If we go from the diagonal, we need three plus either
+zero or one operates. Whether it's zero or one, we check the letter here, the letter here because
+they are identical. They're both T's. That means we got this
+substitution for free. right? So we just need three plus zero
+equals three edits. Right. That means the number we want who fill
+in here would have been three because it's the smallest among the
+three operations. So that is how it works. You got three and that makes
+the next cell available. So you can continue
+to do this for every cell that
+becomes available. You evaluate the three
+situations from the left, from the top, and from diagonal. From the left you always add one. From the top you always add one, but from diagonal you can evaluate whether you've
+got that one for free. That depends on whether the two elements with the
+index are identical or not. Because at every step we know which sub-problem you have
+chosen to get the calculation. So you can actually
+trace back the edits by linking every cell
+to the cell that you have got the calculation done. So in this case, you can see that to get the number
+three into the cell, you trace that back to the 33, and then trace that
+back to the 23, then to the 1211 and then 00. That basically says that you can transform the sub-sequence V-I-N-T into W-R-I-T by first
+a free substitution of T, and then you drop
+the letter N from X. Then you substitute the letter I, and then this substitution
+is also free. Then you add a letter R into Y, and then finally you substitute the letter V from W.
+So this trace back gives you the absolute paths of how you actually arrived
+this edit distance. Sometimes there are multiple
+possible tracebacks because as we said that sometimes both sub-problems would give you the same number
+of edit distance, the same solution
+of edit distance. So in that case it does
+not matter whether you choose to add a letter or
+delete a letter vice versa. For instance, there's another
+alternative traceback to [inaudible] the
+edit distance three. By first the free substitution, and then a substitution
+of N into I, and then another
+substitution of I into R, and finally another
+substitution from V to W. So you can do this practice iteratively until you fill the mass element, until you finish the table. In this particular example, we can see that the
+final number we fill in into the cell that
+we care about is five, and that indicates that
+there are actually five edits minimum needed
+to transform X into Y, to Transform with
+[inaudible] into writers. Once again, you can draw
+the tracebacks according to which sub-problem you have selected to solve the more
+complex problem, one by one. In this case, the traceback
+will look like this. Through this trace back, you can identify the actual
+number of operations and the actual operations needed to Transform from the
+word X to the word Y.

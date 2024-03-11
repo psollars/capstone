@@ -1,0 +1,115 @@
+In this lecture, I'm going to walk through
+a basic data cleaning process with you and introduce you to a few
+more pandas API functions. Let's start by bringing in pandas. So import pandas as pd and
+let's load our data set. We're going to be cleaning the list
+of presidents in the US that I got from Wikipedia. So df=pd.read CSV and we'll bring
+in data sets / presidents.CSV and let's just take a look at
+some of the data, so df.head. Okay, so we have some presidents,
+some dates. I see a bunch of footnotes in the born
+column which may cause issues. So let's start with cleaning up that
+name into first name and last name, I'm going to tackle this with a regex. So I want to create two new columns and apply a regex to the projection
+of the president column. So here's one solution. We could make a copy of
+the president column. So I'll say df sub first that creates
+a new column equals df sub president and then we can call replace and we just have
+a pattern that matches the last name and sets it to an empty string. So df sub first equals df sub
+first.replace and then the regex pattern might be a whitespace character followed
+by any number of characters we just want to null this out. So the next value is just an empty
+string and we say reg x equals true remember to use replace and
+now let's take a look at this, so df.head. So that works but it's kind of gross and
+it's slow since we had to make a full copy of the column and
+then go through and update strings. There are a few other ways
+that we can deal this. Let me show you the most general one
+first and that's the apply function. So let's drop the column we just made. So we'll just remember del df
+sub first should drop the column immediately in place. No copy of a data frame being returned. So the apply function on a data frame will
+take some arbitrary function you have written and apply it to either a series,
+a single column or a data frame across all rows or columns. Let's write a function which just splits
+a string into two pieces using a single row of data. So we'll call this def split name and
+we pass in a parameters the row. So the row is a single series object which
+is a single row indexed by column values. So let's extract the first name and
+create a new entry into the series. So DF sub first equals
+row sub president.split on space and we'll just take the first item. And so remember here when you're doing
+this that the row that comes into this is whatever data frame we apply it to. So we're going to use the data frame
+above but you could potentially reuse this with function with any data
+frame that has a president column. So let's do the same with the last
+word in the string to so row sub last equals row sub president.split and
+then we'll just take minus 1. Remember when you're indexing into a list if you index negatively that counts
+from the back end of the list. So this is a handy way
+to get the last item and that way we don't have to worry about
+any middle names or initials in there. And so now we just return the row and the pandas.apply will take care of merging
+them back together into the data frame. So this function will just return row. And so now if we apply this to the
+dataframe indicating that we want to apply it across columns,
+we should get our result. So DF equals df dot apply,
+we say which function we're interested in applying split name and then we say
+axes equals columns and then df.head. So it's pretty questionable as to
+whether that's less gross but it achieves the result and I find that I use
+the apply function regularly in my work. The panda series has a couple of other
+nice convenience functions though and next I'd like to touch
+on one called extract. So let's drop our first name and
+last name. So we'll del both first and last. So extract takes a regular expression as
+input and specifically requires you to set capture groups that correspond to
+the output columns that you're interested in and this is a great place for
+you to pause in the video and reflect. If you were going to write a regular
+expression that returned groups and had just the first name and last name
+in it, what would that look like? So here's my solution where we
+would match three groups, but only return to the first name and
+the last name. So the pattern remember the groups
+are always in parentheses. So I'm going to have three
+sets of parentheses. And the first one I want anchored to the
+beginning of the string any characters or digits, any number of those. The second one is question mark colon
+because I want this group not to be returned and I want any number of
+characters followed by a white space and then the last one I want any
+number of characters, but I want to anchor this to
+the back of the string. So now the extract function is built into
+the str attribute of the series object so we can call it using
+Series.str.extract sub pattern. So in this case we say df sub president. Remember when you've got a single
+column that you're taking out of a data frame it's projected as a series,
+.str.extract and then pass in a pattern. The pattern we're interested in,
+we'll take a look at the head of this. So that looks pretty nice
+other than the column names. But if we name the groups
+we get column names out. So I'm just going to
+update this pattern and remember that we can create named groups. So we just say question mark capital P and
+then within the less-than and greater-than signs, we put the name of
+the group we want so we'll say one for first and then of course the middle one,
+we're not interested in capturing and returning and
+the last one we'll call last. So now we'll call extract. So again names equals df sub
+president.str.extract sub pattern.head and we'll print out names. And we could just copy these into
+our main data frame if we want to so we could say df sub first
+equals name sub first and df sub last equals name sub last and
+print out the data frame. So it's worth looking at the pandas
+Str module for other functions, which we've been written specifically
+to clean up strings and data frames and you can find that in the docs
+in working with text section. And here's a URL to that. Now, let's move on to
+clean up the born column. First, let's get rid of anything that
+isn't in the pattern of day, month, year. So here I'm going to do this. I'm going to do df sub born
+equals df sub born.str.extract so I'm going to use capture groups again, but
+I'm only going to have one capture group. So it's a little bit cheating maybe and
+I'm going to match any number of characters three times
+followed by a space, followed by any number of characters
+somewhere in that one to two length. Followed by a space and then one to two
+length is really because I want to capture a single digits like first, second, third
+as well as double digits like 10th, 11th, 12th. And then any number of characters for
+time to get that last bit and let's print out the head. So that cleans up the date format, but
+I want to foreshadow something else here. The type of this column
+is actually an object and we know that's what pandas uses
+when it's dealing with strings but pandas actually has really
+interesting date-time features. In fact,
+one of the reasons West McKinney put his efforts into the library was to
+deal with financial transactions. So if I were building this out further, I would actually update this column
+to write the data type as well. So to do that,
+I would say df sub born equals and then I would call on the top
+level of the pandas module. There's a function called to date time and
+I would just pass it df sub born. So I would pass it the whole series and
+let's take a look at what that looks like. So this would make subsequent processing
+on the dataframe around days such as getting every president who was
+born in a given time span much easier. Now most of the other columns in this data
+set I would clean up in a similar fashion and this should be good
+practice activity for you. So I recommend that you pause this video,
+open up a notebook for yourself for the lecture. If you don't already have
+it opened of course and then finish cleaning up the data frame. In this lecture I introduced
+you to the str module, which has a number of important functions
+for cleaning panda's dataframes. You don't have to use these. I actually use applied quite a bit myself,
+especially if I don't need high level performance data cleaning because
+my data set is usually small. But the str functions
+are incredibly useful and they build on your existing
+knowledge of regular expressions and because they're vectorized they're
+very efficient to be using as well.

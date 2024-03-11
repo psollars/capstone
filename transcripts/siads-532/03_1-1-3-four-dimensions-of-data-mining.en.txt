@@ -1,0 +1,70 @@
+So now you have seen
+different views of data mining from
+different practices. Where you have a
+data mining task, you can usually describe the
+task using four dimensions; the first dimension is
+the data to be mined, which is actually the input
+of the data mining task. The second dimension is the
+knowledge to be discovered. What type of patterns are
+trying to discover from the data and this is the output
+of your data mining task. Then we will talk
+about the techniques that people use to connect
+the input to the output. The fourth dimension is about applications in which people adapt this data mining process. So where to use this
+data mining process. Let's look at them one by
+one. Data to be mined. To think about what
+kind of data can data mining process
+take as input. We can characterize
+real-world data based on either the formal types
+or representations. We can divide data into itemsets, into vectors or matrices,
+into sequences, time-series, spatiotemporal data, or data streams,
+graphs, and networks. Taking a different perspective, we could also divide real world data based on the genre or application domains. If you take this view, you can categorize data as
+transactional data, text data, web data, multimedia data, social and information networks, biological data,
+or user behaviors. This application
+driven categorization is also very useful
+in real-world tasks. The second dimension of
+a data mining task is what kind of knowledge are
+you trying to discover. This is also known as the
+data mining functionalities. What functionality do you want to provide through a
+data mining process. These functionalities
+could include lower-level outputs such
+as patterns from the data. Which data objects are co-occurring with which
+other data objects. Similarities of data, right, what's the closest object to the given data object or
+associations of data. The functionalities also include higher-level outputs that could be directly used to
+support decisions. For example classifications,
+clustering, trends, predictions, and outliers on the
+even higher level. Based on the goal of data mining, whether you're trying to
+describe or characterize that data set or whether you are
+trying to make predictions, a data mining process
+can also be divided into descriptive or predictive. Once you define the input and output over a data
+mining process, you can talk about
+the techniques that connects the input to the output. Particular techniques used in the data mining process include data cubing, machine learning, statistics, pattern
+recognition, user modeling, information visualization,
+and data-intensive computing. Once you can generate the
+output from the input, the data mining process can be applied in many
+different domains. We gave a few examples but there are many more examples out there. For example, in retail people use data mining to do
+smart advertisements, to segment their market. In telecommunication, people
+use data mining to detect spam course which unfortunately we are not doing
+very well nowadays. In banking, people use data mining to make
+decisions unknowns. Based on the applicants
+credit scores which can be estimated
+strategic planning process, you can make decisions on whether to approve a loan or not. People apply data mining to social networks such as
+Facebook and Twitter. They use data mining to recommend friends and they rank
+the Facebook feeds, then use feeds in
+those social networks and of course people use data mining to drive
+scientific discoveries. This is very much
+related to Jim Gray's, The Fourth Paradigm of Science. Google uses data mining to answer complicated questions to provide personalized search
+results to the users. The Wall Street's also use data mining to build
+portfolios of stocks. Data mining is also
+applied to text and you may have heard about techniques cut natural language processing, that's about making
+sense from text data. Medical practitioners
+also use data mining. Data mining has been one of the technical foundations of
+health informatics nowadays. These are just some examples of application domains
+of data mining and there are many other of them. So in this lecture, we have given the
+general definition of data mining and
+several variations. Based on the definitions, you should now understand
+relation of Data Mining to other concepts such as Machine Learning such
+as Data Science. Based on the practice domains, people have different
+views of data mining. So there's the data-based view, there is a Machine Learning view, there is that business analytics view and there is
+the human-centered view. We also talk about the four
+important dimensions of data mining tasks that is data, knowledge, technique and
+the application domain.

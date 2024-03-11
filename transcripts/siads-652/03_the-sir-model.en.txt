@@ -1,0 +1,116 @@
+Hello, in this video, we're going to
+be looking at the SIR Model, which is different from the SIS Model, and the SI
+Model that we have looked at previously. And in this case we have a model where
+there are now three types of nodes, the susceptibles, the infected,
+and then the removed. In this SIR model nodes are temporarily
+infected and then they are removed so that they can no longer get infected or
+infect others. This captures cases when infected people
+will gain immunity to the virus and get to a point where they can no
+longer get the virus or infect others. Or you can also think of cases where
+the virus actually kills someone and of course that person can no
+longer infect anyone else. The model dynamics are going to play out
+in a very similar way as they did for the SIS model. But now instead of transitioning
+from the I to the S class, we're going to transition
+from the I to the R class. And so
+let me tell you how the dynamics play out. We started with the typical set of
+seed notes people who are infected in the beginning of the process. And then at each iteration
+that infected nodes will try to infect their neighbors
+with probability p, and then they will be removed from
+the network with probability r. So that's the parameter that's analogous
+to the s parameter that used to tell us the probability that notes move
+from being infected to susceptible. Now the other parameter tells us
+the probability that nodes go from being infected to being removed. Let's work through
+a simulation of this for five iterations as we have done for
+other models. The unique thing here is that we're going
+to be keeping track of three types of nodes this susceptibles,
+infected and ever removed. In the susceptible we're going to call our
+white, the in fact that we're going to call it a red and then the removed
+we're going to call it a grey. So in the first iteration
+that no D who's the one who's initially infected will try
+to infect its neighbors. So node C, G and
+E can potentially become infected. And let's say that note C and
+G actually become infected. And now the nodes who are affected in
+the previous state will transition to the removed class with probability 0.3 and
+so in this case node D may get removed. And let's say in this case it does not. Now at t equals 2, the currently infected notes will
+try to first infect their neighbors. And so let's say that nodes B and
+E become infected in this iteration. And now the nodes that were previously
+infected will transition to the removed class with probability 0.3,
+that's node C, D, and G. In this case, again,
+none of them actually get removed. Iteration number 3 nodes who
+are infected try to infect their neighbors with probability 0.5,
+so now A and H become infected. So now everyone except for F is infected. And then the nodes that were previously
+infected will go to the removed class with probability 0.3. And let's say that in this case nodes D,
+E and G get removed and so
+now we're going to color them gray. Now nodes A, B, C, and H, who
+are the ones who are currently infected will try to infect their neighbors. But you will note that in this case, they actually don't have any neighbors
+who are not either infected or removed. The only node who hasn't been infected or
+removed yet is node F here, but none of the infected nodes point to F. So no one can infect F and
+no new node can get infected right now. And now the four infected
+nodes will transition to the removed class with probability 0.3. And let's say node A is removed. And then the currently infected nodes
+will try to infect their neighbors with probability0.5. But again, they don't have any neighbors
+to infect, and so no one gets infected. And then they will transition to
+the removed class with probability 0.3. And let's say that H does that. And we're done with our five iterations. And so
+two things to note are the following. So, F will never be infected because again
+there is no path from a currently infected node to F without using any of the removed
+nodes and those have been removed. And so they cannot be infected,
+so no one can get to F. And also, these two nodes, B and C, will eventually be removed since at
+each iteration, they get removed to probability 0.3 with enough iterations
+they will eventually be removed. So eventually in this network everyone but
+F will be removed, and F will never be infected. Let's see how the model parameters again
+impact the cascade size (the number of infected nodes). We'll start with D as a seed node and
+we'll do 50 iterations. And, let's look at parameters p
+equals 0.5, and r equals 0.1. We will keep track of three different
+types of nodes so, in the x-axis we have the iteration number, and then in
+the y-axis we have the number of nodes. And, so green is this susceptible nodes,
+blue is the infected nodes, and then orange is the set of remove nodes. And what happens is, okay,
+we start with only one infected node and everyone else is susceptible no
+one is removed in the beginning. And what happens is that the number
+of infected nodes start to go up. And then the number of susceptible
+nodes who starts to go down. And for a while no one is getting removed, the probability of getting
+removed is on the small side 0.1. And so the number of remove nodes does
+not start to increase until sometime. But when it starts to increase,
+then it kind of takes everyone, right? So at this point here we have
+that all the nodes are infected. And so what happens from this
+point is that they will slowly but surely start to go down because
+they're all getting removed. So they're all switching from the infected
+clusters to the removed clusters. So here the orange is becoming larger and
+larger. Now let's see what happens when we
+switch the parameters such that we increase the parameter r. So now we're going to
+be describing a virus, where people do not get to spend too
+much time in the infected class. They will soon switch to the removed
+class because the probability of switching from infected
+to removed became larger. So what happens in that case? So we're going to use
+probability p of 0.5, we'll leave that constant but
+we'll increase our from 0.1 to 0.4. And so
+what happens there is the following. So what you see is that the number of
+infected nodes starts to increase, but it does not get very large. And the reason why it doesn't get
+very large Is that many of those nodes are quickly becoming removed. And because they're
+quickly becoming removed, not all of the susceptible
+nodes eventually get infected. And so at some point what you have
+is that no new nodes is infected. And because no node is infected, none of
+the susceptible nodes can become infected and so things kind of stopped there. And so unlike the previous case where
+eventually everyone was removed. What we see here is not because nodes
+were not able to spend too much time in the infected state when they're actually
+trying to infect their neighbors. Then the virus was not able to
+remove everyone in that network. And we're left with 5 remove nodes and 3 susceptible nodes that
+sort of survived the virus. Now let's see what happens when we
+increase that parameter r even more. And so what happens is that we see kind
+of an extreme version of what we saw in the previous plot. And so here, again, the number of
+infected nodes does not increase very rapidly early on because
+they very quickly become removed. And so what we see is the number of
+removed nodes increasing rapidly initially. And at some point early, the number
+of infected nodes goes to 0, and so no new susceptible node
+can become infected. And so
+all the susceptible node stay susceptible, and no new node becomes infected. And we're left with 5 susceptible nodes,
+and only 3 removed nodes. So what we can see here is that as the
+probability of being removed increases, fear nodes become infected early on. And nodes do not stained
+infected class for very long, such that the number of eventually
+removed nodes decreases. And so
+that's what happens with these SIR model. Again, it's a little bit different
+from this SI and the SIS model, in that nodes go from being
+infected to being removed. And we see this interesting dynamics
+of what happens when nodes are getting removed very quickly as soon
+as they become infected. In the next video we're going to be
+looking at a different model is called the independent cascade model. And it's going to make
+slightly different assumptions from the other three that
+we have looked at so far. So, we'll see you there.

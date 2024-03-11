@@ -1,0 +1,87 @@
+Welcome back. In this lecture, we'll discuss
+another discrete outcome encoding, the hypothetical outcome plot or HOP. To introduce the hypothetical
+outcome plot, we will return to the familiar
+context of linear regression. Now, you may recall
+that in prior lectures, we discussed one way to
+represent uncertainty around an individual regression model
+is to use a confidence interval. The confidence interval represents
+parametric uncertainty for the model. The confidence interval is also a
+continuous representation of uncertainty. We also looked at how to represent
+the same uncertainty using a discrete encoding like a spaghetti plot. These types of encodings
+make it more difficult for the audience to ignore the uncertainty
+because we don't give a single line of best fit, but
+many possible lines of fit. I like spaghetti plots. They're versatile and effective, but they're not
+the only option available to us. Another discrete encoding option
+is the hypothetical outcome plot. A hypothetical outcome plot takes the
+individual draws from a spaghetti plot and runs them through like
+a movie making an animation. What makes a HOP effective is
+it really emphasizes that each draw is just one possible of many. By cycling through the draws and
+the fundamental variation they illustrate, we gain an appreciation for
+the underlying uncertainty. It gives people a way of experiencing
+the uncertainty in hopefully a more intuitive way. We use the same process as
+creating a spaghetti plot. But rather than put all
+the lines on one frame, we spread them out over
+many frames across time. Hypothetical outcome plots can be
+helpful in aiding against deterministic construal errors. The image on the left is one
+that we've looked at already. It's a spaghetti plot showing the
+uncertainty of the path of the hurricane. Now, we might interpret that if
+a particular spot on the map is crossed by a line or draw, it's more likely
+to be hit by the hurricane. This is not the case. Now, we can use the mass of lines
+to roughly understand which regions of the map are more or
+less likely to be in the hurricane's path. But an individual line is just
+a random draw of the model, just represents uncertainty. We can use a HOP to illustrate
+the same phenomenon where we animate the individual draws over time. As you can see, individual draws are
+animated in and out of the view over time. Given enough draws, you're still going to
+run into situations where a draw might intersect with a particular city or
+region. Now you may wonder how is this
+more effective than the original spaghetti plot at mitigating
+deterministic construal errors? Well, the argument is that given
+that the draws fade in and out. It becomes a bit more obvious that these
+draws are part of a random process and should not be interpreted
+deterministically. Let's return to a couple of
+data series that we looked at previously that illustrate high and
+low correlation. If we overlay confidence
+intervals on these data series, starting with high correlation and
+then ending with low correlation. And then if we remove
+the underlying data from view, we see that the line of best fit with
+the confidence interval obscures the underlying relationship
+differences between these data sets. HOPs can help with this problem. To illustrate how HOps can help
+with this correlated data problem, let's look at the unemployment data
+in the United States over time. Here we have the unemployment trend. At the end of this series, we have a forecast which is
+obviously clouded by uncertainty. The problem with this gradient view
+of uncertainty is that it obscures the correlation in the predicted
+region in the red box. If the unemployment starts low,
+does it stay low or does it drift up? We really can't tell from
+this view of uncertainty. Instead, we can use a hypothetical outcome
+plot to show the correlated nature of the data. So here, each draw that we're showing
+is one possible predicted future path. And we can tell how the data generally
+are predicted to move over time. Another option we have is to
+combine the spaghetti plot with the hypothetical outcome plot. So here we have the best of both worlds. In the background, we have spaghetti plot showing a discrete
+encoding of many possible paths. But it's overlay with
+hypothetical outcome plot. Again, reinforcing that each one
+of these is just a random draw. Now, as we've seen in this lecture, HOPs
+and spaghetti plots have similarities and differences. To summarize, let's compare and contrast
+the hop with the spaghetti plot to gain an appreciation for what's similar and
+what's different between them. First, both spaghetti plots and hypothetical outcome plots are discrete
+encodings, as we've already mentioned. Now, a continuous encoding by way of
+review is like a confidence interval. A discrete encoding is something
+where we plot individual elements. One way in which spaghetti plots and hypothetical outcome plots differ is
+the medium that's appropriate for each. A hypothetical outcome plot only works for
+digital media, so on screen displays only. This is a limitation to the HOP, as some organizations still rely
+on print media to share insights. If we're sharing insights in print or
+in other formats that do not easily support animation, spaghetti
+plots are a much better choice than HOPs. Another difference between
+spaghetti plots and HOPs is the encoding mechanism
+that each relies on. Spaghetti plots map to spatial frequency,
+lines occupying a space, whereas HOPs tend to rely on temporal
+frequency, draws mapped across time. Are both of these approaches effective
+against certain types of deterministic construal errors? The answer is yes for both. Depending on the application,
+we may prefer hops or spaghetti plots, but both tend to help with
+deterministic construal errors. Lastly, are these plots effective
+against correlation issues, as we saw in this lecture and
+the spaghetti plot lecture? The answer for both is yes. As you can see, the spaghetti plot and
+the HOP plot have some similarities and they have some differences. In my personal view, it's the medium
+that really drives the decision here. If you plan on sharing your work in print, you're going to have to
+use a spaghetti plot. If you're sharing your work digitally,
+you have a choice. That's it for this lecture on
+hypothetical outcome plots. Our last discrete encoding. I hope you enjoyed it.

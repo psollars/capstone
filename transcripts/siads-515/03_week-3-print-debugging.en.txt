@@ -1,0 +1,286 @@
+If we go a little
+bit deeper here and deal with some more complex code, we can look at a more
+complex traceback. Let's go ahead and take a look at that in the notebook itself. So here we are in the notebook. For your convenience, I've put the first code block here
+corresponding to what we talked about just a minute ago
+with our tokens for token in tokens and
+print(tokn) as an error. So you see here that we get exactly that same error and
+we know how to fix the error. Debugging, of course, is all
+about fixing the errors, not just identifying them, although identifying
+them is the first step. So if we change that
+to print(token), that is to insert an e there, things work as planned. Again, the original code had
+a typographical error there. If we run that, that's our error. It's a name error. We insert an e to correct the name and
+everything's fixed. Here, we have some more code
+that contains two functions; count_unique, which
+takes a list of tokens, preprocess_text, which
+takes (some_text). Then we call the
+preprocess_text function with ("The quick brown fox"). Preprocess_text takes that text, calls count_unique or other function on the
+lowercase and split version of that text and returns the resulting values from
+that second function. In that second function, count_unique, we
+initialize a set. Again, one of the
+basic data types that we'll be talking
+about a little bit later. Then we say for i in tokens, we take our set and we add that token and we return types. So when we run this, we find that we have an error. One of the things I'm trying
+to do in this segment of the course is to
+make you basically, not freak out when you see things like errors
+on your screen. These are things that
+you can and should fix. So here, let's take
+a look at this. Let's think about how
+this is going to work. Here, we have this name error. Name 'I' is not defined and that's identical to the
+previous error that we saw. I want to talk really quickly about how to read a traceback. The key thing to keep
+in mind when you're reading a traceback is to start at the bottom and that's
+where you're going to identify the error or exception
+that you want to address. That you're going to follow
+the traceback up the stack. So this is the stack of function calls that you know from
+your experience with Python. So we're going to follow
+that traceback up the stack until you figure out exactly what
+caused the error. Let's go back to our notebook
+now and do exactly that. So our NameError here, name 'I' is not defined and it identifies this right here. So here, we have this
+NameError: name 'I' is not defined and that's identical to the previous
+error that we saw. I want to talk really quickly about how to read a traceback. The key thing to keep
+in mind when you're reading a traceback is to start at the bottom and that's
+where you're going to identify the error or exception
+that you want to address. That you're going to follow
+the traceback up the stack. So this is the stack of function calls that you know from
+your experience with Python. So we're going to follow
+that traceback up the stack until you figure out exactly what
+caused the error. Let's go back to our notebook
+now and do exactly that. So our NameError here, name 'I' is not defined
+and it identifies this right here in line
+4, types.add(I). We know that that is in the
+function called count_unique. That stack trace tells
+us that count_unique was called from preprocess_text. So that's why these function
+calls are important here. So preprocess_text
+called count_unique, count_unique gave
+us that NameError. Preprocess_text was called
+from the basic module. So that is the cell that we were running or the script if
+you're running a script, that's what module means. It means this is the top level
+thing that we're calling. So module called preprocess_text, preprocess_text
+called count_unique. Count_unique down at line 4, we call types.add(I) and we
+said name 'I' is not defined. If you look at this a
+little bit more closely, you'll see that in line 3, I initialized a for loop with
+a variable (I), and again, I introduced a typographical
+error where I used an uppercase (I) in the line
+that threw the NameError. We talk about throwing exceptions and
+catching exceptions. That is something
+of a fallback to other languages where we actually did throw and catch exceptions. Sometimes, I'll say that we will use a slightly
+different structure in Python called try and
+except for dealing with that. So how would we fix this? Why don't you take a second and see if you can do
+that on your own. So most of you probably
+figured out that this uppercase I should
+be a lowercase i. So if we correct that uppercase
+I to the lowercase i, it appears that
+everything worked. We don't know that for
+sure because it just ran. So let's take a look at what
+preprocess_text gives us. We find out that we get
+this set of {'brown', 'fox', 'quick', 'the'} which is exactly what we would expect. That's how we read a traceback. Let's talk about
+some common errors. I want to walk through
+each of these because each of these are things
+that are very common. These are things that you
+are likely to encounter and we'll talk about some ways to solve some of these errors. Let's start off with
+an AttributeError. Attributes are exactly that. They're attributes of objects. An AttributeError is raised when an object does not have the
+attribute that you requested. So what does that mean? So if we take a look
+at our notebook here, we can initialize a variable
+a to be an empty list. Then if we ask for a.value, we find that the list object
+has no attribute value. There simply is no attribute
+on a 'list' called 'value'. So that doesn't
+make sense to call. The way that we would
+solve that is we wouldn't, we wouldn't use that, so
+we can comment that out. Attributes are
+typically associated with more complex objects, although some simpler objects
+do also have attributes. In general, when
+we're dealing with objects or when you're dealing
+with machine learning, you will see that a lot of
+the models that you'll be generating have attributes
+that you could access. As you look up, for example, the documentation on scikit-learn and you're trying to figure out what particular attribute in a model contains the
+data that you want, if you say mistype that, you will raise an
+AttributeError and that means you should probably go
+back to the documentation, take a look at what the
+correct attribute is, and then use that attribute
+instead of the one that you used that
+generated the error. The next type of
+error that I want to talk about is an ImportError. An ImportError is raised when the module that
+you requested in an import statement is not found or when a
+component is not found. Again, this is often a result of a typo or forgetting the name
+or location of a component. If we take a look at
+some of the things that we often
+encounter when we're working for the first time with things like scikit-learn or
+machine learning in Python, we might think that import scikit-learn is
+how we would import this very common module for
+machine learning in Python. You'll see here that we
+have a ModuleNotFoundError. That gives us a traceback. There is only one line
+that we ran here, so of course, it didn't work. That's the line that didn't work. ModuleNotFoundError says no
+module named 'scikitlearn'. What do you do with that? This is something
+that experience will help you recognize and solve. So scikit-learn,
+when we import it, you will learn this in some of your other courses is sklearn. So getting the name of the module right will then allow
+us to run that. Okay, so we've imported sklearn. Another type of import statement, it looks a little
+bit different from the straightforward import
+something statement that we just looked at
+in the previous cell. This format consists
+of the word from, so we say from a particular module import
+some functionality. So in this case, I'm going to take my
+scikit-learn, sklearn, and I've looked up the documentation now
+I know that I have a namespace called
+naive_bayes and I want to import a
+NaiveBayesclassifier. When I do that, I find out that it's
+an ImportError. I'm told if I read
+very carefully here, cannot import name NaiveBaseClassifier from
+sklearn.naive_bayes. Again, it can be a little
+alarming when you see that. You might not know
+how to fix that. Ideally, you've got some code
+or some documentation that tells you what you should be importing or you have
+experienced during this. In this particular case, it turns out that
+we want to import something a little bit different than just a NaiveBayesClassifier. In sklearn.naive_bayes, the correct thing to
+import is GaussianNB. When it comes to ImportErrors
+and ModuleNotFoundErrors, it's really a matter of
+getting familiar with the different components of the different libraries that you're going to commonly use. The common libraries again for data scientists are
+things like pandas, Matplotlib, pyplot,
+and scikit-learn. Those are your workhorses. So those are the ones
+that you're going to have to get familiar with. As we continue on looking
+at our different errors, the next type of
+error that is very commonly encountered
+is an IndexError. This is typically encountered in lists where their index that you request is out of bounds of the list. What does that mean? Let's take a look
+at the notebook. It'll make a lot of sense. So here, we're
+going to initialize a list numbers to consist
+of three numbers, 1, 2, and 3. We're then going
+to try to inspect the third element, numbers 3. So if we run that, we get an IndexError, and we're told, again, looking at our stack trace, the IndexError is shown
+to us at the bottom here, list index out of range, and we're told that that was
+encountered in line number 2 where we asked for numbers
+square bracket three. As I'm sure you know in Python, most things are zero-based. So lists start with
+the zeroth element, so the zeroth element is one, the first element is two, the second element is three. So it gets a little weird
+when you're counting things. One way to fix that would be to ask for the last element as
+numbers square bracket two. So numbers square bracket
+zero would give us one, numbers square bracket
+one would give us two, and numbers square
+bracket three would get us the list index
+out of range error. So there is a couple
+of ways to fix that. One, as you saw was in this silly example to change
+that to the correct number. Let's say you didn't know
+how long your list was and you wanted to be sure that if someone called something like numbers and then some value
+beyond the end of your list, that you could handle that. How would you deal with that? One way to deal with that is to use a try and except block. So we could say try to access numbers 3 and if
+that doesn't work, we could do something like print some useful error
+message like that. So here, we're trying to
+access something beyond the end of our list and we're going to
+catch that with an except statement and do
+something else with it. Now we could simply
+do nothing with it. We might want to just pass and say that we don't
+want to deal with that. But that gets us around
+the idea that we have to somehow have our program
+terminate with an error. So pass is a way to get an exception just
+absorbed by the system. Another type of error, which is similar to the error
+we just saw is a KeyError. KeyErrors are typically encountered when
+you're working with dictionaries because dictionaries
+have keys and values. A way around that is that
+you would need to use either the.get method on dictionaries or check for the key's
+existence first. So let's take a look at
+how that would work. Let's say we initialize
+a dictionary here, word_counts to have a key
+as a string and a value, in this case, the number
+of times that we saw that piece of text in some
+longer piece of text, that's a typical
+situation that you might encounter when you're doing
+natural language processing. So we have here the word
+'the' encountered 276 times, the word 'a' 152 times, and the word 'is' 44 times. If we then ask for the
+word_ counts of i, we're told that we
+have a KeyError. It doesn't understand what i is. There is no key that is i. So we can change that to use.get instead and that
+will return nothing. So that will give
+us what we want. It's a null value and it
+doesn't raise the exception. Another way of doing that
+is to say if 'i' in word_ counts, print word_ counts. Well, look at that, I
+have another error. So this is a syntax error, which we'll deal
+with in a minute. Sometimes when you're
+fixing one bug, you'll introduce another one. In this particular case, I'm told this is SyntaxError, so I don't panic and it
+actually is quite helpful here, missing parentheses
+in call to print. Did you mean print, parenthesis, word_counts,
+square bracket 'i'? Well, in fact, I did. So let's introduce
+those round brackets here and we have the
+same functionality, where now, our program
+is not terminating with an error just because
+we have a KeyError. That KeyError isn't occurring in this particular case
+because we're checking to see if that particular key exists in that dictionary
+before we access it. A NameError, little
+bit different, is typically encountered
+when you attempt to access a variable that
+hasn't been initialized. We've seen a couple of
+examples of that already, those were the
+introductory examples. This can also happen when you are getting sloppy with say, nested loops where we
+have for i in range 10, for i2 in range 10, print i and j. When we run that, we're
+told we have a NameError. Again, you don't panic, you start at the bottom, name j is not defined, we're told that we're
+trying to access something called j in line 3. We look at our code. Let's see, we said
+for i in range 10, for i2 in range 10,
+I see the problem. So instead of j, we
+want an i2 there. So that's how we would
+fix that NameError. So go back and take
+a look at what you've set up for your loops. Sometimes what'll
+happen is you'll realize you have a
+conflict of names here. You change one name out in the outer loop and you
+forget to change it inside. So that's how those
+come up sometimes, very, very common error. What you saw a minute ago was a SyntaxError that I introduced. I often forget putting parentheses
+into print statements, that's because I have been using Python since it was version 2 and print was an expression
+instead of a function. So I sometimes forget to put parentheses in
+print statements. You probably won't do that as much as doing
+something else, like leaving out a colon. So this is an example if we
+go back to the Notebook, it's a long printout, where
+we'll see something like this for i in range 10, print i. We run that, we're told we have an invalid syntax in line 1. These tend to not give you quite as much information as
+the other types of errors partly because the Python parser is having a hard
+time understanding what you're trying
+to get at here. As I mentioned, this is
+often a missing colon, missing comma, bad indentation, although that's
+another type of error. But we can fix that
+by introducing that colon and that
+fixes that SyntaxError. A TypeError is a little
+bit different again, and it's typically
+encountered when you try to perform an operation on a
+type that doesn't support it. Also note that casting a type can raise
+its own exceptions, so be careful when you
+provide a solution. Let's take a look
+at the Notebook and see what that means. So in a TypeError, here we initialize the
+variable a to one, initialize the variable
+b to a string one, and then do something where we're trying
+to add a and b and assign it to c. When
+we run that code, we find out that we get
+a TypeError and were highlighted at line 3 here when we call
+c equals a plus b. The TypeError tells us that it has unsupported operand types. So an operand is something that this operator
+is operating on. So we're trying to add a and b. So for operand
+types for the plus, so something is going wrong with the addition
+here and it's saying that int and str,
+string are unsupported. We can't add a string to an int. So let's go ahead
+and try to fix that. Let's say that we wanted to
+fix that by saying c equals, we might want to
+cast that to an int, and in that case,
+let's just introduce a little print statement here
+so we can see our output. We get the value two. Now that seems to work okay. What however would
+happen if this was a? What do you think is going
+to happen when I run this? So when we corrected
+this TypeError, we did a print c on it and we got this error
+where we're told it's a ValuerError with an invalid literal for int with base 10. So this is interesting, it tells you how in depth the Python error messages can be. So it recognizes the
+fact that in base 10, the value a is not a legitimate
+value for an integer. Notice that if we were
+not operating in base 10, then we're not going
+to get into that. But if we were using
+something like x, the a would be a valid literal. In this case, it's not. So it raises a ValueError. Well, what's a ValueError? Let's take a look at
+that a little bit here. So a ValueError is typically encountered when the
+number of values do not match what is expected
+or what we just saw now where the value
+is something that's incompatible with the
+operands that we're using. So let's go back here to our Notebook and see
+if we can fix this up. So what might we want to do here? This requires you to examine the logic and think
+carefully about what it is that
+you're trying to do with your values here. Are you really trying to do numerical addition where
+we're trying to add one and some other
+value that could be interpreted as an
+integer like this, or are we really trying
+to add together strings? If we're trying to
+add together strings, we might want to
+instead of using ints, cast these two strings like this, and then we concatenate
+those two strings. Again, I'm not saying that either one of
+these is correct, I'm just saying that you need
+to examine and understand the logic that your code
+is trying to perform. Let's talk a little bit more
+about ValueErrors here. So in this particular case, I have two values, a and b that are being assigned the values
+of a list; a, b, and c. This ValueError is raised because we have too
+many values to unpack. We expected two; a and b, but we were given three; 1, 2, and 3. Hopefully, you've seen
+this structure before. One way to fix that is to correct the number of values
+that are being assigned to, so a, b, and c, each get
+a value from that list. If we do something
+like a print c, you'll see that we've assigned
+correctly that value of c similarly with b and
+obviously with a.

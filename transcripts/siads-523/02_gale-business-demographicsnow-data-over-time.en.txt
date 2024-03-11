@@ -1,0 +1,237 @@
+So welcome back. You just looked at Census Reporter,
+which gives us a nice visualized snapshot of the most recent
+federal census data. Now we're going to go much more in depth. We're going to look at data over time. We're going to look at consumer data and
+we're going to look at personas as well. So just a gentle reminder that you should
+be feeling still that you're in this exploration phase of the Kuhlthau model. That you might feel confused. You're not sure how this
+is all going to end up. And the reason we're going to use
+DemographicsNow is because of the depth and breadth of data
+it can get us very quickly. So hopefully by the time you get
+through this tutorial and the one for FRED, you really have a sense of clarity. Because we don't quite know
+exactly what we're looking for. We don't know until we see the data and
+we compare it to other data what the high-priority data
+is for decision making and is not. We know that there's some
+demographic attributes where previous franchises have been located. But we're still not seeing the firm
+contours. And that's normal. So Gale Business DemographicsNow
+is a subscription database that the state of Michigan's Library
+of Michigan provides using LSTA funds to the University of Michigan community. And you'll have access to this for use
+whenever you like, even beyond this course, as long as you're enrolled as a student. It is a real powerhouse. It's able to show us data over time,
+current estimated data, and one batch of predictive data. It can tell us a lot of information
+about the consumer behaviors of the folks in a particular area. And it can tell us the types of
+people that live in that community. And getting that sense of those personas
+can really help us figure out whether or not this county's going to be
+a match for the restaurant. I've put the URL for
+this database on your screen. And what we'll do next is I'll
+switch over to the home page and we'll take a look at what that says. So over here, we're at the home page
+of Gale Business's DemographicsNow, and I often feel like it's a little bit
+disorienting to get started with this site because there's so much that you can do. So the first thing I want to show
+you is this geofilter up here. And what this is going to do is if you
+have a known area with known boundaries, you'll be able to just type it in. There are also option. Let's say, for another project or for
+something related to your work, you want to know what about this particular neighborhood bordered
+by these particular streets. You can actually draw
+custom boundaries and DemographicsNow will pull
+that data for you. And that's incredibly helpful
+in the business arena. We also use it a lot for nonprofit
+organizations like schools and libraries, so they can figure out what's the data
+within a certain distance of our building? What's the data like in
+a certain neighborhood? So we're going to look again
+at Kendall County, Texas. So here it says Kendall, Texas. And we want the county of data and that's important because you remember
+we have two in our sample data. We have two comparison locations. And the other one is Frederick County. And Frederick County also has
+the city of Frederick in it, and that's why you want to check. So I'm going to click here and
+now it tells me the location is set. And no matter how many reports I run or
+how much data I look up from here on in, it's going to remember Kendall,
+Texas until I tell it otherwise. So I want to get started by
+looking at a couple of data sets and you can do all kinds
+of analysis in this tool. I'm going to look at Summary and I am going to go down to Complete
+Demographic Summary Report. And then I'm going to click
+this word Run Report. And it very quickly is going to
+go out and pull the data just for that section. You'll notice that there's
+a download feature and if I click on it, it will download
+in a lot of different ways. So if I want to get the raw data and
+work with that, I can do that with Excel. I usually just copy and paste the data I
+need into a separate Excel spreadsheet. You can see it downloads in
+lots of other ways as well. But sometimes what pops up automatically
+is a preview of that data and sometimes that's as
+deep as you need to go. You'll notice that it will always date
+the day the data was pulled, which can be helpful when you are attributing
+sources or building a reference list. And let's take a minute and look at what
+we can see just from this basic report. And just like we did with Census Reporter, I'm going to walk through some of what you
+can see here and why things might matter. So here's a couple, let's start by just
+looking at general population, right? Because we know that an area
+with growing population is one of the markers of other
+Chicken Kitchen franchises. And here it tells me that,
+just in this first line, that the population is growing. And
+I can see that just from the raw numbers. So the first column is
+the census data from 2000. The second is the census data from 2010. Now you remember that in Census Reporter,
+they got you either the ACS data for 2017 or 2018 when we looked
+at it at the end of 2019. And instead of that
+ACS American Community Survey data, what it's going to show us
+is what they call 2019a, because we're looking at this in 2019,
+and that is estimates. And when we think about visualizing
+data in the third week of this course, I want you to be thoughtful about how
+you're going to represent estimates and projections. They're going to need to look
+different in your graphic work. So here, 2019 estimated, and
+the fourth column is 2024 projections. And again, projections being
+futurecasting, we would want to represent visually in a different
+way when we get to visualizations. But one of the things I like automatically
+about this report is it tells us what the percent change was. So this is a community that
+has grown incredibly rapidly. It grew 40% in the first
+ten years of the century. And it's telling us here when we look,
+compare 2019 to 2024, which is a five-year estimate,
+or five-year projection, it shows that we're going to
+see even more increase. And so that's an optimistic sign
+for our project. We can also see that not only
+has the population grown but the density has grown. And that's going to be a big factor
+because any place we want to put a restaurant, even an upscale fast
+food restaurant, we want to make sure that there's enough people near it
+that it's a convenient location. We can also see quite dramatically
+that the number of households is on, it's actually 2019 compared to 2000,
+it's just about doubled. So all of these factors are contributing
+towards this positive sense that this is a community that's growing and
+it is expanding in several ways. The total population is up,
+the number of houses is up. All of that is good news for
+Kendall County. And then you will remember that only in
+very rare cases do we think anything about population by gender is important. I will say I was looking up
+Ann Arbor population before. And there is some weird stuff with
+gender in that during the college and early adulthood years there's actually
+an uptick in the number of men in the community which slowly declines
+over time as the population ages. So we must be attracting a lot
+of men to this university. We can also take a look at race, and one
+of the things that we see here is again, that this percent change
+is really helpful. In fact, there's just some
+extraordinary number of growth. Now when you see a number like
+this one that's 943% growth, what's important is to look at what
+were the raw numbers to start with? So if we look at this comparison between
+the 2000 and 2010 census, you'll see that the African American community
+grew from 16 people to 167. So when you have such
+a small starting number, your percent increase could be
+really huge even though it's not an overwhelming percentage
+of the total population. And you'll see a bit that that's true for
+some of the other minority groups here. You will also notice, so we can compare, this is still an overwhelmingly
+White community. But we can see that the growth
+pattern by race is lower for the White community than it is for
+non-Caucasian communities. Looking at population by age, depending on your scenario,
+may be helpful or may not be. And keep in mind that one of
+the things that can be important as you look at data like this is this
+is a lot of little segments. And this segment has five years of
+youth in it, and this one has nine, and this one has four, and this one has five. But these are kind of irregular. And that can help, that can mean that our
+population if we were to just take this straight up and visualize it, we would
+have some, if we made a bar graph of this, some would automatically look bigger just
+because it's counting more years of life. So you want to be aware of that. You also want to think about how granular
+you need your data to be to explain. So let's imagine that you were going to
+talk about, maybe for your scenario you need to know how many folks eligible for
+Social Security there are. You could break it down
+into these three groups if you needed that granularity to say, you know our population that's 85 and
+above is really growing. And we really need to think about services
+for those who are likely becoming cognitively or physically less
+strong than they used to be. But you might also make a case that you
+want to combine all of this data together to tell the story that in general, this is
+what's happening with folks over age 65. So oftentimes when I'm working
+with population by age, I sort of consolidate together. So I might put 0 to 19 together or 20 to 34 together so
+that there are fewer points to compare. And therefore the comparison
+between them is more powerful. So if we've talked about how pie charts
+really start to get muddy after about seven slices, you can see this
+is a lot more than seven slices. And if you wanted to use a pie chart, you might think about that kind
+of clumping and clustering. The same goes with household income. There's all these brackets that
+break down as you can see here, you know, leading up to about $100,000. And yet when you get to $100,000,
+the intervals jump from $10,000 of an interval, to $25,000 for
+an interval, to a whole $50,000. A couple of things that again can be useful. I always look at median household income
+versus mean because if there's one big rancher in this town and his or
+her median household income is $3 million, it's going to skew everything else. So I always look at median
+household income. And here you see something
+really remarkable, right? You see that the median
+household income is going up and is predicted to continue to go up. And remembering that this
+Chicken Kitchen client of yours, it actually likes to be in communities
+that have a lot of disposable income, so there are folks who can
+afford to pay a dollar or more extra for their meal. You can also take a look at per capita
+income and how it's growing over time. And this is not quite as fast but
+then again per capita is literally taking the whole pot of income and dividing it
+among every human being in the county. So you should see that as
+slightly less dramatic. A couple other things that we're seeing,
+we're watching that it's really this high income group that's projected
+to grow the fastest. And that also bodes well for
+an upscale fast food restaurant. If we were McDonald's evaluating
+whether we should be in this county, we might be looking at folks
+in a lower income bracket who are maybe eating there not
+because it's their preference, but because it's the only
+thing that is affordable. And we would use a different
+set of calculuses there. We can look a little bit at employment. I don't know that this will be helpful for
+you or not for your client. Mostly I think I would be
+looking at civilian unemployed. And here you can clearly
+see the recession, that the unemployment rate did go up
+quite a bit between 2000 and 2010. And that's where knowing that in
+2008 we had the national recession would explain why that
+unemployment rate went up so much. Now it did only go up
+from 3.3% to 5.8%, but the percent change was
+rather significant. And I would wonder a little
+bit about this 11.1%. Now keep in mind that the unemployment
+rate really just measures who is eligible to be working who is not working. What it does not record is it
+does not record underemployment. Which means that someone who used to
+make $80,000 in a United Auto Workers job on the assembly line may now be
+making $15 an hour to do similar work. The unemployment rate
+doesn't show that, and I think that's a pretty
+significant factor moving forward. It's just not one we can
+see in this batch of data. Sometimes it can be helpful to look at
+blue collar versus white collar jobs. You see that this community
+is skewing white collar. Again, Chicken Kitchen is a little bit
+more of a white collar type of fast food restaurant, so
+that bodes well for us. We again, we saw the
+housing growth up earlier. It's interesting to me that they
+anticipate that about 30% of the population will have their home paid
+off by 2024, that's pretty exciting. We see that about 25% of
+the population rents and high rental rates are sometimes a sign
+of a more transitory population. Sometimes renter occupied is just because
+people are there to do cyclical work. University towns have
+a lot of renter occupied. If you can't account for
+it in a way like that, then it often is a sign that you're
+going to have a community where folks are moving around and
+switching locations more often. And remember what we
+talked about with vacant. We talked about how vacant
+can mean it's a second home, it could mean they have a house
+in town and a ranch out of town. They're only going to count
+one of those in the census. Or it could be increasingly
+things like Airbnb properties. We can look a little bit
+at vehicles available. This is the kind of thing
+that might be helpful. And we see that the average vehicles per
+household is a little more than two. Which means that having someone
+run out to get a meal while the other one picks up the kids. This is another sign of something
+that that bodes well for adding another fast food restaurant. So we now know that this could be
+a good location for fast food. It could be also a location for
+the more upscale fast food. In fact, 73% of households have two or
+more vehicles available. Marriage may or
+may not apply in your scenario. The thing that I mostly look at
+is I mostly look at marriage with a spouse present and you'll notice
+something really interesting here. So we've seen a lot of upward trends
+in income, in number of households, in household income, in per capita income. All of those led me to believe that when
+we got to this statistic we would have a high marriage rate. That and the fact that it is
+in a more conservative state. So I'll tell you what is surprising me in
+looking at this data is that you can see a steady decline from 2000 to 2010 and again to 2019 and a further decline. So that would be something that I
+might not pay attention to now. But if I worked for civic government, I might keep that on my radar as
+something I want to keep watching. That can mean changes in
+needs for childcare. It can mean that a family that used to
+occupy one apartment now occupies two. There can be some changes in how people
+associate with other institutions. The degree to which they stay
+going to church as a family, all of those can be can be changed. And let's see if we see
+the divorce rate going up. And actually the divorce rate
+isn't so much changing. That's a little bit
+predicted to be more stable. What is changing is this population that's
+never been married, but that is going up. So again, we're starting to build
+a more comprehensive understanding just by being able to look at trends over time. We could continue doing that by
+discussing educational attainment. So I think the big growth here
+is that there's just an influx in the percentage change of people who are
+going to college for the first time. And that is an indicator that a county
+that looks to have a lot of rural spaces is gaining a lot of knowledge work
+jobs, within driving distance at least. And that tells me that this might
+be a community in transition and that it's transitioning toward
+more knowledge-level work. Which makes sense that it would
+correlate with higher income. And then there's this data here about
+seasonal population by quarter. Now, you can see that there is
+not a ton of variance here, but there's a little bit. If you are studying an area
+that has a lot of resorts or a lot of vacation populations, so if you're a Michigander and you were
+looking at Mackinac Island, Michigan, we would see tremendous estimated
+population change by quarter. If you are in the ski areas of Colorado, you should see the same thing,
+these temporary influxes of population. And in some communities, I had a student who was doing some work
+on a shore community in New Jersey. And it actually becomes five times
+as big in the summer as it is during the school year. And so you've got to have a community
+that's cozy for the year-rounders, but also is able to ramp up and
+swell up over time. All right, we're going to come
+back to this in a minute and take a look at another report.

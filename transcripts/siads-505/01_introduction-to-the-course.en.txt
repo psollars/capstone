@@ -1,0 +1,74 @@
+Hi. I'm Chris Brooks, faculty here at the University of Michigan School of Information. This class is about
+data manipulation, and data manipulation is really the foundation of what you'll
+do as a data scientist. And that doesn't really change
+even as you deepen a lot of your investigation and
+your skills in the area. So in this course, we're
+going to teach you the excellent Pandas library. It's wonderful for data
+manipulation it is the de facto standard for Python. When you come out of this class, you should be quite masterful
+on the use of that library. We're going to teach you
+about how to acquire data, how to clean data, how to manipulate and
+joined data together, and to make basic inferences
+about that data. Now we expect that
+you already have some Python skills and
+some statistics skills, but this course is really
+a place where you're going to get to build
+those skills through practice. There'll be some course
+resources off to the sidebar in the course shell that describe other ways that you can get
+some experience with Python. I filmed the lectures
+for this course in very specific manner. I'm using a tutorial style, where most of what you'll be watching is actually
+screen captures of me typing into
+Jupyter Notebooks code. I'm doing a couple of
+unique things with this. One, you'll see all of my texts, all my comments in
+that code live. So you'll be able to
+read as well as listen. But I wanted to share with you
+a strategy that I think is powerful for learning and learning using
+the Jupyter Notebooks. So let's take a look at some
+of the core shell right now. So this is the coursera core
+shell here on the left, and on the right-hand
+side I've opened up the Jupyter Notebooks. So this is actually a MOOC that I taught and I'm going
+to use to demonstrate. When you go to a video
+on the course, let's say this one on DataFrames. You'll see that it's
+a regular instructional video, I'll just mute that. You can seek around in the video and there's
+some talking head. But the majority of it is
+going to look like this, and let's just close the notes
+and close the sidebar. The majority of it's actually
+going to look like this. It's going to be
+me working through examples in a Jupyter Notebook. And I think the most
+powerful way to learn in this course is actually to
+go into your Jupyter system, so I've got that here
+on the right-hand side, and there'll be a separate video about the Coursera
+Jupyter platform. But to actually create
+a new Python Notebook, it's empty and maybe name
+it after the lecture, so this was dataframes I think. And to follow from
+the beginning what I'm doing and type it in yourself, so here we'll maybe
+seek to the beginning. So here you can
+see I'm looking at some cricket loving countries
+in this example. So you can just type here, cricket loving countries, and just follow
+the example as you go. The power of doing it
+this way is that at any time you can pause the video, and you can explore, and you can start to
+look at alternatives, and you can start
+to form questions. And this is really powerful to be doing as you're
+watching a video to be actively learning instead of just watching
+passively this video. The video has a number of other opportunities in it,
+in particular, you can increase or decrease
+the speed of the video, and that can be useful
+too for review. I actually think high-speed
+video playback is wonderful, I listen to a lot of
+educational video this way, largely after I've already done the practice and I've
+already experienced at once, and I just want a quick review
+of the content, I'll flip it on at maybe
+one and a half or two times speed and try and
+absorb that content. The way we've built the videos
+for you for this class, which isn't frankly new to me and I'd love to
+get your feedback on is with that whole transcript within the video as well. So you should be able to read and listen to the video
+at the same time. We've got a number of
+different supports for you as you're
+learning in this course. We've got office hours, we've got slack communications, and we've got
+Piazza discussion forums, and so I'd encourage you to take advantage of all of these. I'll be in the office hours or the instructor of
+this course will, along with other people, such as graduate students
+or staff persons. And you really can't go wrong with practicing over and over again. So please grab
+the educational videos as you're watching them, engage with a blank notebook, and just follow along and see how you've maybe
+misinterpreted things, different investigations
+that you've gone off on, and share what you
+found or questions you have with the rest
+of the class.

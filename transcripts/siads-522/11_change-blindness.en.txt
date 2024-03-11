@@ -1,0 +1,87 @@
+Welcome back to
+perception and cognition. I want to talk about
+a really interesting concept right now called
+change blindness. I'm going to show you an image
+that's going to change. So there's going to be
+a bunch of flickering images, and I'm going to
+ask you to look at it and tell me what's different, and this is going to be a little bit difficult, pay attention. There was a pretty
+big noticeable change which you probably did
+not actually notice. If I show you the two
+images side by side, now it's maybe a little
+bit easier to compare. You might be able to see now
+that there's this big tree, there's big plants sitting behind this things
+that was actually changing as the image was
+flickering back and forth. So let's see this again. I'll play this again for you. Now that you know it's there, and you can see that
+it's a big difference. You might be surprised
+that you weren't able to notice that before, but change blindness is
+this interesting phenomenon, where because I'm introducing this black interjection
+between the frames, it's basically flushing
+out your iconic story, your short-term memory,
+because you're not focusing on this things that are perhaps
+in the background, you're not able to
+detect the change. So that black screen that is between these
+things is going to be the thing that makes you forget basically that there
+was this big change. So let me show you
+a different example, I'm going to flicker this one. Again there's a quit big change, and if you're not really
+paying attention, you probably missed it. Let me show you
+a different example or I'm not going to have flicker now, and now you can see quite
+easily what was changing, these bar was moving in
+a height in the background. So before it was low and
+then it became high, and you can see that when
+the flicker was taken away. So why is this interesting? This is interesting because
+a lot of the things that we do with visualization rely on our ability to tell
+the difference between two different states
+in the visualization. So change blindness relates to this idea that some things are
+visualized through change, and because we're
+blind to change, we may not be able to
+detect the change. Turns out that
+people have thought about this for
+a really long time. So Tombaugh, the guy
+who discovered Pluto, used this really
+interesting instrument that is still in use by astronomers where they take
+pictures of the night sky, and there's a little device where you can plug in
+the two different images, and you can flicker
+them back and forth. Like there's a little knob
+that you can twist back and forth he's got
+this in his hand over here, and you can flicker
+it back and forth, back and forth, back and forth, this is called a blink test. This is a color image
+of the same thing. Basically by looking at what's moved between
+the two different images, they're able to detect
+interesting changes, in this case, the solar system. So if I show
+this particular thing flickering back and forth, there's a bunch of things
+that are changing. So you have to be an astronomer
+a little bit detect this. So I'm going to put
+an arrow over here, and that's Pluto
+moving back and forth. So using this technique,
+they were able to basically load up multiple
+images of the night sky, and look at all the
+different things that we're changing between these different images
+in order to detect this celestial body, which was actually moving
+and was interesting. So this flicker tests, this
+back-and-forth blink test was the thing that supported this ability to
+detect the change. You'd think nobody actually
+uses this thing anymore. This is actually
+still a key part of most software that
+astronomers use. So you can see
+this feature called blink, which is basically
+what I'm describing. Where they take multiple
+pictures of the night sky, and have this ability to
+switch back and forth, in this case, not through
+some physical thing but just on the computer screen back and forth in order to
+detect the change. So why is this interesting to us for visualization purposes? Let's say we have a visualization
+that looks like this. This is a scatter plot
+and we click on a button that
+says add new data. If our visualization did this, we would not be able to answer the question what has changed. So that interjection, that flicker that basically prevents us from making that comparison, that little timer thing makes it impossible for us to determine what has
+actually changed. This is going to be
+determined in how we evaluate software that we get. We don't really want software
+that sits around and blinks out the screen every time
+we say add new data, because that will not allow
+us to detect the change. We also don't want to be
+building this kind of software when we're building
+visualization systems. So just a thing to consider. Takeaways here that
+the changes are really great and powerful way for detecting
+interesting data features. But change in blindness can
+impact those comparisons, and so we're going to be very cautious about the way
+we pick and use, and implement software
+to support this kind of detection in visualizations.
+With that, thanks.

@@ -1,0 +1,117 @@
+So now that we've had a chance to go over
+some basic command line interface tips and tricks and
+how to look around the file system, we're now ready to take a look at some
+of the commands that you can use to manipulate data at the Linux
+command line interface. The first commands we're going to
+take a look at are head & tail which allow us to peek
+at the file contents. Sometimes you just want to
+glimpse at the first few or last few lines of a file, particularly
+a data file, sometimes a Python file. It's sort of cumbersome to load this in
+Python and inefficient to do so in Pandas. You can take a peek at this using
+the browser in Jupyter, but sometimes you don't want to do that
+either because it doesn't give you as quick of a layout as you want. The shell commands that we're going to use
+are head which will show you the first few lines of a file, and tail which will sort of unsurprisingly
+show you the last few lines of a file. So what we might want to do is if
+we had a file called ride2018.csv, we might want to look at
+the first 20 lines of it. And we would do that by using
+the command head -20 ride.csv. Similarly, tail -50 will show you
+the last 50 lines of a particular file. And I want to draw your attention to this
+interesting use of an argument with dash. So the dash here isn't a specific
+option like we saw with ls, with minus l, or minus f, or
+minus t, but rather it's a number. So head takes as its argument a number
+prefixed by a dash, same with tail. So let's take a look at
+that in our notebook. So here we are back in our data directory,
+and if we do an ls we see these files. We do an ls-l to get a slightly
+longer version of that file. One of the options that I introduced
+you to earlier was ls-h, and we can combine those with -l to give us
+a human readable form of those file sizes. So you'll see in the one just above we
+have this kddcup.data.gz at 18115902, and that's a little hard to read. So in the human readable form,
+-lh, we see that that's 18 megs. That's a little large for
+us to deal with, so we're going to take a look at
+this ride.csv file down here. That's 85k in size. So let's take a look,
+let's clear the screen again. Let's take a look at the first few
+lines of that file just by using head -10 ride.csv. So we get some idea of
+the contents of that file. And this is one of the files that came
+from that bike ride that we talked about a little bit earlier. So we see that there's a bunch
+of stuff on the screen. It looks something like a CSV file in
+that it's terminated, it looks like columns are terminated or delineated with
+commas, but it looks a little strange. So let's do a head -1 on ride.csv. That looks even a little stranger, and
+this is why we're going to use the Linux command line to take
+a look at the data file. Let's just quickly take a look at
+another data file called ride_final.csv. So let's do a head -10 on ride_final.csv, and that looks a little bit more like
+what you would expect from a CSV file. And let's take a look at tail. Let's not pass any arguments to it and
+look at what ride, Final looks like. So tail without any arguments
+will give us ten lines of output. Head and tail give us the first few
+lines or last few lines of a file. Let's say we wanted to concatenate
+our show an entire file. The cat command is short for
+concatenate, and that will print the entire contents
+of ride2018.csv to the screen. The screen, by the way,
+is also called standard out, so you'll sometimes hear that term used. Standard out is just another name for
+an output to the screen. Let's take a look at what
+that would look like. So cat ride2018.cs, whoops, ride.csv. And if you look at that very slowly you'll see that we outputted
+a lot of information there. You might want to say, well why would you
+want to concatenate an entire large file? You might not want to unless you're
+piping it to another command, and we'll get to that in a few minutes. Two other commands that
+can be thought of as a more interactive concatenate
+are more and less. So cat will just dump the entire
+contents of the data files. More will allow you to interact
+with the showing of the file, and you can use space to advance through
+the file one screen full at a time, b to move back one page at a time,
+and q will quit showing the file. Less, which you can try out on your own,
+is a slightly different variant of more. So over at our notebook we'll
+clear the screen again and we'll do more ride_final.csv. And you'll see at the bottom I have
+a --more-- followed by a percentage. So that's a prompt telling me that
+there we are 10% through the file. If I hit Space I get the next screen
+full of information at 21% of the file is where I'm at with that marker,
+32 and so on. I can keep hitting Space until
+I hit the end of the file. Less is similar to that, and
+I'm going to use my shortcut here. Cursor up Ctrl A, and change more to less. Less is a little bit more primitive, it
+doesn't have the percentage display, and as we go through we just have a colon. We can quit that at any time by using Q. So I hit Q there and stopped. So more, less, head, tail, and cat all
+dump out information to our screen. If we want to edit a file we usually
+have available to us several editors on a Linux system. One of the most commonly used
+ones is called nano, and it's a lightweight largely text editor. It allows you to edit any non-binary file, and it's typically
+invoked with a file name. So for example,
+nano followed by either the relative or full path name to a data file. And when you start nano you'll see
+some additional functionality that's shown in the menu at
+the bottom of the screen. So let's take a look at, let's go back to our home directory, clear the screen, and I'm going to do nano on data/ride.csv. And you can see that there's a title bar
+up at the top that says this is GNU nano 2.9.3 followed by the name of the data
+file that I'm editing right now. And I can use my cursor
+keys to go through this. I might want to change something here
+where I might want to change, say for example up here I wanted to change
+message to messages as just an example. I could then use Ctrl O
+to write out the file. And I might want to change that file name to be ride2000.csv. It asks me if I want to save
+it under a different name. I say yes, and
+then I can do Ctrl X to exit from it. You can explore the options for
+nano and the functionality, but you're probably pretty good
+at using a text editor. This allows you to edit things directly
+in place on the Linux file system without having to download the file,
+make changes in your favorite editor, and then re-upload the file. So we've talked about a bunch of
+different Linux commands so far, and let's say you want to get
+more help on using those. There are at least two
+ways of getting help. One of them is to use the man command,
+man stands for manual, it's again a Linux Legacy issue. So man command will show you
+the manual page for a command. If that doesn't work you can ask for
+help, and help gives you help for built-in commands, that is those that are
+available explicitly through the shell, in our case Bash, as opposed to another
+command that is actually invoked, for example, nano. So using man is more
+common than using help. Let's take a look and
+see what this would look like. Let's say we wanted some help with ls, we could type man ls and
+we get the manual page. Manual pages can be a little weird to
+look at the first time you've seen them. Manual pages have a standard format. The name of the command is
+indicated in the upper left and right parts of the page, and
+it says posix programmers manual. Posix is a type of Linux, or a type
+of Unix, and Linux is a type of Unix. These have a structured
+format that's consistent. So they consist of a prologue and tells you about where this
+manual page came from, it tells you the name of the command,
+and typically what that name stands for. So ls stands for list directory contents. It gives you a synopsis
+which is an at a glance indication of the options that are
+available to you, and then a description. You can page through this using the same
+commands that you used for more, so this is actually being piped through more. And I'm going to hit Space a few
+times until we get down to Options. Options is probably the most useful
+section of most manual pages. The Options try to give you a clear
+indication of what the different options do. So in our case one of the ones
+that we used was ls-a or -f, and you can see on the screen
+what those options do. So that's what a manual page looks like. You can also ask for
+help on something like cd. cd is built-in and you can see, That that
+means change the shell working directory. So help and man are how you get help for different commands in the Linux
+command line interface.

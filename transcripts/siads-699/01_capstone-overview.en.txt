@@ -1,0 +1,93 @@
+Hi, welcome to the capstone. My name's Dr. Elle O'brian
+and I'm going to be the lead instructor for your capstone of
+the MADS program. The objective of this capstone is that you're going to
+be working to create portfolio worthy projects
+that demonstrate mastery of the Data
+Science skills that you've learned so
+far in the curriculum, as well as depth of knowledge in a particular subject area. This is your opportunity
+to announce that you've arrived essentially in the data science community
+of professionals. You are going to
+have the chance to test some of the skills that
+you've developed so far, as well as to push yourself in ways that you might not have
+gotten the chance to yet, but are really interested in. You can start to develop some of your own personal brand by
+pursuing your interests, and take these opportunities to challenge yourself by going further than you
+previously have. I'm going to give a little
+bit of an overview of the course and just some of
+the logistics around this. First of all, you've
+probably already noticed that you'll be
+working in teams of three. In the real-world, a lot of data science doesn't
+happen independently, almost everything is going
+to involve some teamwork. Even if you're the sole
+data scientist on the team, you'll often be working
+with the data engineer, possibly someone on a front end, as well as people in
+business analytics or whatever the application
+of your project is. Some domain experts and
+working with others is actually one of the
+core challenges of real-world applied
+data science, it is not as easy as it seems. This is going to be your
+chance to confront some of those problems in
+a setting that is somewhat emulative of
+what you might encounter in the real-world with
+all of the code sharing, project management,
+headaches, and glories that that contains. In this class, we are going
+to have weekly office hours, instructors will be offering
+regular office hours. Office hours are not required
+or expected of you and we will not be having any planned reviews or
+curriculum in them, office hours are for coming by and getting yourself unstuck. If you find yourself unable to move past part of your project, that's a good idea then, to come and talk to me or another instructor and we
+can help you get unstuck. Some of the things we can
+help you with our scoping. Trying to figure out
+if you want to keep or reject part of your
+original project proposal, how to deal with something
+that's turned out to be a lot more challenging
+than you thought, or perhaps, finding
+something to be, just anything that's
+more difficult than you expected, we
+can help with that. Come by if you have a question, if you come by and you
+don't have any questions, then we'll probably
+just hang out and we'll probably just end
+up going around and sharing what
+we're working on. In addition to office hours, you can also schedule
+one-on-one time with myself and other members
+of the instructional team, so you can think of
+us as consultants, we are data science
+consultants that are here to give our thoughts
+and opinions to you. Anytime that you think you could use a little bit of extra input, come to us and while it is not
+required that you used us, I strongly recommend it. Please avail yourself of the expert advice that
+is available to you. Another part of this course
+is going to be stand-ups. Because of this is going to be essentially eight weeks
+of work on your projects, there's not as many
+opportunities to check in with your
+other classmates. We're going to have every
+two weeks a stand-up where your team will submit a short video to check in
+about how you're doing. I will go over this in
+more detail shortly, but basically the
+idea is that we're emulating a company that might
+have many teams within it. If you were to work
+somewhere like Microsoft or Facebook or Amazon, they're comprised of hundreds of smaller teams that
+each have their own goal, but we still want to stay
+in touch with one another somehow so that we can
+inspire one another, help each other get unstuck and celebrate things that
+are going really well. We're going to be having a biweekly asynchronous video stand up and I will teach
+you how to do that soon. Finally, you'll be submitting
+your final projects, we have a Coursera
+submission form, final projects will
+consist of a blog post, a short overview video, and a GitHub project repository. You can share those with
+me and I am not picky whatsoever about the
+format of your blog. Seriously, just use whatever
+is going to help you express your ideas best whatever way you'd
+like to publish it in. If it is a real blog
+that you have submitted, if it's a really detailed
+Jupyter Notebook, it could be a preprint for
+an academic type paper, it could be something else. I will not be picky
+as long as it has readable words on it and that I can assess it for the value that it brings
+as a data science project. I'm really looking
+forward to seeing what things you create
+in this project. Like I said, this is a chance
+to push yourself and help define what your interests and assets are as
+a data scientist. I'm really excited to
+see what you create, you've got two months of protected time to build
+something that you think is really cool and I can't wait to see
+where you go with it. Like I've said, think of me and the other data science
+instructors here as consultants that are
+here to help you, make the thing that you are
+feeling so excited about.

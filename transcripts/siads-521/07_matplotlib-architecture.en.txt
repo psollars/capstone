@@ -1,0 +1,138 @@
+So in this lecture,
+we're going to start with a pretty gentle
+introduction to Matplotlib and how you might start looking
+at data visually. Now many of the other lectures
+we'll use other toolkits, there'd be more demos,
+and walkthroughs. But here I want to point out some of the fundamentals underneath matplotlib and how will
+actually actualize them. So the first thing we're
+going to do is setup the Matplotlib backend
+using a magic function. To see a list of the backends
+available on this system, we can just call
+percent matplotlib. So this is an IPython
+magic --list. So we see here there's
+actually quite a few and many of these will actually do nothing
+in the notebook. For instance, the gtk
+backend is going to try and render our plots
+to a desktop application, which is not super-helpful here. There are really
+two common ways to use matplotlib in
+Jupyter notebooks. The first being with
+an inline backend which will store the plots
+in the notebook data itself. The second is with
+the notebook backend, which adds some basic
+interaction like zooming. Let's configure this notebooks
+to show plots in line. So percent matplotlib
+and then inline. Okay, let's bring in the
+scripting layer that we've been talking
+about called pyplot. So I'll import
+matplotlib.pyplot as plt. One more important
+bit and this deals with the Jupyter
+Notebooks specifically. The Jupyter notebook environment
+controls a number of different interaction
+mechanisms and sometimes this seems a
+little bit like magic. For instance, you should
+have already seen that when you type a
+variable names say, df for a dataframe, Jupyter is going
+to try and render that to the screen
+in a meaningful way. The Jupyter Notebooks
+by default change how matplotlib figures are rendered
+and they close figures at the end of cell execution. I find this default a particularly questionable
+choice and I'm going to turn it off here so that
+we can delve a bit deeper into
+matplotlib itself. To do that, I'm
+going to import from IPython.display the set
+matplotlib close function. Then I'm going to call set
+matplotlib close with False. Now that we've
+disabled some magic, let's dive into
+matplotlib through the Pyplot scripting interface. We can start with the
+very basics creating a new figure, so
+called plt.figure. Now that doesn't
+look like it's done anything but it's
+actually initialized the scripting layer
+with a new figure where we can plot things, and we can get a reference to this figure at anytime by calling the Get Current Figure
+or GCF function. So I'll make a
+variable fig equals plt.gcf or get current figure then we'll print out what
+that object looks like. When a figure is
+created in matplotlib, it is also given an identifier and we can ask the pyplot
+scripting layer to tell us about all the
+figures which it currently knows about by looking
+at the figure numbers. So if I call plt.get_fignums nums this is a call to the
+pyplot scripting interface, it will return a list of all of the figures
+that are available. Right now there's just
+one, figure number one. Now figure contains
+an axis object and we can get that object directly from the
+figure if we want to using the figures
+get axis function. Interestingly, you can
+have multiple axis and a figure and we'll talk about
+that in a later lecture. So here, I'll just call Fig which was our object.get_axes. But actually, we get
+an empty list back. So there's been no axes
+created for this figure. So this isn't very common to actually call functions
+on an object when using pyplot because
+we're thinking more in a scripting approach, which is more
+imperative in nature and as we're issuing
+commands to the system, then object-oriented in nature. With matplotlib you can
+get both and this is both very powerful
+and can be confusing. So we can use the plt.gca() or get current axis function
+to get the current axis. So I'll call plt.gca. All right, so now an
+axis has been created and that's been
+done automatically for us underneath by pyplot. So this seems all a
+bit pedantic though. We're talking about
+figures and axis but we can't actually
+see anything yet. So let's plot some data. If we call the pyplot
+plot function, we can send in a couple of
+lists of points to plot. Underneath the function, is actually going to get
+the current figure and the current axis object for us and plot the
+points on that. So I'm going to call
+plt.plot and I get a pass into list, 1,2,3,4,6,10. So this is where things might
+be a little bit confusing. We can see that this lines list came back with one line in it. We have to actually tell pyplot
+that we actually want to render the image now
+to our backend and so, we could do this by
+calling the dot show. So we call plt.show. Awesome, our first figure. We can see that the list of
+numbers we pass in are X and Y parameters respectively
+for three points. For some reason, matplotlib decided to connect
+these points and lines. It's also worth
+noticing that there is some work matplotlib did for us including drawing
+the axis objects and setting the
+scale for our plot. So let's demystify this a bit. Remember that there are
+two axis objects for one axes object and the x-axis and the y-axis are
+the ones that get created. We can get access to these objects directly
+if we want to. So x equals plt.get
+current axes().get_xaxis. We Can do the same thing
+with y to get the y-axis. Once we have the axis object, we can inspect them
+and change them. Let's update some
+labels in the figure. So here I'm going to say
+x.set label text numbers 1,2,3 and then I'll set the
+y label text to up to 10. Now, let's make sure that we actually re-render our image. So we're going to call
+plt.show. Okay, great. If we wanted to plot more
+data onto the same plot, we can just call the
+pyplot function again. Underneath this is looking up the current active axes and
+dropping the data on there. So plt.plot and I'm going
+to at this time put 1, 22, and 3 as my x values and 4, 6 and 10 as my y-values
+and then plot.show. So you'll notice that
+when we did this, matplotlib dealt with all
+of the axis scaling for us and put the new data series directly on in a new color. Anytime we want to
+start up a new figure, we can just call plt.figure(). As we've discussed,
+matplotlib orients a number of different
+renderable objects called artists into the
+artist's layer and that can be passed back to
+the backend for rendering. You can actually
+control most of these. But the scripting interface
+that we're working in pyplot, is hiding a lot of
+this functionality. So let's take a look at that object inheritance
+diagram again. So I'm going to load it here from the matplotlib
+documentation. So nice big inheritance diagram. Just take a moment
+to look at that. That diagram shows
+almost everything inherits from the artists class. The artists class has a nice function
+called get children, which contains a list of all of the children
+of this artist. So let's see what
+children has in it. So I'm going to call plot.get current axes and
+then get children. Okay so here's the
+guts of our plot. The axes object actually contains a whole bunch of children which are the artists themselves, splines x-axis, texts et cetera. All of these things have properties which we can
+change and play with. Now, you won't normally go this deep into the matplotlib
+architecture, but I want you to be
+aware of what's in here. You can read the matplotlib
+docs to understand more about any of these
+objects and their properties. We'll discover some together over the rest of this course, but you're really
+going to have to use the secondary resources
+such as textbooks, websites and most importantly, the online library
+docs for matplotlib in order to create truly
+compelling graphics.

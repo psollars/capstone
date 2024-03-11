@@ -1,0 +1,99 @@
+All right, I have one last point
+that I want to make about text in kind of this last little mini lecture.
+Text is, because it is the way it is,
+we read it, we understand it, we make inferences based on it. We read a book, we read something on
+the sign on the side of the road, we make inferences like that
+is a tendency that we have. And because of the way text is structured
+and the way we believe text should be structured,
+we often make narratives from the text, regardless of whether
+the narratives exist or don't. So, there are many situations where
+people make visualizations of text. In this case,
+this is a different kinds of documents, different kinds of papers written
+in different scientific domains. And it's visualized using kind of this
+dimensionality reduction technique and so you can see different documents
+basically sitting near each other. And you see these little
+text labels next to them and what you might be inclined to do, if you look at this and look at sort of
+where similar things are sitting near each other, you might be inclined
+to start telling stories. So, why is clinical therapy related to,
+therapy is related to cell growth and so on,
+because they're sitting near each other. That is a tendency that you're going
+to have and so you're going to start narrating what it is about these
+things that make them near each other. Now, the problem with
+this is that sometimes it's entirely based on just
+the algorithmic way the system works. So remember, with things like multi
+dimensional scaling, which we've talked about earlier, there's a little
+bit of an optimization problem, okay? So, we're taking many dimensions and
+trying to reduce it down to two, okay? We're trying to take many aspects
+of similarity or dissimilarity and reduce it down to a simple distance
+between two objects in this display. But depending on how you
+start this algorithm, depending on the specific kinds of
+inputs that you put in the parameters that you set, you get very different
+visualizations of the same data. So, these are all different visualizations
+using different kinds of dimensionality reduction techniques of what's
+the Stanford dissertation database. So, what they did was they looked
+at all the dissertations and each of the different
+departments at Stanford. So, the chemical engineering,
+chemistry, electoral engineering, computer science, literature or whatever. Each of these little circles
+represents a particular discipline and all the dissertations within them, the PhD
+dissertations are included within them. The distance between them is intended to
+reflect sort of how much word overlaps there are. Okay, so how similar is dissertations for
+chemical engineering related to others? The color encoding is the higher
+level department is in the college of engineering, the college of literature or
+whatever it is. So, you can see certain patterns in
+the data but depending on how you ran this algorithm, you're going to get three
+very different visualizations. And things are going to be - things
+that were close to each other in one, might be very far away from
+each other in the next. And you put this in front of people and
+you say, tell me a story of why these
+things are next to each other and they're happy to do it, no matter
+which visualization you give them. So, they're happy to tell you why these
+two things are like each other, but if they're very far apart in another
+visualization they'll tell you why these things are very dissimilar. And so, this is problematic because
+they're basically reading tea leaves, basically making inferences off of things
+that are not actually in the data, but just aspects of the algorithm. So, in response to this, the visualization
+that this group came up with is this one. They said look, dimensionality reduction doesn't really
+make sense when we have this kind of data where people are going to be
+likely to do the wrong kinds of things. Instead, let's focus on
+specific sub departments or specific areas of dissertation and put
+that as kind of the central focal thing. And what that allows us to do is pull
+into the center the other departments based on the similarity to that central
+thing that we're going to focus on. So, if we pick like psychology and
+put it in the middle, we can basically pull in all
+the other departments and the distance to psychology
+will actually mean something. The distance from
+department to department, that is not in the central thing
+doesn't mean anything anymore. So, here's what it looks
+like interactively. So, you can see that they're clicking
+on a specific department and it's being drawn to the center. And then all the other departments
+are pulled towards that central department based on the similarity, that distance in textual similarity
+that we've talked about. All right, so let me end there and
+just mention a few takeaways for this and then sort of the broader aspects of text. One, remember that text is interpretable,
+we often derive meaning from it and that is unfortunately, going to
+cause some people to over-read and create narratives where none exist. And so, this is going to be a cautionary
+note that when you're taking textual data and finding ways of encoding it visually, you have to be really cautious about
+the way people are going to over-read. And basically make the incorrect
+inferences based on your particular visualization encodings. Okay, so you have to be a little
+bit careful about that and make decisions that are based on an
+understanding of this potential over-read. So, you might have to go and
+test your visualization technique and ask about what is that they're seeing and figure out whether you actually had
+intended for that to happen or not. As a summary of sort of the broad week on
+text, text data's everywhere hopefully, I don't need to convince you of that. But text encoding is complex, you saw lots
+of examples of the different ways that we can take textual data like even specific
+words or word counts and transform them. And based on that transformation,
+we're going to get very, very different visualizations. So, the kind of pre processing that
+you do to textual data is going to be highly important to what you
+get in the final visualization. There are lots and lots of tasks for
+textual data, just as there are many, many different kinds of text,
+lots of tasks. Some of them will focus on words,
+some of them on sentences, some of them on collections. And as you saw many different options,
+we've only managed to cover a few of them. But in the beginning, I showed you
+a screenshot of like a survey of all these different visualization techniques. And that is going to be
+a useful set of things for you to look at as you consider
+how to visualize text. Some of them will be appropriate for
+certain tasks and not others. There's always going to be that need
+to use the lessons that you've learned about what makes for expressive and
+effective visualizations. And apply them to specific context and specific techniques to figure out whether
+you're making the right decision. And finally, I want to reemphasize this,
+watch for over-reading within textual collections, people naturally read and
+understand text in a certain way. You want to make sure that they're reading
+your visualizations in the way that you had intended. And with that, thank you for listening.

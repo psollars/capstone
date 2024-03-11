@@ -1,0 +1,222 @@
+So now we know how to
+construct synopsis for data streams and
+we use Bloom filter as the example that we care about querying
+the appearance of items. But you don't always just
+care about appearance, right? How many times that we just query
+whether something appeared or not? Intel mining were more concerned
+with more information if statistics such as counting, right? Think about frequent items. Think about populistic models, right? Singled out regressions. We care about numerical counting, numerical measurements of
+items of values of variables. So how do we will
+counting in data streams? Well, the basic idea is still to keep a
+summary of the history updated over time. But in this case, we're not just dealing
+with simple appearance with the only with numerical attributes counting. It is particularly important, because many
+data mining tasks rely on counting, right? Frequent patterns, similarity,
+think about Euclidean distance, right? Correlations, probabilistic models, right, were always interested in dealing
+with numerical attributes. And again, how many counting is
+easy if your vocabulary is small? All you need to do is to
+keep a dictionary and then it just keeps
+a counting of the current. You know the current counting of
+the items in the dictionary and then you keep updating the dictionary. But when your vocabulary is large, the dictionary itself cannot fit into
+your memory, then we need a smarter way. In this smarter way, you're means that we
+have to sacrifice the accuracy, right? Because we need to actually save space and
+we need to update this count over time. So at certain circumstances, the numbers
+may not be exactly the same numbers, but we can prove that
+the errors will be bounded and this is what we know as lossy counting. The basic idea behind lossy
+counting event in many cases, we don't actually need
+the very accurate answer. Approximate answers
+are often sufficient enough. One example would be like trend answers or
+frequent patterns, right? So if we know that,
+we want to find the trend of a time series of the measurement
+where it is going up are down. Do we actually need the accurate counts? If we care about the extracting frequent
+patterns, right, with the minimum threshold for items above this threshold,
+does that really matter, right? If we make 1% or 0.1% of the error,
+but this actually points to the very interesting
+is how much error is acceptable. You didn't ask, right? For example, if we use this example
+from Professor Job Hun, right? Suppose we have a router that is
+interested in all the internet flows whose frequency is at least 1%, right? So you can see that this is actually
+a notion of frequent pattern mining. The minimal support is 1%, right,
+of the entire traffic stream, right? And you feel like that okay, I can
+actually accept one tense of the error, of this mean most treasured, right? In other words, that I can,
+because the minimal structure is 1%. 10% of 1% is 0.1%, right? So I can actually accept the error
+that is 0.1% of the entire population. If I'm comfortable with this loss, then can you actually give
+me an efficient algorithm? So the general question is how to
+count the frequency of items in a data stream with a limited memory capacity and
+with the error bound. Here the error bound is actually epsilon
+times the entire number of items in the stream. As we said that, the algorithm, the process to achieve this
+is called lossy counting. And basically, lossy counting tries
+to divide the data stream into buckets that you can
+actually fit into memory. So at every time,
+you just deal with one bucket, right, instead of dealing with either a sample or
+the entire table stream and you keep a summary of
+the counts in the stream. So this is how you build
+the synopsis of the data stream. You keep a summary of the counts of items. You count the frequency of
+the items in each bucket and then you add item frequency of
+local buckets into the summary. Doesn't make sense? So summaries your synopsis, right,
+and you process each bucket at a time. And then you count the accurate frequency
+of items in the bucket, because the bucket fits into memory and then you
+add these frequencies into the summary. But remember that,
+because the summary has to be compact. If you cannot keep
+the vocabulary into memory, then you cannot keep the vocabulary
+plus summary internet. So that means you have to reduce
+the number of items that you actually record in the summary so
+that the summary is compact. And really what we do to guarantee this
+is to discount the frequency of items so that the infrequent items will become. In other words, in the summary we're only
+keeping the currently frequent items. Does it make sense? So you can see how this is connected
+to frequent pattern mining. So let's look at how the process works, how to conduct lossy
+counting in data streams. Suppose we have a big data stream, right,
+with the squares with many different colors and the goal is to actually
+count the number of items, right? So that you know how many times that items
+of different colors appear in the stream. And we have a rather limited memory
+that we can actually fit in, let's see only 10 items
+in memory at a time. So how can we actually deal with this? Well, we first divide
+the data stream into buckets. So what's the bucket size? Well the bucket size has to fit
+into memory for sure, right? Suppose it does, you also want to
+make sure that the area is bounded. So here is actually a very interesting
+trick that you divide the data stream into buckets of the size
+that is one over Epsilon. Remember that Epsilon is actually
+the error rate that you're comfortable with for instance 0.1%. And in this case, right, if Epsilon is
+0.1%, you can divide your data stream into buckets of 1000 items per bucket and
+we will discuss the rationale later. But in this case we
+cannot draw 1000 items. Let's assume that we're dividing the data
+stream into buckets of 10 items at a time, right? So in this case where we
+actually have Bucket 1 10 items, Bucket 2 10 items,
+Bucket 3 10 items and so on so forth. We only deal with one bucket when we
+have received all the 10 items, right? And then once we're
+dealing with one bucket, we throw away the data
+in the previous buckets. So the best summary here is
+to keep the summary, right? And then with the summary and
+with the current bucket, you make decisions on what to actually add
+into the summary or to update the summary. So to deal with the first bucket of items,
+first thing your items, your summary is empty, right? Because you have received no items before. So what you need to do is to count the
+frequency of items in the first bucket and you add this counts into the summary. Here at the first bucket are these
+10 elements, are these 10 items and if you count the frequency
+of these 10 items, you basically have that, There are four
+red items, two yellow items and for the other four colors,
+you have one each, right? So this is the count with Bucket 1. We know how to do this in data mining one. Now what we need to do is to
+add this to summary, right? But because the summary has to be compact, we don't want to keep many things
+into the summary, so we do one trick. We discount, right,
+the counts of every item by one, right? So we drop the counts of every item by 1. In this case, frequent ones will become
+less frequent and less frequent ones, infrequent ones will be gone, right? After discounting the counts of every
+color by one, we can see that we only have two colors left, red and yellow,
+with the discounted counts three and one. And this is what we will
+actually add into the summary. This sounds like something that's
+the opposite direction of smoothing. Remember that when we're talking
+about probabilistic models, we use smoothing to guarantee that the
+infrequent words still have a probability. But in this case we're
+actually discounting them so that ideally they will be gone, right? And this is because that the purpose
+of the two processes are the opposite. For keeping the summary, we want to
+keep as few items as possible, but for computing the probability right, we need
+the nonzero probability for any item. So this is how to count the first
+bucket and update the summary. Now the summary is no longer empty. It actually has two items with the counts,
+right? So how do you deal with the second bucket? Well, once again we count the frequency
+of the items in Bucket 2, but we add this counts
+into the current summary. Bucket 2 contains these 10 items and
+if we count their frequency and then we add this frequency
+into the summary, now we have seven red squares in total,
+two yellow squares, two orange squares and then one for
+each for the other three colors. Okay, so this is supposed
+to be Your new summary, but there are still too many items. So instead of doing that,
+we do another round of cutting, right? We drop the counts for every item by 1. And in this case your dictionary size is
+still small, as you can see that after dealing with two buckets we still only
+have three items in the summary, the red, yellow and the orange, right? With the counts six, one and one. So this is now your summary, right? With three items and the counts, and now with the arrival of the third
+bucket we do the same thing. We count the frequency of the items in
+buckets 3 and we add them to the summary. So based on the ten
+items in this bucket 3. We count their frequency and
+we add them into the summary, right? We got lots of items. Now we have 9 red items. We have two yellow items, right? One orange item, two black items,
+two blue items, right? And then one for
+each of the other two colors. And once again with
+discount every color by 1. Right and this you can see
+interestingly leave us only, what? Only four colors. And these four colors will be what you
+actually put into the final summary, right? Suppose now you have finished
+all the three buckets. These are the number of
+colored items that you record. But you can see that this summary is by
+no means the accurate answer of the real counts of these items, right? Because after every bucket
+were doing this counts. Right?
+So the real counts are shown actually on the right. You can see that we actually have more,
+counts for every particular color. But why do we still like the summary? Because first is compact, right? It's small. You only has four items, right? So the recovery size small and
+you can fit it into memory. And actually, the summary is quite good because
+it preserves frequent items, right? If you look at the real counts. Of course the real numbers are different,
+but the most frequent items, the red one, right? The yellow one,
+the blue one are still there, right? Are still in the summary. So this is nice. This means that we're not going
+to miss frequent items, but of course there will be false
+positives like the black ones, right? It only has two items, but because the two
+items appeared in the final bucket, right? That makes it appear in the final summary. So you can see that the summary really
+approximates the real counts, right? And we can quote it if they say
+that it's actually quite good. The question is how good or how bad? So how to answer this question, right? Remember that we apply the tricks
+that we designed the bucket so well that the size of
+a bucket is one over Epsilon. Now it's time that it makes the sound. We know that after each bucket, every item
+is discounted at most by 1 by at most well, it's discounted only if it appears
+either in the summary or in a bucket. Right? So what's the bucket size? That's one over Epsilon? In that case, how many buckets? Well, you can see that it
+is total number of items. And over bucket size
+that is just Epsilon N. That's nice. That is the number of buckets, and you
+probably know where I'm going to, right? So suppose at worst case
+area item is discounted. Once, right? Per bucket, then what is the upper
+bound of the error of every item? Well, it is at most Epsilon times N and according to our pre arrangement you
+are comfortable with this error rate. Right?
+So that works really nice, right? And it works really nice if Epsilon
+is small in reality, right? If the acceptable error rate is small,
+then you can actually do this because the bucket size one
+over Epsilon will be large. So this is what we know
+about lossy counting, right? It is extremely powerful. Is the simple idea such a simple idea that
+everyone can actually implement, right? And there's no false negatives, right? Because if the item is not
+included in the summary, then it cannot be frequent overall. That is very nice. And it can be easily extended to
+handle frequent pattern mining,right? So Instead of just counting
+the individual items, the single items you can keep in a summary
+what the frequent patterns, right? The frequent itemsets,
+frequent subsequences, right? So this can be easily extended. But they also have some weaknesses, right? Although it does not have false negatives,
+it does have many false positives. So the item being included in summary
+does not mean that it is frequent. Overall, chances are it's just frequent. Recently, right? And another problem that the space
+bound is actually not so good, right? As we see that it works extremely
+well if epsilon is small, right? That's nice because we can
+just accept lower error but one over epsilon becomes large. That means you have to deal with
+the bucket of still a large number of items at a time. Also a problem that you know, to apply this in reality is that it does
+not handle locally frequent items, right? So after you updated the summary again,
+right, you are actually extracting the frequent
+items overall in the stream. Suppose the item is actually very
+frequent in the beginning or in a particular segment of time,
+but then it becomes less frequent, actually infrequent later,then you
+will be gone eventually from assembly. That's probably not a bad thing, right? So to apply lossy counting in practice,
+right, there are many tricks
+that people have applied. For instance, people would actually process multiple
+buckets if memory allows, right? If your memory can only host one bucket,
+then that's it. But if your memory can actually host
+multiple buckets, you put them all in. And why is that, right? Because if you actually
+count k buckets at a time, then after every computing process
+you reduce the counts by k. Now you probably know why this is
+a desirable, because by doing that you can actually remove more items at a time,
+with the same error band, right? So reducing the count by k will
+actually allow you to reduce more items from the memory
+to keep your memory compact. An another trick, which is our favorite trick that
+whenever possibly want to use apriori. So if you are keeping the counts of
+frequent item sets instead of just individual items, if one pattern,
+if one item, or if one subset of items is not frequent in memory, then you don't
+need to consider its super patterns, right, if you still
+remember how apriori works. In practice, actually,
+lossy counting works pretty well for concept drifting, right? Which is actually good news. Although we said that it's not so desirable because it does not
+handle locally frequent items. And in actual projects false positives,
+but if items just become frequent
+more recently, right? Then, if you look at the history
+they're false positives, but if you look at concept traits, right, good news is that these items
+will be put more weights on. They are more likely to pass the filter,
+right? So in scenarios in applications that
+you do care about concept drift, you do want to put more
+weights on more recent items than this lossy counting process
+have already accommodated. So this is the idea of lossy counting. In reality,
+if you can do counting data stream, you can actually rely on the counting
+to do lots of other things, right? Like frequent pattern mining,
+like similarity, like correlation, like probabilistic models,
+regressions and so forth. This is because so many data mining functionalities
+are just build upon counting, right? We have already named lots of them, right? And in fact more complex data tasks can
+be solved using similar idea, right? You basically keep the synopsis
+structure or summary of the stream. It could either be this bit
+array by the bloom filter or this counting dictionary, the summary. Right, and you update it online, right? In other words,
+in more complex data mining tasks, your synopsis structure
+could also be more complex. For example, you could actually train
+a machine learning model online, right, using stochastic gradient descent. And you will actually learn this when
+you're learning machine learning and deep learning in particular. So to summarize the techniques of counting
+and synopsis structures in data streams. I hope you understand using synopsis
+structure to some right in the stream is actually more efficient than just
+keeping a small number of sampled items. I hope you understand the basic
+idea behind Bloom filter and lossy counting,
+neither of them is very difficult. Many data mining tasks can be facilitated
+through the online summary of data stream and the summary could either be simple or
+it could be more complex.

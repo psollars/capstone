@@ -1,0 +1,186 @@
+Welcome back to Math
+Methods for Data Science. In this video, we're going
+to talk about variance. Let X be any random variable. The variance of X is
+the expectation of the squared difference between the realization of X
+and its expectation. That's given by
+this formula here. It turns out that this is exactly equivalent to this other formula which is sometimes
+easier to compute, which is the expectation
+of x squared minus the expectation
+of x squared. Intuitively, if X
+has a high variance, we can observe values of X
+along way from its mean. If X has a low variance, the values of X tend to be clustered tightly
+around the mean value. When the variance is small, the expectation tells us more about the properties of
+the random variable, namely, where it tends to occur rather than
+just its average. The standard deviation is the square root of the variance. The standard deviation
+is often denoted sigma and the variance
+is sigma squared. Here we have two distributions. In distribution A, we have a normal distribution
+around the value 3. In distribution B, we have
+a bimodal distribution that has mods around
+negative two and two. The question is, which of
+these has the larger variance? Take a second and
+think about this. Maybe pause the video. Then which has the
+larger expectation. The expectation of A is
+going to be right at three and we can see that there's not that much spread between the points and this
+average value three. Distribution B, the
+expectation is going to be around negative one. The expectation of
+distribution B is much smaller than the expectation
+of distribution A, but the variance is larger. We see that here the distance of the
+points from the mean, while these are
+distance three here. So the distance square
+would be like nine. These are distance
+about one there, about three by time you
+get over to minus four. The variance of
+this distribution B is much larger than the variance distribution A and
+you can see that visually that the points
+are simply more spread out. That's what's variance is measuring how spread
+out the points are. Whereas expectation is
+measuring on average. What is a point? Where's the center of mass of
+this distribution function? Let's start off with
+a classic example. What is the variance of a
+Bernoulli random variable X? Where X equals one with
+probability P and 0 with probability 1 minus P. If you haven't seen a Bernoulli
+random variable before, this is just the definition of a Bernoulli random variable, it's a variable that only
+takes on values zero and one. Variance of X, we can compute it two ways
+from the previous formulas. We can compute the expectation of X minus the expectation of X squared. We'll do that first. What's the expectation of X? Well, X equals 1 with probability P. That
+would be P times 1 plus equals 0 with
+probability 1 minus P, 0 times 1 minus p.
+That's just equal to P. The expectation of a
+Bernoulli random variable is just equal to P. Therefore, our variance here is, well with probability P, this value here is, well, the realization
+of X is one, expectation of X is P squared, plus with probability 1 minus P, X turns out to be 0. The realization of X is zero. The expectation is
+still P squared. This just equals, P
+times 1 minus P squared, plus 1 minus P, times P squared. We can take out a P and a 1 minus P term from
+both of these terms here. It's going to be P times 1
+minus P. In the first term, we're left with 1 minus P, and the second term we're
+just left with P. Now, notice that these here, sum to 1, and so this equals
+P times 1 minus P. We can draw a little
+diagram of this. If we put p on the X-axis and the variance of
+p on the Y-axis. If p is 0 and the variance is 0, and in fact the Bernoulli
+random variable is always just 0. If p is one, the
+variance is also 0, and the Bernoulli random
+variable is always one. It's maximized at p equals 1.5. At p equals 1.5, the
+variance is 1/4, because both p and
+1 minus 1 are half. In between, this is a parabola. Looks like this. We can also compute this
+using our other formula. Remember, variance of
+X was also equal to the expectation of X squared minus expectation
+of X quantity squared. Now the expectation of X squared is the same
+as expectation of X, because X squared is equals X. One squared is one
+and 0 squared is 0. The expectation of X squared
+is simply equal to p, it's one with probability p and zero with probability 1 minus p. The expectation of X
+we already saw was p, and so squared is p squared. Again, this equals p
+times one minus p, as we had seen before. In our second example, we're asked to compute the
+variance of a random variable uniformly distributed
+between zero and one. Let's do this. Here, we'll
+use the second formula. Variance of X equals
+the expectation of X squared minus the
+expectation of X squared. First let's compute
+the expectation of X. You might notice
+that it's a half, just by symmetry, but we'll
+go through the calculation. We're taking the integral
+from zero to one of X dx, the probability of each
+of these being one. There's a one in here, and this is just equal to half X squared evaluated
+from one to zero. If you take the derivative of 1.5X squared you get X back. This is simply equal to 1.5
+minus 0 which equals 1.5. We also see that we need to compute the expectation
+of X squared. Well again, we integrate
+from zero to one. Each of these occurs uniformly, so there's 1 times X squared dx. This equals one third X
+cubed from zero to one. This equals one third
+minus 0 is 1/3. The variance of X is
+equal to 1/3 minus 1/4, because 1.5 squared is 1/4, and this equals 1/12. The variance of the
+random variable uniformly distributed
+between 0-1 is 1/12. Let's compute it the other way. The variance of X is equal to the expectation of
+the quantity X minus the expectation of X squared. We saw the expectation
+of X was 1.5, so this is equal
+to the expectation of X minus 1.5 squared. This equals the
+integral from 0-1. Each X is equally probable, 1 times X minus 1.5 squared dx. Just distribute this out, we get X squared
+minus X plus 1/4 dx. We can integrate each
+term separately. A third x cubed minus one half x squared plus one fourth
+x evaluated from 0-1. Plugging 1 in, we get one third minus one
+half plus one fourth, and plugging 0 when
+we just get 0. This equals, and we'll change
+the denominator to 12, 4 minus 6 plus 3 over 12, which again gives us 1 over 12. The variance of a random
+variable uniformly distributed between 0
+and 1 is 1 over 12. Now let's look at some
+properties of the variance. First, if you take a
+linear transformation of a random variable
+X to aX plus b, then the new variance of
+this random variable is just a squared variance
+times the variance of X. Multiplying the
+random variable by a transforms its
+variance by a squared. Adding something
+to random variable doesn't change its
+variance at all. Secondly, if X and Y are
+independent random variables, then the variance
+of X plus Y equals the variance of X plus
+the variance of Y. Let's use these properties to compute variances
+in certain cases. First, what is the
+expectation and variance of the sum of n i.i.d. Bernoulli random
+variables where each is 1 with probability
+p and 0 with probability 1 minus p. Now
+we have a random variable X, which is equal to
+the summation of Xi, i equals 1 to n, and each Xi is equal to 1
+with probability p and 0 with probability 1 minus
+p. So the variance of X is equal to the variance
+of the summation of the Xi, and because all these
+Xi are independent, this is equal to the summation
+of the variance of the Xi. We saw before that the
+variance of each Xi was equal to p times 1 minus p. There's
+n different values so this simply equals
+n times p times 1 minus p. Now this problem is the same, except that now we are looking at the variance of the
+average instead of the sum of n Bernoulli
+random variables. Now our, we'll call it Y, our random variable Y
+equals 1 over n times the sum i equals 1 to n of Xi. This simply equals
+1 over n times X, X being the sum of the random variables that we compute on the previous page, and so the variance of Y simply equals 1 over n squared
+times the variance of X, Y is just X transformed
+by 1 over n, and so we take that 1 over n squared and put it in front
+of the variance here. We saw that the variance
+of X itself was equal to n times p
+times 1 minus p, so this just equals p
+times 1 minus p over n. This is a significant result. What it says is that as we take an average of more and
+more random variables, the variance is decreasing
+and going to 0. As n gets bigger, this variance is getting
+smaller, which is intuitive, as you add more of these
+random variables together, you are going to expect
+that it approaches the expectation and that the amount of
+variation goes down. What is the variance of
+X which is distributed uniformly between
+minus 100 and 500? We have our random variable X, but this X actually equals
+600 times Y minus 100, where Y is uniformly distributed between zero and one. Now we saw that the
+variance of Y from our previous calculations
+was equal to 1/12, and so the variance
+of X will be equal to 600 squared divided by 12. Remember the 100 doesn't
+come into it at all. So 600 squared, while six squared is 32 divided
+by 12 is three, so it's three times 100
+squared, which is 30,000. Now, we saw that if X
+and Y are independent, then the variance of X plus Y, equals the variance of X
+plus the variance of Y, but what happens when X and
+Y are dependent variables? The claim here is that there's
+not much to be learned, so let's look at an example. Let X be the number of hours you study
+during the weekdays, and Y be the number of hours you study
+during the weekends. With probability a half, you study 20 hours during the week days and do not
+study on the weekends. With probability one half, you study 10 hours during the week days and 10
+hours on the weekends. Compute the expectation
+and variance of X, Y and X plus Y. The expectation of X, well, half the time you study 20 hours and half the
+time you study 10 hours, so the average of 20
+and 10 is equal to 15. The expectation of Y, half the time you study
+zero hours on the weekend, and half the time you study
+10 hours on the weekend, so it's just the average
+between zero and 10, which is five. The expectation of X plus Y
+by linearity of expectations, which does not require that
+X and Y are independent, is equal to 20. What about the variances? Well, the variance
+of X is equal to the expectation of X minus
+the expectation of X squared, and this is equal to, well with probability
+half X equals 20. It's going to be 20
+minus 15 squared, 15 being the expectation of X
+and with probability a 1/2, it's 10 minus 15 squared. Each of these gives us 25, so we're just adding 1/2
+plus 25 plus 1/2 plus 25, which is just equal to 25. The variance of Y equals the expectation of Y minus the expectation of
+Y quantity squared, which equals 1/2 times zero minus five squared plus 1/2 times
+10 minus five squared, and again, this is 25. The variance of X and the
+variance of Y are both 25. What about the
+variance of X plus Y? While the variance of X plus
+Y equals the expectation of X plus Y minus the expectation of X
+plus Y quantity squared. In the first case, X plus Y equals 20, the expectation of X and Y is 20, and in the second case, which happens probably
+half as well, X plus Y is also 20. So the variance here is zero, so even though X and Y both
+have positive variance, the sum obviously
+remains the same, the outcome of X plus
+Y is always equal to 20 and therefore it
+has no variance. That's why variance to be additive requires that X
+and Y are independent.

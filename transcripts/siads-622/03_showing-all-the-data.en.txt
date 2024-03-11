@@ -1,0 +1,194 @@
+Welcome back. We've talked about dimensionality reduction, and that's great if you are basically able to throw
+away data in some sense. You're getting some optimized
+imperfect representations that is lower dimension. But what happens if
+you can't do that? What are the choices
+that we have? The first choice that
+we're going to think about is something
+called small multiples. As I mentioned in
+the intro to this, you've probably seen
+small multiples and maybe not realized that
+that's what they're called. This is a very general
+and useful technique to basically have many, many small figures
+all being displayed simultaneously that support
+many different comparisons. How does this work? Let's say we have a data set like the
+one that's on the screen. We have a bunch of D's, let's assume those are students. Those are different students that have been taking a test. Their scores for
+the different tests are in the different columns. There was Test V1, Test V2, Test V3, variable 1, variable 2, variable 3. Each of these
+basically represents the student's performance
+on a particular test. We have three students
+and we have five tests. How do we represent all
+this data simultaneously? We could come up with some weird mash-up bar chart that has lots and lots
+of different colors and lots of categories, basically depending on the test. But what we're going
+to suggest instead is breaking this apart and
+using small multiples. One way of doing this
+is to basically support the comparison of a particular student's
+performance over time. D1 is the student and
+we're going to want to look at their performance for
+Test 1, Test 2, and so on. This sequence of small
+multiple bar charts at the bottom now, I have that. They basically are a
+representation of every student. The first student, D1, you can see their performance represented in that bar chart. The next student, D2, is
+the one in the middle, and D3 is the one on the right. What this is great for is
+basically allowing you to compare student performance
+for a specific student. Comparisons within a specific row are made easy by
+this visualization. Unfortunately, it is harder to compare a particular test
+over multiple students. Our eye now has to
+cross and across these small multiple
+visualizations, multiple lines that are
+basically going to block us and make it hard for us to
+read straight across, and so being able to
+see how students 1, 2, and 3 all did on the fifth test becomes a
+much more difficult task. To answer that, if we had
+a different question, let's say we wanted to
+know something about how students did given a test, we might do a different small
+multiple visualization. In this case, it's a more column-focused small
+multiple approach. Here, what we have
+is an easiness of comparing all the students'
+performance for one test. Test 1, is the visualization
+in the far left, and we can easily
+compare the bars representing each of the
+students against each other. Our eye does not have to travel
+very far to support this. However, now we have the opposite problem as we did before. If we wanted to see one student's performance
+overall the tests, now our eye has to move across all these different
+small multiples and that becomes a harder task. There are trade-offs
+that are made when we decide on how to implement
+small multiples, some things become easier and
+some things become harder. Ultimately, we can show
+lots more data because we have many more
+visualizations to play with, but we have this limitation. A way of representing
+that visually, this design consideration, how we might pick one
+versus the other. Let's say we have
+two different tasks. We might want to know
+where we're an educator, we want to know through
+some learning analytics software how a student's
+grade varies over time and also how the classes' grades
+are varied over time. Within a specific class,
+how the students did. That's the domain-level task. Remember, we have our
+high-level representation, then we have the abstract task. The data is the same, it's students and tests, and we have ids for these things. The tasks themselves,
+the first one is basically comparing by the
+first nominal variable, so it is, let's say
+the student over time. The other one is comparing over the second nominal variable. It is the test. One is the student, the
+other one is the test. If we emphasize that first task, what we might get is
+one small multiple. If we emphasize the other task, we might get a very
+different small multiple. It is true that these
+things are both supported, so there is the ability
+to answer those questions but you can see through
+this dashed line that the other question, the question that we
+didn't focus on with the particular production of the small multiples if we
+emphasized row-based things, we can't do column-based
+things very easy. If we do column-based things, we can't do row things very easy. We can still do them, so
+it's still expressed, but it is not as effective. That's the trade-off that
+we're making when deciding which representation to have
+for the small multiples. Do we want row-based
+or column-based? If you have more data, then you have to make
+more trade-offs. Small multiples can mean
+really, really small, so some of the examples
+that we've had so far, like this one are
+still fairly readable. The charts themselves
+are readable. But if we go to some of
+the actual small multiples that people have produced
+and put in newspapers, for example, you might get something that looks
+very much like this. This is drought over time
+within the United States. Where are the areas
+of the country that have experienced huge
+amounts of drought? Each of these small
+multiple plots, each of the small maps, basically represents the drought
+for that particular year. Where were there areas of drought for that particular year? What's nifty about these
+is that small multiples make somethings easy even
+when we have really, really tiny little icons. With really tiny icons like this, you might not be able to
+read like how Michigan did, for example, or how
+California did. But we are able to make certain inferences
+across all the data. The inferences that we can make are based on things like
+pre-attentive processing. Outliers become easy to
+detect because they're very different from the other
+distracter signals. An outlier in this
+particular case might be a particularly bad year, in which everything was drought, the entire country was
+covered in drought. Another outlier in
+this data might be a year in which there
+were no droughts, the country is totally fine. Then there are other comparisons that we can make over time. Because of course,
+we haven't laid this thing out and
+I'll very long chain, but we have these
+columns and rows, that becomes a little
+bit more difficult, but if there were
+trends in the data, we'd be able to see that as well. If there was a long sequence of droughts that
+were very similar, we might be able to
+detect that quite easily because of things like
+pre-attentive processing. Again, if you don't
+remember this, go back to the first InfoVis, set of lectures InfoVis 1 when we talked
+about perception, and recall then that
+pre-attentive processing makes it easy for us
+to basically pull out the target image from a bunch of distractors
+almost instantly. We don't have to scan across, I can take in the whole scene and we can make that
+determination easily. A very simple example when it comes to small
+multiples of why this works. If I ask you to find Waldo, if you know the
+where's Waldo books, there's like a little character and you're going to have to find him among a bunch of
+different distractors. Where's Waldo is easy if you have a where's Waldo
+that looks like this. This is a small multiple,
+a bunch of Waldos, and it's quite easy to
+detect the target Waldo, everything else looks the same. This does not work well in this kind of real
+where's Waldo scenario, where you have to find the actual where's Waldo character, and all the distractors
+look very similar. Similar in that they're
+all the same size, but they might have
+very different colors, it's impossible to group them
+together. There's nothing. Here all the distractors
+are similar, and here the signal and the distractors are all similar in potentially different
+from each other, it's very hard to detect. This situation might
+be one at where small multiples is actually
+not a great scenario. It's a difficult task because your eye has to scan across. The way you decide whether
+small multiples is appropriate is you ask
+the two questions. Is the target pattern obvious? Is there trend in the data? Those are two questions
+that you might want to apply when using small multiples for
+communicative purposes. When you've decided to
+communicate a particular insight, you should ask, is the
+insight pattern obvious? Is there a pattern to the data that is
+part of the insight? In our running example, this is our cars dataset. We have different ways of generating small
+multiple plots for that. One is to generate basically a different scatter plot for
+every pair of variables. This is what's called a
+SPLOM scatterplot matrix. We're going to do all comparisons and generate something
+that looks like this. This is a matrix
+of scatter plots. It's comparing each pair of
+variables to each other. What's nice about
+this is that you can easily identify outliers. You can identify
+things where they're either very strong
+correlations or very weak correlations
+in the data, or very positive, or very
+negative correlations. Those outliers tend
+to be of interest. You can also find things
+that are similarly behaving. All things that have a
+positive correlation and you might want to target
+those for further analysis. This is another example of SPLOM. This is one has color, we've added an
+additional dimension. We might know something about, let's say their flowers. We might know which
+species they are. We've encoded that in
+this particular image, and to recover some of the functionality because some of these things might be very small, we can add in interactivity. We'll talk more
+about this next week when we go through the
+interactivity lectures. But you can basically add
+interactivity that links between the different
+small multiples to support various tasks. If you have a need to target certain pieces
+of information, to do this filtering or focusing, you can basically tie that in so that interacting
+with one of the small multiples will interact with all the small
+multiple simultaneously. Just a few quick takeaways. We've basically
+understood hopefully by now that the
+more data we have, the harder it becomes to
+support that visualization or visualization of that data
+through one visualization, we have to find other
+ways of doing it, dimensionality reduction was one. Small multiples is
+another approach. We're now by using the different, basically smaller
+charts we've been able to carve out the data
+and partition it in a way to give us more comparisons simultaneously by having the small multiples. Of course, things become
+small, potentially unreadable. We have to be careful
+about their use. We also have to be careful about our decision about whether we want to partition based on
+one dimension or the other. Like picking the dimension
+on which we want to facet this data is going to become
+a crucial consideration. This is the question that you're going to
+ask yourself when making a decision about how
+to generate small multiple. What is the thing that
+you want to fasten on? Also, are there patterns that you care about once
+you've done that? Remember, small multiples in particular, are the
+very small ones, are great when you
+have outliers or patterns that are very obviously of interests relative
+to something else. If you have a specific target, like Waldo, and Waldo looks very different from
+the rest of the plots, and it's great, if all the
+plots that you've generated, they all look the same, it
+may not be a great strategy. These are just some of the considerations
+for small multiples. Hopefully, you get a sense
+of that by also looking at some of the additional examples
+that we offer for you. With that, thank
+you for listening.

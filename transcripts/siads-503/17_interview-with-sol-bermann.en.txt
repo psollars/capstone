@@ -1,0 +1,507 @@
+Hello and welcome back. I'm here with Saul Berman a very
+distinguished guest that I'm very excited to have join our class. The reason I asked Saul to join our
+class is that he's an expert in higher education and big data and data science. Today, we're going to talk about I
+believe learning analytics, although the conversation may stray a little bit to
+other topics relevant to higher education. Saul, thank you so much for joining me. >> My pleasure. So to say I'm an expert
+in learning analytics, I'm an expert in a piece of it or perhaps
+an expert, it's still an emerging field. But at the University of Michigan were
+one of the world's leaders in learning analytics, which is really nothing but
+big data and data science around students, around learners. >> Could you tell us your title? >> Sure, so I'm
+the Chief Information Security Officer for the University of Michigan, but
+I also do a lot of work in privacy and ethical spaces, and
+in particular around learning analytics. So learning analytics at the University
+of Michigan is a big deal. We do a lot of the research that is
+leading the way the world does it but learning analytics as
+with other big data and data science is more than just about
+the algorithms and the outcomes. So as learning analytics work started
+at the University of Michigan early on privacy and ethical considerations
+were identified as something that we need to figure out how to do, how do we build it into a place
+where we do a lot of research. >> Could I ask you then for the students
+watching, what would be an example of learning analytics in case
+they're unfamiliar with the term? Like what kind of analytics
+are they experiencing right now? >> Well, gee, so
+if our online learners are using Canvas or any other sort of learning management
+system that learning management system is tracking them and
+in their engagement in the class. And that's no different if you're online
+or if you're a residential student. So honing in on just the the learning
+management system, you obviously you log into it, you get your
+assignments in it, you get grades in it. You may have message boards where
+you're providing feedback or doing online engagement almost like a
+bulletin board or social media experience. Behind the scenes all that stuff
+is being collected and tracked. So we can tell in certain
+learning management systems, when did you go into that assignment? Was it at five in the afternoon? Was it at midnight? How long were you in the assignment? It might end and faculty members
+often have access to this data. So you may know if a learner has been
+in a 300 page reading assignment for 10 minutes or for 10 hours. >> In fact at my previous institution,
+although not here in Michigan. They had it set up so that the system
+would give you an estimate about how much of any particular reading
+student had accomplished. And I'm here at Michigan,
+correct me if I'm wrong, but I'm pretty sure at some point I logged
+into Canvas as an instructor and it showed me a star rating for each
+student, which was called the Engagement. So it said that this student
+was a three star student and the student was a two-star student
+that there was no other explanation. So I actually shared that with
+the students of the class and they were very unhappy, they didn't like the idea that they were
+a one star student and they didn't know. But I should say,
+I haven't looked into that on Coursera. >> Yeah, but that is the sort of
+some of the student experience, sort of on the flip side of this big data,
+data science world where the subjects. Speaking more broadly in learning
+analytics almost any data point about a student can be become part of
+a learning analytics experience. So if you're a residential
+learner you swipe in and out of buildings with an ID card,
+that gets recorded somewhere, that maybe be good fodder for
+learning analytics. Your engagement in student organizations, when you log into your to various
+accounts, if you're using the WiFi and there's authentication data that actually
+provides your physical location. All those can be used in the learning
+analytics context, which is why ethical considerations are so important
+in how we actually form these systems. >> But I understand that right now
+universities are making decisions about how much they want to
+Invest in these systems. I mean, can you tell us more about this
+location tracking that is being offered to universities right now? >> So
+this is less an offering of a system, and just a byproduct of actually how
+our WiFi works at any institutions. >> I see.
+>> So as you authenticate into WiFi, I'm looking around a studio of course,
+but there's access points, access points collect information to allow
+you to use your whether it's your phone or your laptop to get on WiFi. That provide that access point also has
+a physical location and because we have such dense WiFi at the University of
+Michigan that gets fairly granular. So there have been researchers here at
+the University and certainly elsewhere but I know at the University that have
+wanted access to this information. Because they want to understand learners,
+they want to understand for instance if I know that you are accessing
+a WiFi and you are with five other people. What can we tell about these people
+that might say when this group of people congregate, they get
+synergistic learning opportunities. When these people congregate,
+maybe they drive each other down somehow. But that's feels awful big brother-ish. >> So we can get a location as granular as a room-
+>> Yeah >> Just using WiFi? >> Yeah, so when this came up and
+again, and I feel researcher here, Michigan brought this to us
+wanting to use the data and we said no that we'd only do
+it under certain conditions. And condition number one is that it goes
+through the appropriate institutional review board process. So like any other social science
+experiment using human subjects and our students. I can go on a tangent about how they
+fall through the cracks in from a legal perspective often in this space. But you have to go through this
+process where that your research study is reviewed and
+approved by a group of peer reviewers. And then even after that we said no, we're not going to give it to you
+unless you actually consent to it. And so that was part of the IRB and we weren't just going to turn over
+access to this data to the researcher. We actually created an app, so the student
+can download the data about themselves. If they agreed to be part
+of the research study, they can turn it into the researcher. So it's example as this is sort of my pet
+phrase that I've built in the spaces. We are trying to build privacy and
+ethical considerations into the fabric and framework of how we do learning analytics,
+so that the algorithm is not the only outcome we're looking at, it's not
+just the end justifying the means. >> I mean, it seems like you put a lot of
+careful consideration into the rights of students when you made that decision. But I understand that there may be other
+institutions that pursued a different strategies, is that true? >> Mileage varies depending
+on the institutions. So it varies as widely as some
+institutions don't really engage in much learning analytics at all because they are
+very concerned about student perceptions, about student privacy. Some institutions it is
+part of what they do, and if you're out in their campus,
+then that's their thing. And they may or may not be transparent
+about it, they may or may not give you agency but your only choice if you don't
+want to participate is to not go there. >> And that's really significant just to
+be sure the people, Listen and understand, if I understand, if you're a residential
+student, it means that the university has the ability to track you as you move
+from room to room in your own house, potentially, as well as in pretty much
+every possible part of your life. Because you'll be eating on campus,
+maybe at the dorms, or at the restaurants. You'll be going to school,
+using the sports facilities, the gym, so they could have almost universal coverage
+of your life at a very granular level. >> Yeah, and you can layer on top of that,
+when you think about a residential university,
+we are your school, your library, your healthcare facility,
+your gym, your social media center. We're about every facet of your life,
+and for legitimate reasons, we collect data to provide goods and services that
+are an important part of that experience. But in the world of big data and
+data science, in this case, learning analytics, all those data points
+can become of value to a researcher, and I am a believer in the potential
+of learning analytics. It is not just about Big Brother,
+it is about better outcomes, better interventions,
+better student learning and teaching experiences, but
+we have to be cognizant of the flip side. How are we not being Big Brother? How are we not training our students and
+future leaders of tomorrow to just accept a surveillance society,
+or that algorithms and artificial intelligence will
+make decisions for you? >> Well, let's think about the good side,
+since you say you're an optimist, that would be good. So if I understand how many of
+these systems are deployed in places where they're using learning
+analytics, a common strategy would be to take your data about students,
+and try to classify them into groups. For example, commuting students, or
+residential students, something like that. And then, you would look at deviations
+from the norms within the group, and flag that for some purpose, and
+some of the purposes can be quite noble. Do you have examples? >> On the optimistic side, and I try
+to be optimistic, it's hard sometimes. But on the optimistic side, in particular,
+I'll think about the Michigan experience. If there are groups that are perhaps
+underrepresented in certain ways, that maybe they come from lower incomes, where we want to better track progress,
+and see what differentiates a successful lower income student from
+a successful lower income student. And looking for those deviations, and
+from those, perhaps taking action. Maybe it's mentoring, or
+it could be, It could be nudges, or other interventions that can help
+spur a student on to better successes. >> So you could see a pattern that might
+include something like not logging into any online system, or not leaving
+their room, or something like that. >> Never visiting their advisor. >> Okay, yeah. >> On the other hand,
+I guess this will be the pessimistic side speaking, I worry in a few ways. So one, whether we believe it or
+not, at 18, you're an adult, and
+you get to make decisions. And in a world of big data and
+data science, the information we get may lead us to want to nudge
+students in a certain way. So I'll pick on myself. When I was a college student,
+I was an atrocious math and science student, terrible, terrible, terrible, terrible, and I didn't challenge
+myself very hard in those spaces. But what if I had wanted to? What if I, you know what, I'm going to
+take that advanced chemistry course, even if I'm just going to scrape by. Back in the prelearning analytics days,
+maybe I'd have an advisor that'd say, Saul, it's not a good idea, or
+Saul, you sure you want to do that? In a learning analytics world,
+where we have, again, algorithms and machine learning parsing
+through what's successful and what's not,
+with automated ways to send nudges. Saul, are you sure you want to do that? Saul are you sure you want to do that? Or Saul, maybe the positive, Saul,
+go this way, Saul, go this way. Are we actually, potentially,
+stripping students of choice? Are we stripping students of learning
+opportunities, even through failure, or through challenges? Isn't that part of the whole point
+of going to college or university? To be challenged, to challenge yourself. >> Well, it sounds to me like
+the story you're telling is one where people are pushed toward normalcy,
+or averages. >> That is one of my worried outcomes. Are we creating a happy medium of success? Or are we creating conformity? And again, that's that's not what
+higher ed's supposed to be about, at least in my opinion. >> You also mentioned that you had some
+concerns about whether the systems would work, so that's interesting. In some of the news
+coverage of these systems, there was one particular story I remember,
+where the professors had decided to use a Bluetooth tracking system to do even
+more granular perhaps location tracking. And that professor had decided
+to use that to track attendance. And students are,
+maybe the students watching now, are very interested in points,
+and tracking their points. And so, this actually produced
+an incentive to use the system. But also, sometimes the system wouldn't
+work, and so the students spent a lot of time trying to figure out how to be
+tracked by the attendance tracking system, which didn't seem to detect
+them in the right place. >> Yeah, so I think we're going to see,
+maybe not a rebellion against some of these systems, but some of the tools
+perhaps, where students will, they're smart,
+they will learn to game the system. So I'll give you a different story. There is a university
+in the United States, where actually physical exercise is
+a mandatory part of the curriculum. And they decided that, you know what, it's not good enough to have an honor code
+to say, I took my 10,000 steps today. All students had to get a Fitbit or
+some sort of pedometer like device, that was going to send information back
+to a central repository to say, yes, Saul got his 10,000 steps. >> Wow, really? >> And so,
+students pretty quickly figured out, well, I can just put it on my dog,
+or I could put it on a friend. And now, maybe that would violate
+some sense of honor code, but there's always a sort of way the mouse
+is going to beat the mousetrap. But again, the cynical part of me says,
+to what end? While I appreciate the positive aspects,
+and that this can help students be more successful, help universities
+learn how to better serve students, I also worry about how
+engaged students even are, in understanding that
+the activity's taking place. And I can say in most places, they're not. And this, too,
+brings greater ethical concerns about, are we basically building
+students that take it for granted that these things will
+take place behind the scenes, and that there is a beneficent wizard
+behind the curtain all the time. When we see how some of big data and
+data science issues play out, whether it's in the government or in
+the business sector, that's not the case. >> Sometimes students complain
+about these systems by saying that they're the customer. So they use a metaphor business,
+although higher education, I'd like to think, isn't a business,
+it's an important part of society. But they say, well, we're the customer, we're
+the ones who should be deciding things. But there's a famous quote by Mario Savio
+from the 60s, and he said something like, you think that you're the customer, but In the system of higher
+education you're the products. And the factory is the higher
+education system producing you. And so what I hear reminded me of that
+quote because it sounds like you're saying in some ways we're conditioning the next
+generation to expect a certain level of nudging and prediction and surveillance
+and a certain sort of kind of life. >> Well, and
+I think going back to that quote, outside these ivory walls that
+are higher education, as a citizen, as a consumer,
+you are the product. When we think about what Google or Amazon
+does with data, they commoditize you. And I don't necessarily want to
+train our students that that's okay. At minimum, one of the things higher ed is supposed to be good at is
+training students to question. And if we are actually complicit in
+making them the product, we may also be taking away that sort of questioning
+nature because it's all taken for granted. They did it to me when I was in college. Why should I care? I'm getting this great personalized
+products from Amazon just like I got my great personalized education. >> Well, one of the things that I think
+we could really benefit from is your years of experience as a professional
+working on these topics. So when you encounter some sort of
+question about, perhaps a new technology or in this case, you described a request
+from a faculty member about Big Data. Can you tell us anything
+about your process or what that looks like
+inside your organization? >> So we'll pick on, again,
+my experience is learning analytics here. When these requests started to come in,
+I go through a fairly typical process, which is I reach out to
+the appropriate stakeholders. In this case I reach out to folks in
+our office of academic innovation, in our registrar's office. And he thought this feels odd,
+this feels a little uncomfortable. What can we do to create a framework where
+faculty can go about the research and learning analytics that
+they feel is important, and that we can put
+appropriate safeguards or guardrails so
+that faculty aren't going willy-nilly. And I hate this, I guess I will backpedal
+to say I have not met a faculty member at the University of Michigan and other
+places in learning analytics that has anything but
+the best intentions at their heart. But part of my job is to not just assume
+everybody is the best of intentions and know that accidents happen. So our first step in how we address
+things we came together and we actually created a set of
+guiding principles around ethical use of learning analytics data,
+and we made it a two-way street. There's a component that we had our
+expectation of researchers, but also expectations of students. That they would be participants, but they would learn to question
+along the way, for example. It's not enough to have words on paper. So we've done a number of
+other things than Michigan. We have actually tried to build some of
+these guiding principles into some of the teaching tools that
+we use at the University. More importantly to me though, is we've
+actually tried to engage students. So in a lot of the learning analytics
+space you hear about the wonders of the algorithms,
+the wonders of the research, but you don't hear about how does
+students actually feel about it? So there are faculty members at
+the School of Information at the University of Michigan that
+are looking into attitudes and perceptions around students and
+learning analytics. And to my knowledge, that's one of the first research
+studies being done in this space. So if we have an understanding of their
+perceptions, their value propositions, where they feel it's going into
+creepy land, it can help us better build tools and again, better make
+them not complicit as products. >> I have to say I'm not one of those
+faculty members that's studying this. But I mean, are there any results,
+even anecdotal results that tell us what kind of reaction the students have
+had to these kinds of technologies? >> The early results I've
+heard from the research, and then I'll talk about some my
+own anecdotal experience. From the research, my understanding and
+shameless part for the School of Information for you and
+job Chris Brooks, early results from the research says the students
+appreciate what the tools do for them. They didn't understand how much data is
+being collected by some of the tools and they want to know more. So some of the anecdotal conversations
+I've had with other students, and I'll pick on our learning
+management system, as they didn't have a thorough understanding of just how
+much data is collected in that system. That it wasn't just, professor knows
+I turned my assignment and check. But professor knows that I was a one,
+two or three star, right? And jeez, how what is one two or
+three star even mean? >> Yes. >> And that was a little more
+concerning because there they felt they were being judged or even graded on things they didn't have
+an understanding of how it got there. It's one thing to say, yep, I turned in my
+paper and obviously here's a work product. And it's another thing to say,
+well, I participated in class. I raised my hand, or
+maybe it was in a bulletin board or some sort of chat conversation. Yep, there's a visible artifact. It's a different thing to say, a faculty member sees I'm a one star because maybe I didn't spend time reading that assignment
+to insert level that a three-star did. >> Maybe because I already read it. And so I didn't need to click
+on it this time, right? Right, or maybe I checked
+the book out of the library. >> Right. >> And didn't read it online. >> Moving beyond learning analytics
+slightly, I mean, I'm very impressed by the degree to which the University
+has a lot of data science going on. And its operations, and
+not just its research, but in, sort of, making the University work. I mean, one of the things I find
+interesting about this context that I bet you know a lot about,
+is that, in some situations, students actually have more rights than
+people in other contexts because of, for example, in the US the federal
+laws protecting student privacy. So there have been a number of cases
+where universities have stumbled it. Well, they've run across that law in their
+efforts to provide services to students using new technology. And I'm thinking particularly
+Michigan is a Google campus. So Google is one of our vendors, and when
+I use my University of Michigan email, it's a Google Gmail system, right? So an early, on even though Gmail is
+an advertising supported service, the product they offered to
+universities didn't show ads, but they were collecting data from email. And so over time this came out. It wasn't widely known at first, but
+after it came out, there was an outcry and then they backed off of that. But it seems like there are many
+instances in the operation of the University where there is
+actually some data science going on. That has the potential for you know,
+either privacy risk a security risk or some sort of ethical risk,
+is that the right sense? >> We are all big data
+science driven organizations. No matter universities,
+corporations, governments. So yeah, they do exist. We wanted to use better data science to
+understand how our public transportation, the University bus services used. We want to use Big Data and
+data science to understand wayfaring. How do people make their way around
+buildings across the University? We want to use it to make sure our
+faculty and staff stay healthy. So we have health and
+wellness programs that rely, not just a little bit, but probably
+a lot on Big Data and data science. And from those couldn't how can we
+incentivize better health behaviors For our faculty and staff. >> It's sort of like, I guess what I imagine a company town
+would be in the old days of coal mining. Sort of you buy things
+at the company store. You've got the company doctor. You live in the company
+house in many circumstances. Yeah. >> Yeah, hopefully we won't
+start issuing M script but yes, especially for our students. I mean, I would say that especially
+applies to students because they do live in the company town and they're M script. It can be on their M card where we know
+what they're spending and not spending. I mean so far one of the pictures that
+comes out of the conversation for me is that the University of Michigan
+actually sounds pretty great. Like if I were a student I would think
+like well this guy seems pretty thoughtful and you know, he seems to be
+looking out for me and I liked it. I wonder to what degree though, following up on your suggestion that
+we question, to what degree should we feel secure in the University's
+motives to protect the students? Because I asked that just because I was
+reading about University use of data science and some of the uses seemed
+like they would be great examples for this class. Because they do pose ethical
+challenges for the data scientist. So admissions was an area that that I've
+read about that definitely seems like one of those. So for example, I don't know
+University of Michigan what they do. And I know you're not in
+the admissions office. But I know that other universities,
+they're really watching their rankings like their US News and
+World Report and other rankings. And they know that it's a huge benefit
+to them if their ranking goes up even by a little. And so they do things like commission
+data science consultants to go through data of prospective college students and
+find those college students that they can entice to apply that haven't currently
+applied so that they can be rejected. And the idea is that if they can get
+enough people they won't admit to apply it will make them their selectivity
+rate go up which is a big component of that US News. And I don't know if Michigan's doing this, but I do know that American
+universities do things like this. I mean they also do a variety of data
+science projects in admissions that balance student load where they try to
+be sure they admit enough people that are wealthy so that they can cross
+subsidize the students without money. And this often leads to sometimes perverse
+individual decisions where you might say, I look at this person who got in this
+person who didn't get in doesn't make any sense based on their merit,
+based on their ability. But it had to do with this balancing. So I mean, how do you feel about
+the university as an organization. I mean what's your level of skepticism? So I am always skeptical. I think I'm a little less skeptical
+about Michigan for a few reasons one. We have the luxury of being
+a premier institution where most of our most of our schools and
+programs are already top rated and it's about maintaining if not,
+excellent or great, awfully awfully good,
+I think because we are also such a decentralized body
+that at we often we aren't even an Amazon or
+Google in the way we operate. I think the other part is that I can
+say with fairly straight face that our administration actually cares about things
+like privacy and ethical use of data. I don't know about the admission
+practices in our offices. But the skeptical part of me says
+at some point there's always a risk of somebody else is doing it. So should we do it? And part of my role is to try to be a part
+of the be well ingratiated enough at the University that be able to
+identify if that's going to happen, to be a part of the conversation. And it's also to do things that
+what I would say is go above and beyond expectations particularly for
+students. So, you know, I mentioned in the learning
+analytics space how we're trying to do research into students' perceptions and
+attitudes around learning analytics. Another thing we are slowly working on is
+trying to be create some sort of portal or dashboard function that gives more
+transparency into the data we collect about students and how much use. Mm-hm and it's pretty nascent
+early sign of a debate. I would say an alpha stage but we're one
+of the only universities in the country that has spent any time or effort in
+putting something like that together. So if you think about
+the Google dashboard, it's actually a pretty cool tool. We are trying to create I can't say it
+will be as robust and powerful, but a very vaguely analogous Michigan
+dashboard for my students. I mean, I do notice that in some
+of the projects you're describing, there's a really interesting role for
+design. I mean earlier you mentioned the way
+that you got consent from students to participate in the research project
+involving location data was that you showed them the data they
+would be releasing first. And then you asked if
+they wanted to share it. I mean that's a step that is beyond I
+think what most people would expect from a consent process. because usually you just
+say do you consent and there's maybe a lot of small print right? >> Yeah.
+>> So I mean what prompted in your organization this focus on design or
+making as a sort of strategy? >> Some of it was probably accidental. Some of it was was forced by the IRB,
+the Institutional Review Board process. So they said this data
+clearly has to be consent. It was up to us to figure out what
+the mechanism is and how it would work. So consent is you say yes in whatever form you provided the faculty member. And then we just provide the information
+directly to the faculty member themselves. Right, we thought that wasn't good enough. It was such powerful data that we wanted
+students to have an opportunity to understand it at least a little
+bit before just turning it over. And frankly when most students, when they've looked at this they like,
+this is kind of eye-opening. You can see where I've been at and
+what time of day it was. And I don't know whether
+any students backed off of consenting to be a part of
+the study after seeing it. But at least it gave them more
+upfront information than just saying, okay location data, check, yes,
+here, faculty member can have it. So another question that I wanted to
+ask you is I was curious is there some other example that I should
+be asking you about that? I doubt because you know much
+more about your job than I do. So are there any personal experiences
+are instances where you've had to make decisions that implicate
+ethical principles or dilemmas or? >> My office frequently will get requests
+or has received requests asking for things about did such and such a person
+look at such-and-such a content? And for me that there isn't
+much ethical dilemma in it. >> Really?
+>> So the request from staff or professors or? >> There have been requests from
+faculty and from staff managerial. I see people and
+seeking to do what I always call managing by review of activity. >> Right.
+>> And we don't do it. We simply don't and in fact even in my
+previous job in the private sector. I didn't know this when I joined but
+I had a couple of employees and my first week their eyes. I don't know where I got
+an email saying okay, here's all the websites that your
+employee went to this week on. They're on their computer that they use
+for work whether the websites on the bad list or were they just all
+the website was all the website. Trust me this this particular
+organization filtered all the bad stuff. I see and I was part of the And I was part of the privacy
+office at this organization. And I raised this with my boss, and we
+actually ended up killing this as a thing. And we got a lot of complaints,
+because people would become used to. Well, if Saul is looking at CNN, and think of any legitimate website,
+then he must be wasting his time. And so we have occasionally received
+those requests at Michigan, and the answer is no. The only time we provide that sort of
+information to anyone is if it comes under subpoena or warrant or some other legal
+order that's going to compel us to. And even then, we work with our general
+counsel's office and try to fight it. >> Yeah, I mean, one dimension of
+the university that we haven't talked that much about that probably must come
+up sometimes is health and medicine. Because universities are these
+weird combinations of things in the United States, where they often
+have hospitals built into them. And that's a big part of Michigan,
+so is that something that comes up? Because there's a whole different
+regulatory apparatus there. >> So it does,
+I have peer on our health system side. And they have a different approach
+to some of these issues because they are both from a regulatory perspective and
+just a business perspective. Our health system is far
+more like a business, especially if you strip
+out the medical school. And so they in some areas take a more,
+I will call a more businesslike approach. Whether it's asking their employees,
+it includes their faculty and their staff, to have certain software
+on their personal devices if they want to attach their personal
+devices to their network. So you know, at the University of
+Michigan, you can jack your computer, [LAUGH] your personal computer. You could be running Windows XP,
+for all I know, into our network. And students could put their
+personal devices on our network. That's just how we operate,
+that's how higher ed operates. Because of the nature of the business
+they do in the health system, you have to run special software
+on your personal device if you want it to attach
+to the network at all. And they are tough to get them. >> And this software secures the device? >> Yes, but there's also privacy and
+ethical ramifications. What reports does that device provide
+back to your personal device, back to the central security group? >> Right, I know one reason you might use
+these apps if you were an organization. Is they would detect if your operating
+system of the device had been patched for security vulnerabilities,
+or something like that. And it would either help you install them,
+install them itself, or just report that you didn't have them,
+that it was vulnerable. But it's true that I also have read
+that some of the apps used for this purpose, they are installed
+with the permission that you grant control of
+the device to the app. So the app can take control of the device
+or send any information on the device to, I guess, your employer. And if you have an employer that mandates
+this as a part of your job if you want to use your phone,
+I think most people are consenting. >> Mm-hm, well, [LAUGH] consenting
+in that if they want to use their personal device on that network,
+they have to abide. >> I see. >> So maybe they're abiding,
+and not consenting. >> Uh-huh, yeah, no, that's true,
+and that's a key idea about consent. That it has to be meaningful,
+yeah, and a real decision. Well, I mean, I think the last question
+I had was the one where I asked you if you had any more questions for me. So unless you have any other examples you
+like to share, this has been so useful. >> Gosh, I'm just trying to think
+about other ethical dilemmas. So here, this would be both an ethical. I don't know if it's a dilemma or
+not, but a question for you. So we're doing learning analytics
+at the University of Michigan. Our students are, in some way,
+shape, or form, data subjects. >> Right. >> So we collect that same
+information about you. Okay, maybe you don't live in a res hall. Maybe you don't use your M
+card in a dining hall a lot. >> Faculty analytics. >> Yeah, so faculty, we could just as easily be doing
+faculty analytics as student analytics. And one of the things I often posed to
+the researchers working in this space is, how do you feel about that? What if analytics data was
+being provided to your chair or your dean that would say, well. If Christian was only better in
+these ways, based on the data, that he would be a better researcher or
+a better teacher. >> Well, I mean, just to fit it to
+the flip side of learning analytics. I feel like it would have
+to be teaching analytics. Where you would get little
+nudges that would say like, did you remember to grade this paper? You really have to grade it, or I noticed
+that you missed a couple of the lectures that you were supposed to give,
+what's going on? We're going to have to flag a professor
+advisor, or something like that. That would be, I think, the equivalent
+of that, yeah, and how would I feel? I mean,
+I'm not super excited [LAUGH] about that. >> [LAUGH]
+>> Yeah, I'm not super excited about that. I mean, I think, yeah, an interesting
+thing about being a professor is that one of the things that professors
+are valorized for is being eccentric. It's one of the jobs where you're
+expected to be different and to be weird. And it's a little bit of
+a caricature of itself, but a lot of professors play to it. So the idea of of normalizing everything
+is the fear that you raised earlier. And it seems like a particularly
+difficult fit with this job. Because we know that in teaching, we teach our professors that
+there's no one right way to teach. And there's actually many positive and successful ways to teach that depend
+on the style of the faculty member. And sometimes even just the composition of
+the student group they're trying to teach. Or even the weather or
+time of day, or something. It's a process that involves a lot
+of randomness and variation. And so it's interesting to think of
+normalizing the professor experience. I mean, it seems like, in some way, what we're selling to the students
+is that professors are weird. And we want them to be sort
+of eccentric and strange and have purple hair occasionally. >> [LAUGH]
+>> But not all of them, because that would be too normal. But yeah, I don't know, I haven't
+actually thought about it that way. So I'm going to have to think
+about it some more, but yeah. >> Yeah, so some universities have dipped
+their tail, let's just put it that way. And I think you're nailing [LAUGH] what
+I think the appropriate response is. And I would hope that applies to students. In the same way we don't
+want our faculty to conform, that there is no one right way to teach
+a course or to provide information. There's no one right way to
+consume information or to learn. And the challenge or risk in some of these analytic spaces is
+if you're relying on the data, the data, the data and machines that
+the more we machine learn it and algorithm it,
+where there's less human touch. I think we move towards
+a more conforming blah. Maybe everybody has some level
+of mediocre success world. But that's not what makes
+the world great or interesting. >> And your last point, which I'm
+still mulling over, is a great one. Because we often think of data subjects or people about whom data is gathered, and
+there's always a power differential. Sometimes we acknowledge it,
+sometimes we don't. There's a famous quote by Sandra Harding
+that I'm going to butcher. But it says something like, employers
+have all the opportunities in the world to perform studies to figure out how to
+make their workers get by with less and be more productive. But workers rarely have the opportunity
+to commission studies to figure out how to get capitalists to get by with less
+profit and to give more money to them. But surely,
+studies like that could be performed. >> Yeah. >> Well, I think we can end it there,
+but thank you so much, Saul. I really appreciate you
+coming in [CROSSTALK]. >> My pleasure, this is a blast.

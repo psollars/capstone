@@ -1,0 +1,161 @@
+All right, welcome back. So so far,
+our focus has been on individual words. So thinking about word clouds,
+or these tag clouds, and just placing words off in
+space on their own. But the reality is that most text
+is actually connected, right? So we have sentences. We have paragraphs. We have documents. We have collections. And so it becomes important to consider
+the relationships between words, and how those might be represented. In particular, words that come one
+after the other like in a sentence. So this is a particular visualization
+that's on the screen, kind of showing and demonstrating this particular
+way of thinking about words, in terms of their ordering. So this is something called a word tree. This is Martin Luther King Jr's
+famous speech. And it was analyzed in a way to
+find each specific word, and which words came after that, and
+were sort of repeated over and over again. So I Have a Dream is a recurring
+refrain within that speech. And so what you can see from this
+visualization, because it's been enlarged, is that particular sequence of terms,
+I Have a Dream, are commonly occurring, that size encoding again, but you can also see that they branch off. So he often in his speech started I have
+a dream, and then did something else. So I have a dream that, and then one day,
+or I have a dream today, or whatever it was, right? So these are different things where he
+had this kind of repeated structure in the text. There are many other sentences
+that started with the word I. And you can see that kind of branching
+above and below that I have a dream. And so that is an indicator of other
+things that he did in that speech, just basically starting and re-hammering with
+the word I, over and over and over again. And you can take this, and basically
+click on different words in here. Start with other different kinds of
+sentences, and be able to understand and interpret that kind of
+repetitive structure, or that branching structure within
+different document collections. So this is just one example of
+how you might use a word tree. So here's another one. And this was intended to be interactive. So here's the visualization
+kind of being used. And you can see people clicking on things,
+basically expanding and contracting the different things to
+basically look at other sentences. So this is a very different
+kind of visualization. This is something called PhraseNet. This is not words that are appearing
+in order in sentences, but are commonly used together
+with some intermediate word. So on the left, you have a search
+interface that lets you specify how you want words to be searched for
+in this document collection. So what the person has clicked on
+over here is they would like to find when word one appears with the word "and"
+between it, and a word two. So "father and mother" would be an example. So "father" would be word one,
+"and" would be that middle one, "mother" would be word two. And what you have represented on
+the right over here is a network visualization of all those terms that have
+been found in this document collection. This happens to be Pride and Prejudice, so
+a famous book that was analyzed in this way, searching for that particular regular
+expression, that particular pattern, and this graph was built. And so you can see things
+that are commonly recurring. So the word uncle and aunt,
+the word Elizabeth, the word Jane, those are common. Those appear often in the document
+collection that was represented by the size. You also have these edges between these
+words representing how often they appear together. And the more times they appear together,
+the closer they appear. Also, there was a little bit of a graph
+layout, so it would pull them together. And so the word uncle and
+aunt, it's very common, right? People say uncle and aunt,
+uncle and aunt, uncle and aunt, that appears very often in the text,
+and very often together. And so you can see those two
+words are laid near each other in this visualization. Whereas, the word mother and
+father, for whatever reason, were less common in this particular novel. Okay, so they're sort of further away, the strength of the edge
+between them is bigger. Okay, sorry,
+the strength is weaker, and so they're further away, and
+the weight of it is is smaller. So it's a thinner edge
+between those two things. So this is a particular representation. You can find on the left over there all
+the different other kinds of regular expressions you can make. And you can also, through this tool,
+you were able to make your own. So this is a biblical text. And what the person had searched for
+here was the word begat. So begat means to have a child. So person begat person two. And so [LAUGH] the query here was
+finding sort of the longest chain of who begat who in the biblical collection. And you can see this kind of
+divergence at some point, and re-convergence, where the same name
+happened multiple times, right? So [LAUGH] I forget the example. Abraham begat Isaac begat Jacob,
+and so on in the lower left. Okay, so this is an interesting way of
+analyzing textual collections, when you have certain kinds of phrases that you're
+trying to target within this collection. And notice here that we're using a network
+representation to encode the text. Okay, so the edges correspond
+to those in between words, those regular expression things
+that we were looking for. That's the semantic meaning
+of an edge in this case. Okay, so
+we have nodes representing the words, and edges representing the connective
+words that we searched for. And they have a meaning, based on
+whatever it was that you searched for. This is a different example. In this case, we're looking at the way
+people refer to each other in debates. Okay, so this is on the red. On the right side, you have Republican. On the left, you have Democrats. And these are different people who are
+referring to each other within a speech. So this is a debate,
+a bunch of people on the stage, and they could address the other person. And so you have Obama,
+Richardson, Giuliani, and so on all were on the screen, and
+they were talking to each other. And the edges here are representing
+when they were referring to each other. So the size of each segment sort
+of corresponds to the amount of time they were talking. And you could see where they were
+addressing the other person. This particular visualization
+is interactive. So let me just pull this up. So as you mouse over, you can basically
+see where Obama made reference, or was talked about by other people. Okay, so if you mouse over McCain, or
+Romney, and so on, you can see where other people address them within this debate,
+or the other direction. Okay, so this is an interesting way of
+thinking about the way people are talking. So in this case, it's speech data,
+not, speech-as-text, and not just written words. But the specific subset of
+words that we care about are named entities, that is
+the other people on the stage. And this particular representation is
+showing us how much people are talking when they're referring to other people,
+and how often they're
+referring to other people. So this is an interesting way of
+getting those kinds of relationships between words that are a very narrow,
+specific kind of relation style task, where in this case, we're trying to
+understand political debate in practice. This is another kind of
+interesting example. This is a visualization of an entire book. This is called Text Arc. Unfortunately, it doesn't
+seem to work anymore. This is a very old system,
+very beautiful, and fun to play with, but written in older Java,
+I think, or Flash technology. So it's a little bit harder to get
+a hold of a working version of it. This is, unfortunately, the reality of a
+lot of web-based visualization these days, so I bring that up as an aside. But it is a very interesting and
+visually appealing thing. It has been shown in art museums. So Bradford Paley is
+the person who did this. He has another practice where he builds
+visualization systems for stock traders, but also does this really cool artistic
+stuff, and makes these beautiful posters. Anyway, this was a way of analyzing text. So in this particular example, what was done was that text
+arc read an entire book. Each of the little line segments on
+the side, there's one circled here. There's a really, really tiny line,
+and you have to play with it in the interactive way, and
+click on it to actually read it. It's a line of text, and it happens to correspond to
+a sentence within the overall book. So this is Alice in Wonderland,
+for example. So starting at the upper top kind of area,
+the text spirals, okay, and goes around in a circle clockwise
+corresponding to when sentences appear. So on the outer edge of the circle
+are the sentences in the order in which they appear within the book. Inside of that are words. So next to the sentence, we will put
+the word that appeared in that sentence. So we will pull out the word. In addition to having it
+in the actual sentence, it will get pulled out as kind
+of being a free floating word. Its position within that circle
+is based on how many times other sentences refer to that word. So the sentence that's circled over here, this particular word that's next to it
+only appears probably in that sentence. This word over here in the middle
+is used in multiple places. And you can see the orange lines basically
+indicating which sentences that word appears in. So this is the word rabbit, okay? So you can see where in the book Alice
+in Wonderland the rabbit is mentioned. So this is very early on in the book, and very late in the book
+the word rabbit appears. And because of that, the word rabbit is pulled to
+the center of this visualization. So this is without anything highlighted. So this is just a layout
+of the entire text. This is where Alice is. So Alice is clearly in all
+the places in the book. So Alice is referred to in many,
+many of the sentences. And so Alice is kind of
+the central word over here. And you can see all the yellow lines, and the highlighted green sentences
+telling you where Alice is being used. Here's another word that
+is the Gryphon is only used in one area of the book,
+kind of late in the book. The word Gryphon appears a lot,
+so you can see the word. Gryphon appears in a number of sentences,
+but it's pulled off to the side. It's not a central word. So despite the fact that it is a common
+word in that area of the book, it is not common across all the book. And this kind of visualization allows us
+to do these kinds of comparisons between words that are common across
+the entire collection, or words that are very common in
+a specific part of the document. So this is a way of doing what's
+called digital humanity studies, finding encoding representations
+of visuals of textual documents, kind of doing a deep read of text
+by means of a visualization. Part of the visualization also allows
+you to simulate as you're reading, basically as if you were reading. So it highlights, and kind of there's this
+arcane thing that moves around from word to word to word as you
+were reading the word. And so it's kind of fun to
+watch that animation, and see sort of where you encounter certain
+words, and what that looks like. But the big arcs are kind
+of visually appealing. They may not be the best encoding, but
+they're kind of interesting to watch and be able to follow, as if you were
+reading the narrative itself. So just to wrap up, we have a number
+of examples of looking at words, and their relationships to other words,
+or other entities, or potentially other tasks as
+ways of jumping off points. Because we are focused on relationships,
+network and hierarchical visualizations
+are a great starting off point. So you saw lots of examples
+in this last few set, where the representation uses edges,
+in order to draw your eye from word one to word two, and
+represent those kinds of connections. Those edges have specific
+meaning that's important, and is represented using a network
+style encoding overlaid on top of text. So that is a way of thinking about, or
+an approach when you have these kinds of tasks, when you need to consider
+the relationships between things. All right, and with that,
+thank you for listening.

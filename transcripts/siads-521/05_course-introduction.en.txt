@@ -1,0 +1,115 @@
+Exploratory data
+analysis or EDA is a semi-structured approach to understanding the data
+that you've collected. There's two main
+categories of EDA, the quantitative which
+involves calculating metrics and statistics
+about your data and the visual which involves creating different
+displays of data to see relationships
+between individual or collections of data points. In this course
+we'll be looking at exploratory data
+analysis largely through visual methods but a
+firm understanding of the underlying quantitative
+measures such as means, standard deviations,
+confidence intervals and so forth is required to
+effectively build visuals. Our approach will
+largely be through static visual
+exploration of data. Largely due to the
+poor tools support in Python for interactive
+and dynamic EDA. This course is also heavily skills-based which again a bit of a different
+approach with it. Instead of lectures where
+we show you one way to do everything and force
+you to adhere to this, we're going to demonstrate different content with
+different toolkits. Matplotlib the most common
+Python plotting library will be emphasized. But there are numerous other
+libraries which we will use to demonstrate
+exploration approaches with and this will better prepare you for the
+reality which is that in Python there's really
+a huge diversity of approaches for exploratory
+data analysis, and there are a plethora of interesting emerging libraries
+for data visualization. Now I'd like to take
+a moment to touch on the learning objectives
+for this course. By the end of this course
+you should be able to create effective visuals for data
+including line plots, bar charts, scatter
+graphs, histograms, box plots and heatmaps all
+using Python libraries. You should be able to relate
+the characteristics of data such as the
+dimensionality of the data, central tendency measures
+and variants with the appropriate visual
+exploration mechanisms. You should be able to understand basic statistical techniques and how they might be used in
+exploratory data analysis. In addition to these
+three core competencies, I also want to make you
+literate in the use of the Python matplotlib package, so that you can create
+charts and visuals quickly as you engage in
+other courses in this degree. You should be aware of
+emerging new libraries for visual exploration of data
+with the Python language. Before we jump into matplotlib
+and its architecture, let's talk about some of
+the high level goals of exploratory data analysis or EDA. Now the term EDA was coined by renounced statistician
+John Tukey in a book he authored by the
+same name in 1977. Tukey who is well-known for his many different
+accomplishments in the field of statistics felt that confirmatory
+analysis alone such as hypothesis testing
+which we saw in the first course in this degree, was just one role
+statistics could play in the area
+of data analysis. He argued that
+statistical methods could also be used to help data scientists
+understand where in the data they should be looking
+for trends and effects, and that could be used to
+help form hypotheses to test. So the time confirmatory
+data analysis or inferential statistics
+which aimed to answer questions was the normal
+practice of data scientists. While Tukey aim to
+promote a field of exploratory data analysis
+or descriptive statistics, which helped data
+scientists raise new questions which
+needed to be answered. Both approaches used
+data collected but for very different but
+complementary goals. The engineering statistics
+handbook put out by NIST the National
+Institute of Standards and Technology and Sematech, outlines several different exploratory data analysis goals. First, to maximize
+insight into a data set. When hypothesis testing,
+you're generally answering a single question through comparison of a few
+metrics of the data. Such as using a t-test to compare the means of two
+different populations. In EDA we're looking to gain a more broad understanding of the data set that
+we have collected. Second, to uncover
+underlying structure in the data and this is part of the process of generating insight and relating different
+data to one another. For instance different
+columns in a data frame, and this can be powerful to provide new questions to explore, and this is similar to the the third reason we might engage in EDA which is to extract
+important variables. Often the process of confirmatory methods tells us
+some effect has taken place but doesn't provide
+as much information about the causal
+relationships underneath. While EDA doesn't answer
+this question directly, the exploratory process can help the data scientists discover
+which variables might be important to
+consider when trying to understand why a
+given effect exists. The fourth reason
+to engage in EDA is to detect outliers
+and anomalies, and this was of high
+interest actually to Tukey. In this class we're
+going to talk about his five-number summary and
+the related visual method the box plot to dive into
+how we can detect outliers and how we might change our analysis methods and response. As you know from your
+introductory statistics course, non-parametric tests often have assumptions about the data
+that they're operating on. EDA methods both
+visual and non-visual, help the data scientist test whether these underlying
+assumptions hold true. Perhaps most common are tests of distributions of
+data and we'll talk more about distributions
+and methods for understanding them
+later on in the course. EDA can also help the
+data scientist's create parsimonious models
+of a phenomena. A parsimonious model is one
+which is simple and describes the phenomenon well but uses the fewest variables to do so. This is sometimes casually
+called Occam's razor. That when you have two
+competing theories the simpler explanation pardon me is the one which
+should be preferred. The issue of what makes a
+model parsimonious is actually pretty difficult and you'll talk more about goodness of fit, over fitting and so forth in future courses in the degree. But with respect to EDA, the idea is that by comparing different variables
+to a given outcome, you're interested in that you
+can identify the impact of each variable and come to a simple explanation
+when it exists. Finally, the seventh goal of EDA is described by NIST
+and Sematech is that it can be used to help determine optimal factor settings such as the parameters that
+you might use for statistical techniques in
+more controlled settings. You can then use
+these parameters in different ways and
+explore that space. All right. Let's jump
+into learning more about how to do EDA in Python.

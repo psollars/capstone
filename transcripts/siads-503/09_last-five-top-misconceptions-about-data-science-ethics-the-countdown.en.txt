@@ -1,0 +1,207 @@
+We're here at the last five
+of the top 15 misconceptions about Data Science Ethics. I grouped the last five together because they're all about data, which is our wheelhouse here
+in Data Science Ethics. So what are the top
+misconceptions about ethics and data science, or
+data specifically. Number 11 is that
+being technical and working with data and being
+ethical are opposites. I put this here
+because I think it follows pretty logically from the last one that I talked about. You need to be technical in order to be ethical
+because you have to understand the implications of the analyses that you're doing and if you don't understand them, you're not going to
+be able to reason about their consequences. So that means that you're
+being more technical is likely to make you more
+ethical like that's related. So I think it's clear why technical and ethical or not opposite directions
+that you might move in. I understand why sometimes
+people think about ethics or morality or something like that
+as a soft skill, but I don't think that's an
+accurate way to describe it. It's not that there's a different group of people that are out there thinking
+their ethical thoughts. It's really, it's our job, as I said in the last segment. So these aren't exclusive and they aren't competing goals. They're really one and the
+same. They're linked together. Number 12 might seem a little controversial to
+you because we were told quite often as data scientists that you have
+to respect the evidence, you have to respect the data, you have to present the data, you have a duty to the truth, you have a duty to reality. I think these things are
+true but at the same time, I think there's
+widespread agreement that the data do not speak
+for themselves. There's a variety of
+ways to put this one. Famous one is that there's
+no such thing as raw data, raw data is an oxymoron. But I mean, we can think of other ways to say the same thing. This is the book cover
+for a book called How to Lie with Statistics with one
+example diagram from it. It's a book from the 1950s,
+it's a really old book. The reason I brought it
+up is that it's actually by far overwhelmingly
+the most commonly used book about statistics. So it's the most
+commonly assigned one in statistics courses
+across decades. It's fallen somewhat
+out of favor now, but I think there
+is a new edition. I think it still is
+widely used but over the course in which there has been a thing called statistics, the most common book to teach statistics has been about
+How to Lie with Statistics. Now I know that
+obviously the author wanted a catchy title
+but really the book is about how to lie with statistics and built into
+the assumptions of the book are that it's not just that you present the evidence
+and you're finished. There's a whole
+class about how to present evidence from
+data science analyses. But the ethical concern here
+that we want to highlight, is that we can't just take it for granted that once you
+say what the numbers are or the conclusion
+of the analysis is or something like that,
+that you're done. Your responsibility is to
+think about that presentation. Number 13 is a little hairy but I think that
+we can get there. Number 13 is the idea that ethical decisions are
+not about individuals. It's a misconception
+that they are. Ethical decisions might
+involve reasoning about individuals but it's usually
+about more than that. So if you're a big
+fan of statistics, one of the things that
+you might learn in a statistics class is that
+when you're doing an analysis, if you change the
+level of the analysis, the unit of analysis, you can change the outcome. Another way to put
+that if you don't like that particular comparison
+is you could say, if I do a study of what
+individual people do by adding up what they do and I do a study of what an
+organization does, even though an organization is a group of people added up, it might actually
+behave differently. There might be different things. So ethical decisions aren't usually about individuals
+and I think it's often a fallacy or an error when
+we start our reasoning about ethics by adding up
+individual things. Like there is this many
+people that want to do that, and there's this many people
+that want to do that. Therefore, we have to decide
+for the bigger group. There's some justification in doing that but there's usually some other dimensions that are left out when you're doing
+that kind of analysis. This also relates
+to my earlier point when I spoke about how it's possible for
+a group of people, for each person to make a good decision that they
+believe is the right one, and yet for the group as a whole to then do
+something wrong. So that's another instance where thinking solely in
+terms of individuals probably isn't going to be the best strategy for coming up with a good analysis of what's happening or what should happen. Another way to put that, I guess, might be if we talk
+about ethical decisions in terms of individuals. I think another way of
+putting that fallacy is that some people mistakenly think that ethical decisions are really when they go wrong, that's because there's Dr. Evil or some like
+really bad person who made the wrong decision. They think that ethics is about villains and it's
+about assigning blame. One of the challenges I had when I was working in this area, in partnership with
+people from industry, is that people in Silicon
+Valley or in the tech industry, when public opinion
+started to turn against them because of
+a number of scandals, they became very defensive and it became very difficult
+to talk to them about problems relating
+to what they should do, or ethics or justice
+or things like that. I hope you're not defensive right now by anything that we
+covered so far in the class. I don't mean to
+make you defensive and I generally think
+you shouldn't be because we're going to talk
+about things like racism. But when we talk about racism, it's not that we're looking
+for the evil racist. I'm not saying that there
+aren't any evil racists. Indeed, there may be evil racist. It's just that as an
+overall strategy, we often find that there isn't just one bad
+actor in the basement. We usually find that there are some systemic or
+structural problems that produce an
+outcome that nobody likes and that's what
+we need to address. So yes, in fact, there are people who are bad. I'm not saying that there aren't. One of my earlier
+misconceptions was about how some people
+are bad at ethics. So I definitely believe that. But at the same time,
+we don't want to stop with some analysis
+of individuals. So my job as someone
+interested in Data Science Ethics is
+not to go on some hunt inside a data science
+group and find the person who it turns out is in the
+movies as the bad guy. That is not usually
+what it looks like. In many famous examples
+of disasters that have occurred because of
+ethical failures related to data science, the conclusion at the
+end was that there quite often wasn't a bad guy, was a series of decisions and each of them incrementally
+did something, but their full implications weren't clear at the time until you saw them all together. So even though there were lapses, it often wasn't evil. So your job, if you
+want to be ethical, is not to seek out evil
+individuals and admonish them. So all right, I said
+enough about that. I think you get the
+idea. Number 14. Now, this one I think
+might strike you as controversial as
+well, but I hope not. People often think that data
+science is about numbers. Another way you could put
+this is that it's about data. Really, I don't think that's
+what data science is about. There's a famous essay
+about this that says that the way to think
+about data science is that it's actually about people. Because even when
+you look at data that seem like they don't
+have to do with people. If you look hard enough, there's some people
+in there and that's really where you should
+be putting your focus. I'll give you an example. Earlier in my career, I did some work related to wireless communication
+and I was particularly interested in some questions
+about whether radios were using the
+electromagnetic spectrum in a certain way or not. So I did some research about that and on the one hand,
+you might say, this sounds like it doesn't have to do with people
+because you're doing data analyses with data about radios and the
+question that you're answering is about physics. It's about wave propagation
+and electromagnetic energy. It's not about people, right? I mean, you just do
+the analysis and does the radio receive the signal or does it not receive the signal
+and it seems like you could say it's
+very objective and it just doesn't really have
+that much to do with people. I'm not saying that
+maybe you couldn't find some natural science example that was really hard
+to link with people. But I am saying that
+even things that don't seem like they're about people
+often are and in my case, that was extremely true. So for example, my
+students went on to work in a non-governmental
+organization to do policy work about
+wireless communication. He told me this great story. He said that he came out with a report and I looked
+at it and I was really impressed because
+the report really went through and critically
+attacked a bunch of technical findings
+that had been produced by a wireless company and I
+just really took it apart. It was very incisive and
+detailed and nuanced. I said that to him and
+he said funny story, the people who wrote this report, more or less, that
+you're praising are the same people that wrote the report
+they're criticizing. What? I said I don't understand. What it was is that in
+wireless communication, the allocation of
+frequencies can result in implications for a business that are valued at over
+a billion dollars. That would not be that uncommon. The amount of money at stake
+in these things is so high. So the engineering group at one of the wireless
+companies that produced the industry analysis, they were told by
+their bosses that the analysis had to
+come out a certain way. So they did it, the
+analysis came out that way. They needed, I suppose, support their family and they
+wanted to keep their job. Then at night, they went to
+see my former student at the advocacy organization and
+they said, you know what? That analysis that we just
+wrote is full of shit and let's go through and figure
+out what's wrong with it. The fact that it seems like data science is about numbers was working to the advantage of a company that was
+essentially lying. So they wanted you to think that data science was
+about science and numbers and it had
+nothing to do with politics or money or business and that was
+their cover story. So that's why it's so
+important to recognize that data science is about people and all the messy stuff
+that comes with people, including the politics
+and the money, does work its way into your work practice
+as a data scientist. Working data scientists,
+I think agree completely with this in the majority
+of cases anyway. So data science is not
+just about numbers. So my 15th and final one, I hope, is not too controversial. I think it might be, but I'm not super sure where everyone's
+coming from because I know we have a diverse group of students enrolled in the
+program and in this class. So my last misconception is the idea that
+numbers are neutral, or you could say
+numbers are objective. That's another way to put it. The reason that's a
+misconception is that, as we'll see later in the class. So this one, I think is not quite as much of a
+assumption I'm making, but I will try to demonstrate it to you a little bit more, is that how you assign numbers to things is hugely influential
+in their meaning. Maybe this is obvious to you, but just in case it's not, I mean, we'll get to
+it a little later, but for now I think just
+try to keep in mind that quantification is not in itself a process that frees us
+from ethical judgments. So if I turn something
+that's qualitative into a quantitative value, that doesn't mean that
+I have somehow cast it free of any ethical
+debate or in fact, any other kind of debate as well like a political debate or an economic debate or
+ideological debate. So just turning something
+into a number doesn't by itself make things
+somehow more fair, more neutral, more
+objective, more ethical. There's nothing inherently
+more ethical about numbers. In fact, we could go back
+to that earlier slide, how to lie with statistics
+and there's a whole bunch of really unethical
+numbers in there. So that's the way I'd love
+for you to think about it, is that turning something
+into a number is actually a point at which
+we start to have problems. Like we say, wait did we turn this into the
+number the right way? Unlike the other
+14 misconceptions, this one is a little different
+because we are going to have some material in the
+class about it directly. So if you don't believe me with this one and you believed
+me with all other 14, I hope then just hang on to it and we are
+going to get back to this one a little later in the class when we talk
+about classification. This the top 10 lists
+except it was 15 and the top misconceptions about data science ethics.
+I'll end it there.

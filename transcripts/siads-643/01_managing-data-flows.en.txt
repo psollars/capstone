@@ -1,0 +1,40 @@
+Let's talk about some of the principles
+and ideas involved in managing data flows. So we know that a pipeline
+is a set of steps. We want them to be repeatable and
+isolated from each other and we usually have configuration or
+code that manages how the pipeline is run. A term for this from graph theory is
+a Directed Acyclic Graph or DAG for short. Here's an example of a machine learning
+pipeline represented as a DAG. We can see that the relationships have
+directions as indicated with those arrows. And we can see that there are no loops. There are no cycles that happen in
+this workflow, making it acyclic. It's also worth noting that some steps
+can have more than one parent and can produce more than one child. That distinguishes it from a tree. And sometimes you'll see workflows
+described as a dependency tree. But since we can have multiple parents and
+multiple children, DAG is a more appropriate term. You'll sometimes hear the term DAG
+used interchangeably with data processing flows. That's because the concept fits so cleanly with the kinds of workflows
+that happen when we're processing data. Those data processing flows have
+a series of directed steps. Each step can have multiple dependencies,
+and multiple outputs. And the steps should be arranged so
+that we don't form circular dependencies. Another important concept when thinking
+about data flows are a couple of different programming paradigms. The imperative programming paradigm is
+exemplified by languages like Python, C and Java and
+it describes how an objective is achieved. We use control structures
+like conditionals and loops to describe exactly how
+an objective is to be achieved. Another paradigm that's interesting in
+this space, is the declarative paradigm. In this paradigm,
+we describe what we want to achieve. We declare the end state that we want, and
+we leave it up to the underlying tool to decide which steps need to be
+taken to achieve that outcome. Couple of examples of this type
+of paradigm are make files which are used in software compilation
+pipelines, very commonly, the DVC or data version control tool, and
+another is the Ansible tool, which is commonly used to manage
+technology infrastructure. The main thing to keep in mind if
+you're trying to distinguish between the imperative and declarative
+paradigms is that imperative describes how we're doing something, and declarative
+describes what we're trying to do. DAGs work really well
+with declarative tools. You can define the dependencies
+between different steps. And then allow the tool to manage
+the logic of deciding what to run and when things need to be rerun to recreate
+dependencies if that's necessary. But imperative paradigms are still really
+useful within the individual steps so that we have a lot of flexibility to
+decide exactly how data gets processed or moved around in the individual
+steps of our pipeline.

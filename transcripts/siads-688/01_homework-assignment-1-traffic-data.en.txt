@@ -1,0 +1,138 @@
+Hi everyone. I'd like to discuss the first
+homework assignment and the data set is
+drawn from the study on social comparisons status
+and driving behavior. The three topics
+I'd like to cover are why we want to do a logarithmic
+transformation of the outcome variables. The second topic is about
+Poisson regressions and the third one is about
+clustering standard errors. Let me first talk about the
+logarithmic transformation. Lots of times when we encounter empirical data,
+they're highly skewed. If you look at the
+bottom left graph, you will see that the horizontal axis is the
+number of traffic tickets drivers received in the
+month post-intervention. So mm is the number
+of traffic tickets a driver receives in the
+month post-intervention. On the vertical axis
+is the density. You see a huge spike
+at zero because, for most drivers, they haven't received any, for any given month, they probably don't
+receive a traffic ticket. But then you have if
+you look carefully, these tiny little bars
+that go all the way to 30. In rare cases someone
+received a ticket every day. In these very skewed
+distributions, one way to make it less skewed is to take a logarithmic
+transformation. Once you do that in the data set, you will actually find a variable called log underscore mm, which is the natural
+log of mm plus one. The reason we use mm plus one is because the log of
+zero is not defined. For those who have zero tickets, the log of transformation
+is going to be log of one, which is zero. If you look at the
+right-hand side, the distribution is still skewed, but much less so than
+the left-hand side. This is why we will ask
+you to actually use log mm as the dependent variable
+when you do your analysis. That's the first point.
+The second point is - I'm not sure how many of
+you have encountered this - but sometimes the data has
+such a feature that it doesn't make sense to use ordinary least
+squares regressions. We would use Poisson regression. I'm going to chat
+a little bit about when we use Poisson regressions. Usually the dependent
+variables are counts or rates. In our case, the dependent
+variable will be counts. How many tickets you received in the month post-intervention. The dependent variable y, number of tickets, has a
+Poisson distribution. What is a Poisson distribution? In the formula I gave you
+the precise definition. This is the probability
+of a given number of events occurring in a fixed
+interval of time or space, if these events occur with a known constant mean rate and independently of the time
+since the last event. In other words, at any
+given time in the month, pass after the intervention, the next ticket someone
+receives is independent of the last time someone
+violates the traffic rule. The lambda, the
+parameter lambda in the Poisson distribution, is
+defined as the arrival rate. It is y, the outcome
+variable divided by t, which is the time interval. On the right-hand side, you see a distribution of
+various types of lambdas. What we have in our data looks very similar to the
+case when lambda equals one. So when is Poisson distribution useful? When we model
+the events such as, the number of meteorites greater than one meter diameter, that strike the earth in a year. These are fairly rare
+events and we want to model the count, how many times it happens in a given year. Poisson distribution is useful, or the number of patients
+arriving in an ER, between 10:00- 11:00 pm, that's fixed time interval. The number of laser photons
+hitting a detector in a particular time
+interval can also be modeled as a Poisson
+distribution. Lastly, in our case, the number of traffic
+tickets a driver receives in a month can be modeled as
+a Poisson distribution. That's the second technical
+point and you'll be able to practice Poisson regressions
+in this data set. The last point is
+about standard errors. We know that standard errors essentially measures how
+precise our estimates are. It's important to get it right. In the homework
+assignment we ask you to cluster the standard errors
+at the cell phone level. If you read the paper and
+go through the tables, you see that in every
+regression table, the standard errors are clustered at the
+cell phone level. Why would we want to
+cluster standard errors? I'm going to give
+you two reasons. This is the state of art about why you might want two
+cluster standard errors. One is the sampling design
+reason for clustering. This applies mostly
+with survey data, but it's a good starting point. For instance, your regression
+equation is log wages. Here we go, log again, log transformation and on the right-hand side you can think about factors that might affect someone's wages such as
+their education, proxied by the use of schooling on their experience and
+we might consider, let's say, experience enters
+non-linearly so we also include a quadratic term
+which is experience squared plus the error term. You want to say something about the association between
+schooling and wages in a particular population
+and you're using a random sample of workers
+from this population. If your sampling method is
+at the individual level, then there's no need to adjust the standard
+errors for clustering. You can just go ahead
+and run this regression. However, if the way
+you sample is by randomly sampling 100 villages
+from within that country, and then randomly sampling
+people in each village and your goal is to say
+something about the returns to education
+in the overall population. Here you should cluster the standard errors by
+village since there are villages in the population of interest beyond those
+seen in the sample. In other words, the unit of
+randomization is extremely important in terms of determining when to cluster and how to
+cluster your standard errors. The second reason for
+clustering standard errors, which is the reason that we're concerned with in this
+particular experiment, is the experiment design
+reason for clustering. Again, we're going to look at log wages and we're going
+to write an equation where suppose you have a control and a treatment and in
+the treatment condition, you might give extra
+encouragements, for instance, to workers in
+the treatment condition. If the treatment is assigned at the individual level, again, there is no need to cluster
+the standard errors unless you're using
+multiple time periods. If your treatment is assigned
+at the village level, then you need to
+cluster by village. Again your unit of
+random assignment is usually where it's recommended you cluster the standard errors. In assignment 1, we say please cluster standard errors
+at the cell phone level because each car is associated with a
+cell phone number and sometimes if a family
+has multiple cars, you can have two
+cars or three cars associated with a particular
+cell phone number. The reason we want to cluster the standard errors
+at the cell phone level is to allow for the
+potential correlation of behavior within a cluster. Let's say a family owns two cars and they're registered with
+the same cell phone number. The number of tickets that
+the cell phone receives, you should allow the possibility that the same driver
+sometimes drives one car, sometimes drives another car so the behavior across the
+two cars are correlated. Clustering the standard
+errors basically say that we allow behavior or observations to be
+correlated within the cluster but independent
+across the cluster. This is the reason
+for us to cluster. I'm done with the
+technical points about homework assignment 1, but before I log off, I would like to talk a little bit about homework assignment 4. For those of you
+who looked ahead, you probably realized that homework assignment 4 is
+very different probably from any other homework
+assignment that you have encountered in
+the math sequence. There, instead of giving you
+a data set or asking you to write analysis programs
+with everything specified, we ask you to design
+your own experiment and so it's a good idea to
+start thinking about ideas. You have learned various types of experimental designs from 630, 631, and now 688. There are lots of
+different ways to nudge pro-social behavior to design using data science for
+social good and so you might have a problem in your
+organization or school, or in your city or town that you might be
+interested in solving. It's a good idea to
+come to office hours with either the GSI or me to
+discuss these ideas early. If our office hours don't work, if you don't find any of
+these work for your schedule, feel free to schedule an extra office hour
+with one of us. I just want to put it out there and encourage you to attend office hours and
+to start thinking about your own
+experiment design early.

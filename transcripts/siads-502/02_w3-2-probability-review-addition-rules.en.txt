@@ -1,0 +1,94 @@
+Math methods for Data Science, Bayes' Rule and Maximum Likelihoods: Probability
+Review - Addition Rules. Before we get too far into
+all of the probability rules, I want to give you a cheat sheet. I have here the addition
+rules, the "ORs", the "ANDs", the
+multiplication rules, and the conditional rules, as well as different specifications for
+different cases of events, such as in general
+independent events and mutually exclusive events. Mutually exclusive
+events are those where events A and
+B do not overlap. Independent events happen when knowing that A occurs does not change the
+probability of B, and general events are when neither of those
+two cases are met. This is a good reference
+to come back to when doing
+probability problems. To compute probabilities
+of the form P of A or B, we use the general addition rule. For any two events A and B, the probability of A or B is equal to the
+probability of A plus the probability of B minus the probability of A and B. Just a word of warning, "OR" does not mean what
+you think it does. In statistics "OR" is all of the events in
+one condition plus all of the events in
+the second condition minus all of the events that
+overlap the two conditions. Let's look at a general
+addition rule example. We are given the probability
+of A equal to 0.76, the probability of
+B equal to 0.22, and the probability of
+A and B equal to 0.18. What is the
+probability of A or B? Well in general,
+addition rule tells us that the probability of A or B should equal the probability of
+A plus the probability of B minus the probability
+of A and B. In this case we can
+plug in those values, probability of A plus the
+probability of B minus the probability of A
+and A and we get 0.8. So the probability of A
+or B is equal to 0.8. Typically, we don't turn
+probabilities into percentages. Let's look at one more example of a general addition rule. Find the probability that
+a randomly selected person is likely to vote
+or favors the law. In this case, we want
+everybody in one outcome. So all of those who
+are likely to vote plus all of those who are in favor of the law
+minus the overlap. So the probability
+of those likely to vote is equal to 721 over a 1000, probability of those in favor of the law is equal
+to 523 over 1000, and the probability of likely
+to vote and in favor of the law is the overlap
+or 372 over a 1000. Then we just plug this into our general addition
+rule equation. Seven hundred and twenty
+one over 1000 plus 523 over 1000 minus
+372 over a 1000, gives us 872 over 1000 or 0.872. In the special case of
+mutually exclusive events, we can simplify
+the general addition rule. If A and B are mutually
+exclusive events then the probability of A
+or B is every outcome that satisfies
+event A plus every outcome that satisfies event B
+minus the overlap, but because this is
+mutually exclusive, we're subtracting zero, and we can eliminate that
+from our equation. This rule can be extended to more than two mutually
+exclusive events. Let's look at
+conditional probability. Approximately 15 percent of adult men in the US are
+more than six feet tall. Therefore if a man is
+selected at random, the probability that he is more than six feet tall is 0.15. Now assume that you learn that the selected man is a
+professional basketball player. With this extra information, the probability that
+the man is more than six feet tall becomes much
+greater than 0.15. A probability that is computed
+with the knowledge of additional information is called a conditional probability. The conditional probability
+of an event B given an event A is denoted
+by P of B given A. P of B given A
+is the probability that B occurs under the assumption that A
+has already occurred. The probability is computed as, the probability of B given A
+is equal to the probability of A and B over the
+probability of A. This can also be reversed. The probability of A given B
+is equal to the probability of A and B over the
+probability of B. Consider the following table
+which presents a number of US men and women in millions
+25 years and older, and their favorite type of book. If we select a person at random, What is the probability
+that that person is a man? In order to calculate
+this probability, we need to know the total number
+of men in the sample. So we would take the sum of all of the different
+book categories and get 94 million men in
+this particular sample. We then need to calculate
+the total number of individuals in
+the sample so we can add the number of women in millions and get
+101 million women, adding these together gives us 195 million individuals
+in the sample. So what is the probability
+that the person is a man? Ninety four million out of a
+195 million gives us 0.48. What is the probability
+that the person we randomly select is a man
+who likes True Crime? The outcomes that satisfy this condition
+True Crime and male are 29.6 million out of
+a 195 million individuals, giving me 0.15 as the probability that
+a randomly selected individual is a man who likes True Crime. Now, let's find the probability
+that the person likes True Crime given that
+the person is a male. We now need to calculate the
+probability that they like True Crime given that the randomly selected
+person is male. Therefore, we're
+creating a denominator of men only which we
+know is 94 million, and then the number of men who like True Crime as 29.6 million, and we get a probability of 0.31 as the conditional probability that given we have
+selected a male, the probability that
+that person likes True Crime.

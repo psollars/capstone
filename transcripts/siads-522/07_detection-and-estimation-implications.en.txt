@@ -1,0 +1,67 @@
+So welcome back. We're still focusing on perception
+and cognition, and I want to talk a little
+bit about the implications of problems of detection and estimation when it
+comes to visualization. People have done experiments
+for a really long time. The first of these was a set of experiments by
+Cleveland and McGill, where they started thinking
+about different ways of encoding data and our ability to estimate things
+correctly or not. So we have two different
+visualizations here, on a pie chart, on a bar chart, they're
+encoding the same data, same information is
+being encoded in both. In the case, of
+the pie chart we're encoding the value of
+A using the angle, in the bar chart is, of
+course, based on length. What Cleveland and McGill did is recognizing the fact that some things are read more accurately and some things
+were read less accurately, issued a sequence of these experiments where they
+basically showed people different visualizations
+and they put dots on a couple of these different bars that they wanted
+people to compare. So they said, which is
+bigger bar A or bar B? Then they said, how much bigger is Bar A relative to bar B? They also did this with
+things like pie charts. So they put two dots,
+in this case, around pie slices E and D, and they said which
+is bigger, E or D? Then they said how much bigger
+is E and D. Then looked at how many mistakes people made in both the bar chart version
+and the pie chart version. From this, we developed
+some sense of which visualization types
+are better than others. So from this we learn
+that bar charts that are sitting side-by-side
+have less errors. So if you're looking at
+this plot of the data, you can see the arrow goes
+down as you go to the left, and you can see that
+visualizations, like this one, are better than the stack
+visualizations over here. So those are the things
+that are harder to compare because things
+are not aligned well. So even though
+we're using length, these things do not work well, and pie charts it turns out are actually the worst of the bunch. People have extended
+these experiments in a number of different ways. So this is a crowdsourced
+version of this, where they took lots and lots of other visualization types and similarly did this experiment. So you can see this ordering of visualization types
+in terms of accuracy. So at the top, we
+have things that are really accurate
+and at the bottom, we have things that
+are pretty bad. So you can see that
+we're moving from bar charts down to pie charts, down to area charts, down to these kinds of tree-maps, down at the bottom over here. From this, we've been able
+to describe taxonomies of more accurate to least accurate
+ways of visualizing data. So if we can, we're going to prefer to use things like position and length. If we can't use those
+for some reason, we might rely on angle, slope, and then we are going
+to move down to things like color and density, which are really inaccurate for people to be able to read. But we have to, we're
+going to use those. If we can, we're going to prefer things that are
+accurate, position, length. These are going to be effective when we're making
+visualization choices. So when we showed
+this in the past, these different orderings
+of visualization are retinal variable types
+depending on the kind of data, this is the kind of experiment where we understood
+this relative ranking. So we have quantitative data, we're going to pick
+position first, and then length, and
+then angle, and so on. If we have nominal data, we're going to pick
+position first, then perhaps color, hue, texture, and so on. But these experiments give us this ranking and will
+tell us and inform us as to which decisions
+we should make when picking encodings
+for visualizations. The takeaways is that there's a lot of different
+retinal variables, and experiments
+like this are able to tell us which ones
+are better than others. It also allows us, given new kinds of strategies
+for visualizing data, to estimate and evaluate these new techniques relative
+to the things that we know, and be able to rank them and say this is good and this is bad, or it's good for these kinds of questions and bad for
+these kinds of questions. So these kinds of experiments are the things
+that you should consider when evaluating
+new techniques.

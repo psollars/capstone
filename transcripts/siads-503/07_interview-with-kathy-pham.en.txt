@@ -1,0 +1,719 @@
+Hello everybody. Welcome back. I'm here with a very
+special guest, Kathy Pham. Kathy is here because she has a wealth of
+experience in industry, but is also a leading
+voice in ethics as applied to computing
+and data science. Kathy, thank you so
+much for joining us. Thanks for having me. So when we talked earlier, you mentioned that
+there were instances in your work life where you had situations that you
+were uncomfortable with or where you thought there
+were ethical dilemmas. Tell me if I'm using
+the right words. Yeah. I think both, there are definitely scenarios
+where I was uncomfortable, but I would say that was later
+probably half, later in my career. In my early career, I definitely was on
+the bandwagon of, "We're solving all the
+problems with technology. Let's collect all the data,
+let's do all the things." No one else around me was really questioning anything
+we were building. This was at Google and IBM, where it's, we're going to build a piece of technology to change healthcare or we're going to build something to really
+connect everyone in the world. But I don't recall being
+very uncomfortable, I think primarily because
+I deeply believed that everything that we
+were doing was good. So this is Kathy 1.0 versus 2.0? Yeah. I really want to write a letter to my
+early 2000s self. I might do that one day
+and publish it somewhere. But definitely, Kathy 1.0, idealistic Computer
+Science graduate, software engineer,
+product manager person, working at a big tech company, charging full force with, "We're going to change the
+world with technology, we're going to change
+healthcare even if our company has never done anything with
+healthcare before. We have no idea
+what healthcare is. But we know tech and we're
+going to change health care." Then I think over
+time, it evolved. I think in some ways, my career
+evolved with the state of tech where we're thinking about the state of
+tech as it is now, and I slowly also, through a series
+of both personal, professional events,
+started questioning everything I was building. Can you share some of
+those events with us? Yeah. I'll go into some concrete examples
+of some failures, that we now know are
+failures that I've seen. But I also can share
+what caused me to start questioning
+what we were building. I love it. I think part of it is, in 2014, I left Google to go work for the White House at something called the United States Digital Service and that pulled me out of the tech world where my
+whole life up to then, a decade, was either in computer science
+programs or around engineers in the
+tech world and I was put in a civic tech
+space where people deeply cared about
+serving people, whether it's in the
+Veterans Affairs, the Department of Education, the IRS, Small Business
+Administration, etc, health and human services, but then didn't understand how to build scalable reliable technology. I saw how failed technologies, putting aside the
+ethics conversation as we think about it in terms of like, Facebook and
+Google and bias, etc. But I saw how failed
+technologies, and Virginia Eubanks
+talks about this really well in her
+automating and inequality book. When you build a piece
+of technology for government services
+and that fails, let's say you were well meaning, then you have now a
+scenario where you want to get people more access to Social Services and you end up restricting them from
+access Social Services. You hope that you buy
+something so that judges or the court system as less biased because you
+think humans are more biased. But then now you've created
+a system that's even worse, and how a lack of understanding of how
+to build technologies, both from people who
+don't build technologies, but also from the technologists who don't understand the domain, which is what we see
+in something like Compass where two Data
+Scientists built technologies for the court system and they may perhaps understand
+the deep systemic issues. So going into the civic
+tech space got me thinking really differently
+and then at the same time, all of the election
+stuff happened and I think that was a wake-up
+call to Silicon Valley of, we pride ourselves in
+spreading information. We pride ourselves in
+connecting people. Wait, we didn't think
+about what happens when people connect and they perhaps share information
+that isn't true, when people live
+in echo chambers, and all that kinda happened
+at the same time, for me. Then here we are, really
+thinking about what we can do to shift how we train
+our technologists, how we have policies around
+how we build technologies, how we structure our organizations
+such that this happens, where we don't bring perhaps enough perspectives to the table or we have certain
+incentives that make it so that it's harder to
+build technologies that serve all the populations that
+we mean for them to serve. I know from earlier conversations with you that you've struggled with the idea that
+you sometimes see in the ethics stuff that's
+out there right now, about sometimes it's called
+end-to-end accountability. The idea that we're going to identify a point of failure where there was an ethical decision and it was made incorrectly. I struggle with that because my memories of working
+in industry a long time ago wasn't that there was some villain that was out there
+making the bad decisions. Everyone was trying to
+make good decisions. So I believe that's
+your experience too? Yeah. I don't think everyone is trying
+to make good decisions. So from my experience, many people are there to
+try and make good decisions. If we get into the complexities
+of what motivates people, some people are in a
+job only for the money, which is fine, we have
+different reasons for work. Some people have to work because they can - their income is
+supporting multiple families, etc, and some people
+have the luxury to find jobs they're
+passionate about, excited, there's a lot of
+complexities there too. Some people have the ability
+to use their voice and speak up in a company and others can't for a variety of
+reasons that are very systemic because of the way they look and the way they are. But what I have
+seen, to your point, is that, yes, at least
+in the tech industry, lots of people are there with this deep belief that
+we're going to change the world with tech and
+there wasn't one moment of, "Let's turn this product evil and disrupt an entire
+economy," or "Let's go launch in another country and not
+understand them and just totally cause
+chaos, intentionally." Not that it excuses it, because now we have a
+case where people who are perhaps ignorant of society, of certain communities, are now launching products that
+are pretty irresponsible. But Anand who wrote
+Winners Take All, was here at Harvard recently and had a really great
+statement that I agree with. I generally don't think
+that Mark Zuckerberg cares about money because
+it's easy for a lawsuit. If he only cared more
+about than just money, then maybe we'll get somewhere. In technology, and I think it's indicative of many
+tech workers where it's the mission and the focus and perhaps
+it's just misaligned, it's like it's almost easier
+to solve for the case of the Wall Street person who only cares about money because
+you can attack that. But what do you do with a
+bunch of people who generally believe they're doing
+good for the world, but then their product is not? Then where do you find that
+point of failure, to your point? Where is that in that system? There are definitely a good
+number of theories around and many people are attacking
+it from different angles, whether it's the leadership
+making decisions, or a bunch of
+engineers over time, individual contributors
+contributing code over time that are in little
+bits are problematic, but together, they become
+really problematic. But it's hard, I think, to pinpoint exactly what it is. There are people
+that are like, "We can just have regulation." I think some regulation
+is very helpful. But even if we just
+had regulation, a company's going to have
+to go and execute it, and what does that
+look like in practice? A bunch of engineers,
+and product managers, and designers, and
+data scientists making decisions
+about a tech system, and so you have to figure out where in that whole process of our, either software
+development cycle our product development cycle, where we're kind of just failing the people we're
+trying to build for. Well, to that, maybe we could talk about instances
+where you were involved in building
+systems that you later felt weren't living up to the hopes that you had for
+them in terms of ethics, or justice, or even just success or efficiency. I don't know. Yeah. I'll share a few examples. At Google and then in
+the healthcare system, and then at the White House at the United States
+Digital Service, a lot of them, for me, from come back to
+issues of either teams who don't understand technology or how tech systems
+are being tasked, but building large
+scale tech systems. That happens quite often, either it's and
+they shouldn’t, Doctors are not, there's no reason why a doctor should know how to build
+a software system. They're there to save lives. There's no reason why
+someone who is there to help veterans understand how electronic health
+record system happens. But what we end up
+having is a system of people who are there to do their jobs and then now we need technology imposed on them somehow and there's
+a huge disconnect, and we end up with
+tech that fails, and for me, that's
+an ethical issue. It's an ethical issue that
+isn't talked as much. In the current landscape, I think of ethics where
+we talk a lot about the biased around tech, but for me, that's one of the
+biggest underlying ethical issues of our time. Then you have tech people who don't understand tech building, but they
+shouldn't have to. Then the other side is
+people who build technology, not either surrounding ourselves enough with the
+social scientists, and anthropologists and
+race and gender scholars and other fields or having a little bit of
+that training ourselves to really recognize some of these deep problems where we can't just throw out an app
+into a country and say it spreads
+information and be done. We have to really deeply
+know what that looks like. We can't just say,
+well, we have like this platform for
+everyone to communicate. So yay democracy,
+everyone has a voice. Well, anyone who study humans for a long time knows that
+in any environment, offline or online,
+that doesn't exist, right. Not, everyone doesn't have a voice. There are people that have
+louder voices than others. There are people that
+because of the way they look or the way they are, they're more comfortable
+speaking up than others. So those are the two
+cases I think of. So in the first one with tech people
+building technologies, while not perhaps deeply understanding enough the
+complexities of society. I think of cases when
+I was in industry where we were all either analysts or engineers or data
+scientists or some flavor, and we were making decisions
+on what data fields to have. Anyone who's ever done any data modeling or
+data engineering, you've had to make
+decisions around what your relational
+databases looks like, what kind of fields you want. So one example, this
+wasn't my exact team, but someone pointed this out, there's actually
+research on this now where even if you have
+a good gender column and you decide that's
+going to be a Boolean and now it's either on or off, or yes or no, or male or female, you now restrict yourself from anything else
+later on down the line. You can just change it later.
+Yeah, but change is hard. Every time you build
+something you have a new change there's whole set of change
+reviews and new code. So it's little things
+like that where you'll, like, now I'm making decisions on an array for skin
+tones or I'm making decisions on fields
+for protected classes. Ideally, have people in the
+room who can quickly tell us these are the complexity
+around protected classes. "Hey, did you think that
+maybe an on and off for a Boolean for a gender maybe isn't a
+good thing to start?" To pretty much question all
+these data decisions we make, I saw that constantly. You saw the
+questioning or you saw the fact that the
+decisions were made? I rarely saw the questioning and I wish that we had
+more of the questioning. But in order to have that
+kind of questioning, we either have to have
+the training ourselves, which I think is actually
+helpful but also unrealistic. I think what we really need is to make sure we have people in the room who can
+help us question. It's so common to do unit testing and all sorts of testing when we
+look at our code right, and we don't test for
+that kind of stuff. We test to make sure some
+of these variables work. But then we don't really tests where, "Does this model actually represent the reality of the world that we
+want to live in?" It's just a much harder
+thing to test for. So I rarely see that kind of
+questioning when we have it, and this is across the board. The thing I mentioned was around the database to
+house people information. People information being
+every single candidate who'd ever been through
+the hiring system. Your track from the moment
+you talk to a recruiter, to the moment you leave the company and you
+are still in the system. That includes every
+event you've been at, and is it okay to classify you as a particular
+kind of a candidate? Let's say the company
+really cares about diversity and now they
+have fields that, for example, indicate like someone's quote "diversity score" because a recruiter wants to quickly pull like a
+high diversity score. Now you have a bunch
+of people making decisions like that
+on what constitutes the diversity score and what that means overall for the
+makeup of the company, who gets to join the company
+and what that looks like. That's just the
+internal hiring system. There is a bunch of people doing research around what
+hiring systems look like. So there were decisions made
+about these kinds of things that made you uncomfortable
+at the time or in retrospect? I'd say some of it
+was not at the time. The hiring staff, definitely
+uncomfortable at the time, but I don't know if uncomfortable is the right word,
+it was just "That's kinda weird."" Because I don't think
+at that point I thought I didn't knew
+or thought enough about what that means
+down the line to have a field that
+sums up a person. Right. So you thought, "Gosh, why is this add points to
+diversity, but not this?" Yeah. Oftentimes, these are really small teams making
+decisions like that. It might be three
+or four people on a team making decisions. Some companies have people who understood, think deeply about the complexities
+of race and gender and things like that,
+and some don't. So I don't want to say that there's no one or
+anything like that. So I think for me when I
+think of the industry side, I think of an example
+like that a lot where along the way you just
+have a lot of people. We live in a culture in tech where we're shipping
+pretty fast all the time. So it's not like
+every single time we make a decision on the fields, there's a whole body of peer reviewers who
+come in and are like, "Let us really think deeply
+about this gender fields." Actually gender is a bad example because at this point
+companies have had people have come in to think about gender
+because it took activism, other people speaking up, for companies to really
+pay attention. But there are other case fields where if you
+could think of, this isn't my direct example, but the compass tool
+where they're using a questionnaire that is now
+used in their tech system, and if you'd brought in
+people who really understood questionnaires that you give
+people who are incarcerated, the deep issues with those. So I think a lot of my
+industry example as ways that down to like the
+column and variable, that the variable types, the field and down to that level, the decision-making at that level that a lot of the individual consumers
+who just do on their own really impact the
+much bigger system, whether it is search or max or the higher system that you all go through or any of these. You mentioned tech
+culture a few times. The people watching
+this video may have some experience with
+different corporate cultures, but they also may not. Can you say something about how these kinds of
+things would come up in the culture of your workplace then or
+maybe how they wouldn't? Yeah, I would say for the most part at
+least when I was there, they often did not come up. There's also one
+thing that I found myself surprised to explain to a group of the Berkman
+fellows here at Harvard. The Berkman fellows are really wonderful
+interdisciplinary group of people ranging from lawyers
+to political scientists, to anthropologists,
+social scientists, etc. they ‘re like "Oh clearly,
+do, like, the engineers probably go through
+some phase where they vet the data before they
+put it in their system." I was like no,
+for the most part in tech, you have like the data
+people or like the intake part, and then when it gets to
+the engineering side, all you do is you trust what you get or you're moving really
+fast, like test the system. So you just grab whatever data set that happens to be around. So it's not like there's this deep interrogation
+process everywhere. It's like there's
+the engineering team that built the infrastructure and then there's the
+data team somewhere else that collect
+the data and you just pass each
+other a little bit. What was the original
+question on this? Sorry. I want to make
+sure I answer it. It was just to ask you
+to talk about culture. Yeah. There's like silos
+there even an engineer where there isn't a
+lot of comprehensive - So I think this is actually
+where product managers and leadership can also have some play and pull
+in all this together. I teach a class of
+product management. So that's a different
+conversation. But then - I don't know if this
+is the only problem, but when your team is primarily the makeup
+of the tech industry, which is pretty white and pretty
+male and pretty western, even if you raise,
+like, "That's weird. Why are we tracking that?" You might just be the only one. Even if people listen, it's almost like bringing
+everyone else up to speed because other folks just
+aren’t in the same mindset. Whereas, if you had a
+bunch of people who were already thinking
+about these issues or you can always come at
+everything from a place of "We want to make sure we understand the complexities
+of society or something." It's just a different
+starting point, so I think we suffer a little bit of
+that in the tech culture, where even if people
+care about a topic, there's a lot of
+bringing people up to speed because these topics are just not as common in
+what we've been exposed to. Right. One of the solutions proposed for this
+situation has been that the tech industry and data science should be more like, I don't know- I guess
+airlines used to be a good example before the recent difficulties
+with Boeing. But the idea, in
+the tech industry, if you said, "Well, I'm just going to take this
+problem off on my own. I'm going to spend
+the weekend on it. I'm not going to get any sleep, and I am going to come
+up with a solution the next day," they'd say, "Great. That's how we do things." Whereas, if you did that
+in the airline industry, they'd think you were crazy. You can't just take a design off on your own
+and come up with something, you need to have it checked. So I think one of the
+things people have identified is
+changing the culture. Yeah. We're talking about
+airlines and the whole, but when I think about
+software in general, most software engineers have read the book The Mythical Man-Month. There's a section in there about how software people like
+software because it's a very malleable medium. So unlike building a house or where you set the foundation, moving the foundation
+is quite hard. But if you write software
+and you're like, "I don't really like that aspect, I'm just going to tweak
+and change that variable." If incarcerated number
+is greater than four, actually greater than five,
+then there's something, and it's so easy to make
+a change and so fast. I think that plays
+into this as well, it's so easy for us
+to make changes really quickly and be unchecked
+almost because it's so easy, versus having a deep
+inspection on an airplane. Again, there's
+still issues there. But I think there's also a point where you are
+on the product, right? Because if the product's new, it's really easy
+to make it change. But then once it rolls out, once you get a huge
+installed base and have a lot of data already
+and have a lot of users, software can then be very
+non-malleable, don't you think? Actually I want to jump
+into a healthcare example, but I do think software
+does become more not malleable in the sense that, yes, change is harder. So for example, you
+get an airplane, if you want to go and just remove the wing and you
+replace with a new one, that's a lot, right? In software, maybe you have to go through
+a lot of processes, but the actual change to change the lines of
+code is so easy, right? Fair enough. So that makes it much easier. I get it. You actually made me
+think of another point where we have a lot of processes, especially with site reliability
+engineers and DevOps. I know this is not as much
+the data science side, but the moment something goes wrong- so you
+probably have rarely, not never, but you
+probably have rarely felt Google search go down, but people are trying to
+bring it down constantly. So there are teams in
+place at the moment, something goes wrong or there's a flag that something
+might go awry, there is a whole team of really great engineers that swarm that problem and reverse. And so I think security
+is like this too there's just so much
+we can do to predict all the unintended
+consequences of what we build. Maybe at some point
+we really deeply believed the gender
+column should be binary, and everyone in the world deeply believe that to be
+true for some reason, but later on that's not true. How do we have a process
+in place such that we can, similar to the site
+reliability engineer, people who keep Google search up, the moment we realize
+something is wrong, we have the expertise
+in place to reverse. I think that's a much
+bigger thing that companies need to work on instead of
+saying, "Not my problem. Sorry, we've already
+built this," which was the response from tech
+companies in the ending. We actually have a process to reverse course a little bit. But you made me think
+of- I do want to talk about this healthcare example. It goes back to also
+technologists not understanding the
+tech. There's a good - I'll talk about a case
+that you can look up, and then there's also
+some personal experience - there's a case that
+someone wrote about the Epic System at one of
+the healthcare systems where a patient was over prescribed a medication in the hospital by something insane, was like 26 times or something, the dose that he was
+supposed to have. If you look at the breakdown
+of what that looked like, it was a system that was built where nurses
+and doctors started to ignore alerts
+that they got from the system because
+the alerts just got so frequent and they got in the way of them doing their work. So over time, it's boiling the frog a little
+bit or the crying wolf, where over time,
+they're like, "Yeah. We see those alerts all
+the time. It's fine." So they had something
+similar happen, and I think that's just
+a really great example of what happens when people
+who understand technology, especially who understand,
+let's say, a data system, are like, "I'm going
+to enter a whole new field like healthcare." Not necessarily understand
+the huge complexity of everyone involved
+in the healthcare, like who gives the medication, how often doctors do rounds, what the workload of
+doctors are like. Nurses have 12-hour shifts
+and they go from 7:00 to 7:00 and then they
+transition at seven o'clock, and there's a 30-minute- and
+all these things that play into how a patient looks
+from the tech side. When we don't understand that, we build systems in the hopes of making
+systems more efficient, but then we now
+have techs systems that make it harder for doctors, harder for nurses,
+harder for patients, and ultimately, in some
+cases lead to deaths. You can say it's not
+the software's fault because it's just a medium, but in some ways it aided a doctor or a nurse or
+someone in doing something or prescribing
+something or making a recommendation that
+wasn't accurate. That's another big
+ethical issue that I don't think we
+talk about as much. I've seen that, with working for a big tech consulting company going into healthcare system, a bunch of us weren't
+trained in healthcare. I was, kind of, but a bunch of my teammates were not
+trained in healthcare. They knew how to do data models, they knew how to spin up a software architecture
+diagram really fast. So this was like a more general purpose
+consulting company that had a lot of
+different clients? This exists. Think of any general purpose consulting
+company you can think of, all the big ones, IBM, Accenture, Deloitte, many of them have an implementation arm where
+they take on clients. They may have one solution
+and then they just give it, they say sell it to
+a hospital system, they'll sell it to a government, it's what they do. You have a software as a service that now you
+sell it to everyone. If you as a client are lucky, you might have
+someone on their team that really knows your space. If you're not, you might maybe have a few people on
+the team, if not, you might have maybe one subject matter expert that flies in and out maybe once a week
+that knows the domain, whether it's healthcare or automotive or- think
+of any industry. Obviously it's a
+healthcare example because I know that best. Now you have people building
+a healthcare system to do analytics around a
+population's healthcare or to do predictive analytics or to do recommendation algorithms around what kind of chemotherapy
+you should diagnose. You're relying on
+maybe having doctors and experts in the room,
+but sometimes not. So now you have a team of engineering consultants
+that fly in to build a technical system
+for our hospital, making decisions again
+about data fields, about how many alerts
+to give a doctor. A doctor could maybe tell
+you, but they don't know. You have to go and
+sit at a hospital just to watch people and to see what
+their day-to-day is like. We don't do that very often. Is there a particular example
+of this where something happened that you raised ethical or other kinds of issues? So I think the thing with
+raising ethical issues is, sometimes they're not
+viewed as ethical issues, they're just viewed
+as a failure in a tech system because technology didn't
+work or something. So the Epic case is
+a big one where, if you look it up, it's something like Epic prescriptions failure. But it's almost viewed as
+a tech system just failed, but it's not usually viewed
+as an ethical dilemma, even though, in the end, patients aren't really
+getting the care they need, doctors end up being over worked because of the electronic
+health record system. So I think that you nailed it where some of these
+are not flashy and they're not viewed as
+the ethical dilemmas of- I bring up bias because that's like what the news like to capture on and talk about a lot. AI bias is now part of
+companies' big goals. That's so important, but
+it's such a limiting scope. You can argue that some of
+these issues that I see in building data infrastructure, that's probably the best term, we flew in to build data infrastructure for
+these hospital systems, can ultimately result in bias because of how we built
+the data infrastructure. But it's so much
+deeper than that. It's not just the bias, it's how we build our teams, whose staffed on those teams, their understanding
+of the domain and the complexities of what
+that looks like. Our teams are maybe ranging
+from like 5-8 people. In some cases, building the software data infrastructure for one of the largest
+hospital system, I won't say who it
+is, in the world. This is not a secret, but you see I think any big consulting
+company knows this, where oftentimes, staff are pretty early career engineers. Even if in like the proposal, they write up, they are like, "We have all these fancy people we're gonna put
+in the proposal." What you actually get are some earlier career people following the
+instructions of maybe a more senior architect person. But you have a bunch
+of these people making these decisions on what goes into what the
+Data Model looks like. The team, the review process
+only gets you so far. Ultimately, now you have a hospital system with the data system meant to
+serve patients better, to either do some analytics, or predict certain diseases, or make it so that doctors
+can more quickly see patients because they can review
+their charts more easily. But the system doesn't
+actually do that. Sounds like the data science is a really likely source
+where you could make mistakes if you have
+only seven people. I mean, the way this works
+in other scenarios is that, we usually have systems
+where we say, "Well, the workflow needs
+to have peer review, or it needs to have
+checks and balances, or it needs to have
+an extended timeline, or it needs to have
+evaluation and assessment and
+revisiting the model or something like that." But it sounds like from
+your work experience, these aren't commonly the
+way these systems are built. I mean, we have all
+that in practice. We have peer review and
+we have code review. It's pretty common
+for someone to review your code before it goes off. But the code reviews
+sometimes are like, "Are your character
+links on them?" they're, depending on who you
+have on your team, they can be quite superficial. Like they'll reveal your
+character name and what your code looks like and
+not always necessarily, I think, the second or
+third level of impact. Even if you're doing end-to-end
+testing of some sort. I think  part of
+what I'm saying is perhaps just not doing
+any of that well enough. We're not doing our user
+experience testing well enough. We're not doing our end-to-end
+testing well enough, even if we have processes in place that we
+should technically adhere to. Or we're testing for
+the wrong things, where we're interested in
+the efficiency of the code, or readability or
+maintainability, but not about the people. I think that's a much
+better way of putting it, where I've had code reviews where the readability was made too -
+it was all we looked at, either because that's all they knew or maybe we were all
+just in a rush or whatever. But yeah, that was really it. So it's almost like
+we don't catch some of these issues or there's
+like no one on the team. At least, on many tech
+teams are able to say, "If we were to hand
+this over right now to a bunch of nurses," because it's the nurses not the doctors or even not nurses, whatever the role
+is that deals with these systems in a
+hospital system. Let's say they're pushing the cart around the
+chemotherapy ward, dealing with eight
+patients at the same time, logging in and out and they're dealing with like these really
+complex doses of chemo. What that looks
+like in real time. A doctor does rounds like three times a day and
+when they do rounds, they also have to login
+and do all these things, there isn't necessary
+someone on that team that's building the software that
+understands that complexity. So it's hard to understand when things fail in that world, what your technology is doing and how to respond
+to that technology, and then how that
+ultimately results in some level of misdiagnoses, bad diagnosis, issues
+that fail the end user. Yeah, the last example, I think that pulls
+together pretty much everything for me. President Obama basically said, "We have a technology
+failure that is going to derail a big, one of the biggest policy
+initiatives, that I have." That's exactly what
+Virginia Eubanks writes about in her book, Automating Inequality,
+where we have this technology failures over
+and over and over again. Healthcare.gov wasn't unique,
+it just was really flashy. I think you should give some
+context because we have students from a
+variety of countries. In the United States and the
+UK had something similar. There was this website
+called healthcare.gov, and that was the team that came, and this was a team
+right before me. The healthcare.gov was an
+initiative where anyone in the United States can go
+to this one website to sign up for healthcare.
+It seemed simple. But on the back end, what
+that really looks like, was it was getting
+multiple agencies in the United States to work
+together from like the IRS, which is the Internal Tax Revenue Service that does taxes, to, in some cases, the Department of Education, to deal with some funding,
+and then health and human. So it was several different
+government agencies to work together on one website and pulling in information from
+many different kind of healthcare providers. So it was almost like a
+marketplace of sorts, but dealing with private sector insurance companies, and then public sector agencies,
+and a bunch of people. One contractor, a
+software company got the contract to build it and I think at one
+point They subbed, which is pretty
+common for contracting, where one big company will have the contract
+but then they'll find other smaller companies that can build different
+aspects of it for them. There was something like 60 different subcontractors
+all involved. When you mean 60 subcontractors, you mean 60 organizations,
+not 60 people? That would be far more people. Sixty organizations of some level and sometimes it was like a sub of a sub where like they hired a company A
+hired company B, and then company B found
+other people to help them. So then you have the scenario in the government where you're trying to build one
+healthcare website. You're working with multiple agencies inside your
+own government, you're working with multiple insurance companies
+on the outside, and you're working with a
+bunch of employees all at different companies. They'd never
+cooperated in this way before to do a system
+like this before? They may have cooperated in other ways, building
+other things. These companies have crossed paths via various
+different things, they work with each other all the time in different industries. Maybe they built a
+healthcare portal somewhere else or they like
+work for some manufacturer. They may have, but
+never together like this and definitely
+not as flashy, and you had an added layer
+of complexity of, nobody wanted to be the
+person known for failing, so there's a lot of fear
+and there's a lot of interesting inner personal
+issues with that as well. But on the tech side, we ended up having a
+website that didn't work. Every company basically said
+their part was working. So it didn't work. Like when it was launched, everyone was excited
+that there would be one website that anyone in the United States
+could use to sign up for healthcare
+and it didn't work. I think six people signed
+up on the first day. Did you say six? That's right. It was
+single digits. I forgot the exact number,
+I have to look it up. You can look up how many
+people signed up for health care on the first
+day, I think it was six. When people were asked at the headquarters of
+where everyone was working, "Where do you do your tracking to know where the point
+of failure was?" A bunch of the people
+on the team typed in, or how do you know if
+it wasn't working? They were like, "Oh, we
+just go to healthcare.gov website to see if it's up. We turn on the news to see." So they were relying
+on journalists basically to go and
+figure out who was angry. There was no tracking, there is no end to end and so this is a really complex problem of who's really in charge? Who's there to pull
+it all together? Who is in charge that deeply
+understands technology, and the complexity
+of health care, and the complexity of insurance, and what it takes to pull together a system with all those moving parts and
+make sure it works end-to-end? It sounds like the big theme here is really optimistic projections. I mean, it sounds like
+people had a lot of hubris. They felt this was a problem
+that wasn't that complex. They weren't as worried about it as they
+should have been. I think that's right.
+I think it's one, thinking, "How hard
+could this be?" Two, the hubris of, "We know tech, we're going
+to solve this problem." Then I think the harder
+one that we're all facing everywhere really is, I mean, it's impossible
+for one person to know everything, because
+there's no such thing, but how do we have a person on the team, or at least a few, at least a solid core team that understands the complexity of that space that you're in. I think that's so - who has the training
+and the experience. In this particular case, who has the training
+and that experience to know the complexities of health care and technology, and insurance and tie
+that all together. There's a lot behind what's being written about
+the healthcare.gov story. But part of that was pulling
+together a small team of people who had expertise in
+some combination of that, to just figure out
+what was going on. Because another day,
+when people don't have access to health
+care or they can't get their health care
+when they need it, there's so many countless
+stories here in the United States of people waiting to get health care and hospitals refusing to see them because they
+can't get insurance. People dying because
+they're waiting. That's where, for me, government services and technology failures
+are a matter of ethics, and human rights,
+and social impact, and all that just
+because governments touch so many people. That one I think is a much
+more complex issue than just what should
+data scientist know. But I think what's
+important is if you are a data
+scientist in any of these teams, to figure out if you're okay just being the
+single person that's like, "Okay, I'm just going to do
+my little thing over here." Trusting that someone
+else will figure it out. When I'm telling you now that I've been part of a
+larger systems at Google and IBM and government where sometimes there's no one
+there trying figuring out. Sometimes it takes
+you, the one person, wherever you are in your career, whether you are a
+senior leader or this individual contributor
+to raise a hand and be like, "Has anyone thought of this? Do we know that on launch day, this is going to work end-to-end? I am kinda curious about this
+field that we're using. I think it's going to cause problems later down
+the line," and trust that maybe owing that is going to contribute to help make that better just because the
+status quo is really bad. That's a great point.
+Could you say something about the dynamic there? It sounds to me like all of the contractors and agencies
+wanted to look good, which is usually the case. That's not exceptional. Everyone wants their
+stuff to work. It sounds like there was some organizational failures
+about planning, definitely. But then the part you're zeroing in on just
+now is this idea that there were certainly people who could have
+raised their hand. They could've said, "Well, we should check on this," or, "I'm not sure about this." But that didn't happen. I mean, can you say
+more about that? Like I think, how do we
+overcome that problem? I think that probably
+is the hardest one. Because let's say you are an individual person and your a computer at one of
+the contracting companies, and you notice something weird. You raise your hand but
+maybe it just goes to your team lead at that
+contracting company. It never makes it to someone who is in
+some decision-making capacity on the project. I think it varies from
+project to project. It's not uncommon. I've
+actually sat in on some of these meetings where they have these ginormous
+sprint meetings. Sprint meetings are these
+weekly or by-weekly meetings or even daily
+meetings sometimes, depends on the team, where especially
+in the government, there could be 30 or
+40 people on the call. It becomes a joke because it's just so many people on the
+status update meetings, maybe speak up then. I think it varies. All these teams are run
+so differently to think of where the power levers
+are or who to notify. Also recognizing that
+some people don't have the luxury, or fear of losing
+their jobs if they do that, which actually I think
+is a big part of this, where people are afraid of losing their jobs and they
+don't say anything. So I think it really varies on if you're in the contracting
+position or if you're the lead of the federal agency that's running this project and you notice something wrong. Surrounding yourself
+with enough people who are not just yes people, and enough people who understand technology in the
+domain you're in, to help you raise the issues. I think that's one of the assets the United States
+Digital Service has. It's a team of technologists and this tech startup inside the White House or in government
+of the United States. It's a model that
+other countries are adopting as well where it's just technologists who, for
+the most part, are pretty empowered as part of the culture and the
+position that they're in. One of our values is find
+the truth, tell the truth, to basically say, "I don't care what all the contractors
+are telling you. I don't care what any
+lobbyists are telling you. I don't care what any
+company is telling you, this is not going to work and
+it's going to fail." But we're in a unique
+position to do that because of where our
+organization is. It's inside the White House, or in some of agencies, it sits up in one of
+the highest points in the agencies and we're empowered
+to do things like that. Your agency came in
+after the failure or your team came in after the failure to try and
+correct the problem? Yeah. I came in near the end
+when they were all there. But the team that came in, and they'd be the first to
+say, "We didn't fix it. We stabilized everything." The whole savior, we saved it story
+that the press tells. The issue still a bit of a mess. But yeah, they came in later on to basically be the voice of, "These are all the things we have to fix and bring in all together." It's like, "Well, what if
+we had that all the time? What if we had that
+before any failure, where we just had people along the way that would point out issues that were
+wrong or problematic?" Yeah, so I think when we have people building technologies
+for large-scale systems that impact large
+communities and don't understand the technology, the complexities of the systems, that is an ethical issue. I don't think we talk
+about that nearly enough, because it's harder. Even as I'm talking about now, is it's much less tangible. You're just like, "Well,
+procurement is broken, and government
+software is broken." It's just easy to say that, but we have hundreds of thousands of veterans waiting
+to get access to care that they really deserve. Some of them have
+really severe PTSD. We have small businesses that can't figure out some
+of the benefits there. We have countless issues where our governments are
+just failing people, putting aside any politics, just on the technology front. Well, that's been super helpful. Do you want to round it out
+with any other observations? Do you have any questions
+I should've asked you but I didn't or things
+you really want to say? I think on an individual level, I'm not sure about
+this particular class and what your students are like. But at least in the
+computer science realm, there's a lot of
+hubris and "We know everything", that I talk
+about this quite a bit. When you graduate in
+the Computer Science, at least today,
+you're probably one of the highest paid
+in the company. Everyone tells you that you're
+the most valuable person. Any data scientist or
+computer scientists or software engineering are the most valuable persons in the company, there's not enough of
+you. We want more of you. So we've developed this world where our skill sets
+are the most important, and all these other skill sets of people who are the lawyers, the political scientists
+or the social scientists. There's almost like
+an underlying culture of second-class or
+fields that don't matter as much or
+we'll consider later or not real, and
+that's ridiculous. On an individual level, surround ourselves with
+more people who understand the complexities of society so that they can better
+inform what we do. Then if you're in a
+position to hire people, think about the types of people we can bring
+into a company, I recognize that not every
+tech company can just hire social scientists or even
+what kind of flavor of a social scientist. But think of the
+types of people we hire into certain roles. Data Science is a special field where people come at from really different
+backgrounds to help us. So I think that's a big thing that many of us on an
+individual level, can do, rethink the
+organizations that we run. Or think about the
+perspectives that we bring in with us because we're lacking if we
+are only thinking about our area of expertise. That's the conclusion that
+you came to as Kathy 2.0? That is definitely Kathy 2.0. Kathy 1.0's career was
+definitely in the world of "Your field of expertise is the most important field that we need right now. Computer scientist and
+software engineers are the most valuable
+people in the world." It makes it so that you
+internalize that and really believe that we can
+solve all the problems, because technology
+can solve everything. It sounds silly now, but I think you are taught
+that a little bit. At least over 15 years ago. I don't know. Maybe still now.

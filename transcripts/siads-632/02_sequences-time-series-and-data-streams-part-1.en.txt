@@ -1,0 +1,149 @@
+Hello, everyone.
+Now you know what we are going to cover
+in this course. Let's move on and talk about the definitions and basic
+tasks of sequences, time series, and data streams. To understand the definition of these data representations, let's refresh our memory
+about how we define itemsets and vectors. Basically, an itemset is the set or a bag of
+categoric items. If you write it in
+mathematical form, it's basically a set where you have n items x_1, x_2 to x_n. You can see that the order of
+these items doesn't matter. So you can swap
+any two objects, and this is still
+the same itemset. Itemset only works
+for categorical data. For instance, the products you
+buy or the emojis you use. To represent numerical data,
+we introduced vectors. A vector is the list
+of numerical values. Every value corresponds
+to a given dimension. Writing that in a mathematical form, the vector, you can see that we put a
+little arrow on top of big X, to indicate this is the vector. This vector is the
+n-dimensional list, where x_1 is the
+numerical value corresponding to the
+first dimension, x_2 is the numerical value corresponding to the
+second dimension, so on and so forth. You cannot swap the order. You cannot change
+the dimensions. You cannot say that x_2 corresponds to the
+first dimension, as long as the dimensions
+are predefined. With vector data, we can represent real-world
+information such as how many products you have bought and what scores you have got in
+your previous MADS classes. So sequence data.
+How is that different from itemsets and vectors? As we introduced in
+Data Mining 1, a sequence is the ordered
+list of categorical items. So to some extent, it is very similar to itemsets because it's modeling what? Categorical items, right? For instance the words
+you write in a sentence. However, the difference
+is that every item is now associated with the
+order or the position. You can see that x_1 is associated with
+the first position, x_2 is associated with the second position,
+so on and so forth. Now, you cannot swap the
+order between two items. This is known as a sequence. Of course sometimes,
+we can write it in a less formal mathematical form. Then you can write a sequence
+as x_1 leads to x_2, x_2 leads to x_3,
+so and so forth. Sometimes you can
+even write that as X is equals to x_1, x_2 to x_n. You can find them used interchangeably in certain
+reading materials. There are many real-world
+examples of sequences. We have introduced lots
+of them in real-world. This one is particularly
+interesting, because this is the
+sequence of proteins of, right now what
+we are afraid of, the Coronavirus and certain
+similar human viruses. You can see that a
+biological sequence is essentially an ordered list of either proteins or
+other biological items. This one in particular, circled in red, is the protein sequence
+of the Coronavirus. So we know about sequences. Beyond sequence, another
+data representation that we commonly observe in real-world
+is called time series. What's different from the
+time series to sequences? Well, a time series
+is the list of timestamped values
+or measurements. So you can see that instead
+of similar to itemsets, a time series is more similar to a vector
+because they are both representing
+numerical data. But the difference
+is that in a vector, we only know the order of the dimensions or the
+index of dimensions. The actual timestamps
+don't matter. But in time series data, the actual timestamps matter. You can see that we can write
+down X as a list of tuples. x_1 is associated with
+the timestamp t_1. x_2 is associated with the timestamp t_2,
+so and so forth. So we can see that every x_i is the numerical measurement
+of the same property. For instance, your income. For instance, the stock price
+at a given timestamp, t_i. So you can see that
+the major difference between a time series and the vector is basically every value is associated
+with the timestamp. The major difference
+between time series and sequence is that in
+time series data, not only the order matters. The actual timestamps
+also matter. There are lots of time series
+in the real world. I'm sure that you have seen
+many different types of them. For example, if we
+measure the number of active Corona 19
+cases in the country, every day, you can
+plot the time series. Every timestamp
+corresponds to the day. And we're looking
+at the same measurement, that is the number of
+active Corona-19 cases. So, you can achieve a
+time series if you plot daily active cases of
+the country. And even plot the active cases of
+multiple countries that gives us something called
+multidimensional tensors. On the right-hand side, you can see another time series. That is measuring the
+price of a stock. I believe this is the
+price of the SP 500 index. You can see that
+every timestamp corresponds to a day
+or the hour, or even the minute, or a second, or
+even a nanosecond. We're looking at the same
+measurement over time, that is price. And this gives
+us a series of stock price. If you plot multiple stocks, then that gives us the
+multidimensional time series. What about data streams? How is data streams related or different from sequence
+in time series? We see that the data
+stream is the list of ordered or timestamped
+data objects. And we usually call these
+data objects events. So again there is the
+major difference between data streams and the other
+data types, that is, every event we're
+talking about could be either a simple or the
+complex data object. If every event is simple, it could be just the
+item or the value. In that case, it will
+be not much different from a sequence or
+a time series. But every event could
+also be quite complex. For instance, every event
+itself could be item set. It could be a piece of text, for instance, that is
+the sequence by itself. It could be a vector or a matrix, or it could even be a network. Here in data streams, we have a list of events. These are complex
+data objects. And these events arrive continuously. You can record the timestamps
+when they arrived, and then you get a list of data objects associated
+with timestamps. If you don't record
+the timestamps, if you just record the
+orders they have arrive, then you have a list of
+ordered data objects. If we write the mathematic representation of data streams, you can see that
+essentially the difference is that whatever is associated with the timestamps or the orders are the
+complex data object, uppercase X we use. You can see that this
+representation indicates that this data stream has the long history and it
+goes into the future. This is typically true
+for data streams. Note that we usually
+assume that you cannot store the entire
+history of a data stream. That is why sometimes
+you cannot trace back to the very
+first data object. All what you need to
+do is to summarize the history. And then you continually receive the data
+objects from the future. There are also many real-world
+examples of data streams. One thing that you
+are very familiar is is the tweet stream
+or your tweet inbox. At indefinite
+timestamps, Twitter is pushing new tweets
+to your inbox. If you look at, for instance, the stream of tweets
+treated by UMSI, and this is the typical
+stream of data, here, every tweet is the
+data object or is the event. You can see that
+every tweet itself is actually a complex data object. It's not one item, it's not one value.
+And it is a event. Because these events
+arrive at different time, so every tweet is
+associated by a timestamp. We can see that the
+whole stream dates back to long history and it
+keeps generating new events. So we call this a tweet stream. Another example that we're
+familiar with is the traffic. For instance, if you
+look at the data collected by the CCTV
+camera on highway, you can see that there are
+many vehicles coming and go. This is the typical data
+stream where every vehicle, every car is the event. Of course, you can see
+that a car is the item, but in fact the car could be
+very complex data object. This is different
+from a raw sequence. You can also record the
+actual timestamp when a vehicle appear into the region. This gives us timestamps
+associated with every event. That makes the entire
+traffic a stream. Of course, no CCTV camera can record the entire history
+of traffic on highway. You have to erase the former
+ones and you have to keep just a certain time period. And it continues to collect
+data from the future. So this is known as
+the traffic stream.

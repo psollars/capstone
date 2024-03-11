@@ -1,0 +1,336 @@
+Hi there. I'm back and I
+have a surprise for you. I don't know if you
+noticed already, but I'm wearing a button. I'm going to explain
+why I'm wearing the button before the
+end of this segment, but just so you know,
+in case it's not clear, the button says data, always. Earlier in this this
+week when we talked about the framing questions, we talked about classification. In other segments I
+hinted at the idea, or I said the idea that
+classification can be seen as inherently carrier of things that are subjective
+and interpretive. So classification it's been said, is in general just a way that
+we package our assumptions about the world including maybe the culture of
+where we're from, the economic imperatives
+were trying to satisfy by doing whatever data science
+work that we're doing, maybe a political context that we don't really think about
+but it's still there. Classification does
+all these things and it's built into data science. So we don't think of
+ourselves as trying to avoid the fact the classification builds in all these things. Instead we just acknowledge
+that it usually does. That could be
+decisions as low level as how should I store
+data in a computer? What's the range of data
+for a particular variable? It could be what I
+name a variable, it could be what variables I choose to include,
+how they're measured. Just to drill into this a
+little bit in this segment, I'd like to talk to you about what most data science ethics
+classes cover in this area, but I think I'd like to do
+it a little differently. Most data science
+courses do cover this idea that we smuggle biases in with our
+classifications. One of the things
+that we saw when we looked at syllabi for
+other universities, is that they give you this list that I'm going to
+put on the screen right now, and the list is a list of what are usually called
+protected classes. So in the United States, this is a list of
+protected classes. Legally what this means is that in the law in the United States, there are certain classifications or categories we
+could say of people, and then it's illegal
+to discriminate. That includes just make
+a decision regarding something based on these
+protected classes. Usually that only extends
+to employment and housing in the United States and there's a few others situations, but in a lot of data
+science ethics, you get the message, watch out for the
+protected classes. I think this is a
+useful message I guess, but it's more like a
+compliance message. In fact, the list of classes differs depending
+on where you are. For example, even in
+the United States, some state laws add
+additional classes to this list for some
+situations for example, sexual orientation
+in some states. It's also a little bit the wrong message for
+an ethics class I think because it's about watch
+out for these classes, but it doesn't really get you into what exactly
+you are supposed to watch out for and why. These classes are
+themselves controversial. Sometimes data
+scientists are taught, watch out for these classes because it's illegal to
+discriminate against them in the context of
+employment and housing. That might lead people
+to think, well, I don't really have to
+worry about these if I'm not working in
+employment and housing. Yet that's probably not a
+good way to think about it. Partly you could say that because these are
+protected in one context, the context actually as a way of slipping into other systems. So you might have a
+compliance problem even if you don't work in
+employment and housing. A good example of
+this would be that Facebook recently built an
+advertising system using data science that would allow advertisers to identify
+people who are black. They were concerned about the
+federal protected classes. So they called this African
+American cultural affinity. They said we're not identifying
+people based on race, we're just identifying people
+based on cultural affinity. They then allowed
+people to target ads based on whether someone was a
+particular race or not. So for example, you could use the ad builder in the
+advertisers interface to make an ad for housing
+that said "Don't show this ad to people
+who are black or had the African-American
+cultural affinity." This was later rule to
+be a legal problem for Facebook in the United
+States by the US government. The interesting thing about
+that is that I think that the people who
+designed the system probably weren't
+working in housing, so it probably
+didn't occur to them that they were designing a
+general advertising system and that it could be used
+for housing thus making this ad illegal because
+the United States, it's illegal to show an ad based on race if the
+ad is about housing. There are circumstances
+where it would be legal. For example, an ad for hair products targeted for African-Americans would be legal, the same thing for another race. The thing is I think we
+shouldn't focus so much on housing and employment. We shouldn't focus so much on this particular list because it changes in different states. We should really more try to
+understand what's going on ethically with these
+particular categories and why they're so sensitive. I mean one thing that
+we could say is that the categories themselves
+are somewhat silly. Like it's notoriously difficult to identify someone's race. People have perhaps
+more than one race that they identify with. The categories for race
+are somewhat antique. In the United States, they come from the census. Similarly we talked
+about those problems with gender in the federal
+law it's says sex, but it's often quite
+difficult to say even what would be a good categorization
+for these things. The concept I'd like to
+convey to you that I think is quite useful to think about
+these protected classes, is the concept of
+cumulative disadvantage that comes from a professor
+named Oscar Gandy. Cumulative disadvantage
+is defined I guess he broke the rule
+in that you're not supposed to use the word you're trying to define in the
+definition but he says, cumulative disadvantage refers to the ways in which
+historical disadvantages cumulate over time and across
+categories of experience. Cumulate in this sense just means accumulate or built overtime. We could use different
+phrases for this. This segment of the lecture I'm talking about cumulative
+disadvantage, but in many fields there
+are ideas like this. So for example, people talk
+about the Matthew effect, path dependence, lock
+in, runaway feedbacks. There's a whole bunch of
+different concepts that share at least some of what
+we're talking about here. But really in the case of
+these worrisome classes, I think what we're
+getting at ethically is most of us have an idea that ideally in society we want to be judged
+by what we do, and not by the
+circumstances of our birth. This is I think a principle that is very
+universally accepted. So if you have a person that grew up poor in
+the United States, we want equality of
+educational opportunity. So we don't want it the
+matter that they grew up poor to their ability to get
+into college for example. In the real world,
+that's the principle. In the real world, we know
+that of course it does matter. I think we would all also
+agree with the statement that if you group up rich, maybe it comes with
+some advantages. So in data science we're between a rock and a hard place
+because we've got this idea that is fairly
+universal that we want to be judged
+based on our merit and not based on something that, for example, our
+great-grandparents did or was done to our
+great grandparents, or our genetics which we
+don't have any control over, or something about our parents, or where we were born because all those are things
+we can't control. However, we know
+that in practice, those things do have a way of affecting the present even though they happened in the past. Oscar Gandy did a great job of dealing with this
+topic because he said social systems generate
+differences between people, that's what society is. It categorizes and labels people and it generates
+differences between people. But if you had something
+that happened in the past, it's likely that there are
+still implications and consequences of the past events that are affecting
+you in the future. I'll try to be more concrete.
+Let's be more concrete. So another person who talked
+about this a long time ago and famously was
+Robert Merton sociologist. So Robert Merton said, "Imagine that you have
+two publications and both publications they could be scientific publications
+or reports, and they both are maybe they
+have useful information, but let's say that
+they're equal." It could be that someone
+reads one publication and not the other for reasons that although
+they're not really random, we could assume are like
+randomness for this discussion. So for example, you just happen to subscribe to one
+publication and not the other. One of them starts with a different word that catches
+your eye and not the other. So there are two
+possible publications you could read and for reasons that we don't
+really care about and could be assumed
+to be random. For this analysis, let's say that publication number one is the one you read and not
+publication number two. Well, what Merton said is that basically if you site
+publication number one, you've then made it more likely that other
+people are going to read publication number one and not publication number two. That this is an effect that is temporal so that
+after you cite it, publication number one is
+then more likely to be read. The reason I did that
+whole preface about randomness is that Merton said the key thing
+here is that it may be that the publications
+are equally good, or even you could even say
+what if they're not equal? What if publication
+two is the better one? But if the original
+choice was random, publication one
+accrues the benefit of the citation because you
+could read the publication, or you could read the citation to the publication and that would be another way to learn about it. So what Merton was interested
+in is the idea that certain publications
+accrue advantage over time and it may not
+have to do with their merit. So it might be that the
+one with two citations, is then given a third, is then given a fourth and
+the more citations it gets, the more likely people
+are to read it. So everyone knows about
+the first publication, but no one knows about the
+poor second publication. So in Merton's example, they could be equal or even the second one might be better. But because that
+first citation was random or we might
+think of it as random, then we end up having a system where we're promoting
+something that isn't the best. So it's not meritocratic. It's not that we've
+chosen the thing that's the best argument or
+the best publication. It's that everyone's paying
+attention you could say, to the thing that everyone's
+paying attention to. So this is an example
+you could reverse and Gandy's formulation and you could call it cumulative advantage. But once something starts
+out having an advantage, it continues to
+have an advantage. The advantage begets advantage. We could think of the same
+thing in terms of humans. So it's not just publications although publications
+involve humans. So for example, we know that native Americans in some
+tribes in the United States experienced forced relocation as latest like 1904 in
+the United States. So that means that if you're native American and
+you're in those tribes, your great-grandparents
+were taken from where they lived and forced to live usually in an inhospitable place. So they chose locations
+for Indian reservations to be the land that no one else wanted for anything usually. So that means you
+wouldn't have access to maybe a water supply or
+a place to grow crops, you might have a
+really long drive or walk to get to
+anywhere useful, maybe it would be at
+the top of a mountain. So in some sense when we measure things
+about people today, we want to measure things
+as though people are judged on their own merit and not on the circumstances
+of their birth. But Gandy says if you
+have circumstances like this relocation of your
+great-grandparents, they're all other effects that make it very difficult from a measurement
+perspective to not keep measuring the forced relocation of your grandparents even though we don't want
+to measure that. So for example, we want to know if you'd
+be good at college, we might say we're just going to measure how good you are at
+solving problems in school. But the thing is if your great-grandparents they were relocated away from
+all the good schools, and in fact the resources were so bad that they didn't get a
+chance to have good schools. So the fact that you're in one of these relocated native
+American tribes means that it's very unlikely that you had
+access to a good education. So we might measure
+something like education, but we're actually measuring
+something like whether your great grandparents
+were relocated. There are many other
+examples of this. Another example would be poverty. If your parents grew up poor versus people
+who grew up rich, we want to measure again
+whether you would be a good candidate for
+a college education. We really want to know if you did a great job with what you had, but you had such a
+different experience than someone with a
+lot of money who might be spending money on private
+test prep for the SAT, for example, that many of
+you will be familiar with. That it's just very
+difficult to disentangle. So the ethical issue for data
+scientists is because of cumulative disadvantage
+and you could also reverse it and say
+cumulative advantage. When we try to measure things, we're actually
+measuring these things we don't want to measure from the distant past
+over and over again. So this gives us a
+different way to think about those federal
+protected classes. So the federal
+protected classes in the US came from particular
+laws in the 60s, but ethically we might say getting away from the
+law a little bit, what they were
+trying to do was to account for something
+that happened in the past that
+shouldn't affect you now but in fact does
+affect you now. I think the issue for us as data scientists is
+how do we manage that amazing feat of separating these past events
+from the future events? I'll get to my button
+here in one second. I know you're all very curious
+about why I'm wearing it. So Gandy also said and the
+history of social research, actually also says
+that we're not really good at disentangling some of
+these things from the past. I'm going to say something that I think might blow your mind. I don't know, it blew my mind when I first
+started thinking about it. So I hope maybe you have
+a similar experience. In other data science
+classes that you've taken, we've talked about
+proxy variables. So for example, if you as a
+data scientist were asked to design a data science
+analysis that would identify people who are likely interested
+in buying a car, that's a reasonable scenario
+of use of data science, you might not have access to the inner state of their mind, whether they're really interested in buying a car right now. So you would use a proxy for that state maybe asking them, are you interested in buying
+a car right now would be a pretty good way to
+get their mental state, but you don't have
+access to that either. So different proxies are going to have
+different trade offs. Let's think of some proxies. What if proxy was walking
+around a car dealership a lot? If you're walking around
+a car dealership a lot, it seems like maybe you
+might be a good target for ads about wanting
+to buy a car. But there are problems
+like if we use GPS, we know GPS has some error in it. So maybe we think we're measuring your
+desire to buy a car, but really just
+the restaurant you love for lunch is next
+to a car dealership. So that might be what
+we're actually measuring, and different proxies
+are going to have different pluses and minuses. Did you search for
+words involving new cars like car makes and
+models in Google search? That would seems like
+it would be good, but at the same time
+car enthusiasts often search for these words even when they're
+not buying cars. So that then might have disadvantages as well
+and we can go on. So normally in other classes, we talk about how you have to be careful about
+proxies because they add error and you want to
+get to this core thing. This is the real thing that
+you're trying to measure. In this case, are you interested in buying
+a car right now? I think the thing I'd like
+to convey is that when we look at this list of
+federal protected classes, it may be that what we've been referring to as the
+real thing that we're measuring conceptually is
+actually itself a proxy. Let's think of it this way, in my family the person who buys the car is always a man and
+that's really gendered, so it's the men that are
+interested in cars and the men that make purchasing
+decisions about cars. So in fact, what you might think of as the real thing that
+we're measuring like, "Are you interested in
+buying a car right now?" You could say is itself
+an epiphenomenon or something that is
+a result of gender, or I guess in this list it says sex because of the historical
+definition from the law. So I think I don't want to get all metaphysical
+and philosophical, but what do you think drives
+human behavior ultimately? A demographer that
+I know once said, "If you want to
+explain variance in a dataset you should
+look for the big three." Now, since we're
+near Detroit people think of the big three as the big three automotive
+manufacturers, but to a demographer the big three often refers to gender, race, and class, although you could also add other
+things like age. So if you wanted to
+explain any variation in any dataset and you didn't have a more specific
+explanation in mind, this would probably
+explain some variation because people who are
+of different races, are of different genders, are of different class levels,
+they behave differently. So what that means is
+that we've been trying to watch out for proxies, we need to work on what we're
+really trying to measure. But what I'm trying to
+convey to you and this is the mind-blowing
+thing for me is that, what we're really
+trying to measure may in fact just repeat these basic or
+foundational differences between humans again
+and again and again, and we could add other ones like maybe geographic location. So Gandy has somewhat
+provocative idea that led me to get this button, I got the button
+from a conference of data scientists and it
+says, "Data, Always." Gandy actually says,
+"Because of the risk of cumulative disadvantage
+leading to bias in our data
+science analysis, we should never include data that we don't have
+a good rationale for." Why? It would have some
+effect independently. So if we don't have any
+real idea as to why something would have an
+effect independently, we may just be measuring protected classes or bias
+over and over and over again. Now that's a really
+strong statement, I'm not saying whether
+I agree with it or not, it seems like it would invalidate all exploratory analysis. So it's a strong statement
+but it's the kind of debate that data science is having right now, it's
+just saying, "Well, is it true that really any
+data science analysis that we do is continually reproducing these things that we really don't want to judge
+people about?" So there's some famous
+quotes about this, one of my favorite
+quotes is that, "Machine learning is like a
+money-laundering system for bias" by Maciej Cegłowski, I'm sorry, I'm not that
+good with the polish names. So is the data always
+been a good idea? So I think what Gandy
+would say is that, "No, not data always. In fact, keep things out of your analysis that are
+obvious proxies for protected classes or
+likely to generate some bias in your analysis that doesn't judge
+people on their merit, but instead judges
+people based on something that they
+had no control over because this creates a
+serious ethical problem."

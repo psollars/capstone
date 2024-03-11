@@ -1,0 +1,111 @@
+So the focus for this sequence of lectures is going
+to be around data. We're going to start
+working through the idea of converting data
+into visualizations, and I want to start by talking
+about the flavors of data. This is going to be
+important because we're going to go from things like numbers into visualizations. The process by which we do
+that is called encoding, and there's a lot of different
+options for doing this. It's going to be
+important for us to understand the different kinds of data and why it is
+that we're going to encode data in certain ways. So our goal is basically
+to draw marks. Every visualization is composed
+of a sequence of marks, possibly overlaid, one
+on top of the other. This can go from the very
+simple to the very complex, but all these things start with simple marks on the screen. So whether it's a simple circle or more complicated shapes. We're going to take all these and combine them in
+interesting ways in order to generate the
+visualization by taking the data and encoding it into
+these sequence of marks. But specifically, we're targeting marks that allow us
+to compare things. Visualization is all
+about comparison. We're going to try
+and use marks and properties of these marks
+that will allow the viewer, that is the person
+who's looking at the visualization
+and it might be you, to basically understand
+what it is that they're reading and be able to draw
+comparisons from the data. So you might be thinking, well, this should be pretty easy, like there's only a few
+different ways of doing it. But that's
+not entirely true. Even with a very small dataset, like this one which only
+has two different numbers, we can actually come up with lots and lots of different ways of visualizing these things. So again, this is
+the smallest set of things that we might
+compare, it's a set of two. But we can imagine a simple way of doing it using a bunch
+of little squares. So we have one that's 12
+and one that's seven, and that allows
+a certain kind of comparison. This is a visualization. We can also use things like bar charts and these
+might be familiar to you. The length of these things
+will be useful. We might need to add
+some axes labels to actually make them useful, but these are the kinds
+of things that we're going to think about when
+making visualizations. Again, two simple numbers. But here's a wide
+array of sets of things that we can actually use to convey the same kind
+of comparison. So let me pull this up and we'll walk through some of these, just so you can see
+what's going on. So there's some that are encoding the two datasets as area. So this area over here. The size of the circles is
+comparing the 12 and the 7. This one over here. This one is based on density. This one is based as
+a fraction of a whole, so 12 percent versus
+seven percent. We have, again, areas over here. God forbid, but you can use pie charts like this.
+Please don't do that. But you can use
+simpler ones like this that actually represent part
+versus the whole comparison. So if the 12 and the seven
+corresponds to everything that we can have or something,
+you can combine these. We can have charts like this, like line charts and
+scatter plots over here, and we can even use things like color to convey differences. These are all possibilities for showing you the difference
+between two numbers; 12 and 7. So how do we pick these? That's going to be
+the focus of the day. To understand which one of
+these choices we should make and when we have
+lots of other data, we're going to have
+to think about this a lot more deeply, we're going to think about
+what the data actually means. So what do 12 and 7
+actually correspond to? To do that, we're going to come back to our puzzle pieces. We're going to think about where data sits in all these
+different layers. As data moves from
+layer to layer, we're going to think about
+it in different ways. So at the very top layer, we have what the data
+actually means. So scores on a math test, the number of pirates
+in the ocean, the percent of patients, the relationship between genes that are interacting in the body; all these things are
+at the domain level. That is what the data
+actually means. These things are conceptual. They have a semantic meaning, you understand them
+in a certain way. So there's time,
+temperatures, space, all these things have a meaning to domain analysts or scientists. There are mental constructions and they have semantics and support reasoning
+on these things. At the next layer, we're starting to be a
+little bit more abstract. Now we're thinking about data in terms of whether
+it's a nominal data, interval, quantitative, whether it represents something
+temporal, tree or graph. At this level, we have
+low-level descriptions and these correspond to
+mathematical operations. Those things that we could
+imagine doing mathematically on the data: adding, multiplying,
+subtracting, dividing. All of these things
+can be done to abstract data independent of what the data actually means. At the technique level, it turns out that we care only about a few specific types to generate most of the visualizations that
+we're going to see. So nominal, interval,
+quantitative, we're going to see
+one called ordinal. These are the different things
+that we're going to use at the technique level. Down at the very lowest level, we're going to use things that
+the computer understands. So things like Boolean, short, 32-bit integer, float; these are things
+that the computer understands and
+represents data with. We're going to focus
+mostly at the layer between abstraction
+and techniques today. So at the abstraction layer, we're going to have
+a high level task. This is an abstract task, not one necessarily related
+to any particular domain, and then we're going
+to have our data, which is nominal, ordinal, quantitative and so on. At the technique layer, what we're going to
+be concerned about is the kinds of marks that
+we can put on the screen. So we can put different
+numbers of marks, we can use different
+visual channels and we'll talk about that and retinal variables, which
+again we'll talk about. But these are things
+like the color, the size, the shape and so on. What we're going to care
+about is this transformation. The thing called visual encoding and the visual
+metaphors that we're using to transform the datasets that we see at
+the abstract layer, the things that we're going
+to visually represent on the screen or on paper
+using marks and images. So the takeaway is just
+very briefly is that, encoding is a key task
+of visualization, it's going to be the focus
+of the sequence of lectures. We're going to concentrate
+on what data is and then mapping
+data to these marks. Data, just to
+reinforce this point, has different meanings
+at different levels. At some levels, it's very domain-specific,
+number of pirates. At the abstract level, these are things that
+we can do math on. We don't actually care what
+the domain meaning is, so the count is an ordinal,
+is a quantitative. Then at the bottom layer,
+we have implementation, which is the thing the computer
+can actually understand. With that, thanks for listening.

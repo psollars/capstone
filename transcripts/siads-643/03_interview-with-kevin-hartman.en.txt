@@ -1,0 +1,306 @@
+I've got Chris and
+myself here today, and we're going to be
+interviewing Kevin Hartman. Kevin is the director
+of Analytics in Google. He's going to talk to
+us about what he does, and how he brings
+value to Google, and his insights on marketing, on Analytics, and on data itself. Kevin, why don't you introduce
+yourself and give us some background on how you
+got to where you are now. Absolutely, great.
+Good to see you guys. Thank you so much
+for inviting me. Also, I want it known
+right up front, I am a Michigan guy. I grew up in Mount Pleasant,
+right in the center. Spent many of my finest
+years in Michigan, so very happy to be
+here speaking with you all. I am Kevin Hartman. Director of Analytics
+means that I lead a team, the Google Media sales side, that works with advertisers
+to better construct campaigns that those advertisers
+will run on YouTube, on Google search, on any of the display advertising
+media that we offer. That includes both
+insight work that we will do to just improve the
+effectiveness of those campaigns, targeting of those campaigns, as well as the back-end
+measurement and proof that the campaigns
+actually worked, that they wind up having
+some desired effect. I have always worked in data, whether it was in
+my stent working in the public sector
+and government, to the consulting work that
+I did to then working in an advertising agency
+running analytics for a long time as well. I think that's been
+a constant theme. I was fortunate enough right around 10 years ago to
+wind up coming on over to Google to do many of the things that I've
+been doing at other places. Just Google's a
+whole new ballgame. I have been really happy doing the work
+that I do here now. When you started out, what
+kinds of technologies were you using yourself to do this work? Both to do the analysis, but then also to orchestrate
+it and keep track of things? Sure. Great questions. When I was hands-on keyboard, I was using MySQL. I was using a lot of
+throughput products, and I don't even
+remember their names any longer, to be honest. I was using SAS and SPSS. Eventually, I became very enamored with
+[inaudible] overtime. I still have not been
+able to master Python, but I'm one of those people with firm belief that you really should choose one or the other, and never the
+[inaudible] should mix. But I've also developed into Tableau and other data
+visualization tools. But full disclosure,
+once you get to Google, we've got a lot of homegrown
+tools that we use here, either Data Studio
+or the way that we access data internally. Then, in my role today, frankly, working with large advertisers, there are a lot of analytics
+tools we use for sure, but I spend a lot of
+my time working with third-party measurement
+vendors like Nielsen's and others in constructing
+their experiments. So I move a little away from the hands-on tools into more of the application of those
+tools more broadly. Pre-COVID, what does a typical
+day look like for you? The irony about it is
+that it doesn't look, in many ways, that different. Google is a very
+connected company. I lead a team of around 80 people that we
+are all over the map. So I spent a great
+deal of my time going from video conference to video conference,
+back to back to back. In Google's culture,
+for the most part, every meeting is a
+30-minute meeting. I will in the course
+of an eight-hour day have 16 of those
+just lined right up. Pre-COVID the only thing
+you would add would be a nice commute
+down to our office, the West Side of Chicago
+in the Fulton Market area, and then a free lunch. Those are the things
+that I've missed out on, as well as the trip
+to the barista that you traditionally do
+in the afternoon. A lot of meeting with people, a lot of virtual
+meetings with my team, and a fair amount
+of travel as well, just to go see customers go visit my teams in different areas. All of that now just keeps me seated right here flowing through these video conferences. Random fact about your office, at least if it's still the same way it was the
+last time I was in there. There are random 'Did
+You Know Facts?', in the bathroom stalls. There are. It's interesting
+that you know that. There is something that we call, I can't even remember it now, it's coding in the Jan, maybe. Don't quote me on that.
+It's something like that. They are coding directives that engineers swap out very
+frequently in those areas. Yes, they are there, indeed. I've been in your
+Chicago location for a while which is how I know that. Yes. It's not unfair to say that
+your team is responsible or is responsible for helping with one of Google's
+primary profit centers, which is advertising revenue; is that an unfair classification? No, it is the revenue center. It's 90 whatever percent
+of our revenue today is the ads that we
+want to serve to you as a consumer when you come watch videos on YouTube
+or come to Google.com. Can you tell us a little
+bit about the data you're collecting and how you're making decisions around that data? Absolutely. All of this is
+anonymized and consent-driven. Unlike a place like say, Facebook where you
+have to be signed in, we do allow people to come to YouTube and watch
+videos without signing in, no personal identification,
+then it's done. We allow people to opt out of location tracking and
+location history. You don't get the
+benefits of Google Maps, but you can still opt out of that product or
+make that decision. You can search without having to have it tied back to
+your profile as well. But when you are tied
+to your profile, we're looking at what you're watching, how you're behaving, the ads that you skip, those that you watch
+all the way through. We're looking at the categories of searches that you're conducting and what it
+is you're looking for. What we're doing primarily then, is rolling that into
+an anonymized sort of aggregate consumer segment that you will fit or what we
+call interest categories. You can actually see it at, I believe it's
+google.com/ads/preferences. We actually show you what interest categories
+we think fits you as a person based on all of those
+markers that I talked about. The whole intent there
+is for us to serve you ads that are relevant to you. We don't want to show you
+things you don't want to see. You're going to see
+ads. Again, it's how we make our money. The alternative is that you pay for your Google
+searches, right? Or you do the monthly YouTube Red and then you don't have ads. But we are trying to
+create an experience for you at our Google properties that will keep you coming back because we want you to come back. That's much of the information that we are tracking
+and collecting. I want to freaking talk about
+your team a little bit. What kinds of backgrounds do
+people on your team have? What kind of skills do you have? Also, when you're hiring
+and building the team, what kind of soft skills
+are you looking for? Sure. How does that look and what are your philosophies
+around that? All great questions.
+To be honest, I'm probably looking at soft skills more than anything
+because the hard skills, have become pretty democratized. When we're hiring for our roles, we are looking for
+people who are curious. We are looking for
+people who have great attention to detail and
+take pride in their work, and we're looking for
+people who are optimistic. When you can fit those
+things into the ability to have a data strategy
+point of view, meaning the ability to connect data that you're
+collecting to some kind of business decision and have the understanding and the
+context that is needed to translate that data for a non-analysts in
+the business world. The technological hard
+skills like I talked about, that you can collect data, analyze data, manage data. Then importantly, what we call the data designer or the data storytelling aspect. Being able to take this
+stuff and make some narrative out of it,
+develop a hypothesis, prove or disprove it, and then tell, again, a non-analyst what the data says. Soft skills there and hard
+skills and somebody who can, when I'm talking to students
+or talking to prospective When I'm talking to candidates, someone who can stand in front of me and link their left brain and right brain really shows me that they can do those things, they have the hard skills that are exhibited
+on the left side, and they can tell these stories, and demonstrate the curiosity, and do the right things
+on the right side. That in a nutshell, I think, are the things that
+we're looking for. Can you talk about Google's use within your
+area of machine learning, and how you'd use
+machine learning, and where it works well, and where it has
+failed spectacularly? Absolutely. There
+are all examples. It is a fantastic, absolutely crucial tool for us. What machine learning does is, you all know this, I'm sure, but it looks at past history, looks at data in the past, and will discern relationships
+and patterns and things that we just wouldn't see
+any way or any other way. We will use that,
+machine learning, to classify you as someone
+who's interested in boating, or someone who's interested in baseball, or whatever it is. Those interest categories
+that I talked about, those are all machine
+learning driven. It's not an analyst like me
+looking at it and saying, "I think this is the
+baseball lover," it's a machine figuring that out. That's one of the ways
+that we'll use it. We'll also use it in measurement. I mean, in the
+analytics environment that we are in today, with privacy such a concern, and the degradation
+and deprecation of third-party cookies and other identifiers that
+we've always used, we are going to have a
+much more difficult time tracking someone's path through the World Wide Web and understanding how
+advertising influenced them. I mean, that's a big
+part of what I do. As that data disappears, we are turning more and more to machine learning to help us with what we call probabilistic models complete those paths. I might not be able to see
+you all the way through, probably even worse
+than I was before, but I'm able to use
+machine learning and other heavy technologies to complete that picture
+a little better. That's another way
+that we're using it. It fails when there are
+no humans involved. I was just sharing
+this the other day. One of my favorite examples,
+and you can look this up, is some work that Google led in image classification
+using machine learning. You're basically training
+machines to just identify what is a guitar, or what is an automobile, and find one of the early
+pictures of dumbbells, the weights that you lift. It's hilarious because what a machine learning algorithm
+believed the dumbbell was, was the correct two pieces
+of metal with a joining bar, and then a disembodied
+hand that's fixed to it because every picture that it saw of a dumbbell
+had a hand on it. It's creepy as all get out, but it's a perfect example of how these machines are great
+at identifying patterns, but they don't
+always get it right, and they need humans to
+really step in and add the intuition and make the
+real decisions for them. In your workflow, in your team, do you have
+human-in-the-loop workflows, and how do you leverage that
+and take advantage of it? Yeah. The interesting
+thing about Google, and one of the things
+that I love about it, is that I don't need to go out and build
+many tools anymore. Particularly, the
+machine learning algorithms that are constructed
+are all given to me, I just become a consumer of
+those things and my team. We are the ones who
+are able to use that technology as an
+input into our decisions. We are the ones that
+get to figure out, all right, how do
+I position this? Is this the right context? How do I use this
+input, this tool, to influence a marketer or someone who is trying
+to decide if they should give their
+next marketing dollar to Facebook,
+television, or Google. It puts us in a great position because being bootstrapped like I was in a previous life in an advertising agency
+where you're just trying to piece together
+anything you can, we have an embarrassment of
+riches when it comes to that. But more to your question, it allows us to play
+that human role. All the way through,
+it is what we do. There are so many tools and inputs that we are
+able to choose from, it relies on us
+being the human in the process to make
+it worthwhile, to make those tools really work. I'll be honest. When we set up this call, I immediately went
+online and Googled you and found that you
+had written a book. You're not asking me
+to plug the book, but I'm plugging the book
+here. I'm not even halfway. I'm just in a few
+chapters into this, but the title got me. This is Digital
+Marketing Analytics: In Theory And In Practice. My immediate question was, how does the theory
+differ from the practice? Where does the theory say this
+is how things should work, and then you get
+into the practice and that's not how things work. Yeah, I think I painted
+with the theory and some of the frameworks that I've used in the book
+and that I've used, that book is a culmination of the 30 whatever years that
+I've been doing this. It's things that I've learned that helped
+me along the way, but frameworks like the
+consumer decision journey, ideas and concepts of the
+zero moment of truth. The process that we use
+to identify hypotheses, test them with data we collected and then all
+the visualization work, is an idealized state. I think the practice, it doesn't hold up when
+in a couple of ways, either when that client
+meeting gets moved from Friday to tomorrow and suddenly you don't have
+nearly as much time. It doesn't get applied. Frankly, when I see, and I've seen a lot of
+this in my careers, you see just bad marketers or people who don't
+exhibit intuition who aren't willing to make
+risks and they're not using any of these concepts, any theoretical approach to
+the decisions that they make. They just want to get into
+the data and get right down into the weeds, and they want everything
+to be perfect and it just isn't perfect. Then I think the other way that the theory doesn't apply to the practice when we frankly as analysts get sloppy. That happens, we're human
+and we're prone to it. If you deviate, you cut corners, if you start to introduce bias
+into the work that you do, then you just wind up
+in the wrong place. The theory is
+definitely idealized. I understand it, but those instances of the practice not holding to the theory are, I think, fortunately
+not the majority of the experiences that
+you'll have as an analyst. Make some predictions here. Actually, let me ask
+this in two ways. Sure. What's been the biggest change in the last five years for
+the work that you've been doing and what do you think the biggest change in the
+next five years will be? It's not probably the
+sexiest of answers, but it's a pretty easy one. I mean, the biggest
+change has just been the enormous amount of data, the culmination of
+data, processing power, and our ability to really
+make sense of that. That has all come together. I mean, five years ago, location history and location
+tracking to know if someone saw my ad on YouTube and then wound
+up going into my store, I didn't have that like I do now. I can make those
+sorts of connections. As long as we can
+respect the idea of consumer consent and privacy, that has been the biggest change. In five years it is all about consumer
+consent and privacy. I think where we'll
+see measurement go, again with Apple and their Intelligent Tracking
+Prevention is introduced, and what GDPR means in the European Union and whatever we'll have
+here in the US, means that we'll have
+much more regulated use of personal data. What that means for
+marketers is probably a greater reliance on technology to create the measurement, to make the insight, create the insight,
+than we were before. I think we'll be
+able to do it with less data using bigger and
+more powerful machines, which to the conversation
+that we're having, just makes even more necessary
+the role of the analyst, someone who then make
+sense of that stuff. Which means that anyone
+who is a student of analytics today is
+in the right field, I would say, and on their
+way to a successful career. Speaking of students
+of analytics, which most of our
+students would call themselves in one
+form or another. What's some advice for them both as they leave this program
+and go for the job market? Also, in their jobs, once they start, you mentioned the left-brain,
+right-brain side of things. But what are some of
+the things that they can do to provide that value back other
+than buy ads with you? Yes, right. Click on a lot of search ads is
+what I always tell them, and don't skip your YouTube ads are the things that they
+can do to really help. I would say, the
+advice that I have is it links back to what Chris
+and I were talking about. I would say think of
+yourself as having three functional roles that you have to be able
+to demonstrate. That idea of the
+Business strategists or the Data strategists, that idea of your technical
+hard skill functions. Then the idea of being a
+designer and a storyteller and just try to balance
+all three of those things. There was a time when companies would hire people
+for one specific role, and those days are gone. Now you need to do at all. You can do it. I would
+say balance those things. Then once you're in a role, I think probably the best advice that
+I could give someone is don't think about your career, particularly in
+analytics, as linear. You will get in. You will see that I am
+in an analytics team, and I've got a boss, and that boss has a boss. In five years, who knows where
+this thing is going to be? I think there is so much
+opportunity for analytics that I think everybody's
+idea and conception of what an analytics
+program looks like, it's going to change quite a bit. I would say, be willing
+to take risks and just operate on the
+cutting edge of that and be interested and curious in what's
+coming next and what are the things that
+technology can bring to improve these data in your organization and
+try to get into that. One last question that I've been asking all the people
+we've interviewed, and I'll ask it in two ways. What are your or your team's favorite tooling
+that other people can use? The open-source tools
+or commercial tools? Obviously not like
+internal Google things. I just find it to be,
+and particularly for me, and maybe it's because I've
+got a sweet spot for it. It's what I always use, but the unlimited capability. I'm in awe of some of
+the people who use it. Hadley Wickham is someone that I've known for a long time, and love what he's done and what the
+RStudio team has done. I look at someone like Nathan
+Yau in flowingdata.com, and the tutorials
+just blow my mind. My analysts use it. It's a tool that when we
+need to move a lot of data, we will use it in
+our secure privacy, safe areas on our laptops
+to conduct our analysis. It's a tool that, on the engineering side of
+the house at Google, is used widely as well. It's something that is
+pretty pervasive here, and something that I've always
+loved and my team loves. Any other tools other than R? As I said, most of the other
+things that we use are, say, Data Studio, which
+is a Google product. We use all the Google
+productivity suite and Sheets and Slides, and Docs. My team can be outfitted pretty well with our Google
+internal tools. The customer-face are the ones
+that I just talked about. The ones that aren't
+customer-facing, that we use as well. Then our Tableau, and we're pretty good
+to go, to be honest. I've got some people
+that are using Python and some other more even TensorFlow and some of the other tools they've
+googled that google has. But that makes for a pretty
+complete set for my analysts. No, I think this has been a
+really great conversation. I've really appreciated
+the insights around the work you're doing and the character
+of your team. It's been great. Thank you so much for
+your talk, gentlemen. Of course, guys, it was really, really nice to speak with you. Thanks for inviting me, and
+thanks for taking the time. Pleasure. Thank you.

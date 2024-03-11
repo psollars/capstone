@@ -1,0 +1,99 @@
+Many classifiers in
+scikit-learn can provide information about the uncertainty associated with a
+particular prediction, either by using the
+decision function method or the predict_proba method. When given a set of test points, the decision function method
+provides for each one a classifier score value
+that indicates how confidently classifier
+predicts the positive class. There will be large magnitude positive
+scores for those points. Or if it predicts
+a negative class, there will be large
+magnitude negative scores for negative points. Here's an example in the notebook showing the first
+few instances from our classification problem using logistic
+regression classifier. We can see that instances
+in the negative class often have large magnitude
+negative scores. Indeed the instances in
+the positive class have positive scores from the
+logistic regression classifier. Likewise, the
+predict_proba function provides predicted probabilities
+of class membership. Typically, a classifier would choose the more likely class. That is, in a binary classifier, the class with probability
+greater than 50 percent. Adjusting this decision threshold affects the predictions
+of the classifier. A higher threshold
+means the classifier has to be more confident
+in predicting the class. For example, we might
+predict class 1 only if the estimated probability of
+class 1 was over 70 percent. This results in a more
+conservative classifier. Here's an example of getting these prediction
+probabilities for the test instances for the same logistic
+regression classifier. You can see that many entries
+with a positive label of one have a high
+probability like 0.995, while many negative
+label instances have a very low
+prediction probability. Note that not all models provide useful probability
+estimates of this type. For example, a model
+that was over-fit to a training set might provide overly optimistic
+high probabilities that were in fact not accurate. Now we can use these decisions scores or prediction
+probabilities for getting a more complete
+evaluation picture of a classifier's performance. For a particular application, we might pick a specific
+decision threshold depending on whether
+we want the classifier to be more or less
+conservative about making false positive or
+false negative errors. It might not be
+entirely clear when developing a new model what
+the right decision threshold will be and how that choice will affect evaluation metrics
+like precision and recall. Instead what we'll do is
+look at how the classifier performs for all possible
+decision thresholds. This example shows
+how that works. On the left here is a list of test instances with their true label and
+classifier score. If we send a decision threshold, then all the instances
+above that line. For example, if we said
+the decision threshold to be minus 20 here, then all the instances above the line are below the
+threshold of minus 20. So minus 20 or less. All the instances in this direction are above
+the threshold of minus 20. The ones below the
+threshold will be predicted to be in the negative class. The ones above the
+threshold will be predicted to be in
+the positive class. If we pick specific thresholds, so in this case minus 20 and we partition the
+test points in this way, we can compute
+precision and recall for the points that are predicted to be in
+the positive class. In this case, we have
+12 instances here, 12 total instances that are being predicted as positive
+and only four of them. This one, this one, this one, and this one
+are actually positive. The precision here
+is 4 divided by 12, or approximately 0.34. The recall on the other hand, there are four positive
+labeled instances in the whole set of
+test examples here, and we found all of them with this particular
+threshold setting. The recall here is
+four out of four, we found all four positive
+labeled examples. For this particular
+threshold of minus 20, we could obtain precision and recall score
+for that threshold. Let's pick a different threshold. Let's look at what happens
+when the threshold is negative 10 right here. Again, anything below
+this line it has a higher value of minus 10 here. Those would be treated
+as positive predictions. Things above the line have
+a score below negative 10, so these be, predicted
+to be negative. Again, we can compute
+a precision and recall for this decision
+threshold setting. We can see here that
+there are a total of six instances in the
+positive prediction class of which four are actually
+of the positive class. The precision here is four
+over six, or about 0.67. Again, the recall here is
+going to be four out of four. It's going to be 1.0 again. That corresponds to this
+point in the table over here. Then as we're computing these
+different precisions and recalls for different thresholds, we can also plot them on
+this precision recall chart. The first pair of precision
+and recall numbers that I got 0.34 and 1.0, we can plot on this point
+in precision recall space. The second example so this was for the threshold
+of minus 20. When the threshold was minus 10, we got precision of
+0.67 and a recall of one corresponding to this
+point that we can plot. You can see that if we do this for a number of
+other thresholds, for example, the
+threshold of zero, we will get a precision of
+0.75 and a recall of 0.75 that corresponds to this point and that choice of
+decision threshold. We can keep doing that
+for different thresholds. We actually are
+plotting a series of points through this space which can be connected as a curve. In this way, we can get a more complete picture by
+varying the threshold of how the precision and recall are the resulting classifier
+output changes as a function of the
+decision threshold. This resulting chart here is called a
+precision-recall curve. We'll look at it in
+more detail next.

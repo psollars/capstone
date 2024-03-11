@@ -1,0 +1,68 @@
+In this lecture, we'll think about
+longer sequences of text to analyze. Specifically, we'll be looking at multi
+word expressions and named entities. Language itself isn't just
+made of single words. Here, let's take a look an example. The University of Michigan in Ann Arbor,
+Michigan, has a world class program and applied data science. If we read this sentence, we might notice
+particular entities that pop out to us, say the University of Michigan or
+Ann Arbor, Michigan. These are what's known as named entities. These are places or things or people
+of what we might also notice one other particular sequence, applied data science. This itself is a multi word expression or
+a sequence where the meaning of this particular expression isn't necessarily
+derivable from the words themselves. Names and multi word expressions are
+everywhere in natural language, and it's actually an important task to recognize
+these for downstream applications. Let's take a look at named entities
+in multi word expressions. Typically, named entities are things that
+could be referred to with the proper name. These are people, places or things. It could also be businesses or even famous
+buildings like the Empire State Building. They can also be movies,
+books and paintings. So there are long list of categories. And there's a long tail of
+categories like medical drugs or designer items that also fall
+into this named entity category. A multi word expression is a sequence of
+words where we try to derive the meaning, but it's not fully predictable
+from the component words. So applied data science
+as a field needs to be recognized as a particular unit of text. And there are many,
+many types of multi word expressions. We have things like noun compounds,
+so support vector machines or machine learning, things that you
+often run into in domain literature. We have idioms like spill the beans or
+get into the weeds. Verbal constructions like take a shower or
+go out to eat. And even fixed phrases often borrowed
+from other languages, like inter alia or ex ante. By far the most common group of
+these is the noun compound, and we see this quite frequently
+throughout many different fields. If we want to recognize named entities and
+multi word expressions that one of the most common techniques is actually
+just to have a fixed list of them. This is especially true for
+named entities, and we often call these lists gathered here. Recognizing multi word expressions is
+hard because we often create them and practiced, especially as new domains add
+sort of jargon words or technical details. Many multi word expressions come to rise,
+and building a list of multi word expressions can actually be
+possible using noun-noun compounds. One of the most common ways to do this is
+using part of speech tagging, actually. There are the other statistical
+approaches for finding noun pairs. Several approaches will abuse machine
+learning, specifically sequence labeling to identify named entities, and
+we'll talk about this in later segment. If you want to recognize multi word pairs,
+one of particular idea is to use pointwise mutual information, an aspect that
+we looked at in the past lecture. Here, we can think about whether two
+words co occur next to each other more frequently than we
+expected by chance, and calculate the joint probability their
+co occurrence in a corpus relative to the product of their independent
+probabilities of occurring. There are other statistical tests,
+like using a chi square test or a t-test. However, these approaches are harder to
+extend, say if you wanted to do a three word, a four word, or five words sequence,
+as because much more unwieldy to calculate statistics and
+identify where that support is needed. There are some practical implications for
+doing this. One is that recognizing entities
+is actually quite critical tenancy applications, say machine translation,
+where you would want to recognize that a named entity say a person name
+should be directly translated and copied over to the translation rather
+than trying to be implicitly translated. Or say for summarization to recognize that
+maybe a name should be continued into the summary. Many NLP approaches focus on finding
+named entities specifically, due to the fact that they're slightly easier
+to recognize and have less variability. However, multi word expressions
+can be quite important, especially if you're in a domain
+with sate lots of jargon. For example, data science, where we important to recognize
+the techniques that are used here. And running named entity recognition or multi word expressions
+into single units of text. A single token can actually be a pretty
+useful pre processing step when trying to learn vector representation. This can give you a representation of say,
+what the name entity represents, or how to interpret the multi word
+expression as a unit of text. Some of the techniques that we
+talked about in lecture two for vector representation or distributional
+representations often benefit from a preprocessing step that does
+this merging before you run and try to learn those vectors.

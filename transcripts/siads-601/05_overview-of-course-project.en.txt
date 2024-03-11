@@ -1,0 +1,145 @@
+In this segment, we'll talk about the course project
+that you're going to be using throughout this course because in this course you'll
+be conducting interviews, performing qualitative
+data analysis, and writing a report, we need something that you're going to be doing
+these things about. So for that, you'll
+need to choose a single project that runs
+through the entire course. Basically what I want you to do is think about a
+scenario in which you're a data
+scientist who's been tasked with analyzing
+some data set. Assume that you know
+relatively little about the content and domain of the data set but
+you have access to people who care about the
+information in the data set. Maybe they're the people who commissioned the data
+set or the people who care very much about the outcome of your data
+analysis but in any case, by interviewing
+them you can learn something about the
+expectations of the data in the data set as well as what people are expecting
+to hear from you. When you analyze
+what they tell you, it will provide a
+starting point and possibly a rough
+framework for how you direct your quantitative
+data analysis. So again, for the course project, and this is very important
+that you do this really well because it will
+affect the entire course, you'll need to identify
+a data set and a set of three stakeholders that you could interview that
+fit the scenario above. So what particularly
+makes a good project? First of all, I want to emphasize that you
+want to look for an existing
+quantitative data set. The data set should
+be reasonably rich, probably unexplored, especially by you and you
+want to have good contacts with the data-set stakeholders so that you could potentially
+interview them, I'll get back to
+this in a moment. It's not necessary that you have actual access to the data set
+but I do want to emphasize that it should be a real
+existing data set and the reason for this is the people
+that you interview, will treat you and
+the interview and the whole situation differently if it's something that
+they're merely imagining. So it's important that
+there's an actual data set associated with your
+project for this course. Another thing is that I
+would like you to choose a data set that you're not
+that familiar with, and again, this is because you want to go in fresh in these interviews in a situation in which
+you probably know very little about the
+data or the domain. We'd like you to interview at least three people who are connected to the data
+set in this course. You could interview more
+people if you're really interested in practicing
+your interviewing skills, but it's important
+that those three people are chosen so that they care about the data
+that's in the data set. They might have
+different perspectives about the data or the data set, or how they relate to the data and the information
+that's contained in it and they should all be willing to do 30-60 minute interviews around the 2nd and 3rd week
+of this four-week course. In the actual written assignment, you'll find that there's much more specific details about roughly what days you should
+aim for these interviews, please look at those, and then finally the scope of the data set
+should be just right. The data set shouldn't be
+too large or too complex, it shouldn't be too
+smaller or simple. Think of it as the
+kind of data set where you could gain some
+insight about what you might be expected to do quantitative data
+analysis through three interviews or so. I'm going to go
+through some examples of good data sets and
+then towards the end, I'll give a couple of examples of data sets that would probably not be good for this course. So here's a good example of a potential course project
+you might propose. Imagine that you know that there's a data
+set collected by your local police department
+about traffic stops and citations between
+some 10-year period. It's likely to be something like a single Excel spreadsheet with thousands of rows
+and dozens of columns. Big enough that you wouldn't immediately be able to
+tell patterns within it, big enough that there's lots of interesting trends and patterns you might be able to find, and also sufficiently
+complex that is not immediately obvious what
+kinds of analysis to do. Potential stakeholders
+you might want to interview might be, for example, this department's
+deputy chief who obviously would have a very
+good perspective about how the police department views this data and what kinds of
+trends they would expect to see. Another possible
+interviewee would be a police officer from the
+department who obviously has daily interaction with
+people that they would stop in traffic and
+issue citations for, and they might be able
+to give you hints into certain trends that you
+would see in the data. Another possibility is the
+administrative staff member who's responsible for
+putting the data together. They would have an idea about
+how the data was collected, what kinds of gaps there might
+be in the data? What kinds of problems there
+might be in the data? In any case, all three of these people will be people
+that if you interviewed, would be able to give
+you some pointers into how to begin a
+quantitative data analysis. Here's another example. This could be data
+collected over five years, let's say by an
+e-commerce company that specializes
+in selling shoes. You might have several
+database tables with, again, thousands of rows and dozens of columns and here are some stakeholders that you
+might interview, again, assuming that you
+have access to them, the company's head of sales would obviously be
+very interested in understanding what kind of
+pattern the data contains with respect
+to what shoes are selling and
+who's buying them. A member of the marketing staff might be interested in seeing whether the data reflects
+their marketing efforts, and of course even a frequent user of the e-commerce website might be able to tell you
+the different ways in which they have interacted with the e-commerce website and how their buying decisions might
+influence their behavior. So these are all possible stakeholders you could
+interview to getting some insight about a data set about e-commerce shoe company. Here's a third example, imagine that your state's Department of Parks
+and Recreation has some kind of data about how
+its resources are used by residents over the past year. This might be a
+mish-mash of spreadsheet and databases with
+this information for each county in the state and here are some stakeholders that you might want to interview. It could be the department's
+research director who would obviously be very interested in any kind of analysis of this data. It could be a park
+ranger who knows a lot about the people that use these parks and other
+resources or it could be somebody who is a regular user of the
+state's parks and who again, might be able to point
+you towards trends that you might expect to find
+in such a data set. Again, the important
+thing is that there is an existing data set overall, that you're going to work with
+and which you're going to propose for your
+course project and that you can name
+three people that you already have ties with who will already have agreed to conducting an interview with you sometime in the next
+couple of weeks. A couple of bad examples. These aren't necessarily
+terrible in the sense of you could get by
+by doing a project but it'll be much harder to
+find interesting things to conduct an interview
+about and then to do a meaningful qualitative
+data analysis at the end. You don't want to address
+a data set that's too big. For example, all of
+the data collected by your country's national census
+bureau for the 50 years, that just seems too big to
+really get a handle on. You could interview a few
+people but they would tell you very different things
+about the trends that they would expect and
+it wouldn't coalesce as a coherent framework
+for you to do future quantitative
+data analysis on. On the other side, you don't want to go too small, sales data from your
+child's candy sale at school last month
+might be too small. Maybe there's a spreadsheet
+with a couple of columns. It's not likely that
+you're going to get meaningful responses to any questioning with stakeholders who would be involved in a
+very small project like that. So try to find a data set that is of reasonable size
+something that you might actually do a single quantitative
+data analysis project on but which you don't have
+too much background in, and where you have connections to different people who would be open to doing
+interviews with you. For more details, please look at the written assignment that is on the platform and it
+will contain a lot of details about exactly when you should plan for these
+interviews and again, I would recommend that
+you try to schedule the interviews in
+order to fulfill the assignment so that
+there's no question about whether you'd be able to do three interviews
+during the course.

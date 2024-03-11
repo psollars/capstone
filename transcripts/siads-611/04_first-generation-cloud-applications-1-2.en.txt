@@ -1,0 +1,136 @@
+So I want to talk about the great
+disruption that led to in a sense the NoSQL movement and started
+changing database architectures forever. So prior to this, let's just pick 2002, everybody had their own relational
+database, everybody bought a $40,000 computer if you had a big school
+like the University of Michigan. Everybody bought a $40,000 computer and
+ran your database for your HR on a a $40,000 computer, ran your database for
+your mail on a $40,000 computer, and just vertically scaled. And
+it worked, because the software worked in this environment, the hardware
+worked in this environment. It was not cheap to do it, but it was
+something we needed to do, and away we go. And so, again, a lot of what I'll
+call pseudo-cloud vendors used this as their technique, and that is to
+just make a bunch of databases. They put them all on Amazon and they
+put the application in front of them and then switched between databases and
+claimed we're cloud. The answer is no, we just collected all of
+the individual ones and put them together in one building, or in a couple of buildings
+in the case of Amazon. So that's 2002. And what happened is Google. So Google's
+going to search, they're going to write a database crawler and they're going to
+crawl the web and they're going to make a full copy of the web then they'll
+index that full copy the web. Then they're going to look at like
+connections between it. Sounds like a perfect thing for a database because it's all about
+connections. Just like relational, right? And then of course you have Gmail that
+comes quick on the heels, right? 2009. And that is here's Gmail. Now Gmail's
+not just a read-only thing, well, read-mostly thing, but
+Gmail's read/write. We're going to log in and check our
+mail all the time and send a message and delete it, and this that and the other
+thing. And so Gmail is very much like a typical application that would
+use a relational database, going back to how universities were
+doing it 2002. But it could not, it just couldn't. Google was not going to give
+everybody their own domain, even though these days
+they've changed that but let's go back in 2009.
+Everybody just used gmail.com. One of the things that
+was nice about Google was that they really chose applications
+that didn't exactly need transactions, so that eventual consistency was fine. So think about Gmail, right? You've got 100 million users and
+they're just logging in but they're kind of logging into their
+own little data silos, right? And so the eventual consistency wasn't
+that I'm going to delete a message from your mail, I couldn't do that. I could
+only delete messages from my own mail. And then I would send and receive mail,
+but that was just kind of this little email sending thing. And
+it was all nicely client/server. And so my little corner of the world would
+send your little corner of the world a message and then a couple seconds later, your corner of the world would see my
+message and vice versa, then you'd reply. And so, Google worked in these
+cloud-scale applications and it was a chicken and egg problem in that they wanted to build these really cool
+scalable cloud-scale applications. And so they couldn't do certain things. Now, you'll notice in
+the early days of Google, they didn't have charging
+because then you'd like do you really want an eventual
+consistency on an accounting system? I don't think so. You want
+to know I billed them or I didn't bill them, right? Or you want to be able to like if the bill
+came and you got an email about the bill, you want to be able to log in and
+see if what the bill was, right? But oh, it's eventual consistency, so
+the bill's not perfect yet. And even writing to Gmail was
+widely distributed, right? I mean, like I said, there's just these little pockets
+of data. In the early days of Gmail they would migrate your data to
+a server that was closer to you. Like if you went back home
+to Europe on a Christmas break, the data would sort of creep over to
+servers that are there and your little island of data would just move around and
+then all of a sudden be really fast. So there was this data migration. Your little silo of data might follow
+you around the world as you traveled. And so the early Google applications were
+not Facebook, they were not Twitter, they were not connection-oriented. They were just like here's a thing for
+you and whatever. And so these systems used cleverly named files,
+they used hashing, right? You can hash an email address and that could be like a folder that
+has a bunch of files in it. Then you'd take the folder names and you'd
+hash them and then you'd basically make it so that when you delete a file, it just
+rewrites that folder a little bit, right? And they even could use a little bits of
+relational database if they felt like it. Something like SQLite, which really
+reads and writes one file on disk. It's not great for multi-reader / multi-writer,
+but if there is one database for each user, then SQLite could be
+a good little database, right? So sharding is the idea of slicing
+a problem across a bunch of servers and then you sort of have
+your particular view. It's not like a read replica
+where you could go to any of them. No, you had your email address and
+your data was on this one server, that's your shard. And so you've been sharded. So
+your data is not on all the servers. It's just on this one and unlike the stuff I showed you before,
+there's only one. That's a shard. And so I want you to watch
+a couple of videos. You can either watch these on YouTube. This is an hour-long keynote. I've got a much shorter version
+of it that you can watch. This is Marissa Mayer, Google I/O 2008. I was actually in the audience
+when she was giving this talk and I will tell you that my mind
+was blown when she was talking. I go to a lot of conferences and I'm always sitting with my laptop
+in the conference and I'm like, get some code done, yeah, whatever,
+they're going to say dumb things, right? I mean, I'm enjoying it and
+I'll clap once in a while, look, and I'll go back to coding. As she hit this part of
+the speech that I've cut out, my jaw just dropped and I'm like. And you're going to watch it here
+in 2020 or later and you'll be like,
+why was that so amazing and the answer was that
+in 2008 Google prior to this. This is the first Google I/O conference.
+It's the Google developer conference, which I encourage you to go to. They're kind of repetitive after
+you've gone to one or two of them. I went only to two of them and
+stopped going because they're so repetitive. Google from a developer perspective
+just is crap. They just come up with an idea and then they throw
+it away just like two years later. So Google is really not stable enough for
+me to like as a developer. I like Amazon, I like Microsoft if you're kind of into that
+closed-source kind of thing, but Google is just, someday I'll just go be president
+of Google and just slap those people. I'm like, quit it, quit it. Sorry, sorry,
+sorry. Marissa Mayer. Great keynote. Google I/O was like opening the covers
+to what had been for almost a decade at that point completely the most
+secretive way of building fast systems. And I walked in thinking as a high
+performance computing person that thought that a million-dollar computer was
+the way to solve most problems. And what she showed with this
+gather/scatter technique and this is like, oh, no, she has a bunch of
+thousand-dollar computers and they go so much faster than my $1 million computer
+and she can add as many thousand-dollar computers as she wants and I'm like,
+yeah, that's pretty dang cool. So this, it was revolutionary. And so please watch it. Put your mind in
+the sense that this was to me the first time that Google was showing
+how it was able to do search cost-effectively and not charge you for
+it. Because if I'd have built search in 1997-98 I'd have built it out of
+really expense hardware and Google did not build it out
+of really expensive hardware. A year later, they started showing
+some of their actual techniques for how they build virtualize hardware,
+and this is amazing. Again, before this time I would
+see rumors about Google's, this is how Google does it,
+it was a big secret, right? And what happened was is and
+and in 2000, it was a big secret. By 2009 what people realized
+was that with the energy crisis and all these concerns about the footprint
+of the energy cost of these systems and the fact that they would throw these
+things away after one or two years. And so everybody, Google and
+Facebook and Twitter and Amazon, they realized that for the greater good
+they ought to share some of their best practices on how to do all
+these things efficiently. And so, they started having Summits .
+And so again, when I first saw this I'm like, jaw drop.
+I'm like, that's their secret. Holy mackerel,
+I can't believe it, it's amazing. I would have never thought of it, that is
+not how I would have built Google, not me, that's not how I would build it. But then you watch and you go like, of course, it's a wholly good idea, right? And again, ACID and BASE are the essence
+of this and I was an ACID kind of guy, right? And I was looking at this BASE
+world, I'm like, dang, that's really cool. And then I also want you to see,
+so you see this is 2010. So you see Google's kind of opening
+up their secrets to the world. How did even search work? So this is a Matt Cutts, March 2010. It's a beautifully done
+production with animation, but it's also think of it from a ACID
+versus BASE perspective of how they can use a distributed set of
+computers to go through the web, to pull the web down, to index
+the web, and then to run searches. So I really want you to
+watch these three videos. You can either watch the short
+versions that I've provided, or you can watch the long ones. The Marissa Meyer is the only one
+where the long one is an hour and my short one is like three minutes. And so, you've got to catch the part where
+she talks about how to do searching but the Matt Cutts one and the Google
+container tour, those, if you watch the long one, they're not that much
+longer than my succinct versions of them. So please watch those and then come
+back and we'll talk a little bit more. [MUSIC]

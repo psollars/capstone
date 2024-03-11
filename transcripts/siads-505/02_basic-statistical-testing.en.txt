@@ -1,0 +1,224 @@
+In this lecture, we're
+going to review some of the basic statistical
+testing in Python. We're going to talk about
+hypothesis testing, statistical
+significance, and using SciPy to run
+the student's t-test. We use statistics a lot in different ways
+in data science, and in this lecture
+I want to refresh your knowledge of
+hypothesis testing, which is a core data
+analysis activity behind experimentation. The goal of hypothesis testing is to determine if for instance the two different
+conditions we have in an experiment have resulted
+in different impacts. So let's import our usual
+NumPy and pandas libraries, this is np and pandas as pd. Now, let's bring in some new
+libraries from SciPy. So from SciPy I want
+to import stats. Now SciPy is an
+interesting collection of libraries for data science, and you'll use most or perhaps
+all of these libraries. It includes NumPy and pandas, but also plotting libraries
+such as Matplotlib and a number of other scientific
+library functions as well. When we do hypothesis testing, we actually have
+two statements of interest. The first is
+our actual explanation, which we call the
+alternative hypothesis, and the second is that
+the explanation we have is not sufficient and we call
+this the null hypothesis. Our actual testing method
+is to determine whether the null hypothesis
+is true or not. If we find that there is a difference between
+groups then we can reject the null hypothesis and
+we accept our alternative. So let's see an example of this. We're going to use
+some grade data. So make a new DataFrame here and read _csv
+(datasets/grades.csv). Let's look at the head of that. If we take a look
+at the DataFrame inside we have
+six different assignments. Let's look at some summary
+statistics for this DataFrame. So I'm just going to
+print out the number of rows and columns, and remember the DataFrame has a shape and we'll just
+pass those as variables. All right, for the purpose
+of this lecture let's segment this population
+into two pieces. Let's say those who finish the first assignment by
+the end of December 2015, we'll call them early finishers, and those who finish
+at sometime after that we'll call them
+late finishers. So I'll create some new variable, early finishers equals DataFrame. I'm going to do a pd.to_datetime. So I'm going to convert
+that column to date_time. We could have done
+this when we read in the CSV file as well. I want to take that
+assignment one submission time and just if
+it's less than 2016. So then let's take a look
+at our early finishers. So you've got lots of
+skills now with pandas. How would you go about getting the late finishers DataFrame? Why don't you pause
+this video and give it a try? All right, here's my solution. First, the DataFrame df and the early finishers
+share index values. So I really just
+want everything in the df which is not
+in early finishers. So I'll create late finishers
+and I'll make that equal to our original DataFrame, and then I'll take the inverse of df.index.isin
+early_finishers.index. So here the tilde is
+a bit wise compliment. So we're just taking all of our true values and
+negating them to false and taking all our false values and negating them back
+into true values. Let's take a look at the head. So there are a lot of
+other ways to do this. For instance, you
+could just copy and paste the first
+projection and change the sign from less than two
+greater than or equal to. This is okay. But if you decide you want
+to change the date down the road you have to remember
+to change it in two places. You could also do a join of the DataFrame df with
+early finishers. If you do a left join you only keep the items in
+the left DataFrame. So this would have
+been a good answer. You also could have
+written a function that determines if someone
+is early or late and then call.apply on the DataFrame and added a new column
+to the DataFrame. This is a pretty
+reasonable answer as well. So there's a number of
+different things you could have done to create this DataFrame. As you've seen, the pandas
+DataFrame object has a variety of statistical
+functions associated with it. If we call the mean function
+directly on the DataFrame, we see that each of the means for the assignments are calculated. Let's compare the means
+for our two populations. So I'm just going to
+print the early finishers assignment1_grade.mean. I'm going to do
+the same thing with the late finishers and
+let's take a look. So these look pretty similar
+but are they the same? What do we mean by similar? This is where the
+student's t-test comes in. It allows us to form the alternative hypotheses,
+these are different, as well as the null hypothesis, these are the same, and then
+test that null hypothesis. When doing hypothesis testing, we have to choose
+a significance level as a threshold for how much of a chance we're willing to accept. This significance level is
+typically called Alpha. For this example, yet let's use a threshold of 0.05
+for our Alpha, which is five percent. Now this is commonly used number but it's really quite arbitrary. The SciPy library
+contains a number of different statistical
+tests and forms a basis for hypothesis
+testing in Python. We're going to use the
+ttest_ind() function, which does an independent t-test, meaning that the populations in the two groups are not
+related to one another. The result of t-ttest_ind() are this t statistic
+and the p-value. It's this latter value the probability which is
+most important to us as it indicates the chance
+between zero and one of our null
+hypothesis being true. So let's bring in
+ttest_ind() function. So from SciPy stats
+import ttest_ind(). Let's run this function
+with our two populations. We're going to look at
+the assignment one grades. So ttest_ind(), we'll take early finishers and
+we just want to project the assignment1_grade
+and late finishers and we'll project
+the assignment1_grade. So here we see that
+the probability is 0.18. This is above our
+Alpha value of 0.05. This means that we cannot
+reject the null hypothesis. The null hypothesis was that the two populations
+are the same. We don't have enough certainty
+in our evidence because the probability is greater than Alpha to come to a conclusion
+to the contrary. This doesn't mean
+that we've proven that the populations
+are the same. So why don't we check
+the other assignment grades. So I'm just going to
+copy and paste here. So I'm going to put it in
+the assignment2_grade, assignment3_grade
+assignment4 _ grade, five and I think there
+are six assignments here. Okay, so it looks like in
+this data we do not have enough evidence to suggest the populations differ
+with respect to grade. Let's look at those p-values for a moment though
+because they're saying things that can inform
+experimental design down the road. For instance, one
+of the assignments, assignment3 has a
+p-value around 0.1. This means that if
+we accept a level of chance similarity of 11 percent, this would have been considered
+statistically significant. As a researcher, this would
+suggest to me that there's a number of things here worth considering following up on. For instance, if we had
+a small number of participants, and we don't here, or if there was something unique about this assignment as it relates to our experiment
+whatever the experiment was, then there may be
+followup experiments that we could run to better
+understand the phenomenon. Now, p-values have come under fire recently for
+being insufficient for telling us enough
+about the interactions which are happening and
+two other techniques confidence intervals
+and Bayesian analyses are being used more regularly. One issue with p-values is that as you run more
+tests you're likely to get a value which is statistically significant
+just by chance. So let's see a little
+simulation of this. First, let's create
+a DataFrame of 100 columns each with a 100 numbers. So here I'm going to
+do dF1 pd.DataFrame, and then we'll put in
+a nice list comprehension. Np.random.normal random
+100 for x in range 100. Let's look at the head of that. Now, pause this and reflect. Do you understand
+the list comprehension and how I created this DataFrame? You don't have to use a list
+comprehension to do this, but you should be
+able to read this and figure it out because this is a commonly used
+approach that you'll find on web forms
+and then help forms. Okay. Let's create
+a second DataFrame. So here we'll just do
+the same thing dF2 equals pd.DataFrame and I could
+have a list comprehension. What I'm saying here is I want to call the statement
+np.random.random100. So this will generate
+100 random values into it in a list for x in range 100. So I want to iterate over
+another list of 100 values. I'm actually not using X here. It's just being thrown away
+because the data that I'm using is the np.random.random. So are these two
+DataFrames the same? Maybe a better question is
+for a given row inside of dF1 is it the same as
+that same row inside of df2. So let's take a look. Let's
+say our critical value here is 0.1 or an Alpha
+of 10 percent. We're going to compare
+each column in dF1 to the same
+numbered column in df2 and we'll report when the p-value isn't
+less than 10 percent, which means that we have
+sufficient evidence to say that the columns
+are different. So let's write this as a
+function called test_columns. So def tests_columns. We'll pass a parameter Alpha by default we'll set it to 0.1. We can change that later though, so it's nice to have a parameter. I want to keep track of how
+many columns actually differ, so make some new variable
+num_diff and make it zero. Now, we're just going to
+iterate over the columns. So for call in dF1.columns, we're just iterating over
+all the list of columns in dF1 we're just going to run our t-test in between
+the two DataFrames. So we're going to
+get a test stat and p-value is equal to ttests_ind(). We'll do dF1 sub call
+and df2 sub call. Remember t-tests end
+returns two values. We can use tuple
+unpacking here to get the test stat in its variable
+and the probability in it. We're going to check the
+p-value versus the Alphas, so if the p-value is less
+than or equal to Alpha and now we're just going
+to print out if they're different and increment
+the number of difference. So column is statistically significantly different
+at some Alpha level, some pval level and will
+pass our parameters. Of course, let's increment
+our number of differences. Let's print out
+some summary stats after were done testing
+all the columns. So the total number
+of different ones we'll place that in
+and we'll turn it into a percentage and we'll just do the math with
+the length of columns. Now let's actually run this code. So ttests_columns. Interesting. So we
+see that there's a bunch of columns that
+are actually different. In fact, that number looks a lot like the Alpha
+value we chose. So what's going on shouldn't all of the columns be the same? Remember, that
+all t-test does is check if two sets are similar given some level of confidence
+in our case 10 percent. The more random
+comparisons you do, the more will just happen
+to be the same by chance. In this example, we
+checked 100 columns. So we would expect there
+to be roughly 10 of them to be the same
+if our Alpha was 0.1. So we can test some other
+Alpha values as well. So let's do tests columns with 0.05 and you could try
+other values as well. So keep this in mind
+when you're doing statistical tests like
+the t-test which has a p-value. Understand that this p-value
+isn't magic and it has a threshold for
+you when reporting results and trying to
+answer your hypothesis. What's a reasonable threshold? That depends on your question
+and you need to engage domain experts to better understand what they would
+consider significant. So just for fun, let's recreate that second DataFrame using
+a non-normal distribution. I'm going to arbitrarily
+choose chi-squared. You can try some other ones
+if you'd like. So we'll just df2
+equals pd.DataFrame and now we'll just do
+np.random.chi-squared. Now chi-squared is
+a distribution actually takes parameter
+the degrees of freedom. I'll just set it to one here. You can read about that or
+maybe you already know about the chi-squared distribution
+and I want 100 values and we're going to iterate
+over 100 columns as well. Let's just test that.
+So now we see that all or most columns tests to be statistically significant
+at the 10 percent level. In this lecture, we've
+discussed just some of the basics of hypothesis
+testing in Python. I introduced you to
+the SciPy library. Which you can use for
+the student's t-tests. We've discussed some of
+the practical issues which arise from looking at
+statistical significance. Now, there's much more to learn
+about hypothesis testing. For instance, there are
+different tests to be used depending on the shape of
+your data and different ways to report on the results instead of just p values such as confidence intervals
+or Bayesian analysis. But this should give
+you a basic idea of where to start when comparing two populations for differences which is a common task
+for data scientists.

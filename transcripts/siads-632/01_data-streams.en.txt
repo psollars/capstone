@@ -1,0 +1,192 @@
+Hello, welcome back. In the past few weeks, we have gone over how
+to mine sequence data, of course, beyond what we have learned in
+Data Mining one, and also how to mine
+time series data. Starting today, we will look at another different
+data representation that is known as data streams. Just to remind ourselves, the sequence data is essentially an ordered
+list of items. The categorical items x_1, x_2, and x_n are associated with positions or ordered positions 1, 2, 3 until n. In sequence data we are dealing
+with categorical items, discrete items and only
+the order matters. Differently, time series data use essentially a list of
+timestamped measurements, or timestamped real values. In mathematical representation
+we can see that X is actually a list of pairs where you actually have a pair of numerical values
+associated with timestamps. In time series data
+we are dealing with numerical values and
+timestamps matter. What about data streams? As you can see that
+data stream is actually a generalized notation of
+sequences or time series. It is the list of ordered or
+time-stamped data objects. These data objects,
+we call them events. Here, every event can be
+either a simple data object, for instance, an item. If the event is the item then it is not too much
+different from a sequence. If that event is the numerical measurement
+then it is essentially a time series but the event could also be the complex
+data object itself. For instance, every event
+itself could be either set. It could be the vector. It could be even a sequence, or you could be
+even a time series, or even a network,
+so and so forth. Every event can be either a simple data object
+or a complex data object. In data stream, another
+difference is that the events just come
+and go continuously. We're receiving
+continuous arrival of events into the future. Mathematically, we use capital D to indicate that data stream. You can see that it
+is the list of pairs and every pair is the
+data object or the event. We use capital X to indicate that this
+event could itself, be a context data object. Every event X_k or X_n is
+associated with a timestamp. In some cases, if you
+don't have timestamps, t_k could also be just the order. You can see that we're not recording data objects from x_1, t_1 and this is because they are you're
+data stream that we assume that entire history
+is too long to store. We have gone over a few examples of
+real-world data streams. The tweet stream, which
+were are familiar with, is one perfect example. For instance, this is actually a stream of tweets
+tweeted by UMSI. You can actually see that every tweet here is
+actually an event. You can see that a tweet
+is not a categorical item, itself is the sequence
+of words with metadata. Every event here is actually the complex
+data object itself. The events continuously
+arrive into the data stream and the arrivals are identified by the timestamps. We actually have actual
+timestamps instead of just orders in this
+particular type of data stream. Another example is
+actually the traffic. Or you can imagine that
+you have a CCTV camera that is recording incoming
+traffic in an intersection. In this example, every vehicle, every car is actually an event. You can easily consider the car as the simple categorical item, or you can consider car as
+the very complex data object. Their arrivals are also
+recorded by timestamps. No CCTV camera [inaudible]. You know the entire
+history of this road. This is a perfect
+example that the history of a data stream could
+be too long to store. Yet another example, that is the event of making
+my video streams, which is what I'm
+doing right now. When we're recording videos, our computers actually receive the data stream from the camera. Data objects could
+be images and audio, and could also be videos
+or any annotated videos. In fact, if you think about live streaming on the internet, the server is actually
+receiving metric packages and the metric package is actually a complex event in
+this data stream. This is a good example because when you're watching
+a live stream, you really cannot
+play back easily. That is because that
+in the short time that the computer is not really storing the entire data stream. Yet another example,
+that is the stream of user behaviors that all these internet
+companies are recording. For instance, Google records
+all the queries and click throughs submitted by
+every individual user from all over the world. If you look at what Google's server is
+recording and processing, it is actually recording
+the stream of queries, clicks, or Amazon is recording
+stream of transactions. Some companies are
+even collecting keyboard inputs and many other different
+types of user activities. The companies are actually
+using algorithms to make decisions upon the arrival
+of certain user activities. These are all real world
+examples of data streams. You can see that one
+particular difference between the stream
+and the sequence or a time series is that every event could be the
+complex data object itself. Another difference is
+that they don't have the entire history
+of the data stream and the data stream also
+arrives into the future. What are the data
+mining functionalities upon data streams? Well, you can see that you still extract patterns
+from data streams, you're still concerned about
+the similarity between two data streams or between the events within a
+single data stream. You care about
+modeling data stream, you care about
+making predictions. Why? Because the data stream
+arrives into the future. You want to actually make
+predictions about future. If you're making
+predictions about the future then you're
+actually doing forecasting. Classification and clustering are also very commonly used in data mining functionalities and stream data corresponding to supervised and
+unsupervised machinery. You also want to detect
+outliers from data stream. Well, if you look at this, you might say that how are they different from mining other data? Exactly. None of these
+data mining outputs and data streams look very different from sequence data or time series or any other
+data representation. But difference is that because the particular property of the data streams,
+complex data objects, now complete history, continuous
+arrival into the future, it makes mining data streams
+particularly challenging. What are the challenges
+of mining stream data? Instead of naming one
+challenge after another, I'm just giving you
+one example that can actually summarize
+all the challenges. What is the example? Imagine that you are dealing
+with the tweet stream. You know that there
+are over 500,000,000 tweets being generated
+everyday, this is in effect. Suppose your computer or your
+data mining algorithm has the capacity to only keep 1000 tweets at any
+given time, let's say. Your computer can only explore, can only mine 1000
+tweets at a time. How can you do data
+mining in this case? This example really summarizes all the challenges
+of data streams. The data is huge and it's
+coming continuously. It is not like a big data dump that
+anyone prepared for you, it is actually being generated
+and being sent to you, and if you don't process
+them, you're gone. You have a limited capacity
+to handle the data, you cannot store the entire data. How can you do the
+mining in this case? There are many
+different constraints of data mining encoded
+in this example. You can see that we
+really cannot store the entire history and in fact, we really cannot even
+store part of the history. In many cases, decisions have
+to be made, and reflect. Because we cannot
+store the history, we really cannot look back. If you made a decision
+and wanted to actually reverse the decision,
+it's extremely hard. Or if you want to query
+what has happened 2000 events ago,
+it's just harder. If you have to deal
+with events "in order," because all the
+events are actually, send to you and if you don't
+process them they're gone. So you have to do this as the first-come-first-serve
+basis. In other words, you have
+to do everything online. That means if one event arrives, you have to make a decision
+for this event right away. You cannot wait until two hours later or one day later
+to make a decision, for this particular event, because during that time, many new events they
+already arrive. These are particular
+challenges or constraints of data
+mining in data streams. Then let's look at a few
+applications that we use [inaudible] about
+mining data stream. One application is called
+information filtering systems, and it is commonly used by this social media companies
+like Facebook, like Twitter, or any news feeds you have or any convinced radio with a
+recommendation systems that actually send you
+recommendations of items or that actually send your personalized filtered information
+of your interest. The information filtering system functions like the following. You have the information
+filtering system and in many cases they
+are called feeds ranking. If you look at your
+inbox on Facebook, you're using feeds ranking to decide what posts to show you. Such a system is trend
+using user interest and the user interests are gathered either online
+or offline, such as, your specified
+keywords of interest, specified categories of interest, or they are actually learned on the files through
+your behavior. What's important here is that this information filtering
+system functions on a continuous stream
+of information. This could be the
+stream of tweets, could be a string
+of Facebook posts, string of news, or
+string of new products, and some of the items
+in the stream are particularly, are
+potentially useful, or interesting for the users, and some of them, actually, majority of them are not. Through this information
+filtering system, you make the decision on a file, that items, tweets or products, that are interesting to the user, that are potentially
+valuable to the user, are actually filtered
+and sent to the user, and all the other
+items are discarded, so you're not actually
+showing them to the user. You can see that this is the commonly used system right behind all this
+social media agents. Another application of data stream mining
+is fraud detection. We're actually
+submitting our behaviors through our mobile phones, through our computers,
+or through, let's see, ATM machines or
+back transactions, and these sensors are actually collecting a big stream
+of user behavior. You can see that who locked
+into the system and the XYZ. Who transferred this
+amount money to whom else, so you actually have this continuous stream that
+is being collected and that is being presented to
+fraud detection systems, and the fraud detection
+system is essentially an online detector that
+handles this stream, monitors this stream, and
+makes decisions online. What does making
+decision online mean? It means once the system
+receives the user transaction, or another behavior
+it's going to make a decision whether this
+is a fraud or not, whether this is spam or not. As a result, that it
+will project out alarm, if it thinks that the
+current user transaction, the current user behavior, is questionable, is problematic. This is another application of the online ways data streams. As you can see that in
+both of the scenarios, you don't want to
+delay the decision, you want to make the
+decision on the flag. To summarize data streams, we should understand
+how data stream is different from sequence
+and time series. As we said that there are
+two major differences. One, data stream, every event could actually be either simple or
+complex data object. Second, we don't have
+access to entire history, and data stream continuous
+to arrive into the future. We should know that there
+are many real-world examples and applications of data streams, and the nature of data streams makes it very hard to
+actually mine them. So we need some smarter
+algorithms to mine data streams.

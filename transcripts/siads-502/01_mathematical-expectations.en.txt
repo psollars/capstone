@@ -1,0 +1,105 @@
+Welcome back to Math
+Methods for Data Science. In this lecture,
+we're going to talk about mathematical expectation. Intuitively, the expectation
+of a random variable is an arithmetic mean
+of a large number of independent realizations of X. It's sometimes also
+referred to as the average or the first
+moment of a random variable. For discrete random variable X, we denote the
+expectation as E(X), and it's given by this
+formula here where we sum over all the
+possible realizations of X, which are called
+the support of X, and for each realization, we take the probability that realization
+times the value of X. Let's see some examples. In the first example, we'll compute the
+expected value of a roll of a six-sided fair die. Let X be the random variable that represents the
+outcome of the roll. From our previous formula, we saw the expectation of X is the summation over all
+possible realizations, which are 1, 2, 3, 4, 5, 6. The probability of that
+realization times the value. This is going to be equal to one-sixth times 1 because each value occurs with
+probability one-sixth, one-sixth times 2, and so on and so forth
+until one-sixth times 6. You can pull the one-sixth
+out to the front, and it's one-sixth times the sum, 1 plus 2 plus 3, plus 4, plus 5 plus 6. We could add all these up
+and there's a cute trick; 1 plus 6 is 7, 2 plus 5 is 7, 3 plus 4 is seven, and this will help you add any
+adjacent numbers together. We have three sevens in here, this is in fact equal to 21, which is 3 times 7 over 6, and reducing that, we
+get that as equal to seven halves or 3.5. The expected value of the roll of a fair six-sided die is 3.5. Here, we're given another
+probability distribution and we're asked to compute
+its expected value. Again, we write down the formula; expectation of X equals, the first value we have is 0, so 0 times five-tenths, plus the second value is 2, the probability it
+happens is three-tenths, plus next value is
+3 times 1 over 10, plus the final value
+is 6 times 1 over 10. Now we simply add up all the, there's going to be a
+10 on the denominator, there, add up the numerators, 0 times 5 is 0, plus 2 times 3 is 6, plus 3 times 1 is 3, plus 6 times 1 is 6, this equals 15 or 10, which is just three-halves. The expected value of this random variable
+is three-halves. In this problem, we're
+given a certain amount of dollars when the first 1 appears on the k-th
+toss of a pair dice, so we're going to toss the dice, and when the first
+one appears at time, say k, we're going to get
+paid 0.5 to the k dollars. We're going to use this formula here in the computation later. What's their expected payment? Well, expected payment is going to be equal to summation of all the possible values, we'll call the value t for
+the time that it lands on, so we're going to count the times from period one to infinity. The probability that
+the first one occurs at time t is equal to, well, it must have rolled
+something other than one, the first t minus 1 time periods, if you roll something other than 1 with probability 5 over 6. So 5 over 6, the t minus 1 [inaudible] that each of the
+proceeding time periods, times 1 over 6 for
+the t-th time period. How much money do we receive
+if in fact the outcome, the first one occurs
+at probability t? Well, it's 0.5, which is
+one-half to the t-dollars. We have this sum here. We're going to try
+to rewrite it to get it to look like
+the hint we have here. First, we're going to sum
+t equals one to infinity, and then we have 5_t minus 1, so we're just going to put
+a 1 over 5 in the front, and then we can do 5_t divided
+by 6_t times 2_t is 12_t. Rewriting this again,
+it's 1 over 5 times. Then, instead of
+starting our summation at t equals 1 we're
+going to start at t equals 0 to make it look
+like a formula over here, so we can just plug that in. But when t equals
+0, five-twelfths_0 is actually going to be 1, so we need to subtract
+off the extra one that we added by including
+the zero index. Using our formula,
+we can see that the value of this infinite
+summation of five-twelfths_t, this part here is
+actually equal to 1 over 1 minus 5 over 12, which equals 1 over
+seven-twelfths, which equals 12 over 7. This entire thing
+here then equals one-fifth times 12
+over 7 minus 1, which equals one-fifth times, we'll subtract
+seven-sevenths from the top, 5 over 7, which equals 1 over 7. We should expect to get
+1 over $7 on average. This is the same as
+the previous slide except now we receive 2_k dollars if the first one
+appears on the k-th toss. Again, the expectation
+x equals the summation, t equals 1 to infinity, the chance that we get the first one appears on the k-th toss or on the t-th
+toss is the same as before. Five over 6_t minus
+1, plus 1 over 6, but now the amount
+of money that we get for getting one of t-th toss is actually 2_k dollars. Now, if we write this
+as we did before, we'll add the fifth in there as we did before. On the top, we're
+going to have 10, 5 times 2 is 10, on the bottom we're
+going to have 6_t. Now, you'll notice
+that as t gets large, the quantity here gets
+larger and larger. We're adding infinitely many sums and they're growing
+bigger and bigger, so this does not converge
+and is infinite. Which is a curious thing, but the amount of money
+that we'd expect to get paid playing this
+game, is infinite. Notice in any particular
+game it would be finite, but nonetheless in expectation
+it would be infinite. Fun parlor game is to think, how much would you pay to play this game if you were
+an expected agent? I guess you would pay
+an infinite amount of money to play this game, even though a few people
+would actually do that. That's a famous
+mathematical paradox, but in the context
+of this lecture, the idea is to point out that the expectation of a random
+variable need not exist, it can diverge and
+does in many cases. What if we have a
+continuous random variable? If we have a continuous
+random variable expectation, instead of taking the sum is
+replaced by this integral. F of x is the probability
+density function, and x is this realization here. Otherwise, it's the same. Let's try an example of computing the expectation
+of a continuous variable. This random variable
+X has a range of 0,1, and pdf 3x squared. What is the expectation of X? The expectation of X. We don't need to integrate from minus
+infinity to infinity because the pdf is zero
+outside the range 0-1. We'll just integrate
+over the range 0-1, and then the pdf
+there is 3x cubed, and then we need to multiply
+that again by x, dx. We'll just bring the
+three out front, integral from 0-1 of x cubed, this just 1 over
+4 times x_fourth, and we take the derivative
+of one-fourth x_fourth, we indeed get x cubed back again, evaluate it at 1-0. If we evaluate this at one, we get 3 times
+one-fourth minus 0, when we evaluate it at 0, equals three-fourths, three over four. We've described what
+an expectation is, we've described how to
+compute it in certain cases, we've seen that it
+doesn't always exist. In the next lecture, we'll talk about some
+properties of expectation, that enable us to compute
+it in more cases.

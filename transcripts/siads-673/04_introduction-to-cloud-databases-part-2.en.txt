@@ -1,0 +1,147 @@
+Our database has been created. Let's take a look around
+at what we now know. This is the remote demo database
+that we created earlier. When we go in here, there are some interesting things
+that we've learned. One, we can see the
+address for our instance. We can see the sub-nets
+that it exists on, and we can see the
+security group. Now, earlier when we set up a security group for
+our EC2 instance, we did that over in EC2. What's nice about Amazon is that the security groups will
+travel between services. Security groups are
+a global concept. They're not a
+service-specific one. We can see that
+this security group is the one ending in f1ba, and over here we've
+got one that we caught all traffic and default. Default is just the one that comes with
+Amazon by default, it's the one that
+was put in there. The inbound rules
+basically allow traffic to anything
+that's in that group. We want this to be publicly accessible for the
+sake of this demo. So we're going to edit
+the inbound rules here. We'll add a new one and
+we're just going to say in here Postgres, and from Anywhere
+on the Internet, and we'll go ahead and
+press "Save rules." It'll take that a
+minute to come up and now what we've
+done is we've made this available anywhere
+on the Internet to be accessed using
+this host-name. Now, to validate that this is working
+the way it should, what I want to do
+is I want to log into the server. I
+want to log into this. There's a couple of
+ways to do this. I could open up a
+Jupyter Notebook and use Python to do it. If I had the Postgres client
+installed on my laptop, I could use my
+laptop to do this. There are all sorts
+of different tooling I can use to
+accomplish this task. But this is a course
+on the Cloud, and so I'm going to go
+back to the EC2 Dashboard. I'm going to go under Instances
+and I'm going to create a new virtual server
+in the Cloud. We'll choose Ubuntu. I can keep with the
+micro instance, it doesn't have to be fast. We'll go through here
+and set this up. We'll reuse that
+security group we used in an earlier demo where
+we said All Traffic, and we'll say "Launch." This will take it a minute, but we'll soon have
+access to this Instance. Now what we're going to do
+is we're going to open up a new terminal and we're going to get ready
+to log in to our Instance. We'll put this over
+here for a second, and we'll come here
+and we'll refresh this page and we see that the
+Instance is still pending, so it's going to
+take it a second. Every Instance you create in the Cloud should have a name. So I'm just going to
+call this pg-test and it will go ahead
+and do a refresh. We now see that the
+Instance is running, but our Status check
+is still initializing. We can try to log in
+and see if it's ready. We'll click on the IP address
+over here, do an ssh, paste that IP in, -l Ubuntu, and the key is fine. Now we're logged in to this
+new server we just spun up and we're going to have to install a package to
+connect to Postgres. We're going to update
+our Package Manager listing and we'll go ahead and install that
+package in one second. We'll wait for this to finish. Make this a little
+bigger for folks, sudo apt-get install
+postgres-client, I think that's the
+name of the package. Nope. Postgressql-client.
+We're going to install the client
+for PostgresSQL. We could also install an
+entire server on this, but there's no point,
+Amazon's done that for us. When this is done installing, we should be able to run psql. Now what we need to do
+is come back over here, and so our Endpoint, or our Host-name, is that, we'll put
+that on our clipboard. We'll do a psql -h paste
+that in there, -u postgres. It's asking us the
+password for Postgres. When we first set this up, we entered in that
+master password. I'm going to enter
+that in now and you will now see that I'm logged into a PostgresSQL Instance
+running in the Cloud. I can do dt, there are
+no tables in here. It's not going to show me
+anything, but this is created. Now, let's talk about
+how we shut this down. Databases contain
+important information. By default, every
+Amazon RDS instance you create will actually make a backup of itself
+every 24 hours. If you do something and
+you completely screw up, you have that backup. We could go under actions and we could actually force this to create that snapshot right
+now if we wanted to. But we don't, we're done, we're going
+to delete the instance. You can stop the instance
+which would shut it off, like an EC2 instance, reboot it. You normally don't
+need to use this, but sometimes if things
+get stuck, you can. But we're going to
+delete it and it's going to come up and it's going
+to ask me some questions. It's going to say,
+hey, do you want to create one last snapshot
+of this database? Well, there's no important
+data in here, so I do not. Do I want to retain
+the automated backups? Well, no, I don't. I acknowledge that
+when I delete this, everything is going to be gone. That is correct and then
+it's going to actually make me say delete me to confirm that I know what I'm doing. I'm going
+to press "Delete." You're going to see that the
+status here is available. I'll go back to this page and
+now the status is deleting. It is shutting down
+that Instance, it is cleaning up after itself. It's going to lock
+everybody out. If you come over here
+and we type this, we can still see that
+this is running. I can still get into
+this, but at some point, it's going to actually
+kick me out because the server that's running
+that is no longer working. I'll close out of there
+and I'll give it a second. We'll give this a minute
+to keep deleting, while it's deleting, we
+can actually watch this. Under the Monitoring
+tab here, first of all, your database keeps
+track of all sorts of cool metrics about itself. We've got lots of data
+about our database in here, how it's using services, how many connections
+are in there. It'll help you figure out
+if you need to scale it. Logs and events
+actually let us get to the raw logs running in here, the events are things
+that we've triggered. Also, if Amazon does
+any automated updates, they'd show up in
+Events and logs of the actual database
+logs themselves. Configuration is just a recap of what we've
+already configured. Maintenance and backups
+are the actions that it's taken, it's pretty smart. I'll come in here and do
+preventative maintenance for itself and Tags are
+the tag service that follows all of AWS.
+This is still deleting. This isn't necessarily
+going to do it fast. It's not necessarily just yanking that device
+off the Internet. It's got to remove all
+the assorted hardware that Amazon put in place for it. When I say hardware,
+I don't actually mean physical
+pieces of hardware. I mean soft pieces of hardware. But you'll notice that now
+when I go to log into it, it's hit the point
+where this address is no longer responding. Before when I tried to log in, I got the prompt for a password. Now I'm not getting
+that because it can't even talk to this address. This is going to
+eventually delete, it takes about 15
+minutes to actually go through the entire
+delete process. You'll notice before I finish
+here that I'm logged into this EC2 Instance here,
+but I'm done with this. I'm done testing this. I can go to Instance
+state and I can say Terminate and I
+can terminate it. You'll see that this goes into
+a Shutting down Instance. My Instance has actually changed and it's now showing that
+it's being shut down. What we've done here in these
+two videos is we've created a new RDS Instance. We've logged into it by creating an EC2 Instance
+to connect to it, and we've briefly reviewed
+the Monitoring logs. Your homework is going to be to actually spin up an
+Instance from a backup and get some data
+out of it using a Jupyter Notebook and then
+put some data back into it. This will test some
+of your SQL skills, but also review how things work with RDS
+Instances. Thank you.

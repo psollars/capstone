@@ -1,0 +1,90 @@
+So in this class will introduce
+both lab and field experiments. So you might be using both if you are a
+user experience engineer or ux designer. You probably will be conducting
+a lot of lab experiments. If you're a data scientists working
+at one of the IT companies, you probably be doing a lot
+of field experiments. So let's use both methods and
+they are complementary. So the foundational paper for the method of conducting lab Is Smith 82,
+and a survey and a general framework set up on field
+experiments is by Harris analyst. So let's go through each of these papers. Vernon Smith is a Nobel Laureate
+in economics in the year 2002, and he is one of the pioneers
+in experimental economics. And so one of the most important
+contributions that he made to the methodology to the field
+is the Induced-Value Theory. And that really laid the foundation for
+lab experiments. So what's it like to be
+a participant in a lab experiment? You will experience that as part
+of the exercise for this week. You will be participating in
+some auction experiments. You don't necessarily have to be in a lab. But this experiment has all
+the components of a lab experiment. So first of all,
+the experimenter controls the environment. So the experiment to decides how
+much endowment a subject gets. What's the monetary incentive, and what's the technology used to
+deliver these different treatments. The second component is
+the institutions and rules. So everyone has an action space
+that's the different options that you can choose from. There's a sequence that
+the action takes place and there are information conditions. So these are what you're told about
+this game or this experiment. And the last part is the framing. We use natural language. This is the instructions,
+what you're told about the environment the institutions the rules
+the other participants. So you will experience all of
+this in the auction experiment. So let me go through the Induced-Value
+Theory which is developed to set up a controlled experiment. So the first component is why
+we need Induced-Value Theory. Why is it important to have subject
+perform like real world subjects? So in some experiments, for instance,
+in some psychology experiments the experimenter use introduced
+the experiment and say do your best. Everyone's paid a lump sum to
+compensate for their time in the lab. Whereas the Induced-Value Theory
+says essentially the subjects has to be rewarded
+based on their performance. In other words, there is a proper
+use of a reward medium which allows an experimenter to induce pre-specified
+characteristics in experimental subjects. So this reward medium should
+satisfy three conditions. One is monotonicity, which means that the subjects
+prefer more reward medium to less. And so money would satisfy this. In most of the cases though participants
+would prefer more money to less money. The second condition is salience. That is the reward depends
+on the subjects actions. So if you're in a trading environment and
+you lose money, your total reward should go down
+as a result of you losing money. Whereas if you make good decisions,
+your reward should also go up. In other words, you know, lump sum payment as we talked about before
+would not satisfy the Salience condition. The third condition is Dominance, which is changing subjects utility come
+predominantly from the reward medium. This actually dictates a certain
+number of experimental rules. For instance,
+it's important to maintain privacy. It's important that subjects decisions
+are not publicized to other subjects. For instance suppose one subject
+is made worse off because of another subjects decision,
+and privacy is not kept. As a result, you know, there might be ramifications
+after the experiment is over. So the Induced-Value Theory dictates that
+there is a set of practical implications in design. So for instance,
+we often pay our subjects in cash. How about grades? If you have student subjects,
+why don't you pay them in grades? That's much cheaper than cash. The problem with grades is
+if the class is curved and then subjects don't just care about their
+own grade their the number of points. They also care about how they
+compare to the rest of the subjects. Which condition does it violate if
+we go back to the three conditions? It would violate Dominance
+because the changes in subjects utility come from
+not just the reward medium, but also the relative position of how
+I perform compared to others. So you have to be very careful
+when you pay subjects grades, grade points, that the amount a subject
+earns in the experiment should depend on the subjects
+actions in the experiment. It also means that the average
+payment should be higher than the opportunity cost. That it would ensure you that the subjects
+would actually want to come and participate in the experiment. As an experimenter to you want to create
+the simplest possible environment. We already talked about the role of
+privacy of subjects and actions and payoffs. And then ask part which is
+sometimes difficult to do, is you should not deceive the subjects or
+lie to them. And this is because lots of times
+the theoretical prediction is based on the belief distribution. And if you deceive your subjects,
+they don't believe you anymore. An example for lying is a recent experiment conducted
+on Facebook by Kramer et al. So the researchers wanted to study
+whether emotions are contagious through social networks. To do so, they assign subjects
+to a positive emotion treatment versus a negative emotion treatment. How do they do that? They manipulate what kind of
+messages are displayed to you. So if your friends posted a message,
+which is very positive, but you are in the negative treatment,
+then you won't be be shown these messages. Needless to say this is deception and
+it should not be done. So we're going to use
+some auction experiment. So we talked a lot about
+Induced-Value Theory and how you implement it in the lab. We're going to demonstrate it by a lab experiment that's setup
+using the Induced-Value Theory. And they're both auction experiments
+their first price sealed bid auctions and second price sealed bid auctions. You can go to MobLab and
+finish these two auction experiments. So to motivate you the points you earned
+in this experiments actually count towards your grade, and
+we're now grading on a curve. So it does satisfy, you know, our three
+conditions for the proper reward medium. And you want to earn as many points
+as possible in the experiment. Have fun.

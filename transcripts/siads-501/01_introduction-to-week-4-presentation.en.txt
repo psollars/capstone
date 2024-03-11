@@ -1,0 +1,24 @@
+Welcome back everybody. See you've completed
+your data analysis. Time to pack up and move
+onto the next project. Maybe not quite yet. Your data and models aren't going to speak
+for themselves. This week we'll talk
+about stage four, Turning your analysis into
+something that changes minds, changes decisions,
+changes actions. As with other weeks, our
+learning objectives this week focus on general perspectives rather than specific techniques. At the end of
+this week you should appreciate the need
+for telling stories, appreciate the need
+for making your models understandable and for conveying uncertainty and doing
+it in concrete terms. You should understand
+the engineering challenges of
+putting a model into production and the ecosystem of other roles that
+a data scientist interacts with. There's a video lecture
+for each of those five, each with short
+readings accompanying. So in a previous lecture, I promised a really
+complicated wordplay joke. I think this one is
+the top of the heap. What is the difference
+between a prince, a bald-headed man,
+a monkey, and an orphan? Well, the first is
+an error apparent. The second has no apparent hair. The third has a hairy
+apparent and the last has nary apparent. I'll
+see you next time.

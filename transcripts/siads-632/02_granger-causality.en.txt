@@ -1,0 +1,129 @@
+We have introduced the vector
+autoregression methods. Now, basically, applies
+to multivariate tensors, or multidimensional tensors, or multiple tensors
+that are aligned. VAR is powerful. But it does not
+really tell us which of the theories is actually
+predictive of the others. In other words, if we
+have two series, x and y, VAR makes the prediction
+of either of them, using both of them. It does not tell us
+whether x is driving y, or y is driving x. Why is that important? Well, if you want to understand the mechanism behind the
+generation of the data, then this is actually
+quite important, other than just
+making the forecasts. In other words, in VAR, all the dimensions
+are treated equally. In real-world applications,
+as we say that we usually wanted to
+figure out the direction. For instance, if you are actually working for financial
+predictions for creating. You really want to understand whether the news is actually
+driving the market, or the other way around, or the market's
+driving in the news. Because if it's the former's
+then you can actually use the news to actually
+make decisions about market. But if it's the latter,
+then there's no signal. In a paper published, of using Twitter sentiments
+to predict the stock market. This is also the major question. Well, Twitter sentiment,
+is easy to measure. But if it is not
+driving the market, instead, it's market
+driving the sentiments, then there's no value. You can see that, basically, figuring out the
+direction of the effect, is the mild notion of causality. Whether, the news event is causing the change of the market, or the
+other way around. VAR does not answer
+these questions. To answer this question, this mild causality question, we introduced a method
+called Granger causality. That is built upon
+VAR autoregression. But it directly helps us to
+figure out the direction. The idea of Granger causality, is to understand that when
+multiple series are present, which one is actually
+driving which one else. As you can see that we can answer this question
+using correlation. Because if x is
+correlated with y, then y has to be correlated with x. ACF autocorrelation
+does not help us. What we needed to do, is to test for this
+causal relationship that, if x is causal to y, or y is causal to x. Remember that if x causal y, then does not mean that y
+causal x. [inaudible] , how can we do this? Well, I'm sure that when you are taking the
+causal inference class, you'll learn not
+so far techniques of figuring out the causality
+between two variables. But in particular,
+in time-series, Granger causality
+is usually used. The basic idea of Granger causality is
+actually quite simple. You look at two
+aligned time series, and you try to see, whether, you can actually use
+one to predict the other, conditional on the one itself. For example, in this case, you can see that x, and y have very similar patterns. But x is always
+moving ahead of y. That means, if you have
+the observations of x, you can usually predict for
+the future values of y, but not vice versa. In fact, if you use
+y to predict for x, using regression
+you can still see that the previous values of y have certain correlation
+to the future value of x. But this correlation
+is misleading. Because no matter what
+correlation you find from y to x, you can also find
+a creation from x, the previous value of x itself. To the future value of itself. In this case, y does not really have to
+predictive power of x. Given the previous
+observations of x. But instead, x has the
+predicted value of y. Because you can see that movement of x is always ahead of y. If you can actually
+capture the difference, then you can actually figure
+out who is causing who. To implement this basic idea, we use the so-called
+Granger causality test. This is the statistical test. You know that in
+statistical tests we have a null hypothesis. In this case, the null
+hypothesis is that x does not Granger cause y. We use Granger cause,
+meaning that this is a very specific type of
+causality. How to test that? Well, we basically compared
+two autoregression models, both trying to predict for y. The first one, only uses the previous values of y
+itself, to predict for y. This is essentially, the autoregression model
+we introduced. The second one, it uses the previous p-values
+of Y to predict itself, but it actually adds a component, and this component uses
+the previous values of X. By doing this, we're actually adding the previous
+of the vision of X on top of the previous of the vision of Y to predict
+for the future value of Y. In other words, the
+second regression is trying to test for the
+predictive power of X, conditional on Y's own history. Which one do you think has
+the better predictive power? We can measure the predictive
+power based on what? Based on RSS or IMSE or R square and many others that
+these going to test. The trick is that if the
+second regression is significantly better than
+the first regression to make predictions of Y, then we know that the
+time series X really has extra predictive power to
+predict the future value of Y. This is in additional to the previous observations of Y itself. Does that make sense? We're not interested in either the first regression is good, or the second regression is good. Instead, we're interested
+in the comparison, where this is a
+second regression is better and is significant better than the first regression. If the second one is significant better
+than the first one, that means X has additional value on top of Y to predict
+the future value of Y. If that happens, we see that
+X may have been causing Y. In this case, the
+null hypothesis that X does not Granger cause Y. We can actually compare the two regressions in the
+previous slide using F-test. If the F-stat is high, then we reject the
+null hypothesis. If we reject the null hypothesis, that basically means that
+X is gradually causing Y. Note that when you apply the
+parameters two regressions, there are two parameters, p and m. Why? Because using the
+auto-regression model of Y, you need to look at the
+previous p observations. By adding in previous
+observations of X on top of Y, you also have a
+parameter to look at, at most m observations of X. In reality, you could either try predefined values,
+try different values, and see whether
+the test result is robust or you could actually use model selection to
+first determine the best parameters for
+the two regressions, and you compare the
+best to the best, to see if there is still
+any significant difference. But if you do that, please be careful because that means you're actually making
+multiple comparisons. In that case, F-test
+might lose power if there are too many
+parameters to tune. To summarize, you can use
+Granger causality test to figure out whether a one series is driving another or
+the other way around. But in reality, the reason
+that we always call this Granger causal is because that many people doesn't
+believe is truly causal. In fact, these often disputed in the statistics or the
+economics community, whether Granger causality
+is truly causal. The common criticism of
+Granger causality is that it only works for
+pairs of variables. If you have observed the
+panel data of X and Y, then you can actually figure out which one is driving which. But what if there's
+a third parameter? There is a third variable Z
+that causes both X and Y. If this is the case, then there's no way
+that you can use Granger causality to discover
+because Z is not observed. Despite this critical problem, there are also many
+people defending it, trying to say that
+Granger causality is still measuring at least part of the causality between
+X and Y. I'm not going to take position
+in this debate. But what I wanted you to know
+is that you can actually use Granger causality to actually make
+certain conclusions, but you have to be cautious
+making this conclusions. You can actually refer to the
+causal inference cause for more advanced
+techniques of figuring out the causality
+between variables. When you are actually applying Granger causality, normally, people don't actually
+jump into conclusion, but instead, using the
+results as features.

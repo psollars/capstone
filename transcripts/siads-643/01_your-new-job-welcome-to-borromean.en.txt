@@ -1,0 +1,85 @@
+Hi, welcome. Today I want to
+talk about some of the structure we have
+set up for this class. I'm a firm believer that the real-world does not take the form of a
+written assignment. In classes, you're handed
+a written assignment, it typically has an introduction, it tells you exactly
+what we're expecting, sometimes it even tells
+you how to complete the task and you turn
+in the assignment. We grade it. We sometimes get feedback, sometimes we don't,
+sometimes it's auto graded, and then you move on to
+the next assignment. That works great in a classroom. The problem is when you
+get to the real world, that's not how things work, that's not what we do
+in the real world. So what I'd like to
+talk a little bit about is how this
+class tries to mimic the real-world as closely as we can within a
+classroom setting. To do that, I'd
+like to welcome you all to Borromean Digital. You've now been hired
+at Borromean Digital. HR says, "You've passed
+your background check. Congratulations. We're excited to have you as a member
+of this team." Kelly Davenport is our CTO. Borromean is a fake company. It doesn't actually exist. It's very obvious this
+company doesn't exist if you go to their website,
+borromean.digital. This is a framework
+we use in this class. Some of your homework
+assignments, will take the format
+as if you are communicating with
+your coworkers. At a job, for those
+of you who had jobs, you're familiar with this;
+for those of you who are about to go out and get jobs, most of your work
+does not come from a faculty member or
+a professor saying, "I have an assignment
+for you to do it." It comes from someone in your company asking
+you for information. So the following people are
+going to be those people who ask you for information
+here at Borromean. So I want to review some of
+their personas with you, so that when you get
+an e-mail from them, and an email is code
+for an assignment, you know where
+they're coming from. Let's start off with our CTO. Our CTO is Kelly Davenport. She has two degrees, one of them is an
+MBA from Harvard. She is not actually
+a technical person. She's a business person. She's not going to understand
+technical details, but she understands the
+business of Borromean Digital. By the way, I don't know what Borromean Digital's
+actual business is, if you figure that
+out, let me know. She is your boss's boss's boss. She has three cats and one dog. She likes to read the physical
+newspaper in the morning. We used to get newspapers printed and they were delivered. She still likes to
+read one of those. She's in her early '50s
+and she's married to Ian, who actually works at Borromean here at the product department, and there's a lot of drama. Raj, he is your
+direct supervisor. He has a CS degree from Oxford. He likes to tinker
+with Amazon Alexa. He used to be on the web team
+here at Borromean Digital. He's 43 years old
+and has been here for the last 10 years. In his personal life,
+he's been married to Eve for three years and has one very, very fat cat. Kim is our director of security. Has been here for five years. Started in development,
+then moved up through DevOps and now runs the
+security department. Has four dogs and loves racing, not the dogs, cars. He's unhappy because
+somebody keeps going into his desk drawer and
+takes candy out of it. Lawrence, finally. Lawrence is our head
+of our research group. Lawrence looks for new
+products and investments. He started as an
+analyst 11 years ago. In his personal life, he got married to
+Nadine last week. So these are the primary people
+who you will be receiving communications from
+throughout this class, or throughout your tenure
+here at Borromean Digital. They will communicate with you, and some of them have greater or less knowledge
+around technology, and so when you're
+communicating back to them, when you're answering their
+questions, keep that in mind. This leads to ambiguity. This class has a decent amount of intentional ambiguity.
+What do I mean by that? Well, in a real-world, you're not handed
+an assignment and told exactly how to
+complete the assignment. We do that in classes and
+we do that in places where we need to use
+auto-graders because the auto-grader has to
+be able to interpret it. But here we put some ambiguity
+into our assignments. Don't get me wrong. Some
+of them are going to be very clear cut, this is what you do,
+this is how you do it. Some of them are going
+to be a little bit of replicating aspects
+of the real world. So when in doubt, there's
+a couple options. If you read an assignment and
+you're not sure what to do, do what you would do in the
+real-world, ask questions. Go on Slack, ask some questions. You can e-mail us
+and ask questions. Or do the work and provide a solution and provide
+context with your response. It's not wrong to say, for a written response, "I read your request, I interpreted it
+this way and here's how I provided the response." Oftentimes there'll be two
+or three different ways to respond to a problem, and as long as you're not
+completely out of left field, you'll be fine from a
+grading perspective.

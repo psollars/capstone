@@ -1,0 +1,144 @@
+Welcome back. We're going to continue on our journey
+through perception and cognition right now thinking about something called
+Gestalt psychology Gestalt psychology is something that's really interesting
+basically tells us that the simplest and most stable interpretations
+are the ones that are favored. This is called the law of prognost, but we're going to see specific
+examples of this in one second. But again, remember that our brains
+have evolved in a certain way and we like really simple explanations in
+terms of what it is that we're seeing the most famous example in this space. This one. So if you're looking at this particular
+diagram that we put up on the screen you might recognize this as
+the face in vase experiment. So most people when looking at this
+will first see the vase that is because the faces look like background. Okay.
+So the thing that's figure the thing that's in the foreground
+will become most apparent and that's usually the thing
+that you'll detect first. If I draw frame around this the face
+has become the foreground object and so most people will detect the faces
+over the vase in this particular version of the visual
+Here's another example. If I asked you to look at these two
+different diagrams, they both have the same number of dots but I ask you to
+think about whether you're seeing rows or columns in each of these most people
+when looking will see columns in the first one and
+we'll see rows in the second one and that's because we have this notion of
+proximity where dots or anything that's close to each other will be treated
+together like as if it was a unit so doc. That are sitting close to each other
+will be preferred as a kind of unit of information in this case
+a column versus in this case. They're closer in the other direction. And so you're going to prefer
+an explanation that says call rows instead of columns for
+the one on the right. So if we look at this
+visualization over here, this is a network diagram where each
+of the dots represents a gene and each of the lines that are connected them
+is a interaction between the genes so yellow dots genes in Her
+actions either these red or blue lines if you start
+this visualization for a little while what you might start to
+detect as these kinds of striations. And your brain is going to tell you these
+things are points that are related to each other in some way. It happens to be that this is not actually
+any kind of real interesting signal. This just happens to be a property of
+this visualization technique that it puts the points in this way that puts
+them in these little striated little lines going up and down and so
+you're going to read something from this visualization that is actually
+just an artifact of the algorithm. So this is an example of where proximity The technique is going to
+do the wrong thing for us. So again, we have this notion of proximity
+The Columns the rows and when applied to this visualization, we're going to
+see something that isn't actually there. Another related ideas this
+notion of similarity. And again, if I asked you to look
+at this particular image and tell me whether you see rows and columns
+most people are going to see columns because we're going to prefer
+an explanation of that says things that are similar to each other should
+belong to the same group here. The spacing is equal. So there's not a difference between the
+spacing either horizontally or vertically, but you're going to read all the circles
+in the one column as being together and all the squares in other. Holmes is being together. This is totally rational. This is what you might
+expect in the real world. A related idea is something
+called connectedness. Now, I want you to look at this visual. I'm going to show you
+four different ones and I want you to think about whether
+you're seeing rows and columns. And the first one you're reading this and
+you're probably seeing a bunch of columns. Okay, this is proximity. So we're going to write down column
+C in this one because of similarity. You're sorry. This one is Rose. And in this one you're going to probably
+be seeing columns because of similarity and this one you're going to be seeing. Again, because of similarity and this one
+columns again because of similarities. So now we have Rose in the first one and
+three instances of columns. Now, I'm going to draw a subtle
+thing on top of all of these which will change all your
+understanding of the data. So drawing these little lines on
+Top This notion of connectedness things that are connected
+should become grouped together our interpretation of the data
+changes dramatically. So the thing that was a row
+in the upper corner over here now looks like a column
+this one looks like a row. This one looks like a row and this one for
+most people looks like a row. Okay.
+So this little subtle connection which makes sense in the real world things
+that are connected belong together will dominate over the proximity or
+similarity arguments. Another interesting Gestalt
+principles is notion of continuation. If you're looking at this
+particular image over here, you have these lines
+you have these two end. For end points a b c and d and if I ask
+you to think about what are the segment's like, how does it how to think about
+breaking this particular image apart? Most people will tend towards an
+explanation that looks like this this red line connecting points A and B and
+this blue line connecting points C and D. This is reasonable. This is the way the world Works things
+of the don't have like the sudden weird changes in the way the shape flows. So this is a different interpretation so
+we could have this red Connection between a and c and
+this blue connection between B and D. But you're going to prefer in most cases
+the interpretation where you have this smooth continuation rather than these
+weird breakpoints in the middle. The principle of closure is
+an interesting one as well. If you're looking at this particular
+image, you can thinking about what you're seeing most people like to imagine that
+these squares are actually squares and continue. So if you're looking at it,
+let's draw this most people will interpret this is a unit this is a unit and
+this is a unit because it makes sense to imagine these Lines continuing
+and basically closing off the image. Okay, so that is an interpretation
+that you will prefer most cases looking at
+this particular image. Now if I remove these little lines
+at the top and the bottom and I just show you the bars. Your interpretation is going to change the
+thing that before you perceived as a unit. So this particular Square
+it will no longer look like a unit when those little lines those
+continuation and closure lines go away. So now we're going to
+treat this as a unit. This is a unit. This is a unit and proximity-based. We here will dominate so
+the things that were connected before okay become disconnected when
+those closure lines go away. Closure is an interesting because we
+understand it again relative to the way that things work in the real world. So if you're looking at this particular
+image and you're thinking how does this circle sit relative to the rectangle
+you're going to understand or believe that there's some continuation
+right that goes behind the circle but that doesn't need to be the case and certainly
+not with visualization with real data. We might have something
+that's actually like this. Okay.
+So your I might be fooled in your brain might be fooled because you
+understand the A real lions and real things work again in the real world,
+but that doesn't necessarily mean that they work that way when it comes to
+data last one to think about is this notion of smallness if I have
+a particular diagram over here, you have one on the left and one on
+the right and you have these two different kinds of crosses inside people tend to
+prefer a small things as being units. And so in the one on the left,
+you're going to usually see this this cross over here that's going along the
+diagonals and on the right you're going to see this cross that's going up and down
+in this case where there's a lot of those kind of equivalence between these like
+there's not one that's smaller or larger. You're going to be able to switch back and forth between these
+different interpretations. Yeah, that's going to be something that
+your brain can do because it's not clear that one thing is small and
+obvious relative to the others. The notion of surrounding this
+is another interesting one. If you look at this particular image,
+and I asked you what do you see? Well most people look at and understand this to be is a bunch of these
+weird little icons these little glyph. So you have this thing over here
+you have this thing this thing and this thing as these different
+separate entities and this is totally reasonable again
+because of this foreground and background in this notion of surrounding
+us the thing that's surrounding this white space that's surrounding these
+black sort of Lifts that you see, but if I change this a little bit now
+you can see what's actually there. Okay. So the thing that was hard to read because
+of this notion of surrounding us becomes easier to read when I create
+this obvious difference. Okay.
+So this is something that we're going to think about what it is that we're showing
+relative to the background how it is that things are surrounding the signal
+that we want to portray. A related notion is one of symmetry if
+I show this particular image, there are multiple ways one could interpret this
+but most people will prefer not this one. They'll prefer this one. Okay.
+The thing that is symmetric will be the preferred foreground image. There's nothing in here that's telling
+you what's foreground or background, but you're going to read these two different
+Towers probably as chess pieces rather than this. Have the notion of symmetry as
+being preferable because that is how we see most things in the real world. We see more things that look symmetric
+like this then things that look like this. So just to recall the simplest and most
+stable interpretations are the ones that are favored and this applies to all
+the Gestalt principles that we've seen so far and will continue to use when
+we think about visualizations. The takeaways is that Gestalt
+psychology indicates that we focus on these simple explanations,
+there's lots of specific laws and principles that have been studied
+extensively around those and they can be used to our
+advantage as we'll see later on.

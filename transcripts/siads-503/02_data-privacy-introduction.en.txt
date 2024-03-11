@@ -1,0 +1,29 @@
+Hi, my name is Amanda and I will be teaching you the data privacy
+part of the data science ethics module. And I'm hoping to convince you of
+two questions, does data science hate privacy and is privacy-respecting
+data science even possible? So if you think about data privacy
+in terms of informed consent, checking the box for
+your terms and conditions, absolutely, data privacy limits data
+scientists access to the quantity of data. However, if you think about data privacy
+in terms of selective disclosure, and if someone doesn't want to share
+something due to the sensitive nature, for example of that data exchange, then it actually does impact the quality
+of data that a data scientist has access to and we'll come back to these
+questions throughout this module. But hopefully I can convince
+you that actually data privacy is important to data scientists
+in the sense of quality. And then, is privacy-respecting
+data science even possible? So right now, as we'll learn, privacy protections are really
+based off of informed consent. However, there are a lot of limits to
+the success of that paradigm in the era of big data that you are working in and so
+how do we prepare for privacy regulation. That is going to take a more
+substantive approach and thinking about if data is
+collected in one context, is it appropriate to be used in another? And as those regulations
+are coming down the pipeline, tt's important to think as you yourselves are
+data scientists practitioners thinking about where your data is coming
+from and where your data is going. And so, over this part of the course we'll
+be reviewing conceptions of privacy. Thinking of privacy in terms
+of not only the individual but also the social and collective. We'll consider privacy principles and
+the regulations that they inform. Also discuss informed consent and
+the limits to privacy decision-making. As well as the limits to the
+de-identification and the implications for group privacy. And then the summary will
+return to those two questions. And hopefully convince you that
+data privacy isn't the archenemy of data scientists.

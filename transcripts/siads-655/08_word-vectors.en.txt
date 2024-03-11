@@ -1,0 +1,103 @@
+In the previous statements,
+we talked about how to use large, unstructured text data to
+learn sequences of work. Here we'll think about how
+to learn meanings of words. And how do we represent those
+meaning computationally. I first like to take a step back and
+ask, what do words mean? This is the big question. For many one of the first answers would
+be, well, let's look in a dictionary. In fact, dictionaries provide
+a knowledge base for describing meaning. If we take a look at an example here,
+say coyote, we could see that it has a lemma,
+its base form and two senses. These are two meanings of a word. Each of these senses
+also has a definition. You may also see this
+referred to as a gloss. These are structured forms of language
+that provide explicit list of meanings. However, this has to be
+specified by someone. Present an alternative view for
+thinking about meaning. For one, let's think about a few contexts
+and see if we can fill in the blank. Let's say I said,
+I enjoy blank with my family. What word would you fill
+in that blank with? Or if I say, all you need for
+blank is cards and paper again, the same word is in the blank. Perhaps these contexts start
+to constrain the meaning more. If I added, say, my friends and
+I planked played blank last night or the rules for blank are simple. There's probably a small set of words that
+you think you could fill in these with. And in fact the context for
+the words helped us refine its meaning. So we'll think about this, this context
+as a way to as an implicit definition. This was recognized long ago by linguists,
+in particular J.R.Firth, who coined the phrase you so
+no word by the company it keeps. The idea here is that the context in which
+a weird appear offer constraints and that if we look at enough context, we can
+define some implicit form of its meaning. In practice, we can try to operationalize
+this into what's known as a distributional representation of words. Here we use the presence of different
+types of context to encode meeting implicitly. In practice will use what's known as
+a vector representation of words that capture which context the word appears in,
+there are many different approaches for encoding context. You've actually already seen one
+that we'll talk about today. For many of these approaches,
+the underlying principle is that all words that have the same meaning
+appear in very similar context. So, for example, if we have the same
+meaning represented with similar vectors that describe which context
+those words appear in. Let's take a look at one example of
+this here we'll go back to our term document matrix that we've looked
+at before for classification. The rose here will reflect words. The columns will reflect
+Wikipedia pages in this case, and you can think that this is an implicit
+definition of context as these words appear in the same document together. If we keep explicitly going through each
+of these different words, we see that, cat and dog appear in similar
+types of Wikipedia pages. Where say art and
+painting appear in similar pages, and things like mortgage and bank also
+appear in similar types of pages. Together, we can think about these as a
+particular type of representation matrix. The term document matrix, in fact,
+gives us two types of factors. We've used one before. This document vector that we can use for
+classification. And we have another one,
+the rose that represent the word vector, which we can think of as
+we're capturing its meaning. Another way to do it is to think about
+co-occurrence nearby in this particular sentence. So, for example, that we looked at
+before all you need for blankets, cards and paper, and my friends and
+I played blank last night. We can think about the words occurring
+in that context as a constraint on the meaning. In fact, we can build what's known as
+a term term matrix to capture these co-occurrences. Hear the words will be rose,
+just as with the term document matrix. But the columns will be the presence
+of words appearing nearby, which act as contexts. Typically will define a fixed window
+around an occurrence for counting context. So, for example, with a plus or minus two
+word window we would only use need for is cards I played and last night as words
+in appearing in the context window. Let's take a look at this in practice
+with the term term matrix here again, words will represent rose, and
+we'll use words in context as the columns. We could see, for example, that the word
+cat occurs, but with another itself twice, but also with dog 22 times in the world,
+the 102 times. In fact, each cell reflects how many times the
+context word appeared within the window. We can see for dog and
+for other other words, that we can again capture these context
+words, representations and, ideally, these would let us compare meanings. Let's take a look at how we actually
+compare word vectors, with the idea being that similar words that have similar
+meanings have similar vectors. Vectors themselves
+are mathematical objects, and so the way that we typically do
+this in NLP is to use geometric or linear algebraic methods to
+compare the vectors themselves. The most typical way to compare them
+is what's known as cosine similarity, which essentially measures the angle
+between two vectors in a space. Let's take a look at
+this in a toy example. Here we're only going to care
+about two types of co-occurrences. The y axis will reflect the number of
+times a word has co-occurred with dog. In its context, the x axis reflect the number of times
+mortgage has occurred in the context. Let's look at one vector for doggy,
+here we see that doggy occurs far more frequently with dog in this context
+than with mortgage in its context. Another word payment occurs as mortgage
+occurring in this context far more often, to see why we typically
+use cosine similarity. Let's compare with a third word doggo. Here we can see that
+the vector is shorter, reflecting the fact that it occurs less
+times with other words in his context. However, the distribution of words
+that it occurs with looks very much similar to doggy. So if we wanted to compare them,
+say the angle between the two, doggy and doggo would have very similar angles, and
+so the cosine similarity would be high. In comparison doggo to payment
+has a much larger angle, and in this case the cosine
+similarity would be much lower. I should notice that there
+are other approaches, their use, Euclidean distance or
+non Euclidean distances. However, in practice, coastline similarities remains a very
+effective method for comparing vectors. For cooccurrence based representations,
+the context provides this rich way to implicitly defined word meaning by looking
+at which context the word occurs in. These representations ultimately
+depend on the type of training data. So if you train your
+word representations on, say, news versus Wikipedia
+versus Social Media, you may get very different definitions or
+implicit definitions of meaning. And there are many different ways to
+define and improve these representations. We'll talk about a few
+in the in the class, but there are many more that are also
+described in your textbook. You actually already know one of these
+the TF-IDF methods for term document matrices that can help you define a simple
+word vector using count based measures.

@@ -1,0 +1,140 @@
+Welcome back. Let's talk about a catalog of analysis
+techniques to go with our catalog of problem types. In this course, we're not teaching
+you the actual analysis techniques, but we want you to start
+building a mental model. That there is a repertoire of
+techniques appropriate to each of the problem types in our
+taxonomy from week one. I'll go through some examples
+in this video lecture. You're not expected to learn to use any
+of these techniques during this course or even memorize what their names are in
+which problem types that go with. But by the time you complete this program,
+it should be second nature to you to identify some techniques for
+each problem type and be able to apply. You'll be learning to use some of
+those techniques in future classes in this program. As before, we have this sort of
+generative theory of learning where we ask you to guess things. Because you'll remember things
+better if you try to guess and if we just tell you things. So, in the assignment for this week,
+we asked you to guess we're in the curriculum you're going to learn
+about some of these techniques for the different problem types. We'll give you feedback on the assignment
+to tell you where they're actually covered to sort of close the loop on that
+generative theory of learning. All right, so, our first technique and
+I'm covering these slightly out of order from the order that we
+talked about the problem types. In the first week,
+you'll see why in a minute. So the first one is the first problem type
+I'm going to talk about is regression. And, one of the techniques that's
+available there is, of course, linear regression or
+ordinary least squares. Where we're going to say,
+y is some constant beta naught + coefficient beta 1 times variable x1 and
+beta 2 times x2 and so on + some normally
+distributed error term. So that's one kind of technique for
+handling regression problems. Another common technique for
+these regression or prediction problems is neural networks, where you have an input
+as a vector of features. And then you have some number of
+hidden layers with connections between the layers and
+the values at the input layer get propagated to the output layer
+to produce one or more outputs. And the training process for a neural
+network of works by back propagation, figuring out given out what
+the correct output is. Maybe we should figure out some
+different weights on these links and we sort of adjust the neural
+network that way. So, the second type of problem
+is the classification problem. And, one technique for
+solving a classification problem is logistic regression and
+that's why I change the order here. It's just like linear regression, but remember the difference between
+a classification problem. And a regression problem is that
+in a classification problem, we have a discrete output may
+be only two possible labels. And so in a logistic regression, we're predicting the probability of
+getting one label or the other, but the right-hand side looks exactly the same
+as an ordinary least squares regression. Another technique is decision trees. Where you start by checking one feature. Does this item have a red square? Yes or no? Now if it does have a red square,
+does it have a yellow circle? Yes or no? Eventually, after answering a bunch of
+these questions you get to a decision. So that's called a decision tree. A third technique for doing classification
+problems is called random forest. Just basically a bunch of decision trees
+in a way to combine results from them. A fourth common technique for
+doing classification that you'll learn about it some point is
+called the naive Bayes algorithm. Which is taking advantage
+of Bayes rule for updating probabilities
+given some evidence. They're also neural network approaches for
+doing classification problems, just as there were four
+regression problems. Whether you're predicting an output
+that's continuous or discrete, neural networks can be useful. So those are some techniques that
+eventually you'll learn about for doing classification problems. What about similarity matching problems? Well, one technique if your
+features are all discrete is called the Jaccard distance. Just says, for two items,
+remember in similarity matching, we're seeing what how close
+two items are to each other. Each item is described
+by a set of features and the Jaccard distance just says, well, how many features do they have in common
+divided by the total number of features? If you have more continuous features,
+one well-known technique for computing similarities is called
+the the cosine similarity metric. Sort of treat each item as being a vector
+in a multidimensional vector space and then we're computing
+the angle between them, at the angle is small the items
+are close to each other. Again, neural networks
+can sometimes be used for deciding how close two
+things are to each other. Either by looking at comparing
+vector embeddings of them, at the opening layer, or
+comparing some other layer of the network, what the values are for the two items. Clustering problems,
+you'll get more than one technique for doing clustering as well, perhaps
+the best known one is called k-means. Here we're trying to divide up all
+the items into three clusters. And at each stage, we're adjusting
+exactly where the division points are, seeing how good it is, how close
+everything is to the rest of the things in their cluster, and then maybe adjusting
+where we have the division points. You can also use things like
+principal components analysis, which is a dimension reduction
+technique where we take items and project them into just two dimensions. And then we see how close are these
+items in the two dimensional space. We can do clustering that way, basically do these items
+load on the same components. A third problem type is
+co-occurrence grouping. And you'll get techniques
+like the K-Nearest Neighbors. We have the green circle in the middle,
+and we're trying to decide which
+items are nearest to it. And we'll have some kind of distance
+metric based on the co-occurrence of did these people buy the same things or
+did they read the same things? There are a number of other techniques
+that you might learn about for doing this frequent items that mining or sometimes
+it's called association rule mining. Or item-based collaborative filtering
+to determine which items were bought together or viewed together or
+liked together. For the problems of profiling and
+outlier identification, we really don't have any new
+techniques that are common just for these, instead, we will interpret
+outputs of other techniques. Now for example, if we do clustering,
+we might take the cluster centroids and use them as sort of the archetypes for
+each of the clusters. So the red one n the center of
+that group would be profile the prototypical item from that cluster. In regression, you might take the output
+at median values of the independent variables and that would give you sort
+of a central prototypical output. If you're trying to do the opposite
+rather than profiling, you're trying to do anomaly
+detection to look for outliers. You might take a similarity metric but
+instead of trying to find pairs of items that are close to each other,
+you would find an item that's far from the other items and
+that would be an anomaly or an outlier. You might look for outliers by doing
+a regression and then looking for points that are far from
+the regression line. So there's a large residual error. And so, the point here where x is 1 or
+the point where x is 7, those are kind of outliers that you
+might want to treat as anomalies. For link prediction problems, the same
+kind of classification and regression models will still be available to us
+except now some of the features that we're going to use as independent variables
+will typically be network features. Like, how many common neighbors do A and
+B have in the graph? What is the the shortest distance between
+A and D, the shortest path between them? That kind of thing. So, those are things that will allow
+you to use the other techniques but to do network prediction, link prediction. For data reduction problems, I've already mentioned the idea
+of principal components analysis. There are a number of other
+dimension reduction techniques, like singular value decomposition or
+a matrix factorization. And you'll come across
+those in later courses. For causal modeling, one of the important techniques
+will be drawing a causal diagram. So for example here,
+we're trying to investigate whether smoking increases the death rate. But we are going to include
+other things where we say, well, we think that smoking causes lung
+cancer and lung cancer causes death. We may also have some idea that
+age at the time of conducting our initial survey has some impact on that. That we're more likely to get smokers,
+who are in the younger population or more likely to get smokers
+in the older population. So, this kind of causal diagram
+helps in doing a causal analysis. Another thing that's often used in causal
+analysis is structural equation modeling. Where you take this kind of causal
+diagram and then you estimate several different regression models
+that are together that you parcel out what the effects of these different
+components of the diagram are. You'll also find other techniques for
+causal reasoning, instrumental variables regression,
+propensity score matching, and so on. So that is a whirlwind tour of some of
+the techniques you'll be learning for answering the different types
+of data science questions. Again, I'm not expecting that having
+seen this you're going to be able to do all of those techniques or
+reproduce them as a list. But by the time you get
+through this program, they will be sort of second nature to you. Let me finish with a couple of pun jokes. My first time using an elevator
+was an uplifting experience. The second time really, let me down. Okay, here's another one. What's the difference between a poorly
+dressed man on a tricycle and a well-dressed man on a bicycle? A tire. I have an even longer one in the vein of
+these pun jokes, which I will save for a future video. I'll see you next time.

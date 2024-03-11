@@ -1,0 +1,68 @@
+Hi, everyone. This is
+Paramveer Dhillon. In this video, we will
+build upon the ideas discussed in the previous
+video and we will study how we can extract visual features using a convolutional neural
+network, a CNN. In particular, we will study the details of the convolutional
+operator in detail. In order to understand the convolutional
+neural networks, first, we need to understand the basic operation on
+which they are built, that is the operation
+of convolution. So convolution operation is essentially an operation used in image processing for tasks such as edge or corner detection, or smoothing, or blurring, or sharpening of the image. A convolution filter
+is essentially a spatial filter or a
+matrix of size s by s, where s is typically a small
+number, say around 2-5. Each element of the
+spatial filter matrix represents a weight. Next, we slide that filter
+all over the image, computing element-wise product of the filter with the
+corresponding pixel values. Convolutions with
+spatial filters of different sizes extract
+different types of features from the image, so filters of smaller
+sizes extract more local features and larger filters extract
+more global features. CNNs or convolutional
+neural networks are a neural network architecture build on this basic
+idea of convolution. Essentially, CNN's
+learned the weights of the spatial filter, also known as the
+convolutional weights, that is the entries of this s by s matrix from the data itself. Let's work out an example of the convolution operator in order to develop some
+intuition about it. Let's assume that we have a
+three by three image with pixel values at the
+[inaudible] position as XIJ, which needs two values
+from x_11 to x_33. Further, let's assume that our
+convolutional filter is of size two-by-two with
+entries Gamma i j. Now, in order to generate each
+entry of the output image, we slide the filter over the
+input image and multiply each pixel value in the two-by-two
+spatial neighborhood with the corresponding
+filter weights. For instance, in order to
+generate the output entry O_11 in row 1 and column
+1 of the output image, we multiply Gamma_11 with
+x_11, Gamma_12 with x_12, Gamma_21 with x_21, and finally, Gamma_22 with x_22, and
+then we add those numbers. We repeat this process to obtain the remaining entries
+of the output image. Now, let's work out
+an example with actual numbers to
+crystallize these ideas. Assume that we have a six-by-six
+binary image and a three by three convolutional
+spatial filter as shown on the slide, and we'd like to
+generate the output map. First, we place the filter
+on the leftmost and top-most pixels of the input
+image as shown on the slide. Multiplying the
+corresponding entries and then adding them up, we obtain the number 4, which becomes the entry in the output map in
+row 1 and column 1. Next, we slide the filter one pixel to the
+right, and once again, multiply the
+corresponding numbers and then add them up to
+obtain the number 3, which becomes our entry at row 1 and column 2 in the output map. We, again, slide our filter to the right and obtain the entry of the output map in row
+1 and column 3 as 4, via identical
+procedure as earlier. Now, we have hit the rightmost
+boundary of the image, so we can't move further right. Next, we move the filter down
+by one pixel and move it as far left as we can to fill the second row
+of the output map. If we repeat this procedure
+for the entire image, we get the final output
+map as shown on the slide. I encourage you-all to work
+out the remaining steps of the convolution filter operation that I skipped in
+interest of time. To summarize,
+convolutional filters of different shapes
+and sizes can be used to extract
+local feature maps from the images at
+different scales. It is easy to see how
+different sizes and weights of the convolution
+filter can be used to sharpen, or blur, or smooth
+the input image. These output feature maps extracted via the application of different convolutional
+filters provide a highly discriminative signal for various computer
+vision tasks, as we will see next.

@@ -1,0 +1,110 @@
+Welcome back. I've saved the picky picky for last, and that's discussion
+of citations and references. So this slide deck isn't quite a formal
+academic paper, but it still is important that there's never any question
+of where your information came from. So that's why we want to talk
+about citations and references and what they might look like in
+this unique style of document. So first, let's talk a little
+bit about why citations matter. And I should probably back up a step and
+say what is a citation. And a citation is just a note placed
+in various places on the text, depending on what format you use,
+that says hey, I didn't make this information up,
+I got it from the source. So especially as a young or
+new professional in data science, it's a way of building up your credibility
+and your authority right away, to show that these aren't just your ideas,
+when they build on the ideas of others. And that idea we sort of nickname standing
+on the shoulders of giants, that you are building on work that has happened
+before and you're acknowledging that work. We all come from different
+disciplines here at SI, and each of us is used to
+a different form of citation. So some of the common ones are APA, for American Psychological Association, MLA,
+Modern Language Association, Harvard. In my neck of the woods we tend
+to use Chicago Author-Date. And we need to make those acknowledgements
+that we're using information we got from elsewhere in two places. First, in the report proper,
+we need to note that. And we can do that by mentioning the
+source in the sentence in which we talk about the data from there. We can do it in an endnote, which means that we put the source
+in parentheses with the date. And we can also do it as a footnote. So we'll also post a link to where
+there's a more comprehensive discussion of each of these formats
+if this work is entirely new to you. At the end, we also list all of the
+references over again so that we can see it both as we're reading the report and
+we can see it once the report is complete. So let's take a look at what this
+might look like in a slide doc. So there's sort of three ways that
+you might show where your information came from. And one is the top version on your screen,
+and that is where we just
+mention where it came from. So maybe we say according
+to the 2010 census, 25% of the population lives
+below the poverty line. Because this isn't
+a formal academic paper, that is an acceptable means of citation. Another way to approach that would be
+to say to give the factual information, in this case, the median
+household size is 2.4 residents, and then put the source of the data and
+the year. And this is the Chicago Author-Date style. There are other ways that do this. MLA, I believe you can drop the year off. The third option is that
+you can put a footnote, and that's by making the little
+superscript after each fact. And then, at the bottom of each page,
+you provide the citation information. So here's some things I
+think we want to avoid, and one is cluttering up our
+document that we have worked so carefully to streamline, and
+minimize the visual clutter. We don't want to stick
+an active hyperlink in there, unless that is the in-house
+style of your organization. Because what it's going to do is it's
+going to introduce a new type of font styling to your report,
+and it's going to stand out and often disrupt the color scheme that
+you've worked so carefully to choose. So we never want to use
+a citation that is just a URL. But what we could do is say according
+to the 2018 American Community Survey via CensusReporter dot org,
+the population is that. In the second way of doing things,
+it's much easier for us to see where the information came from. Now, a common mistake that people make
+is that if they use CensusReporter, they don't mention the age or they act
+like CensusReporter is the data source. And if you're using CensusReporter,
+you don't want to say it's the source, you want to say that it was
+where you found the data, but that the actual data source is going to
+be whatever's at the top of the page. And one of the things that we've
+learned from doing lots of work with CensusReporter over time is that the data
+source at the top of the page might be different depending on what
+community you're looking at. So CensusReporter should never be
+listed as the source of the data when, really, it comes from some
+version of the census. Now, you're going to also need
+a bibliography or a works cited or references page at the end of your report. And again, different disciplines
+handle this differently. And some of you come from a background
+where just making a list of the names of places you found things,
+or it's just a list of URLs, it looks something like the one
+on the left, is what happens. And here's where you're
+really going to need to put that little bit of extra effort in and put it in a recognizable citation style
+like we talked about a few slides ago. So APA, MLA, Harvard,
+Chicago Date, styles like that. So we want to little bit more
+formality on that references page. And whether it's called references or
+bibliography or works cited will depend on
+what citation format you use. So we're not picky about
+which format that is, but we do want to see that extended entry. Now, making citations can be a real pain,
+and that's why I want to recommend
+that in my experience the best way to format citations is to use the free
+tools page at noodletools dot com. Some of you used this tool when you were
+in high school to prepare citations. You maybe even had an account when you
+logged in, and that account is fantastic. It'll let you store all of your notes and it will let you save up all your sources
+and it will auto-generate your whole page. I think it's about $10, but you can also
+do one entry at a time on their free page. And just recently, I was working with
+a middle school student, and she had been sent home and told use EasyBib to
+to create your list of citations. And she used some data sources
+that were kind of odd, and she really struggled with EasyBib. But noodletools has lots of prompts,
+and I was stunned that after doing one sample with noodletools she felt
+comfortable doing the rest on her own. Now, I'm not saying
+you're in middle school, I'm just saying that if making citations
+is something you struggle with, in my experience, this is the best
+way to get over that struggle. It will say is this a data set,
+an image, a website, a book, an article? And it will walk you through what
+information you need to provide, and then you can copy and paste that
+information into your slide deck. So I hope that that will clarify
+a little bit about citations and references, both why we do it and the various techniques that
+you can use to generate them. So with that,
+that brings us to the end of week two. Some of you may want to move ahead and
+start into week three. And so, your schedule might get
+a little off during this time. This is a shorter set of lectures
+than the week three ones are. Some of you like to create your visuals
+at the same time you're creating your content, in which case you'll want to
+watch the videos a little bit earlier. And some of you may want to just
+settle in and do some research. Just keep in mind that time is your
+best tool with this project, and that if you can kind of
+time box your schedule and say I'm going to set this time aside,
+and I'm just going to sink in and do the work for a while, I think you're
+going to find a lot more satisfaction. And you're going to find that as you
+move through that continuum that we talked about in week one, that
+you're feeling like you're getting out of the struggle part and into
+the successful phase as soon as possible. Again, we'll be in office
+hours when you have questions. See you there.

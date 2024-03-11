@@ -1,0 +1,280 @@
+Welcome back to Introduction to Information visualization. I want to talk a little
+bit right now about the functions of
+information visualization. We've seen a little
+bit of the history. We've seen a little
+bit about what makes information visualization
+different from other kinds of visualization. But it's important to understand that within information
+visualization, we actually have
+different kinds of things that we want to
+be able to support. So why visualized data? There are a number
+of different reasons and I'm not going to get
+through all of these. But they range from
+exploratory data analysis, just supporting an analyst
+role on decision support, storytelling through
+communicate visualizations, memory expansion, inspiration, and you'll see a number of
+these pop-up over and over and over again in the different kinds of examples that I'm
+going to show you. There's going to be three
+specific topics that I want to cover in terms of why
+we visualize data. But let me start with
+this particular example. This is a very famous one
+called Anscombe's Quartet. It's a nice piece of data. There are four
+different datasets. So Dataset 1, Dataset
+2, Dataset 3, Dataset 4, and each of
+these has an X and a Y. So this is the X and this
+is the Y that goes with it. This is the X and this is
+Y that goes with it and so on. So there are four data sets. Looking at this data, you're
+not going to be able to understand anything
+as being interesting. Like just looking at the data,
+nothing is interesting. So if you'd been
+trained at all in statistics or exploratory
+data analysis, what you're going to do and
+you're instance thing to do because it's easy and cheap is to generate a bunch of
+statistics about the data. So you might calculate
+things like the mean and the variance and
+the correlation and so on. It turns out that for all four
+data sets here the X mean, the X variance, the Y mean, Y variance correlation and
+regression are all the same. That is, the underlying
+statistical properties using just these tests would indicate that all of these datasets
+were essentially the same. So all four have equivalent properties in
+the statistical sense. So of course, you're
+probably realizing that the mistake here was not
+in visualizing the data. Once we visualize the data, the first dataset might
+look something like this. Whereas, the second
+looks like this, the third and
+the fourth look like this. Now you can see there's actually quite significant differences
+in the underlying data. So while they have very similar
+statistical properties, in fact, they have very different
+kinds of distributions. If we'd only visualize the data, we would've been
+able to see this. So this is Anscombe's example of why it's important
+to visualize the data. So in the first one, we see something that's
+actually reasonable. The dataset is nice and
+fits the regression line. There's not a lot of variants, not a lot of outliers, and so on. However, a linear regression
+is not appropriate in the second dataset and then
+the third and the fourth, we actually see these weird
+outliers that are driving the behavior of the regression and the variants and so on. So if we'd only
+visualize the data, we would have realized
+this and realize that that particular statistical
+analysis was inappropriate. The answer that it was
+giving us was that all four data sets are the
+same was actually untrue. This is where it's important
+to visualize the data. So always generate visualizations as you're doing
+exploration of the data. Now you should not take
+away from this that visualization is
+the only way to do this. In fact, Anscombe himself said that you should
+combine these things. A computer should make
+both calculations and graphs. Both sorts of things are
+interesting and should be studied and will contribute
+to your understanding. So don't assume
+that because we're talking about information
+visualization that you should ignore other kinds of
+traditional statistics, nor when you learn
+about statistics, should you ignore
+information visualization. You should combine those things. This is the power of
+information visualization. It shows patterns in
+the data that may not have been obvious to you if you had just looked
+at the raw numbers. Here's another really
+famous example. This is Snow's Ghost map. It is a reflection of deaths by cholera
+in London, England. At the time, nobody knew what
+was the cause but each of these little dots corresponds
+to an individual dying. So you see places where many people have
+died due to cholera. The little x's over here
+correspond to water pumps. Okay. It turns out that
+John Snow in exploring this data discovered where the deaths were in relation to water pumps. Not knowing at the time that
+cholera was waterborne, the epidemiologists discovered
+this particular property and identified this Broad
+Street pump which is over here on the map and over
+here when we zoom in as being the epicenter of where all these deaths
+were happening. So we see lots of deaths
+around there and this was intended to communicate
+this fact that all these deaths were clustered around
+the Broad Street pump. So by removing the pump, the handle for the pump, they actually stopped
+deaths in that area. So you are no longer able to
+draw water from that well. So deaths subsided due to cholera in
+this particular region. It's a very nice example. It's not the fact that they discovered this through
+the visualization but they were able to
+communicate it well through the visualization to
+other people. All right. So you saw a couple of
+really nice examples due to Anscombe and due to Snow's Ghost Map of where information
+visualization is useful. I want to talk about three high-level functions;
+recording, analysis, and communication that you will see over and over and over again as we talk about different kinds of
+information visualization. Recording is by far
+the least common but one that it was used as a way of capturing data through information
+visualization. So thinking about generating diagrams as a memory aid that is a representation
+that was intended to preserve something
+about the real-world. So this is an early example of such a mechanism,
+recording sunspot changes. So each of this was
+a representation of the sun and the little dots
+representing where the sunspots were at
+that particular day or time. So this is an interesting
+example of recording things observed about the real-world
+through a visualization. A more common task, so the two most common ones
+that we'll see are the analyst and
+communicative tasks. The next most common on analysts tasks are things where you're actually
+exploring the data, trying to have your questions
+about the data answered. So someone gives you a data set, they give you some questions, and you're trying to do
+this thing of pattern finding that is finding
+the patterns within the data or pattern-making, trying to understand
+which patterns actually exist. So both these things
+are analyst tasks. The visualization works here because visualization
+acts as a memory aid. So if I throw two numbers on the screen just as an example, this will not be a visualization. We're just going to
+throw two numbers, and I'm going to ask you to
+multiply them in your head. Okay. So just putting
+these two numbers up. If you're looking at this, you're going to find this
+quite difficult. What you're probably
+itching to do is write them down and
+you've been trained in a specific way to do
+multiplication in this long way, where you start to write
+it out bit by bit. So you multiply
+the 7 times the 2, the 7 times 4 and so
+on and you're always carrying numbers and doing
+summation and so on, to get the final answer. Writing down
+the intermediate steps, that's this memory
+aid function of paper and pencil when doing
+these long multiplications. Information visualization
+serves the same function. It is a memory aid
+for understanding the data which is why analysts
+like to use in this way. This is a nice example. This is a little bit of a communicative
+visualization but again, a memory aid that's going to explain why analysts like this. This is a map, sorry, dataset of the train
+schedule in France, and so you have the time
+over here on the x-axis, you have train stations
+going from Paris, Dijon, to Macon basically on
+the Y-axis over here. Each of these lines going down is a train moving
+through the network. So a train leaving Paris at seven we'll hit Montereau
+around nine something, and Dijon down here
+around five, and so on. So you were able to look at this visualization and
+instead of having to think about a long table
+that has all this data, that would have been another natural way to represent this, looking at each train
+and where it was, and the time and so on. This is a really nice
+representation of the underlying dataset that
+can boost your memory. It basically means that you
+don't have to figure out the distances between
+these things and do weird summations
+or subtractions, or recall which things are
+leaving when or whatever. When you're looking at the table, you're able to just look at the visualization and answer a lot of the
+underlying questions. So this is where
+you've taken away the necessity to look at the data and remember
+certain factors. You go and just are able to look at the visualization and
+answer the questions. This is the power of information visualization
+as a cognitive aid. Here's another example. This
+is again an analyst tool. Now, we're going to
+have lots of software that will actually support
+some of these tests. But this is something that was used in the time of
+things like slide rules, where we needed to calculate
+things very easily, but maybe didn't have
+access to computers. What a nomogram is,
+is a visualization that allows you to make
+certain decisions. In this case, how risky
+different factories are built in generating food. So if we have a manufacturing plant that is making good and we want to know how likely it is that there's going
+to be some disease, how often do we need to test it? So the way this was used is you would start to
+answer the questions. So you would answer on a scale
+of remote to unlikely, so this is starting
+at step one over here for remote to almost inevitable, what's the likelihood of occurrence of
+this particular thing? So you'd draw a line, sorry. So you would draw a line over here answering highly probable, and then your answer to
+the second question, frequent monitoring is what you're manufacturing
+control laws, and you look at the intersection
+of that over here. Using that, you would carry it over to the next visualization. So whatever the value was
+in the intersection here, you would pull it down to
+this other table down here. Then he would start answering
+additional questions. So you might start
+answering questions 4, 5, and 6, and then 7, 8, 9, and so on. Basically as you are going, you would carry over the different things that
+you were discovering, until you had
+an answer in the end. The risk score, the sampling
+rate safety and so on. So as you went through this interactive
+visualization on paper, you would get back an answer
+about how often you needed to test food safety
+in this environment. Nice information
+visualization supporting decision-making.
+Very simple thing. We just have a bunch of lines, and we're connecting the
+elements and in that connection, we're discovering interesting
+things about the data. This is another very
+famous example. This is an example of where the analysts in not using
+the right visualization, might've led to a disaster. So this is from the famous example of
+the Challenger disaster. So this was the space shuttle
+that was launched, and it turns out that
+because of some fault in this particular structure
+called the O-ring, and the temperature of
+the day of the launch, there was a failure
+and the rocket exploded and all the astronauts
+unfortunately passed away. This is the history of
+testing of these O-rings. So these are
+the different boosters. So booster A and booster B
+at the time of the test, 66 degrees was the temperature. This was another test, 70 degrees and you can see here, this is where there was
+a detected fault in the O-ring. Sixty nine degrees, 80 degrees, 68 and so on. Fifty seven we see a
+miss no damage 63, we see some damage, and so on. Now, Edward Tufte
+who's very famous in information visualization
+basically says this was a fault of the analysts in not representing the data
+in a particular way, that made answering questions
+about how likely it was for the O-ring to suffer a fault during the time of the launch in
+that particular day. So by not representing
+the data in a different way, they weren't able to answer
+this question and then launched the rocket and
+the space shuttle exploded. So the example that he
+pushes for is this, and he basically says that if you'd only
+represented the data, there's different way
+where you used a visualization that represented the temperature along the x-axis, and the number of
+faults over here, what you would see
+is that most of the successful launches or during these high
+temperature days, that as the temperature
+was lowered, you were actually
+experiencing lots of faults. This particularly cold day
+in 1986 would have put us 30 degrees and if we'd only extended
+the line over here, we would have realized that this was an unsafe time to launch. Even though there was
+no actual testing over here, we can have extrapolated and realized that
+this was a bad idea. So this was an analyst
+and his view, making a mistake in representing the data in a way that
+looked like this, instead of a way that
+looked like this, which would have actually
+made it easier to see this. Now, this is a little bit
+of an apocryphal story, this is not entirely true. The engineers were
+aware of this problem, and so this is
+a nice example that we describe as why information
+visualization is useful, but not actually one that is
+helpful in reality because the engineers were
+doing something a little bit different
+than just using this. So it's a nice story
+that we tell as to why information visualization
+is useful for analysts and specific intro of
+his choices are useful, but is not entirely accurate. So I will give you that as a little bit of a grain of
+salt when you hear the story. So just one last example of information visualization
+for analysts. One of the things that we
+will focus on in this class, in this particular
+series of lectures, is the best way to
+represent data. So there are often
+many different kinds of ways to encode data. So given raw data, how do we transform it into something that
+we put on the screen? What choices do we make that will support to different tasks? So this is a visualization
+of sunlight over time. So we have on the x-axis
+again as usual, we have time and on the y-axis, we have the amount of sunlight. You can see from
+this visualization that on a day-to-day level,
+you're seen spikes. The sun comes up
+the sun goes down, you're seeing spikes,
+they go away. So this is interesting. You're
+seeing this sequential, series, this repetitive
+nature of the data. But this isn't actually
+telling you the whole story. If you'd only visualize
+the data in a different way, that is put the data on a spiral, you would have actually seen other periodicity which
+is also interesting. So this is the same data. We're going to take
+this particular time series and then stretch it
+out along the spiral. So going from inside out
+like the spiral shape, and what you'll be able to then see are different patterns. What will happen is
+that different times of the day will align naturally. So all this might be
+the same time of day. So this might be 5:00 PM. This particular form of
+the visualization is interesting in that you now see that there are
+patterns again. All these things there's sunlight and there's
+always some sunlight, but in this period over here, you're seeing something very different from
+this period over here. This might be summer months, this might be winter months, or this might be a week
+where we had no clouds, and this might be a week
+where we have lots of clouds. This is not obvious when we're looking at the
+visual in this form. So the same visualization. Same data represented on a spiral versus a time series will show
+us very different things. So again, this is the power of picking the right visualization, the right encoding to support the analytical
+question that we have. So if we have a question
+about how the weather is impacting the amount of sunlight that we see at
+different times of the day, this might be a better
+visualization than this one. So just to summarize, the goal of analytical
+visualization is to find patterns. This is going to be critical. We have specific
+set of questions, we would like to find them. The goal is not to
+explore the data, the goal is to find
+patterns within the data. So just to reiterate, we've seen two different tasks so
+far; record and analyze. We're going to talk
+about communicate next. But the analyst tasks, these are going to be some
+of the most common ones, are all about pattern finding. With that, thank
+you for listening.

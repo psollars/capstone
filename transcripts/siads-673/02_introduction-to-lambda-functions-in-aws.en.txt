@@ -1,0 +1,112 @@
+One of the most
+interesting Cloud hosted provided service is
+this concept of a function. As we think about
+using Cloud services, we think about how to restructure our code
+to be different, and what Lambda is in AWS is the concept of a
+Cloud hosted function. We've all written
+functions in Python before and what
+this will let us do is this is going to let us
+write a function that runs in the Cloud where we don't have to worry about infrastructure. We don't have to
+worry about Python. It just runs and I'll give
+an example of how this works and then talk about how this
+can be really interesting. I'm going to create
+a function called mlhtest and I can choose the language that I want
+to run my function on. I'd like Python 3.9
+and we'll go to next. It's going to take it a
+second to actually create the infrastructure behind the
+scenes for this function, keep in mind there's no
+server being created here. There's nothing being created except what Amazon
+needs to keep track of our function itself and we're
+going to see things like this and there's a couple of interesting things that come out of this, out of the blue. One, you can see that I've
+got this IDE down here. I can write some code down here. It's a really easy, simple way to write
+some Python code. But if I scroll down here, there's a lot of other
+information that I've got available to this Runtime
+setting specifically. I can come in here
+and I can say, "Hey, it's Python 3.9, this is going to run Lambda_function.Lambda_handler,"
+and if we look, this is Lambda function, this is Lambda handler, so that's where
+that's coming from. Under the actual
+configuration tab, I can specify the
+resources that are available to this infrastructure,
+and so I can say, "Hey, this is going to be, take 15 seconds to run
+and it's going to use 128 megs of memory. That's where it's limited at. If it tries to use more,
+it's going to fail." A couple of other interesting
+things you'll see in here is this Layers function. By default, we don't actually have like pip
+in these functions. There's no pip install so
+if you want to add a layer, you either have to build
+your own layer by hand. There's a way to do that. You have to specify
+somebody else's layer or you can specify
+that there are some built-in layers
+that come with Amazon and so we can use that one and we
+can specify a version. Now, where do these functions
+get powerful for him? Well, just a function
+sitting here alone isn't really useful. Yes, I can write code
+that does things, I can print, "Hi," and
+it will run that code. I can import libraries, and it will do that but that's not really where
+this is interesting. Where Lambda is really
+interesting from is when you add triggers
+and you add destinations. Amazon has an entire
+ecosystem here, and you can see that all
+of these different systems can talk directly to
+Lambda and do things, and so you can say,
+"Hey, you know what? There's a file upload," and I can come in
+here and I can say, "When something happens when in this bucket when any type of thing that creates
+an object happens, run this function," and it will automatically do all
+of this for me on the fly. It's pretty amazing
+how this will work. Now I've triggered this input. I can actually specify a destination as
+well and say, "Hey, when this is done, do something," including
+trigger another function, but let's not get into
+that at the moment. Now what will happen here is
+if I write test and I say, "I'm going to get a template
+and I'm just going to say S3 in here and
+I'm going to say S3 put," and it's giving
+me this sample JSON. But what effectively
+is going to happen is this function will get triggered anytime somebody
+makes a change that bucket. Let's go through
+this for a second. Let's assume I expose that bucket to a third
+party and I say, "Hey, you put your files
+here," and every time they put a file
+in that bucket, I want them to let slack know that there's a new
+file to be analyzed. That's probably
+going to be one of your homework
+assignments is to update slack and let them
+know that a file has been inputted into a bucket. I'll walk you through
+how to do that in the assignment but using S3 and Lambda is a
+really powerful combination. The other place where
+you'll see Lambda used a lot is Amazon's API Gateway. We're all familiar
+with what APIs are. This is web hosted APIs,
+for the most part, is what this is
+implying and APIs effectively are the concept
+of you go to a web request, something happens
+and it returns data so we think about this
+as like the Twitter API. We go to the Twitter
+API and we say, "Give me all the tweets that
+match this requirement," or "Post to this new tweet" or "Delete this tweet," and
+effectively an API is a bunch of verbs that call things that
+happen in the Cloud. When you think about how
+you would build this, most of the time you're using
+something like flask or fast API to build
+this and that works. It's a great way to do it
+but you can actually build an entire API infrastructure
+without a single server and without a single piece of infrastructure
+just by using Lambda. I can come in here
+and I can say, we're going to say
+lambda and there's my function I wrote
+and basically, when somebody goes there, we are going to
+call that function, and so if we create this, what this is going to
+spin up for me is here's my URL and it will call a Lambda function
+when somebody goes to that function
+and they're authorized. You can see that this
+says, "Hello from Lambda." This is a public web
+address on the internet. Obviously, this was
+originally set up to be a function to deal with S3, but this is hello from Lambda. I can say, "Good day." We'll deploy that and then
+when we come back over here, we can refresh our
+API Gateway page and we get our "Good day." Now, obviously, this
+is not very useful. This is the equivalent of
+hello world but you can see that within three
+clicks I have spun up an entire infrastructure
+that will scale to handle as many
+requests as I needed to scale to and it doesn't cost
+any server infrastructure. If nothing's running, if there's nobody calling this,
+I'm not paying. Lambda is a really
+awesome function of every Cloud and so you should spend some time getting
+familiar with it. Thank you.

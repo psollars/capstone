@@ -1,0 +1,237 @@
+Welcome back. We're going to continue our discussion a little bit about the life factor
+as I call it Part 2, but this is going to be
+about graphical integrity. It's another idea put
+out by Edward Tufte. Again, there will be
+some caveats to this, but it's generally a good idea to follow these principles
+of graphic integrity. So what does it mean
+to have integrity when we talk about charts
+and visualizations? There are basic questions that we believe most people
+should be able to answer, such as where's the baseline, what's the scale,
+what's the context. So being informative about those choices that we
+make and readability, showing people where the
+baseline is or allowing them to understand that maybe
+the baseline isn't a zero, that's going to be important. So we're going to try to provide accurate legends and things
+like that as we will see, but there are other extensions to these that are going
+to be important. So let me give you
+a few different things. Proportionality,
+which is related to our first discussion
+of life factors, is that the numbers on
+the drawing surface should be proportional to
+the numerical quantities. What we mean by that is
+that if you have a set of data like let's say you have
+the numbers 1, 5, and 10, and you choose to represent
+that as a line so the encoding for
+the data is basic lines, the line link for
+one should be five, sorry the line length
+for five should be five times as one, and the line length for 10 should be twice as much as five. So this should be a 5x difference between the five and the one, and there should be a 2x
+difference between the 10 and 5. So these things are
+proportional in the encoding, the size, the length of the lines relative to the actual
+differences in the data. So again, this refers to the original idea
+of the life factor. So the proportionality is
+going to be critical here. The other thing that we
+want to make sure to have good graphical
+integrity is that we're accurately
+explaining everything that we can about the data
+that we think is important. This is important both for
+communicative purposes, but also when you're an analyst and are trying
+to understand the data, you as the person interpreting the data want to be
+able to understand what the underlying system has done, and so it's going to
+be important to think about whether it's showing
+you this information or not. If you look at this
+visualization on the right, you see a pretty good job of them annotating the data and
+labeling things clearly. You see notes about how
+the data was normalized, you see things like the source, you see the visualization
+itself with a call-out to when
+the recession happened. This is the key point
+in the article and so they're calling it
+out making it salient. You also see that they've identified key points to look at that they
+think are important. There's some discussion,
+there's good titles, but the axes are
+labeled properly. So everything here is readable if I take away all my
+notation on top of it. So this is a nice example
+were labeling is clear, concise and so on and is actually understandable
+as visualization. So it has good integrity
+in that case. The other thing that is often believed when
+we're focusing on chart integrity or
+graphical integrity is that we should
+focus on the data, so we shouldn't be showing off in terms of design
+variations like making things interesting
+visually instead of focusing on the data. There will be caveats
+to this as we'll discuss later when we
+talk about Chartjunk, but the main notion is that you should avoid
+things like this, where you're being clever about the way that you're
+encoding that data. I mean, in this case,
+is different figures, dressed in the local costume
+of the country, representing the size of
+whatever data this is, using the size of the figures. So this is very
+visually appealing, it's perhaps engaging and
+that might have its uses, but as a way of encoding data, it might not have
+great graphical integrity listed in the mind of Tufte. The other thing that we
+often talk about when we talk about graphical
+integrity is normalization. This is going to be
+important when we have time-varying things like
+money or population units. So for example, bread loaves cost very different amounts
+in 1930 versus 2013, but this reflects in some sense inflation and not necessarily anything
+about the bread. So bread was not necessarily
+cheaper in 1930s relative to 2013 once you consider how much income was
+for different individuals. So this is a case where we
+have to normalize the data, and people who do this correctly will often indicate this. So this is a visualization
+of crude oil prices where they're trying to show
+different changes in time, and in this case, they've
+normalized the data. So this is actually
+a good representations that we actually see how these things have actually varied versus not. So as you can see over here
+this little annotation, deflated using the consumer
+price index for the US. It's always money of the day. So you can actually get
+a good sense of whether this was an important change or
+a non-important change once you understood things like inflation. This also comes into play when we talk about things
+like population. So this is a map
+visualization where the US population density
+is encoded using the color. So more dense areas are encoded with these
+darker shades of red. Now, of course, what
+happens when you look at other things distributed
+geographically, what happens is it doesn't
+actually matter what the data is because so many people
+live in a certain place. If we eliminated this title, this could equally well be
+a visualization of people with colds or it could be the number of readers
+of magazines. Because there's
+so many people who live in a particular county, that's going to
+overwhelm anything else. So it's often going
+to be important to normalize by the number of people who live in
+a particular thing. So we want to know the readers
+of magazines per capita, that is per person living
+in that particular county. This is going to be critical for the person trying to
+understand the map; otherwise, we're always going to be showing the same map because this
+is where most people live, and so that no matter
+what situation it is, that's where most of
+the highlighting is going to happen regardless
+of what data it is that we're
+visualizing just because that's the way geographical
+distribution happens. So, again, normalization,
+it's going to be critical here to show the interesting features that are properties of the county and not properties of the population of large counties
+versus small counties. We're also going to try
+and limit the number of retinal variables so the
+information-carrying variable. So we want to use one dimension when we have
+one-dimensional data. So we're just trying to encode the price per barrels of oil. We're going to just try
+and use lines directly. So ideally, we would just
+draw a bar chart instead of these fancy barrels because the barrels are encoding
+multiple things. They're encoding the x, the y, and the z-axis because the barrels
+are three-dimensional. We often don't want to have
+that in our visualization. We want to use one for one. Now, where does this matter, where might we have
+a caveat to this. In some cases we might have different
+device types like we have color printers or
+color-blindness and there, we might not want to use
+just a single variable. So in this case we're
+just using color to differentiate between
+these two different color types, but this will not work if you're colorblind or if your device doesn't support color printing. In this case, we might want
+to have something else. So using only one encoding
+whether it's just color or whether it's just shape, might not be ideal. What we might want to do is both things because that's
+where we're going to have the advantage of dual coding or most people will be
+able to read better, but this will also support those people who are printing on black and white printers, and those people who
+have colorblindness. So in this case, we have three pieces of data
+but we're using four different things
+to encode them, x position, y position, color and shape, are
+all being used here. So we're breaking the
+graphical integrity discussion that Tufte would push for, Okay? So ideally, we should
+only have three things, shape or color, but
+we're choosing here to use four for three
+different variables. The next thing that we want
+to talk about is context. So Graphics must not quote
+data out of context. This is a pretty
+good rule generally. So let's say we have
+this data and I tell you that
+something had a value 325 in 1955 and 275 in 1956. Let's say this is
+the number of deaths due to accidents and I'm trying to make an argument
+about a changed from 1955 to 1966. So we have accidents before
+and accidents after it. If I show you this visualization
+that looks like this, you might from that interpret that, this was a good change. Something happened
+between those two years that decreased
+the number of accidents. But what this is
+lacking is context. What we don't know is if this particular piece of
+data that I'm showing you, is part of a much more
+complicated story. Maybe the story looked
+like something like this, where in fact
+the change that we made to the roadways or seat belt
+laws or whatever it is, actually led to
+this really nice decrease in the number of fatal accidents. Or maybe it looked like this, for some reason there
+was a blip and it went up in the year 1954 but
+we're not seeing it, and then went down
+from 1955 to 1956. Or maybe it looks like this, like it's changing over time and this oscillating way, okay? We don't know if we
+don't show the context. So the reality of
+the situation is being masked from the reader in
+a way that's damaging perhaps. Now, context can be
+a double edge sword. So in this example, if we take things like
+the average global temperature, so this is climate
+change over time. If we rescale the data we're showing the context in
+this particular way, going all the way from
+zero to a 110 degrees, and we're showing the change from the pre 1900s to about 2019. It looks pretty flat, right? So this is a trick that
+some people use in order to display this information
+to show that, that doesn't look like there's
+actually a lot of changes, but it's actually
+the small changes here that are really critical. So the things that
+are happening at the fine level between these two different sets
+of degrees like 55 degrees and 65 degrees or 55 and 60 are actually
+the important things. So by choosing to show
+context in this way, we're actually hiding
+the important changes in the data that's being masked by introducing
+this additional context. Context In this case
+doesn't actually matter. Here's a few other examples
+of misuse and abuse of data, in this case they're doing
+a bunch of broken things. So if you look at the
+visualization just for a second, see if you can already identify what's the problem with it. So if we look at the picture
+in a little bit more detail, we look at the different level. So this is unemployment rates
+under Obama at the time. So we have a different
+dates and we have the different levels
+ranging from 8-10 percent. If I pull out this visualization and annotate it with
+additional stuff, what you see is
+interesting is that 8.8 is actually below 8.6. So what we're seeing
+something a little bit weird about this data already, and 9.0 percent is actually at the same level as 8.6 percent. So something is a little busted
+about this data already. What happens if we pull
+out the context and we show the data encoded
+in the proper way, we're seeing a much
+different visualization, when we visualize the real data, in a way that is consistent
+with graphical integrity. So part of this might have
+been just a natural mistake, but perhaps this was intentional. So I wanted to show you
+the two different kinds of ways of visualizing this data. The one on the right and the
+one on the left which is actually the true representation
+of the encoding. So we would prefer under the notion of
+graphical integrity, to use the one on the left. Here's another example. This is cost of gas and
+what they're choosing to show here is a few time-points, so last year, last week, and current which is a little bit of a weird thing already, just split up data in this way. But this is the way
+they've chosen to represent the data and you can see this change over
+time in the data. So what you might infer from this is that gas prices are going up. So last year was low
+at $3 and 17 cents, last week it was $3 and 51 cents, and now it's jumped at $3
+and 57 cents and that's bad. What's lacking in here
+as again context. If we actually look at the data
+for the same time period, and we're actually showing
+all the different time points, we actually see a lot more
+fluctuation happening, and the levels are
+actually staying relatively the same
+from the beginning, the early February 2011 to
+February 2012 like we have it. We went up then we
+went down and so on. We're also showing
+here are the prices, both for national average wholesale and crude
+simultaneously, so it's easier to
+compare different points of pricing in the gas station. So with that additional
+context what we see, is this very simple story of gas prices going up is
+not actually accurate. Here's another example
+and hopefully this one's quite obvious about
+what's wrong with it. You see different
+bar charts here for a survey about how concerned people are about the Zika virus. Somehow, somewhat has
+a bar length 28 percent, whereas not at all which is only 13 percent has
+this really high bar. This is clearly not
+the right encoding of this data. Perhaps they wanted to
+tell a certain story that most people are not
+concerned about Zika, but this is not actually correct. Very few people are not at
+all concerned about Zika, that is, most people
+have some concerns. So what are the takeaways from this notion of
+graphical integrity? There are lots of rules
+on graphical integrity. Something like context including
+normalization is good. Things like 1-to-1 mapping of
+data to variables is good, but there are caveats
+to each of these. The caveat for the first is
+that context in the case of climate change one can
+be a double-edged sword, there we're introducing
+context inappropriately. Also with a 1-to-1 encoding, things like having changed colorblind users or
+black and white printers, make it important to
+use double encoding and not just the 1-to-1 mapping
+of data to variables. All right. With that,
+thank you for listening.

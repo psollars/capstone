@@ -1,0 +1,227 @@
+Hi, everyone. Welcome to the supervised machine
+learning course in the Masters of Applied
+Data Science program. I'm Kevyn Collins-Thompson,
+Associate Professor of Information and Computer Science at the
+University of Michigan, and I'll be your instructor
+for this course. Now, the supervised learning
+course is a bit special because in addition to being fascinating
+in its own right, it's also our first
+substantial step into the very exciting world of machine learning in
+general in this degree. With that in mind, I wanted to take a minute to give you some broader contexts, to discuss not just what
+we'll cover in this course, and I'll do that in a minute, but also how that material fits into the overall
+arc of the degree. In particular, I wanted to
+give you some idea of how this course fits together with the previous courses
+you may have taken, as well as how it
+will prepare you for the machine learning
+courses that are coming up. Then at the very end, I'll
+tell you a little bit about myself since I'm a
+co-instructor in the program, and of course, I look forward
+to getting to know and working with all of you as
+this semester progresses. How does machine learning, in particular
+supervised learning, fit with the courses you
+may have already taken? Well, as we'll see, a key problem in supervised learning is
+how to predict something about an object given the
+properties that it has. For example, if it's to predict a real-valued number
+property for something, like the price of a house, we would use regression, and the regression
+model might take as input features such as
+the number of rooms, the amount of land, location of the
+house, and so forth. Or maybe we are building a movie recommendation
+site and we want to predict the category for a movie, which is a binary value, perhaps, that indicates whether
+someone likes a movie or not. Since that's a categorical value, it's a classification problem instead of a regression problem. In this case, the input
+to the classifier, which is the thing doing
+the categorical prediction might be features such
+as the movie's length, which actors or actresses
+are in the movie, whether your friends
+liked it, and so forth. To make these predictions or the regression or classification, we need two things: First, the object or thing
+in question has to be described to the computer in terms that it can understand. In other words, we describe the object to the
+computer as a set of numbers that summarize the
+properties that it has. In machine learning, these
+are called features. This problem of how to
+represent an object to the computer in terms of a set of features and the
+machine learning, the set of features is called
+the feature representation, this feature
+representation problem turns out to be critical to
+making effective predictions. If the feature representation of the objects isn't very
+complete or informative, the computer will have
+a hard time discovering effective prediction rules
+no matter how powerful the prediction method is if the feature
+representation itself is lacking somehow,
+or even erroneous. Beyond features, the second thing the computer needs to
+learn to do is make predictions based
+on a training set of labeled examples
+that it can learn from in order to
+predict the labels accurately for new objects that it might see in the future. As you'll see, the process of obtaining these
+training sets with labeled examples is often
+done with human judges. This process by itself is very interesting and
+important to study. It can also be very
+time consuming and expensive to obtain these labels. We'll look at more of that
+in the course as well. This need to have labeled examples is where the name supervised
+learning comes from. Because we can think of the
+algorithm's predictions as being supervised in a sense, as it learns by a process that knows the correct label
+of the training example, and can provide
+corrective feedback to the supervised
+learning algorithm if the predicted label doesn't
+match the correct label. As we get into all of these new ideas in
+machine learning, you'll see how previous
+courses like data mining, if you've taken it
+already is very useful. Because the data mining
+techniques that you've learned, such as extracting patterns, computing similarities
+between items, and so on can be used to create effective features
+that can be used as input to supervised
+learning algorithms. For example, for a movie recommendation system,
+like I just mentioned, you could apply your knowledge of similarity functions from
+data mining to add a feature that measures how
+similar this movie is to other movies or to movies your friends have
+liked, and so forth. In general, you can use data
+mining methods to analyze these objects and create richer
+feature representations, and that will play a central role in effective prediction. We'll also see, of course, to prepare data for use with
+machine learning algorithms, will make heavy use of
+the skills that you've learned in data manipulation, in efficient scalable
+data processing, and databases, and so forth. You'll apply visualization
+methods to help evaluate the effectiveness of machine
+learning algorithms, as well as mathematical
+constructs from linear algebra, for example, to describe
+algorithms and data. Maybe more profoundly, given how machine learning
+algorithms are incredibly widely used in almost every aspect
+of daily life, principles of Data Science ethics will always be important in using the power of machine learning methods
+correctly and wisely. Thinking about your future
+machine learning courses, this course in supervised
+learning will help prepare you for several
+more in the series. For example, you'll explore a powerful special case of supervised learning
+called deep learning, which I'm sure many of you
+have heard of already because deep learning methods are at the cutting edge of current
+technology at the moment. Deep learning methods are special for a number of reasons, but one of their key advantages is that humans don't need to provide the feature
+representation for an object necessarily. They can provide their own to augmented
+deep learning model, but one of the key attributes of deep learning methods is
+that they can actually find the best feature
+representations automatically, and that's what makes
+them so powerful. Of course, there's a price to pay for this extra
+power and flexibility, because in training
+deep learning methods, you usually need massive
+amounts of data, much more than
+traditional methods because there are a lot
+more parameters to be tuned both for the
+representation finding and also using the representation
+to do the prediction. Related to deep learning, one question I get
+frequently from students in my machine learning
+classes these days is, "Why can't we just skip
+right to deep learning since that's where all the exciting
+progress is happening? Why do we have to spend
+time learning about traditional supervised
+learning techniques like decision trees or support
+vector machines?" Well, there are at
+least two reasons why we need to start with
+a solid understanding of supervised learning
+fundamentals before considering special cases
+like deep learning. First, we're going to cover absolutely critical basic
+principles in this course that apply to all
+supervised learning, including deep learning. Concepts like over and
+under-fitting, generalization, regularization, parameter
+tuning, and how to correctly evaluate
+supervised learning algorithms. It's really important to
+master these basics and apply them with a variety
+of different methods. In this way you get a
+better understanding, also when some methods
+are the best ones to apply in a particular scenario or to a particular problem, and when other methods might be a different choice,
+a better choice. We'll cover how to make
+those decisions as part of supervised learning
+in later courses as well. Second, we're going to cover a variety of supervised
+learning algorithms. Now, these are still very
+much used to achieve state of the art performance
+in real world settings. This includes
+classification algorithms, which we learn how to assign
+a category to an object, regression algorithms,
+we learn how to predict a real-valued quantity
+for an object. Some examples of classifiers
+that we'll learn about include decision trees and
+their sophisticated variants, random forests, gradient
+boosted decision trees. We'll look at linear and
+non-linear classifiers, including support vector
+machines and much more. Related to deep learning, again, deep learning had some very
+impressive successes in domains where we have large
+volumes of unstructured data. Those are situations where
+finding representations automatically is really crucial. Domains like natural
+language processing and computer vision are
+exactly the domains where deep learning has
+excelled because it has such a powerful capability of finding feature
+representations automatically. We'll definitely be getting
+into that in later courses. But there are a lot
+of problems where deep learning has
+its own limitations, and the truth is that
+for many problems, state of the art performance, when problems involved
+structured data where many of the features the representation has already been
+provided for you, you can save their
+performance from a number of supervised
+learning methods like gradient boosted trees, which we'll cover in the course. You can look at competition sites like
+Kaggle, for example. It's a fun way to see
+what actually works. In the readings for this week, the first week of the course, I've posted a link to
+exactly one such example. It's a fraud detection problem, so be sure to check it out
+and we'll discuss it later. So beyond deep learning, another critical
+related course to this one is
+unsupervised learning, where the computer has to
+find structure in a dataset. For example, you might want
+to find interesting clusters. It's called unsupervised because we don't have labeled examples. The algorithm has to find
+the structure in the data without the guidance of having labeled
+examples in the data. So this includes things
+like data clustering, density estimation, and so forth. An example, suppose you have
+an e-commerce site that logs customer visits and you log, they're clicking
+and they're buying activity for your projects
+and you might want to see if you can
+categorize or cluster users into groups according
+to their shopping behavior. So unsupervised learning
+techniques will help you understand what
+these groups might look like and how to
+characterize them and so forth. We'll also briefly look at, as part of unsupervised learning, something called
+self-supervised learning, which is a very active area
+of research right now, where the learning
+algorithm tries to predict the structure within a dataset and within examples without
+requiring explicit labels. So it's an interesting
+related domain to unsupervised learning. The machine learning
+pipelines course brings everything together. We'll show you how
+to build, tune, evaluate end-to-end solutions for practical machine
+learning problems. So while the supervised
+learning, unsupervised learning, and deep learning
+courses will go into depth on specific algorithms, often real-world solutions to machine learning
+problems are involved in iterative multi-step
+process using multiple types of learning algorithms and data
+manipulation methods, hence the term
+pipeline to describe the series of steps that you
+use to process and predict. Pipelines have their
+own engineering methods and methodologies to ensure
+these steps work well together and that
+the entire result is effective and efficient. The Milestone II course will give the opportunity to apply your new knowledge from
+all these courses. Supervised,
+unsupervised learning, deep learning pipelines, those bring it all together
+to bring those powerful tools to bear on specific new end-to-end
+machine learning problems. Finally, beyond Milestone II, you'll find that more
+specialized courses will continue to make use of ideas and methods from this course and the other machine
+learning courses for particular kinds of data. For example, natural language
+processing will apply both supervised and unsupervised learning methods to focus on data analytics problems that involve text and language. So the supervised
+learning course, as well as the machine
+learning courses that follow, will be extremely important
+for providing you with a foundational toolkit
+for problems that you'll see during the degree and beyond. So a little bit about me. I have about 25
+years of experience in research and development
+of machine learning systems. I have unusual combination of industry and academic experience. I grew up in Canada and did
+my undergraduate degree in math and computer science at
+the University of Waterloo. I spent most of my career
+in the United States. I spent 15 years in industry as a programmer and
+then technical manager, and then a researcher at Microsoft Research
+before I decided to move to become a professor at the University of
+Michigan in 2013. I have a PhD from the School of Computer Science at Carnegie Mellon University, where I graduated from the Language
+Technologies Institute. In research, I work a lot on
+algorithms that try to do a great job of connecting
+people with information, especially for tasks that involve trying to help people
+learn and discover things. So some applications
+of my research include advancing the state of the art in commercial
+search engines, Intelligent Tutors
+that help people learn new languages
+or that help teach kids improve literacy skills, algorithms that predict how
+difficult text is to read, algorithms that try to avoid
+serious prediction errors, risk-sensitive algorithms,
+and personalized search. My work combines a lot
+of different things; applied machine learning, natural language processing,
+economics, psychology. While at Michigan, I've taught many data science
+courses at all levels, both in the classroom and online. So again, welcome to the
+course and I look forward to working with each one of you in the days
+and weeks to come.

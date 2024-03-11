@@ -1,0 +1,262 @@
+Okay, let's talk a little bit
+about the Linux filesystem. Now that we've had a chance
+to introduce ourselves to a very simple command
+called the echo command. The Linux filesystem,
+is similar to finder on a Mac or File
+Explorer on Windows. Linux files are organized
+into directories, which is what we in the
+world of Linux call folders. So typically we
+refer to things as directories and not folders. This week we're going to
+cover three basic commands, ls, cd, and pwd. The sum of the Linux
+command line commands are a little cryptic. So ls does stand for list. It's a little odd
+that they were drop the I and the t but Linux has been around for decades and things were kind of
+primitive in the early days. Cd is change working directory. That should be familiar
+to most of you who work on Mac and Windows as well and pwd stands for
+print working directory. So those make a little
+bit more sense than ls, although ls is probably
+the command that you use very often as well as cd. ls list directory
+contents will show you the files and directories by default in the
+current directory. So here's what we mean by that as an example and you'll see
+some of the code here. So if I open up my
+terminal and do an ls, you'll see that I have
+two directories in there called data and shared. Here we are in the
+notebook that we just were editing
+and if we do ls, you'll see in my case I have a collection of files and a
+collection of directories. A little bit more complex than what you see on the slides, but you'll see a listing
+it's put into columns there. So you can read down one
+down the left column from 515_01 all the
+way down to data. Starts with data.txt
+at the top of the next one and then shared at the top of
+the third column. Third column in our format, is just to tidy things up. We'll show you how
+to ask for things in one list if you prefer that. But this is designed
+to be relatively easily read by humans. I want to talk a little
+bit right now about command line arguments
+or command arguments. Many Linux commands
+can take arguments. So this is similar to
+what you've learned about functions and arguments that
+are passed to functions. So arguments are pieces
+of information that are passed to the command
+on the command line, usually there
+delimited by a space, and arguments can start with 0,1 or two dashes and
+we'll see some examples of that they're used in
+somewhat creative ways across the different Linux
+commands and it turns out there's relatively
+little consistency and it's something that you have to learn through practice and experience. For command line arguments, there are generally three forms of specification for arguments. One of them is where
+you use no dashes. So for example, if we
+did an ls space data, we're passing data as
+the name of a directory. So we're asking ls to list the contents
+of that directory. Remember when we did
+ls a minute ago, we had no arguments
+and it just listed the files and directories in the current working directory, ls data will allow us to look at the contents of a directory in our current
+directory called data. Another way to use ls, is to use an argument
+with one dash. For example, ls
+minus l minus l part indicates that we want along
+output from the ls command. So the third way of passing an argument to ls is
+to use a double dash. So for example, ls dash dash all, indicates that we want
+to show all files. Now a little bit of history
+about arguments in Linux. The dash dash form, what's called the long form, is relatively new that's shown up in the last decade
+or a decade and a half. That dash dash sign, that dash dash format followed by a relatively long word is
+a little bit easier to use and remember than a short form of something like dash l.
+But you'll see both quite often when you pull up a help page and
+we'll show you how to do that in a few minutes too. You'll see that there
+are equivalents between the one dash form of something and the long form of something. So in this particular case, ls space dash dash all, is the long form of
+ls space dash a. Back to our ls command. Some common arguments are
+minus l to show long output, minus a to show all files
+including hidden ones. Again, minus a is also
+invoked using minus minus all minus capital H is another command argument for ls that will show the file sizes
+in human-readable form, and that's often used
+with minus l. Finally, the other common
+argument that we use with our ls in data science is minus t to sort the output with the most
+recently who used files first. So here we are back
+at our notebook and let's try some of
+these arguments here. So to clear the screen, what I'll first do
+is hit Control L and that's just going to give
+me a clear workspace to work in. So here's our ls command
+again, without any arguments. Remember one of our
+examples was ls Data. So that will show you
+the contents of data. In other words over here, we had a directory called
+data and when we did ls data, we saw that those were
+the contents of data. We can also do ls minus a. You can see some other files. These are hidden files. You'll see two of
+them at the very top, right after we do ls minus a, the single dot over here
+and the double dot. Those are special characters that we'll explain
+in just a minute. Any other file or any other directory
+that starts with a dot. For example, you'll
+see one app to the list of 515
+files you'll see one called.bash_history
+underneath that one you'll see.cache and so on. These are alphabetically sorted. So you'll see with
+the special provision that dot files are folded into
+the alphabetical sorting. So you'll see
+.empty,.ipnyb_checkpoints, .ipython and so forth. Those are normally not
+shown when you do an ls. When choosing what
+to call a file, you can always call
+a file starting with dot and that will
+be hidden from ls. Typically these are things
+like configuration files, temporary files, or things you don't really
+want people to see. There's no permissions
+restriction on them. It's strictly a visibility issue. So let's take a look at
+some other options to ls. In fact, let me clear
+the screen first. So we talked a little
+bit about ls -l. The ls -l output shows
+more details about each file and this looks a little bit complex the first
+time you see it, but again, with experiences
+makes more and more sense. So we see the filenames in the right-hand side
+of the output. Remember, we saw a 515_01_LinuxCLI-Copy1.ipynb
+in our plain old ls command. Now, we have some additional
+information and we're going to work from right
+to left in explaining it. We have a date and a time. That's the date and time that
+the file was last modified. We also call it last touched. So that was the time so you know roughly when the contents of that file were modified or at least the file appears
+to have been modified. We can actually
+change the time of the file modification by
+using the touch command. So this is sometimes
+useful if you want to freshen up a file or
+have it sort to the top. I could touch
+515_01_LinuxCLI-Copy1. Then you'll notice if you review this video
+just a little bit, that the name of that file appeared in chunks
+and very quickly. I was hitting the
+tab key there to get the tab completion
+to help me complete that filename so I didn't
+have to type the whole thing. Okay, so here's our touch command and right before I issue this, I want to remind you that this 515_01_LinuxCLI-Copy1.ipynb
+file was last modified September 29th at 17:46. If I touch that file and now, I'm going to use my cursor
+up key to do an ls -l again, you'll see that the date and
+time on that has changed to September 30th at 13:38. So that's the touch command. Sometimes, a useful little
+thing if you want to update the timestamp on a file. Continuing on our exploration
+of the columns of ls -l, the next column over, in this case 42851, is the number of bytes or the file size of that
+particular file. So this
+515_01_LinuxCLI-Copy1.ipynb file is exactly 42,851 bytes long. The next pieces of information, jovyan and users, is the user who owns and the group who
+owns this particular file. Because of the special nature of the JupyterHub instance that's running your Jupyter
+for this course, this will always be jovyan. As far as we're
+concerned, you're jovyan, but you're on a machine
+that's named for you and your group
+is always users. When you're using a
+shared Unix environment or a shared Linux environment, you might see that
+files are owned by other users who are
+using the system. This may be something
+that you see in the big data scalable course that you might take
+after this course. We're going to ignore this number just to the left of that, it's one typically all the
+way down followed by three. That's the number of
+linked nodes to that file. Over here are the
+permissions on the file. The permissions on
+the file can be a little daunting when you
+first take a look at them. But we have to remember
+the whole idea behind a Linux system was that it
+was shared amongst users. In our permissions,
+the first dash tells us if the file
+is somehow special. Looking down this column, we see that they're all
+dashes until we get to this particular
+line here where we see D for data directory. D, not surprisingly,
+stands for directory. So everywhere you see a
+D in this first column, you know that that's a directory. Looking further down the list, we see that there's another
+D beside pixiedust-files, another D on the line that has shared as the label
+to the right-hand side, and similarly, for
+untitled folder. So that's how we distinguish a directory from
+a plain old file. The next series of columns
+in our permissions, if we go back up and
+look at the top one here, we have rw-r--r--. So it's best to think of those
+in three groups of three. The first group of three tells us about the permissions
+for you as the user, technically the
+owner of that file. In this case, the user jovyan, which is U, has the permission to read
+and write that file. The dash is something
+called an executable bit which tells us whether that file can be run
+from the command line. For all intents and purposes, we're not going to create any commands that can be run from the command line so that's typically going to
+remain as a dash. It might be an x and we'll see some Xs a little
+further down. The next group of three, in our case r--, that middle group of permissions here tells us
+about what the group can do, so anyone in the group
+users has the ability to read but not write and they can't execute
+this file either. The third group of
+bits here, r-- again, is the permissions assigned
+to everybody else, so not jovyan, not users, but everyone else on the
+system can read the file. Now, this is largely for
+your information only. In the environment
+that we're spinning up for you during this program, you are the only
+user on your system, so this idea about having users other than yourself
+is sort of academic. But at some point, you
+might find yourself on a shared Linux
+server and you will have to understand
+how permissions work, so this is an introduction to
+this notion of permissions. We talked about executables or executable bits not
+being set for files. So you'll notice it's rw-r--r--
+for most of the files. The exception to
+that is directories. So directories, you'll see for the data directory
+in this line here, you'll see that we know it's a directory because
+that first column, that first bit is set to D. Then interestingly,
+we have read, write, and execute set for yourself and read and execute and read and
+execute for everyone else. The X means that someone can
+change into that directory. So we don't use that functionality or that
+restriction very often. Best to know for all
+intents and purposes in this program that the
+executable bit is typically set on a directory and allows you to cd or change
+directory into that directory. So we just talked about cd or changing the
+working directory. To change into a directory, say, is called data and assuming that it's in the current
+working directory, we could do cd data. Another example is if we
+want to go up a level, so we've changed into data, we've done cd data and now we want to back out to
+the parent directory. We can do cd double dot. I want to talk about some
+special characters that we've already encountered called
+dot and double-dot. In Linux, a dot refers to this directory or the
+current working directory. So if I say cd dot, that's really a null operation. It means to change into the current directory,
+which does nothing. Similarly, in Linux, a double-dot refers to
+the parent directory. So one up. Couple of other notations. If you're at the top
+level directory, it's called the root directory. So that's represented
+by a single slash. The parent of the root directory, in case you wanted to know, is also the root directory. So you can't go to the parent of a root directory and find something other than
+a root directory. Another important notion in Linux file systems is
+the home directory. Each user has their
+own home directory, and it turns out if you use
+cd without any arguments, that will change into a
+user's home directory. So that could be a
+bit of a surprise. You might think that cd without any arguments will just
+print the working directory, but it in fact returns to
+you to your home directory. The home directory in Linux is often represented
+by a tilda character. A tilda is the character on your keyboard that
+you would get if you look to the left of the one key in a regular
+keyboard and hit shift. So that's the tilda
+character and that's how we represent the
+home directory because the home directory typically has your username imbedded in it. Let's take a look at what that looks like in the notebook. Again, I'm going to clear the screen and we're
+going to do an ls. So here's our usual ls. We've now should be
+comfortable with that. I'm going to show
+you another argument that we can pass to ls, the minus f option. Minus f will highlight those files that are
+somehow special. So you see the difference
+between the ls and the ls minus f in our case is that
+all of the directories, data, pixie dust files, shared, and untitled folder all
+have trailing slashes. Just a visual indication that those things
+are directories. So let's do cd data. You'll notice right away that my command prompt has changed. The command prompt
+that used to be just jovyan@jupyter dash your
+unique name colon tilda has now changed to
+the same thing, except after the colon we
+have tilda slash data. So the command prompt will tell us what directory we
+are currently working in. As we mentioned in the slides, if we go up a directory, that will return us to
+our home directory. We could also, for example, go into shared, do an
+ls and go into samples. So now, we're a couple
+of directories deeper. So we're in shared and samples. We could return up one level and up one level to get back
+to our home directory. But let's go back
+to shared samples. What I've shown you
+there is you can go to multiple levels of
+directories in one line. So you don't have to cd
+shared and then cd samples. We can do cd shared slash samples and get into that directory
+that we wanted to get into. Now from here, if
+we just did a cd , you know where we're going to go, we're going to go to
+our home directory. Now, when we're moving
+around file systems like that and we're changing directory into a
+bunch of directories, we might get somewhat lost. So PWD is a command that
+we used to use before we had richer prompts to show us what our current
+working directory is. So PWD stands for print
+working directory. In this case, you see that our current working directory
+is slash home slash jovyan. That is the equivalent of
+what the tilda tells us. So that tilda actually refers
+to slash home slash jovyan. So there's an equivalence between the tilda and the slash
+home slash jovyan, and you'll notice that this
+is the first time we've seen a slash at the beginning
+of a pathname. I want to talk a little bit about absolute versus relative paths. Absolute paths
+begin with a slash. Relative paths are
+written relative to our current working
+directory and do not begin with a slash. So for example, if we're in
+our home directory slash home slash jovyan and we want to change into
+the data directory, we could either refer
+to that through its absolute path
+by doing cd slash home slash jovyan slash data or using its relative path
+with just slash data. So we've changed back
+into our home directory. So we can get into
+data with cd slash home slash jovyan slash data. So those two are equivalent, and you'll notice that
+my command prompt that's shortened it to tilda slash data. So that finishes our tour of some very basic command
+line shortcuts. Remember our control sequences and maneuvering around
+the Linux file system. So in our next segment, we're going to start looking at some other commands
+that are available to you to start manipulating data at the command
+line interface.

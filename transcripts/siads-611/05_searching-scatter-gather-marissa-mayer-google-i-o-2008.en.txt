@@ -1,0 +1,41 @@
+But as I said, I think that it is important to
+think about how sometimes the simplest design actually is the right answer. When you think about what
+happens in a Google search, it's really complicated. Let's say you did a search
+for beautiful code. Maybe because you
+want to write some, maybe because you're interested
+in the Tim O'Reilly book. What would happen is
+if you'd issue that search from here today, it would go and it would bounce through some of our data centers. At this time of day,
+our data centers are all running fairly hot. So it probably bounced
+through a few before it found a data center that can
+actually accept the query. It will then enter
+the data center. It would first be
+greeted by a series of machines called load balancers. These are the machines that watch all the other machines to see
+who's busy and who's not, and actually, they
+would go ahead and earmark your query for a mixer. The mixer is the infrastructure
+we have that mixes together all of our universal
+results, our ad results. It then gets earmarked
+for a web server. We'll query a bunch
+of web servers, and mark one that actually
+is in respond to your query. And then it hits about
+300-400 backends that are all the different
+forms of search, all the different forms of ads, gather together
+the best results. Then it's time for your query
+to go back to the mixer, which mixes those all together, getting things in
+the right relevance order, getting the right blend
+of universal results in, the right blend
+of advertising in. It then goes to the web server, where it will write out the
+actual HTML for the page. The load balancer
+marks it as done, and the query then
+travels back to you. There's a lot of complications. Actually, in that time, your query will have
+hit somewhere between 700 and 1,000 machines, and will probably have
+bounced at the speed of light between several
+different data centers, coming back to you with
+about five million results in about 0.16 seconds. Very, very complicated
+technology, but behind a very
+simple interface. We think that that's the
+best way to do things. Our users don't need
+to understand how complicated the technology and the development work that
+happens behind this is. What they do need to understand is that they can
+just go to a box, type what they want,
+and get answers. And that's why Occam's razor about the simplest design
+really ends up being the right answer is so important, and works so well for us.

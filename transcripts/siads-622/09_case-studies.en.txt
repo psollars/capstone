@@ -1,0 +1,184 @@
+All right,
+to wrap up our adventures through time, I'm going to focus on a few case
+studies that I think are kind of cool. That are representative of different
+things that you might want to do. Some of them include
+multiple visualization, some of them are a little bit nonstandard,
+that includes summarization and so on. But it will give you a little bit of a
+taste of really sophisticated techniques. And again have to be willing to
+pay the costs, the learning curve. But if you are, there are better
+techniques that can be often through interactivity, support
+lots of different tasks. So the first case that we're going to look
+at is the case of managing your calendar. Okay, so everyone has a Google calendar or some other calendar that they're trying to
+use, and you want to manage your events. And you want to manage your events
+relative to other people, right? So you want to know when other people
+are free, when other people are busy, should you be busy? Should you be attending
+whatever talk they're going to? You want to basically have
+an understanding of yourself relative to other people. So, this is going to be the domain level
+task, like basically understanding your calendar and other people's
+calendars relative to each other. The abstract task is identifying like if
+we're trying to satisfy this need for like finding meetings, for example,
+is identifying holes in event data. So where everyone has availability,
+for example. And then understanding
+events at different levels. So what we're going to have as a task,
+as a particular task for this visualization is being able to show
+the details, but also the broader context. As we're going to want to look at time
+over many different kinds of levels of the hierarchy, so months,
+years, weeks, days, and so on. All right, so that's the abstract tasks. So the most common way that most
+people know how to do this is through things like this. So this is a very standard
+Google calendar view. Here we're looking at four days,
+here we've zoomed out and looked at a month's worth of data, right? So this is the same underlying
+dataset just looked at in a couple of different perspectives. I want to show you a much more
+sophisticated version of this. Now, this is one that was an experimental
+system used at Xerox PARC. It was in 1994, so they used lots of three
+dimensional stuff, which is good and bad. But it's an interesting point in time for visualization history, but
+one that's interesting. This is a spiral calendar. So in the furthest back right
+now it is like the year. And as you clicked on specific items,
+it would pull additional visualizations, additional calendar views closer to
+you that were additional details. So first you clicked on the year
+from a number of years. And then you clicked on the month,
+and then you clicked on the week, and then you clicked on the day, and
+then you clicked on the hour. And so spiraling out from the middle out, you can basically get a sense
+of both the specific data like what it is in my meeting for that
+particular time in that particular day. But also the context of that
+at different other points. Is that from a busy week? Is that from a busy month or
+from a light month and so on? So you get all the data being shown, all the visualizations kind of being
+shown dynamically as you click. So this is another visualization
+from a similar series of work. This is a visualization of multiple
+people's calendars simultaneously done in 3D. The way of thinking about this is
+like if you take your calendar and a bunch of other people's calendars,
+you can stack them on top of each other. And then put them out like floating in
+space and shine a light through them so that the projection on the walls
+corresponds to when people were busy or when people are free. So when there's no light being shown
+through because lots of people have an event that particular
+time on that particular day, that back wall will be very dark
+at that particular instance. So the visualization of dates
+versus hours is on the back wall. On the right wall we have
+people versus hours so we can tell when specific
+people are busy or not. And on the bottom we
+have people versus days. So when are particular days that are good
+for making meetings with people. So again, this three dimensional view is
+an interesting approach because we have lots of dimensions that we
+care about simultaneously. So using the additional dimensions and having that kind of interesting light
+shining through and projecting basically three additional visualizations on these
+back walls is kind of a neat idea. And you can interact with this and
+rotate this so you can focus in on specific
+visualizations or specific people. So there were lots of interactive features
+that made this useful and usable. This was not intended for
+sort of a static representation. All right, so
+these are the different things. So events in the middle, person × times ×
+day, the projection wall with dates versus hours, the people versus hours over here,
+and the dates versus people on the bottom. All right, second case, this is
+a different kind of domain problem. In this case, these were people who wanted
+to understand the behavior of their workers in a factory. So they basically had people
+coming into work during the day, leaving at certain times. And they wanted to know what were
+the patterns of the factory's operation over time. So over the course of a year, what we're
+sort of common trends in the data? They had again factory
+workers clocking in and out. And that was the details, like sort
+of the data details that they had. So abstractly what they had was the need
+to correlate different times series and group time series based on similarities. So, what were the patterns of days in
+which people behaved in a certain way? Were there weird outliers and so on? So one way of thinking about this data and
+this is not for people checking in and out. This is for kilowatt consumption, so
+the amount of energy being consumed. You have on one dimension the days,
+on another dimension the hours, and then the height sort of the coloring, in that other dimension, is telling
+us how much energy is being used. So this is a visualization that allows
+us to see certain patterns in the data. So imagine each of these slices
+corresponded to people coming in and out of the factory, right? So that was the behavior
+of people during that day, the average behavior of
+people during that day. So this is one way of representing that,
+but it's really hard to see any
+kinds of patterns in this. Because that three dimensional thing, we
+have to rotate and move things around like we can't tell that there are distinct
+patterns in this particular data. Because very similar patterns can be
+very far away from each other in this kind of slice - this long log. Interestingly, this is not a new idea. Like this is a really,
+really old example of a similar idea. People physically created time series
+data and then stacked it together in this kind of weird, crazy visualization. So this is a physicalization
+of the same time series data. So you can see the stack time series and
+look through from different sides or move them around to see certain patterns. Okay, how did people actually solve this? So we don't want something like this. We want a condensed view that actually
+allows us to see patterns in the data. So this is an award winning visualization. It's a little bit old, so
+it looks a little bit older, but it's a really great technique that has
+been sort of used by other people since. So you have a number of
+different things on here. On the right,
+you have the time series visualization. So on the x-axis,
+you have the time of day. On the y-axis, you have the number
+of people that are in the factory. On the left,
+you have this kind of calendar view. Okay, so this is not in English, but you have the different months of the year,
+and you have each of the months being displayed in a little
+small multiples display. The colors correspond to
+the label assigned once a clustering algorithm has been applied. So what they did was they looked at all
+the time series data for all 365 days. And they found similar time series,
+things that had very similar shapes and they put those into a group. So you have the orange group, and
+the red group, and the green group, and whatever, okay? So the time series clusters,
+you can see like maybe half a dozen, or, yeah, like maybe six or
+seven of these time series, which are representative of
+the entire 365 days of the year. And the same color that's assigned
+to them in the visualization on the right is assigned to their label
+in the calendar view on the left. All right, so I'll set 365 days on the
+left and seven key patterns on the right. Colors are again linking these together. So what are some insights? The cool thing about this, and
+this is why this paper is kind of great as it shows you the power of this technique
+is they started looking at this data and seeing like,
+what have we learned from here? So we've talked about this. So the weekdays versus weekends
+are kind of the easiest thing, right? So, weekends nobody came into the factory. So you see this kind of bottom line
+where no one was in the building. And you can see that visually
+in the calendar view as well. Like that particular blue is kind of the
+Saturday, Sunday thing where nobody is in. So that line is flat and
+there's no difference there. But the other ones are a little
+bit more interesting. So there's an early morning
+peak in most of these, like people sort of come
+in at a regular time. But in traditional office hours, like you sort of see this range like
+people come in at 9 AM and leave at 5 PM. Those people who are sort of leaving
+a little bit over time it's kind of this shallow slope for a traditional work day. So most of those traditional ones
+you can see visually in the calendar like those are the most common
+kinds of days, the orange. Holidays are a little bit different. Holidays far fewer people came in, like these were not holidays that
+you were obligated to leave. The company was not closed, but
+you could not come in if you wanted. And so that's a day where like
+people came in around the same time, but far fewer people, and
+they left much earlier. Okay, so you can see that and
+knowing something about the holidays, like the sort of makes sense. There were summer Fridays so far fewer people came in on Fridays
+during summer and they left early. They wanted to have a long weekend. There were some crazy outliers like
+leaving early on December 5th, it's a particular kind of holiday. And so all these things, like are
+identifiable using this one visualization, which has summarized a lot of
+time series data into one. So instead of showing you 365 different
+lines all at once, we've been able to condense them into just seven lines and
+relate to them to a calendar view. With some domain knowledge,
+you're able to sort of explain and understand why these things are happening. So you're able to isolate those kinds
+of patterns within the visualizations, both in the calendar view and
+in the time series view on the right. All right, so some consideration, some takeaways from just
+these two case studies. Consider the hierarchical nature of time. This will be important in some of the
+other visualizations that we'll talk about later on in the semester. But time is hierarchical,
+you have years, you have months, you have weeks, you have days,
+you have hours. So consider that as important
+ways of condensing and scales at which people care about. Sometimes they care about one scale and
+not the other, it's important to consider. Sometimes they care about all the scales,
+and you have to think about the right interactive strategies to support
+exploration along these multiple axes. Consider patterns, okay, so
+do we care about seasonality, things happening over and
+over and over again? And sometimes these
+summary representations. So throwing away some of the data and condensing it into representative
+views is a more powerful techniques. So 365 days is a lot, and sometimes
+you have a lot more data than that. So finding ways of summarizing
+your time series data so that you don't have 365
+lines makes things easier. Mhm. So to summarize this entire week,
+real world datasets are multifaceted. So hopefully I don't need to do
+much work to convince you of that. But often we need to visualize
+them in two dimensions. And so there are lots of trade offs
+that we can make in order to do that. Okay, so one is using tools
+like dimensionality reduction. Another is using sophisticated
+visualization techniques like parallel coordinates or kind of novel glyphs. We're going to consider interactions and we're going to dive deeply
+into interactions next week. So you're going to see lots of possible
+ways to sort of boost the efficiency and make the learning easier for visualizations that are maybe
+harder to read or harder to learn. With temporal datasets,
+time is going to be hugely important in a lot of the different datasets that
+you'll encounter in the real world. Most often it's time plus something else, like we rarely just have
+a calendar with nothing on it. But when we do have
+the time plus other data, you have to consider what's
+the most important thing. Is that the data, or is it the time,
+or is it some combination? Standard representations
+are going to work great. People are familiar with time series
+like they know how to read them. That's a thing we train in
+the earliest days of pre-school now, so people know how to read
+time series datasets. But there are alternatives that are also
+powerful that I will encourage you to go and take a look at that might be suitable
+for certain kinds of analyst tasks. Where you're willing to pay the cost
+to train people on how to use them. They will get a benefit
+from these techniques. All right, and with that,
+thank you for listening.

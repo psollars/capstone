@@ -1,0 +1,65 @@
+Hi everyone. This is
+Paramveer Dhillon from the School of Information at
+the University of Michigan. Last time, we studied about the simple multilayer perceptron, which is also one of the basic essential building
+blocks of deep learning. Next, we will see how a simple multilayer
+perceptron can be used to predict an individual's
+chances of loan approval. For the sake of simplicity, let's assume that an
+individual's odds of loan approval depend
+on two main factors, their credit score, and
+their employment history. These two attributes of each individual will be
+our main features in the multilayer
+perceptron MLP model that we will use to predict
+loan approval success. Let's look at our training data that we will use to
+learn our model. Each data point in our dataset
+represents an individual. The individual's corresponding to red data points were
+denied the loan, whereas the blue individuals
+had their loans approved. In particular, we can
+see that if you have a higher credit score and have
+been employed for longer, then you are more likely
+to receive the loan. Further, we can see that there is no clear linear
+decision boundary that separates the red and
+blue data points. Hence the need to use a MLP to learn a nonlinear
+decision boundary. Our goal here is to predict the loan approval chances for the individual represented
+by the green dot, which is sandwiched between
+the red and the blue ones. As far as the model is concerned, we use a simple one, hidden layer multilayer
+perceptron to predict the loan approval odds
+with Thetas being the model parameters that we
+will learn from the data. Our hidden layer
+has three neurons. That is, we learn
+three new features, Z_1, Z_2, and Z_3. The first step in our model
+building is to perform a linear transformation
+of the input features x_1 and x_2. Once we have transformed
+the features, we apply a nonlinear
+activation function. In this case, we simply use the ReLU,
+activation function, which zeroes out the
+negative part of its input signal and
+passes the rest as is. Finally, in step 3, we transform all the three
+loaned activations by a softmax function
+and convert them into probability of loan
+success for an individual. The softmax function that we just saw is similar to the
+logistic function, and it converts
+real valued numbers to probabilities in
+the range from 0-1. It is common to apply the softmax function
+in the final or the output layer of a neural network if we are performing a classification task. This is so because in the end, we need classification
+probabilities. After we have
+specified the model, we optimize it to minimize
+the discrepancy between the correct and the predicted outputs for the various individuals. The optimization
+procedure changes the model parameters, the Thetas, to make correct and predicted outputs similar on
+the training dataset. This process of loss
+minimization is exactly the same that is employed while learning standard
+machine learning models. Though there are a variety
+of loss functions that one can use for
+learning MLP model. But there are a couple that are ones that are the
+most commonly used. The first one is the
+Binary Cross-Entropy Loss, which is the loss
+function of choice for two class or binary
+classification problems, such as our problem of
+loan approval prediction. This loss function can be easily generalized to a
+multiclass problem, which would have been the case, if for instance, we were
+predicting a third class, let's say a conditional
+approval of loan. The second commonly
+used loss function is the Mean Squared Error Loss, which minimizes the
+squared distance between the predicted
+and the correct label. This loss is commonly employed if we have
+a regression task. That is, we want to predict a real valued output
+from our model.

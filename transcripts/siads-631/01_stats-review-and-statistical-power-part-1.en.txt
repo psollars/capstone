@@ -1,0 +1,184 @@
+Hi everyone. Welcome
+to Lecture 3. We're going to cover
+statistical power or sample size calculation in
+the first module and then do two commonly used
+randomization methods which is blocking and clustering. Then, on the analysis side, we'll cover differences
+in differences estimator. So this is an outline
+of this week's lecture. So the first unit to prepare us for statistical power and
+sample size calculation, we're going to first review
+some basic concepts which is Type I and Type II errors
+and the power of a test. When I had my first
+statistics class, I actually had a hard time to differentiate between Type
+I and Type II errors. But then, I ran across this analogy which I
+thought was really good, and so we're going to bring
+this into our lecture. So remember the story about
+the boy who cried wolf. When we were kids, our parents used this
+to teach us not to lie. So let me quickly
+review the story. So the boy was a shepherd. When he was herding
+sheep he got bored, so he decided to create some excitements
+so he cried wolf, he said, "A wolf is here." Then, the farmers nearby
+heard the cry and they came. Then, they realized
+there was actually no wolf. So they left. Some days later, the
+wolf actually came. So the boy cried again,
+"The wolf is here." Then, the villagers at
+this point thought wow, the boy must be having some
+fun and it's just a joke, so we're not going to rescue him. This time, it's real. So first time and second time, we can draw the same analogy for Type I error and Type II error. So let's frame the story in the null and
+alternative hypotheses. So the null hypothesis here
+is that there's no wolf whereas the
+alternative hypothesis is that there is a wolf. So what's a Type I error? The Type I error is when the first time
+the villagers came. They believe the boy
+when there was no wolf. So basically, they reject the null hypotheses incorrectly. So how about the second time? The second time,
+the villagers did not believe the boy when
+there actually was a wolf. So this time, they rejected the alternative
+hypotheses incorrectly. What does this have to do
+with experiment design? Now, we're going to replace
+wolf with treatment effect. So the null is that there's
+no treatment effect and the alternative hypothesis is that there is a treatment effect. So what's a Type I error then? The Type I error in this context is that there is the truth. The underlying
+truth is that there is no treatment effect. But the researcher or the experimenter
+believe that there actually is a treatment effect. How about a Type II error? So a Type II error
+in this context is when there is actually
+a treatment effect. But through your design
+of the experiment, you cannot detect
+it which means that you reject the alternative
+hypotheses incorrectly. So now we're ready after we review Type I and Type II error, we're ready to go on to power analysis and
+sample size calculation. Why is this important? Before you run an experiment, when you design an experiment, one thing that every
+experimenter or analyst encounters is how large
+should the sample size be? How many subjects or how
+many users should I recruit? So most of the analysis here comes from a paper by
+List, Sadoff, and Wagner. So we're going to use
+their notation which is also commonly used
+notation in this context. So we'll first give an
+overview of the sample size and power calculation and then we'll go through
+some of the slides. So the overarching
+idea when you design an experiment is to
+maximize the variance of the treatment variable and you have to adjust the
+samples to account for variance heterogeneity
+which means that your treatment might have a different variance compared to the control condition
+and the rough rule of thumb is that you want
+to put most of your sample, most of your observations, your users into the
+experimental condition with a larger variance. We're going to make
+it more rigorous. So the first thing that we're going to do is
+to have an overview. So there are several factors that affect the sample
+size calculation. One is the size of
+your population. The other one is the resources you have.
+What's your budget? We'll look at a situation where the marginal cost from
+the treatment condition, the control condition will be different and you'll have
+a budget constraint. So that affect your
+sample size as well. How many research
+assistants you have? So that's the manpower. What's your method of sampling? We talked about complete 10 simple random
+assignment, and today, we're going to talk about stratification or blocking
+as well as clustering. Also, the degree of
+difference to be detected. That's something that you
+want to decide ahead of time. So let's take the example
+of an education experiment. So for instance, you want
+to test the hypothesis that a larger number of students would make the learning
+experience less effective. So your outcome variable is test scores and so compared
+to the control condition, you have let's say one treatment. What is the difference in
+test scores that you want to detect through the design
+of the experiment. The other important factor is variability which is captured
+by standard deviation. Where do you get that data? So that basically tells you
+how noisy your data will be. That usually comes from
+either a pilot study or historical data that's naturally occurring data, that's
+non-experimental data. The next set of
+factors is the degree of accuracy in your
+inference process. So here, we're back again. Type I error or
+sometimes we often use the Greek letter Alpha
+to denote Type I error, and typically the convention is that Type I error should
+be less than five percent. That's the cut off or claiming
+statistical significance. It is somewhat arbitrary
+but that's the convention that many disciplines
+use at this point. The other factor is Type II error and sometimes we call it Beta. So Type II error is typically set to be
+less than 20 percent, and so the power of the
+test is one minus Beta. So if you have Type II error
+of let's say 20 percent, that means if the treatment
+effect is actually there, that means if the wolf
+is actually there, remember the boy who cried wolf, there's an 80 percent probability that you will actually see it. So that's the power of the test. So now, we're going to put
+this in a two by two table. So on the horizontal axis, you have the true situation which is the
+population situation. So there are two alternatives. One is that there's
+actually a difference H_1, that's the alternative
+hypothesis. The other situation is that
+there's no difference. So H_0, that's the
+null hypothesis. On the vertical axis, you have the conclusion you
+draw from the experiment. So again, you either
+draw the conclusion from your experimental data
+that the difference exists or there's no difference. So there are several scenarios. One scenario is there
+truly is no difference between the treatment and the control condition and through the design
+of your experiment, you also correctly
+infer that there was no difference and that happens with probability
+1 minus Alpha, and if you set for Alpha
+equals five percent, you will be able to reach the correct conclusion with
+95 percent probability. The second situation
+is in the population, the true situation
+is that there's no difference between
+the treatment and the control condition. However, you conclude from your experiment that
+it actually exists. So there is a difference between the treatment and
+the control condition. So that happens with
+probability Alpha. So going back to our convention, if you say Alpha
+equals five percent, so that happens with
+probability five percent. The next scenario is
+in the population, the difference actually exists. So which means that the
+treatment has an effect. But you infer that there is no difference probably sometimes because your sample
+size is too small. So you're not powered enough
+to detect the difference. We say that in that case you made a Type II error and that
+happens with probability Beta. So you can set your Beta equal
+20 percent or 10 percent, lots of times people
+would like to push it towards a lower percentage. So what about when there's
+actual difference and you also say you can infer from your experimental data
+that the difference exists. So that's the correct inference and that happens with
+probability 1 minus Beta. So when you set your
+beta equals 20 percent, you can expect to infer the treatment effect
+when it actually exists with probability
+80 percent. So this is the overview of the type of errors in hypothesis testing when
+you design an experiment. So now we're going back to our experiment design and what is the power of the design. That's the probability that for a given effect size and a given statistical
+significance level, Alpha, we will be able
+to reject the hypothesis of zero effect when the
+treatment effect actually exist. So in other words, the power of your
+experiment design is the probability of
+detecting a real effect. So now you see that it
+is really important. If you're treatment actually
+could produce an effect, so there is a real effect, but your design is under powered, you then waste resources. You design and run an experiment, but you don't see the effect. So how do you decide
+the size of the sample? How do you decide how many
+users you would use or how many subjects you need to recruit for
+your experiment? So these are the steps and
+then we're going to proceed to the way that you actually
+calculate the sample size. So first, you need to determine the expected difference or the minimum average
+treatment effect. So that's sometimes in
+real terms, in let's say, the test scores or sometimes it's actually measured
+in standard deviations. The second step is to find out the standard deviations
+of both groups. Now we're talking about the simplest experiment where there's only one control condition
+and one treatment condition. So where would you find that out? It's not always easy. Lots of times, we have
+some empirical data. You have the prior
+year's tests score from students of
+various class size. The data is not perfect, but that gives you an idea
+of how noisy the data is. That enables you to figure
+out the standard deviations. Another way to do this is
+to run a pilot experiment, which is you try out your
+experimental conditions on a smaller sample to test your program and also to get
+the standard deviations, and the last one is in fact
+to get it from theory. We're going to use an
+example at the end to show how you might expect to get the standard deviations of your treatment
+group from theory. Sometimes the theory will
+give you a direction, whether the standard
+deviation will shrink or it's going to enlarge
+in the treatment groups. So the third one is before
+you start your experiment, you set the Alpha error or
+Type I error to be tolerated, and the convention is to
+set it at five percent. Of course, you can also move it to two percent, one percent. The smaller the Type I error is, the larger your sample
+size will have to be given the other parameters. The next step is to decide
+the power of the study. As I mentioned, we
+typically use 80 percent, and in some type of study
+such as replication studies, you might want to have
+high power which is, for instance, 90
+percent or 95 percent. That means that your Type
+II error is going to be correspondingly 20 percent
+or 10 percent or 5 percent. Then you can select the appropriate formula to
+calculate the sample size. In most statistical softwares, you can actually just plug in these parameters and it
+will calculate for you. Then you can either the
+statistical program will spit out the sample size for you or you can do it using
+some other methods. For instance,
+calculating by hand. The last part that we're going to cover in the next lecture is, you need to allow
+for drop-out rate. So sometimes people enroll in a program and then they
+drop out of the program. So you have to take that
+into consideration as well, and perhaps to allow for
+non-compliance of treatment. Again, that's material
+to be covered in Week 4.

@@ -1,0 +1,179 @@
+Welcome back everybody. Even if you have enough data
+to make inferences from, things can still go badly
+wrong if the data is unrepresentative or if the
+data is just incorrect. The learning objectives
+from today's lesson, at the end of this lesson,
+you should be able to correctly use the term
+selection bias, self-selection bias,
+and survivorship bias, to describe situations
+where making inferences from non-representative
+data can cause problems. You should be wary of reproducing incorrect inferences if training data are
+labeled incorrectly, and you should be wary of
+creating unfair outcomes if those two problems
+lead to worse outcomes for some groups of
+people than for others. We'll start by
+using the term bias in a somewhat technical sense, to refer to a sample of data that is non-representative of
+the larger population. This isn't quite the
+same idea as bias in the sense of unfair treatment to one group of people over another, although this kind of
+statistical bias can be one cause of an unfair outcome
+for a group of people. So the first kind
+of bias I want to talk about is selection bias. If you take a sample, only some of the flags
+you're selecting, and you're doing bias selection if you're not taking
+them at random. So if I only select
+the US flags here, then I might make
+a wrong generalization about the overall set of items, whereas random sampling ought to get me some from
+every country. Now, any convenience sample is likely to have this kind
+of selection bias. For example, if we
+conduct surveys about moral values with
+college students at elite colleges in the US, we might get a very WEIRD view of how the world views
+many questions of morality. Indeed the acronym WEIRD, W-E-I-R-D, has been used to refer to this kind
+of bias sample. WEIRD, W for Western, E for Educated, I
+for Industrialized, R for Rich, and D for Democratic. So WEIRD, Western Educated
+Industrialized Rich and Democratic Societies, which make up only 12 percent
+of the world's population, but 80 percent or more of psychologists
+study participants. Even on some basic
+cognitive questions like perceiving
+certain visual illusions, selecting study participants
+from the WEIRD societies, can lead to different
+results than you would get from other samples. Sampling the people
+who use your product, if you're working at a company, that may also be a form
+of selection bias. If you're interested
+in the opinions or behavior of people who
+don't yet use your product, and you only survey the people who do use your
+product and try to generalize, you'll probably be
+making some mistakes. So that's one kind of bias. Another kind is
+self-selection bias. That occurs when you let people self-select to be in your sample. Like I'm in a live classroom and I only call on people
+who raise their hands. Now, any online opinion
+poll that collects data from people who choose
+to visit the website, rather than say the people who the site has chosen to contact, that's going to have a risk
+of self-selection bias. For example, if the website for a political party conducted a poll asking
+people's opinion about who they will vote for
+in the next election, and run it as a web survey
+that you start by clicking on a link
+on their website, you're likely to get
+an answer that overstates the true vote percentage
+for that party's candidate. Political scientist Jim Fishkin
+refers to these as SLOPs, self-selected listener
+opinion polls. But you can get
+a self-selection problem even if you invite
+people to participate, because some kinds of
+people may be more likely to accept your invitation. So a third kind of
+bias is recall bias. Here, the people you are getting data from maybe representative, but the data you get from
+them may be incorrect. For example, you ask people to recall what they did last week, and they don't remember
+very well. Observer bias. This one isn't really
+a statistical bias. It's a catch all for anything that the
+data scientists might do that causes the analysis to come out the way they
+were expecting it to. But one particular form of this is that the data providers, say the person you're
+surveying or interviewing, they deliberately or not, they may provide what they think the observer wants to hear. For example, in surveys, you have to take great care about how you ask the questions. If you ask leading questions, you're going to get
+the answers you were leading people to give you. Next kind of bias is
+called survivorship bias. This is another form of
+selection bias where items are included in the dataset only if they've survived
+some pre-screening process. For example, consider the adage, they don't make them
+like they used to. Now, I have a sewing
+machine at my house, and that was manufactured
+more than a 100 years ago. It's actually not
+exactly this one. Mine is not restored
+quite so nicely, but I refurbished mine, and it still works. Can you imagine goods made today lasting for a 100 years
+and still working? I've asked that in a leading way
+to get you to say no. Actually, maybe some of today's goods will still be
+working a 100 years from now. We have a selection bias in our sample of goods
+from a 100 years ago, we tend to collect the
+ones that have lasted, like these old Singer
+sewing machines. The ones that were poorly
+manufactured then, they're not still around today. If you want to ask,
+are goods today more durable than ones made a long time ago?
+Think about cars. In 1980, the average age of cars on the road in the United States was about six-and-a-half years. The cars were six-and-a-half
+years old on average. Today, the average age
+is more than 11 years. So we actually are making cars better than we
+used to. All right. Let's talk about one other source of not getting the right data. Even if a dataset covers a set of items that's representative
+of the population as a whole, we have another data
+quality problem, which is the data
+might just be wrong. For example, the dataset might include
+people's birth dates, but some birth dates may be incorrectly
+entered or inferred. Maybe people
+deliberately gave you wrong birth dates
+because they were trying to protect their privacy. So one situation where this
+can be especially problematic is when the dataset
+reflect human judgments, and those judgments
+encode historical biases, because then we'll end up using
+the data to train a model that reproduces
+those law judgments. By historical biases here, I mean not the
+statistical notion of bias that we've talked
+about up till now, but the usual notion of bias as in unfairly discriminating
+against women or minorities. For example, imagine we wanted to create
+a computer program to do a first screening of
+resumes for job applicants. Now, that could be really
+helpful if there are hundreds of applicants
+for every job. So suppose we gather training
+data consisting of resumes, job descriptions, and
+an outcome variable of whether the person
+was eventually hired for the position. May be we'll even track the people who were
+hired and only counted as a good outcome if the person was still employed two years
+later by the same company, then we'd use that
+as training data. Amazon tried this.
+The problem was, for some kinds of jobs, Amazon didn't have
+a very good track record of hiring or retaining women. So Amazon hasn't reported
+statistics about this, but other tech companies have, and they they filled up
+to three-quarters of their technical positions
+with men as of 2017. So that's in the training data. The labels for
+the data items representing female applicants tended
+to show negative outcomes, even though maybe those women would have been
+very good employees. So sure enough,
+the model that was trained reproduced
+those same negative judgments. Indeed, they were even able to trace that the model
+that was trained gave systematically lower scores to applicants from
+women's colleges. If they'd use this program, it would have reproduced Amazon's historical
+hiring practices, which many suspected reflected an unfair bias against
+female applicants and hiring and a poor way of
+running the organization so that they were not as
+successful after being hired. So Amazon decided not to use the algorithm that had
+been trained on that data. So in summary, even
+with enough data, you can still have problems if you make inferences
+from the data and the data is unrepresentative
+or if the data is wrong. If the underrepresentation or errors in the data
+reflect societal biases, such as mistreatment of
+women and racial minorities, this can lead to reproducing and amplifying that mistreatment. On a more positive note, being aware of potential dangers is a good first step
+towards avoiding them. One of the optional readings for this lesson is report that I coauthored issued by
+the Brookings Institution, which makes some recommendations for how organizations can systematically watch out for these problems and take
+some action to correct them. So let me leave on
+a little lighter note. There was a small town doctor, this is in the days before ultrasounds revealed
+the gender of babies, but the doctor, he had
+a great reputation for guessing
+the gender of babies. Seemed he just had an act for it. Even had a nickname
+to go with it, Dr. Foresight.
+Here's what he did. So Mrs. Johnson would come in for her routine prenatal exam at 16 weeks and Dr. Foresight said, "Mrs. Johnson, I think you're
+going to have a baby girl." "Really, how do you know?" "That's just the feeling. I tell you what, I'm
+going to write this down, I'll seal it in an envelope
+and I'll put it in my safe, and we can look at it
+after your baby is born." After telling her that she
+was going to have a girl, he wrote down baby boy and
+sealed it in the envelope. You see, Dr. Foresight have
+realized that people only asked to see the envelope when the outcome was unexpected, when it wasn't what
+they remembered, and then he would
+just say that he remembered saying the opposite. He'd go open the seal, take out the envelope, and the envelope would
+prove him right. So he was taking advantage
+of survivorship bias. Now, actually, survivorship
+bias is also the basis for a potential con, a big scam. So a con man, he wants to do people into sending in
+their life savings. So he sends out a 1000
+letters one week saying, "I can predict the stock
+market's ups and downs. I'll prove it to you
+over the next 10 weeks," and half the letters, his newsletter says, "The stock market will
+go up next week." The other half of letters say the stock market will
+go down next week. So naturally, for
+half the people, he got the first week right. The next week, he only sends
+follow-ups to those people, the rest of the people he doesn't bother wasting the postage. So these people, he
+was correct last week, and for half of them he says, "The market's going
+up next week," and for the other half he
+says it's going down. Again, he's right
+for half of them. The third week he only
+sends follow-ups to the ones he was right,
+two weeks in a row now. So after 10 weeks of this, he's down to only one person
+that he's been right for all the 10 weeks out of
+his original 1024 people. But that person will
+be mightily impressed, because our con man has predicted the stock market correctly
+for 10 straight weeks. So now, he finally makes his ask. He says, "Look, now you
+know I can really do this. Send me all your money and
+I'll make a killing for you." Guy sends him the money,
+he disappears, and the person's out all
+of their life savings. So let the investor beware. Oh well, a downer ending
+for a downer lesson. Let the data scientists beware. I will see you next time.

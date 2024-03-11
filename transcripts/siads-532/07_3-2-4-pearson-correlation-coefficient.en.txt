@@ -1,0 +1,106 @@
+So you're talking about relatedness,
+right? In that case, why don't we directly measure
+the correlation between two vectors? We can definitely do so. There's a metric called a Pearson
+coefficient that measures the linear correlation
+between two variables. If we treat every vector
+as the variable and the values on each dimension as of
+relations of this variable under different contexts, then we can calculate
+the correlation between the two vectors. Pearson's coefficient has
+the strong correlation to cosine. And in fact, it is essentially the cosine similarity
+after deducting the mean from each vector. So given two vectors x and y,
+you just first normalize the numbers of x. You calculate the mean of all
+the values in x vector and the mean of the values in the y vector. You call the means x bar and y bar. And then you basically,
+for every data vector and for every value under each dimension,
+you subtract the mean. And then you calculate
+the cosine of the new vectors. So if you look at the equation, you can see that how similar it
+is to the cosine similarity. The only difference is that we
+do not directly use xi and yi. We use them after subtracting x bar,
+that is the mean of the x vector, and y bar that is
+the mean of the y vector. And then we calculate cosine. So do you like Pearson's coefficient or
+cosine? They are very closely
+related to each other. As we say that Pearson coefficient is
+essentially cosine after deducting the mean from each vector. So whether you should use Pearson or
+cosine depending on whether it is meaningful to deduct to do this operation
+to deduct mean from each vector. As we know, the mean of the vector
+indicates the general trend of the values in this vector. So this would have been
+the very meaningful operation. If the different dimensions
+are measuring the same thing, in other words, if the different
+dimensions are homogeneous, right, they are measuring the same verb,
+for instance. If you're looking at vectors
+of ratings on movie reviews, then every dimension corresponds
+to different movies. But they're all ratings, right,
+they are the same type of data attributes. So taking the mean of
+the ratings is meaningful. And that basically indicates
+the user's general tendency of giving high scores or
+low scores. In that situation, deducting the mean from
+each vector is the meaningful operation. And Pearson's coefficient has the
+advantage over cosine in such scenarios. But the other scenarios, the dimensions of the vector space
+are measuring different data attributes. In other words, they are heterogeneous to. For example, one dimension could be
+about the weight of the user and the other dimension could be
+about the height of the user. Then take the mean of the weight and
+height does not mean anything. In this scenario, it is not meaningful
+to take the mean out from each vector. And in that scenario,
+we should just directly use cosine. Now we have talked about how to calculate
+the similarity of the distance between two vectors. We talked about the dot product. We talked about Manhattan distance,
+Euclidian distance, cosine, and Pearson's coefficient. Now let's use a real example to show
+you how to do this calculation. I hope that will help you better
+understand how to deal with a similarity matrix. Let's look at the same set
+of documents data mining, data mining data Mining, and data mining. And in the third document,
+we added one word, science, into it. So we have another document
+called data science. Let's first represent the three
+documents as vectors. The vocabulary contains three different
+words, data, mining, and science. So we represent every document as
+the three-dimensional vector, okay, as following. Now given the vector of additions of
+documents, let's try to calculate the similarity or distances between D1 and
+D2 and between D1 and D3 and see whether document 2 is
+indeed more similar to document 1. Let's first use dot product. By definition,
+dot product is essentially the sum of the product of the values on
+each individual dimensions. So the similarity of D1 and
+D2 can be calculated as 1 x 2, that's the contribution for the first dimension,
+plus 1 x 2 as the contribution from the second dimension, plus 0 x 0, that's
+the contribution from the third dimension. And then you have the dot
+product that equals to 4. Similarly, the similarity between
+document 1 and document 3 can be calculated as the sum of the contribution
+from each of the dimensions. And that gives us a different value 1. So you can see that if you use
+dot product, indeed D1 and D2 are considered to be more
+similar than D1 and D3. Of course, the question is is that
+really such a large difference? Is the similarity between D1 and D 2 really 4 times larger than
+similarity between D1 and D3? We don't know and
+let's look at what other matrix say. Now we can calculate the Manhattan
+distance between the documents. Remember that the Manhattan
+distance is defined as the summation of the absolute
+difference on each dimension. So the distance between D1 and
+D2 is the sum of the absolute distances, 1- 2 from the first dimension,
+1- 2 from the second dimension, and 0-0 from the third dimension. That gives us the number 2, Similarly, the Manhattan distance between document
+1 and document 3 is a summation of the absolute difference of
+their values on each dimension. And that gives us 1- 1, 1- 0, 0- 1, take the absolute value,
+add them together. You, again, get the number 2. That is Manhattan distance
+considers the two documents, D2 and D3, equally similar or
+equally far away from D1. What about Euclidean distance? Euclidean distance is defined
+as a square root of the sum of squares of the difference
+on each dimension. So using this definition, we can
+calculate the distance between D1 and D2. On each of the dimension, you calculate
+the difference of the values, you take the square, and then you add
+them up over different dimensions. Then finally,
+you take the square root, and that gives you 1.4 as the Euclidean
+distance between D1 and D2. How about D1 and D 3? You use the definition and you compute
+the sum of the squares of the difference of different dimensions, and
+then you take the square root. And that once again
+gives you a number 1.4. And that means Euclidian distance actually
+agrees with Manhattan distance on this one. And they both think that D2 and
+D3 are equally similar to D1. Now how about cosine similarity? To calculate cosine similarity,
+we need to normalize the vectors and then calculate the dot product. Essentially, the cosine
+similarity between D1 and D2 is their dot product over
+the localization of each of the vectors. You take the square root of the sum
+of the squares of each vector. And that gives you 4 over square
+root of 2 times square root of 8. And it gives you the cosine similarity 1. That's nice. Remember that the largest positive
+value of cosine similarity is 1. That means document 1 and document 2
+are just considered as the same vector. Why? Because they just share
+the same dimension, because they just share
+the same directions. So how about cosine
+similarity between D1 and D3? Based on the same equation, you can calculate the cosine
+similarity between D1 and D3. You take the dot product of D1 and D 3 and then divide that by the localization
+of the magnitude of D1 and D3, and that gives you a value 0.5. So using cosine similarity, you can
+see that the similarity between D1 and D2 is the maximum and it is two times
+higher than similarity between D1 and D3. Is that intuitive? Does that a great with your intuition? We leave the calculation of Pearson
+coefficient for your homework.

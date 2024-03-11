@@ -1,0 +1,168 @@
+All right. Now, let's take another look through
+this slide deck, and talk about what worked and what maybe was
+less effective. So we'll start. Here's
+the title slide. This is actually the logo
+for Chicken Kitchen. And this does a couple of things. First, we have the option of
+pursuing this color theme, or coming up with a sort of
+complimentary color theme. You can see we chose
+to use the branded theme. And we'll take a look
+at times when that really works and times when
+maybe it didn't work so well. But because this logo had a font, we were able to copy the font. This is Montserrat, and you can see that it's got a couple
+of different weights. There's the chunkier
+bold font in the logo, and then superimposed is
+that lighter font style. This is a stock photo based on the Experian Mosaic profiles that we looked at
+way back in Week 1. We found an open
+source variation for the purpose of these slides. But beginning the slide
+deck with people, especially happy smiling people, can be a way of really
+humanizing an experience. So I do like this moment. Did we need two moments? I'm not quite so sure. One might have been enough. The thing you want to be
+careful about whenever you are making sort of these photo
+representations of folks is that you've got at
+least some diversity that's reflective of the community
+that you were talking about. Here, I think that one of the
+things that felt important for context is why
+were we looking at two very different
+populations. So in this case, I built them out to
+be natural extensions of where we already
+have locations. This might not work
+in every case. But I put a dotted
+line to show that they didn't yet exist there. And here you see where
+really sticking with the brand colors is
+potentially overwhelming. So if Chicken Kitchen
+is the kind of place where everything
+is pink all the time, then this is going
+to fit right in, right? If it's a place where
+that logo was meant to be a provocative contrast, then you can see how this could easily become overwhelming. And we can fix this in
+a couple of ways. One is we could switch to that darker border
+color of the logo, one is we could ignore it
+altogether and look across the color wheel and find a different color that
+is complimentary to it. And this image, by the way,
+is just a Wikipedia US map, so I was able to put a colored
+background behind it. So another option could
+have been that I didn't put a pink background but I left the pink dots because pink
+dots represent the company. Here, again I wanted to make the point that this is
+a great place to be. So even though a lot
+of the narrative is about highways and
+commuting time, I wanted to really
+build up this sense and give the impression
+that this is one of those higher income communities where this franchise fits well. So I wanted to sort of awaken
+this sense that this was the right kind of community for the profile that this
+corporation has set forward. Here, I think we
+have a design mistake. And you can think, "Gosh, it's
+really great that we have like these maps and that's kind of cool
+to have the state outlines." But part of what makes us
+problematic, of course, is that Texas is really
+geographically enormous, yet it has the smaller income. So in order to make Maryland look big enough to
+have 95K in income, we've completely
+skewed the graphics. We tried graying out the Texas so that the
+Maryland one comes out, but here's a place where
+it's just not adding up. And maybe, a simple graph, a bar graph, would tell the
+story more effectively, or frankly, just doing a numbers-only graphic with just
+the 95 and the 81. And maybe 95 is a dark color
+and 81 is sort of grayed out. So here's a place where
+I think we had a bit of a ambitious design
+experiment that's a fail. I always wrestle with these two-year or side-by-side
+graphics like this. And I think that this makes the case. I think that maybe less
+data, or different data, or maybe even a
+table of data with colored boxes might have been slightly easier to
+understand right away. Or what I might do here is
+make a pie chart where I show that the wealthier
+population, the 100K, is growing. And then I might cluster some
+of the lower-income data and show that that population is shrinking or staying stable. That might have done a
+better job and required a little bit less
+technological intervention. Here's another place where the attempt was to be
+graphically interesting. And it turns out that there was
+a lot to say about roads, right? So in a way, this
+works pretty well. It very boldly says, this is what is important. I think what's a little
+bit less effective here is the two different
+colors of pink, with Frederick
+County being bolder, Kendall County being sort of
+transparent and grayed out. So here I think you
+either want to take the metaphor all the way. If you want to visualize that, maybe it's two cars
+on the road or it's two exit signs on the road, but I feel like the pink
+boxes are not quite the right metaphor to go
+with the bold graphic move. And I should point out that
+this road comes from the site The Noun Project
+which is a great place to get free to use with
+citation graphics of all kind. They're all black and white, you can recolor them, but it's sort of my go-to place
+when I need something graphical and I'm not
+going to make it myself. Here, we switched to maps. And I think that maps can
+be super powerful here. Now, the question
+that arises when you see this map, first of all, it's very clear that there are these major roads
+that go all around, right? And I think what maybe would have
+been stronger here is not to have the little Yelp
+numbers in place yet but merely to say, there's a lot of
+expressways here. Because the case about number of restaurants can be made
+better on this slide, right? Here, we've got some
+screenshots from Yelp and we see the location. And this is a good place
+to pause and talk about how one could make an argument that
+this is the wrong place, which is why there's
+a bit of ambiguity involved in all of
+your scenarios. We could say this area
+is already too built up. I show you one Chick-fil-A
+in this picture, there are actually two. So bringing in a new
+chicken company, that might be
+too much restauranting in a single lane of interest. So you would not want to say, absolutely, we're going
+to put down roots here. You might want to think
+about site visits, and pricing out the market, and being a little
+bit more measured. You could also say
+the opportunity is in Kendall County, which
+is less developed. We could really plant our flag. We could get land for less money. We could be the
+dominant price point. And that would also be a different
+approach to the argument, right? If these decisions were all
+hit 'em out of the park, we wouldn't need to
+hire an analyst, right? I do like the simplicity of this slide that just says
+there is a college there. I could have done a
+photo, but I think that would have added
+a sense that I'm supposed to get something more out of the image than
+really is intended. So I'm just minimizing the cognitive load and
+just putting the logo up. I've made this point, and we've been talking
+about this since Week 1, of anticipating what an audience might ask in a presentation. And so throughout this course, there's been the
+recommendation that you think about why not the other choice? And here we represent
+that as a table. You could also have a
+really high-power image. Let's say that you know that Chicken Kitchen's
+profits are directly, they travel in an exact same
+pattern as the percentage of the population that
+votes Republican, or that has the highest
+anticipated growth. You might highlight
+just that one fact. What I wanted to
+show here is that we knew multiple measures
+of impact that lead toward the probability
+of more profits per store, and that made Frederick
+the key picture. But here again, we see
+that bright, bright pink color. This is going to appeal to
+some of your cultures and not. Again, we're trying to echo
+the Chicken Kitchen logo. We could easily debate
+whether that should have been a different
+color or whether we should have applied a
+transparent version of that color so that we got the same intensity but a little bit
+more white mixed in. And again, you'll want to sit
+and play with these sorts of things. We could also have, for example, taken out the vertical lines. That's one of my go-tos
+when I look for tables. Because we don't
+have a ton of data, we would probably not lose
+any meaning if we did that. And again, you find that out
+by your experimentation. You'll also notice, by the way, that the fonts on this
+table might look bigger than they did when
+you were working on your technical report. And again, that's because
+we anticipate that most technical reports are
+written on bigger screens, but when we're here in the
+webinar moment of things, those fonts might need to be a little larger because there's a much higher probability it will be seen on a small screen. Now finally, we returned to those same images from
+before as our closing, keeping in mind that people
+becomes then the major theme. Now, let's say I have
+a CEO that isn't into pink and isn't into people
+and is all about profits, would I organize
+this differently? I sure would. But I'm assuming
+in building this out that this is a group that is pretty people-centered
+and that people are going to be responsive
+to that kind of mode. And that's about all the time
+you're going to have. You're going to have five minutes so you're
+going to have to be really judicious in
+making your recording. That means you'll have
+to decide on what is my highest impact argument? What are the tools I have in my tool kit to
+deliver that impact? How am I going to practice
+to be ready for that? So you'll want to think about
+five minutes looks short, but there's all that
+prep work around it. And try to give yourself
+the space to enjoy that process because
+you're going to learn so much through that
+experimentation. All right, that's
+it for Week 4. Good luck in your own webinar.

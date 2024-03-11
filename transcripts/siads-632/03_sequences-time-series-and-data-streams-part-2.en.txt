@@ -1,0 +1,107 @@
+Now we have talked about the
+definition of sequences, time-series, and data streams. You can see that there's
+actually one thing in common in all these
+three data representations. And that is all of them have orders. No matter you're talking about a category item or the value, or the complex data
+objects and event. And no matter whether you record the actual
+timestamp or not, these objects come in order. Because we have the order, a common data mining task we can apply to these
+data representations is to make a prediction. In many cases, we're particularly interested in making a
+prediction in the future. Basically, by making
+a prediction, we're looking at
+the observed data and we want to make an
+inference or a guess, about something that
+we have not observed. For example, that something
+could be a data object. Which car is going to arrive
+in 20 minutes on the highway? Or it could be just the
+property of data objects. For instance, the
+price of a stock. What will be the
+stock price tomorrow? It could be an event. It could be any information
+that is about the event. The definition of the
+target or prediction could be quite broad. But it is trying to figure out, trying to guess something
+that we have not observed. And of course we
+make the prediction based on what we have observed. As we said that, we are probably more
+interested about making predictions for the future instead of making
+predictions for the past. When the target of
+predictions in the future, making a prediction is
+also known as forecasting. We know a lot of examples of time series-based
+forecasting. We will cover a lot
+in this course too. In this course, if
+there's no ambiguity, we will use predictions and forecasting interchangeably
+because many of the techniques that we
+use to predict the future can also be used to predict
+the past and vice versa. But if there is ambiguity, I will use the two
+terms differently. You can see that
+predictions and forecasting are very common data
+mining functionalities used on sequence data, time-series data,
+and data streams, and in particular because
+they have orders. And also in particular that they could let us guess
+about future events. Let's first look at how to make predictions in the sequence. Or what are the applications
+of sequence predictions. I'm sure that you have seen this. On Google if you type
+in the query, nowadays you don't have to
+finish the whole query. If you type in the
+word university and Google is trying
+to recommend to you, or is trying to make a guess of what you
+wanted to type in next. You can see that not every
+query word is the item. And the sequence of words gives you something that is
+called a sequence of words. Then you can make a prediction. Google is making a prediction of the future items in the sequence based on
+the historical items. Based on what you have
+already typed in. It's good to see that University of Michigan
+is the top guess. It is actually an
+accurate guess for me. This is another example that
+is also the Google product. If you look at in Gmail, nowadays whenever you are typing in a partial sentence
+in your Gmail, it's trying to help you complete the sentence
+automatically. Of course, behind there, there is lots of machine learning. Lots of natural language
+processing tricks. But essentially, what it is doing is to make
+predictions. Based on what? Based on the sequence
+words you're typing. In these two examples, we can see that we have observed
+partially the sequence. These are the previous
+items or words in order. The target of the prediction are the next items also in order. The system is trying to guess, what are the next
+and the next word we will type into this sequence. This is the typical application
+of sequence prediction. What about time series
+predictions? The same thing, right? Given historical values,
+timestamped values, we can make a guess
+about future values. For example, in the plot
+to the left of the screen, we can see that we
+have a set of prices, and in this case Google
+stock prices over time. Some of them we have observed and these are
+the scattered dots. Based on the stock prices we
+have observed in the past, you could actually
+make references, you can make inferences, and you can use your time
+series answers techniques, which we will learn
+later in the course, to make a forecast. That is to guess, what the price would
+be in the future. For instance, you can see
+that in this plot where making predictions
+into the year 2021. You can see the time
+series is not covered by the actual scatter plots are our
+predictions or forecasts. Another real-world
+example and that we're very familiar with
+weather forecasting. Based on whatever
+we have observed. Not only is the
+temperature of today, but also lots of sensor data. Then we model the climates,
+we model the weather, then we're trying to
+make a prediction of the temperatures of
+the weather tomorrow, the day after tomorrow, basically into the future. In these examples,
+what we observed are time-stamped values up
+to now, up to present. The target or prediction are the same type of value
+at a future time point. And the prediction target will be the same
+type of properties. For example, if you have
+access to Google stock prices, you're also making
+a prediction of Google stock prices
+in the future. This is normally how it's done. But the difference is that, 
+we're trying to make the history, to make a prediction, to make
+a guess about the future. Predictions are also
+common for data streams too. Take the Twitter
+stream, for example. This is the research work that we have done in the past
+quite a few years, to detect rumors as early as
+possible in Twitter stream. The basic idea is to model rumors as the cluster of tweets. You can see that it is actually
+a complex data object in tweet stream. Or is the
+complex event that is a rumor. Based on detecting
+the rumors that are circulating in
+Twitter in history, we're trying to make
+predictions of, in what scenario then, a new rumor is going to be widespread. And if there is, we want to catch it as
+quickly as possible. You can see that,
+in this example, what we observed are the
+summary of historical events. Why? Because the entire
+Twitters stream is just huge, that no one can actually handle all the tweets from
+the very first day. At least not in academia. The target we're trying to
+predict is not just one item, is not just one value. It is actually the complex event. That is the arrival
+of the new rumor.

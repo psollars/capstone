@@ -1,0 +1,91 @@
+One of the more common python
+visualization library is in use for data science, it's called matplotlib. And in this course, we're going to
+use it within the jupyter notebook just like we did with pandas and altair. Jupyter has some specialized support for
+matplotlib and this is enabled by using
+the IPython magic functions. And you'll see some of
+this in our examples. Of course, you don't have to use
+matplotlib in jupyter notebooks. It is plenty of support for standalone
+IDs or other software environments. In this video I want to speak to some
+of the details as to how matplotlib was architected and the mindset you might
+want to get into when using it. So matplotlib is built around
+the notion of back ends, which are services that actually
+do the rendering of visuals. And matplotlib has a number of
+different back ends available. A back-end is an abstraction layer, which knows how to interact
+with the operating environment. Whether it's an operating system or
+an environment like a browser and the back-end knows how to
+render matplotlib commands. In fact, there's a number of different
+interactive back ends, but there's also back ends called hard copy back ends,
+which support rendering to Graphics formats, like scalable vector graphics
+SVGs or portable Network Graphics pings. Not all back-end support all features,
+especially interactive features and we'll touch on this a little
+bit later in the course. The architectural layer above the back end
+is where will actually spend most of our time though, and
+that's called the artist layer. The artist layer is an abstraction
+of drawing and layout primitives. The route of visuals is a set of
+containers which each include a figure object with one or more subplots in each
+of those is a series of one or more axes. And it's this last object the axes which
+is the most common one that you're going to interact with. Okay, so time for
+a brief aside, especially since this is a global classroom with
+people from around the world. Matplotlib relies heavily on the axes
+object, which is the plural form of axis. But matplotlib also has
+an axis object as well. And an axes is actually made up
+of two axis objects, one for the X horizontal dimension and
+one for the y or vertical dimension. So you might hear me pronouncing
+these two words axis and axes a bit more intentionally
+than I would in regular speech, in order to help make things
+a little easier to follow. I hope it's not going to be too weird and the code you should be seeing
+the notebook should make that more clear. Now the artist layer also contains
+primitives and collections. These are base drawing items. A rectangle, ellipse or a line, and the
+collections of items such as a path which might capture many lines together forming
+a polygon shape or an irregular shape. Collections are easy to recognize as their
+name tends to end in the word collection. It's worth taking a moment to look at
+the kinds of artists which are available. Here's an image from the matplotlib
+documentation on artists. You'll see that there are many child
+object of the artist object and that one of them is called patch. This name comes from the Matlab
+roots of the matplotlib project. A patch is any two-dimensional object
+which has a face color and an edge color. And children of the patch class
+are the primitives as we've discussed. Okay, so matplotlib has two layers,
+a back-end layer, which knows about low-level Graphics routines,
+It can render to the screen or to a file. Will use the inline back-end layer for
+most of our work and the artist layer which Describes
+Primitives, Collections and containers. It knows how figures
+are composed of sub figures and where objects are within
+a given axis coordinate system. So with this we can actually get
+started building figures and rendering. But there's one more layer which
+is extremely important for us as data scientists in particular and
+this is called the scripting layer. You see if we're writing
+an application to use matplotlib, we might never care about
+the scripting layer. But this layer helps simplify and speed-up
+our interaction with the environment. And it does this in order
+to build plots quickly. Frankly, this does a bunch of magic for us
+and the difference between someone who's effective with matplotlib and someone
+who isn't in a data science sense is usually based on their understanding
+of this magic of the scripting layer. The scripting layer that we're going to
+use in this course in many of the examples is called pyplot. So that describes
+the matplotlib layer cake. There's a back-end which deals
+with the actual drawing. A bunch of artists sit on top of the back
+end which describe how data is arranged. And then there's a scripting layer at the
+top which actually creates those artists and choreographs everything together. I just want to address one
+more topic before we move on. And that's the difference between
+procedural and declarative visualization libraries, and well user interface
+is more generally actually. The pyplot scripting layer
+is a procedural method for building a visualization. In that we tell the underlying software
+which drawing actions we wanted to take in order to render our data. There are also declarative methods for
+visualizing data, HTML is a great example of this. Instead of issuing command after
+command to the backend rendering agent, which is the browser in HTML, HTML documents are formatted as models
+of relationships in a document. We call this often the Dom or
+the document object model. These are two fundamentally
+different ways of creating and representing graphical interfaces. So the popular JavaScript Library,
+you might be familiar with it, you might not for instance. It's called D3.js and it's an example of a declarative
+information visualization method. While matplotlib pyplot is
+an example of a procedural information visualization method. So if you're familiar with D3 or HTML, you
+might find this a little bit different. Okay, that ends our discussion
+of the matplotlib architecture. I've also linked an article that was
+published in the second volume of a book architecture of Open Source Applications. This provides a little
+bit more context for the architecture of matplotlib
+if you're interested. It's a little dated now. It was written by John Hunter and Michael Droettboom,
+who created the matplotlib library. I think it's a really
+wonderful to read and give a little bit more
+context to the library, especially if you start using it more and
+more and get engaged with the community. Let's dive in and do some plotting and
+charting at matplotlib.

@@ -1,0 +1,116 @@
+Hello there. We're just about at the end of this week, and I wanted to talk a little bit
+with you about the assignment. This week's assignment, I hope, is going to be
+particularly useful and relevant. Obviously the teaching staff think that
+everything in the class is useful and relevant and I didn't put in
+anything that I thought was useless. So we tried to put in things that
+were only good but at the same time, I recognize that everyone's
+coming from a different place and you have a variety of really
+interesting backgrounds and experiences that lead you to focus
+on a particular topical domain. I do too. There's certainly biases in the things
+that I focused on in this class because I wanted you to benefit
+from my experience. This week, the assignment asks you to really tie
+the things we've covered in this class to your experiences and your needs. So other than - a little different than
+the previous week's - the previous week's had a more specific assignment
+related to that week whereas this week, what we'd like you to do is reflect
+on the course as a whole and to think about the material
+that was useful to you. Like, I hope everything was useful and interesting but even within that maybe
+there were some hits and some misses, so think about what is particularly
+useful to you for this assignment. The way we'd like to structure this
+assignment is to think through the genre of the professional oath or
+pledge or checklist. We've covered some checklists in the past. You remember, perhaps, our other assignment
+about the Canadian checklist for algorithmic impact assessment. What we're going to do in this is a little
+different. Instead of asking you to review or comment on for example a software
+system like the what if tool or a case study or the Canadian
+algorithmic impact assessment, what we'd like you to do is
+to come up with your own professional oath pledge or checklist and we'd
+like that to be specific to the domain that you're most interested in working
+in or that you're likely to work in. So if you're particularly interested in
+the auto industry than maybe think about a professional oath, pledge, or checklist
+that relates to the auto industry. You don't have to reinvent
+the wheel, as I said way back in the introduction
+of this class. There's a huge number of checklists and
+guidelines and ethical statements out there, way too many I think personally
+because we're not really sure which is the right one. But what I think you can do is try to
+identify things that we've covered in this class that are particularly relevant
+to your situation and think about how you might implement that in a real workplace
+as either an oath, pledge, or checklist. This is not an abstract idea. So I'm showing you now a recent magazine
+article headline: Should Data Scientists Adhere to a Hippocratic Oath? We talked about Hippocrates and
+his oath a little earlier in the class. But generally there is a widespread public
+idea that because there are certain dangers specific to data science, and
+data scientists are really the only people that are well placed in identifying the
+dangers at the time or preventing them by may be doing or not doing certain things
+during a data science analysis or during data collection or
+during the presentation of data. Maybe there should be some sort of oath
+that would give us some guidance and there have been some proposals for that. You can you can also search for
+that online. But I just want to emphasize this is
+also a fairly normal idea, the oath of Hippocrates and it's the idea
+that it starts with do no harm, which isn't actually what it starts with
+but most people falsely think that, for doctors is pretty well-known.
+But there are oaths for a variety of professions for some time
+the Association of Computing Machinery, which I am a member of, which is
+a professional association for software developers and
+computer scientists. It had a little a little
+list of Ethics rules on the back of its membership card so
+that you do see a variety of professional organizations that have oaths and
+pledges and things like that. I'll highlight one. It's interesting one it kind of fell
+out of fashion, but it was proposed by I believe a Nobel Prize
+winner in science. And this was a pledge that
+was designed for science. It's called the Pugwash Pledge, which I
+believe is a reference to a particular conference called the Pugwash Conference,
+which I think is a reference to a place. Anyway, the pledge is "I promise to work
+for a better world where science and technology are used in
+socially responsible ways. I will not use my education for any
+purpose intended to harm human beings or the environment. Throughout my career, I'll consider the ethical implications
+of my work before I take action." Now, I'm not going to read the rest but the idea behind the pledge
+was that science, at the time this was proposed, was
+starting to move into areas that people thought were, were
+in some ways quite threatening. The particular concerns were about
+nuclear weapons, weapons of mass destruction, some kinds of chemical
+agents like nerve gas, weapons of war. And so the idea was maybe we should
+have a conversation, as a part of our education process, about what kinds of
+things people are expected to do with this education that they're given and
+that maybe scientists or technologists could get together and
+all agree on what they were about. So this, this pledge fell out of fashion. It's a more of a historical example and
+you don't see it as much anymore. But at one time if you
+got natural science, or in some cases engineering degree. There would be an organization that
+would ask you to sign this pledge. But there's many other pledges.
+Checklists are okay too. We, earlier spoke about
+the Canadian checklist. But there are a variety of checklists
+that are online that you might also, that you might also want to consider.
+My message for you is that checklists, pledges, and oaths are actually a pretty
+normal part of your professional life. Although we don't tend to think about
+the oaths and the pledges so much except right when we're taking them and if we
+get into trouble, they're still around. And so what I'd like you to do here is not
+reinvent the wheel but try to identify some parts of the course that are relevant
+to your particular practice and then it's okay to use existing checklists
+or to adapt them to your purposes. So what I'm thinking that you're
+doing here is not, maybe, drafting a whole new statement or checklist, but rather stealing, in a productive way,
+what's most useful for the career? You'd like to go into and
+doing so in a thoughtful way while also keeping in mind that I
+think all of these things are partial. So for example, we've talked
+earlier in the class about how some of the, some of the things that
+you might do as a data scientist that are problematic aren't really done because
+you thought you were doing a bad thing. So if we make everyone take an oath that
+says, "I promise to be a good person", that's not going to solve
+a bunch of ethical problems that really don't relate to whether
+you think you're a good person or not. Because we can have bad consequences
+even with the best intentions. So, so they're definitely limitations
+to all of these mechanisms as ethical mechanisms for for
+change or accountability or responsibility in because you know,
+I'm not sure if, I mean, I don't think I've taken
+the pugwash pledge. But even if I had, I mean I'm going
+to still keep doing the best I can to lead an ethical life and
+to make science and technology for good but it might turn out that, that
+because of the way that the company that I work operates or
+something that's out of my control, I've contributed to some ethical problem. And so the pledge might not stop it. So let's think a little bit carefully
+about what we're leaving out when we make one of these systems for
+applying ethics concretely to a domain or a workplace where you have an interest. All right, and I wanted to stop there. But before I stop I just want to
+conclude my remarks by saying. I've been really delighted
+to teach this course and I'm really happy to have
+had the chance to organize the teaching team's thoughts about data
+science ethics and and convey them to you. I tried to go out of my way to make it
+a little more interesting than a talking head in a box with Johnny Cash, the dog, and
+my buttons and my weird scarves and things and
+I'm, I hope you got something out of it. I want you to know that definitely
+the teaching team enjoyed producing this for you. So thank you very much and
+good luck on this week's assignment.

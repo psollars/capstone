@@ -1,0 +1,63 @@
+In this video, I'm
+going to be reviewing the project guidelines
+for Milestone 2, and all of these
+guidelines can be found in the document links
+in the slides in case you forget anything
+or have any questions. In my opinion, the project is the most fun component
+of this milestone. It's an opportunity to practice and demonstrate synthesis of all the skills that
+you've been learning so far from data exploration
+and analysis, to model development, feature development,
+and validation, to communicating
+those results in reports and presenting
+it to an audience. I'm going to be going
+over a few things here. The first is what datasets and what modeling techniques are
+expected for this project. We, the instructors,
+are providing a few sample datasets and
+you're also welcome to select your own as long as it's not
+a dataset that's publicly available or that's
+been previously worked on in for example a
+Kaggle competition. If you do decide to
+choose your own, please run that by the
+instructors beforehand. The project requires
+two components. One is going to be an
+supervised learning components and the other is an
+unsupervised learning, and you're welcome to use the same dataset that you used for the supervised
+part with the unsupervised or if there's not a reasonable way to turn it into an unsupervised project, you also have the
+option of choosing a second dataset for the
+unsupervised components. Of course, those same guidelines about public availability
+still apply. Timeline for the project. There are basically four steps. We're going to start
+with team formation. Then you'll put together
+a draft proposal. Those proposals will be peer reviewed and then reviewed
+by the instructors. Then you'll obviously
+work on the project and put together a final
+report which you'll submit. The first step after forming
+a group will be to the select a dataset and to
+develop project proposal. This proposal is
+a short document. The specific guidelines are listed again in the project
+guidelines document, but basically it's
+a short document that you'll put
+together to pitch your analysis and
+evaluation techniques and to solicit feedback from
+your peers and instructor. The next step will be
+to submit this proposal and it will be
+assigned to peers in your course and your cohorts
+to evaluate based on a few questions and criteria
+that we give you from, does the analysis
+technique makes sense? Can you suggest anything
+that's missing? Is the proposal
+communicated effectively? Not only will you be
+receiving this feedback, but you'll also have
+an opportunity to see some of your peers proposals and provide that
+feedback for that. Next we, the instructors
+will provide some quick feedback
+and then you have runway to develop and
+work on the projects. What does the final
+report look like? You're going to be introducing the dataset and the problem and your approach and
+why you selected it, and then showing us
+what your approach was, what the results were compared to a baseline that
+you will provide, and then discussing
+those results, what the limitations
+of your approach or the dataset might have been. That's it. We're really
+excited about the projects. Again, you could find all of the guidelines listed
+in the document online. As always, please feel free to reach
+out with any questions.

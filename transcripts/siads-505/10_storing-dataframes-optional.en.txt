@@ -1,0 +1,256 @@
+This lecture might seem
+a bit backwards to some. You've already learned how
+to manipulate DataFrames, loading data from structured
+formats such as CSVs. But there's many more
+common data formats, the pandas can help you with. I think it's important
+to have a bit more of a comprehensive look
+at data storage. So here we're going to expand our investigation to
+other data formats. Let's import the pandas library. So import pandas as pd. All right. Let's talk
+about CSVs first. One of the most common and
+easiest files to work with is a CSV file or comma
+separated text file. Loading, reading and
+writing CSV files is a key skill to master
+for any data scientist. To review, a CSV file
+is a text file where values or columns are
+separated by commas. CSV is quick to read and it's compatible
+with most platforms, and you can even open
+a CSV file within the text editor
+built into Jupyter. While CSV is very easy to load, real-world data rarely contains clean data in these cases, and there's a few different
+pandas functions that can help with messy data here. This is an example of
+a CSV file I pulled from Google containing data
+on national education. So we'll say df equals
+pd.read_csv datasets, and it's called National-2018. Let's look at the head of that. So we can summarize the values of unique values for
+a specific column. So the most frequently occurring element
+and how much they occur using this
+value_counts function. So df_qualification.value_counts. So we see that our DataFrame
+was printed out first. So we get all of the columns or rather the head of
+the DataFrame was, and then we can see some summary
+information as well. When you load a CSV file, Python knows that the values
+will be separated by commas, but CSV values don't contain any type of
+information for the data. So pandas infers
+the datatypes unless you specify the value type for columns with a dtype parameter. We can quickly see
+the datatype inferred by pandas using the
+DataFrame.dtypes attributes. So let's just say df.dtypes, we can see here all of the columns and all
+of the datatypes. In this case because it
+was lowered from the CSV, these were inferred by pandas. Usually, the first row in a CSV file contains the names of the columns
+for the data, and when it doesn't, you can either specify columns yourself or let pandas insert an
+auto-incrementing number instead. A handy option is to
+actually use the index of the DataFrame to be one of
+the columns as well on load. So I'll regularly do this. So pd.read_csv. I'll bring in National CSV, and I'll just say
+index col equals one. So I wanted it be
+the second item. Then let's look at
+the head of this. So here we see that
+qualification was picked up. You can also insert a multi index by just providing a list, and you can use
+the column names as inferred from the first row
+instead of a number. So here we'll just pd.read_csv, bring in the CSV file
+and set our index call. Here we'll just set
+it to be a list of year level and academic gear, and look at the head of that. We see here it's a multi index, year level is
+the outermost index and academic year and next. Sometimes the formatting
+issue can occur, preventing you from working
+with your data at all. While you should always
+ensure that you're working with the data
+that you want to, it's sometimes useful to skip troublesome rows for
+data exploration. In truth, I do this quite
+a bit for exploration, but it really is
+important to make sure you understand why you have to skip data when it comes
+to reporting some result. So pd.read_csv,
+bringing the CSV file, and then you can just say
+which rows you want to skip. So skip rows equals
+one, two, three. Then let's look at
+the head of this. We can see that we skipped
+a number of those rows. Sometimes you're dealing
+with large CSVs and reading them in in
+one operation is intractable. To help deal with this, you
+can give pandas a chunk size, then iterate over the DataFrames in a chunk by chunk manner. So here's an example. We'll create a new
+chunking iterator, and the key is it's in iterator. Then pd.read_csv, bring in our data sets and say chunk size, and we'll just say it's
+equal to 13 lines. So now we've got
+this iterable item. So we say i equals zero
+for piece and chunker. Let's just print out. Chunk has some rows, and we'll pass in our chunk
+information and the length of the number of rows and
+increment i, and run that. So I use this when I've fairly
+extensive data cleaning or processing routine that I want to run on large data files, and I wanted both reduce
+overall memory usage as well as improved
+CPU utilization. Now, this isn't particularly
+important for this class, but as you progress
+as a data scientist, there will come a time
+when you need to load data and to work
+with biggish data, and data that you
+should be able to work with on a laptop, but can't. Knowing that there's
+places to investigate further is actually
+really important. Something you should be aware,
+with chunking, however, is that the pandas type inference works on a chunk by chunk size. So your types might end up
+being a bit unpredictable. In the above example, there's one cell in the academic year column
+which has a non-number. When we read in
+the whole DataFrame, this is red and
+the type of object. But when we read it in chunks, we see that this is only
+an object for one chunk. So for piece in pd.read_csv, and we'll set our chunk size
+again to Lucky 13. Then we're actually
+just going to print out P_academic year and what
+its data type was inferred as, and we'll increment i. Here we can see that one of those chunks is
+different than the rest. So it's actually
+an appropriate Int64, and most places but
+an object in others. Perhaps even more ubiquitous than CSV files in the corporate
+world or Excel files. You'll find that much
+of the data created or given to you might be
+trapped in this format. Using the excellent xlrd library, pandas is able to read this almost as seamlessly
+as CSV files. Important difference
+from CSV files is that a single Excel workbook
+might contain many sheets. Each is analogous to a DataFrame. So let's load some data
+from a report card on elementary districts
+from 2016 and 2017. Here I'll just look
+at the one sheet, the primary class sizes. So we say pd.read_excel, actually read_ is great just to explore all of the
+different options available. I will pulling datasets
+classsizes.xlsx. I will set the sheet name
+to primary class sizes, and let's look at
+the head of that. Our table doesn't actually
+look very useful. So let's take a look at what
+this looks like in Excel. So here, I'll just
+load a picture of what this looks like in Excel. Okay. So this is a pretty typical data file you might be
+handed to work with. We see that a number of different rows being
+taken up with graphics, and then like colors
+being used for headers, and that there are
+at least two different DataFrames on this page. To deal with this, you're going to want to use a number of different options in
+the read_excel function. Excel numbers, it's row
+starting at one, but we don't. We start at zero. Excel has
+columns starting with A, but with pandas, we use
+numbers instead of letters. Again, starting at zero. So let's grab that top table
+into a DataFrame. So I'm going to say df
+equals pd.read_excel. I give it the path to
+the Excel file classsizes.xlsx. I set the sheet name
+that I'm interested in, and then I'm going to parameterize a bunch
+of other things. So I'm going to say the header, we actually want Row 7. We're going to skip
+the footer at 19. We want the index
+column to be zero, and we're going to
+set a dtype here. We're going to say that
+the average class size is going to be of type string. Let's look at the head
+of that DataFrame. So that's pretty handy to
+be able to do in Excel, to actually quickly pull that
+into a pandas DataFrame. In the corporate world when somebody gives you an Excel file, they often don't want to be
+changing that Excel file, maybe the data values
+change in it over time. They might not know how
+to export it as a CSV. So being able to take and
+work with the Excel file quickly and to write some code to do that
+is really quite handy. The easiest way to store
+data in a binary format is using Python's built-in
+pickles serialization. Now, this isn't actually
+a Pandas library, this is built into
+the language itself. It's quick and easy to
+dump an object like a dataframe to a file to
+use it for later use. There's lots of caveats to
+doing this and I wouldn't recommend it over some of the other formats
+we'll talk about. But if you're working mostly
+with Python developers, you will undoubtedly
+need to use it. One of the most useful parts
+of pickle versus some of the other formats
+we've talked about is that data types are preserved, so you could do all your
+cleaning and typing in one file and then share
+the object with others. So first let's import
+the pickle library that's built into Python
+so import pickle, and now we're going to create the pickle file that we
+actually want to write to. So we do this with
+the file just with open. I'll call it dataframe.pickle, and WB stands for
+"write binary" as f, so now we have a file handle
+with f. Now we just tell Python to dump our dataframe from the previous example
+into this pickle file. So pickle.dump df and we
+want it to go into f, and then when we finish
+the with statement, we automatically close
+all of our file handles. When we want to read it in again, we can do so pretty easily. So similar thing with
+open dataframe.pickle, here I'll say read
+binary, rb as f, and we'll create some new
+variable our_old_dataframe equals pickled.load f, and then let's look
+at our_old_dataframe, and we see our
+old_dataframe is there. Pickle files are a quick and easy way to store dataframes, and I find that sometimes
+I use them when I need to save intermediate
+dataframes in particular. For instance, when
+I'm working with large dataframes on a machine with a limited amount of memory, or when I need to
+distribute portions of a dataframe to different
+processes or machines. I also use these regularly
+for intermediate work, and so I'll be working, I'll do a lot of manipulation on a dataframe that
+takes some time, then I'll want to dump that, and then I can start to work from that the next day
+when I come back. HDF5 is used when you're working with very large datasets, and it's especially useful for datasets that won't
+fit into memory. HDF stands for
+Hierarchical Data Format and each HDF5 file can store multiple
+datasets as well as supporting metadata like
+column information. HDF5 supports on
+the fly compression with a variety of
+compression modes, enabling data with
+repeated patterns to be stored more efficiently. So let's bring in
+the numpy library. So import numpy as np, and then you use HDF5, we first create
+our data stores or files, so I'll create
+a variable store is equal to pd.HDFStore and we'll
+just call it mydata.h5. Then we can insert
+into that store different dataframes or
+even portions of dataframes. So I can say store
+subclass_sizes equals dataframe, or I can say store subclass_size
+2009 equals DF sub 2009, I'm just project a column
+into that dataframe. Let's take a look
+at what store is. So you can see
+what keys are available in the HDFStore with.keys. So store.keys, and we can see that we've got five
+different keys in this one. Objects contained in
+the HDF5 file can then be retrieved using the same
+dict-like API, the selector. So store
+subclass_sizes.head pulls out for us the class
+sizes dataframe. But where HDF5 really shines is when you save an object
+of type table. So here we can say store.put, a new class size, we'll call that, we'll put the dataframe in and we'll
+format this as a table. Let's look at the store.keys now. When you do this, you
+can retrieve portions of your dataframe from disk without having to read the whole
+dataframe into memory. So in this way, it's actually
+a lot like a database. So to do that, we would do store.select and then we
+would say a new class size, and then we can add
+a where clause, so where the index equals prep, and we want to return
+the columns 2009 and 2010. We can run that and we
+see that we actually get just that row and
+just those columns. So you can see that we can store the data on disk and we
+don't actually have to read it all into memory
+to begin to work with it. A deeper investigation of HDF5 is outside the scope
+of this lecture, but I would encourage
+you to check it out in the online docs and
+play with it a bit, especially the novel
+hierarchical nature of the data. Where it is used most commonly is large scientific datasets which are collected once but actually read many many times. A more common alternative, which we won't cover
+in this course due to the size and complexity of it, are relational databases, and there's several ways
+of interacting with these data sources from
+within Python and pandas. The last data file format I'll talk about here is pyarrow, and the feather format. The feather format is an open-source
+columnar storage data, so a dataframe format, which is intended to be a replacement for CSV
+files and is both faster to read and write as well as preserves
+metadata about columns. So let's do some time
+comparisons reading in the same dataframe from
+both CSV and feather formats. So I'll use the magic cell, time it here, so I'm going
+to run this cell 10 times. First, let's test
+the CSV reading, so we'll work just df_csv
+equals pd read_csv datasets, and here we'll read in
+these house_prices.csv. Now, let's try it with feather. So time it n 10, now we'll try with the feather and df_feather equals
+pd.read_feather. It looks the same, we
+just give it a link to the feather file,
+house_prices.feather. So we see that feather reading
+is moderately faster. Let's look at the dataframe
+types and compare them. So we'll load our CSV file
+from the dataset, and we'll print out
+the types in there, and we'll load the feather file, and we'll print out the types. Let's compare these. One difference we can see is
+that the sale date field is correctly set to a date_time
+64 in the feather dataframe, but was just interpreted as a generic object in
+the CSV and dataframe. Now, we could probably
+further tweaks some of these other datatypes to increase speed a little bit
+if we want to do, dropping the integer
+and float sizes. But I don't want to give you
+the thought that you should pivot and start using
+feather for everything. It's very much under
+active development and there are some potential catches or defaults that you might
+not be expecting. For instance, I
+thought preserving a multi index would
+work, but it doesn't. So if I take df _feather
+and I set the index to state and city and then I try and write this
+to a feather file, I get an error. The error is helpful but the default behavior for CSVs
+is actually different and the two CSV function just writes the columns
+although of course not as an index because there's no metadata,
+just regular columns. Regardless, the feather is
+a great format to watch evolved and the bindings
+across programming languages means that there's potential for high interoperability
+and high-performance of dataframe data structures. In this lecture, we
+covered a range of data file formats for dataframes. By far, the most
+common is the CSV. But it's useful to know that
+there are other formats that you have to work with and
+the pandas supports them. Excel files are very common
+in large organizations, pickle files are
+quick to move between Python processes and capture all of the nuance of
+the dataframe object. An HDF5 and feather files have their uses in more
+specialized circumstances.

@@ -1,0 +1,176 @@
+Hello everybody,
+welcome to our live demo on Git. This is really exciting. I like doing GIT, GIT is a fun tool. We're going to be using which Theo,
+which I've got pulled up here. And will go through what this looks like. But before you start this
+week in your assignment, there's a place that says
+create your GitHub repository. When you click on that link, it's going
+to ask that you sign into GitHub. And it should come up and it's going
+to say we've got to authorize this, go ahead and authorize, it and
+it will take it a minute. And then it's going to say yes. I'm going to accept this assignment. And it's going to take some time
+to do the initial repository. This week is going to be pretty short. And when you're done, you should have
+a link that it says, your repository or assignment repository has been created. We can click on this and we're going to
+end up at a page that looks like this. We're not going to do anything with this
+yet, but we will come back to it later. Let's go and actually start
+working with git first of all. So if we go over to Arthia environment,
+you can see that we have no files here. There's nothing been created yet. I'm going to actually
+open up the terminal. Because we're going to have to type
+some code on the terminal in order for this to work. And so the first command I'm
+going to type is git init, git init creates our initial repository. And it's just going to do that. After we do that,
+there's going to be no change, but we can actually now run
+the command git status. And git status is going to tell us,
+Hey, nothing's happened yet. So let's start actually
+creating some files in here. So I'm going to go to the new file. And I'm just going to call
+this A dot PY to start with. And you'll see that this is come up and
+it's got some things here. We can go ahead and say yes to
+these if they show up for you, and let's just make A dot PY. Why do something? Just something so we can show it. Now If you look. See how this has got a circle around it, that indicates this file
+hasn't been saved yet. And I can use the keyboard
+shortcut to save or I can go into the file menu and
+choose save. Either work showed us a circle is gone. Now if we type get status,
+what this is going to say is, hey, I see that you've created
+this A dot PY file. That's awesome. But you know, we're not tracking it. Git is not been instructed
+to track this file yet. So if we want to tell, get to track the
+file, we use the command git at A dot PY. Why we really only do that once per file
+when we initially create the file and now if we do a git status. We can see that Hey,
+there's a new file here. How do we commit files? We can do git commit,
+hyphen M add new file. And it fails. So the first time you set up git,
+you have to tell git who you are. In this class when you
+go from week to week, you may actually have to do this more
+than once, but it's pretty easy. Just going to copy and paste. The command it wants you to use, but rather than you at example com
+filling your actual email address. And your actual name. Now if we re run our git commit statement,
+get commit Hyphen M. Add new apps. Add new file. We can see that one file changed,
+two insertions. Create mode a dot PY we gotta get status. It says we're on branch master. There's nothing to commit
+working tree clean, OK? So let's add another file. And come in here we can say, new file B dot Ty and
+this is going to be print. This is file B. Print good, good day again. We can save this file and once again we're going to see the exact
+same thing if we come down here. Git status, we can see that B is been
+added, so let's do a git add b dot py. Git commit Hyphen m add b dot py. And if we do a git log now,
+I'm sorry, git status. We can see that there's
+nothing that's been changed. We've committed the file. Now this is where we get
+to have fun with git. So let's go back to our a file for
+a second. An I'm going to add some lines in here and
+I'm going to say print. Good afternoon. 3 exclamation points. Now when we come in here and
+we say a git status. We're going to see that git notice that
+we have modified a dot PY, now we know. We did, we added some line breaks and
+we typed in good afternoon. But if we didn't know that,
+we could actually type in get death. And it's going to tell us in its
+own gateway that these things, you have there are plus signs here,
+that it added good afternoon. Now what might we want to do with this? Well, let's commit it, commit -m. Add greeting to a.py. And then we just say we
+want to commit a.py. So, what I'm saying here is with
+the commit message add greeting. Commit the a.py file, and we will say one
+file has been changed, three insertions. If we come here and we say,
+we don't really want this white space, let's get rid of that,
+we'll go to save the file. We can do a git commit -m. Remove Whitespace from file a.py. And we see that one file changed and
+they were two deletions. I'm going to go ahead and
+add some more files in here, just so we have some more things to play with. Lets do b.py. I'm sorry we don't have a b.py, c.py. Let's do a=1, print a, doesn't matter, print a+a. And let's do a d.py. Print, let's do var 1=hello world. Print, it doesn't really
+matter what we right in here. It's just something so
+that there's some text in here. And lastly, let's add one more file. And let's just print. This is e.py, and we'll save all of these. Actually in fail, we can go to
+the file menu and do save all, which will save all the files out. Now we can do some shortcuts here. Git status. We see that we've added these three files. We can actually do a git add c.py,
+d.py, and e.py. And then we can do git commit -m,
+which is short for message, add new files,
+c.py, d.py, and e.py. It's going to say that
+it's created those files. 3 files have changed, there are six total lines there
+were good to go on that occasion. So that's pretty straightforward. Pretty easy to do. The next thing I kind of want to
+talk about is pushing to the server. So far this is all local, this exists on our local computer
+here on Corsair's infrastructure. But normally when you're using git,
+you want to push your code to the server. And so, when you created your repository, there's one line in here that you need
+to be aware of, and it'll tell you, or push an existing repository
+from the command line. And we really just want
+these three lines here. I'm going to actually
+just copy the first one, because it's really the only one we really
+need, and so that's now on my clipboard. I can come here and I can paste it. And what this is saying is add a remote
+server, in this case we call it origin, but we could rename this to be whatever
+we wanted, and define it as this URL. And now we can do git push origin. Well before we do that,
+I should do one last thing, git status. You'll notice this is the master branch. When you do this,
+it may be called the main branch, but we can do git push origin master. And what this is saying is take
+the master branch we have here and push it to the origin. In this case that's defined as this URL,
+and so we're going to press enter here. And the first thing that's going to
+say is, who are you, log in. going to do some get things,
+and when it's done, it's going to say that it's
+pushed its code up here. We can come back here, we can refresh this
+webpage, and we can see that our files are right here with our commit messages,
+as we expect them to be. And then as we do our work,
+we can, come in here, let's open up d.py, and let's just print. This is d.py. Save this file git status. We see that we've modified it. git commit -m, identify this file. d.py. Now we've committed this, but once again
+until we run that git push command, our remote server is not going to change. And so we can see that the last commit
+on this was two minutes ago, and it was add new files. If I wanted to show up on the remote
+server, git push origin master. I'm going to have to log in again. Wait for that to finish. Come back over here, refresh. And we can now see that d.py
+has changed the commit message. And when we click on this, we have a file that has the change
+that we made which is right here. We'll come back here for a minute and
+let's do some more things within git. So the typical workflow here as I
+mentioned in the earlier slide deck as you do your work, you push it. You do some work, you push it, etc. Sometimes it's useful to take
+a look at what we've done, what changes have we made so
+we can do git log. And get log is going to show us
+every change that we've made, when it was made and who made it. And so we can see the last
+change we made was here. I'm going to do something that
+intentionally breaks this code. So if we go to C.PY for
+a second and I say B equals Hello. And I print B + a. This is not going to work, and
+just to make sure that it doesn't work, I'm going to do that as well. This Python code will not run,
+two reasons. One is this, I'm trying to add an integer
+to a string and that's going to fail to. Two, this is gibberish in the Python
+interpreter is not going to know what to do with it. So what do we want to do around this? Well, let's take the easy approach. First, let's commit it. So I've not followed best practice here. Let's say made quick fix. And this is bad because I've
+now made this change and if this were in production,
+this would be broken. And I can even push this to
+the remote server push origin master. And so now this is on my remote server. It's all good to go, but
+it's bad code, it doesn't work. So how can I go about fixing it? Well, the easiest way, given that
+this is just two lines that are bad, would be to just delete
+the changes I made. But what if this was more complex? What if there were a lot of changes
+in here that needed to be removed? Git has the ability to revert and so
+we can come here and we can do a git log. And we know that this is where I
+broke things when I made that commit. That said, make quick fix. And so I'm just going to copy
+this entire string here. This is the commit ID. It's the internal ID of
+the change that I made. And I can now type git revert,
+paste that in, hyphen, hyphen, no edit. Couple things are going to happen. One, we can see that there were
+five deletions made to this file. When I click back up here, I'm going to
+force data like refresh what's on disk. Maybe. Let's close this,
+not save changes and open this. And you'll see that when I reopen it,
+that it's changed. It's gone back to what it was. And so if I look at my log again,
+here's where I reverted the change. It says what commit got reverted,
+and so now I'm on this commit. I was able to undo the change I made. Let's say I add a file in here. Let's just make a copy of E. We'll come here. We'll say new file. This works with files as well. Long file name.text. Come in here. I can do a git add long filename.text,
+get commit, hyphen m. Add filename add long file name.text. Git push origin master. Okay, I can do a git log. I can see this is in here now. This is where this gets fun. I can actually come here and revert
+this commit where I added this file. Git revert. Let's just do a git status first. Yep, git revert filename,
+hyphen, hyphen, no edit. And you'll notice it deleted the file. It's gone now. There's one thing to be careful
+of when you're deleting files. If, Master is the name of the branch. When you delete something from the Git
+repository, it is always there. So even though I got rid of this file and
+it looks like it's gone, it's off my file system. If I do a git log,
+it's actually still here. I can actually go back and
+get back access to that file. Why does this matter? It doesn't really. Unless you committed like
+sensitive information. If you committed a password, then there's
+a Little bit more work required to actually get it out of the Git history
+permanently, but the point here is, it's pretty easy to remove and
+modify files now. Hypothetically, one of the things that
+happens when you're working with Git is, you might want to try something radical,
+and we use branches for that so far. We have been working on the Master Branch,
+but if I wanted to create a new branch to test something new without
+messing up with things in master, I could do something like git branch test_
+cool_thing, git check out test_cool_thing. So the first thing I did is, I created the branch that's
+a new branch that didn't exist. Now, I'm going to tell git I want to use
+that branch and so now, if I type git status, you'll notice that here, when I
+type git status, I'm on branch master. Nothing to commit working tree clean. Down here, I'm now on branch test_
+cool_thing and so, I'm going to go through what I'm going to make a bunch
+of changes in here, print a.py. I didn't say they're going to be
+interesting changes, print b.py. But you can imagine a scenario when you
+might want to like make major changes to the way your code works, but you don't
+want to lose anything that's in progress. One thing you could do, would be to
+just put the files in a backup folder or something, and that actually works. But the problem with doing that is then,
+what if you have to go back and make changes to those files because
+they're currently what's being used. And so here we are, I've saved this off. Let me go to the file menu and choose
+Save all, just so they all get saved. I can then do a git log,
+I'm sorry I get status, and we can see in here a, b, c, d, e. And I can then do a git commit -n
+make major changes to files a.py, b.py, c.py, e.py, d.py and, they missed one, I don't think so, I just went out of order, git status. Yep, this is all good, it all worked.,
+I'm on test_cool_thing. Let's just add another file here,
+let's just add f.py, just to show what this looks like,
+new file, f.py, print f.py save git add f.py, git commit f.py -n f.py and
+I can then do a git push origin, but I'm not going to actually type master. If I do, it'll work, but I'm not on the master branch
+anymore I'm on test_cool_thing. So if I do this, Now what's nice about this is
+now that I've made that change. I go here and I refresh this. Let me look at code for a second. You can see. Here's the Master Branch, but if I change
+this my test_cool_thing shows up here even and I can see it in f.py isand everything
+I can go back to my master branch as well. Now, where do we get to have fun with us? Let's assume for a second that
+we've got this running and no, we need to go back to our master branch to
+change something, get check out master. You're going to notice first of all,
+that after went away, and all of these files reverted
+to what was in them. I didn't lose any of the history. I can make changes on this. And I can even commit on it, git status. Git commit e.py -n show change. So, you'll notice the e.py
+s this whole thing. If I go back out, I look at my
+branches first of all branch and I say, let's go back to git
+checkout test_cool_thing. Notice that this file instantly changed
+back to e.py and f.py is there. So as you can see, Git is a really
+powerful tool that you can use with in this class and
+all classes to keep track of your files. I keep track of pretty much everything
+I do and get because it allows me to go back and see what I've changed, when
+it was changed, why it was changed, etc. Thank you.
