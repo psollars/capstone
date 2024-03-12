@@ -1,135 +1,0 @@
-Now that we have refreshed out memory,
-about sequence data and n grams, lets look at sequence prediction. and a model called
-unigram language model. Remember that last time,
-I left a few questions for you. Once we have extracted
-sequential patterns, or n-grams from your  sequence data, I want you to think about  why are bigrams always more frequent  than trigrams? Why are some n-grams more
-frequent than other n-grams? And what would the next
-item be in a sequence? For example, if we see  this sequence "In the end, cowards are those  who follow the dark", which word is more likely
-to follow this sequence? The dark "side"?  The dark "path"? Or even the dark "lord"? In general, this problem is
-known as sequence prediction. And we have already shown  some examples. For example, If you are composing an  email, now if you use Gmail, once you type in  two words, it will try to recommend the rest  of the sentence to you. What it essentially has
-done is sequence prediction. Formally, if we have observed
-the sequence, that is x_1, x_2, to x_n, the question is, what's the  most likely x_n plus 1? Or what's most likely the next
-item in the sentence? Sometimes, we're not just interested
-in predicting the next item, we're interested in  the next k items. And in that case, the sequence prediction
-task can be generalized into asking, what's the most likely
-subsequence x_n plus 1, x_n plus 2, all the way to x_n plus k,  following the observed sequence? So how do you solve sequence prediction? As we can see that we can't
-just extract patterns because we still need to interpret
-the patterns and make use of them. The answer is to model sequence data. And as we have introduced, modeling
-your data is the way you to understand the properties, explain the properties, and
-make predictions of your data. So what is sequence modeling? Basically, in our context
-the sequence model, is trying to assign the  probability to any sequence. In this case, if we can assign
-the probability to any sequence. then sequences with higher probabilities,
-are just more likely to appear. Such a model is called probabilistic
-model of the sequence. And it helps us explain the  generation process of a sequence. Basically, it helps us to explain
-the process in which the sequence was written or was generated  in the first place. And we can assign a probability to
-any sequence that will help us make predictions about  future items. Why is that? Because all of  things that we need to do is to assign probability
-to any sequence x_1 to x_n. And if you have already  observed partially the sequence, all you need to do is to ask which complete sequence
-is more likely to appear? Back to this particular example,
-the question is, which word is more likely to
-follow the partial sentence "In the end, cowards are  those who follow the dark"? So how do you answer this question? If we can assign probability
-to any sequence, then we probably will find
-out that probability of the complete sequence "In the end,
-coward are those who follow dark side" Is greater than the probability, of "In the end, cowards are those
-who follow that path". And it is greater than the probability of
-any other words, filled into the sequence. If this is the case, we can
-fairly draw the conclusion that the word "side" is our most confident guess,
-that will follow the partial sentence. So "side" is our top choice,  and "path" is our second choice. We're less confident about
-filling in the word "path", comparing to the word "side".
-But we still believe that it's more likely to follow the  sentence than other words. So you can see that, to answer
-the sequence prediction question, all we need to do is
-being able to compute the probability of any  given sequence. No matter that is the sequence that
-you have already observed, or the sequence that  you have not observed. When we're talking about words as items,
-and sequences as sentences, or textual documents, then such the sequence
-model is also called a language model. Basically, a language
-model helps us evaluate the probabilities of
-any sequence of words. And explains how text data or
-sentence or document or query or some lyrics of a song is generated. And based on language model,  we can predict which word sequence is more  likely to appear next. And this is essentially  what Google uses to generate the auto  completion of the email. Note that when you  have a language model, when you can assign probability
-to any sequence of words, that indicates that any
-sequence becomes possible. Any combinations of letters and
-words becomes possible. Of course, some sequences,
-some sentences, has the higher or smaller probability than others. And in fact, this is quite interesting
-because the latter is known as the "infinite monkey theorem." I don't know whether you have heard of
-this story, but the claim is that if you put a monkey in front of a typewriter
-an ask them to just type forever, then there is the probability that the monkey will generate
-something great. In fact, if the monkey types infinitely, if the monkey lives forever  and types forever, then it's sure that the monkey, at
-some point, will generate Hamlet, or any other Shakespeare plays. And this is because with the language
-model, any sequence of words is possible. Even with the teeny
-tiny probability. So how can we calculate the probability
-of a sequence of words? We don't know how to do it unless
-we can decompose this sequence into smaller pieces. And there is something in probability
-that's known as the chain rule. What is that? Remember that there is a way to compute
-the joint probability of two events. Probability of A and B. And in this case, if we consider
-all these words as the joint event, that means to calculate the probability of, "In the end, cowards are those  who follow the dark side", we need to calculate the probabilities
-of all the words appearing together. And of course, in order. And we know that the probability of
-two events, of a joint events A and B, can be written as the probability
-of one of the events P(A) times the conditional probability of the other
-event, conditionally on the first event. And that is P(A,B) =  P(B given A) times P(A). So this is something that  you should have learned from entry level statistics  probability course. This applies to two variables. The chain rule can also be
-applied to multiple variables. For instance, if you want to calculate
-the probability of a joint event, A, B and C, we can first write it as the probability
-of C given two events A and B, and times probability of A and B. Note that the probability of A and
-B is still the joint event. So we can further decompose
-the probability of A and B into the probability of  B given A times P(A). So in this case, the probability of A,
-B and C can be written as the probability of C given A and
-B, times the probability of B given A, and then times the probability of A. So this is definitely true. This
-works for all possible joint events. Based on the chain rule, let me write
-it right here so you don't forget, Probability of A and B equals  probably of B given A times P(A). It can also be written as,
-probably of A given B times P(B), depending on which event
-you want to express first. So based on this chain rule, we can introduce a language model
-called the n-gram language model. That helps us compute  the probability of n words of the n-gram w_1, w_2 to w_n. So what is that? When applying this  chain rule, we can see that probability of w_1, w_2, to w_n,  the next event is w_n. So we choose to express that
-with conditional probability first. We write down the probability  of this n-gram, as the probability of w_n,  that is the last word, given all the previous words.  That is, w_1 to w_n minus 1. And we have to times  that by the probability of w_1, w_2, to w_n minus 1. And that is the probability
-of the n minus 1 gram. So this is essentially
-applying the previous rule, PA and B equals to PB given A times PA. Just in this case, our A is what? Our A is w_1 to w_n minus 1. And our B is what? Our B is w_n. So note that, the probability of w_1,
-w_2 until w_n minus 1, the probability of this n minus 1
-gram is still the joint probability. So we can further apply this rule. To write it down as
-probability of w_n minus 1, given probability of 1 to
-the probability of n minus 2, times the probability of the n
-minus 2 gram, w_1, w_2 to w_n minus 2. So this is again, applying the  chain rule once more. Of course, for the probability of w_n,
-the conditional probability of w_n just need to write
-the same thing down. And now you can see that the probability of w_1 to  w_n minus 2, the n minus 2 gram is still
-the joint probability. So applying the chain rule again, we can write that into the conditional
-probability of w_n minus 2, given all the previous words, times
-the joint probability of n minus 3 gram. So we can do this practice forever. We can continue to decompose the n
-minus 1, n minus 2, n minus 3 gram into the conditional probability, times
-the probability of the shorter n-gram. Then finally, the shorter n-gram
-becomes the unigram. So eventually, we will get
-the following expression that is, The probability of the n-gram,  w_1, w_2 to w_n equals the conditional
-probability of w_n given w_1, w_2, to w_n minus 1, times the probability, the conditional  probability of w_n minus 1 given all its previous words. And then times the conditional
-probability of w_n minus 2 given all its previous words. Finally we got the conditional
-probability of w_2 given w_1, and finally, times the  probability of the w_1 because there's no other  words before w_1. So you can see that
-applying the chain rule, we can rewrite the joint  probability of the n-gram, w_1, 2_2 to w_n, with n  conditional probabilities. Well, except for the w_1. The conditional probability of  a word, given its previous words. So for convenience, we  usually write this from w_1 to w_n. In this case, we can just swap
-the order in the production, and what we get is  probability of w_1 times the probability of  w_2 given w_1. Of course you can guess the next one
-is probability w_3 given w_1 and w_2. And then we do that  again and again. We have probability of
-the second to last word, w_n minus 1 given all  the previous words. And finally we have the  probability of w_n given all the n minus 1  previous words, w_1, w_2 to w_n minus 1. And this is guaranteed to  be true, given the chain rule. We have not done anything that's  not allowed, in probability theory. So you can see that, now we  have written the n- gram, the probability of the n-gram,
-w_1, w_2, until w_n, into the product of conditional
-probabilities of w_1 given nothing, w_2 given its previous words,
-and that's only w_1, w_3, w_4, and w_n minus 1,
-given all its previous words, w_1, w_2, to w_n minus 2.  And finally w_n given all its previous words, w_1,
-w_2, to w_n minus 1. And this model is called
-the n-gram language model because it helps us to decompose  the probability of the n-gram into a set of conditional probabilities
-by applying the chain rule. Of course the easiest example  of the n-gram language model is single word sequences.
-So n equals to one. In that case we can use the rather simple
-special case of the n-gram language model. To compute the probability of every
-sequence with just one single word. For example, a sequence that contains
-just one word "is", another sequence "haha", another sequence "OK", another  sequence "data", so and so forth. And because we're using this
-rather simple language model, we do not consider any n-gram
-with n greater or equal to two. So in that case, we only  need to consider the probability of  single word w. And in this single word language model,  we care about two questions. Only two questions. The first question is, which single word
-sequence is more likely to be observed or Is more likely to be generated? And the second question is, which  word is more likely to be written in the new sequence? Basically you can see that they are asking the same question expressed in different ways. All we need to do is to have
-the probability of any given word. Such a simple process of  generating the sequence of words using unigram  language model can be actually expressed as  the process of tossing a dice. Everyone has tossed  a dice before, right? When you're playing board  games. You toss a dice with usually really six dimensions. And if a dice has six dimensions,
-it's called a regular dice. Formally, we can say  that the sample space of this size is the  set of six numbers. 1, 2, 3, 4, 5, 6. Whenever you toss a dice,
-you can actually see a number. And if you tossed a  dice many times you will receive a  sequence of numbers. For instance, if you  tossed a dice once we get the number 3. And
-then tossed it again, get the number 5, 2, 6,  2, 1, 1, 5, 1 so and so forth. In that case, every  time you tossed a dice the number you receive  has nothing to do with whether you tossed a  dice before or what numbers you have tossed,  what numbers you received in in the previous tosses.  So that means whenever you generate a  number, you tossed a dice. And if you tossed a dice once,  it's not dependent on the previous tosses. Of course,  in reality not all dices are regular. And sometimes there's  even something more weird about the dice.  In the regular dice. the probability that  you see any number from the six numbers is equal. In that case we call
-this dice a fair dice. That means the probability  associated with any of the six phrases is actually equal. So probability of 1 equals  probably of 2, is the probability of  3, 4, 5, 6.  And they're all equal to 1 over 6. In reality, a dice could be
-unfair if the probabilities of these face are different
-from each other. I could play with you with a fair dice,
-with the unfair dice, That it's more likely for you to toss
-once, it's more likely for me to 6, right? In that case the probability  that's associated with one of the faces could be larger. The probability of other
-faces could be smaller. So in that case the dice  is called an unfair dice. And sometimes a dice could  have more than six faces, right? In general, a dice could have n-dimensions
-and we call that an n-dimensional dice. In that case, we can indicate that
-the sample space of a dice is a set of numbers from 1 to n
-instead of numbers 1 to 6. If you don't believe that
-the n-dimensional dice exist, you can see that these are some examples. So a unigram language model is essentially
-the process of tossing a dice. How so? All we need to do is to
-construct the special dice. The dice is irregular because
-it has more than six faces. It has n faces and each  of the face corresponds to a word in the vocabulary. And a dice; number of faces of this dice equals the number of words  in a vocabulary. So the sample space of
-this n-dimensional dice is essentially the vocabulary. The set of all distinct words. And this dice is also not fair.  It's the unfair dice, so that some faces has the  higher probability than others. Basically, this is because  there's some words are just more likely to be used than others. For example, we see that probability
-of the face that's corresponding to the word "the" is greater  than probability of "cat" and is greater for the  probability of the face corresponding to "jaguar".  And so on and so forth. And with such a special dice, you can now generate a  single-word sequence fairly easily. Basically, you select a  word to write by tossing this n-dimensional unfair dice, and you write down the word that show up at its  corresponding face. Now, if you want to generate  another word or another single-word sequence, you  toss the dice again, and then you write  down the word on the face that show up. Note that, the second toss has nothing to do with the  results of the first toss. Because you're using this dice again. If you do that again  and again, you can see a sequence of words  corresponding to the sequence of  faces that show up. So this is how you  can use such the unigram language model  or such the special n-dimensional dice to generate  single-word sequences.

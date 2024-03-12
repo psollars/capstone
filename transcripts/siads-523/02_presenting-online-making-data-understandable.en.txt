@@ -1,166 +1,0 @@
-So, so far in this presentation,
-we've talked about rhetoric and we've talked about structure and
-to a certain extent, we've talked about the text
-of our presentation. In this section, I want to talk
-about making data understandable and some of this will be a carryover or
-a reminder from last week and some may be a little bit new. So one of the things that I really
-want to continue to emphasize in this course is you as translator,
-that you are a data scientist. You have a high level of visual and statistical vocabulary with which
-to talk with other data scientists. But in this case and in this course,
-we are stepping outside that world and we are figuring out how to get
-that information that we know understood by amateurs. So that's why we're going to continue
-the practice of using very simple visualization styles, things like pie
-charts, bar graphs, line graphs, and maps. We had lots of other examples
-in last week's lecture. And this will help minimize the amount
-of time between you sharing a piece of information and
-it being understood by your audience. And that's very important when we only
-have a five minute presentation window. So we've talked before about the power of
-having two visualization side by side. In this case, showing that over time,
-there is an increase In the number of female instructional
-faculty in higher ed in the US. And I want to introduce formally
-a concept that goes with this and that's the concept of small multiples. I really like small multiples as
-a way of communicating a lot of information in a very small
-space without animation. And basically it is what you think it is. It's lots of little identical or
-near identical charts. So, you can see this is a little bit
-shaped like the United States maybe, and the goal of this chart is
-there is a little graph for each state and it maps the average life
-expectancy for the state and for the US. And if the shading is orange, that means that the state's life
-expectancy is higher than the nation and if it's purple it means they have
-a lower life expectancy in the nation. So what we get here is this
-really kind of cool snapshot that clearly shows that in some regions of
-the country people live longer on average than the national average and
-in some they live fewer years. So it's a ton of information but rather
-than having a line graph with 50 lines on it, we've divided it up into
-this little segment and this one comes from 538.com, which is
-actually one of my favorite places to find interesting visualizations both
-classic styles and pushing the envelope. Here is a really tiny one
-from the New York Times. This is meaning to show
-a hundred years of drought data. So this one's got lots of tiny maps of the
-United States and the amount of orange and the location of the Orange shows whether
-there was a drought in that area. And by having a hundred
-of these little charts, this is more impactful than having
-a whole bunch of numbers and what it really helps us see is that there
-are cycles of drought that a region can go several years and be untouched and
-then there can be a big swell in drought. And in these cases, you might start with
-a big small multiple like you've got here, but then we want to help the viewer focus. So think about what it would be like if we
-just showed a couple of decades of drought data and how much data we can see up
-close if we move in that direction. And sometimes we might add labels that show that we have three non
-drought years in quick succession and then we went a long time before
-we had a light drought year. And so we can layer on top of it boxes and arrows that will help us
-communicate more quickly. One of the things that really helps us
-when we're doing data presentation as well, is this question
-of is this a big number? And this comes from the book
-The Numbers Game by Blastland and Dilnot. It's got a couple of different covers. One of the things that can be really
-hard for novice audiences is to know whether a number is big or impactful. So in the 2016 election, for example, Hillary Clinton won the endorsement of
-the National Education Association, which is one of the leading teacher
-unions in the United States. Is that a big number? Well, if you know how many people
-live in the United States which is about 325 million. That means that that union represented
-1% of all citizens not just voters, all citizens and
-we get a sense of the size of that number because we can compare it to
-something that we're used to. And we can compare in terms of size, distance, time, speed or rate of change. And we do this all the time if
-you have a Roku remote control, it's about the size of
-a of a Snickers bar. There's a library in the upper peninsula
-that describes its service area by saying it's square mile's equivalent
-to the state of Rhode Island. It really helps us to get a sense of
-how big are we talking about here? So here are some examples
-of how that might play out. So this is a graphic
-from The Washington Post. It's actually two graphs side by side. On the left hand side,
-we see the median income each year between white families and
-African-American families. And on the right side,
-we see the median wealth, the accumulated money of white
-families and black families. And let's think about how we might tell
-this story differently depending on which of those comparisons we're using. So if we want to compare size then we
-can say that white families in general, on average, are a lot wealthier
-than black families and we do that by comparing those two. And so we would highlight the difference
-in the size of those numbers and we might do something like this. Maybe what we want to point out in
-this data is that no matter how much white families make in
-income per year in a median, and black families make in a year,
-those numbers go up and down a little bit. But the size of the gap
-stays consistent over time. In which case,
-we might only show this part and we might add a label that
-explains that detail. So you can see we've changed the header,
-originally it said racial income and wealth gaps and
-we've changed to more active language. So now I've told you what to look at. I've told you to look at the fact
-that that gap is persistent. Maybe what we want to talk about
-is distance, in this case, the distance between
-two values of numbers. So you can see that as the recession
-hit there was a dramatic downturn in the wealth of white families. So how might we show that if that's what
-we want to talk about in our presentation? We might again change the label and
-talk about volatility instead. And all of these are decisions that you're
-going to make based on the data that you find, you're going to be looking at how
-much of the data do I want to show? How many years do I want to show? Do I just want to show white families,
-just black families, show them together? You're going to need to make
-all of these active decisions, which you started last week and
-we're continuing here. Maybe we want to compare rates. In this case, notice how much longer it
-took for wealth to rise dramatically in white families and how little time
-it took for them to lose value. So how might we take the same data and
-make that point? So here what we've done is
-we've literally just shown the white families in this case. We've drawn a dotted line to
-show where at its lowest point. What year did that take place in the 90s. And we can see now that it took longer
-to earn the money than it did for it to lose value. So I just want to pause here and
-give a name to one of the things that we've been talking
-about anecdotally in the previous slides. And that's this idea of statistical
-benchmarks, which Joel best explores in the book Stat-Spotting,
-a Field Guide to identifying dubious data. Which is a book I highly recommend,
-it's very short, it's very practical and really helps build some of the day
-literacy understandings for novices that can help them be
-much savvier consumers of data. Best talks about statistical benchmarks. So comparing new data to more familiar
-data as a way of orienting folks. And one of the extension ways we can
-think about statistical benchmarking is actually to compare parallel cities. So if you work in civic government at all,
-you may know that your government leaders look to
-another city in the same state or country that has similar characteristics,
-and it looks to them as a peer and sort of it helps them
-benchmark against each other. So if you're from Michigan,
-Plymouth Canton schools and Ann Arbor schools are often looking at
-each other as parallel organizations. Or Birmingham, Michigan and Grosse Pointe,
-Michigan both have high income, high services constructions
-to government and so they'll check their work
-against each other. So you can use comparisons like this
-to help people understand the data that you've uncovered. So this is the population clock. This is the official US estimate
-of the population of the US and the world at any given time. We're up to about 330 million people so
-I can know that to keep that in mind. I also know that there's about
-6 million kids born a year, which means there's going to be about 6
-million kindergarteners next year and they'll be about 6 million teens who
-are eligible to graduate every year. That's maybe not an exact number,
-but it gives me a frame of reference that can help me know if something
-is accurate or not accurate. So let's say for example, there's been discussion of how many DACA
-recipients are there in the United States. This is the program for folks who came
-as children to the United States, but don't have formal citizenship. If DACA goes away as a program, about
-700,000 people would be implemented and so far since 2012 there have been
-900,000 people who have received DACA. I get a sense of how big that is. Because I can compare that to the overall
-US population, and really realize that's less than 1 in 300
-people is a DACA recipient. And now I have a better
-way of calculating whether I think that's a big number or not. And having that comparison gives me a
-little bit more accuracy than just saying, ooh, 900,000 is a lot. Another strategy you can use with
-data storytelling is to reveal data a little bit at a time. So this is actually from
-The Washington Post. They got ahold of whole bunch of drug
-enforcement agency data about opioid prescriptions in the United States
-between 2006 and 2012. They've published this dataset online, they've published a number of
-interactives and visualizations. And if you haven't had a chance to look
-at it, I certainly hope that you will. Here you're going to watch every
-year the updated data will show you. So we're revealing a little
-bit of data at a time. And what I hope you'll see is that the
-cumulative effect of revealing a little bit of data at a time makes this more
-powerful than say a small multiple might. So a visualization like
-this is really good for seeing how this is a crisis that started
-in pockets of the United States and you can watch it grow and
-grow and grow over time. Now, I do want to emphasize
-that this data stops in 2012. We're filming this at the end of 2019. So this not where we
-necessarily are right now. But you can recreate this without
-an animation by simply having slides that transition, you put the 2006 map on one
-slide and the 2007 on the next slide, and the 2008 on the next slide and
-you build in transitions and suddenly you can, in a very low-tech way,
-recreate this kind of data. And there's something powerful about
-watching the crisis grow on this map, a map being a cognitive plan
-that we understand really well, that really hammers home
-the impact of this disease and the places of the highest
-concentration as well. Let's look at another way you might reveal information over time. So there  are two key moments in this visualization from the Washington Post Wonkblog.
-One is that the popular vote was much closer than the electoral college vote.
-And also That Clinton actually has more popular vote.
-And the other big revelation is that of course that a hundred million
-people didn't vote. Now this appeared in print in one graphic. But if I were going
-use it in a presentation I might split it into a
-handful of different slides. So my first slide might first
-might just be these two votes. And I might talk  about how the popular vote was quite close
-and Clinton did have a larger popular vote. Here I might just point out
-that there are six million people voting  someone else. Which is not a statistically important  number at this point. And finally on the next slide I  would just add the hundred million. So I would take this one graphic  and would keep cropping it down as I put it on new slides. So that  very quickly and simply I'm making this. And for my final slide I can  add the header which is this is what I want  you to know about the data. And you'll notice too that we  have the footer. We have the creator of the visualization,  which is Wonkblog, and we have the source of the data.  So if our visualization, in a public document, like Washington Post, gets  disaggregated from the paper gets taken out, and I dunno,  stuck in someone's MOOC about data visualization, the credit continues  to travel with the graphic. And that's really important and something we   talked about in Week 3. You'll also notice stylistically something  which is that there is black text used throughout, until you get  to that horizontal line. And then text gets very light in line weight  and also gets greyed out. So that our eye attention goes to the  color. Goes to the big bold black font. So that's another way that you  can show a little bit over time. That's it for this section. I'll  see you in the next lesson.

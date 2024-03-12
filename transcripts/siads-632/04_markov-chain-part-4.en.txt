@@ -1,238 +1,0 @@
-So now let's take a look at
-the particular example of how to estimate n-gram language model. We start with the math and then we
-go on with the real example. So we do that when you
-have a large database. And you count the frequency
-of all n-grams. So now you can see that we are generalizing
-this from Markov chain, right? We may be estimating longer dependency. We may be estimating the higher
-order Markov chain. Or n-gram model where
-n equals to 2, 3, 4 or whatever. Basically this is how we do it. We have a large database,
-we kind of frequency of n-grams and this is what you already learned how
-to do in Data Mining I.  Right? And then given any word w, any word w, and a pattern
---  sequential pattern -- w_1, w_2, to w_k, which
-is shorter than an n-gram. Why it has to be shorter? Because
-if it's already n-gram then we can, we have not counted the frequency
-of a longer path. So given any single word w, any sequential pattern
-shorter than n-gram, we have the probability of w 
-given this shorter pattern. Right? Why do we need that? Well, because even if you consider 
-n-gram language model, at the beginning of the sequences, you won't actually have enough 
-observations. Right? The first word, even though 
-that you wanted to depend on the previous word, you don't
-have a previous word right? The second word, even if you
-wanted to depend on the previous two words, it only has 
-one previous word. Right? So to facilitate that,
-you have to consider the probability of w given
-any sequential pattern. As long as the pattern
-is shorter than n. So how to calculate probability
-of w given w_1 to w_k? Well, we just need to generalize what
-we have done for the bigrams. This conditional probability is
-essentially the number of times that you see this k plus one gram,
-w_1, w_2, to w_k and followed by w. Divided by the count of this k-gram. w_1, w_2 to w_k. This seems enough. Say if you want to count the condition
-probability of "side" following "the dark", then you can how many times
-the trigram "the dark side" appear. And you normalize that by how many 
-times you see the bigram "the dark". So that would give you the conditional
-probability of w given w_1 through w_k. Another example, if you 
-care about 6-gram "to be or not to be", 
-you need to compute the conditional probability of
-the word "be" given "to be or not to". All you need to do is to count number of
-times the 6-gram "to be or not to be", you normalize that, you divide that, by the
-count of the fixed-gram "to be or not to", no matter which word is following
-that 5-gram. Making sense? Now let's take a look at a concrete 
-example of a trigram language model. We want to estimate a trigram 
-language model from the data. And in this case the data only 
-has three short sentences. Or three short sequences of words. "Fear leads to anger",
-"anger leads to hate", and "hate leads to suffering".
-Another quote of Master Yoda. To do that as we described, we first count
-the frequency of all n-grams with n what? Because we care about trigrams,
-with n equals to 1, 2 and 3. So we have all of them.
-We have the count of "fear" is 1. The count of "fear leads" is also 1.
-The count of "leads" is actually 3. The count of "leads to" is 3. The count of "hate" is 2.
-So and so forth, right? So we have the counts for
-bigrams, trigrams, and of course unigrams. Then how can we calculate the probability
-of "anger leads to suffering"? This is the new sequence, right? We want to calculate the 
-probability of this sequence. Lets decompose this. First into
-using the chain rule. So the whole probability can be
-rewritten as probability of "anger" times probability of the second
-word "leads" conditional on "anger". And probability of the third word
-"to" conditional on "anger leads". And then the probability of "suffering"
-conditional on "anger leads to." This is what? This is the chain rule. 
-This is always correct. Now because we only care 
-about trigram language models, that means we only care about
-the dependency of one word on the previous two words. So one of the words in this chain 
-rule has to be crossed out. And that is the "anger" in the condition
-probability of suffering. Right? Because we assume that the word
-"suffering" only depends on the previous two words.
-That is "leads to". Right? So this is how we write
-down the equation. And now we need to calculate
-these probabilities. Then you can see that we can use
-the simple rule in the previous slide, to calculate any of these probabilities. Probability of "anger" as the unigram
-is essentially the count of "anger" normalized by all the other grams. The probability of "leads" given "anger"
-can be calculated as the count of the bigram "anger leads", normalized by
-the count of the unigram "anger". So basically no matter which word
-follows that word "anger", we put them into the count of "anger". Similarly, the condition probability of "to"
-given "anger leads" can be calculated as the count of "anger leads to"
-divided by the count of "anger leads". And the probability of "suffering"
-given "leads to" can be calculated as the count of "leads to suffering"
-normalized by the count of "leads to". And all of these counts you 
-have already calculated based on frequent sequential
-pattern mining. So you can just look up these
-counts in your dictionary and then this is the 
-results you've got. And that gives you a probability
-of 0.028. Not so bad. That means that it's quite likely to see a sequence that is 
-"anger leads to suffering". Right? It's not bad. Now you can see this is how we 
-can calculate trigram language model. And then evaluate the likelihood or
-the probability of any given sequence. Life is good. Right? Now we can actually
-estimate any n-gram language model. As long as we have data. 
-Isn't that a great thing? You can choose whether you want
-to use the bigram language model, trigram language model or
-higher order language models. Well, there's a problem. The problem is what if the n-gram n
-ever appeared in the past? You say that to calculate the conditional
-probability from one state to another, you have to count the n-gram
-and normalize by the n minus 1. What if the n-gram never appeared
-from the data you've seen? Does it mean that it will never
-appear in the future? Well the answer is no, right? In the future
-you can't actually observe any words. You can't observe any sequence
-that's possible, right? That's the infinite
-monkey theory, right? So what happens if we're
-looking at the word, or n-gram that never
-appeared in the past? If you look back into the 
-chain rule, you can see that because we are essentially
-computing the probability of a longer sequence as a 
-product of multiple probabilities. That means if any of
-these components, if any of these condition probabilities
-is 0, then the whole product is 0. That's too bad. That means
-that as long as we haven't observed w_1, w_2, or w_1, w_2, w_3,
-or any other n-grams, or any other shorter grams, then the
-whole probability of w1, w2 to w_n will just automatically become 0. To verify that, we can go back to this
-example, the trigram language model -- remember that we have already
-generated all this counts for bigrams, trigrams, unigrams. Now let's look at another trigram,
-actually 4-gram, that is "anger leads to fear". It also sounds reasonable, right? What's the probability of "anger leads to
-fear", given this trigram language model, where we do the same thing. We
-decompose this into the chain rule. And then because we  only
-care about trigrams, then we cross out "anger" 
-as the condition of "fear", because it's already three words away. And then we look at 
-numbers from the table and we want to calculate all 
-these conditional probabilities. Now what happened? The count of the trigram
-"leads to fear" is 0. Because net trigram has never appeared
-in the data we have observed. As if this is 0, then we don't even
-need to look up other numbers. The whole thing will automatically 
-become 0. That's too bad. That basically means that there's 
-no way that we will observe a sentence saying "anger lead to fear". And you can see that this is incorrect.
-This is not reflecting reality, right? In reality this could be possible. So how can we correct that? The method for correcting this
-problem is called smoothing. And basically the idea is that,
-you know that the probability 0 is making a problem, then
-let's make the probabilities not 0. So even if the n-gram has
-never appeared in the past, we still want to assign
-the small probability to it. By doing that, we can calculate the probability
-of any out sample sequence, right? No matter whether it
-contains part of the n-gram, that has never appeared in the past. But because the probabilities of
-n-grams should sum to 1, right? The probabilities of all the faces
-of a dice should sum to 1. So if we assign probabilities
-to unseen events, then we have to distract those right,
-from the observed events. If we increase probability 
-of some n-grams, then we have to decrease the
-probabilities of existing n-grams. And this process is called smoothing, Basically, you distract some
-probability from the rich, and then you assign them to
-the observations not approve or that has not appeared. There are many many smoothing 
-techniques available and you will see some of them in the 
-natural language processing course. In this class, we will only
-introduce the very simple one, it's called the add one smoothing. It's also known as Laplace smoothing,
-named after the mathematician Laplace. Well, the intuition is quite simple. Basically, for every word 
-in the vocabulary, as long as it is the end of your 
-n-gram or your k-gram, no matter k is smaller than what k is,
-as long as is smaller n, we add the gram,  k+1 gram let's see, ending with w, always by 1. What does that mean? That means we pretend that, given any
-shorter gram w_1 to w_k, there's always one case of any word
-in the vocabulary following it. That also means we're 
-adding the count of w_1 to w_k and then 
-w by 1 for any word w. So that's why it's called 
-add one smoothing. It's pretending that every word has appeared
-after subsequence for at least once. And now you can see that why
-it handles the unseen n-grams. Because after adding one to all these
-words following any given k-gram, then we have basically observed
-any possible k+1 gram. Mathematically, this is quite simple.
-To calculate the probability of w, given w_1 to w_k. Remember that previously, we're using
-the count of the k+1 gram, w_1 to w_k and w over the count of the k-gram,  w1 to w_k. Now we add one above the bar, pretending that there's yet another
-observation of the k+1 gram. No matter whether the previous count,
-the count of w_1 to w_kw is 0 or not, we always add one. But if you add 1 to the top,
-you have to add something to the bottom. Otherwise the probabilities of
-all w's will not sum to 1. So how many have you added? You have added 1 to any word w. 
-Then that means for all the words in vocabulary have added V, that is the number of words
-in the vocabulary. So, below the bar we have to add
-the size of your vocabulary. And that gives us the new
-estimation of the conditional probability of w given w_1,
-w_2 to w_k. And this is known as add one smoothing. 
-So for every word w, we pretend that we have observed
-it once after the given k-gram. So we add this count by 1.
-Once we add the count of every word by 1, no matter they truly observed
-after the n-gram or not. Then we have in total added V
-observations to k+1 gram. So this is known as Laplace smoothing or add one smoothing. And is 
-actually quite useful in reality. As we said, many other smoothing 
-methods, fancier ones, will be made available in the natural
-language processing course. So now let's take a look at
-the previous example, right? How can we calculate the probability
-of "anger leads to fear", even though "leads to fear" 
-has never appeared in your data? Now suppose we are already at this step, right?
-We have decomposed this probability into the product of conditional probabilities 
-of a trigram language model. Now we need to get the vocabulary so 
-we know how many new counts, pseudo-counts,
-we're adding to the observations, and vocabulary has six words in total,
-six distinct words in total. So the size of vocabulary six. And
-now you can see instead of counting, instead of computing all these four
-probabilities, with the count of a longer gram normalized by
-the count of the shorter gram, we're adding one. We are
-always adding one on top of the line. And 
-we're always adding six, that's the size of the vocabulary, 
-below the bar. So this pretending that the trigram "
-leads to fear" appeared once. And "leads to leads" also appeared once.
-"Leads to to" appeared once. "Leads to anger", well, it has 
-appeared once. So we add one, pretending 
-that it appeared twice. "Leads to hate" appeared once. We add one,
-pretending that it appeared twice. "Leads to suffering" appeared twice, right? And how many have we added? We have added six. The number
-of words in the vocabulary. So after add one smoothing, we
-can see that the probability, the problem of the 0 is solved.
-Because now adding one, we're adding one to any possible trigram, then there's no zero
-probabilities available. So that will not ruin our calculation. And then we can see that
-the probability is 0.00066. Well, that's small, but that's
-not too bad.  That's not zero. That means there's still
-the probability, it's still likely that someone
-will write this sequence. So this is what we know 
-about smoothing. Right? In general, when you are making these
-calculations of probabilities, no matter with smoothing or not, 
-there is the trick that we do. Which is always use logarithms 
-instead of using products. Why? Because when sequence is long, once you are actually computing 
-the product of many components, many probabilities, there might 
-be the problem. You may actually run into
-the problem of underflow, and you may lose the precision
-because of, this is how computer works. So if we do this in log space,
-it's not only faster, it is also mathematically equivalent.
-Why is that? Because the logarithm of a 
-product is basically, essentially, the sum of the logarithm. So if you have a product of many
-probabilities, you take the log that will become the sum of
-the log of each component. You can always transform that
-back into the original product. That's not a problem. And because in many
-cases we're only doing comparisons, this is what we have seen
-all the previous examples, we don't need to calculate the accurate
-probability. We just need to know that "the dark side" has the greater
-probability then "the dark path". When we're making comparisons,
-comparing the numbers in a log space is equivalent to comparing the 
-numbers as is. So we always want to use the sum of logs instead
-of the product of the raw probabilities. So this is the practical trick, 
-that whenever you are actually computing the product of 
-a long sequence, for instance, in this is we're
-computing the probability of 100-gram. or "darks", right? And then if you do the raw calculation,
-you got probability of "dark" to power of 100. And then if you use the calculator,
-that will give you 0. Tust me, that would give you 0. But if you use the logarithm
-of this probability, that basically gives you the sum of 100 logs, over 100 times the logarithm of this probability.
-And that gives you a very decent number. Of course, because the probability 
-is smaller than 1. So if you take the log, the logarithm
-will be smaller than 0. So we have introduced Markov chain. We have also introduced higher level,
-higher order Markov chains. Like trigram language models. In practice, Markov chain is the powerful and
-still simple model for sequence modeling. There are many other fancier, more 
-complicated models available. Many of the other models also
-used Markov Assumption. But they have different tricks. They have different specific designs
-on what they count as the event. And what they do in 
-constructing the network. They're widely used for various types
-of sequence-like data even for time series or for data streams. And even for network data. In the following video, we'll introduce
-one of them called Hidden Markov model. Not to the same detail of
-the Markov chain. But this is a summary of
-n-gram language models. And in particular the 
-bigram language model is known as the Markov model.

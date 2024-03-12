@@ -1,186 +1,0 @@
-Since we have talked about
-unigram language models. As we can see there, the problem of
-the model, although it's really powerful, is that it cannot handle
-longer dependencies. To add longer dependencies to the 
-model, in particular to make sure that the generation of one word
-depends on the previous words, were going to introduce
-another family of models. Naturally, we will talk
-about bigram models and there is the fancy name for bigram 
-models known as the Markov chain. As we can see that moving from unigrams
-to bigrams seems the easy task. Why? All we need to do is to generate 
-two word sequences at a time instead of single word sequences. For example, instead of one word "data",
-we can generate "data science", or "good luck", or "Ann Arbor",
-so on and so forth. So if we borrow the techniques of
-constructing unigram language models, all we need to do is
-to build another dice. Remember that with unigram language
-models we build a dice with n dimensions, where every dimension, every face,
-corresponds to a word in vocabulary. So, to facilitate bigrams, all we
-need to do is to build a dice with N squared dimensions, and every 
-face corresponds to now a bigram. So if we toss this dice once,
-we can generate a bigram sequence. If we toss the dice again, we
-generate another bigram sequence. So everything seems to be easy. The only difference is that the new
-dice has N squared dimensions and every face corresponds to
-a bigram instead of a unigram. If I do that, we will see the problem, which is generating a longer sequence
-becomes not that easy. Generating bigram sequences, which means that the sequence only
-has the bigram, that's easy. But if you want to generate a longer
-sequence using multiple bigrams, it becomes tricky. Let's take a particular example. Suppose we want to generate the sequence,
-"may the force be with you". So this is longer than a bigram. Suppose now you have a device
-that has many faces. Anad every phase corresponds 
-to the bigram. How can you generate this particular
-bigram, this particular sequence? Well, one way to do that is of course
-to generate 2 words at a time. So you first toss the dice and
-generate a word, "may the". And then you toss the dice again and
-then if you're lucky enough, you generate the bigram, "force be". And then you generate another bigram,
-"with you". This is good, but usually we don't
-split the sentences the way we are. And in other cases what if
-the number of words in this sequence is not even, but odd? So you can see that,
-this is not a big deal. Suppose we have a unigram 
-language model, that's one dice. And we have the bigram 
-language model, that is another dice. We can use these two dices interchangeably 
-to generate the language sequence. Which is to say that maybe we will
-toss the unigram dice once and generate a word "may". And then
-followed by tossing the bigram dice generating "the force", 
-and then "be with". And now we have to use the unigram
-dice again to generate the word "you". So that sounds like another possibility. But you can see that the problem
-is that, how do you know when to use the unigram dice and
-went to use the bigram dice? This is not that simple. You may say that okay, what's the big
-deal, there's another way, right? Remember that we were talking
-about counting bigrams, we're talking about 
-sliding windows. So can we borrow that idea to generate
-overlapping bigrams at a time? In that case, we don't need to worry about
-switching between unigrams and bigrams. And this sounds like a smart idea, right? Which is to say, we first toss the dice
-to generate the bigram "may the", and then generate the bigram "the force". And then "force be", and
-then "be with", and then "with you". If you do that, you can see that
-we have not omitted any word. And all we have been doing
-is to use the bigram dice. That sounds like a better idea
-then the previous tool is. But the problem, if you look at this,
-is that many words are actually generated twice. For instance, 
-the word "the" is generated when we're generating 
-the bigram "may the", and is also part of the next bigram, "the force". So in this
-case, the word "the" is double counted. And the problem is that when you
-calculate the probability, if you time the probabilities
-of all these bigrams, so you can see that apparently,
-some words appear in both probabilities. And some words only appear
-in one of the probabilities, which is not mathematically correct. So the question is, how can we 
-generate longer sequences using the bigram language model, without 
-falling into any of these pitfalls? In fact, there is a smart way
-of generating bigrams. And you can see that the key is not
-to generate two words at a time. All these problems in the previous slides
-are due to the fact that sometimes, we have to generate two
-words at a time and sometimes we have to generate
-one word at a time, right? So we don't know when to switch
-between those two occasions. And if we always generate two 
-words at a time, we may either miss some words or some 
-words will be double counted. So why don't we always 
-generate one word at a time, so we don't have either
- of the problems? The key is that if we're
-generating one word at a time, then one word always depends
-on the previous words. And in that case, the dependency 
-between the bigrams, the dependency between the two 
-words in the bigram is still preserved. This is to say that when we
-are generating a longer sequence, the first word of the sequence does
-not depend on anything because this is the first
-word in the sequence. And then the second word, when we are 
-generating it, it depends on the first word. Because we have already decided
-which word to write first. Then the second word does depend
-on what the previous word is. And then we're generating the third word. The third word depends on the second word,
-and it does not depend on the first word. So in that case, you can see the bigram
-dependency is still preserved. And we're not going beyond bigrams. So the third word depends
-on the second word, the fourth word becomes dependent on
-the third word, so on and so forth. So finally, the nth word will
-depend on the n minus 1th word. So this is to say, except for
-the very first word in a sequence, every other word in the sequence,
-the generation process will depend on the previous word. And this is
-known as the bigram language model. And we can now write
-down the probability of the whole sequence w_1, w_2 to w_n. This is essentially decomposed as the
-product of the probabilities also over w_1, w_2, w_3, to w_n. But the difference is that for
-the first word, we're using the marginal
-probability P(w_1). And for the second word, we're 
-using the conditional probability of w_2 given w_1 because w_1 is already decided. The third word is probability of w_3
-conditional on w_2, so on and so forth. And finally, we have the conditional
-probability of w_n given w_n -1. So this is pretty much how we can
-calculate the probability of a long sequence, given bigrams. The key is that we are still
-generating every word at a time, but the generation of every word
-depends on its previous words. So we have lots of 
-conditional probabilities. The problem is, how is this r
-elated to the chain rule? We know that the chain rule is guaranteed
-to be correct mathematically, right? So if we write down the chain rule,
-if you still remember, the probability of the whole sequence is decomposed
-as the product of probabilities. The first word depends on nothing.
-The second word depends on the first word. And then the third word 
-depends on both of the first and second words. 
-So on and so forth. And then finally, you have the last word
-depends on everything in front of it. And using the bigram language model,
-what do we have is like this. So if you compare these two forms, we can see that the chain rule
-is definitely correct. For the bigram language models,
-we're making some assumptions. We can compare them one by one. We can see that the assumption is
-basically that the probability, the conditional probability of one word
-given all its previous words, can be simplified as the condition 
-probability of this word given only its previous one word. So this is the fundamental assumption
-behind bigram language models. Remember that with
-unigram language models, the probability of writing down one
-word does not depend on anything. This is our assumption. And in bigram language models 
-we assume that the probability of writing
-down one word depends, and only depends on 
-its previous word. Of course the general case is the chain
-rule. That writing down a word depends on everything, 
-every word right in front of it. Mathematically, if you want to
-use the bigram language model, then this assumption has to hold.
-Which is the probability of any given k. The probability of w_k
-given all its previous words equals the probability of w_k
-given only its previous word. And with such the assumption, with
-such the bigram language model, we're actually coming into a new 
-family of sequence models. And this family of models 
-actually have a fancy name called the Markov models. And in the Markov model, if every
-observation, if every item only depends on its previous item,
-then it's called a Markov chain. A Markov chain is apparently
-limit after someone right? Markov models and Markov chain
-are all named after the Russian mathematician Andrey Markov.
-And the assumption that the word only depends on its previous word
-is known as the Markov assumption. So in the Markov chain, we're looking
-at a sequence of possible events. The probability of every 
-event only depends on the state of a previous event. So you can see that the definition 
-of Markov chain is actually broader than our definition of a sequence. Later on we can see that Markov
-assumption can also apply to time series data or data streams.
-Where we are looking at a sequence of events, instead of a sequence of categorical 
-items in general. If you read the textbook, it has two very
-interesting examples of Markov chain. You can see that on 
-the left hand side, we have a Markov chain 
-model with three states. Basically three states 
-about temperature. The temperature could be hot,
-could be cold, and could be warm. And then if we know nothing, 
-then the temperature could come in with one of the states. So we call that the start distribution. But now when we know that
-the temperature is hot, then the next day there is
-the probability that it's still hot. There is the smaller probability
-that it will become cold. And there is an intermediate 
-probability that it will be neither too hot or too cold. 
-It will be warm. If today's temperature is
-in any of the three states, then tomorrow the temperature could
-depend on today's temperature. And we assume that with Markov 
-assumption, that today's temperature does not depend on the temperature
-the day before yesterday. So you can see that there is 
-another set of probabilities associated with every state, that is 
-known as the transition probabilities. That means supposed today is hot. Then how likely tomorrow will
-be either hot or cold or warm? So there are three probability numbers, 
-and then they have to sum to one. On the right hand side we
-can see another example. Another Markov chain with three words
-instead of three temperature states. So you can see that generating a sentence, suppose we only have the three 
-words, follows the same process. The first word could be either the word
-"charming" or the word "uniformly", or the word "are". 
-And these probabilities, the three probabilities,
-are  also described as the starting probability or 
-initial probability. Now once the first word is written, then the next word will depend 
-on the previous word. So once you have already
-written down any of the words, the next word you have to
-make a decision. Based on what? Based on a set
-of transition probabilities. So suppose we have already
-written down the word "uniformly". Then the next word, there's 
-the teeny tiny probability is that you will write down 
-this word again. 0.1. But there will be the 
-probability of 0.4 that you will write down the 
-word "are" as the next word. And there will be another 
-probability of 0.5 that you will write down 
-the word "charming". So if you're in any of the states, 
-you have conditional probabilities that leads to you to any of 
-the other states, or itself. And these set of probabilities,
-we call them transition probabilities.
