@@ -11,6 +11,7 @@ langchain = "==0.1.6"
 chromadb = "==0.4.22"
 markdownify = "*"
 sentence-transformers = "*"
+llama-cpp-python = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
