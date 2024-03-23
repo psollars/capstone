@@ -465,67 +465,67 @@ We consider apps that specifically post messages or respond to messages from hum
 
 Slack is an effective tool for online engagement and collaboration. It is one of the main tools our community uses to come together and learn from each other. Our community is global, and our Slack workspace represents this. We make up different cultures, time zones, and backgrounds but have a shared commitment to the study of data science. Our Slack workspace is an inclusive and professional space for members of our community. When using Slack, please remember these practices. **Failure to uphold them may result in the loss of posting privileges or workspace access**.
 
-- **When you start using Slack**
+### When you start using Slack
 
-  We recommend using the Slack desktop and mobile apps rather than the web browser. When you set up your Slack profile, we welcome you to include your name, pronouns, time zone, and expected graduation date (month/year). You may also include your job title if employed.
+We recommend using the Slack desktop and mobile apps rather than the web browser. When you set up your Slack profile, we welcome you to include your name, pronouns, time zone, and expected graduation date (month/year). You may also include your job title if employed.
 
-- **Mind the channel's _purpose_ and not just your interests**
+### Mind the channel's _purpose_ and not just your interests
 
-  Each Slack channel is designed for a specific purpose, such as project discussion or career development. If you are interested in sharing something, find the right channel to do so. It makes retrieving information from Slack easier, too. Only post to a community-wide channel if you are making an announcement or asking a question relevant to our entire MADS community. If you discover you have an interest not represented in a current channel, you are welcome to create a new one, but before you do, browse the channels first to see if it already exists.
+Each Slack channel is designed for a specific purpose, such as project discussion or career development. If you are interested in sharing something, find the right channel to do so. It makes retrieving information from Slack easier, too. Only post to a community-wide channel if you are making an announcement or asking a question relevant to our entire MADS community. If you discover you have an interest not represented in a current channel, you are welcome to create a new one, but before you do, browse the channels first to see if it already exists.
 
-- **Use direct messaging or email when sharing feedback**
+### Use direct messaging or email when sharing feedback
 
-  Use direct messages (DMs) or email ([umsimadshelp@umich.edu](mailto:umsimadshelp@umich.edu)) when you want to share crucial individual, course, or program feedback or offer constructive but personal or individual feedback to instructors, staff, or other students. Given the volume of conversations and the various ways community members use Slack (i.e., some are heavy users and others are not), this feedback may be overlooked or not responded to if posted in a channel.
+Use direct messages (DMs) or email ([umsimadshelp@umich.edu](mailto:umsimadshelp@umich.edu)) when you want to share crucial individual, course, or program feedback or offer constructive but personal or individual feedback to instructors, staff, or other students. Given the volume of conversations and the various ways community members use Slack (i.e., some are heavy users and others are not), this feedback may be overlooked or not responded to if posted in a channel.
 
-- **Use direct messaging when sharing assignment code with an instructor(s). Use course channels when asking assignment questions**
+### Use direct messaging when sharing assignment code with an instructor(s). Use course channels when asking assignment questions
 
-  You may want to ask an instructor for specific feedback about your assignment code or writing. If you are communicating with an instructor and they ask to see your work, please direct message it to them so others don’t see it. If you have general assignment questions, start with the applicable private course channel before DMing the instructional team. Your peers may be able to answer your questions. If the instructor allows sharing work in a course channel, you may defer to their guidance but otherwise refrain from sharing solutions publicly.
+You may want to ask an instructor for specific feedback about your assignment code or writing. If you are communicating with an instructor and they ask to see your work, please direct message it to them so others don’t see it. If you have general assignment questions, start with the applicable private course channel before DMing the instructional team. Your peers may be able to answer your questions. If the instructor allows sharing work in a course channel, you may defer to their guidance but otherwise refrain from sharing solutions publicly.
 
-- **Use [labels] and follow pinned threads to help organize a course channel**
+### Use [labels] and follow pinned threads to help organize a course channel
 
-  If you are asking a question about an assignment or other course topic, begin your message with a label wrapped in square brackets to signal what the assignment or question is about. Be sure to post your question in the appropriate homework pinned thread (typically set up by the instructional team on the first day of the course). For example, if you had a question about how to approach the first assignment, you would start the message with [Assignment 1], or if you had a query about question two from the third homework, you would start the message with [HW3 Q2].
+If you are asking a question about an assignment or other course topic, begin your message with a label wrapped in square brackets to signal what the assignment or question is about. Be sure to post your question in the appropriate homework pinned thread (typically set up by the instructional team on the first day of the course). For example, if you had a question about how to approach the first assignment, you would start the message with [Assignment 1], or if you had a query about question two from the third homework, you would start the message with [HW3 Q2].
 
-  How you refer to the homework depends on what it is called in the course and how others refer to it. By using labels at the beginning of messages, instructors and fellow students can more quickly understand your question and, in the case of fellow students, see if they can help or benefit from that question thread. Additionally, the labels can be used to search the channel more easily.
+How you refer to the homework depends on what it is called in the course and how others refer to it. By using labels at the beginning of messages, instructors and fellow students can more quickly understand your question and, in the case of fellow students, see if they can help or benefit from that question thread. Additionally, the labels can be used to search the channel more easily.
 
-- **Announce when you’re leaving a discussion if it’s happening in real time.**
+### Announce when you’re leaving a discussion if it’s happening in real time.
 
-  When you are in the middle of a discussion in a channel or DM, let everyone know when you decide to leave the discussion if it’s happening in real time.
+When you are in the middle of a discussion in a channel or DM, let everyone know when you decide to leave the discussion if it’s happening in real time.
 
-- **Switch to email when you have large attachments**
+### Switch to email when you have large attachments
 
-  Slack is not great at handling a lot of attachments in one place. Whenever you have large attachments you're sharing with others, you can send an email or use Google Drive instead of posting it to Slack.
+Slack is not great at handling a lot of attachments in one place. Whenever you have large attachments you're sharing with others, you can send an email or use Google Drive instead of posting it to Slack.
 
-- **@channel is reserved for announcements**
+### @channel is reserved for announcements
 
-  @channel is generally reserved for announcements from program faculty and staff. Please don't use @channel. If you'd like to alert everyone who is active for an @here announcement, you may do so. However, be mindful when using @here, as we have many time zones represented in our program.
+@channel is generally reserved for announcements from program faculty and staff. Please don't use @channel. If you'd like to alert everyone who is active for an @here announcement, you may do so. However, be mindful when using @here, as we have many time zones represented in our program.
 
-- **Don't pin and unpin messages**
+### Don't pin and unpin messages
 
-  Typically, MADS faculty and staff have pinned a message to a channel so others can easily access or reference it. Unpinning an item makes it much harder to search for. Please reserve pinning and unpinning for MADS faculty and staff.
+Typically, MADS faculty and staff have pinned a message to a channel so others can easily access or reference it. Unpinning an item makes it much harder to search for. Please reserve pinning and unpinning for MADS faculty and staff.
 
-- **Tailor your writing style**
+### Tailor your writing style
 
-  Think of Slack as a conversation instead of a presentation. Don’t feel like you have to write everything in one go.Communicating in one sentence at a time will keep the conversation going. It will help others process the information in real time. However, if you have multiple things to say, threading the rest of your messages under the first one helps keep things organized and prevents pinging everyone in the channel multiple times.
+Think of Slack as a conversation instead of a presentation. Don’t feel like you have to write everything in one go.Communicating in one sentence at a time will keep the conversation going. It will help others process the information in real time. However, if you have multiple things to say, threading the rest of your messages under the first one helps keep things organized and prevents pinging everyone in the channel multiple times.
 
-- **Acknowledge, even when you want to work on it later**
+### Acknowledge, even when you want to work on it later
 
-  You may get a question or request from your classmates on Slack when you’re busy with other things. Instead of leaving the message unattended, tell them you have seen it and will get around to acting on it later.
+You may get a question or request from your classmates on Slack when you’re busy with other things. Instead of leaving the message unattended, tell them you have seen it and will get around to acting on it later.
 
-- **Send a direct message before adding someone to a new channel**
+### Send a direct message before adding someone to a new channel
 
-  The message should help them clearly understand what to discuss in that particular channel.
+The message should help them clearly understand what to discuss in that particular channel.
 
-- **Set your Slack status and availability**
+### Set your Slack status and availability
 
-  Ensure you [set your Slack status](https://slack.com/help/articles/201864558-Set-your-Slack-status-and-availability), which shows a custom message and emoji, such as “in a meeting” or “on a flight,” to indicate what you are up to.
+Ensure you [set your Slack status](https://slack.com/help/articles/201864558-Set-your-Slack-status-and-availability), which shows a custom message and emoji, such as “in a meeting” or “on a flight,” to indicate what you are up to.
 
-- **Make sure your notifications are set at the "right" level for you**
+### Make sure your notifications are set at the "right" level for you
 
-  This way, you won’t miss any critical discussion but also won't be bothered by frequent pings on topics less relevant or you care less about. If interested, U-M Information and Technology Services provides an overview of [Slack notification best practices](https://documentation.its.umich.edu/slack-notifications) to help you manage when and how you’re notified.
+This way, you won’t miss any critical discussion but also won't be bothered by frequent pings on topics less relevant or you care less about. If interested, U-M Information and Technology Services provides an overview of [Slack notification best practices](https://documentation.its.umich.edu/slack-notifications) to help you manage when and how you’re notified.
 
-- **Mark conversations for later**
+### Mark conversations for later
 
-  Every time you discuss something that you feel might be useful to reference later, [mark the conversation using the bookmark icon](https://slack.com/help/articles/360042650274-Save-messages-and-files-for-later) (“Save for later”). These conversations will be saved to your “Later” section at the top of your sidebar.
+Every time you discuss something that you feel might be useful to reference later, [mark the conversation using the bookmark icon](https://slack.com/help/articles/360042650274-Save-messages-and-files-for-later) (“Save for later”). These conversations will be saved to your “Later” section at the top of your sidebar.
 
 # Relevant University of Michigan Policies
 
