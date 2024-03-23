@@ -14,6 +14,9 @@ sentence-transformers = "*"
 llama-cpp-python = "*"
 ipywidgets = "*"
 rank-bm25 = "*"
+seaborn = "*"
+matplotlib = "*"
+gensim = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
