@@ -2,7 +2,7 @@
 
 ## Master of Applied Data Science
 
-# About this handbook…
+### About this handbook…
 
 This handbook is a helpful guide for new and continuing MADS students. As an enrolled student at UMSI, you are responsible for knowing and understanding the content of this handbook. If you have questions or comments about what is contained in the MADS Student Handbook don't hesitate to contact us at [umsi.advising.mads@umich.edu](mailto:umsi.advising.mads@umich.edu) This is a living document. As the MADS program evolves, we anticipate so too will the handbook. We will alert students to any significant changes if and when they occur. Some parts of this Handbook are also contained in other sections of the Master of Applied Data Science Student Orientation course.
 
@@ -485,7 +485,7 @@ Slack is an effective tool for online engagement and collaboration. It is one of
 
   How you refer to the homework depends on what it is called in the course and how others refer to it. By using labels at the beginning of messages, instructors and fellow students can more quickly understand your question and, in the case of fellow students, see if they can help or benefit from that question thread. Additionally, the labels can be used to search the channel more easily.
 
-- **Announce when you’re leaving a discussion if it’s happening in real time. **
+- **Announce when you’re leaving a discussion if it’s happening in real time.**
 
   When you are in the middle of a discussion in a channel or DM, let everyone know when you decide to leave the discussion if it’s happening in real time.
 
