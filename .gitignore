@@ -6,4 +6,5 @@ chroma_data
 chromadb_test
 chroma.log
 
-syllabus_loader_embeddings
+# Models
+models/*.gguf
