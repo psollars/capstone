@@ -377,9 +377,11 @@ The UMSI Student Payment Form must be included with any expense report for stude
 
 The Engaged Learning Office offers financial support for students and student teams working on engaged learning projects in the curriculum. This includes BSI capstone projects, applied mastery course projects, other client-based course projects, and projects related to co-curricular ELO and UMSI programs. Preference is given to students/teams working with community-based organizations who cannot provide financial support for certain aspects of the project, including user research, transportation, etc. Students and student teams are encouraged to inquire about other needs. Students can learn more and apply at [umsi.info/elo-funding](http://umsi.info/elo-funding).
 
-# [MADS Slack Policy, Standards, and Practices](https://docs.google.com/document/d/1LgxAYs2ZxNew4q9vSHCOGLNk6ZkFV8ueLCkXic5wPQo/edit#heading=h.lbr4s95fau6e)
+# MADS Slack Policy, Standards, and Practices
 
 ## MADS Slack Policy
+
+[MADS Slack Policy, Standards, and Practices](https://docs.google.com/document/d/1LgxAYs2ZxNew4q9vSHCOGLNk6ZkFV8ueLCkXic5wPQo/edit#heading=h.lbr4s95fau6e)
 
 As an official tool used by the entire MADS community:
 
