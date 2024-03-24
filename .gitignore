@@ -5,6 +5,11 @@
 chroma_data
 chromadb_test
 chroma.log
+embeddings/
+.idea
+
+!documents.pickle
+!embeddings.pickle
 
 # Models
 models/*.gguf
