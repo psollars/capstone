@@ -17,6 +17,7 @@ rank-bm25 = "*"
 seaborn = "*"
 matplotlib = "*"
 gensim = "*"
+textacy = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
