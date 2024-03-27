@@ -1,0 +1,39 @@
+question,ground_truth,ideal_context,
+Which class involves time series analysis?,"Data Mining II, SIADS 632 includes a particular focus on time series analysis.","This course extends Data Mining I and introduces additional data representations and tasks involved in mining real world data, with a particular focus on sequence modeling, time series analysis, and mining data streams.\xa0 It introduces how to extract patterns, compute similarities/distances of data, and make predictions under these data representations.",
+Who teaches the SQL and Databases class?,"The primary instructor for SQL and Databases is Graham Hukill. Additional course assistants include, Derek Bruckner, Emily Schemanske, Jungseo Lee, and Toby Kemp.","Instructor And Course Assistants
+
+- Instructor: Graham Hukill - (gshukill@umich.edu)
+- Course Assistant: Derek Bruckner (dbrucknr@umich.edu), Emily Schemanske (landise@umich.edu), Jungseo Lee (jungseo@umich.edu), Toby Kemp (tobyk@umich.edu)",
+What are the prerequisites for Data Science for Social Good?,"SIADS 630, 631, and 694","Course Syllabus for SIADS 688: Data Science for Social Good Course Overview and Prerequisites This course analyzes the motivations and incentives for people to contribute to public goods. Students will learn how to apply causal inference techniques and social science theories to nudge pro-social behavior. Application domains include energy conservation, safe driving, contributions to open content (Wikipedia), open source, and P2P online microfinance.
+
+The prerequisites for SIADS 688 include:
+
+- Preceded or accompanied by SIADS 630, 631, and 694; (C- or better) This course was initially developed by Dr. Yan Chen.",
+When are the office hours for the Math Methods course?,"Office hours for Math Methods are held at the following times: Alex McLeod: Monday at 11:45 am EST, Saurabh Budholiya: Friday at 9:00 am EST, Alexis Castellano: Thursdays at 7:00 pm EST","- This course starts **Tuesday, August 29th** and ends Monday, September 25th
+- Weekly assignments are due on Mondays at 11:59 pm EDT (Eastern Daylight Time)
+- Schedule of Weekly Office Hours via Zoom: - Alex McLeod: Monday at 11:45 am EST - Saurabh Budholiya: Friday at 9:00 am EST - Alexis Castellano: Thursdays at 7:00 pm EST",
+Are there any weekly readings for Milestone II?,"There is introductory material during the first week of the course, but generally speaking, no weekly readings in this course.","There is introductory material during the first week of the course, but generally speaking, no weekly readings in this course.",
+What are the outcomes of Qualitative Inquiry?,"Upon successful completion of this course, students will be able to:
+
+1.  Collect, represent, and analyze qualitative data about a quantitative data set, by…
+2.  Conducting semi-structured interviews;
+3.  Processing interview notes into discrete pieces of qualitative data; and 4. Analyzing qualitative data using affinity walls.
+4.  Develop a narrative about qualitative findings that support later quantitative analysis.
+5.  Communicate qualitative findings in written form.","Upon successful completion of this course, students will be able to:
+
+1.  Collect, represent, and analyze qualitative data about a quantitative data set, by…
+2.  Conducting semi-structured interviews;
+3.  Processing interview notes into discrete pieces of qualitative data; and 4. Analyzing qualitative data using affinity walls.
+4.  Develop a narrative about qualitative findings that support later quantitative analysis.
+5.  Communicate qualitative findings in written form.",
+What textbook is required for SIADS 505?,"Python for Data Analysis: Data Wrangling with Pandas, NumPy, and iPython 2nd edition by Wes McKinney (O'Reilly). Copyright 2017 Wes McKinney, 978-1-491-95766-0.","Python for Data Analysis: Data Wrangling with Pandas, NumPy, and iPython 2nd edition by Wes McKinney (O'Reilly). Copyright 2017 Wes McKinney, 978-1-491-95766-0.",
+What textbook is required for Data Manipulation?,"Python for Data Analysis: Data Wrangling with Pandas, NumPy, and iPython 2nd edition by Wes McKinney (O'Reilly). Copyright 2017 Wes McKinney, 978-1-491-95766-0.","Python for Data Analysis: Data Wrangling with Pandas, NumPy, and iPython 2nd edition by Wes McKinney (O'Reilly). Copyright 2017 Wes McKinney, 978-1-491-95766-0.",
+Which week of unsupervised learning covers DBSCAN?,Week 2,"## Learning Outcomes: Week 2
+
+- Apply k-means clustering to a given dataset.
+- Learn about issues with applying some clustering methods in practice, such as local minima and restarts.
+- Create a dendrogram from hierarchical data to answer questions about the dataset.
+- Use DBSCAN to find groups and detect outliers.
+- Compare different clusters in terms of selected quality metrics.",
+How many credits are required to complete the MADS program?,34,"To earn a Master of Applied Data Science at the School of Information, you must complete a minimum of 34 credit hours of SIADS coursework, with a cumulative grade point average of a B (3.0) or better, including required coursework and electives.",handbook
+How long do students have to complete the MADS program start to finish?,Five years,Students are expected to complete all coursework within five years from the date of first enrollment in the program. Students exceeding this time limit must file a petition for modification or waiver of policy. Petitions must describe explicitly the amount of work remaining and a timeline for completion. Students must be making good progress and have good academic standing to receive an extension. A student who does not complete degree requirements within five years and does not petition for an extension may be withdrawn from the program and required to apply for readmission.,handbook
