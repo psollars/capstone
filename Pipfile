@@ -18,6 +18,7 @@ seaborn = "*"
 matplotlib = "*"
 gensim = "*"
 textacy = "*"
+bert-score = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
