@@ -11,4 +11,5 @@ chroma.log
 !embeddings.pickle
 
 # Models
+models/all-MiniLM-L6-v2
 models/*.gguf
