@@ -8,6 +8,7 @@ chromadb_test
 chroma.log
 .idea
 !documents.pickle
+!transcripts.pickle
 !embeddings.pickle
 
 # Models
