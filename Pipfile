@@ -21,6 +21,8 @@ textacy = "*"
 bert-score = "*"
 langchain-experimental = "*"
 ragas = "*"
+pyngrok = "*"
+streamlit = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
