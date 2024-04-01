@@ -1,11 +1,18 @@
-# MADS RAG Pipeline LLM (Team 28)
+# MADS-RAG: A Helpful Chatbot for Master’s of Applied Data Science Students at the University of Michigan
 
-## TODO
+### SIADS 699 Capstone (Winter 2024)
 
-- A README file that documents how to run your code
-- Code that generates results and figures in your report
-- Cleaned code: unused code blocks and files removed, absolute file paths converted to relative paths, and personal keys (e.g. API) removed.
-- In-line code attributions for any code segments your team did not write or received external assistance to create. If code is reused from an open source project, licenses are respected.
+### Team 28: Patrick Sollars, Aaron Newman, and Tawfiq Zureiq
+
+Throughout our time as Masters of Applied Data Science (MADS) students, we have relied on communications tools like Slack to answer questions about classes and the overall program. Fortunately, there are faculty, staff, fellow students, and alumni who are usually willing to lend their expertise. Our team thought that it would be nice to use Artificial Intelligence techniques to answer some of those frequently asked questions - the types of questions where the answer can probably be found in course syllabi or perhaps the student handbook.
+
+## Using This Repo
+
+- `00_archive` A graveyard for old unpolished work, we’ll remove this for the final submission
+- `01_loading` This has relevant code to load and split the documents, run document_loader.ipynb with a fresh repo to get started
+- `02_evaluation` Working in here to test out different retrieval strategies and models, the notebooks should have some report or visualization at the end about the performance
+- `03_visualization` Ad hoc notebooks to create viz for the report
+- `04_chatbot` Any notebooks/code/configuration relevant to the UI or “productionizing” the finished product
 
 ## Environment
 
@@ -34,6 +41,15 @@ pipenv install --dev
 
 > **NOTE:** You might also prefer to set `PIPENV_VENV_IN_PROJECT=1` in your .env or .bashrc/.zshrc (or other shell configuration file) for creating the virtualenv inside your project’s directory.
 
+## Secrets
+
+Some notebooks require API keys to run, these should be stored in the .gitignored file, `secrets.py`, in the root of this repo.
+
+```
+OPENAI_API_KEY = "your_secret_key"
+NGROK_AUTH_TOKEN = "your_secret_key"
+```
+
 ## Data Access
 
 All syllabus documents used in this project are publicly accessible through the [Master of Applied Data Science Curriculum page](https://www.si.umich.edu/programs/master-applied-data-science/curriculum/mads-courses).
@@ -43,6 +59,10 @@ Additional source documents are referenced below:
 - [MADS Student Handbook](https://docs.google.com/document/d/1YEOcpdONdme5kmpNEnZpdbJeVFhEIw1pS0wq16QdH1I/edit)
 - [MADS Academic Advising FAQ](https://docs.google.com/document/d/1A3zdTF0AYQY_zzD2-OlpSHeDxnWqFVEhXl446SyT_pA/edit)
 
-**TODO: A data access statement indicating how to access the data or explaining who owns the data. Licenses for data use and redistribution are respected.**
+Proprietary transcripts from MADS course lectures were pulled from Coursera using [`coursera-dl`](https://github.com/coursera-dl/coursera-dl).
 
-**TODO: add attribution for our quantized models... https://huggingface.co/TheBloke/Llama-2-7B-GGUF**
+Quantized large language models were sourced from public HuggingFace repositories:
+
+- https://huggingface.co/TheBloke/Llama-2-7B-GGUF
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
+- https://huggingface.co/TheBloke/Starling-LM-7B-alpha-GGUF
