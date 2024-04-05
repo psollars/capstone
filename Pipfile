@@ -23,6 +23,9 @@ langchain-experimental = "*"
 ragas = "*"
 pyngrok = "*"
 streamlit = "*"
+rouge-score = "*"
+sacrebleu = "*"
+nltk = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
