@@ -1,0 +1,5 @@
+Models required to run the full RAG pipeline should be placed in this directory. These can be downloaded from the following public HuggingFace repositories.
+
+- https://huggingface.co/TheBloke/Llama-2-7B-GGUF
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
+- https://huggingface.co/TheBloke/Starling-LM-7B-alpha-GGUF
