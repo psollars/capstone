@@ -1,3 +1,12 @@
+# Proprietary MADS Data
+colbert_index/colbert/indexes/transcripts
+documents/transcripts
+embeddings/*
+# Keep these two
+!documents.pickle
+!embeddings.pickle
+
+# Local env stuff
 .venv
 .DS_Store
 __pycache__
@@ -6,14 +15,10 @@ __pycache__
 secrets.py
 
 # ChromaDB
-embeddings/*
 chroma_data
 chromadb_test
 chroma.log
 .idea
-!documents.pickle
-!transcripts.pickle
-!embeddings.pickle
 
 # Models
 models/all-MiniLM-L6-v2
