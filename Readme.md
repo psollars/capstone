@@ -59,7 +59,13 @@ Additional source documents are referenced below:
 - [MADS Student Handbook](https://docs.google.com/document/d/1YEOcpdONdme5kmpNEnZpdbJeVFhEIw1pS0wq16QdH1I/edit)
 - [MADS Academic Advising FAQ](https://docs.google.com/document/d/1A3zdTF0AYQY_zzD2-OlpSHeDxnWqFVEhXl446SyT_pA/edit)
 
-Proprietary transcripts from MADS course lectures were pulled from Coursera using [`coursera-dl`](https://github.com/coursera-dl/coursera-dl).
+Proprietary transcripts from MADS course lectures were pulled from Coursera using [`coursera-dl`](https://github.com/coursera-dl/coursera-dl). These exist in a [private repo](https://github.com/psollars/capstone-protected) at the following paths.
+
+- `colbert_index/colbert/indexes/transcripts`
+- `documents/transcripts`
+- `embeddings/transcripts.pickle`
+
+> Access to these transcripts is restricted to the Winter 2024 Capstone course students and instructors. If you would like access to this repo, please reach out to [psollars@umich.edu](mailto:psollars@umich.edu) with your request.
 
 Quantized large language models were sourced from public HuggingFace repositories:
 
