@@ -1,15 +1,16 @@
 import streamlit as st
-from langchain.vectorstores import Chroma
-from langchain.retrievers import BM25Retriever, EnsembleRetriever
 from langchain.chains import RetrievalQA
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
 from langchain_community.llms import LlamaCpp
 from langchain.callbacks.manager import CallbackManager
 from langchain_core.prompts import PromptTemplate
-import pickle
+from ragatouille import RAGPretrainedModel
+
+# from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
+
 import time
 import random
+
 
 # base_dir = "./drive/MyDrive/Capstone"
 base_dir = "./.."
@@ -17,33 +18,13 @@ base_dir = "./.."
 
 @st.cache_resource
 def get_retriever():
-    print("loading context...")
-    # Load documents from persistent store
-    with open(f"{base_dir}/embeddings/documents.pickle", "rb") as handle:
-        documents = pickle.load(handle)
-    with open(f"{base_dir}/embeddings/embeddings.pickle", "rb") as handle:
-        embeddings = pickle.load(handle)
-
-    document_db = Chroma(
-        "documents",
-        embedding_function=embeddings,
-        persist_directory=f"{base_dir}/embeddings",
-        collection_metadata={"hnsw:space": "cosine"},
+    RAG = RAGPretrainedModel.from_index(
+        index_path=f"{base_dir}/colbert_index/colbert/indexes/documents"
     )
 
-    chroma_retriever = document_db.as_retriever(
-        search_type="mmr",
-        search_kwargs={"k": 5, "fetch_k": 20},
-    )
+    retriever = RAG.as_langchain_retriever()
 
-    bm25_retriever = BM25Retriever.from_documents(documents)
-
-    retrievers = [chroma_retriever, bm25_retriever]
-
-    ensemble_retriever = EnsembleRetriever(retrievers=retrievers, weights=[0.5, 0.5])
-
-    print("built retriever...")
-    return ensemble_retriever
+    return retriever
 
 
 @st.cache_resource
@@ -118,20 +99,16 @@ def main():
     user_input = st.text_input("Ask a question about MADS:", key="user_input")
 
     # placeholder = st.container()
-
     # callback_handler = StreamlitCallbackHandler(placeholder)
 
-    ensemble_retriever = get_retriever()
+    retriever = get_retriever()
 
-    qa_chain = get_llm(ensemble_retriever)
+    qa_chain = get_llm(retriever)
 
     # Who teaches the SQL and Databases class?
     if st.button("Send"):
-
         response = qa_chain(user_input)
-
         print(">>>", response)
-
         st.write_stream(stream_response(response))
 
 
