@@ -6,7 +6,7 @@ from langchain.callbacks.manager import CallbackManager
 from langchain_core.prompts import PromptTemplate
 from ragatouille import RAGPretrainedModel
 
-# from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
+from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
 
 import time
 import random
@@ -28,7 +28,7 @@ def get_retriever():
 
 
 @st.cache_resource
-def get_llm(_retriever):
+def get_llm(_retriever, _callback_handler):
     template = """
     Use only the following pieces of context to answer the question at the end.
     Keep your answers concise and do not provide additional explanations or interpretations.
@@ -41,17 +41,17 @@ def get_llm(_retriever):
     """
 
     std_out = StreamingStdOutCallbackHandler()
-    callback_manager = CallbackManager([std_out])
+    callback_manager = CallbackManager([std_out, _callback_handler])
 
     llm_open = LlamaCpp(
-        model_path=f"{base_dir}/models/mistral-7b-instruct-v0.2.Q4_K_S.gguf",
-        n_ctx=32 * 1024,  # 4096 for Llama, 32*1024 for Mistral
+        model_path=f"{base_dir}/models/llama-2-7b.Q3_K_M.gguf",
+        n_ctx=4096,  # 4096 for Llama, 32*1024 for Mistral
         n_gpu_layers=50,
         temperature=0.15,
         top_p=1,
         top_k=40,
         repeat_penalty=1.1,
-        max_tokens=512,
+        max_tokens=256,
         callback_manager=callback_manager,
         stream=True,
     )
@@ -72,20 +72,7 @@ def get_llm(_retriever):
     return qa_chain
 
 
-def stream_response(response):
-    # response = "This course extends Data Mining I and introduces additional data representations and tasks involved in mining real world data, with a particular focus on sequence modeling, time series analysis, and mining data streams.\xa0 It introduces how to extract patterns, compute similarities/distances of data, and make predictions under these data representations."
-
-    # response
-    # "query": "Who teaches the SQL and Databases class?",
-    # "result": "...",
-    # "source_documents": [
-    # Document(
-    #     page_content="....",
-    #     metadata={
-    #        ...
-    #     },
-    # ),
-
+def fake_stream_response(response):
     for word in response["result"].split():
         yield f"{word} "
         time.sleep(random.uniform(0.001, 0.1))
@@ -98,18 +85,18 @@ def main():
     )
     user_input = st.text_input("Ask a question about MADS:", key="user_input")
 
-    # placeholder = st.container()
-    # callback_handler = StreamlitCallbackHandler(placeholder)
+    placeholder = st.container()
+    callback_handler = StreamlitCallbackHandler(placeholder)
 
     retriever = get_retriever()
 
-    qa_chain = get_llm(retriever)
+    qa_chain = get_llm(retriever, callback_handler)
 
     # Who teaches the SQL and Databases class?
     if st.button("Send"):
         response = qa_chain(user_input)
-        print(">>>", response["result"])
-        st.write_stream(stream_response(response))
+        # print(">>>", response["result"])
+        # st.write_stream(fake_stream_response(response))
 
         # Print the top 3 source documents
         st.write("### Sources")
@@ -119,6 +106,17 @@ def main():
             sources += f"- {m['course_title']} | {m['heading']} | [Source Document]({m['document']})\n"
 
         st.write(sources)
+
+    # response
+    # "query": "Who teaches the SQL and Databases class?",
+    # "result": "...",
+    # "source_documents": [
+    # Document(
+    #     page_content="....",
+    #     metadata={
+    #        ...
+    #     },
+    # ),
 
 
 if __name__ == "__main__":
