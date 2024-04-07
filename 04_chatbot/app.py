@@ -47,7 +47,7 @@ def get_retriever():
 
 
 @st.cache_resource
-def get_llm(_retriever, _callback_handler):
+def get_llm(_retriever):
     template = """
     Use only the following pieces of context to answer the question at the end.
     Keep your answers concise and do not provide additional explanations or interpretations.
@@ -60,8 +60,7 @@ def get_llm(_retriever, _callback_handler):
     """
 
     std_out = StreamingStdOutCallbackHandler()
-
-    callback_manager = CallbackManager([std_out, _callback_handler])
+    callback_manager = CallbackManager([std_out])
 
     llm_open = LlamaCpp(
         model_path=f"{base_dir}/models/mistral-7b-instruct-v0.2.Q4_K_S.gguf",
@@ -118,13 +117,13 @@ def main():
     )
     user_input = st.text_input("Ask a question about MADS:", key="user_input")
 
-    placeholder = st.container()
+    # placeholder = st.container()
 
-    callback_handler = StreamlitCallbackHandler(placeholder)
+    # callback_handler = StreamlitCallbackHandler(placeholder)
 
     ensemble_retriever = get_retriever()
 
-    qa_chain = get_llm(ensemble_retriever, callback_handler)
+    qa_chain = get_llm(ensemble_retriever)
 
     # Who teaches the SQL and Databases class?
     if st.button("Send"):
@@ -133,7 +132,7 @@ def main():
 
         print(">>>", response)
 
-        # st.write_stream(stream_response(response))
+        st.write_stream(stream_response(response))
 
 
 if __name__ == "__main__":
