@@ -108,8 +108,17 @@ def main():
     # Who teaches the SQL and Databases class?
     if st.button("Send"):
         response = qa_chain(user_input)
-        print(">>>", response)
+        print(">>>", response["result"])
         st.write_stream(stream_response(response))
+
+        # Print the top 3 source documents
+        st.write("### Sources")
+        sources = ""
+        for doc in response["source_documents"][:3]:
+            m = doc.metadata
+            sources += f"- {m['course_title']} | {m['heading']} | [Source Document]({m['document']})\n"
+
+        st.write(sources)
 
 
 if __name__ == "__main__":
