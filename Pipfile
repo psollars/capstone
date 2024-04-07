@@ -27,6 +27,7 @@ rouge-score = "*"
 sacrebleu = "*"
 nltk = "*"
 langchain-core = "*"
+ragatouille = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
