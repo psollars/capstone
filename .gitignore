@@ -10,6 +10,7 @@ embeddings/*
 .venv
 .DS_Store
 __pycache__
+node_modules
 
 # Secrets
 secrets.py
@@ -23,3 +24,6 @@ chroma.log
 # Models
 models/all-MiniLM-L6-v2
 models/*.gguf
+colbertv2.0
+
+*.log
