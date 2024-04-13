@@ -21,6 +21,7 @@ With all dependencies, models, and source data installed, the chatbot can be sta
 
 1. navigating to the chatbot directory: `cd 04_chatbot`
 2. start the chatbot client: `pipenv run  streamlit run ./chatbot.py --server.port 8501`
+   - If your machine can't handle it, you can use `mock_chatbot.py` which uses cached responses with minimal resources (Not the RAG LLM)
 3. Navigate to http://localhost:8501 where you can:
    - Enter your prompt
    - View the response generated from the MADS-RAG pipeline

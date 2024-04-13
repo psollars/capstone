@@ -11,17 +11,16 @@ import time
 import random
 
 base_dir = "./.."
+index = "combined"  # or "documents" or "transcripts" for individual sources
 
 
 @st.cache_resource
 def get_retriever():
     RAG = RAGPretrainedModel.from_index(
-        index_path=f"{base_dir}/colbert_index/colbert/indexes/combined/"
+        index_path=f"{base_dir}/colbert_index/colbert/indexes/{index}/"
     )
 
-    retriever = RAG.as_langchain_retriever(k=5)
-
-    return retriever
+    return RAG.as_langchain_retriever(k=5)
 
 
 @st.cache_resource
@@ -95,7 +94,7 @@ def build_source(source_documents):
 
 
 def fake_stream_response(r):
-    for word in r["result"].split():
+    for word in r["result"].splitlines(keepends=True):
         yield f"{word} "
         time.sleep(random.uniform(0.001, 0.2))
 
