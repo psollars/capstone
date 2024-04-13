@@ -2,23 +2,97 @@
 
 ### SIADS 699 Capstone (Winter 2024)
 
-### Team 28: Patrick Sollars, Aaron Newman, and Tawfiq Zureiq
+Team 28: Patrick Sollars (psollars@umich.edu), Aaron Newman (newmanar@umich.edu), and Tawfiq Zureiq (tawfiqz@umich.edu)
 
-Throughout our time as Masters of Applied Data Science (MADS) students, we have relied on communications tools like Slack to answer questions about classes and the overall program. Fortunately, there are faculty, staff, fellow students, and alumni who are usually willing to lend their expertise. Our team thought that it would be nice to use Artificial Intelligence techniques to answer some of those frequently asked questions - the types of questions where the answer can probably be found in course syllabi or perhaps the student handbook.
+## Overview
+
+MADS-RAG is developed to enhance the remote learning experience for MADS students, providing quick and accurate answers to queries about course schedules, policies, and content. MADS-RAG leverages a Retrieval-Augmented Generation (RAG) pipeline, integrating the latest course and program information dynamically.
+
+- **Dynamic Content Retrieval:** Pulls in the most relevant and up-to-date information from various sources like course syllabi, handbooks, and transcripts.
+- **Familiar Interface:** Easy to use interface built with Streamlit for an intuitive user experience.
+- **No External APIs:** Runs locally (with a powerful computer), ensuring data privacy and cost efficiency.
+
+![RAG Architecture](./03_visualization/RAG%20Architecture.jpeg)
+_High-level architecture of the MADS-RAG chatbot_
+
+## Quickstart
+
+With all dependencies, models, and source data installed, the chatbot can be started by:
+
+1. navigating to the chatbot directory: `cd 04_chatbot`
+2. start the chatbot client: `pipenv run  streamlit run ./chatbot.py --server.port 8501`
+3. Navigate to http://localhost:8501 where you can:
+   - Enter your prompt
+   - View the response generated from the MADS-RAG pipeline
+   - Interact with links in the response or source information
+
+![Chatbot Interface](./03_visualization/chatbot_interface.png)
+_MADS-RAG chatbot interface using Streamlit_
 
 ## Using This Repo
 
-- `00_archive` A graveyard for old unpolished work, we’ll remove this for the final submission
-- `01_loading` This has relevant code to load and split the documents, run document_loader.ipynb with a fresh repo to get started
-- `02_evaluation` Working in here to test out different retrieval strategies and models, the notebooks should have some report or visualization at the end about the performance
-- `03_visualization` Ad hoc notebooks to create viz for the report
-- `04_chatbot` Any notebooks/code/configuration relevant to the UI or “productionizing” the finished product
+### `01_loading`
+
+This contains relevant code to load and split the documents. Sources were later pulled from the MADS program website and other public sources and were parsed using Marker. Some of these files were manually cleaned, so the steps weren't documented in this code. The output of all document collection is in the `documents` directory at the root of this repo.
+
+### `02_evaluation`
+
+Many notebooks used here to test out different retrieval strategies and models. The notebooks have some report or visualization at the end about the performance of that particular configuration. Selected components for the final chatbot highlighted in **bold**.
+
+- Retrievers
+  - ChromaDB (mmr, similarity_score, similarity_score_threshold)
+  - TF/IDF
+  - BM25
+  - Ensemble (chroma, tfidf, bm25)
+  - **ColBERT**
+- Models
+  - Llama2 (7B & 13B)
+  - **Mistral7B**
+  - Starling7B
+- Evaluation Strategies
+  - BLEU
+  - ROUGE
+  - METEOR
+  - Ragas
+  - **Just using our eyes** `¯\_(ツ)_/¯`
+
+### `03_visualization`
+
+Document chunking analysis and topic modeling visualizations for the report.
+
+### `04_chatbot`
+
+Notebooks, scripts, and configuration relevant to the UI or “productionizing” the finished product.
+
+### `colbert_index`
+
+This is the primary retrieval index. Only "documents" are stored in this repo. See [Data Access](#data-access) for details on proprietary transcript data in the [capstone-protected](https://github.com/psollars/capstone-protected) repo.
+
+### `colbertv2.0`
+
+Clone the [colbertv2.0](https://huggingface.co/colbert-ir/colbertv2.0) model into the root of this project. This requires [git lfs](https://git-lfs.com/) to be installed and configured on your machine.
+
+### `documents`
+
+These are the raw source files in plain text markdown format. They can be fed to our embedding notebooks to create document indexes.
+
+### `embeddings`
+
+This directory contains chunked documents and metadata after the initial loading with ChromaDB. Many evaluation notebooks will reference these cached embeddings, but the final chatbot uses ColBERT as the retriever.
+
+### `models`
+
+Various quantized models were tested for this project. These are very large files that can be downloaded directly from Hugging Face.
+
+- https://huggingface.co/TheBloke/Llama-2-7B-GGUF
+- https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
+- https://huggingface.co/TheBloke/Starling-LM-7B-alpha-GGUF
 
 ## Environment
 
-This repo uses [pipenv](https://pipenv.pypa.io/en/latest/) to manage dependencies.
+### pipenv
 
-If you don't already have it installed you can do so with:
+This repo uses [pipenv](https://pipenv.pypa.io/en/latest/) to manage dependencies. If you don't already have it installed you can do so with:
 
 ```sh
 $ pip install --user pipenv
@@ -26,9 +100,7 @@ $ pip install --user pipenv
 $ brew install pipenv
 ```
 
-Or, view the complete [installation documentation](https://pipenv.pypa.io/en/latest/installation.html).
-
-Then navigate to the repo and run these commands to install project dependencies.
+Or, view the complete [installation documentation](https://pipenv.pypa.io/en/latest/installation.html). Then navigate to the repo and run these commands to install project dependencies.
 
 ```sh
 # Recommended to keep the venv local to the repository
@@ -41,12 +113,12 @@ pipenv install --dev
 
 > **NOTE:** You might also prefer to set `PIPENV_VENV_IN_PROJECT=1` in your .env or .bashrc/.zshrc (or other shell configuration file) for creating the virtualenv inside your project’s directory.
 
-## Secrets
+### Secrets
 
 Some notebooks require API keys to run, these should be stored in the .gitignored file, `secrets.py`, in the root of this repo.
 
 ```
-OPENAI_API_KEY = "your_secret_key"
+OPENAI_API_KEY = "your_secret_key" # only for evaluation
 NGROK_AUTH_TOKEN = "your_secret_key"
 ```
 
@@ -59,8 +131,9 @@ Additional source documents are referenced below:
 - [MADS Student Handbook](https://docs.google.com/document/d/1YEOcpdONdme5kmpNEnZpdbJeVFhEIw1pS0wq16QdH1I/edit)
 - [MADS Academic Advising FAQ](https://docs.google.com/document/d/1A3zdTF0AYQY_zzD2-OlpSHeDxnWqFVEhXl446SyT_pA/edit)
 
-Proprietary transcripts from MADS course lectures were pulled from Coursera using [`coursera-dl`](https://github.com/coursera-dl/coursera-dl). These exist in a [private repo](https://github.com/psollars/capstone-protected) at the following paths.
+Proprietary transcripts from MADS course lectures were pulled from Coursera using [`coursera-dl`](https://github.com/coursera-dl/coursera-dl). These exist in a [private repo](https://github.com/psollars/capstone-protected) at the following paths. This project references data at these paths which will need to be manually copied from the private repo.
 
+- `colbert_index/colbert/indexes/combined`
 - `colbert_index/colbert/indexes/transcripts`
 - `documents/transcripts`
 - `embeddings/transcripts.pickle`
@@ -72,3 +145,4 @@ Quantized large language models were sourced from public HuggingFace repositorie
 - https://huggingface.co/TheBloke/Llama-2-7B-GGUF
 - https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF
 - https://huggingface.co/TheBloke/Starling-LM-7B-alpha-GGUF
+- https://huggingface.co/colbert-ir/colbertv2.0
