@@ -2,12 +2,15 @@ import streamlit as st
 import time
 import random
 import re
+import pickle
 
-from mock_responses import responses
+# from mock_responses import responses
 
 
 @st.cache_resource
 def get_next_response():
+    with open("./sample_results_norouter_5.pkl", "rb") as handle:
+        responses = pickle.load(handle)
 
     i = 0
     while True:
@@ -87,3 +90,14 @@ if prompt := st.chat_input("How can I help?"):
 # What classes does Graham Hukill teach?
 # How many credits do I need to complete the MADS program?
 # How does PCA work?
+
+# What is Elle O'Brien's role in the MADS program?
+# According to your information, who is Laura Stagnaro?
+# What can you tell me about Kevyn Collins-Thompson?
+# Which class involves time series analysis?
+# Who teaches the SQL and Databases class?
+# What are the prerequisites for Data Science for Social Good?
+# What is a backpack for MADS students?
+# When is the latest I can drop a course?
+# How do I get an override to take a class?
+# How do I take a leave of absence from the MADS program?
