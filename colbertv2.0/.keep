@@ -1,0 +1,1 @@
+Clone the [colbertv2.0](https://huggingface.co/colbert-ir/colbertv2.0) model in the root of this project. This requires [git lfs](https://git-lfs.com/) to be installed and configured on your machine.
