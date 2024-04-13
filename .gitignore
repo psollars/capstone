@@ -24,6 +24,6 @@ chroma.log
 # Models
 models/all-MiniLM-L6-v2
 models/*.gguf
-colbertv2.0
+colbertv2.0/*
 
 *.log
