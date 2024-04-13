@@ -6,8 +6,6 @@ from langchain.callbacks.manager import CallbackManager
 from langchain_core.prompts import PromptTemplate
 from ragatouille import RAGPretrainedModel
 
-from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
-
 import re
 import time
 import random
@@ -43,14 +41,14 @@ def get_llm(_retriever):
     callback_manager = CallbackManager([std_out])
 
     llm_open = LlamaCpp(
-        model_path=f"{base_dir}/models/llama-2-7b.Q3_K_S.gguf",  # mistral-7b-instruct-v0.2.gguf",
-        n_ctx=4096,  # 4096 for Llama, 32*1024 for Mistral
+        model_path=f"{base_dir}/models/mistral-7b-instruct-v0.2.gguf",
+        n_ctx=32 * 1024,  # 4096 for Llama, 32*1024 for Mistral
         n_gpu_layers=50,
         temperature=0.15,
         top_p=1,
         top_k=40,
         repeat_penalty=1.1,
-        max_tokens=32,
+        max_tokens=512,
         callback_manager=callback_manager,
         stream=True,
     )
