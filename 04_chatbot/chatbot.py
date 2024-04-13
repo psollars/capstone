@@ -94,7 +94,7 @@ def build_source(source_documents):
 
 
 def fake_stream_response(r):
-    for word in r["result"].splitlines(keepends=True):
+    for word in re.split(r"(\s+)", r["result"]):
         yield f"{word} "
         time.sleep(random.uniform(0.001, 0.2))
 

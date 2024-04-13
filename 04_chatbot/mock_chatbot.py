@@ -46,8 +46,8 @@ def build_source(source_documents):
 
 
 def fake_stream_response(r):
-    for word in r["result"].splitlines(keepends=True):
-        yield f"{word} "
+    for word in re.split(r"(\s+)", r["result"]):
+        yield f"{word}"
         time.sleep(random.uniform(0.001, 0.2))
 
 
@@ -77,8 +77,8 @@ if prompt := st.chat_input("How can I help?"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
+        time.sleep(random.randint(1, 5))
         next_response = get_next_response().__next__()
-        time.sleep(random.uniform(1, 5))
         response = st.write_stream(fake_stream_response(next_response))
 
         st.write("##### Sources")
