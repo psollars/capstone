@@ -29,6 +29,9 @@ nltk = "*"
 langchain-core = "*"
 ragatouille = "*"
 scipy = "==1.12.0"
+gradio = "*"
+json2html = "*"
+semantic-router = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
