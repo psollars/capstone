@@ -9,8 +9,6 @@ from ragatouille import RAGPretrainedModel
 from langchain_community.callbacks.streamlit import StreamlitCallbackHandler
 
 import re
-import time
-import random
 
 base_dir = "./.."
 
@@ -27,7 +25,7 @@ def get_retriever():
 
 
 @st.cache_resource
-def get_llm(_retriever):
+def get_llm(_retriever, _callback_handler):
     template = """
     Use only the following pieces of context to answer the question at the end.
     Keep your answers concise and do not provide additional explanations or interpretations.
@@ -40,10 +38,10 @@ def get_llm(_retriever):
     """
 
     std_out = StreamingStdOutCallbackHandler()
-    callback_manager = CallbackManager([std_out])
+    callback_manager = CallbackManager([std_out, _callback_handler])
 
     llm_open = LlamaCpp(
-        model_path=f"{base_dir}/models/llama-2-7b.Q3_K_S.gguf",  # mistral-7b-instruct-v0.2.gguf",
+        model_path=f"{base_dir}/models/llama-2-7b.Q3_K_M.gguf",  # mistral-7b-instruct-v0.2.gguf",
         n_ctx=4096,  # 4096 for Llama, 32*1024 for Mistral
         n_gpu_layers=50,
         temperature=0.15,
@@ -96,12 +94,6 @@ def build_source(source_documents):
     return sources
 
 
-def fake_stream_response(r):
-    for word in r["result"].split():
-        yield f"{word} "
-        time.sleep(random.uniform(0.001, 0.2))
-
-
 st.markdown("## MADS-RAG")
 st.markdown(
     "#### A Helpful Chatbot for Master's of Applied Data Science Students at "
@@ -114,31 +106,37 @@ st.markdown(
 )
 st.markdown("---")
 
-retriever = get_retriever()
-qa_chain = get_llm(retriever)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+placeholder = st.empty()
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+with placeholder:
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
-if prompt := st.chat_input("How can I help?"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+    if prompt := st.chat_input("How can I help?"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
 
-    with st.chat_message("assistant"):
-        next_response = qa_chain(prompt)
-        response = st.write_stream(fake_stream_response(next_response))
-        response = next_response["result"]
+        with st.chat_message("assistant"):
+            callback_handler = StreamlitCallbackHandler(
+                placeholder, collapse_completed_thoughts=False
+            )
+            retriever = get_retriever()
 
-        st.write("##### Sources")
-        st.write(build_source(next_response["source_documents"][:3]))
+            qa_chain = get_llm(retriever, callback_handler)
 
-    st.session_state.messages.append({"role": "assistant", "content": response})
+            next_response = qa_chain(prompt)
+            response = next_response["result"]
+
+            st.write("##### Sources")
+            st.write(build_source(next_response["source_documents"][:3]))
+
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 # Who is the instructor for the SQL and Databases class?
