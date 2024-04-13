@@ -27,7 +27,7 @@ With all dependencies, models, and source data installed, the chatbot can be sta
    - View the response generated from the MADS-RAG pipeline
    - Interact with links in the response or source information
 
-![Chatbot Interface](./03_visualization/chatbot_interface.png)
+![Chatbot Interface](./03_visualization/chatbot_interface_demo.gif)
 _MADS-RAG chatbot interface using Streamlit_
 
 ## Using This Repo
