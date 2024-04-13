@@ -48,7 +48,7 @@ def build_source(source_documents):
 def fake_stream_response(r):
     for word in r["result"].split():
         yield f"{word} "
-        time.sleep(random.uniform(0.001, 0.5))
+        time.sleep(random.uniform(0.001, 0.2))
 
 
 st.markdown("## MADS-RAG")
