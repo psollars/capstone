@@ -1,0 +1,21 @@
+{
+    "host": "0.0.0.0",
+    "port": 7999,
+    "models": [
+        {
+            "model": "/Users/arnewman/.cache/lm-studio/models/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/mistral-7b-instruct-v0.2.Q4_K_M.gguf",
+            "model_alias": "mistral-7b-instruct-v0.2",
+            "n_gpu_layers": -1,
+            "n_batch": 512,
+            "n_ctx": 32768
+        },
+        {
+            "model": "/Users/arnewman/.cache/lm-studio/models/bartowski/Starling-LM-7B-beta-GGUF/Starling-LM-7B-beta-Q4_K_M.gguf",
+            "model_alias": "Starling-LM-7B-beta",
+            "chat_format": "chatml",
+            "n_gpu_layers": -1,
+            "n_batch": 512,
+            "n_ctx": 8192
+        }
+    ]
+}
