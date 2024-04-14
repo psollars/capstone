@@ -51,6 +51,7 @@ Many notebooks used here to test out different retrieval strategies and models. 
   - **Mistral7B**
   - Starling7B
 - Evaluation Strategies
+  - BERTScore
   - BLEU
   - ROUGE
   - METEOR
