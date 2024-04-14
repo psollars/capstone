@@ -32,6 +32,9 @@ scipy = "==1.12.0"
 gradio = "*"
 json2html = "*"
 semantic-router = "*"
+sse-starlette = "*"
+starlette-context = "*"
+pydantic-settings = "*"
 
 [dev-packages]
 ipykernel = "==6.29.2"
