@@ -1,5 +1,6 @@
 # Proprietary MADS Data
 colbert_index/colbert/indexes/transcripts
+colbert_index/colbert/indexes/combined
 documents/transcripts
 embeddings/*
 # Keep these two
