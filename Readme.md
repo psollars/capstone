@@ -20,12 +20,23 @@ _High-level architecture of the MADS-RAG chatbot_
 With all dependencies, models, and source data installed, the chatbot can be started by:
 
 1. navigating to the chatbot directory: `cd 04_chatbot`
-2. start the chatbot client: `pipenv run  streamlit run ./chatbot.py --server.port 8501`
+2. start the chatbot client: `pipenv run streamlit run ./chatbot.py --server.port 8501`
    - If your machine can't handle it, you can use `mock_chatbot.py` which uses cached responses with minimal resources (Not the RAG LLM)
 3. Navigate to http://localhost:8501 where you can:
    - Enter your prompt
    - View the response generated from the MADS-RAG pipeline
    - Interact with links in the response or source information
+
+### Run with llama_cpp
+
+```sh
+cd 04_chatbot
+
+pipenv run python -m llama_cpp.server —config_file llama_cpp_config.json
+
+# In a new shell...
+pipenv run streamlit run ./chatbot_llama_cpp.py --server.port 8501
+```
 
 ![Chatbot Interface](./03_visualization/chatbot_interface_demo.gif)
 _MADS-RAG chatbot interface using Streamlit_
@@ -119,7 +130,7 @@ pipenv install --dev
 
 Some notebooks require API keys to run, these should be stored in the .gitignored file, `secrets.py`, in the root of this repo.
 
-```
+```sh
 OPENAI_API_KEY = "your_secret_key" # only for evaluation
 NGROK_AUTH_TOKEN = "your_secret_key"
 ```
