@@ -4,13 +4,13 @@ import random
 import re
 import pickle
 
-# from mock_responses import responses
+from mock_responses import responses
 
 
 @st.cache_resource
 def get_next_response():
-    with open("./sample_results_norouter_5.pkl", "rb") as handle:
-        responses = pickle.load(handle)
+    # with open("./sample_results_norouter_5.pkl", "rb") as handle:
+    #     responses = pickle.load(handle)
 
     i = 0
     while True:
@@ -48,7 +48,7 @@ def build_source(source_documents):
 def fake_stream_response(r):
     for word in re.split(r"(\s+)", r["result"]):
         yield f"{word}"
-        time.sleep(random.uniform(0.001, 0.2))
+        time.sleep(random.uniform(0, 0.1))
 
 
 st.markdown("## MADS-RAG")
@@ -77,7 +77,7 @@ if prompt := st.chat_input("How can I help?"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        time.sleep(random.randint(1, 5))
+        time.sleep(random.randint(5, 10))
         next_response = get_next_response().__next__()
         response = st.write_stream(fake_stream_response(next_response))
 
