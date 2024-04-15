@@ -29,6 +29,8 @@ With all dependencies, models, and source data installed, the chatbot can be sta
 
 ### Run with llama_cpp
 
+llama.cpp can be configured to run with hardware acceleration for your particular machine. See the [documentation](https://github.com/abetlen/llama-cpp-python?tab=readme-ov-file#installation-configuration) for more information on installation configuration for this package.
+
 ```sh
 cd 04_chatbot
 
