@@ -1,0 +1,4 @@
+Embedding Models required to run the full RAG pipeline should be placed in this directory. 
+These can be downloaded from the following public HuggingFace repository:
+
+- https://huggingface.co/WhereIsAI/UAE-Large-V1
