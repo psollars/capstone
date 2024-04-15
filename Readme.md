@@ -77,7 +77,15 @@ Document chunking analysis and topic modeling visualizations for the report.
 
 ### `04_chatbot`
 
-Notebooks, scripts, and configuration relevant to the UI or “productionizing” the finished product.
+Notebooks, scripts, and configuration relevant to the UI or “productionizing” the finished product. There are several ways to run the chatbot:
+
+- `chatbot.py`: The standard chatbot with Streamlit UI `pipenv run streamlit run ./chatbot.py --server.port 8501`
+- `chatbot_llama_cpp.py`: Same Streamlit UI, but this connects to an instance of the LLM API running at `http://localhost:7999`
+- `mock_chatbot.py`: Loops through a list of canned responses, used to develop and test the UI quickly
+- `semantic_routing_gradio_ui`: This notebook provides an alternative UI and includes an optional implementation of the router
+- Other Notebooks: These will run the startup commands if you prefer to not use the shell, additionally they offer tunneling to your local instance if you'd like to (temporarily) share the app.
+  - run_chatbot_localtunnel
+  - run_chatbot_ngrok (requires `NGROK_AUTH_TOKEN`)
 
 ### `colbert_index`
 
